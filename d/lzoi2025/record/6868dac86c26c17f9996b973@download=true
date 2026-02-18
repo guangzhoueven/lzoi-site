@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int first_Digit(int x) {
+    while (x >= 10) x /= 10;
+    return x;
+}
+ 
+int last_Digit(int x) {
+    return x % 10;
+}
+ 
+int main() {
+    int n;
+    cin >> n;
+    vector<vector<int>> count(10, vector<int>(10, 0));
+ 
+    for (int i = 1; i <= n; ++i) {
+        int a = first_Digit(i);
+        int b = last_Digit(i);
+        count[a][b]++;
+    }
+ 
+    long long ans = 0;
+    for (int i = 1; i <= n; ++i) {
+        int a = first_Digit(i);
+        int b = last_Digit(i);
+        ans += count[b][a];
+    }
+ 
+    cout << ans << endl;
+    return 0;
+}

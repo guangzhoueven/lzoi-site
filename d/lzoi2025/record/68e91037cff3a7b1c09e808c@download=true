@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+vector<i64> euler(i64 n) {
+	vector<i64> min_prime(n + 1, 1);
+	vector<bool> is_prime(n + 1, true);
+	vector<i64> primes;
+	
+	for (i64 i = 2; i <= n; i++) {
+		if (is_prime[i]) primes.push_back(i), min_prime[i] = i;
+		
+		for (i64 j = 0; j < (i64) primes.size() && i * primes[j] <= n; j++) {
+			is_prime[i * primes[j]] = false;
+			min_prime[i * primes[j]] = primes[j];
+			if (i % primes[j] == 0) break;
+		}
+	}
+	return min_prime;
+}
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	vector<i64> min_prime = euler(5e6);
+	
+	i64 T, n;
+	cin >> T;
+	while (T--) {
+		cin >> n;
+		vector<i64> a(n);
+		map<i64, i64> sum;
+		for (i64 i = 0; i < n; i++) cin >> a[i];
+		
+		auto ok = [&]() -> bool {
+			if (n & 1) return true;
+			if (n == 2) return a[0] == a[1];
+			for (i64 x : a) {
+				i64 tmp = x;
+				while (tmp != 1) {
+					i64 cnt = 0, d = min_prime[tmp];
+					while (min_prime[tmp] == d) cnt++, tmp /= min_prime[tmp];
+					sum[d] += cnt;
+				}
+			}
+			for (auto [d, s] : sum) 
+				if (s & 1) return false;
+			return true;
+		};
+		cout << (ok() ? "YES" : "NO") << '\n';
+	}
+	return 0;
+}

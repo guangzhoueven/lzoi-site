@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n, m;
+	string s, t;
+	cin >> n >> m >> s >> t;
+	int T;
+	cin >> T;
+	vector<string> ds(T);
+	for (int i = 0; i < T; i++) cin >> ds[i];
+
+	for (auto d : ds) {
+		vector<int> cnt(26);
+		for (int i = 0; i < 26; i++) {
+			char ch = d[i];
+			cnt[ch - 'a'] = i;
+		}
+		int len = min(s.size(), t.size());
+		bool tmp = false;
+		for (int i = 0; i < len; i++) {
+			if (s[i] != t[i]) {
+				if (cnt[s[i] - 'a'] < cnt[t[i] - 'a']) cout << "s\n";
+				else cout << "t\n";
+				tmp = true;
+				break;
+			}
+		}
+		if (!tmp) {
+			if (s.size() < t.size()) cout << "s\n";
+			else cout << "t\n";
+		}
+	}
+	return 0;
+}

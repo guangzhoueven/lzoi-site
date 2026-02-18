@@ -1,0 +1,39 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int solve(int R, int G, int B) {
+	int res = -1;
+	if ((G % 3 == B % 3) && (R > 0 || G == B)) {
+		int ops = max(G, B);
+		if (res == -1 || ops < res) {
+			res = ops;
+		}
+	}
+	if ((R % 3 == B % 3) && (G > 0 || R == B)) {
+		int ops = max(R, B);
+		if (res == -1 || ops < res) {
+			res = ops;
+		}
+	}
+	if ((R % 3 == G % 3) && (B > 0 || R == G)) {
+		int ops = max(R, G);
+		if (res == -1 || ops < res) {
+			res = ops;
+		}
+	}
+	return res;
+}
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+	int T;
+	cin >> T;
+	while (T--) {
+		int R, G, B;
+		cin >> R >> G >> B;
+		cout << solve(R, G, B) << endl;
+	}
+	return 0;
+}

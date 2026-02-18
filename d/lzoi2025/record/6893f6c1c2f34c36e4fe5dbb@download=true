@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+// 用deque会出现一个测试点 #4-19 会MLE，所以用了list优化
+void calc(unordered_map<int, list<int>>& q, const string& op, int a, int x = 0) {
+	if (op == "push_back") 					q[a].push_back(x);
+	if (op == "pop_back" && !q[a].empty())  q[a].pop_back();
+	if (op == "push_front") 				q[a].push_front(x);
+	if (op == "pop_front" && !q[a].empty())	q[a].pop_front();
+	if (op == "size") 						cout << q[a].size() << "\n";
+	if (op == "front" && !q[a].empty()) 	cout << q[a].front() << "\n";
+	if (op == "back" && !q[a].empty()) 	 	cout << q[a].back() << "\n";
+}
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int T;
+	cin >> T;
+	unordered_map<int, list<int>> q;
+	while (T--) {
+		string op;
+		cin >> op;
+		int a, x = 0;
+		if (op == "push_back" || op == "push_front") cin >> a >> x;
+		else cin >> a;
+		calc(q, op, a, x);
+	}
+	return 0;
+}

@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+const int inf = 1000000007;
+
+int cal(int r, int g, int b) {
+	if (r < g) swap(r, g);
+	if ((r - g) % 3 != 0) return inf;
+	// if ((r - g) / 3 > b) return inf;
+	// r - (r - g) / 3 + (r - g) / 3;
+	return r;
+}
+
+int main() {
+	int T, r, g, b;
+	cin >> T;
+	while (T--) {
+		cin >> r >> g >> b;
+		int ans = cal(r, g, b);
+		ans = min(ans, cal(g, b, r));
+		ans = min(ans, cal(b, r, g));
+		cout << (ans == inf ? -1 : ans) << '\n';
+	}
+	return 0;
+}

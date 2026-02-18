@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+/* 超市优惠券问题（最小化花费）【贪心算法】*/
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int T;
+	cin >> T;
+	while (T--) {
+		int n, x, y;		// n 件商品，折扣x，立减值y
+		cin >> n >> x >> y;
+		vector<int> p(n);	// n 件商品的价格
+		for (int i = 0; i < n; i++) cin >> p[i];
+
+		// 计算每个商品使用两种优惠后的节省金额
+		vector<pair<double, int>> ZK_save; 	// <节省费用,商品id>
+		vector<pair<int, int>> LJ_save;     // <节省费用,商品id>s
+		for (int i = 0; i < n; i++) {
+			ZK_save.emplace_back(p[i] - p[i] * x / 100.0, i);   // 商品i使用折扣卷节省费用
+			LJ_save.emplace_back(p[i] - max(p[i] - y, 0), i);// 商品i使用立减卷节省费用
+		}
+
+		// 按节省金额降序排序
+		sort(ZK_save.begin(), ZK_save.end(), greater<>());
+		sort(LJ_save.begin(), LJ_save.end(), greater<>());
+
+		double cost = accumulate(p.begin(), p.end(), 0.0);
+		double max_save = 0.0;
+
+		if (n == 1)
+			max_save = max(ZK_save[0].first, (double)LJ_save[0].first);// 只能选择一种优惠券
+		else {
+			if (ZK_save[0].second != LJ_save[0].second) {	// 检查最优的两个节省是否来自同一个商品
+				max_save = ZK_save[0].first + LJ_save[0].first;
+			} else {
+				double option1 = ZK_save[0].first + (LJ_save.size() > 1 ? LJ_save[1].first : 0);
+				double option2 = (ZK_save.size() > 1 ? ZK_save[1].first : 0) + LJ_save[0].first;
+				max_save = max(option1, option2);
+			}
+		}
+		cout << fixed << setprecision(4) << cost - max_save << "\n";
+	}
+	return 0;
+}

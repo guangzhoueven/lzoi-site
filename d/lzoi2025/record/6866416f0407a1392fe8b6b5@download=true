@@ -1,0 +1,42 @@
+#include <iostream>
+#include <queue>
+#include <vector>
+
+using namespace std;
+
+const int N = 4e5+5;
+
+struct E {
+	int v, i, j;
+	bool operator>(const E& o) const { return v > o.v; }
+};
+
+void solve(int n, vector<int>& a, vector<int>& b) {
+	priority_queue<E, vector<E>, greater<E>> pq;
+	
+	for (int i = 0; i < n; ++i)
+		pq.push({a[i]+b[0], i, 0});
+	
+	for (int k = 0; k < n; ++k) {
+		auto t = pq.top(); pq.pop();
+		cout << t.v << "\n";
+		if (t.j+1 < n)
+			pq.push({a[t.i]+b[t.j+1], t.i, t.j+1});
+	}
+}
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+	int n;
+	cin >> n;
+	
+	vector<int> a(n), b(n);
+	for (int& x : a) cin >> x;
+	for (int& x : b) cin >> x;
+	
+	solve(n, a, b);
+	
+	return 0;
+}

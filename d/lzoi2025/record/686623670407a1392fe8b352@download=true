@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	int x,n,k;
+	set<int> s;
+	cin>>n>>k;
+	for (int i = 0; i < n; i++) {
+		cin >> x;
+		s.insert(x);
+	}
+	if (s.size() < k) cout << "NO RESULT" << "\n";
+	else {
+		int cnt = 0;
+		for (int x : s) {
+			if (++cnt == k) {
+				cout << x << "\n";
+				break;
+			}
+		}
+	}
+	return 0;
+}

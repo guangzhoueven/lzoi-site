@@ -1,0 +1,70 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using pii = pair<int, int>;
+
+// 表示一个很大的数
+const int inf = 1000000000;
+
+// 在地图 g 中寻找 (sx, sy) 到 (ex, ey) 的字典序最小的最短路
+string getPath(vector<string>& g, int sx, int sy, int ex, int ey) {
+	// h: 地图的高, w: 地图的宽
+	int h = g.size(), w = g[0].size();
+	
+	// 按字典序从小到大, D < L < R < U
+	vector<int> dx = {1,  0, 0, -1};
+	vector<int> dy = {0, -1, 1,  0};
+	vector<string> f = {"D", "L", "R", "U"};
+	
+	// d[i][j] 表示从起点到 (i, j) 的最短路, 初值为无穷大
+	vector<vector<int>> d(h, vector<int>(w, inf));
+	
+	// p[i][j] 记录从起点到达 (i, j) 的最短路的最后一步
+	vector<vector<int>> p(h, vector<int>(w, inf));
+	
+	d[sx][sy] = 0;
+	queue<pii> q;
+	q.push({sx, sy});
+	while (!q.empty()) {
+		auto [x, y] = q.front();  // 取队首
+		q.pop();                  // 将队首弹出
+		for (int k = 0; k < 4; k++) {
+			int u = x + dx[k], v = y + dy[k];
+			if (u < 0 || u >= h || v < 0 || v >= w) continue;
+			if (g[u][v] == '1') continue;  // 障碍
+			if (d[u][v] != inf) continue;  // 有其他更近的路
+			
+			d[u][v] = d[x][y] + 1;  // 更新 d[u][v]
+			p[u][v] = k;            // 记录到达 (u, v) 的方向
+			
+			q.push({u, v});
+		}
+	}
+	
+	// 终点不可达
+	if (d[ex][ey] == inf) return "-1";
+	
+	string path;
+	int x = ex, y = ey;
+	while (!(x == sx && y == sy)) {
+		int d = p[x][y];
+		path += f[d];
+		x -= dx[d], y -= dy[d];
+	}
+	reverse(path.begin(), path.end());
+	return path;
+}
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr); cout.tie(nullptr);
+	
+	// h: 地图的高, w: 地图的宽
+	cin >> h >> w;
+	vector<string> g(h);
+	for (int i = 0; i < h; i++) cin >> g[i];
+	
+	cout << getPath(g, 0, 0, h - 1, w - 1) << '\n';
+
+	return 0;	
+}

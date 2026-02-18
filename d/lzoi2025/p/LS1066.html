@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html data-page="problem_detail" data-layout="basic" class="layout--basic page--problem_detail theme--dark nojs" data-mantine-color-scheme="dark" lang="zh" data-app="Hydro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.gzlzoi.cn/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../../favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../../android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="../../../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../../favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://www.gzlzoi.cn/p/LS1066">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="乐知课堂" />
+  <meta property="og:url" content="https://www.gzlzoi.cn/p/LS1066" />
+  <meta property="og:image" content="/favicon-96x96.png" />
+                                  <meta property="og:locale" content="zh" />
+              <meta property="og:title" content="LS1066. 【入门】最小差值 - 乐知课堂" />
+    <meta property="og:description" content="题目描述
+输入一个整数数组 a，和一个整数 k，对于 a 中的每个元素，必须进行依次操作（加上 k 或者减去 k）
+要求是数组中所有元素执行完操作后，整个数组的最大和最小值之差最小，输出这个差值。
+输..." />
+    <title>【入门】最小差值 - 题目详情 - 乐知课堂</title>
+  <style>
+    body {
+      --font-family: "Microsoft Yahei", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Consolas", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="../../../theme-4.58.0-beta.17.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      window.UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","hydroacFeatures":[],"blspHost":"wss://ws.hydrooj.com","constantVersion":"1c07a499","domainId":"lzoi2025","domain":{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"},"extraTitleContent":"\u3010\u5165\u95E8\u3011\u6700\u5C0F\u5DEE\u503C","SWConfig":{"preload":"","hosts":["http://www.gzlzoi.cn","https://www.gzlzoi.cn","https://www.gzlzoi.cn/","/"],"assets":[],"domains":[]}}';
+      window.UserContext = '{"_id":39,"mail":"202610319@gzlzoi.cn","uname":"202610319","hashType":"hydro","priv":4,"regat":"2025-07-01T02:30:33.477Z","loginat":"2026-02-06T00:24:21.126Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921","role":"\u5B66\u751F","scope":"BigInt::-1","tfa":false,"authn":false,"group":["20250702\u4E0A\u5348","\u4E34\u65F6\u5C0F\u7EC4","20250804\u4E0A\u5348","39"],"domains":[{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"}],"viewLang":"zh","timeZone":"Asia/Shanghai","codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","avatar":"gravatar:202610319@gzlzoi.cn","qq":"","gender":"2","bio":"<blockquote class=\\"note\\">\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: yellow;\\">\u4E66\u5C71\u6709\u8DEF\u52E4\u4E3A\u5F84\uFF0C\u5B66\u6D77\u65E0\u6DAF\u82E6\u4F5C\u821F\u3002</p></h3>\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: #12DA72;\\">Diligence is the path to the mountain of knowledge, hard-working is the boat to the endless sea of learning.</p></h3>\\r\\n</blockquote>","school":"\u5E7F\u5DDE\u5E02\u5929\u6CB3\u533A\u9A8F\u666F\u5C0F\u5B66","studentId":"","backgroundImage":"/d/lzoi2025/file/39/%E4%B9%90%E7%9F%A5%E8%AF%BE%E5%A0%82%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.png","unreadMsg":0,"pinnedDomains":["lzoi2025"],"rounded":true,"skipAnimate":false,"showTimeAgo":true,"fontFamily":"Microsoft Yahei","codeFontFamily":"Consolas","theme":"dark","preferredEditorType":"sv","showInvisibleChar":false,"formatCode":true,"displayName":"\u9EC4\u98DE\u535A","rpInfo":{"problem":237.2780396214451,"contest":8.25},"nAccept":191,"nSubmit":194,"rp":245.5280396214451,"rank":2,"level":8,"join":true,"avatarUrl":"//cn.gravatar.com/avatar/2dbb0a041212ea8df395e4d4418e92fa?d=mm&s=128"}';
+    </script>
+      </head>
+<body>
+      <script type="text/javascript" src="../../../resource/1c07a499/entry.js"></script>
+    <script type="text/javascript" src="../../../resource/4.58.0-beta.17/lang-zh.js"></script>
+    <script type="text/javascript" src="../../../hydro-4.58.0-beta.17.js"></script>
+    <nav class="nav slideout-menu" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://www.gzlzoi.cn/"><img class="nav__logo" src="../../../components/navigation/nav-logo-small_dark.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="../index.html" class="nav__item">
+    首页
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../set_theme/dark.html" class="nav__item nav--active">
+    题库
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../training.html" class="nav__item">
+    训练
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../contest.html" class="nav__item">
+    比赛
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../homework.html" class="nav__item">
+    作业
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../discuss.html" class="nav__item">
+    讨论
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../record@uidOrName=39.html" class="nav__item">
+    评测记录
+  </a>
+</li>
+      </ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+              <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-domain" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <span class="nav__item"><span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span> lzoi2025 <span class="icon icon-expand_more nojs--hide"></span></span>
+        <ol class="dropdown-target menu" id="menu-nav-domain"><li class="menu__item">
+              <a href="../index.html" class="menu__link">
+                <span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span>
+                lzoi2025              </a>
+            </li><li class="menu__seperator"></li><li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 管理
+            </a>
+          </li>
+        </ol>
+      </li>
+          <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <a href="../user/39.html" class="nav__item">202610319 <span class="icon icon-expand_more nojs--hide"></span></a>
+        <ol class="dropdown-target menu" id="menu-nav-user">
+          <li class="menu__item">
+            <a href="../user/39.html" class="menu__link">
+              <span class="icon icon-account--circle"></span> 我的资料
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/messages.html" class="menu__link">
+              <span class="icon icon-comment--multiple"></span> 站内消息
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> @ lzoi2025
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/account.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 账户设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/settings/preference.html" class="menu__link">
+              <span class="icon icon-sliders"></span> 偏好设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/security.html" class="menu__link">
+              <span class="icon icon-security"></span> 安全设置
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> 我的域
+            </a>
+          </li>
+                              <li class="menu__seperator"></li>
+                    <li class="menu__item">
+            <a href="../logout.html" class="menu__link" name="nav_logout">
+              <span class="icon icon-logout"></span> 登出
+            </a>
+          </li>
+        </ol>
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://www.gzlzoi.cn/" target="_self">
+        <img src="../../../components/navigation/nav-logo-small_dark.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+        <script>
+
+  
+  
+  
+  
+  
+</script>
+                                <meta property="og:locale" content="zh" />
+              <meta property="og:title" content="LS1066. 【入门】最小差值 - 乐知课堂" />
+    <meta property="og:description" content="题目描述
+输入一个整数数组 a，和一个整数 k，对于 a 中的每个元素，必须进行依次操作（加上 k 或者减去 k）
+要求是数组中所有元素执行完操作后，整个数组的最大和最小值之差最小，输出这个差值。
+输..." />
+  <div class="row" data-sticky-parent>
+  <div class="medium-9 columns">
+    <div class="section">
+      <div class="section__header">
+        <h1 class="section__title">
+                      <a href="../record/689dbd3dbbeb552d59dcc438.html">
+              <span class="icon record-status--icon pass"></span>
+              <span class="record-status--text pass">100</span>
+            </a>
+                                <form class="form--inline" action="LS1066.html" method="post">
+              <input type="hidden" name="star" value="true">
+              <input type="hidden" name="operation" value="star">
+              <button class="star" type="submit">
+                <span class="starred--hide"><span class="icon icon-star--outline" data-tooltip="收藏"></span></span>
+                <span class="starred--show"><span class="icon icon-star" data-tooltip="取消收藏"></span></span>
+              </button>
+            </form>
+          #LS1066. 【入门】最小差值
+        </h1>
+              </div>
+      <div class="section__body">
+        <ul class="problem__tags">
+                      <span class="problem__tag-item">ID: 96</span>
+                    <span class="problem__tag-item icon icon-book">传统题</span>
+                                <span class="problem__tag-item icon icon-stopwatch">1000ms</span>
+            <span class="problem__tag-item icon icon-comparison">256MiB</span>
+                                <a class="problem__tag-item interactive" href="https://www.gzlzoi.cn/d/lzoi2025/record?pid=96">尝试: 19</a>
+            <a class="problem__tag-item interactive" href="https://www.gzlzoi.cn/d/lzoi2025/record?pid=96&amp;status=1">已通过: 6</a>
+            <span class="problem__tag-item">难度: 8</span>
+            <span class="problem__tag-item interactive">上传者: <span class="user-profile-link">
+      <img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20">
+    <a class="user-profile-name uname--lv3" href="../user/2.html">
+          liangsheng
+      </a>
+  </span>
+</span>
+                                <span name="show_tags" class="problem__tag-item interactive nojs--hide icon icon-tag">标签&gt;</span><span class="problem__tag-item tags hasjs--hide">贪心</span><span class="problem__tag-item tags hasjs--hide">入门</span>        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="problem-content-container"><div class="problem-content" data-marker-enabled>
+        <div class="section__header non-scratchpad--hide">
+          <h1 class="section__title">【入门】最小差值</h1>
+        </div>
+                <div class="section__body typo richmedia" data-fragment-id="problem-description">
+                      <h1 id="%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0" tabindex="-1">题目描述</h1>
+<p>输入一个整数数组 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">a</span></span></span></span>，和一个整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>，对于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">a</span></span></span></span> 中的每个元素，必须进行依次操作（加上 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> 或者减去 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>）</p>
+<p>要求是数组中所有元素执行完操作后，整个数组的最大和最小值之差最小，输出这个差值。</p>
+<h1 id="%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F" tabindex="-1">输入格式</h1>
+<p>第一行包含 2 个整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mn>2</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><msup><mn>10</mn><mn>5</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">n(2 \le n \le 10^5)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mopen">(</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 代表数组 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">a</span></span></span></span> 的长度, 和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo stretchy="false">(</mo><mn>1</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><msup><mn>10</mn><mn>9</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">k(1 \le k \le 10^9)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></p>
+<p>第二行是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 个用空格分开的整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>a</mi><mn>2</mn></msub><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><msub><mi>a</mi><mi>n</mi></msub><mo stretchy="false">(</mo><mn>1</mn><mo>≤</mo><msub><mi>a</mi><mi>i</mi></msub><mo>≤</mo><msup><mn>10</mn><mn>9</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">a_1, a_2, ..., a_n(1 \le a_i \le 10^9)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">...</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.786em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></p>
+<h1 id="%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F" tabindex="-1">输出格式</h1>
+<p>输出操作后的最小差值</p>
+<pre><code class="language-input1">10 4
+2 3 3 4 6 6 7 7 8 10
+</code></pre>
+<pre><code class="language-output1">6
+</code></pre>
+<h1 id="%E6%8F%90%E7%A4%BA" tabindex="-1">提示</h1>
+<p><strong>【样例解释 1】</strong></p>
+<ul>
+<li>可以对前 4 个数加 4，后 6 个数减 4</li>
+<li>数组变成 6 7 7 8 2 2 3 3 4 6</li>
+<li>最大数与最小数差值数 8 - 2 = 6</li>
+</ul>
+<details>
+<summary><font color="#FF0000">请思考后再点击查看提示</font></summary>
+</details>
+<h1 id="%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1%E4%B8%8E%E9%99%90%E5%88%B6" tabindex="-1">数据规模与限制</h1>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><msup><mn>10</mn><mn>5</mn></msup><mo separator="true">,</mo><mn>1</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><msup><mn>10</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">2 \le n \le 10^5, 1 \le k \le 10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0085em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>a</mi><mi>i</mi></msub><mo>≤</mo><msup><mn>10</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">1 \le a_i \le 10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.786em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span></li>
+<li>1s, 1024KiB for each test case.</li>
+</ul>
+<h1 id="%E6%9D%A5%E6%BA%90" tabindex="-1">来源</h1>
+
+
+</div>      </div></div>
+    </div>
+  </div>
+  <div class="medium-3 columns"><div data-sticky="large">
+        <div class="section side section--problem-sidebar">
+  <div>
+    <ol class="menu">
+                  <li class="menu__item scratchpad--hide nojs--hide"><a class="menu__link highlight" name="problem-sidebar__open-scratchpad" href="javascript:;" data-global-hotkey="alt+e" style="display: none;">
+        <span class="icon icon-enlarge"></span> 进入在线编程模式 (Alt+E)
+      </a></li>
+      <li class="menu__item non-scratchpad--hide"><a class="menu__link" name="problem-sidebar__quit-scratchpad" href="javascript:;" data-global-hotkey="alt+q">
+        <span class="icon icon-enlarge"></span> 退出在线编程模式 (Alt+Q)
+      </a></li>
+                  <li class="menu__item scratchpad--hide"><a class="menu__link" href="LS1066/submit.html">
+        <span class="icon icon-send"></span> 递交
+      </a></li>
+                      <li class="menu__seperator"></li>
+              <li class="menu__item"><a class="menu__link" href="../discuss/problem/96.html">
+        <span class="icon icon-comment--text"></span> 讨论 (0)      </a></li>
+              <li class="menu__item"><a class="menu__link" href="LS1066/solution.html">
+        <span class="icon icon-comment--text"></span> 题解 (0)      </a></li>
+          <li class="menu__item"><a class="menu__link" href="LS1066/files.html">
+        <span class="icon icon-file"></span> 文件
+      </a></li>
+      <li class="menu__item"><a class="menu__link" href="LS1066/stat.html">
+        <span class="icon icon-statistics"></span> 统计
+      </a></li>
+              <li class="menu__seperator nojs--hide"></li>
+                    <li class="menu__item nojs--hide"><a class="menu__link" href="javascript:;" name="problem-sidebar__copy">
+          <span class="icon icon-copy"></span> 复制
+        </a></li>
+              </ol>
+  </div>
+</div>
+<div class="section side">
+  <div class="section__header">
+    <h1 class="section__title">相关</h1>
+  </div>
+  <div class="section__body typo">
+          <p>在以下作业中: </p><p><a href="../homework/689c3e70256bc353a88824f8.html">【算法入门-08】听说大家都学过贪心</a></p>  </div>
+</div>
+  </div></div>
+</div>
+<div style="display:none" class="outer-loader-container"><div class="loader"></div></div>
+<div class="scratchpad-container" style="display:none">
+  <div style="display:none" class="loader-container"><div class="loader"></div></div>
+  <div id="scratchpad" style="opacity:0"></div>
+</div>
+  </div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+      <div class="row footer__links">
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          状态
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://www.gzlzoi.cn/d/lzoi2025/record">评测队列</a></li>
+          <li class="footer__category__item"><a href="../status.html">服务状态</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          开发
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">开源</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          支持
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/help.html">帮助</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">联系我们</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable end">
+        <h1>
+          关于
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/about.html">关于</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#privacy">隐私</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#tos">服务条款</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">版权申诉</a></li>
+        </ul></div>
+      </div>
+    </div>
+      <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+                    <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-lang"><li class="menu__item"><a class="menu__link" href="../language/en.html">English</a></li><li class="menu__item"><a class="menu__link" href="../language/ko.html">한국어</a></li><li class="menu__item"><a class="menu__link" href="../language/zh.html">简体中文</a></li><li class="menu__item"><a class="menu__link" href="../language/zh_TW.html">正體中文</a></li></ol>
+          </li>
+          <li class="footer__extra-link-item">
+                          <a href="https://www.gzlzoi.cn/legacy?legacy=true">兼容模式</a>
+                      </li>
+          <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> 主题 <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-theme">
+              <li class="menu__item"><a class="menu__link" href="../set_theme/light.html">亮色</a></li>
+              <li class="menu__item"><a class="menu__link" href="../set_theme/dark.html">暗色</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><a href="https://beian.miit.gov.cn/">京ICP备2023010486号-3</a></li><li class="footer__extra-link-item">Worker 0, 16ms</li>
+          <!-- Prepare 3ms -->
+          <!-- Method 1ms -->
+          
+          
+          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v5.0.0-beta.16</a> Community</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      window.UiContextNew = '{"problemId":"LS1066","problemNumId":96,"codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","pdoc":{"_id":"689c3c62256bc353a88824ae","content":"{\\"zh\\":\\"# \u9898\u76EE\u63CF\u8FF0\\\\n\\\\n\u8F93\u5165\u4E00\u4E2A\u6574\u6570\u6570\u7EC4 $a$\uFF0C\u548C\u4E00\u4E2A\u6574\u6570 $k$\uFF0C\u5BF9\u4E8E $a$ \u4E2D\u7684\u6BCF\u4E2A\u5143\u7D20\uFF0C\u5FC5\u987B\u8FDB\u884C\u4F9D\u6B21\u64CD\u4F5C\uFF08\u52A0\u4E0A $k$ \u6216\u8005\u51CF\u53BB $k$\uFF09\\\\n\\\\n\u8981\u6C42\u662F\u6570\u7EC4\u4E2D\u6240\u6709\u5143\u7D20\u6267\u884C\u5B8C\u64CD\u4F5C\u540E\uFF0C\u6574\u4E2A\u6570\u7EC4\u7684\u6700\u5927\u548C\u6700\u5C0F\u503C\u4E4B\u5DEE\u6700\u5C0F\uFF0C\u8F93\u51FA\u8FD9\u4E2A\u5DEE\u503C\u3002\\\\n\\\\n# \u8F93\u5165\u683C\u5F0F\\\\n\\\\n\u7B2C\u4E00\u884C\u5305\u542B 2 \u4E2A\u6574\u6570 $n(2 \\\\\\\\le n \\\\\\\\le 10^5)$ \u4EE3\u8868\u6570\u7EC4 $a$ \u7684\u957F\u5EA6, \u548C $k(1 \\\\\\\\le k \\\\\\\\le 10^9)$\\\\n\\\\n\u7B2C\u4E8C\u884C\u662F $n$ \u4E2A\u7528\u7A7A\u683C\u5206\u5F00\u7684\u6574\u6570 $a_1, a_2, ..., a_n(1 \\\\\\\\le a_i \\\\\\\\le 10^9)$\\\\n\\\\n# \u8F93\u51FA\u683C\u5F0F\\\\n\\\\n\u8F93\u51FA\u64CD\u4F5C\u540E\u7684\u6700\u5C0F\u5DEE\u503C\\\\n\\\\n```input1\\\\n10 4\\\\n2 3 3 4 6 6 7 7 8 10\\\\n```\\\\n\\\\n```output1\\\\n6\\\\n```\\\\n\\\\n# \u63D0\u793A\\\\n\\\\n**\u3010\u6837\u4F8B\u89E3\u91CA 1\u3011**\\\\n\\\\n* \u53EF\u4EE5\u5BF9\u524D 4 \u4E2A\u6570\u52A0 4\uFF0C\u540E 6 \u4E2A\u6570\u51CF 4\\\\n* \u6570\u7EC4\u53D8\u6210 6 7 7 8 2 2 3 3 4 6\\\\n* \u6700\u5927\u6570\u4E0E\u6700\u5C0F\u6570\u5DEE\u503C\u6570 8 - 2 = 6\\\\n\\\\n<details>\\\\n<summary><font color=\\\\\\"#FF0000\\\\\\">\u8BF7\u601D\u8003\u540E\u518D\u70B9\u51FB\u67E5\u770B\u63D0\u793A</font></summary>\\\\n\\\\n</details>\\\\n\\\\n# \u6570\u636E\u89C4\u6A21\u4E0E\u9650\u5236\\\\n\\\\n* $2 \\\\\\\\le n \\\\\\\\le 10^5, 1 \\\\\\\\le k \\\\\\\\le 10^9$\\\\n* $1 \\\\\\\\le a_i \\\\\\\\le 10^9$\\\\n* 1s, 1024KiB for each test case.\\\\n\\\\n# \u6765\u6E90\\\\n\\\\n\x3C!-- - [\u5B57\u8282\u8DF3\u52A8\u9762\u8BD5](https://ac.nowcoder.com/acm/contest/70845/D)\\\\n- [\u53C2\u8003\u7B54\u6848](https://www.gzezoi.cn/d/gzezoi2023/record/65953350e953713d3c4b46d3) -->\\\\n\\\\n\\"}","owner":2,"domainId":"lzoi2025","docType":10,"docId":96,"title":"\u3010\u5165\u95E8\u3011\u6700\u5C0F\u5DEE\u503C","tag":["\u8D2A\u5FC3","\u5165\u95E8"],"hidden":false,"nSubmit":19,"nAccept":6,"pid":"LS1066","data":[{"_id":"1.in","name":"1.in","size":27,"lastModified":"2025-08-13T07:18:58.378Z","etag":"L2RhdGEvZmlsZS9oeWRyby9oaWgveGtsdHZteWVjbXc1amJzNDdhMWhzLmlu"},{"_id":"1.out","name":"1.out","size":2,"lastModified":"2025-08-13T07:18:58.381Z","etag":"L2RhdGEvZmlsZS9oeWRyby9hbXEveG55ZnR5a29scGx5d296OTh5YnIwLm91dA=="},{"_id":"10.in","name":"10.in","size":48907,"lastModified":"2025-08-13T07:18:58.385Z","etag":"L2RhdGEvZmlsZS9oeWRyby9zMXcvczV1aWdoYzBkMHhxeXF4YTBucmptLmlu"},{"_id":"10.out","name":"10.out","size":5,"lastModified":"2025-08-13T07:18:58.388Z","etag":"L2RhdGEvZmlsZS9oeWRyby9nb2kvcXhsb3BiMHV0a2V4a3lrdzBvMG82Lm91dA=="},{"_id":"2.in","name":"2.in","size":59,"lastModified":"2025-08-13T07:18:58.392Z","etag":"L2RhdGEvZmlsZS9oeWRyby9teTAvYWN3NHZ2bWZxemJhYWMwd2xnYWswLmlu"},{"_id":"2.out","name":"2.out","size":3,"lastModified":"2025-08-13T07:18:58.395Z","etag":"L2RhdGEvZmlsZS9oeWRyby83dGsvYTNvbTB5dWxpbmRjczBrajMyczB4Lm91dA=="},{"_id":"3.in","name":"3.in","size":147,"lastModified":"2025-08-13T07:18:58.399Z","etag":"L2RhdGEvZmlsZS9oeWRyby90ZXovdDgwY2FrbGUwYmY0cW93MGdoZzdtLmlu"},{"_id":"3.out","name":"3.out","size":3,"lastModified":"2025-08-13T07:18:58.402Z","etag":"L2RhdGEvZmlsZS9oeWRyby90OXAvbHo1NGN4amIyOWt5dXRoa3d6MTRqLm91dA=="},{"_id":"4.in","name":"4.in","size":305,"lastModified":"2025-08-13T07:18:58.406Z","etag":"L2RhdGEvZmlsZS9oeWRyby90OGkvMHdkYm5sZjBycG0wMHduZXVreno5Lmlu"},{"_id":"4.out","name":"4.out","size":3,"lastModified":"2025-08-13T07:18:58.410Z","etag":"L2RhdGEvZmlsZS9oeWRyby9oa3EveHllNjdzZHByajcxZDI5aWVhcHBpLm91dA=="},{"_id":"5.in","name":"5.in","size":698,"lastModified":"2025-08-13T07:18:58.413Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lamovaHMwZWpkb3dnaW11b2p0MDVueGZ6Lmlu"},{"_id":"5.out","name":"5.out","size":4,"lastModified":"2025-08-13T07:18:58.417Z","etag":"L2RhdGEvZmlsZS9oeWRyby8xZ2kva3hvbnRzZ2lodWp5MDViZnUweHp1Lm91dA=="},{"_id":"6.in","name":"6.in","size":1898,"lastModified":"2025-08-13T07:18:58.421Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wdmIvYnVnaGZ6dXVkMDNlaHdzbWwyaGpyLmlu"},{"_id":"6.out","name":"6.out","size":4,"lastModified":"2025-08-13T07:18:58.424Z","etag":"L2RhdGEvZmlsZS9oeWRyby9pemYvN3duamQwc2ZzNXpnZnR1bGdjcWhtLm91dA=="},{"_id":"7.in","name":"7.in","size":3884,"lastModified":"2025-08-13T07:18:58.428Z","etag":"L2RhdGEvZmlsZS9oeWRyby9waXcvcHJtb3M3cGFuamV0aDJ1MWU4cnBwLmlu"},{"_id":"7.out","name":"7.out","size":4,"lastModified":"2025-08-13T07:18:58.432Z","etag":"L2RhdGEvZmlsZS9oeWRyby9oemkvbml0eG51dXpoandxZ3d0a3NtY2R0Lm91dA=="},{"_id":"8.in","name":"8.in","size":8920,"lastModified":"2025-08-13T07:18:58.435Z","etag":"L2RhdGEvZmlsZS9oeWRyby83ZGovcXN4aW5jMDdvaGp4OXpoMHpqeTl1Lmlu"},{"_id":"8.out","name":"8.out","size":5,"lastModified":"2025-08-13T07:18:58.439Z","etag":"L2RhdGEvZmlsZS9oeWRyby91bncvbXZrZHdzeWN5cGh6YjJwNW1jcGY4Lm91dA=="},{"_id":"9.in","name":"9.in","size":23869,"lastModified":"2025-08-13T07:18:58.442Z","etag":"L2RhdGEvZmlsZS9oeWRyby9tdXYvNWV6bmUwcGVtcGQzM29nODJqeXg4Lmlu"},{"_id":"9.out","name":"9.out","size":5,"lastModified":"2025-08-13T07:18:58.446Z","etag":"L2RhdGEvZmlsZS9oeWRyby9heWMvanYybzJseWoxd3JlZHlqenZseTBqLm91dA=="}],"difficulty":0,"html":false,"stats":{"AC":6,"WA":12,"TLE":0,"MLE":0,"RE":0,"SE":0,"IGN":0,"CE":1,"s0":2,"s30":2,"s40":3,"s50":2,"s60":1,"s70":3,"s100":6},"config":{"count":10,"memoryMin":256,"memoryMax":256,"timeMin":1000,"timeMax":1000,"type":"default","langs":["cc","cc.cc14o2","cc.cc17o2","py","py.py3"]}},"canViewRecord":true,"postSubmitUrl":"/d/lzoi2025/p/96/submit","getSubmissionsUrl":"/d/lzoi2025/record?fullStatus=true&pid=96","getRecordDetailUrl":"/d/lzoi2025/record/%7Brid%7D","pretestConnUrl":"record-conn?pretest=1&uidOrName=39&pid=96&domainId=lzoi2025"}';
+      window.UserContextNew = '{}';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using pii = pair<int, int>;
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
+
+	int n;
+    cin >> n;
+    vector<int> x(n), y(n), px(n), py(n);
+    for (int i = 0; i < n; i++) {
+        cin >> x[i] >> y[i];
+        px[i] = x[i], py[i] = y[i];
+    }
+
+    // 离散化
+    sort(x.begin(), x.end());                      // 排序
+    x.erase(unique(x.begin(), x.end()), x.end());  // 去重
+    int ex = x.size();
+    for (int i = 0; i < n; i++) {
+        px[i] = lower_bound(x.begin(), x.end(), px[i]) - x.begin() + 1;
+    }
+
+    // 离散化
+    sort(y.begin(), y.end());                      // 排序
+    y.erase(unique(y.begin(), y.end()), y.end());  // 去重
+    int ey = y.size();
+    for (int i = 0; i < n; i++) {
+        py[i] = lower_bound(y.begin(), y.end(), py[i]) - y.begin() + 1;
+    }
+
+    // 二维前缀和
+    vector<vector<int>> f(ex + 1, vector<int>(ey + 1, 0));
+    for (int i = 0; i < n; i++) f[px[i]][py[i]] = 1;
+    for (int i = 1; i <= ex; i++) for (int j = 1; j <= ey; j++) {
+        f[i][j] = f[i - 1][j] + f[i][j - 1] - f[i - 1][j - 1] + f[i][j];
+    }
+
+    // 计算 [x1, y1] 到 [x2, y2] 形成的矩形的和
+    auto cal = [&](int x1, int y1, int x2, int y2) -> int {
+        return f[x2][y2] - f[x2][y1 - 1] - f[x1 - 1][y2] + f[x1 - 1][y1 - 1];
+    };
+
+    // 枚举 水平线 和 竖直线
+    int ans = n;
+    for (int i = 1; i < ex; i++) for (int j = 1; j < ey; j++) {
+        int c1 = cal(1, 1, i, j);            // 左上
+        int c2 = cal(i + 1, 1, ex, j);       // 左下
+        int c3 = cal(1, j + 1, i, ey);       // 右上
+        int c4 = cal(i + 1, j + 1, ex, ey);  // 右下
+        ans = min(ans, max({c1, c2, c3, c4}));
+    }
+    cout << ans << '\n';
+
+	return 0;
+}

@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, c;
+	cin >> n >> c;
+	
+	vector<i64> a(n);
+	for (auto& x : a) cin >> x;
+	
+	sort(a.begin(), a.end());
+	i64 ans = 0;
+	for (i64 i = 0, j = 0, k = 0; i < n; i++) {   // 双指针（尺取法）
+		i64 A = a[i] + c;				// A-B=C  ==>  A=B+C
+		while (j < n && a[j] < A) j++; 	// j 找到第一个 >= B+C 的位置
+		while (k < n && a[k] <= A) k++; // k 找到第一个 > B+C 的位置
+		ans += (k - j); 
+	}
+
+	cout << ans << "\n";
+	return 0;
+}

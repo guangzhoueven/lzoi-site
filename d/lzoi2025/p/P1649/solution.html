@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html data-page="problem_solution" data-layout="basic" class="layout--basic page--problem_solution theme--dark nojs" data-mantine-color-scheme="dark" lang="zh" data-app="Hydro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.gzlzoi.cn/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../../../favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../../../android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="../../../../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../../../favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://www.gzlzoi.cn/p/P1649/solution">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="乐知课堂" />
+  <meta property="og:url" content="https://www.gzlzoi.cn/p/P1649/solution" />
+  <meta property="og:image" content="/favicon-96x96.png" />
+      <title>【普及】最少拐弯次数 - 题解 - 乐知课堂</title>
+  <style>
+    body {
+      --font-family: "Microsoft Yahei", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Consolas", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="../../../../theme-4.58.0-beta.17.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      window.UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","hydroacFeatures":[],"blspHost":"wss://ws.hydrooj.com","constantVersion":"1c07a499","domainId":"lzoi2025","domain":{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"},"extraTitleContent":"\u3010\u666E\u53CA\u3011\u6700\u5C11\u62D0\u5F2F\u6B21\u6570","SWConfig":{"preload":"","hosts":["http://www.gzlzoi.cn","https://www.gzlzoi.cn","https://www.gzlzoi.cn/","/"],"assets":[],"domains":[]}}';
+      window.UserContext = '{"_id":39,"mail":"202610319@gzlzoi.cn","uname":"202610319","hashType":"hydro","priv":4,"regat":"2025-07-01T02:30:33.477Z","loginat":"2026-02-06T00:24:21.126Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921","role":"\u5B66\u751F","scope":"BigInt::-1","tfa":false,"authn":false,"group":["20250702\u4E0A\u5348","\u4E34\u65F6\u5C0F\u7EC4","20250804\u4E0A\u5348","39"],"domains":[{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"}],"viewLang":"zh","timeZone":"Asia/Shanghai","codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","avatar":"gravatar:202610319@gzlzoi.cn","qq":"","gender":"2","bio":"<blockquote class=\\"note\\">\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: yellow;\\">\u4E66\u5C71\u6709\u8DEF\u52E4\u4E3A\u5F84\uFF0C\u5B66\u6D77\u65E0\u6DAF\u82E6\u4F5C\u821F\u3002</p></h3>\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: #12DA72;\\">Diligence is the path to the mountain of knowledge, hard-working is the boat to the endless sea of learning.</p></h3>\\r\\n</blockquote>","school":"\u5E7F\u5DDE\u5E02\u5929\u6CB3\u533A\u9A8F\u666F\u5C0F\u5B66","studentId":"","backgroundImage":"/d/lzoi2025/file/39/%E4%B9%90%E7%9F%A5%E8%AF%BE%E5%A0%82%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.png","unreadMsg":0,"pinnedDomains":["lzoi2025"],"rounded":true,"skipAnimate":false,"showTimeAgo":true,"fontFamily":"Microsoft Yahei","codeFontFamily":"Consolas","theme":"dark","preferredEditorType":"sv","showInvisibleChar":false,"formatCode":true,"displayName":"\u9EC4\u98DE\u535A","rpInfo":{"problem":237.2780396214451,"contest":8.25},"nAccept":191,"nSubmit":194,"rp":245.5280396214451,"rank":2,"level":8,"join":true,"avatarUrl":"//cn.gravatar.com/avatar/2dbb0a041212ea8df395e4d4418e92fa?d=mm&s=128"}';
+    </script>
+      </head>
+<body>
+      <script type="text/javascript" src="../../../../resource/1c07a499/entry.js"></script>
+    <script type="text/javascript" src="../../../../resource/4.58.0-beta.17/lang-zh.js"></script>
+    <script type="text/javascript" src="../../../../hydro-4.58.0-beta.17.js"></script>
+    <nav class="nav slideout-menu" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://www.gzlzoi.cn/"><img class="nav__logo" src="../../../../components/navigation/nav-logo-small_dark.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="../../index.html" class="nav__item">
+    首页
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../set_theme/dark.html" class="nav__item nav--active">
+    题库
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../training.html" class="nav__item">
+    训练
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../contest.html" class="nav__item">
+    比赛
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../homework.html" class="nav__item">
+    作业
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../discuss.html" class="nav__item">
+    讨论
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../record@uidOrName=39.html" class="nav__item">
+    评测记录
+  </a>
+</li>
+      </ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+              <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-domain" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <span class="nav__item"><span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span> lzoi2025 <span class="icon icon-expand_more nojs--hide"></span></span>
+        <ol class="dropdown-target menu" id="menu-nav-domain"><li class="menu__item">
+              <a href="../../index.html" class="menu__link">
+                <span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span>
+                lzoi2025              </a>
+            </li><li class="menu__seperator"></li><li class="menu__item">
+            <a href="../../home/domain.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 管理
+            </a>
+          </li>
+        </ol>
+      </li>
+          <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <a href="../../user/39.html" class="nav__item">202610319 <span class="icon icon-expand_more nojs--hide"></span></a>
+        <ol class="dropdown-target menu" id="menu-nav-user">
+          <li class="menu__item">
+            <a href="../../user/39.html" class="menu__link">
+              <span class="icon icon-account--circle"></span> 我的资料
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../../home/messages.html" class="menu__link">
+              <span class="icon icon-comment--multiple"></span> 站内消息
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../../home/settings/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> @ lzoi2025
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../../home/settings/account.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 账户设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../../home/settings/preference.html" class="menu__link">
+              <span class="icon icon-sliders"></span> 偏好设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../../home/security.html" class="menu__link">
+              <span class="icon icon-security"></span> 安全设置
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../../home/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> 我的域
+            </a>
+          </li>
+                              <li class="menu__seperator"></li>
+                    <li class="menu__item">
+            <a href="../../logout.html" class="menu__link" name="nav_logout">
+              <span class="icon icon-logout"></span> 登出
+            </a>
+          </li>
+        </ol>
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://www.gzlzoi.cn/" target="_self">
+        <img src="../../../../components/navigation/nav-logo-small_dark.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+        <div class="row">
+  <div class="medium-9 columns">
+    <div class="section">
+      <div class="section__header">
+        <h1 class="section__title">2 条题解</h1>
+      </div>
+      <div class="section__body">
+        <ul class="dczcomments__list view--solution">
+  <li class="dczcomments__item">
+  <div class="media">
+    <div class="media__left top">
+      <div class="vote vote--discussion">
+              <div class="vote-number">0</div>
+            </div>
+    </div>
+    <div class="media__body top">
+      <div class="clearfix">
+        <div class="supplementary dczcomments__supplementary">
+          <span class="user-profile-link">
+      <img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20">
+    <a class="user-profile-name uname--lv3" href="../../user/2.html">
+          liangsheng
+      </a>
+                      <a class="user-profile-badge v-center badge--lv3" href="../../user/2.html" data-tooltip="LV 3: Top 55%">LV 3</a>
+                      <span class="user-profile-badge v-center badge--su" data-tooltip="超级管理员">SU</span>
+            </span>
+ @ <span class="time relative" data-timestamp="1754386290">2025-8-5 17:31:30</span>
+        </div>
+        <div class="dczcomments__operations nojs--hide">
+                  <a href="javascript:;" data-tooltip="复制链接" data-copylink="/d/lzoi2025/p/P1649/solution/6891cf728f5b582a0ace59a8">
+            <span class="icon icon-link"></span>
+          </a>
+                                        </div>
+      </div>
+      <div class="typo richmedia" data-emoji-enabled data-raw-url="/d/lzoi2025/p/63/solution/6891cf728f5b582a0ace59a8/raw">
+        <ul>
+<li>又一个经典错误；来自某位同学</li>
+<li>同样试一试下面的数据</li>
+</ul>
+<pre><code class="language-c++">3
+A . .
+. . .
+x . B
+</code></pre>
+<ul>
+<li>答案是 1</li>
+</ul>
+<pre><code class="language-c++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+long long n, ax, ay, bx = -1, by = -1, x, y, xs, ys, p = 0;
+long long sxy[210][210], sx[10] = {-1, 1, 0, 0}, sy[10] = {0, 0, -1, 1};
+char a[210][210];
+queue&lt;pair&lt;long long, long long &gt;&gt; q;
+int main() {
+	memset(sxy, -1, sizeof(sxy));
+	cin &gt;&gt; n;
+	for (long long i = 0; i &lt; n; i++) {
+		for (long long j = 0; j &lt; n; j++) {
+			cin &gt;&gt; a[i][j];
+			if (a[i][j] == 'A') {
+				ax = i;
+				ay = j;
+				q.push(make_pair(ax, ay));
+				sxy[i][j] = 0;
+			}
+			if (a[i][j] == 'B') {
+				bx = i;
+				by = j;
+			}
+		}
+	}
+	if (bx == -1) {
+		cout &lt;&lt; -1 &lt;&lt; endl;
+		return 0;
+	}
+	while (!q.empty()) {
+		x = q.front().first, y = q.front().second;
+		q.pop();
+		for (long long t = 0; t &lt; 4; t++) {
+			xs = x + sx[t];
+			ys = y + sy[t];
+			while (xs &gt;= 0 &amp;&amp; xs &lt; n &amp;&amp; ys &gt;= 0 &amp;&amp; ys &lt; n) {
+				if (sxy[xs][ys] != -1 || a[xs][ys] == 'x') break;
+				q.push(make_pair(xs, ys));
+				sxy[xs][ys] = sxy[x][y] + 1;
+				xs += sx[t];
+				ys += sy[t];
+			}
+		}
+	}
+	if (sxy[bx][by] &lt; 0) cout &lt;&lt; -1 &lt;&lt; endl;
+	else cout &lt;&lt; sxy[bx][by] - 1 &lt;&lt; endl;
+	return 0;
+}
+
+</code></pre>
+
+      </div>
+      <div class="commentbox-edit-target"></div>
+      <ul class="dczcomments__replies commentbox-reply-target"></ul>
+    </div>
+  </div>
+</li>  <li class="dczcomments__item">
+  <div class="media">
+    <div class="media__left top">
+      <div class="vote vote--discussion">
+              <div class="vote-number">0</div>
+            </div>
+    </div>
+    <div class="media__body top">
+      <div class="clearfix">
+        <div class="supplementary dczcomments__supplementary">
+          <span class="user-profile-link">
+      <img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20">
+    <a class="user-profile-name uname--lv3" href="../../user/2.html">
+          liangsheng
+      </a>
+                      <a class="user-profile-badge v-center badge--lv3" href="../../user/2.html" data-tooltip="LV 3: Top 55%">LV 3</a>
+                      <span class="user-profile-badge v-center badge--su" data-tooltip="超级管理员">SU</span>
+            </span>
+ @ <span class="time relative" data-timestamp="1754381760">2025-8-5 16:16:00</span>
+        </div>
+        <div class="dczcomments__operations nojs--hide">
+                  <a href="javascript:;" data-tooltip="复制链接" data-copylink="/d/lzoi2025/p/P1649/solution/6891bdc08f5b582a0ace5843">
+            <span class="icon icon-link"></span>
+          </a>
+                                        </div>
+      </div>
+      <div class="typo richmedia" data-emoji-enabled data-raw-url="/d/lzoi2025/p/63/solution/6891bdc08f5b582a0ace5843/raw">
+        <ul>
+<li>经典错误：状态变为 dp[i][j][p] 表示从起点到 (i, j) 且最后方向为 p 的最少拐弯次数</li>
+<li><strong><font color="#FF0000">wrong answer</font></strong></li>
+<li>看下这个样例</li>
+</ul>
+<pre><code class="language-c++">3
+A . .
+. . .
+x . B
+</code></pre>
+<ul>
+<li>答案是 1</li>
+</ul>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+using p3i = tuple&lt;int, int, int&gt;;
+
+// 表示一个很大的数
+const int inf = 1000000000;
+
+// 在地图 g 中寻找 (sx, sy) 到 (ex, ey) 的字典序最小的最短路
+int getPath(vector&lt;vector&lt;char&gt;&gt;&amp; g, int sx, int sy, int ex, int ey) {
+	// h: 地图的高, w: 地图的宽
+	int h = g.size(), w = g[0].size();
+	
+	// 按字典序从小到大, D &lt; L &lt; R &lt; U
+	vector&lt;int&gt; dx = {1,  0, 0, -1};
+	vector&lt;int&gt; dy = {0, -1, 1,  0};
+	vector&lt;string&gt; f = {&quot;D&quot;, &quot;L&quot;, &quot;R&quot;, &quot;U&quot;};
+	
+	// d[i][j][p] 表示从起点到 (i, j) 且最后方向为 p 的最短路, 初值为无穷大
+	vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt; d(h, vector&lt;vector&lt;int&gt;&gt;(w, vector&lt;int&gt;(4, inf)));
+	
+	queue&lt;p3i&gt; q;
+	for (int i = 0; i &lt; 4; i++) d[sx][sy][i] = 0, q.push({sx, sy, i});  // 初始方向不确定
+	
+	while (!q.empty()) {
+		auto [x, y, p] = q.front();  // 取队首
+		
+		q.pop();                  // 将队首弹出
+		for (int k = 0; k &lt; 4; k++) {
+			int u = x + dx[k], v = y + dy[k];
+			if (u &lt; 0 || u &gt;= h || v &lt; 0 || v &gt;= w) continue;
+			if (g[u][v] == 'x') continue;  // 障碍
+			if (d[u][v][k] != inf) continue;
+			
+			// k 和 p 相不用拐弯, +0; 否则要拐弯 + 1
+			int tmp = d[x][y][p] + (p != k);
+			d[u][v][k] = tmp;  // 更新 d[u][v][k]
+			q.push({u, v, k});
+		}
+	}
+	int ans = inf;
+	// 到达终点时 4 个方向都有可能
+	for (int i = 0; i &lt; 4; i++) ans = min(ans, d[ex][ey][i]);
+	if (ans == inf) ans = -1;
+	return ans;
+}
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr); cout.tie(nullptr);
+	
+	// h: 地图的高, w: 地图的宽
+	int h, w, sx, sy, ex, ey;
+	cin &gt;&gt; h; w = h;
+	vector&lt;vector&lt;char&gt;&gt; g(h, vector&lt;char&gt;(w));
+	for (int i = 0; i &lt; h; i++) for (int j = 0; j &lt; w; j++) {
+		cin &gt;&gt; g[i][j];
+		if (g[i][j] == 'A') sx = i, sy = j;
+		if (g[i][j] == 'B') ex = i, ey = j;
+	}
+	cout &lt;&lt; getPath(g, sx, sy, ex, ey) &lt;&lt; '\n';
+	
+	return 0;	
+}
+</code></pre>
+
+      </div>
+      <div class="commentbox-edit-target"></div>
+      <ul class="dczcomments__replies commentbox-reply-target"></ul>
+    </div>
+  </div>
+</li></ul>
+
+                    <ul class="pager pager-bottom"><li>
+          <span class="pager__item current">1</span>
+        </li></ul>
+
+                    </div>
+    </div>
+      </div>
+  <div class="medium-3 columns">
+          <div class="section side section--problem-sidebar">
+  <div class="section__header">
+    <h1 class="section__title">【普及】最少拐弯次数</h1>
+  </div>
+  <div>
+    <ol class="menu">
+              <li class="menu__item"><a class="menu__link" href="../../problem/random@q=category%253AUSACO.html">
+        <span class="icon icon-flag"></span> 查看题目
+      </a></li>
+              <li class="menu__item scratchpad--hide"><a class="menu__link" href="submit.html">
+        <span class="icon icon-send"></span> 递交
+      </a></li>
+                      <li class="menu__seperator"></li>
+              <li class="menu__item"><a class="menu__link" href="../../discuss/problem/63.html">
+        <span class="icon icon-comment--text"></span> 讨论      </a></li>
+              <li class="menu__item"><a class="menu__link active" href="solution.html">
+        <span class="icon icon-comment--text"></span> 题解      </a></li>
+          <li class="menu__item"><a class="menu__link" href="files.html">
+        <span class="icon icon-file"></span> 文件
+      </a></li>
+      <li class="menu__item"><a class="menu__link" href="stat.html">
+        <span class="icon icon-statistics"></span> 统计
+      </a></li>
+            </ol>
+  </div>
+</div>
+<div class="section side">
+  <div class="section__header">
+    <h1 class="section__title">信息</h1>
+  </div>
+  <div class="section__body typo" data-fragment-id="problem-sidebar-information">
+  <dl class="large horizontal">
+    <dt>ID</dt>
+    <dd>63</dd>
+    <dt>时间</dt>
+    <dd>1000ms</dd>
+    <dt>内存</dt>
+    <dd>125MiB</dd>
+    <dt>难度</dt>
+    <dd>8</dd>
+    <dt>标签</dt>
+    <dd>
+      <ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%22%E9%8D%94%E3%84%A6%E2%82%AC%E4%BD%BD%EE%9D%89%E9%8D%92%92%20DP%22">动态规划 DP</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%A5%E6%8D%90%EE%86%91">图论</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../../p@q=category%253A2007.html">2007</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../../p@q=category%253AUSACO.html">USACO</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%22%E9%AA%9E%E5%9E%AE%E5%AE%B3%E6%B5%BC%E6%A8%BA%E5%8E%9B%E9%8E%BC%E6%BB%85%E5%82%A8%20BFS%22">广度优先搜索 BFS</a></li></ul>
+    </dd>
+    <dt>递交数</dt>
+    <dd><a href="https://www.gzlzoi.cn/d/lzoi2025/record?pid=63">106</a></dd>
+    <dt>已通过</dt>
+    <dd>19</dd>
+    <dt>上传者</dt>
+    <dd><span class="user-profile-link">
+      <img class="small user-profile-avatar v-center" loading="lazy" src="https://cn.gravatar.com/avatar/93dccfd2059789405993939fbe82175e?d=mm&amp;s=64" width="20" height="20">
+    <a class="user-profile-name uname--lv0" href="../../user/1.html">
+          Hydro
+      </a>
+  </span>
+</dd>
+  </dl>
+</div></div>
+  </div>
+</div>
+  </div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+      <div class="row footer__links">
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          状态
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://www.gzlzoi.cn/d/lzoi2025/record">评测队列</a></li>
+          <li class="footer__category__item"><a href="../../status.html">服务状态</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          开发
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">开源</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          支持
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../../wiki/help.html">帮助</a></li>
+          <li class="footer__category__item"><a href="../../wiki/about.html#contact">联系我们</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable end">
+        <h1>
+          关于
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../../wiki/about.html">关于</a></li>
+          <li class="footer__category__item"><a href="../../wiki/about.html#privacy">隐私</a></li>
+          <li class="footer__category__item"><a href="../../wiki/about.html#tos">服务条款</a></li>
+          <li class="footer__category__item"><a href="../../wiki/about.html#contact">版权申诉</a></li>
+        </ul></div>
+      </div>
+    </div>
+      <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+                    <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-lang"><li class="menu__item"><a class="menu__link" href="../../language/en.html">English</a></li><li class="menu__item"><a class="menu__link" href="../../language/ko.html">한국어</a></li><li class="menu__item"><a class="menu__link" href="../../language/zh.html">简体中文</a></li><li class="menu__item"><a class="menu__link" href="../../language/zh_TW.html">正體中文</a></li></ol>
+          </li>
+          <li class="footer__extra-link-item">
+                          <a href="https://www.gzlzoi.cn/legacy?legacy=true">兼容模式</a>
+                      </li>
+          <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> 主题 <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-theme">
+              <li class="menu__item"><a class="menu__link" href="../../set_theme/light.html">亮色</a></li>
+              <li class="menu__item"><a class="menu__link" href="../../set_theme/dark.html">暗色</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><a href="https://beian.miit.gov.cn/">京ICP备2023010486号-3</a></li><li class="footer__extra-link-item">Worker 0, 17ms</li>
+          <!-- Prepare 5ms -->
+          <!-- Method 3ms -->
+          
+          
+          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v5.0.0-beta.16</a> Community</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      window.UiContextNew = '{}';
+      window.UserContextNew = '{}';
+    </script>
+  </body>
+</html>

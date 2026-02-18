@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 T;
+	cin >> T;
+	while (T--) {
+		i64 n;
+		cin >> n;
+		unordered_map<i64, i64> q{{0, -1}}; // 前缀和，第一次出现的位置
+		i64 ans = 0, prefix_sum = 0;  		// ans: 最长子数组长度，prefix_sum: 当前前缀和
+
+		for (i64 i = 0; i < n; i++) {
+			i64 x;
+			cin >> x;
+			prefix_sum += x ? 1 : -1;  		// 子数组和为0：0变-1，1是+1
+			// 当前的前缀和出现过（区间的01数量相等）, 最大子串长度=当前i - 第一次出现的位置
+			if (q.count(prefix_sum)) ans = max(ans, i - q[prefix_sum]);
+			else q[prefix_sum] = i;			// 记录该前缀和第一次出现的位置
+		}
+		cout << ans << "\n";
+	}
+	return 0;
+}

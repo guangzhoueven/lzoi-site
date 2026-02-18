@@ -1,0 +1,41 @@
+// https://atcoder.jp/contests/abc356/submissions/54087894
+#include <bits/stdc++.h>
+
+using i64 = long long;
+
+int main() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    
+    int N;
+    std::cin >> N;
+    
+    std::vector<int> A(N);
+    for (int i = 0; i < N; i++) {
+        std::cin >> A[i];
+    }
+    
+    const int M = *std::max_element(A.begin(), A.end());
+    
+    std::vector<int> c(M + 1);
+    for (auto x : A) {
+        c[x]++;
+    }
+    
+    std::vector<int> s(M + 1);
+    for (int i = 1; i <= M; i++) {
+        s[i] = s[i - 1] + c[i];
+    }
+    
+    i64 ans = 0;
+    for (int x = 1; x <= M; x++) {
+        ans += 1LL * c[x] * (c[x] - 1) / 2;
+        for (int y = x; y <= M; y += x) {
+            int v = s[std::min(y + x - 1, M)] - s[std::max(x, y - 1)];
+            ans += 1LL * c[x] * v * (y / x);
+        }
+    }
+    std::cout << ans << "\n";
+    
+    return 0;
+}

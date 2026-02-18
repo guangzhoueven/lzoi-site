@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n, m, k;			// n行，m列，每次可移动1~k步
+	cin >> n >> m >> k;
+	int sx, sy, ex, ey;		// 起点(sx,sy),终点(ex,ey)
+	cin >> sx >> sy >> ex >> ey;
+	sx--, sy--, ex--, ey--;	// 0-based
+
+	vector<vector<int>> ok(n, vector<int>(m, INT_MAX));
+	vector<string> grid(n);
+	for (int i = 0; i < n; i++)	cin >> grid[i];
+
+	queue<pair<int, int>> q;
+	ok[sx][sy] = 0;    		// 起点移动步数为0
+	q.push({sx, sy});
+
+	vector<int> dx = {-1, 0, 1, 0};
+	vector<int> dy = {0, -1, 0, 1};
+	while (!q.empty()) {
+		auto [x, y] = q.front();
+		q.pop();
+
+		for (int p = 0; p < 4; p++) {    				// 四个方向p
+			for (int step = 1; step <= k; step++) {    	// 每个方向可移动1~k步
+				int nx = x + dx[p] * step;
+				int ny = y + dy[p] * step;
+				
+				if (nx < 0 || nx >= n || ny < 0 || ny >= m || grid[nx][ny] == '@')	break;  // 越界或障碍
+				if (ok[nx][ny] > ok[x][y] + 1) {	// 还有更短的路径
+					ok[nx][ny] = ok[x][y] + 1;
+					if (nx == ex && ny == ey) {		// 已达到终点
+						cout << ok[nx][ny] << "\n";
+						return 0;
+					}
+					q.push({nx, ny});
+				} else if (ok[nx][ny] < ok[x][y]+1) {
+					break;
+				}
+			}
+		}
+	}
+	cout << -1 << "\n";
+	return 0;
+}

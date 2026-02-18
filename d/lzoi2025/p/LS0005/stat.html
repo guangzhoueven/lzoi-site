@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html data-page="problem_statistics" data-layout="basic" class="layout--basic page--problem_statistics theme--dark nojs" data-mantine-color-scheme="dark" lang="zh" data-app="Hydro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.gzlzoi.cn/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../../../favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../../../android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="../../../../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../../../favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://www.gzlzoi.cn/p/LS0005/stat">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="乐知课堂" />
+  <meta property="og:url" content="https://www.gzlzoi.cn/p/LS0005/stat" />
+  <meta property="og:image" content="/favicon-96x96.png" />
+      <title>【课件】时间复杂度与排序 - 题目统计 - 乐知课堂</title>
+  <style>
+    body {
+      --font-family: "Microsoft Yahei", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Consolas", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="../../../../theme-4.58.0-beta.17.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      window.UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","hydroacFeatures":[],"blspHost":"wss://ws.hydrooj.com","constantVersion":"1c07a499","domainId":"lzoi2025","domain":{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"},"extraTitleContent":"\u3010\u8BFE\u4EF6\u3011\u65F6\u95F4\u590D\u6742\u5EA6\u4E0E\u6392\u5E8F","SWConfig":{"preload":"","hosts":["http://www.gzlzoi.cn","https://www.gzlzoi.cn","https://www.gzlzoi.cn/","/"],"assets":[],"domains":[]}}';
+      window.UserContext = '{"_id":39,"mail":"202610319@gzlzoi.cn","uname":"202610319","hashType":"hydro","priv":4,"regat":"2025-07-01T02:30:33.477Z","loginat":"2026-02-06T00:24:21.126Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921","role":"\u5B66\u751F","scope":"BigInt::-1","tfa":false,"authn":false,"group":["20250702\u4E0A\u5348","\u4E34\u65F6\u5C0F\u7EC4","20250804\u4E0A\u5348","39"],"domains":[{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"}],"viewLang":"zh","timeZone":"Asia/Shanghai","codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","avatar":"gravatar:202610319@gzlzoi.cn","qq":"","gender":"2","bio":"<blockquote class=\\"note\\">\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: yellow;\\">\u4E66\u5C71\u6709\u8DEF\u52E4\u4E3A\u5F84\uFF0C\u5B66\u6D77\u65E0\u6DAF\u82E6\u4F5C\u821F\u3002</p></h3>\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: #12DA72;\\">Diligence is the path to the mountain of knowledge, hard-working is the boat to the endless sea of learning.</p></h3>\\r\\n</blockquote>","school":"\u5E7F\u5DDE\u5E02\u5929\u6CB3\u533A\u9A8F\u666F\u5C0F\u5B66","studentId":"","backgroundImage":"/d/lzoi2025/file/39/%E4%B9%90%E7%9F%A5%E8%AF%BE%E5%A0%82%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.png","unreadMsg":0,"pinnedDomains":["lzoi2025"],"rounded":true,"skipAnimate":false,"showTimeAgo":true,"fontFamily":"Microsoft Yahei","codeFontFamily":"Consolas","theme":"dark","preferredEditorType":"sv","showInvisibleChar":false,"formatCode":true,"displayName":"\u9EC4\u98DE\u535A","rpInfo":{"problem":237.2780396214451,"contest":8.25},"nAccept":191,"nSubmit":194,"rp":245.5280396214451,"rank":2,"level":8,"join":true,"avatarUrl":"//cn.gravatar.com/avatar/2dbb0a041212ea8df395e4d4418e92fa?d=mm&s=128"}';
+    </script>
+      </head>
+<body>
+      <script type="text/javascript" src="../../../../resource/1c07a499/entry.js"></script>
+    <script type="text/javascript" src="../../../../resource/4.58.0-beta.17/lang-zh.js"></script>
+    <script type="text/javascript" src="../../../../hydro-4.58.0-beta.17.js"></script>
+    <nav class="nav slideout-menu" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://www.gzlzoi.cn/"><img class="nav__logo" src="../../../../components/navigation/nav-logo-small_dark.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="../../index.html" class="nav__item">
+    首页
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../set_theme/dark.html" class="nav__item nav--active">
+    题库
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../training.html" class="nav__item">
+    训练
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../contest.html" class="nav__item">
+    比赛
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../homework.html" class="nav__item">
+    作业
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../discuss.html" class="nav__item">
+    讨论
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../record@uidOrName=39.html" class="nav__item">
+    评测记录
+  </a>
+</li>
+      </ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+              <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-domain" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <span class="nav__item"><span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span> lzoi2025 <span class="icon icon-expand_more nojs--hide"></span></span>
+        <ol class="dropdown-target menu" id="menu-nav-domain"><li class="menu__item">
+              <a href="../../index.html" class="menu__link">
+                <span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span>
+                lzoi2025              </a>
+            </li><li class="menu__seperator"></li><li class="menu__item">
+            <a href="../../home/domain.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 管理
+            </a>
+          </li>
+        </ol>
+      </li>
+          <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <a href="../../user/39.html" class="nav__item">202610319 <span class="icon icon-expand_more nojs--hide"></span></a>
+        <ol class="dropdown-target menu" id="menu-nav-user">
+          <li class="menu__item">
+            <a href="../../user/39.html" class="menu__link">
+              <span class="icon icon-account--circle"></span> 我的资料
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../../home/messages.html" class="menu__link">
+              <span class="icon icon-comment--multiple"></span> 站内消息
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../../home/settings/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> @ lzoi2025
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../../home/settings/account.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 账户设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../../home/settings/preference.html" class="menu__link">
+              <span class="icon icon-sliders"></span> 偏好设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../../home/security.html" class="menu__link">
+              <span class="icon icon-security"></span> 安全设置
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../../home/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> 我的域
+            </a>
+          </li>
+                              <li class="menu__seperator"></li>
+                    <li class="menu__item">
+            <a href="../../logout.html" class="menu__link" name="nav_logout">
+              <span class="icon icon-logout"></span> 登出
+            </a>
+          </li>
+        </ol>
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://www.gzlzoi.cn/" target="_self">
+        <img src="../../../../components/navigation/nav-logo-small_dark.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+        
+<div class="row">
+  <div class="medium-9 columns">
+    <div class="section nojs--hide">
+      <div class="section__header">
+        <h1 class="section__title">统计</h1>
+      </div>
+      <div class="row">
+        <div class="medium-6 columns" id="submission-status-placeholder" style="height:230px"></div>
+        <div class="medium-6 columns" id="submission-score-placeholder" style="height:230px"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section__header">
+        <h1 class="section__title">递交统计</h1>
+        <div class="section__tools">
+          <form method="get" class="filter-form" name="filter-form">
+            显示:
+            <select class="inline compact select" name="sort"><option value="time" selected>运行时间</option><option value="memory">内存占用</option><option value="length">代码长度</option><option value="date">提交时间</option></select>
+            <select class="inline compact select" name="direction">
+              <option value="1" selected>ASC</option>
+              <option value="-1">DESC</option>
+            </select>
+            <select class="inline compact select" name="lang">
+                <option value="">所有语言</option>
+              </select>
+            <button type="submit" class="compact button">
+              搜索
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="section__body no-padding">
+                <div class="nothing-placeholder">
+  <div class="nothing-icon"></div>
+  喔，还没有评测记录呢！
+</div>
+
+              </div>
+    </div>
+  </div>
+  <div class="medium-3 columns">
+        <div class="section side section--problem-sidebar">
+  <div class="section__header">
+    <h1 class="section__title">【课件】时间复杂度与排序</h1>
+  </div>
+  <div>
+    <ol class="menu">
+              <li class="menu__item"><a class="menu__link" href="../LS0005.html">
+        <span class="icon icon-flag"></span> 查看题目
+      </a></li>
+              <li class="menu__item scratchpad--hide"><a class="menu__link" href="submit.html">
+        <span class="icon icon-send"></span> 递交
+      </a></li>
+                      <li class="menu__seperator"></li>
+              <li class="menu__item"><a class="menu__link" href="../../discuss/problem/26.html">
+        <span class="icon icon-comment--text"></span> 讨论      </a></li>
+              <li class="menu__item"><a class="menu__link" href="solution.html">
+        <span class="icon icon-comment--text"></span> 题解      </a></li>
+          <li class="menu__item"><a class="menu__link" href="files.html">
+        <span class="icon icon-file"></span> 文件
+      </a></li>
+      <li class="menu__item"><a class="menu__link active" href="stat.html">
+        <span class="icon icon-statistics"></span> 统计
+      </a></li>
+            </ol>
+  </div>
+</div>
+<div class="section side">
+  <div class="section__header">
+    <h1 class="section__title">信息</h1>
+  </div>
+  <div class="section__body typo" data-fragment-id="problem-sidebar-information">
+  <dl class="large horizontal">
+    <dt>ID</dt>
+    <dd>26</dd>
+    <dt>时间</dt>
+    <dd>1000ms</dd>
+    <dt>内存</dt>
+    <dd>256MiB</dd>
+    <dt>难度</dt>
+    <dd>10</dd>
+    <dt>标签</dt>
+    <dd>
+      <ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E6%9C%B5%E7%B2%AC">其他</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%BA%E6%8E%91%E7%B0%AD">排序</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%87%E5%8F%A5%E6%AC%A2">课件</a></li></ul>
+    </dd>
+    <dt>递交数</dt>
+    <dd><a href="https://www.gzlzoi.cn/d/lzoi2025/record?pid=26">12</a></dd>
+    <dt>已通过</dt>
+    <dd>0</dd>
+    <dt>上传者</dt>
+    <dd><span class="user-profile-link">
+      <img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20">
+    <a class="user-profile-name uname--lv3" href="../../user/2.html">
+          liangsheng
+      </a>
+  </span>
+</dd>
+  </dl>
+</div></div>
+  </div>
+</div>
+
+  </div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+      <div class="row footer__links">
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          状态
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://www.gzlzoi.cn/d/lzoi2025/record">评测队列</a></li>
+          <li class="footer__category__item"><a href="../../status.html">服务状态</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          开发
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">开源</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          支持
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../../wiki/help.html">帮助</a></li>
+          <li class="footer__category__item"><a href="../../wiki/about.html#contact">联系我们</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable end">
+        <h1>
+          关于
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../../wiki/about.html">关于</a></li>
+          <li class="footer__category__item"><a href="../../wiki/about.html#privacy">隐私</a></li>
+          <li class="footer__category__item"><a href="../../wiki/about.html#tos">服务条款</a></li>
+          <li class="footer__category__item"><a href="../../wiki/about.html#contact">版权申诉</a></li>
+        </ul></div>
+      </div>
+    </div>
+      <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+                    <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-lang"><li class="menu__item"><a class="menu__link" href="../../language/en.html">English</a></li><li class="menu__item"><a class="menu__link" href="../../language/ko.html">한국어</a></li><li class="menu__item"><a class="menu__link" href="../../language/zh.html">简体中文</a></li><li class="menu__item"><a class="menu__link" href="../../language/zh_TW.html">正體中文</a></li></ol>
+          </li>
+          <li class="footer__extra-link-item">
+                          <a href="https://www.gzlzoi.cn/legacy?legacy=true">兼容模式</a>
+                      </li>
+          <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> 主题 <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-theme">
+              <li class="menu__item"><a class="menu__link" href="../../set_theme/light.html">亮色</a></li>
+              <li class="menu__item"><a class="menu__link" href="../../set_theme/dark.html">暗色</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><a href="https://beian.miit.gov.cn/">京ICP备2023010486号-3</a></li><li class="footer__extra-link-item">Worker 0, 12ms</li>
+          <!-- Prepare 6ms -->
+          <!-- Method 2ms -->
+          
+          
+          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v5.0.0-beta.16</a> Community</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      window.UiContextNew = '{"pdoc":{"_id":"685e05c9c6c0836c1dd83204","content":"{\\"zh\\":\\"- [1\u3001\u65F6\u95F4\u590D\u6742\u5EA6](#1\u3001\u65F6\u95F4\u590D\u6742\u5EA6)\\\\n- [2\u3001\u6392\u5E8F\u7B97\u6CD5](#2\u3001\u6392\u5E8F\u7B97\u6CD5)\\\\n  - [2-1\u3001\u9009\u62E9\u6392\u5E8F](#2-1\u3001\u9009\u62E9\u6392\u5E8F)\\\\n  - [2-2\u3001\u5192\u6CE1\u6392\u5E8F](#2-2\u3001\u5192\u6CE1\u6392\u5E8F)\\\\n  - [2-3\u3001\u5F52\u5E76\u6392\u5E8F](#2-3\u3001\u5F52\u5E76\u6392\u5E8F)\\\\n  - [2-4\u3001\u5FEB\u901F\u6392\u5E8F](#2-4\u3001\u5FEB\u901F\u6392\u5E8F)\\\\n  - [2-6\u3001\u81EA\u5B9A\u4E49 sort](#2-6\u3001\u81EA\u5B9A\u4E49-sort)\\\\n\\\\n# 1\u3001\u65F6\u95F4\u590D\u6742\u5EA6\\\\n\\\\n* \u4E3A\u4EC0\u4E48\u6709\u7684\u4EE3\u7801\u6267\u884C\u901F\u5EA6\u5FEB\uFF0C\u6709\u7684\u4F1A\u8D85\u65F6\uFF08**<font color=\\\\\\"#FF0000\\\\\\">Time Execeeded</font>**\uFF09\\\\n* \u65F6\u95F4\u590D\u6742\u5EA6\u5C31\u662F\u7528\u6765\u8861\u91CF\u4E00\u4E2A\u7B97\u6CD5\u6267\u884C\u5FEB\u6162\u7684\u6307\u6807\\\\n* \u6211\u4EEC\u901A\u8FC7\u51E0\u4E2A\u4F8B\u5B50\uFF0C\u6765\u5B66\u4E60\u5982\u4F55\u8BA1\u7B97\u65F6\u95F4\u590D\u6742\u5EA6\\\\n\\\\n```c++\\\\nint n, sum = 0;\\\\nint a[105];\\\\ncin >> n;\\\\nfor (int i = 0; i < n; i++) {\\\\n    cin >> a[i];\\\\n    sum += a[i];\\\\n}\\\\ncout << sum << \'\\\\\\\\n\';\\\\n```\\\\n\\\\n* \u4E0A\u9762\u7684\u4EE3\u7801\uFF0C\u901A\u8FC7\u4E00\u4E2A for \u5FAA\u73AF\u904D\u5386\u4E86\u6570\u7EC4 $a$ \u7684 $n$ \u4E2A\u6570\uFF0C\u5728\u505A\u4E86 $n$ \u6B21\u52A0\u6CD5\u540E\u6C42\u51FA\u4E86 $sum$\\\\n* \u6211\u4EEC\u79F0\u8FD9\u6BB5\u4EE3\u7801\u7684\u65F6\u95F4\u590D\u6742\u5EA6\u662F $O(n)$\\\\n\\\\n```c++\\\\nint n, m, sum = 0;\\\\nint a[105], b[105];\\\\ncin >> n;\\\\ncin >> m\\\\nfor (int i = 0; i < n; i++) cin >> a[i];\\\\nfor (int i = 0; i < m; i++) cin >> b[i];\\\\nfor (int i = 0; i < n; i++) {\\\\n    for (int j = 0; j < m; j++) {\\\\n        sum += a[i] * b[j];\\\\n    }\\\\n}\\\\ncout << sum << \'\\\\\\\\n\';\\\\n```\\\\n\\\\n* \u4E0A\u9762\u7684\u4EE3\u7801\uFF0C\u901A\u8FC7 2 \u4E2A for \u5FAA\u73AF\u679A\u4E3E\u4E86\u6570\u7EC4 $a$ \u548C\u6570\u7EC4 $b$ \u4E24\u4E24\u7EC4\u5408\u7684\u6240\u6709\u60C5\u51B5\uFF08\u603B\u5171 $n*m$ \u79CD\u60C5\u51B5\uFF09\\\\n* \u6211\u4EEC\u79F0\u8FD9\u6BB5\u4EE3\u7801\u7684\u65F6\u95F4\u590D\u6742\u5EA6\u662F $O(n*m)$\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">\u5176\u5B9E\u5C31\u662F\u627E\u5230\u5D4C\u5957\u7684 for \u5FAA\u73AF\uFF0C\u5C06\u6BCF\u4E2A for \u5FAA\u73AF\u7684\u6267\u884C\u6B21\u6570\u76F8\u4E58</font>**\\\\n\\\\n```c++\\\\n// \u5D4C\u5957 2 \u4E2A for, \u65F6\u95F4\u590D\u6742\u5EA6 O(n*m)\\\\nfor (int i = 0; i < n; i++) {\\\\n    for (int j = 0; j < m; j++) {\\\\n        sum += a[i] * b[j];\\\\n    }\\\\n}\\\\n// \u5D4C\u5957 3 \u4E2A for, \u65F6\u95F4\u590D\u6742\u5EA6 O(n*m*d)\\\\nfor (int i = 0; i < n; i++) {\\\\n    for (int j = 0; j < m; j++) {\\\\n        for (int k = 0; k < d; k++) {\\\\n            sum += a[i] * b[j] * c[k];\\\\n        }\\\\n    }\\\\n}\\\\ncout << sum << \'\\\\\\\\n\';\\\\n```\\\\n\\\\n* \u4E0A\u9762\u7684\u4EE3\u7801\uFF0C\u6709 2 \u4E2A\u5D4C\u5957\u7684 for \u5FAA\u73AF, \u7B2C 1\u4E2A \u5D4C\u5957\u7684\u65F6\u95F4\u590D\u6742\u5EA6\u662F $O(n*m)$\uFF0C\u7B2C 2 \u4E2A\u5D4C\u5957\u7684\u65F6\u95F4\u590D\u6742\u5EA6\u662F $O(n*m*d)$\\\\n* \u6211\u4EEC\u79F0\u8FD9\u6BB5\u4EE3\u7801\u7684\u65F6\u95F4\u590D\u6742\u5EA6\u662F $O(n*m*d)$\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">\u5F53\u6709\u591A\u4E2A\u5D4C\u5957\u7684 for \u5FAA\u73AF\u7ED3\u6784\u65F6\uFF0C\u6211\u4EEC\u53EA\u4FDD\u7559\u590D\u6742\u5EA6\u6700\u9AD8\u7684\u5D4C\u5957 for \u5FAA\u73AF</font>**\\\\n  * \u8FD9\u662F\u56E0\u4E3A\uFF0C\u968F\u65F6\u6570\u636E\u91CF\u7684\u53D8\u5927\uFF08$n, m, d$ \u8D8A\u6765\u8D8A\u5927\uFF09, $n*m*d$ \u8981\u8FDC\u5927\u4E8E $n*m$\uFF0C\u8BA1\u7B97\u91CF\u5C06\u4E3B\u8981\u7531 $n*m*d$ \u51B3\u5B9A\\\\n\\\\n```c++\\\\n// \u5D4C\u5957 2 \u4E2A for\\\\nfor (int i = 1; i <= n; i++) {\\\\n    // \u7B2C\u4E8C\u4E2A for \u6BCF\u6B21 j += i\\\\n    for (int j = i; j <= n; j += i) {\\\\n        sum += i * j;\\\\n    }\\\\n}\\\\n```\\\\n\\\\n* i = 1 \u65F6, j = 1, 2, 3, 4, ..., n, \u5171\u8BA1\u7B97 $n$ \u6B21\\\\n* i = 2 \u65F6, j = 2, 4, 6,..., \u5171\u8BA1\u7B97 $\\\\\\\\frac{n}{2}$ \u6B21\\\\n* i = 3 \u65F6, j = 3, 6, 9,..., \u5171\u8BA1\u7B97 $\\\\\\\\frac{n}{3}$ \u6B21\\\\n* i = n \u65F6, j = n \u5171\u8BA1\u7B97 $\\\\\\\\frac{n}{n}=1$ \u6B21\\\\n* \u6240\u4EE5\u603B\u5171\u8BA1\u7B97\u4E86 $n*(\\\\\\\\frac{1}{1}+\\\\\\\\frac{1}{2}+\\\\\\\\frac{1}{3}+\\\\\\\\frac{1}{4}+...+\\\\\\\\frac{1}{n})$ \u6B21\\\\n* $\\\\\\\\frac{1}{1}+\\\\\\\\frac{1}{2}+\\\\\\\\frac{1}{3}+\\\\\\\\frac{1}{4}+\\\\\\\\frac{1}{5}+\\\\\\\\frac{1}{6}+\\\\\\\\frac{1}{7}$\uFF0C\u5C0F\u4E8E\u4E0B\u9762\u7684\u5F0F\u5B50\\\\n* $\\\\\\\\frac{1}{1}+\\\\\\\\frac{1}{2}+\\\\\\\\frac{1}{2}+\\\\\\\\frac{1}{4}+\\\\\\\\frac{1}{4}+\\\\\\\\frac{1}{4}+\\\\\\\\frac{1}{4}$ = 3\\\\n* \u6240\u4EE5 $\\\\\\\\frac{1}{1}+\\\\\\\\frac{1}{2}+\\\\\\\\frac{1}{3}+\\\\\\\\frac{1}{4}+...+\\\\\\\\frac{1}{n}$ \u662F\u4E0D\u8D85\u8FC7 $log(n)$ \u7684\\\\n* \u6240\u4EE5\u4E0A\u8FF0\u4EE3\u7801\u7684\u590D\u6742\u5EA6\u662F\u4E0D\u8D85\u8FC7 $O(nlog(n))$ \u7684\\\\n  \\\\n  * \u5927\u5BB6\u56DE\u5FC6\u4E0B\u7B5B\u7D20\u6570\u7B97\u6CD5\uFF0C\u5176\u65F6\u95F4\u590D\u6742\u5EA6\u4E0D\u8D85\u8FC7 $O(nlog(n))$\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">$log(x) = y$: \u662F\u6307 $2^y==x$</font>**\\\\n  \\\\n  * \u6BD4\u5982: $log(8) = 3$, \u56E0\u4E3A $2^3=8$; $log(4) = 2$, \u56E0\u4E3A $2^2=4$\\\\n  * $3 \\\\\\\\lt log(9) \\\\\\\\lt 4$\\\\n  * $log(1000) \\\\\\\\approx 10, log(10^6) \\\\\\\\approx 20$\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">\u4E00\u822C\u6765\u8BF4\uFF0C\u5F53\u65F6\u95F4\u590D\u6742\u5EA6\u7684\u7ED3\u679C\u662F $10^8$ \u65F6\uFF0C\u6211\u4EEC\u7684\u7A0B\u5E8F\u9700\u8981\u6267\u884C 1 \u79D2\u949F\uFF0C\u4E5F\u662F\u5927\u591A\u6570\u9898\u76EE\u7684\u65F6\u95F4\u9650\u5236</font>**\\\\n  \\\\n  * **<font color=\\\\\\"#FF0000\\\\\\">\u6240\u4EE5\uFF0C\u5F53\u65F6\u95F4\u590D\u6742\u5EA6\u662F $O(n^2)$ \u65F6\uFF0C$n$ \u4E0D\u80FD\u8D85\u8FC7 $10^4$</font>**\\\\n  * **<font color=\\\\\\"#FF0000\\\\\\">\u5F53\u65F6\u95F4\u590D\u6742\u5EA6\u662F $O(n \\\\\\\\cdot log(n))$ \u65F6\uFF0C$n$ \u6700\u5927\u662F $10^6$ \u5DE6\u53F3</font>**\\\\n  * **<font color=\\\\\\"#FF0000\\\\\\">\u5F53 $n$  \u63A5\u8FD1\u6216\u8D85\u8FC7 $10^7$ \u65F6\uFF0C\u6211\u4EEC\u7684\u65F6\u95F4\u590D\u6742\u5EA6\u5E94\u8BE5\u662F $O(n)$ \u624D\u4E0D\u4F1A\u8D85\u65F6</font>**\\\\n\\\\n# 2\u3001\u6392\u5E8F\u7B97\u6CD5\\\\n\\\\n* [\u6570\u636E\u7ED3\u6784\u4E0E\u7B97\u6CD5\u7CFB\u5217--\u5341\u5927\u6392\u5E8F\uFF08\u9644\u52A8\u6001\u56FE\u89E3\uFF09](https://zhuanlan.zhihu.com/p/60152722)\\\\n  * \u8FD9\u4E2A\u7F51\u7AD9\u6709\u5404\u79CD\u89E3\u91CA\u548C\u52A8\u56FE\uFF0C\u4EE3\u7801\u53EF\u4EE5\u4E0D\u7528\u53C2\u8003\\\\n* [visualgo.net \u5404\u79CD\u52A8\u56FE](https://visualgo.net/zh/sorting)\\\\n  * \u8FD9\u4E2A\u7F51\u7AD9\u53EF\u4EE5\u81EA\u5B9A\u4E49\u6570\u636E\u751F\u6210\u52A8\u56FE\\\\n\\\\n## 2-1\u3001\u9009\u62E9\u6392\u5E8F\\\\n\\\\n* \u8BF7\u53C2\u8003\u4E4B\u524D\u7684\u8BFE\u4EF6 [\u3010\u8BFE\u4EF6\u3011\u6570\u7EC4\u548C\u5B57\u7B26\u4E32](http://43.136.49.238/d/gzezoi2023/p/P0003)\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nconst int N = 100005;\\\\n\\\\n/*--------------------- \u9009\u62E9\u6392\u5E8F, \u65F6\u95F4\u590D\u6742\u5EA6 O(n^2) begin -----*/\\\\n// \u5C06 a[l], a[l + 1], ..., a[r - 1], a[r] \u6392\u5E8F\\\\n// select_sort(a, 1, n);\\\\nvoid select_sort(int* a, int l, int r) {\\\\n    for (int i = r; i > l; i--) {\\\\n        int p = l;\\\\n        for (int j = l; j <= i; j++) if (a[j] > a[p]) p = j;\\\\n        swap(a[p], a[i]);\\\\n    }\\\\n}\\\\n/*--------------------- \u9009\u62E9\u6392\u5E8F, \u65F6\u95F4\u590D\u6742\u5EA6 O(n^2) end -------*/\\\\n\\\\nint main() {\\\\n    int n;\\\\n    int a[N];\\\\n    cin >> n;\\\\n    for (int i = 1; i <= n; i++) cin >> a[i];\\\\n    select_sort(a, 1, n);\\\\n    for (int i = 1; i <= n - 1; i++) cout << a[i] << \' \';\\\\n    cout << a[n] << \'\\\\\\\\n\';\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n* \u9009\u62E9\u6392\u5E8F\u5171\u8BA1\u6BD4\u8F83\u7684\u6B21\u6570: $(n-1)+(n-2)+...+1=n*(n-1)/2=\\\\\\\\frac{1}{2}n^2-\\\\\\\\frac{1}{2}n$\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">\u5F53 $n$ \u5F88\u5927\u65F6\uFF0C\u65F6\u95F4\u590D\u6742\u5EA6\u4E3B\u8981\u7531 $\\\\\\\\frac{1}{2}n^2$ \u51B3\u5B9A\uFF1B\u65F6\u95F4\u590D\u6742\u5EA6\u53EA\u4FDD\u7559\u548C\u6570\u636E\u91CF $n$ \u76F8\u5173\u7684\u9879\uFF0C\u5FFD\u7565\u5E38\u6570\u9879 $\\\\\\\\frac{1}{2}$\uFF0C\u6240\u4EE5\uFF1A</font>**\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">\u9009\u62E9\u6392\u5E8F\u7684\u65F6\u95F4\u590D\u6742\u5EA6\u662F $O(n^2)$ </font>**\\\\n\\\\n## 2-2\u3001\u5192\u6CE1\u6392\u5E8F\\\\n\\\\n* \u5192\u6CE1\u6392\u5E8F\u603B\u5171\u6267\u884C $n-1$ \u8F6E\\\\n* \u6BCF\u4E00\u8F6E\u6BD4\u8F83\u76F8\u90BB\u7684 2 \u4E2A\u6570\uFF0C\u5C06\u8F83\u5927\u7684\u6570\u4EA4\u6362\u5230\u540E\u9762\uFF0C\u8FD9\u6837\u6BCF\u4E00\u8F6E\u90FD\u80FD\u627E\u5230 1 \u4E2A\u6700\u5927\u7684\u6570\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nconst int N = 100005;\\\\n\\\\n/*--------------------- \u5192\u6CE1\u6392\u5E8F, \u65F6\u95F4\u590D\u6742\u5EA6 O(n^2) begin -----*/\\\\n// \u5C06 a[l], a[l + 1], ..., a[r - 1], a[r] \u6392\u5E8F\\\\n// bubble_sort(a, 1, n);\\\\nvoid bubble_sort(int* a, int l, int r) {\\\\n    // \u5192\u6CE1\u6392\u5E8F\u653B\u51FB\u6267\u884C r - l - 1 \u8F6E(\u4ECE r \u5230 l - 1)\\\\n    for (int i = r; i > l; i--) {\\\\n        for (int j = l; j < i; j++) {\\\\n            // \u6BD4\u8F83\u76F8\u90BB\u7684 2 \u4E2A\u6570\uFF0C\u5C06\u8F83\u5927\u7684\u6570\u4EA4\u6362\u5230\u540E\u9762\\\\n            if (a[j] > a[j + 1]) swap(a[j], a[j + 1]);\\\\n        }\\\\n    }\\\\n}\\\\n\\\\n/*--------------------- \u5192\u6CE1\u6392\u5E8F, \u65F6\u95F4\u590D\u6742\u5EA6 O(n^2) end -------*/\\\\n\\\\nint main() {\\\\n    int n;\\\\n    int a[N];\\\\n    cin >> n;\\\\n    for (int i = 1; i <= n; i++) cin >> a[i];\\\\n    bubble_sort(a, 1, n);\\\\n    for (int i = 1; i <= n - 1; i++) cout << a[i] << \' \';\\\\n    cout << a[n] << \'\\\\\\\\n\';\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">\u5192\u6CE1\u6392\u5E8F\u7684\u65F6\u95F4\u590D\u6742\u5EA6\u662F $O(n^2)$ </font>**\\\\n\\\\n## 2-3\u3001\u5F52\u5E76\u6392\u5E8F\\\\n\\\\n* \u5148\u8003\u8651\u4E00\u4E2A\u7B80\u5355\u7684\u95EE\u9898\uFF0C\u6709 2 \u4E2A\u6392\u5E8F\u597D\u7684\u6570\u7EC4 $a$ \u548C $b$, \u5982\u4F55\u5C06 $a,b$ \u5408\u5E76\u6210\u4E00\u4E2A\u65B0\u7684\u6392\u5E8F\u597D\u7684\u6570\u7EC4 $c$ \uFF1F\\\\n  \\\\n  * $a = [1, 3, 5, 7, 9, 10]$\\\\n  * $b = [2, 4, 6, 8]$\\\\n  * \u8BBE p = 1, \u4E3A a \u7684\u7B2C 1 \u4E2A\u6570\uFF1Bq = 2\uFF0C\u4E3A b \u7684\u7B2C 1 \u4E2A\u6570\\\\n  * $(p=1) \\\\\\\\lt (q=2)$\uFF0C\u4E8E\u662F\u628A p \u653E\u5230\u6570\u7EC4 $c$\uFF0Cc = [1], p \u6307\u5411 a \u7684\u7B2C 2 \u4E2A\u6570 3\\\\n  * $(p=3) \\\\\\\\gt (q=2)$\uFF0C\u4E8E\u662F\u628A q \u653E\u5230\u6570\u7EC4 $c$\uFF0Cc = [1, 2], q \u6307\u5411 b \u7684\u7B2C 2 \u4E2A\u6570 4\\\\n  * $(p=3) \\\\\\\\lt (q=4)$\uFF0C\u4E8E\u662F\u628A p \u653E\u5230\u6570\u7EC4 $c$\uFF0Cc = [1, 2, 3], p \u6307\u5411 a \u7684\u7B2C 3 \u4E2A\u6570 5\\\\n  * $(p=5) \\\\\\\\gt (q=4)$\uFF0C\u4E8E\u662F\u628A q \u653E\u5230\u6570\u7EC4 $c$\uFF0Cc = [1, 2, 3, 4], q \u6307\u5411 b \u7684\u7B2C 3 \u4E2A\u6570 6\\\\n  * $(p=5) \\\\\\\\lt (q=6)$\uFF0C\u4E8E\u662F\u628A p \u653E\u5230\u6570\u7EC4 $c$\uFF0Cc = [1, 2, 3, 4, 5], p \u6307\u5411 a \u7684\u7B2C 4 \u4E2A\u6570 7\\\\n  * $(p=7) \\\\\\\\gt (q=6)$\uFF0C\u4E8E\u662F\u628A q \u653E\u5230\u6570\u7EC4 $c$\uFF0Cc = [1, 2, 3, 4, 5, 6], q \u6307\u5411 b \u7684\u7B2C 4 \u4E2A\u6570 8\\\\n  * $(p=7) \\\\\\\\lt (q=8)$\uFF0C\u4E8E\u662F\u628A p \u653E\u5230\u6570\u7EC4 $c$\uFF0Cc = [1, 2, 3, 4, 5, 6, 7], p \u6307\u5411 a \u7684\u7B2C 5 \u4E2A\u6570 9\\\\n  * $(p=9) \\\\\\\\gt (q=8)$\uFF0C\u4E8E\u662F\u628A q \u653E\u5230\u6570\u7EC4 $c$\uFF0Cc = [1, 2, 3, 4, 5, 6, 7, 8], \u6B64\u65F6 b \u5DF2\u7ECF\u6CA1\u6709\u6570\u4E86\\\\n  * \u628A a \u4E2D\u5269\u4E0B\u7684 9 \u548C 10 \u653E\u5230\u6570\u7EC4 $c$\uFF0Cc = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\\\\n  * \u81F3\u6B64\u6211\u4EEC\u6210\u529F\u5C06 a \u548C b \u5408\u5E76\u6210 1 \u4E2A\u65B0\u7684\u6709\u5E8F\u6570\u7EC4 c\uFF0C\u6211\u4EEC\u5171\u8BA1\u6BD4\u8F83\u4E86 8 \u6B21\\\\n  * **<font color=\\\\\\"#FF0000\\\\\\">\u5408\u5E76 2 \u4E2A\u6709\u5E8F\u6570\u7EC4\uFF0C\u6700\u5DEE\u9700\u8981\u6BD4\u8F83\u7684\u6B21\u6570\u4E0D\u8D85\u8FC7 $O(n+m)$ \u6B21, n, m \u4E3A 2 \u4E2A\u6709\u5E8F\u6570\u7EC4\u7684\u5927\u5C0F</font>**\\\\n* \u7528\u4EE3\u7801\u63CF\u8FF0\u4E0A\u8FF0\u8FC7\u7A0B\\\\n\\\\n```c++\\\\nint a[N], n;                           // \u6570\u7EC4 a \u5B58\u653E\u5728 a[0: n)\\\\nint b[N], m;                           // \u6570\u7EC4 b \u5B58\u653E\u5728 b[0: m)\\\\nint c[N], e = 0;                       // \u6570\u7EC4 c \u7684\u5927\u5C0F\u662F e, \u521D\u59CB\u662F 0\\\\n\\\\nint i = 0, j = 0;                      // i = 0, \u6307\u5411 a \u7684\u7B2C 1 \u4E2A\u6570; j = 0, \u6307\u5411 b \u7684\u7B2C\u4E00\u4E2A\u6570\\\\nwhile (i < n &&  j < m) {\\\\n    if (a[i] < b[j]) c[e++] = a[i++];  // \u628A a[i] \u653E\u5230 c, i \u6307\u5411 a \u7684\u4E0B\u4E00\u4E2A\u6570\\\\n    else c[e++] = b[j++];              // \u628A b[j] \u653E\u5230 c, j \u6307\u5411 b \u7684\u4E0B\u4E00\u4E2A\u6570\\\\n}\\\\nwhile (i < n) c[e++] = a[i++];         // \u628A a \u4E2D\u5269\u4F59\u7684\u6570\u653E\u5230 c\\\\nwhile (j < m) c[e++] = b[j++];         // \u628A b \u4E2D\u5269\u4F59\u7684\u6570\u653E\u5230 c\\\\n```\\\\n\\\\n* \u5F52\u5E76\u6392\u5E8F\u9700\u8981\u7528\u5230\u9012\u5F52\u7684\u601D\u60F3\\\\n* \u5047\u8BBE\u8981\u5BF9 a[l: r] \u6392\u5E8F\\\\n* \u6211\u4EEC\u5C06 a[l: r] \u5206\u6210\u5DE6\u53F3 2 \u90E8\u5206\uFF0Ca[l: mid] \u548C a[mid + 1: r], \u5176\u4E2D mid=(l+r)/2\\\\n* \u5982\u679C a[l: mid] \u548C a[mid + 1: r] \u90FD\u6392\u5E8F\u597D\u4E86\uFF0C\u518D\u8C03\u7528\u4E0A\u8FF0\u8FC7\u7A0B\u5408\u5E76\u5DE6\u53F3 2 \u90E8\u5206\u5373\u53EF\uFF01\uFF01\uFF01\\\\n* \u5B8C\u6574\u7684\u4EE3\u7801\u5982\u4E0B\\\\n\\\\n```c++\\\\n/*--------------------- \u5F52\u5E76\u6392\u5E8F, \u65F6\u95F4\u590D\u6742\u5EA6 O(nlog(n)) begin ----*/\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nconst int N = 100005;\\\\n\\\\n// \u5C06 a[l], a[l + 1], ..., a[r - 1], a[r] \u6392\u5E8F\\\\n// merge_sort(a, 1, n);\\\\nint c[N];\\\\nvoid merge_sort(int* a, int l, int r) {\\\\n    if (l == r) return ;\\\\n    int mid = (l + r) / 2;\\\\n    merge_sort(a, l, mid);             // \u5C06 a[l] \u5230 a[mid] \u6392\u5E8F\\\\n    merge_sort(a, mid + 1, r);         // \u5C06 a[mid + 1] \u5230 a[r] \u6392\u5E8F\\\\n    int i = l, j = mid + 1, e = 0;\\\\n    while (i <= mid && j <= r) {       // \u5C06 2 \u6BB5\u6392\u597D\u5E8F\u7684\u5B50\u6570\u7EC4\u5408\u5E76\\\\n        if (a[i] < a[j]) c[e++] = a[i++];\\\\n        else c[e++] = a[j++];\\\\n    }\\\\n    while (i <= mid) c[e++] = a[i++];  // \u9632\u6B62\u6700\u540E\u8FD8\u6709\u4E00\u4E9B\u6CA1\u5408\u5E76\u7684\u6570\\\\n    while (j <= r) c[e++] = a[j++];\\\\n    for (i = 0; i < e; i++) a[l + i] = c[i];  // \u8FD8\u539F\u5230 a \u6570\u7EC4\\\\n}\\\\n/*--------------------- \u5F52\u5E76\u6392\u5E8F, \u65F6\u95F4\u590D\u6742\u5EA6 O(nlog(n)) end ------*/\\\\n\\\\nint main() {\\\\n    int n;\\\\n    int a[N];\\\\n    cin >> n;\\\\n    for (int i = 1; i <= n; i++) cin >> a[i];\\\\n    merge_sort(a, 1, n);\\\\n    for (int i = 1; i <= n - 1; i++) cout << a[i] << \' \';\\\\n    cout << a[n] << \'\\\\\\\\n\';\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n* \u53EF\u4EE5\u67E5\u770B [luogu_P1177_\u3010\u6A21\u677F\u3011\u6392\u5E8F](https://www.luogu.com.cn/problem/solution/P1177)\uFF0C\u52A0\u6DF1\u7406\u89E3\\\\n* \u4E0B\u9762\u7684\u52A8\u56FE\u662F\u5F52\u5E76\u6392\u5E8F\u7684\u5168\u8FC7\u7A0B\\\\n  ![\u5F52\u5E76\u6392\u5E8F\u56FE\u89E3](file://\u5F52\u5E76\u6392\u5E8F.gif)\\\\n* \u4E0B\u9762\u7684\u8868\u683C\u7B2C 1 \u884C\u4EE3\u8868\u539F\u59CB\u6570\u7EC4\\\\n* \u7B2C 2 \u884C\u4EE3\u8868\u76F8\u90BB 2 \u4E2A\u6570\u6392\u597D\u5E8F\u540E\u60C5\u51B5\uFF0C\u5373 a[1, 2], a[3, 4], a[5, 6], a[7, 8] \u6392\u597D\u5E8F\\\\n* \u7B2C 3 \u884C\u4EE3\u8868\u76F8\u90BB 4 \u4E2A\u6570\u6392\u597D\u5E8F\u540E\u60C5\u51B5\uFF0C\u5373 a[1, 2, 3, 4] \u6392\u597D\u5E8F, a[5, 6, 7, 8] \u6392\u597D\u5E8F\\\\n* \u7B2C 4 \u884C\u4EE3\u8868\u76F8\u90BB 8 \u4E2A\u6570\u6392\u597D\u5E8F\u540E\u60C5\u51B5\uFF0C\u6570\u7EC4\u5168\u90E8\u6392\u597D\u5E8F\\\\n\\\\n|  |  |  |  |  |  |  |  |\\\\n| :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\\\\n| 6 | 5\\\\t| 3\\\\t| 1 | 8\\\\t| 7\\\\t| 2\\\\t| 4 |\\\\n| 5 | 6\\\\t| 1\\\\t| 3 | 7\\\\t| 8\\\\t| 2\\\\t| 4 |\\\\n| 1 | 3\\\\t| 5\\\\t| 6 | 2\\\\t| 4\\\\t| 7\\\\t| 8 |\\\\n| 1 | 2\\\\t| 3\\\\t| 4 | 5\\\\t| 6\\\\t| 7\\\\t| 8 |\\\\n\\\\n* \u957F\u5EA6\u4E3A n \u7684\u6570\u7EC4\uFF0C\u7531\u4E8E\u6BCF\u6B21\u5E73\u5206\u6210 2 \u6BB5\\\\n* \u56E0\u6B64\u6700\u591A\u5E73\u5206 $log(n)$ \u6B21\u540E\uFF0C\u6BCF\u6BB5\u53EA\u5269\u4E0B 1 \u4E2A\u5143\u7D20\\\\n* \u800C\u6BCF\u6B21\u5E73\u5206\u540E\uFF0C\u6700\u591A\u9700\u8981 $n$ \u6B21\u6BD4\u8F83\u53EF\u4EE5\u5408\u5E76\u5DF2\u7ECF\u6709\u5E8F\u7684\u591A\u4E2A\u6570\u7EC4\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">\u56E0\u6B64\u5F52\u5E76\u6392\u5E8F\u7684\u65F6\u95F4\u590D\u6742\u5EA6\u662F $O(nlog(n))$, \u8981\u8FDC\u6BD4\u9009\u62E9\u6392\u5E8F\u548C\u5192\u6CE1\u6392\u5E8F\u5FEB</font>**\\\\n  * \u4F46\u662F\u5F52\u5E76\u6392\u5E8F\u9700\u8981\u989D\u5916\u7533\u660E 1 \u4E2A\u6570\u7EC4 c\uFF08\u7528\u6765\u5408\u5E76\u6709\u5E8F\u6570\u7EC4\uFF09\uFF0C\u9700\u8981 $O(n)$ \u7684\u5B58\u50A8\u7A7A\u95F4\\\\n\\\\n## 2-4\u3001\u5FEB\u901F\u6392\u5E8F\\\\n\\\\n* \u7B80\u79F0\u5FEB\u6392\uFF0C\u987E\u540D\u601D\u4E49\uFF0C\u5FEB\u901F\u6392\u5E8F\u7684\u7279\u70B9\u5C31\u662F\u901F\u5EA6\u5F88\u5FEB\uFF08\u4E8B\u5B9E\u4E0A\uFF0C\u5FEB\u6392\u662F C++ \u7684 sort \u51FD\u6570\u7684\u4E3B\u529B\u6392\u5E8F\u7B97\u6CD5\uFF09\\\\n* \u5176\u4E3B\u8981\u601D\u60F3\u548C\u5F52\u5E76\u6392\u5E8F\u76F8\u4F3C\uFF0C\u90FD\u662F\u5C06\u4E00\u4E2A\u5927\u7684\u6570\u7EC4\uFF0C\u5206\u6210 2 \u4E2A\u5C0F\u7684\u6570\u7EC4\\\\n* \u800C\u5B83\u5206\u5272\u6570\u7EC4\u7684\u65B9\u6CD5\uFF0C\u662F\u968F\u673A\u9009\u53D6\u6570\u7EC4\u91CC\u7684 1 \u4E2A\u503C\uFF08\u5927\u591A\u6570\u60C5\u51B5\u4E0B\u4F1A\u53D6\u6570\u7EC4\u7684\u7B2C 1 \u4E2A\u5143\u7D20 a[0]\uFF09\\\\n  * **<font color=\\\\\\"#FF0000\\\\\\">\u5C06\u6240\u6709\u6BD4 a[0] \u5C0F\u7684\u6570\u653E\u5230 a[0] \u7684\u5DE6\u8FB9</font>**\\\\n  * **<font color=\\\\\\"#FF0000\\\\\\">\u5C06\u6240\u6709\u6BD4 a[0] \u5927\u7684\u6570\u653E\u5230 a[0] \u7684\u53F3\u8FB9</font>**\\\\n  * **<font color=\\\\\\"#FF0000\\\\\\">\u7136\u540E\u9012\u5F52\u7684\uFF0C\u5206\u522B\u5BF9\u6BD4 a[0] \u5C0F\u7684\u6570\u548C\u6BD4 a[0] \u5927\u7684\u6570\u6392\u5E8F</font>**\\\\n* \u4E0B\u9762\u7684\u4EE3\u7801\u662F\u5FEB\u6392\u7684\u4E00\u79CD\u5B9E\u73B0\\\\n  * \u8BE5\u5B9E\u73B0\u4E0D\u662F\u9009\u7684 a[0]\uFF0C\u800C\u662F\u968F\u673A\u9009\u53D6 1 \u4E2A\u5143\u7D20\\\\n  * \u8BE5\u5B9E\u73B0\u5B9E\u9645\u4E0A\u5206\u4E86 3 \u6BB5\uFF0C\u5DE6\u8FB9\u662F\u6BD4 p\uFF08\u9009\u53D6\u7684\u5143\u7D20\uFF09\u5C0F\u7684\u6570\uFF0C\u4E2D\u95F4\u662F\u7B49\u4E8E p \u7684\u6570\uFF0C\u53F3\u8FB9\u662F\u6BD4 p \u5927\u7684\u6570\\\\n\\\\n```c++\\\\n/*--------------------- \u5FEB\u901F\u6392\u5E8F, \u65F6\u95F4\u590D\u6742\u5EA6 O(nlog(n)) begin ----*/\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nconst int N = 100005;\\\\n\\\\nvoid quick_sort(int* a, int l, int r) {\\\\n    if (l >= r) return ;\\\\n    int p = a[rand() % (r - l + 1) + l];  // \u968F\u673A\u9009\u53D6\u57FA\u51C6\\\\n    // i: \u5F53\u524D\u64CD\u4F5C\u7684\u5143\u7D20\u4E0B\u6807\\\\n    // a[l: j-1] \u5B58\u50A8\u5C0F\u4E8E p \u7684\u5143\u7D20(a[l], a[l + 1], ..., a[j - 1])\\\\n    // a[j: k] \u5B58\u50A8\u7B49\u4E8E p \u7684\u5143\u7D20(a[j], a[j + 1], ..., a[k - 1])\\\\n    // a[k+1: r] \u5B58\u50A8\u5927\u4E8E p \u7684\u5143\u7D20(a[k+1], a[k + 2], ..., a[r])\\\\n    int i = l, j = l, k = r;\\\\n    while (i <= k) {\\\\n        if (a[i] < p) swap(a[i++], a[j++]);\\\\n        else if (a[i] > p) swap(a[i], a[k--]);\\\\n        else i++;\\\\n    }\\\\n    quick_sort(a, l, j - 1);\\\\n    quick_sort(a, k + 1, r);\\\\n}\\\\n\\\\nint main() {\\\\n    int n;\\\\n    int a[N];\\\\n    cin >> n;\\\\n    for (int i = 1; i <= n; i++) cin >> a[i];\\\\n    quick_sort(a, 1, n);\\\\n    for (int i = 1; i <= n - 1; i++) cout << a[i] << \' \';\\\\n    cout << a[n] << \'\\\\\\\\n\';\\\\n    return 0;\\\\n}\\\\n/*--------------------- \u5FEB\u901F\u6392\u5E8F, \u65F6\u95F4\u590D\u6742\u5EA6 O(nlog(n)) end ------*/\\\\n```\\\\n\\\\n* \u4E0A\u9762\u7684\u4EE3\u7801\uFF0C$i, j, k$ \u7684\u8BA1\u7B97\u90E8\u5206\u4E0D\u592A\u597D\u7406\u89E3\uFF0C\u6211\u4EEC\u901A\u8FC7\u4E00\u4E2A\u5177\u4F53\u7684\u4F8B\u5B50\u6765\u7406\u89E3\u4E0B\\\\n* \u6570\u7EC4 $a = [7, 1, 4, 8, 2, 3, 5, 4, 4, 7, 3]$\\\\n* \u521D\u59CB\u503C\uFF1A$i = 0(\u6307\u5411\u7B2C 1 \u4E2A\u5143\u7D20 7), j = 0, k = 10(\u6307\u5411\u6700\u540E 1 \u4E2A\u5143\u7D20 7)$\uFF0C\u9009\u53D6 $p = 4$\\\\n* i = 0 \u65F6, (a[0]=7) > 4, \u4E8E\u662F: swap(a[i], a[k--]), i=0 \u4E0D\u53D8, k = k - 1 = 9, a=[3,1,4,8,2,3,5,4,4,7,7]\\\\n* i = 0 \u65F6, (a[0]=3) < 4, \u4E8E\u662F\uFF1Aswap(a[i++], a[j++]), i=i+1=1, j=j+1=1, a=[3,1,4,8,2,3,5,4,4,7,7]\\\\n* i = 1 \u65F6, (a[1]=1) < 4, \u4E8E\u662F\uFF1Aswap(a[i++], a[j++]), i=i+1=2, j=j+1=2, a=[3,1,4,8,2,3,5,4,4,7,7]\\\\n* i = 2 \u65F6, (a[2]=4) == 4, \u4E8E\u662F\uFF1Ai=i+1=3, j=2\u4E0D\u53D8, a=[3,1,4,8,2,3,5,4,4,7,7]\\\\n* i = 3 \u65F6, (a[3]=8) > 4, \u4E8E\u662F\uFF1Aswap(a[i], a[k--]), i \u4E0D\u53D8, k = k - 1 = 8, a=[3,1,4,7,2,3,5,4,4,8,7]\\\\n* i = 3 \u65F6, (a[3]=7) > 4, \u4E8E\u662F\uFF1Aswap(a[i], a[k--]), i \u4E0D\u53D8, k = k - 1 = 7, a=[3,1,4,4,2,3,5,4,7,7,8]\\\\n* i = 3 \u65F6, (a[3]=4) == 4, \u4E8E\u662F\uFF1Ai=i+1=4, j=2\u4E0D\u53D8, a=[3,1,4,4,2,3,5,4,7,7,8]\\\\n* i = 4 \u65F6, (a[4]=2) < 4, \u4E8E\u662F\uFF1Aswap(a[i++], a[j++]), i=i+1=5, j=j+1=3, a=[3,1,2,4,4,3,5,4,7,7,8]\\\\n* i = 5 \u65F6, (a[5]=3) < 4, \u4E8E\u662F\uFF1Aswap(a[i++], a[j++]), i=i+1=6, j=j+1=4, a=[3,1,2,3,4,4,5,4,7,7,8]\\\\n* i = 6 \u65F6, (a[6]=5) > 4, \u4E8E\u662F\uFF1Aswap(a[i], a[k--]), i \u4E0D\u53D8, k = k - 1 = 6, a=[3,1,2,3,4,4,4,5,7,7,8]\\\\n* i = 6 \u65F6, (a[6]=4) == 4, \u4E8E\u662F\uFF1Ai=i+1=7, j=4\u4E0D\u53D8, a=[3,1,2,3,4,4,4,5,7,7,8]\\\\n* \u6B64\u65F6 $(i=7) > (k=6)$\uFF0Cwhile \u5FAA\u73AF\u505C\u6B62\\\\n* a[0:j-1] = a[0:3] = [3,1,2,3] \u5168\u90E8\u6BD4 4 \u5C0F\\\\n* a[j:k] = a[4:6] = [4,4,4] \u5168\u90E8\u7B49\u4E8E 4\\\\n* a[k+1:10] = a[7:10] = [5,7,7,8] \u5168\u90E8\u5927\u4E8E 4\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">\u5FEB\u901F\u6392\u5E8F\u7684\u65F6\u95F4\u590D\u6742\u5EA6\u662F $O(nlog(n))$, \u5206\u6790\u65B9\u6CD5\u7C7B\u4F3C\u5F52\u5E76\u6392\u5E8F</font>**\\\\n  \\\\n  * \u6BCF\u6B21\u5C06\u6570\u7EC4\u5206\u6210\u6BD4 p \u5C0F\u7684\u4E00\u6BB5\uFF0C\u548C\u6BD4 p \u5927\u7684\u4E00\u6BB5\uFF0C\u6309\u6982\u7387\u6765\u8BB2\uFF0C\u8FD9\u79CD\u5206\u6CD5\u76F8\u5F53\u4E8E\u5E73\u5206\\\\n  * \u56E0\u6B64\u5FEB\u6392\u5927\u591A\u6570\u60C5\u51B5\u4E5F\u53EA\u4F1A\u5206\u5272 $log(n)$ \u6B21\\\\n  * \u800C\u6BCF\u6B21\u5206\u5272\uFF0C\u540C\u6837\u6700\u591A\u9700\u8981\u6BD4\u8F83 $O(n)$ \u6B21\\\\n  * \u56E0\u6B64\u5FEB\u6392\u7684\u65F6\u95F4\u590D\u6742\u5EA6\u662F $O(nlog(n))$\\\\n* \u9700\u8981\u6CE8\u610F\u7684\u662F\\\\n  \\\\n  * \u5982\u679C\u8FD0\u6C14\u4E0D\u597D\uFF0C\u6BCF\u6B21\u9009\u53D6\u7684 p \u90FD\u662F\u6700\u5C0F\u503C\uFF08\u6216\u8005\u6700\u5927\u503C\uFF09\\\\n  * \u90A3\u4E48\u6BCF\u6B21\u53EA\u80FD\u5206\u5272\u51FA\u6BD4 p \u5927\u7684\u4E00\u6BB5\uFF08\u6216\u8005\u6BD4 p \u5C0F\u7684\u4E00\u6BB5\uFF09\\\\n  * \u6B64\u65F6\u5FEB\u6392\u7684\u65F6\u95F4\u590D\u6742\u5EA6\u662F $O(n^2)$\\\\n  * **<font color=\\\\\\"#FF0000\\\\\\">\u56E0\u6B64\u6211\u4EEC\u79F0\u5FEB\u6392\u7684\u6700\u5DEE\u65F6\u95F4\u590D\u6742\u5EA6\u662F $O(n^2)$</font>**\\\\n* \u53EF\u4EE5\u5728\u8FD9\u4E2A\u7F51\u7AD9\u67E5\u770B\u52A8\u56FE\uFF1A[visualgo.net](https://visualgo.net/zh/sorting)\\\\n\\\\n## 2-5\u3001\u5806\u6392\u5E8F\\\\n\\\\n* \u5806\u6392\u5E8F\u7C7B\u4F3C\u4E8E\u9009\u62E9\u6392\u5E8F\uFF0C\u603B\u5171\u6267\u884C n - 1 \u8F6E\uFF0C\u6BCF\u4E00\u8F6E\u9009\u51FA\u6700\u5927\u7684\u6570\\\\n* \u4E0D\u540C\u4E8E\u9009\u62E9\u6392\u5E8F\u7684\u662F\uFF0C**<font color=\\\\\\"#FF0000\\\\\\">\u5806\u6392\u5E8F\u6BCF\u6B21\u9009\u51FA\u6700\u5927\u7684\u6570\u53EA\u9700\u8981\u6BD4\u8F83 $O(log(n))$ \u6B21</font>**\\\\n* \u8BBE\u6570\u7EC4 a=[91,60,96,13,35,65,46,65,10,30,20,21,77,81,22]\uFF08\u4ECE a[1] \u5230 a[15]\uFF09\\\\n* \u6211\u4EEC\u5C06\u6570\u7EC4 a \u7684 15 \u4E2A\u6570\uFF0C\u6392\u5217\u6210\u4E0B\u56FE\u7684\u6837\u5B50\\\\n  * 15 \u4E2A\u6570\u5206\u6210 4 \u5C42\uFF0C\u6BCF\u5C42\u5206\u522B\u6709 1\uFF0C2\uFF0C4\uFF0C8 \u4E2A\u6570\\\\n  * \u524D 3 \u5C42\uFF0C\u6BCF\u4E2A\u6570\u90FD\u5411\u4E0B\u8FDE\u63A5 2 \u4E2A\u5176\u4ED6\u6570\uFF0C\u6570 a[i] \u5DE6\u4E0B\u65B9\u7684\u6570\u662F a[i\\\\\\\\*2]\uFF08\u79F0\u4E3A a[i] \u7684\u5DE6\u513F\u5B50\uFF09\uFF0C\u53F3\u4E0B\u65B9\u7684\u6570\u662F a[i\\\\\\\\*2+1]\uFF08\u79F0\u4E3A a[i] \u7684\u53F3\u513F\u5B50\uFF09\\\\n  * **<font color=\\\\\\"#FF0000\\\\\\">$n$ \u4E2A\u6570\uFF0C\u6309\u4E0A\u8FF0\u65B9\u6CD5\uFF0C\u6700\u591A\u53EF\u5206\u6210 $O(log(n))$ \u5C42</font>**\\\\n\\\\n![\u6700\u5927\u5806](file://\u6700\u5927\u5806.jpg)\\\\n\\\\n* \u5806\u6392\u5E8F\u5206\u4E3A 2 \u6B65\\\\n* \u7B2C 1 \u6B65\uFF1A\u4ECE a[15] \u5230 a[1] \u904D\u5386\u6BCF\u4E2A\u6570\uFF0C\u627E\u51FA a[i] \u7684\u513F\u5B50\u4E2D\u6700\u5927\u7684\u6570 a[p]\uFF0C\u5982\u679C $a[p] > a[i]$\uFF0C\u5C31\u4EA4\u6362 a[i] \u548C a[p] \u7684\u503C\uFF1B\u5982\u679C\u4EA4\u6362\u4E4B\u540E a[p] \u7684\u513F\u5B50\u4E2D\uFF0C\u4E5F\u6709\u6BD4 a[p] \u5927\u7684\u6570\uFF0C\u5C31\u7EE7\u7EED\u4EA4\u6362\uFF1B\u76F4\u5230 a[p] \u7684 \u513F\u5B50\u90FD\u6BD4 a[p] \u5C0F\uFF1B\\\\n  * \u7B2C 1 \u6B65\u5B8C\u6210\u540E\uFF0C\u6BCF\u4E2A\u8282\u70B9\u7684\u6570\u90FD\u6BD4\u4ED6\u7684\u513F\u5B50\u8282\u70B9\u8981\u5927\\\\n  * \u6240\u4EE5\u6B64\u65F6\uFF0Ca[1] \u5FC5\u7136\u662F\u6700\u5927\u503C\\\\n  * **<font color=\\\\\\"#FF0000\\\\\\">\u6211\u4EEC\u628A\u8FD9\u79CD\u6570\u636E\u7ED3\u6784\uFF08\u6BCF\u4E2A\u8282\u70B9\u90FD\u6BD4\u5176\u513F\u5B50\u8282\u70B9\u5927\uFF09\uFF0C\u79F0\u4E3A\u6700\u5927\u5806</font>**\\\\n* \u7B2C 2 \u6B65\uFF1A\u4EA4\u6362 a[1] \u548C a[15] \u7684\u503C\uFF0C\u6B64\u65F6 a[15] \u4E2D\u5B58\u653E\u7684\u662F\u6700\u5927\u7684\u6570\uFF0C\u800C a[1] \u7684\u5DE6\u53F3\u513F\u5B50\u4E2D\uFF0C\u53EF\u80FD\u4F1A\u5B58\u5728\u6BD4 a[1] \u5927\u7684\u6570\uFF0C\u7EE7\u7EED\u6309\u7B2C 1 \u6B65\u4E2D\u7684\u65B9\u6CD5\u5F80\u4E0B\u4EA4\u6362\\\\n  * \u6B64\u65F6\uFF0Ca[1] \u4E2D\u5B58\u653E\u7684\u6570\uFF0C\u5FC5\u7136\u662F\u7B2C 2 \u5927\u7684\u6570\uFF0C\u5C06 a[1] \u4E0E a[14] \u4EA4\u6362\\\\n  * \u4E0D\u65AD\u91CD\u590D\u7B2C 2 \u6B65 14 \u6B21\uFF08n - 1\uFF09\u6B21\uFF0C\u5373\u53EF\u5B8C\u6210\u6392\u5E8F\\\\n* \u53EF\u53C2\u8003\u4E0B\u9762\u7684\u52A8\u56FE\\\\n\\\\n![\u5806\u6392\u5E8F\u56FE\u89E3](file://\u5806\u6392\u5E8F.gif)\\\\n\\\\n* \u5806\u6392\u5E8F\u7684\u5B9E\u73B0\u5982\u4E0B\\\\n\\\\n```c++\\\\n/*--------------------- \u5806\u6392\u5E8F, \u65F6\u95F4\u590D\u6742\u5EA6 O(nlog(n)) begin ------*/\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nconst int N = 100005;\\\\n\\\\nvoid down(int* a, int p, int n) {\\\\n    while (true) {\\\\n        int x = p;\\\\n        if (p * 2 <= n && a[p * 2] > a[x]) x = p * 2;\\\\n        if (p * 2 + 1 <= n && a[p * 2 + 1] > a[x]) x = p * 2 + 1;\\\\n        if (x == p) return ;\\\\n        swap(a[p], a[x]);\\\\n        p = x;\\\\n    }\\\\n}\\\\n\\\\n\\\\n// \u5C06 a[1], a[2], ..., a[n - 1], a[n] \u6392\u5E8F\\\\n// heap_sort(a, n);\\\\nvoid heap_sort(int* a, int n) {\\\\n    // \u7B2C 1 \u6B65\\\\n    for (int i = n / 2; i >= 1; i--) down(a, i, n);\\\\n\\\\n    // \u7B2C 2 \u6B65\\\\n    for (int i = n; i > 1; i--) {\\\\n        swap(a[1], a[i]);\\\\n        down(a, 1, i - 1);\\\\n    }\\\\n}\\\\n\\\\n/*--------------------- \u5806\u6392\u5E8F, \u65F6\u95F4\u590D\u6742\u5EA6 O(nlog(n)) end --------*/\\\\n\\\\nint main() {\\\\n    int n;\\\\n    int a[N];\\\\n    cin >> n;\\\\n    for (int i = 1; i <= n; i++) cin >> a[i];\\\\n    heap_sort(a, n);\\\\n    for (int i = 1; i <= n - 1; i++) cout << a[i] << \' \';\\\\n    cout << a[n] << \'\\\\\\\\n\';\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n* \u5728\u7B2C 1 \u6B65\uFF0C\u6BCF\u4E2A\u6570\u6700\u591A\u88AB\u4EA4\u6362 $O(long(n))$ \u6B21\\\\n  * \u56E0\u6B64\u7B2C 1 \u6B65\u7684\u65F6\u95F4\u590D\u6742\u5EA6\u6700\u591A\u662F $O(nlong(n))$\uFF0C\u5B9E\u9645\u4E0A\u5176\u590D\u6742\u5EA6\u662F $O(n)$\uFF0C\u53EF\u53C2\u8003 [\u5EFA\u5806\u65F6\u95F4\u590D\u6742\u5EA6\u7684\u8BA1\u7B97](https://www.jianshu.com/p/83842d5cb3e3)\\\\n* \u7B2C 2 \u6B65\u6267\u884C $n-1$ \u6B21\uFF0C\u800C\u6BCF\u6B21\u6700\u591A\u5C06 a[1] \u8282\u70B9\u4EA4\u6362 $O(long(n))$ \u6B21\\\\n  * \u56E0\u6B64\u7B2C 2 \u6B65\u7684\u65F6\u95F4\u590D\u6742\u5EA6\u662F $O(nlong(n))$\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">\u6240\u4EE5\u5806\u6392\u5E8F\u7684\u65F6\u95F4\u590D\u6742\u5EA6\u662F $O(nlong(n))$</font>**\\\\n\\\\n## 2-6\u3001\u81EA\u5B9A\u4E49 sort\\\\n\\\\n* \u5927\u5BB6\u66F4\u591A\u65F6\u5019\u4E0D\u9700\u8981\u81EA\u5DF1\u7F16\u5199\u6392\u5E8F\u51FD\u6570\uFF0C\u76F4\u63A5\u7528 C++ \u81EA\u5E26\u7684 sort \u51FD\u6570\u5373\u53EF\\\\n* C++ \u81EA\u5E26\u7684 sort \u51FD\u6570\uFF0C\u9ED8\u8BA4\u662F\u4ECE\u5C0F\u5230\u5927\u6392\u5E8F\uFF0C\u8BED\u6CD5\u5982\u4E0B\\\\n* \u5BF9 a[0: n) \u6392\u5E8F(a[0], a[1], ..., a[n - 1]\\\\n  * sort(a, a + n)\\\\n* \u5BF9 a[l: r) \u6392\u5E8F(a[l], a[l + 1], ..., a[r - 1])\\\\n  * sort(a + l, a + r)\\\\n* \u5BF9 a[1], a[2], a[3], a[4] \u6392\u5E8F\\\\n  * sort(a + 1, a + 5)\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nconst int N = 100005;\\\\n\\\\nint main() {\\\\n    int n;\\\\n    int a[N];\\\\n    cin >> n;\\\\n    for (int i = 1; i <= n; i++) cin >> a[i];\\\\n    // \u5BF9 a[1], a[2], ..., a[n] \u6392\u5E8F\\\\n    sort(a + 1, a + n + 1);\\\\n    for (int i = 1; i <= n - 1; i++) cout << a[i] << \' \';\\\\n    cout << a[n] << \'\\\\\\\\n\';\\\\n\\\\n    // \u5BF9 a[3], a[4], a[5], a[6] \u6392\u5E8F\\\\n    sort(a + 3, a + 7);\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n* \u5982\u679C\u60F3\u4ECE\u5927\u5230\u5C0F\u6392\u5E8F\uFF0C\u5E94\u8BE5\u600E\u4E48\u529E\u5462\uFF1F\u53EF\u4EE5\u7528\u5230 sort \u7684\u81EA\u5B9A\u4E49\u6392\u5E8F\u529F\u80FD\\\\n* \u81EA\u5B9A\u4E49 sort \u9700\u8981\u5F00\u542F C++14 \u9009\u9879\\\\n\\\\n![\u5DE5\u5177_\u7F16\u8BD1\u9009\u9879](file://\u5DE5\u5177_\u7F16\u8BD1\u9009\u9879.jpg)\\\\n\\\\n![\u7A0B\u5E8F_C++14](file://\u7A0B\u5E8F_C++14.jpg)\\\\n\\\\n* \u81EA\u5B9A\u4E49\u6392\u5E8F\u7684\u8BED\u6CD5\\\\n  * \u5927\u5BB6\u4E0D\u592A\u7406\u89E3\u8BED\u6CD5\u7684\u8BDD\uFF0C\u53EF\u4EE5\u5148\u8BB0\u4F4F\uFF0C\u4EE5\u540E\u4F1A\u7406\u89E3\\\\n\\\\n```c++\\\\nsort(a + 1, a + n + 1, [&](const int& x, const int& y) {\\\\n    // \u4F60\u7684\u6BD4\u8F83\u903B\u8F91\\\\n    // \u5224\u65AD x \u80FD\u5426\u6392\u5728 y \u524D\u9762,\\\\n    // \u82E5 x \u53EF\u4EE5\u6392\u5728 y \u524D\u9762, return true; \u5426\u5219\u8FD4\u56DE false;\\\\n\\\\n    // \u4ECE\u5C0F\u5230\u5927\u6392\u5E8F\\\\n    // [1, 3, 5, 2, 4] -> [1, 2, 3, 4, 5]\\\\n    if (x < y) return true;  // x \u6BD4 y \u5C0F\u7684\u65F6\u5019, x \u80FD\u6392\u5728 y \u524D\u9762 \\\\n    return false;\\\\n\\\\n    // \u4E5F\u53EF\u4EE5\u7B80\u5199\u6210 \\\\n    // return x < y;\\\\n}); \\\\n\\\\nsort(a + 1, a + n + 1, [&](const int& x, const int& y) {\\\\n    // \u4ECE\u5927\u5230\u5C0F\u6392\u5E8F\\\\n    // [1, 3, 5, 2, 4] -> [5, 4, 3, 2, 1]\\\\n    if (x > y) return true;  // x \u6BD4 y \u5927\u7684\u65F6\u5019, x \u80FD\u6392\u5728 y \u524D\u9762 \\\\n    return false;\\\\n\\\\n    // \u4E5F\u53EF\u4EE5\u7B80\u5199\u6210 \\\\n    // return x > y;\\\\n});\\\\n```\\\\n\\\\n* \u9664\u4E86\u7B80\u5355\u7684\u4ECE\u5C0F\u5230\u5927\u548C\u4ECE\u5927\u5230\u5C0F\uFF0C\u8FD8\u53EF\u4EE5\u81EA\u5B9A\u4E49\u66F4\u590D\u6742\u7684\u6392\u5E8F\u903B\u8F91\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nconst int N = 100005;\\\\n\\\\nint main() {\\\\n    int n;\\\\n    int a[N];\\\\n    cin >> n;\\\\n    for (int i = 1; i <= n; i++) cin >> a[i];\\\\n\\\\n    // \u5BF9 a[1], a[2], ..., a[n]\\\\n    // \u5947\u6570\u6392\u524D, \u5076\u6570\u6392\u540E, \u540C\u5947\u5076\u7684\u6570\u4ECE\u5C0F\u5230\u5927\\\\n    // [5, 4, 3, 2, 1] -> [1, 3, 5, 2, 4]\\\\n    sort(a + 1, a + n + 1, [&](const int& x, const int& y) {\\\\n        int p = x % 2, q = y % 2;\\\\n        // \u540C\u5947\u5076\u7684\u60C5\u51B5\u4E0B, \u5C0F\u7684\u6392\u5728\u524D\u9762\\\\n        if (p == q) return x < y;\\\\n        // \u4E0D\u540C\u5947\u5076\u7684\u60C5\u51B5\u4E0B, x \u5982\u679C\u662F\u5947\u6570, \u5C31\u80FD\u6392\u5728 y \u524D\u9762\\\\n        if (p == 1) return true;\\\\n        return false;\\\\n    });    \\\\n\\\\n    for (int i = 1; i <= n - 1; i++) cout << a[i] << \' \';\\\\n    cout << a[n] << \'\\\\\\\\n\';\\\\n\\\\n    int b[N];\\\\n    for (int i = 1; i <= n; i++) b[i] = i;\\\\n    // \u5047\u8BBE\u6570\u7EC4 a \u662F [6, 8, 10, 7, 9]\\\\n    // \u90A3\u4E48\u6570\u7EC4 b \u662F [1, 2, 3, 4, 5]\\\\n    // \u6392\u5E8F\u4E4B\u540E\u7684\u6570\u7EC4 b \u662F [1, 4, 2, 5, 3]\\\\n    // \u56E0\u4E3A (a[1]=6) < (a[4]=7) < (a[2]=8) < (a[5]=9) < (a[3]=10)\\\\n    sort(b + 1, b + n + 1, [&](const int& x, const int& y) {\\\\n        // \u5982\u679C a[x] < a[y], \u90A3\u4E48\u5728\u6570\u7EC4 b \u4E2D x \u5C31\u80FD\u6392\u5728 y \u524D\u9762\\\\n        return a[x] < a[y];\\\\n    });\\\\n    for (int i = 1; i <= n - 1; i++) cout << b[i] << \' \';\\\\n    cout << b[n] << \'\\\\\\\\n\';    \\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n\\"}","owner":2,"domainId":"lzoi2025","docType":10,"docId":26,"title":"\u3010\u8BFE\u4EF6\u3011\u65F6\u95F4\u590D\u6742\u5EA6\u4E0E\u6392\u5E8F","tag":["\u5176\u4ED6","\u6392\u5E8F","\u8BFE\u4EF6"],"hidden":false,"nSubmit":12,"nAccept":0,"pid":"LS0005","additional_file":[{"_id":"\u5806\u6392\u5E8F.gif","name":"\u5806\u6392\u5E8F.gif","size":1159356,"lastModified":"2025-06-27T02:45:29.766Z","etag":"L2RhdGEvZmlsZS9oeWRyby9uenkvYnJoNWYwamRuNXFodm9zdzN2NGZxLmdpZg=="},{"_id":"\u5DE5\u5177_\u7F16\u8BD1\u9009\u9879.jpg","name":"\u5DE5\u5177_\u7F16\u8BD1\u9009\u9879.jpg","size":104311,"lastModified":"2025-06-27T02:45:29.771Z","etag":"L2RhdGEvZmlsZS9oeWRyby9icXEvd3VqeWQzbjdxeHNpc3E3c2txZGhkLmpwZw=="},{"_id":"\u5F52\u5E76\u6392\u5E8F.gif","name":"\u5F52\u5E76\u6392\u5E8F.gif","size":262505,"lastModified":"2025-06-27T02:45:29.775Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wd2cvZXhuNm5zbjEwbjcwbXIwMGdwYjAwLmdpZg=="},{"_id":"\u6700\u5927\u5806.jpg","name":"\u6700\u5927\u5806.jpg","size":212721,"lastModified":"2025-06-27T02:45:29.779Z","etag":"L2RhdGEvZmlsZS9oeWRyby9sYXkvb25sNGVpYm9yaW5tNng2Y25oczFxLmpwZw=="},{"_id":"\u7A0B\u5E8F_C++14.jpg","name":"\u7A0B\u5E8F_C++14.jpg","size":164912,"lastModified":"2025-06-27T02:45:29.783Z","etag":"L2RhdGEvZmlsZS9oeWRyby90eGcvanRqYzRhanEybnN6NDR6aGtyM3NvLmpwZw=="}],"difficulty":0,"html":false,"stats":{"AC":0,"WA":0,"TLE":0,"MLE":0,"RE":0,"SE":0,"IGN":0,"CE":0,"s0":12},"config":{"count":0,"memoryMin":256,"memoryMax":256,"timeMin":1000,"timeMax":1000,"type":"default","langs":["cc","cc.cc14o2","cc.cc17o2","py","py.py3"]}}}';
+      window.UserContextNew = '{}';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n, m;
+	cin >> n >> m;
+	vector<string> grid(n);
+	for (int i = 0; i < n; i++) cin >> grid[i];				// 输入n行仅包括@ . # = 字符的字符串
+
+	unordered_map<char, vector<pair<int, int>>> QJump;		// 存储传送装置：<大写字母，[x,y]>
+	int sx = -1, sy = -1, ex = -1, ey = -1;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			if (grid[i][j] == '@') 		sx = i, sy = j;		// 起点
+			else if (grid[i][j] == '=') ex = i,	ey = j;		// 终点
+			else if (isupper(grid[i][j])) QJump[grid[i][j]].emplace_back(i, j);	// 记录传送装置（大写字母）的[x,y]]坐标集合
+		}
+	}
+
+	vector<vector<int>> dist(n, vector<int>(m, -1));		// 最短路径（时间）
+	queue<pair<int, int>> q;			// 存储坐标点[x,y]的队列
+	dist[sx][sy] = 0;					// 初始化
+	q.emplace(sx, sy);
+
+	vector<int> dx = {-1, 0, 1, 0};		// 从左->上->右->下（顺时针）四个方位搜寻
+	vector<int> dy = {0, -1, 0, 1};
+
+	while (!q.empty()) {
+		auto [x, y] = q.front();
+		q.pop();
+
+		if (x == ex && y == ey) {		// 已到达终点（出口），则输出最短路径（消耗的总时间）
+			cout << dist[x][y] << "\n";
+			return 0;
+		}
+
+		for (int k = 0; k < 4; k++) {
+			int nx = x + dx[k];
+			int ny = y + dy[k];
+			if (nx < 0 || nx >= n || ny < 0 || ny >= m || grid[nx][ny] == '#') continue; // 遇到障碍或已经越界了（注意：0-based的界限）
+			if (isupper(grid[nx][ny])) {			// 遇到传送装置（大写字母）时，必须使用，但不回传
+				auto points = QJump[grid[nx][ny]]; 	// 坐标集points：记录已经识别【传送装置】的所有坐标信息
+				for (auto [tx, ty] : points) {		// 启动传送装置（从 [nx,ny] 穿越到 [tx,ty] ）
+					if (tx != nx || ty != ny) {		// 不回传（不存在回路）
+						nx = tx;					// 已完成穿越，更新当前坐标 [nx,ny] = [tx,ty],即从已经跳到【传送装置】的对端去了
+						ny = ty;
+						break;
+					}
+				}
+			}
+
+			if (dist[nx][ny] == -1) {				// 还未访问过的（相等于visited = false，进行遍历)
+				dist[nx][ny] = dist[x][y] + 1;		// 往前行走，更新最短距离（时间）
+				q.emplace(nx, ny);					// 记录更新后的坐标信息[nx,ny]
+			}
+		}
+	}
+
+	cout << -1 << "\n";								// 无解，不可到达出口
+	return 0;
+}

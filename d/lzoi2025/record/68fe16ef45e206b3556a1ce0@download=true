@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, h, w;
+	cin >> n >> h >> w;
+	vector<pair<i64, i64>> P(n);
+	for (auto& [a, b] : P) cin >> a >> b;
+
+	vector<vector<bool>> g(h, vector<bool>(w, false));
+	vector<i64> cnt(n, 1);
+
+	function<bool()> dfs = [&]() {
+		i64 x = -1, y = -1;
+		for (i64 i = 0; i < h && x == -1; i++)
+			for (i64 j = 0; j < w && x == -1; j++)
+				if (!g[i][j]) x = i, y = j;
+		if (x == -1) return true;
+
+		for (i64 i = 0; i < n; i++) {
+			if (!cnt[i]) continue;
+			for (auto [a, b] : {
+			         P[i], pair{P[i].second, P[i].first}
+			     }) {
+				if (x + a > h || y + b > w) continue;
+				bool ok = true;
+				for (i64 u = x; u < x + a && ok; u++)
+					for (i64 v = y; v < y + b && ok; v++)
+						if (g[u][v]) ok = false;
+				if (!ok) continue;
+
+				for (i64 u = x; u < x + a; u++)
+					for (i64 v = y; v < y + b; v++)
+						g[u][v] = true;
+				cnt[i]--;
+				if (dfs()) return true;
+				cnt[i]++;
+				for (i64 u = x; u < x + a; u++)
+					for (i64 v = y; v < y + b; v++)
+						g[u][v] = false;
+			}
+		}
+		return false;
+	};
+	cout << (dfs() ? "Yes" : "No") << "\n";
+	return 0;
+}

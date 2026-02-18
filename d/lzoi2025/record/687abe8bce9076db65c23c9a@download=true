@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+string solve(int n, int m, int k) {
+	string s;
+	int L_zeros = min(k, m); 		// 最多放置m个0，不能超过k
+	s.append(L_zeros, '0');			// 字符串后追加0
+	m -= L_zeros;					// 更新剩余的0的个数
+	while (m > 0 || n > 0) {		// 剩余的0和1交替放置，且先放0（字典序最小）
+		if (n > 0) { s += '1'; n--;	}
+		if (m > 0) { s += '0'; m--; }
+	}
+	return s;
+}
+int main() {
+	ios::sync_with_stdio(false),cin.tie(0),cout.tie(nullptr);
+	int n, m, k;
+	cin >> n >> m >> k;
+	cout << solve(n, m, k) << "\n";
+	return 0;
+}

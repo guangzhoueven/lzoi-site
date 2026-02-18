@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	
+	int n;
+	cin >> n;
+    vector<int> a(n);
+	for (int i = 0; i < n; i++) cin >> a[i];
+	sort(a.begin(), a.end());
+	
+	int ans = a[0] * (a[1] + a[2]);                    // 3 正
+	ans = min(ans, a[n - 1] * (a[n - 2] + a[n - 3]));  // 3 负
+	ans = min(ans, a[0] * (a[n - 1] + a[n - 2]));      // 2 正 1 负
+	ans = min(ans, a[n - 1] * (a[0] + a[1]));          // 1 正 2 负
+	cout << ans << '\n';
+	return 0;
+}

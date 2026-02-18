@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+// 每次操作：减少2种颜色球数，增加1种颜色球数，但 S = R + G + B 保持不变
+// 所有操作：最后情况是要么G=0, B=0, R=S 【红】；要么R=0, B=0, G=S 【绿】；要么R=0, G=0, B=S 【蓝】
+// 算法步骤：对于每个测试用例，读取R, G, B。检查三种可能的最终颜色：
+// 红色：检查 G % 3 == B % 3。如果是，则操作次数为 max(G, B)。
+// 绿色：检查 R % 3 == B % 3。如果是，则操作次数为 max(R, B)。
+// 蓝色：检查 R % 3 == G % 3。如果是，则操作次数为 max(R, G)。
+// 收集所有可行的操作次数，取其中的最小值。如果没有可行的，输出-1。
+int solve(int R, int G, int B) {
+    int res = INT_MAX;
+ 
+    // Check for red (G and B to 0)
+    if (G % 3 == B % 3) {
+        int ops = max(G, B);
+        res = min(res, ops);    // res = min(res, max(G, B));
+    }
+    // Check for green (R and B to 0)
+    if (R % 3 == B % 3) {
+        int ops = max(R, B);
+        res = min(res, ops);    // res = min(res, max(R, B));
+    }
+ 
+    // Check for blue (R and G to 0)
+    if (R % 3 == G % 3) {
+        int ops = max(R, G);
+        res = min(res, ops);    // res = min(res, max(R, G));
+    }
+ 
+    return res == INT_MAX ? -1 : res;
+}
+ 
+int main() {
+    ios::sync_with_stdio(false);            // 取消缓冲区同步，避免TLE超时
+    cin.tie(nullptr);  cout.tie(nullptr);   // 取消输入输出流绑定
+     
+    int T;
+    cin >> T;
+    while (T--) {
+        int R, G, B;
+        cin >> R >> G >> B;
+        cout << solve(R, G, B) << endl;
+    }
+    return 0;
+}

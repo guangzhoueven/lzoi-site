@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	ios::sync_with_stdio(false), cin.tie(0), cout.tie(0);
+	int h,w;
+	cin>>h>>w;
+	vector<vector<char>> g(h,vector<char>(w));
+	for(int i=0;i<h;i++) {
+		for(int j=0;j<w;j++) {
+			cin>>g[i][j];
+		}
+	}
+	vector<vector<bool>> ok(h,vector<bool>(w,false));
+	queue<pair<int,int>> q;
+	ok[0][0]=true,q.push({0,0});
+	while(!q.empty()) {
+		auto [x,y]=q.front();
+		q.pop();
+		vector<int> dx={-1, 0, 1, 0};
+		vector<int> dy={ 0,-1, 0, 1};
+		for(int k=0;k<4;k++) {
+			int u=x+dx[k],v=y+dy[k];
+			if(u<0||u>=h||v<0||v>=w) continue;
+			if(g[u][v]=='#') continue;
+			ok[u][v]=true;
+			q.push({u,v});
+		}
+	}
+	cout<<(ok[h-1][w-1]?"Yes":"No")<<"\n";
+	return 0;
+} 

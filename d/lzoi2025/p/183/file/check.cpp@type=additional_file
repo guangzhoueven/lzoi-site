@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using i64 = long long;
+
+i64 solve(vector<int>& a, int m) {
+    int n = a.size();
+    i64 ans = 0;
+
+    for (int l = 0; l < n; l++) {
+        // a[r] 是最小的数使得 a[l] + a[r] >= m
+        int r = lower_bound(a.begin() + l + 1, a.end(), m + a[l]) - a.begin();
+        ans += n - r;
+    }
+    return ans;
+}
+
+int main() {	
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+    
+    int n, m;
+    cin >> n >> m;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) cin >> a[i];
+    cout << solve(a, m) << '\n';
+
+    return 0;
+}

@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+vector<i64> euler(i64 n) {
+	vector<bool> is_prime(n + 1, true);
+	vector<i64> p;
+	for (i64 i = 2; i <= n; i++) {
+		if (is_prime[i]) p.push_back(i);
+
+		for (auto t : p) {
+			if (i * t > n) break;
+			is_prime[i * t] = false;
+
+			if (i % t == 0) break;
+		}
+	}
+	return p;
+}
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, q;
+	cin >> n >> q;
+	vector<i64> prime = euler(n);
+
+	while (q--) {
+		i64 x;
+		cin >> x;
+		cout << prime[x - 1] << "\n";
+	}
+	return 0;
+}

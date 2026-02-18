@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    int n;
+    cin >> n;
+    vector<int> nums(n);
+    for (int i = 0; i < n; ++i) 
+        cin >> nums[i];
+    sort(nums.begin(), nums.end()); // 默认升序排序
+    /* (1) 当 ak 为负数时，需要 (ai+aj) 尽可能大，则乘积会更小
+       (2) 当 ak 为正数时，需要 (ai+aj) 尽可能小，则乘积会更小
+       (3) 当 ak 为 0 时，乘积总是 0  */
+ 
+    long long min_val = LLONG_MAX;  //LLONG_MAX :9223372036854775807,LLONG_MAX :9223372036854775807,INT_MIN :-2147483648,INT_MAX :2147483647
+ 
+    // case1: 两个最小的数 * 最大的数
+    min_val = min(min_val, (long long)(nums[0] + nums[1]) * nums.back());
+    // case2: 两个最大的数 * 最小的数
+    min_val = min(min_val, (long long)(nums[n-2] + nums[n-1]) * nums[0]);
+    // case3: 三个最小的数（如果存在负数）
+    if (n >= 5) {
+        min_val = min(min_val, (long long)(nums[0] + nums[2]) * nums[1]);
+        min_val = min(min_val, (long long)(nums[1] + nums[2]) * nums[0]);
+    }
+    // case4: 三个最大的数（如果存在正数）
+    if (n >= 5) {
+        min_val = min(min_val, (long long)(nums[n-3] + nums[n-2]) * nums[n-1]);
+        min_val = min(min_val, (long long)(nums[n-3] + nums[n-1]) * nums[n-2]);
+    }
+ 
+    cout << min_val << endl;
+ 
+    return 0;
+}

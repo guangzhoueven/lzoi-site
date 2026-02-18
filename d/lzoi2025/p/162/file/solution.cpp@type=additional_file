@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using i64 = long long;
+const int P = 998244353;
+
+int gao(const vector<int>& a) {
+    int n = a.size();
+
+    // L(i): 左边第一个 <= a[i] 的数的下标 
+    vector<int> L(n, -1);
+
+    // R(i): 右边第一个 < a[i] 的数的下标
+    vector<int> R(n, n);
+
+    vector<int> s(n);
+    int e = 0;  // s 中元素的个数
+
+    for (int i = 0; i < n; i++) {
+        // 在 st 里从后往前找到第一个 <= a[i]
+        // 出栈的时候确定右边第一个 < a[s[e - 1]] 的就是 a[i]
+        while (e > 0 && a[s[e - 1]] > a[i]) R[s[--e]] = i;
+
+        // 入栈的时候确定左边第一个 <= a[i] 的
+        if (e != 0) L[i] = s[e - 1];
+        s[e++] = i;
+    }
+
+    // 最后 s 里剩下的肯定是单调不降的
+    for (int i = 1; i < e; i++) L[s[i]] = s[i - 1];
+
+    i64 ans = 0;
+    for (int i = 0; i < n; i++) {
+        ans = (ans + (i64) (i - L[i]) * (R[i] - i) * a[i]) % P;
+    }
+    return ans;
+}
+
+int main() {	
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) cin >> a[i];
+    cout << gao(a) << '\n';
+
+    return 0;
+}

@@ -1,0 +1,118 @@
+// https://acm.hdu.edu.cn/viewcode.php?rid=40166358
+// 1107MS 61332K
+#include <bits/stdc++.h>
+#define repe(i, u) for (int i = head[u]; i != -1; i = nxt[i])
+using namespace std;
+
+using i64 = long long;
+const int P = 998244353;
+
+// 冷门科技 —— DFS 序求 LCA: https://www.luogu.com.cn/article/pu52m9ue
+// https://www.luogu.com.cn/record/211492413
+// 1.05s
+struct DfsLca {
+    int n;    // 点的个数, 从 1 开始
+    int e;    // 边的个数, 从 0 开始
+    int cnt;  // 用于计算 dfs 序, 从 1 开始
+
+    vector<int> head, pnt, nxt;   // 链式前向星
+    vector<int> dfn;              // 表示节点 x 的 dfs 序, 从 1 开始编号
+    vector<vector<int>> st;       // st 表, 用来求 2 点的 lca
+    vector<vector<int>> lca_st;   // st 表, 用来求相邻 lca 的最小值
+
+    // n_: 点的个数, m: 边的个数
+    DfsLca(int n_, int m) {
+        n = n_;
+        e = 0, cnt = 0;
+        head.assign(n + 1, -1);        // 点从 1 开始
+        pnt.resize(m), nxt.resize(m);  // 边从 0 开始
+
+        dfn.resize(n + 1);  // dfs 序
+        st.assign(__lg(n) + 1, vector<int>(n + 1, n + 1));
+        lca_st.assign(__lg(n - 1) + 1, vector<int>(n, n));
+    }
+
+    void add_edge(int u, int v) {
+        pnt[e] = v;
+        nxt[e] = head[u], head[u] = e++;
+    }
+
+    // 求 dfs 序 dfn
+    void dfs(int u, int fa) {
+        st[0][dfn[u] = ++cnt] = fa;  // st 表最低下存 fa
+        repe (i, u) if (pnt[i] != fa) dfs(pnt[i], u);
+    }
+
+    int get(int x, int y) {
+        return dfn[x] < dfn[y] ? x : y;
+    }
+
+    // 返回 u, v 的 lca
+    int lca(int u, int v) {
+        if (u == v) return u;
+        if ((u = dfn[u]) > (v = dfn[v])) swap(u, v);
+        int d = __lg(v - u);
+        return get(st[d][u + 1], st[d][v - (1 << d) + 1]);
+    }
+
+    void run(int rt = 1) {
+        dfs(rt, 0);  // 从 1 开始编号, fa 设为 0, 不能是 -1, 否则 P42 会出现 dfn[-1]
+        for (int i = 1; i <= __lg(n); i++) {
+            for (int j = 1; j + (1 << i) - 1 <= n; j++) {
+                st[i][j] = get(st[i - 1][j], st[i - 1][j + (1 << i - 1)]);
+            }
+        }
+        for (int i = 1; i <= n - 1; i++) lca_st[0][i] = lca(i, i + 1);
+        for (int i = 1; i <= __lg(n - 1); i++) {
+            for (int j = 1; j + (1 << i) - 1 <= n - 1; j++) {
+                lca_st[i][j] = get(lca_st[i - 1][j], lca_st[i - 1][j + (1 << i - 1)]);
+            }
+        }
+    }
+
+    // 返回 [l, l + 1, ..., r - 1, r] 的 lca
+    // 思路来自: https://www.cnblogs.com/keysky/p/18678644
+    int lca_range(int l, int r) {
+        if (l == r) return l;
+        
+        // 找到 [l, r] 中相邻 2 个点的 lca 的最小值
+        // 这里一定要是整个区间的长度(这里是 [l, r - 1], 所以区间长度是 r - l)
+        // 不能是 r - l - 1, 会 RE 
+        int d = __lg(r - l);
+        return get(lca_st[d][l], lca_st[d][r - (1 << d)]);  // [l, r - 1]
+    }
+};
+
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr); cout.tie(nullptr);
+
+    int n, q, rt = 1, x, y;
+    cin >> n;
+
+    // dfs 序求 LCA
+    DfsLca dl(n, 2 * (n - 1));
+    for (int i = 1; i < n; i++) {
+        cin >> x >> y;
+        dl.add_edge(x, y);
+        dl.add_edge(y, x);
+    }
+    dl.run(rt);
+
+    vector<vector<i64>> g(n + 1, vector<i64>(n + 1, 0));
+    for (int i = 1; i <= n; i++) {
+        for (int j = i; j <= n; j++) {
+            g[i][j] = g[i][j - 1] + dl.lca_range(i, j);
+        }
+    }
+
+    cin >> q;
+    while (q--) {
+        cin >> x >> y;
+        i64 ans = 0;
+        for (int i = x; i <= y; i++) ans += g[i][y];
+        cout << ans << '\n';
+    }
+    return 0;
+}

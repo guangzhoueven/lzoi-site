@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n, m;   cin >> n >> m;
+	vector<string> maze(n);  	
+	for (int i = 0; i < n; i++) cin >> maze[i];			// 迷宫（n行长度为m的"#"、"."字符串
+	if (maze[0][0] == '#' || maze[n-1][m-1] == '#') { 	// 若起点和终点都是障碍，根本无法通过
+		cout << "No" << "\n";
+		return 0;
+	}
+
+	queue<pair<int, int>> qp;	// 左边（x,y)的队列
+	vector<vector<bool>> visited(n, vector<bool>(m, false)); // 访问标记，初始化0（未访问）
+	qp.push({0, 0});
+	visited[0][0] = true;  // 起点入队列，标记已访问
+	
+	bool ans = false;
+	while (!qp.empty()) {
+		auto current = qp.front();  // 取队首
+		qp.pop();
+	
+		// 机器猫只能走到左、上、右、下四个方向的空地
+		vector<int> dx = {-1, 0, 1,  0};
+		vector<int> dy = {0,  1, 0, -1};
+		int x = current.first;		// 取队首坐标
+		int y = current.second;
+		if (x == n - 1 && y == m - 1) {	// 达到终点
+			ans = true;
+			break;
+		}
+		
+		for (int k = 0; k < 4; k++) {  	// 更新坐标
+			int nx = x + dx[k], ny = y + dy[k];
+			// 边界检查
+			if (nx >= 0 && nx < n && ny >= 0 && ny < m && maze[nx][ny] == '.' && !visited[nx][ny]) {
+				visited[nx][ny] = true;
+				qp.push({nx, ny});
+			}
+		}
+	}
+	cout << (ans ? "Yes" : "No") << "\n";	
+	return 0;
+}

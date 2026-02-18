@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0); 
+	int n;
+	cin >> n;
+	vector<int> a(n);
+	vector<int> arr1, arr2;
+	
+	for (int i = 0; i < n; ++i) {
+		cin >> a[i];
+		if (a[i] % 2 == 0) {
+			arr2.push_back(a[i]);
+		} else {
+			arr1.push_back(a[i]);
+		}
+	}
+	
+	sort(arr1.begin(), arr1.end());
+	sort(arr2.begin(), arr2.end());
+	
+	int arr1_p = 0, arr2_p = 0;
+	for (int i = 0; i < n; ++i) {
+		if (a[i] % 2 == 0) {
+			a[i] = arr2[arr2_p++];
+		} else {
+			a[i] = arr1[arr1_p++];
+		}
+	}
+	
+	for (int i = 0; i < n; ++i) 
+		cout << a[i] << " ";
+	cout << '\n';
+	
+	return 0;
+}

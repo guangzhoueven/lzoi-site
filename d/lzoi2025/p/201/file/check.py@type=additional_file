@@ -1,0 +1,26 @@
+# https://leetcode.cn/problems/contiguous-array/solutions/3805089/shi-zi-bian-xing-mei-ju-you-wei-hu-zuo-p-x9q2/
+import math
+from typing import List
+from bisect import bisect_right
+from collections import deque
+from collections import defaultdict
+
+class Solution:
+    def findMaxLength(self, nums: List[int]) -> int:
+        # 前缀和数组的首项 0 相当于在 -1 下标
+        pos = {0: -1}
+        ans = s = 0
+        for i, x in enumerate(nums):
+            s += 1 if x else -1
+            if s in pos:
+                ans = max(ans, i - pos[s])
+            else:
+                pos[s] = i
+        return ans
+
+T = int(input())
+for _ in range(T):
+    n = int(input())
+    a = map(int, input().split(' '))
+    sol = Solution()
+    print(sol.findMaxLength(a))

@@ -1,0 +1,59 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+    
+    int n, m, L;
+    cin >> n >> m >> L;
+    
+    vector<pair<int, int>> a(n), b(m);  // 1 <= a[n],b[m] <= 10^9
+    for (int i = 0; i < n; i++) {
+        cin >> a[i].first;
+        a[i].second = i + 1;
+    }
+    for (int i = 0; i < m; i++) {
+        cin >> b[i].first;
+        b[i].second = i + 1;
+    }
+    
+    sort(a.rbegin(), a.rend());  //反转排序，降序
+    sort(b.rbegin(), b.rend());  //反转排序，降序
+    
+    unordered_set<long long> SS;  //无序集合，元素唯一
+    SS.reserve(L);
+    for (int i = 0; i < L; i++) {
+        int x, y;
+        cin >> x >> y;
+        SS.insert((long long)x << 32 | y);
+    }
+    
+    priority_queue<tuple<int, int, int>> pq;
+    pq.emplace(a[0].first + b[0].first, 0, 0);
+    unordered_set<long long> visited;
+    visited.insert(0);
+    
+    while (!pq.empty()) {
+        auto [sum, i, j] = pq.top();
+        pq.pop();
+        
+        int x = a[i].second;
+        int y = b[j].second;
+        if (!SS.count((long long)x << 32 | y)) {
+            cout << sum << "\n";
+            return 0;
+        }
+        
+        if (i + 1 < n && !visited.count((long long)(i + 1) << 32 | j)) {
+            pq.emplace(a[i + 1].first + b[j].first, i + 1, j);
+            visited.insert((long long)(i + 1) << 32 | j);
+        }
+        if (j + 1 < m && !visited.count((long long)i << 32 | (j + 1))) {
+            pq.emplace(a[i].first + b[j + 1].first, i, j + 1);
+            visited.insert((long long)i << 32 | (j + 1));
+        }
+    }
+    
+    return 0;
+}

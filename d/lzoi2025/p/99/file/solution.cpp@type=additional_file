@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
+	
+	int n, T;
+	cin >> T;
+	while (T--) {
+		cin >> n;
+		vector<int> b(n);
+		for (int& x : b) cin >> x;
+		
+		int maxi = 2 * b[0], ok = 1;
+		for (int i = 1; i < n; i++) {
+			if (b[i] >= maxi) {
+				ok = 0;
+				break;
+			}
+			maxi = min(maxi, 2 * b[i]);
+		}
+		cout << (ok ? "YES" : "NO") << '\n';
+	}
+	return 0;
+}

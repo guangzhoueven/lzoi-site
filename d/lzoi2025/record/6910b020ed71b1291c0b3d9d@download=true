@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+const i64 MOD = 998244353;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n;
+	cin >> n;
+	vector<i64> a(n);
+	for (auto& x : a) cin >> x;
+
+	vector<i64> L(n, -1), R(n, n);
+	vector<i64> st;
+
+	for (i64 i = 0; i < n; i++) {
+		while (!st.empty() && a[st.back()] > a[i]) {
+			R[st.back()] = i;
+			st.pop_back();
+		}
+		if (!st.empty()) L[i] = st.back();
+		st.push_back(i);
+	}
+
+	i64 ans = 0;
+	for (i64 i = 0; i < n; i++)
+		ans = (ans + (i64)a[i] * (i - L[i]) * (R[i] - i)) % MOD;
+	cout << ans << "\n";
+	return 0;
+}

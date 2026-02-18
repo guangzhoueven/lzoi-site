@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html data-page="homework_main" data-layout="basic" class="layout--basic page--homework_main theme--dark nojs" data-mantine-color-scheme="dark" lang="zh_TW" data-app="Hydro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.gzlzoi.cn/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="../../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://www.gzlzoi.cn/homework">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="乐知课堂" />
+  <meta property="og:url" content="https://www.gzlzoi.cn/homework" />
+  <meta property="og:image" content="/favicon-96x96.png" />
+      <title>功課 - 乐知课堂</title>
+  <style>
+    body {
+      --font-family: "Microsoft Yahei", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Consolas", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="../../theme-4.58.0-beta.17.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      window.UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","hydroacFeatures":[],"blspHost":"wss://ws.hydrooj.com","constantVersion":"1c07a499","domainId":"lzoi2025","domain":{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"},"SWConfig":{"preload":"","hosts":["http://www.gzlzoi.cn","https://www.gzlzoi.cn","https://www.gzlzoi.cn/","/"],"assets":[],"domains":[]}}';
+      window.UserContext = '{"_id":39,"mail":"202610319@gzlzoi.cn","uname":"202610319","hashType":"hydro","priv":4,"regat":"2025-07-01T02:30:33.477Z","loginat":"2026-02-06T00:24:21.126Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921","role":"\u5B66\u751F","scope":"BigInt::-1","tfa":false,"authn":false,"group":["20250702\u4E0A\u5348","\u4E34\u65F6\u5C0F\u7EC4","20250804\u4E0A\u5348","39"],"domains":[{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"}],"viewLang":"zh_TW","timeZone":"Asia/Shanghai","codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","avatar":"gravatar:202610319@gzlzoi.cn","qq":"","gender":"2","bio":"<blockquote class=\\"note\\">\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: yellow;\\">\u4E66\u5C71\u6709\u8DEF\u52E4\u4E3A\u5F84\uFF0C\u5B66\u6D77\u65E0\u6DAF\u82E6\u4F5C\u821F\u3002</p></h3>\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: #12DA72;\\">Diligence is the path to the mountain of knowledge, hard-working is the boat to the endless sea of learning.</p></h3>\\r\\n</blockquote>","school":"\u5E7F\u5DDE\u5E02\u5929\u6CB3\u533A\u9A8F\u666F\u5C0F\u5B66","studentId":"","backgroundImage":"/d/lzoi2025/file/39/%E4%B9%90%E7%9F%A5%E8%AF%BE%E5%A0%82%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.png","unreadMsg":0,"pinnedDomains":["lzoi2025"],"rounded":true,"skipAnimate":false,"showTimeAgo":true,"fontFamily":"Microsoft Yahei","codeFontFamily":"Consolas","theme":"dark","preferredEditorType":"sv","showInvisibleChar":false,"formatCode":true,"displayName":"\u9EC4\u98DE\u535A","rpInfo":{"problem":237.2780396214451,"contest":8.25},"nAccept":191,"nSubmit":194,"rp":245.5280396214451,"rank":2,"level":8,"join":true,"avatarUrl":"//cn.gravatar.com/avatar/2dbb0a041212ea8df395e4d4418e92fa?d=mm&s=128"}';
+    </script>
+      </head>
+<body>
+      <script type="text/javascript" src="../../resource/1c07a499/entry.js"></script>
+    <script type="text/javascript" src="../../resource/4.58.0-beta.17/lang-zh_TW.js"></script>
+    <script type="text/javascript" src="../../hydro-4.58.0-beta.17.js"></script>
+    <nav class="nav slideout-menu" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://www.gzlzoi.cn/"><img class="nav__logo" src="../../components/navigation/nav-logo-small_dark.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="index.html" class="nav__item">
+    首頁
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="set_theme/dark.html" class="nav__item">
+    題庫
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="training.html" class="nav__item">
+    訓練
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="contest.html" class="nav__item">
+    比賽
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="homework.html" class="nav__item nav--active">
+    功課
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="discuss.html" class="nav__item">
+    討論
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="record@uidOrName=39.html" class="nav__item">
+    評測佇列
+  </a>
+</li>
+      </ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+              <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-domain" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <span class="nav__item"><span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span> lzoi2025 <span class="icon icon-expand_more nojs--hide"></span></span>
+        <ol class="dropdown-target menu" id="menu-nav-domain"><li class="menu__item">
+              <a href="index.html" class="menu__link">
+                <span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span>
+                lzoi2025              </a>
+            </li><li class="menu__seperator"></li><li class="menu__item">
+            <a href="home/domain.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 管理
+            </a>
+          </li>
+        </ol>
+      </li>
+          <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <a href="user/39.html" class="nav__item">202610319 <span class="icon icon-expand_more nojs--hide"></span></a>
+        <ol class="dropdown-target menu" id="menu-nav-user">
+          <li class="menu__item">
+            <a href="user/39.html" class="menu__link">
+              <span class="icon icon-account--circle"></span> 我的資料
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="home/messages.html" class="menu__link">
+              <span class="icon icon-comment--multiple"></span> 站內訊息
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="home/settings/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> @ lzoi2025
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="home/settings/account.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 賬戶設定
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="home/settings/preference.html" class="menu__link">
+              <span class="icon icon-sliders"></span> 偏好設定
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="home/security.html" class="menu__link">
+              <span class="icon icon-security"></span> 安全設定
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="home/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> 我的域
+            </a>
+          </li>
+                              <li class="menu__seperator"></li>
+                    <li class="menu__item">
+            <a href="logout.html" class="menu__link" name="nav_logout">
+              <span class="icon icon-logout"></span> 登出
+            </a>
+          </li>
+        </ol>
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://www.gzlzoi.cn/" target="_self">
+        <img src="../../components/navigation/nav-logo-small_dark.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+        
+<div class="row">
+  <div class="medium-12 columns">
+    <div class="section">
+      <div class="section__header">
+        <h1 class="section__title">所有功課</h1>
+        <div class="section__tools">
+          <span class="nojs--hide">
+            檢視:
+            <select class="inline compact select" name="homework_display">
+              <option value="calendar">日曆檢視</option>
+              <option value="list" selected>列表檢視</option>
+            </select>
+          </span>
+          <form method="get" class="filter-form" name="filter-form">
+            <input type="text" class="inline compact textbox" name="q" value="" placeholder="搜尋作業...">
+            <select class="inline compact select" name="group">
+              <option value="" selected>全部</option><option value="20250702上午">20250702上午</option><option value="临时小组">临时小组</option><option value="20250804上午">20250804上午</option></select>
+            <button type="submit" class="compact button hasjs--hide">
+              搜尋
+            </button>
+          </form>
+                </div>
+      </div>
+      <div class="section__body no-padding">
+              <ol class="section__list homework__list"><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1818950340">22</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1818950340">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/6947b8bf94db19114128b9c2.html" data-emoji-enabled>【2026-01-10】学校要封校，不能上课，我们寒假再见（请大家点开作业）</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1767744000">2026-1-7 8:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818950340">2027-8-22 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1818863940">21</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1818863940">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/6938cbac736919eae1137a6c.html" data-emoji-enabled>【算法入门-21】生成树与并查集</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1765584000">2025-12-13 8:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818863940">2027-8-21 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1818777540">20</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1818777540">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/692ed81da16808069bde8c9e.html" data-emoji-enabled>【算法入门-20】前缀和优化技巧</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1764979200">2025-12-6 8:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818777540">2027-8-20 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1818691140">19</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1818691140">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/692671f0ce9c6f6f1ad9ba22.html" data-emoji-enabled>【算法入门-19】神奇的根号算法</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1764374400">2025-11-29 8:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818691140">2027-8-19 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1818604740">18</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1818604740">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/691afe5917726c08837084b7.html" data-emoji-enabled>【算法入门-18】尺取法和双指针</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1763769600">2025-11-22 8:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818604740">2027-8-18 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1818518340">17</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1818518340">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/6915789c648edc5ab68a9f17.html" data-emoji-enabled>【算法入门-17】如何设计你的状态</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1763164800">2025-11-15 8:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818518340">2027-8-17 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1818431940">16</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1818431940">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/69085f10fd80d5b0ebdc54da.html" data-emoji-enabled>【算法入门-16】贡献思维和单调栈</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1762560000">2025-11-8 8:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818431940">2027-8-16 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1818345540">15</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1818345540">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/68d9d6717fd8fcac1ed2807f.html" data-emoji-enabled>【算法入门-15】数论分块</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1764604800">2025-12-2 0:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818345540">2027-8-15 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1818259140">14</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1818259140">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/68d762cbc69a4e0706158d7e.html" data-emoji-enabled>【算法入门-14】筛法只能求质数？</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1759881600">2025-10-8 8:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818259140">2027-8-14 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1818172740">13</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1818172740">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/68c28292fe802d7961adcfcd.html" data-emoji-enabled>【算法入门-13】区间统计问题研究</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1757721600">2025-9-13 8:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818172740">2027-8-13 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1818086340">12</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1818086340">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/68b555293ef0b4af1ee9bdd2.html" data-emoji-enabled>【算法入门-12】经典动态规划问题</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1764374400">2025-11-29 8:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818086340">2027-8-12 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1817999940">11</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1817999940">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/68b5545c3ef0b4af1ee9bdc7.html" data-emoji-enabled>【算法入门-11】暴力枚举的艺术</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1760486400">2025-10-15 8:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1817999940">2027-8-11 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1817913540">10</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1817913540">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/68b5516c3ef0b4af1ee9bdb8.html" data-emoji-enabled>【算法入门-10】背包九讲</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1757721600">2025-9-13 8:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1817913540">2027-8-10 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1817827140">9</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1817827140">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/68b550933ef0b4af1ee9bdb6.html" data-emoji-enabled>【算法入门-09】二分枚举与按位枚举</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1757116800">2025-9-6 8:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1817827140">2027-8-9 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1817740740">8</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1817740740">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/689c3e70256bc353a88824f8.html" data-emoji-enabled>【算法入门-08】听说大家都学过贪心</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1755129600">2025-8-14 8:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1817740740">2027-8-8 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1817654340">7</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1817654340">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/689ae85ef8a9d7efd04acea0.html" data-emoji-enabled>【算法入门-07】神奇的树状数组</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1755043200">2025-8-13 8:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1817654340">2027-8-7 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1817567940">6</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1817567940">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/689993ef3466cac7af56b652.html" data-emoji-enabled>【算法入门-06】听说大家喜欢数学题</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1754956800">2025-8-12 8:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1817567940">2027-8-6 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1817481540">5</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1817481540">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/68944890c2f34c36e4fe8b2e.html" data-emoji-enabled>【算法入门-05】图论与最短路算法</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1754611200">2025-8-8 8:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1817481540">2027-8-5 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1817395140">4</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1817395140">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/6887290a5c77c0f877120fc9.html" data-emoji-enabled>【算法入门-04】网格寻路与bfs</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1754269200">2025-8-4 9:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1817395140">2027-8-4 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li><li class="section__list__item homework__item">
+            <div class="media">
+              <div class="media__left medium">
+                <div class="homework__date numbox">
+                  <div class="numbox__num large"><span class="time" data-timestamp="1817308740">3</span></div>
+                  <div class="numbox__text"><span class="time" data-timestamp="1817308740">2027-8</span></div>
+                </div>
+              </div>
+              <div class="media__body medium">
+                <h1 class="homework__title"><a href="homework/685e36acc6c0836c1dd8328e.html" data-emoji-enabled>【算法入门-03】STL库的应用</a></h1>
+                <ul class="supplementary list">
+                  <li>狀態: 正在進行…</li>
+                  <li>開始時間: <span class="time relative" data-timestamp="1751414400">2025-7-2 8:00:00</span></li>
+                  <li>
+                                      截止時間: <span class="time relative" data-timestamp="1817308740">2027-8-3 23:59:00</span>
+                                    </li>
+                </ul>
+              </div>
+            </div>
+          </li></ol>
+          <ul class="pager pager-bottom"><li>
+          <span class="pager__item current">1</span>
+        </li><li>
+          <a class="pager__item page link" href="homework@page=2.html">2</a>
+        </li><li>
+          <a class="pager__item next link" href="homework@page=2.html">下一頁 ›</a>
+        </li></ul>
+
+        <div name="calendar_entry"></div>
+            </div>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+      <div class="row footer__links">
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          狀態
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://www.gzlzoi.cn/d/lzoi2025/record">評測佇列</a></li>
+          <li class="footer__category__item"><a href="status.html">服務狀態</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          開發
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">開源</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          支援
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="wiki/help.html">幫助</a></li>
+          <li class="footer__category__item"><a href="wiki/about.html#contact">聯絡我們</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable end">
+        <h1>
+          關於
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="wiki/about.html">關於</a></li>
+          <li class="footer__category__item"><a href="wiki/about.html#privacy">隱私</a></li>
+          <li class="footer__category__item"><a href="wiki/about.html#tos">服務條款</a></li>
+          <li class="footer__category__item"><a href="wiki/about.html#contact">版權申訴</a></li>
+        </ul></div>
+      </div>
+    </div>
+      <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+                    <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-lang"><li class="menu__item"><a class="menu__link" href="language/en.html">English</a></li><li class="menu__item"><a class="menu__link" href="language/ko.html">한국어</a></li><li class="menu__item"><a class="menu__link" href="language/zh.html">简体中文</a></li><li class="menu__item"><a class="menu__link" href="language/zh_TW.html">正體中文</a></li></ol>
+          </li>
+          <li class="footer__extra-link-item">
+                          <a href="https://www.gzlzoi.cn/legacy?legacy=true">相容模式</a>
+                      </li>
+          <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> 主題 <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-theme">
+              <li class="menu__item"><a class="menu__link" href="set_theme/light.html">亮色</a></li>
+              <li class="menu__item"><a class="menu__link" href="set_theme/dark.html">暗色</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><a href="https://beian.miit.gov.cn/">京ICP备2023010486号-3</a></li><li class="footer__extra-link-item">Worker 0, 12ms</li>
+          <!-- Prepare 0ms -->
+          <!-- Method 4ms -->
+          
+          
+          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v5.0.0-beta.16</a> Community</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      window.UiContextNew = '{"docs":[{"_id":"6947b8bf94db19114128b9c2","content":"\u30102026-01-10\u3011\u5B66\u6821\u8981\u5C01\u6821\uFF0C\u4E0D\u80FD\u4E0A\u8BFE\uFF0C\u6211\u4EEC\u5BD2\u5047\u518D\u89C1\\r\\n- \u4F5C\u4E1A\u91CC\u9762\u662F\u4E00\u4E9B\u5927\u5BB6\u505A\u7684\u4E0D\u597D\u7684\u9898\u76EE\uFF0C\u8BF7\u5927\u5BB6\u8BA4\u771F\u5B8C\u6210","owner":2,"domainId":"lzoi2025","docType":30,"docId":"6947b8bf94db19114128b9c2","assign":["20250804\u4E0A\u5348"],"penaltySince":"2027-08-22T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"title":"\u30102026-01-10\u3011\u5B66\u6821\u8981\u5C01\u6821\uFF0C\u4E0D\u80FD\u4E0A\u8BFE\uFF0C\u6211\u4EEC\u5BD2\u5047\u518D\u89C1\uFF08\u8BF7\u5927\u5BB6\u70B9\u5F00\u4F5C\u4E1A\uFF09","rule":"homework","beginAt":"2026-01-07T00:00:00.000Z","endAt":"2027-08-22T15:59:00.000Z","pids":[424,425,426,428,427,68,429,430,433,431,432],"attend":39,"rated":false,"langs":[],"maintainer":[2],"url":"/d/lzoi2025/homework/6947b8bf94db19114128b9c2"},{"_id":"6938cbac736919eae1137a6c","content":"\u3010\u7B97\u6CD5\u5165\u95E8-21\u3011\u751F\u6210\u6811\u4E0E\u5E76\u67E5\u96C6\\r\\n\\r\\n- \u8BFE\u4EF6\\r\\n  - [\u751F\u6210\u6811\u4E0E\u5E76\u67E5\u96C6.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/6938cbac736919eae1137a6c/file/public/%E7%94%9F%E6%88%90%E6%A0%91%E4%B8%8E%E5%B9%B6%E6%9F%A5%E9%9B%86.pdf)\\r\\n  - \u8FD9\u5468\u7684\u4F5C\u4E1A\u5148\u4E0D\u7528\u505A\uFF0C\u6211\u4EEC\u540E\u9762\u8FD8\u4F1A\u518D\u8BB2 \\r\\n\\r\\n\x3C!-- - 1\u3001\u5176\u5B9E\u8001\u5E08\u662F\u60F3\u8BB2 $\\\\color{orange}{\u500D\u589E\u6CD5}$ \u7684\\r\\n- 2\u3001\u4F46\u662F\u8BB2 $\\\\color{orange}{\u500D\u589E\u6CD5}$ \uFF0C\u6700\u6709\u8DA3\u7684\u5B9E\u9645\u4E0A\u662F\u5404\u79CD $\\\\color{orange}{\u6811\u4E0A\u500D\u589E}$\\r\\n- 3\u3001\u4F46\u7531\u4E8E\u6211\u4EEC\u53EA\u5B66\u8FC7 $\\\\color{orange}{\u56FE\u548C\u6700\u77ED\u8DEF}$\uFF0C\u6CA1\u5B66\u8FC7 $\\\\color{orange}{\u6811}$\uFF08\u662F\u4E00\u79CD\u7279\u6B8A\u7684\u56FE\uFF09\\r\\n- 4\u3001\u6240\u4EE5\u6211\u4EEC\u8FD9\u8282\u8BFE\u5148\u8BB2 $\\\\color{orange}{\u6811}$\\r\\n- 5\u3001\u800C\u8BB2\u5230\u6811\uFF0C\u5C31\u4E0D\u5F97\u4E0D\u63D0 $\\\\color{orange}{\u6700\u5C0F\u751F\u6210\u6811}$ \u548C $\\\\color{orange}{\u5E76\u67E5\u96C6}$\\r\\n- 6\u3001\u5E76\u67E5\u96C6\u4E0E\u7EBF\u6BB5\u6811\uFF0C\u6811\u72B6\u6570\u7EC4\uFF0C\u5E76\u79F0\u4E3A $\\\\color{orange}{\u4E09\u5927\u6570\u636E\u7ED3\u6784}$\uFF0C\u540C\u6837\u7684\u7B80\u6D01\uFF0C\u597D\u7528\uFF0C\u795E\u5947\uFF01\uFF01 -->\\r\\n\\r\\n- B \u7AD9\u5B66\u4E60\u89C6\u9891\uFF1A\\r\\n  - 1\u3001[\u5E76\u67E5\u96C6 - \u57FA\u672C\u64CD\u4F5C, \u8DEF\u5F84\u538B\u7F29, \u6309\u79E9\u5408\u5E76](https://www.bilibili.com/video/BV1zZRSYUEWV/?share_source=copy_web&vd_source=037e882c0cdcb03fb30079bba610dae3)\\r\\n  \x3C!-- - 2\u3001[\u5E76\u67E5\u96C6(Union Find]( https://www.bilibili.com/video/BV1LojAzfEoj/?share_source=copy_web&vd_source=037e882c0cdcb03fb30079bba610dae3)\\r\\n  - 3\u3001[\u7B97\u6CD5\uFF1A\u201C\u4F60\u4EEC\u662F\u540C\u4E00\u4E2A\u5BB6\u65CF\u7684\uFF1F\u90A3\u4ED6\u5C31\u662F\u4F60\u7239\u4E86\u201D](https://www.bilibili.com/video/BV1ge4y1b78w/?share_source=copy_web&vd_source=037e882c0cdcb03fb30079bba610dae3) -->\\r\\n\\r\\n- \u5E76\u67E5\u96C6\u6A21\u677F\uFF08\u5982\u679C\u4F60\u4E0D\u60F3\u5199\u8FD9\u4E48\u957F\uFF0C\u8BF7\u81EA\u5DF1\u4FEE\u6539\uFF09\\r\\n\\r\\n```cpp\\r\\n// \u5E76\u67E5\u96C6(Union-Find Disjoint Sets/DSU)\\r\\nstruct DSU {\\r\\n    int n;\\r\\n    vector<int> f, sz;\\r\\n\\r\\n    DSU(int N): n(N) {\\r\\n        // \u5C06 f \u7684 size \u8BBE\u7F6E\u4E3A n + 1\\r\\n        f.resize(n + 1);\\r\\n\\r\\n        // \u76F8\u5F53\u4E8E for (int i = 0; i <= n; i++) f[i] = i;\\r\\n        // \u5C06\u4ECE 0 \u5F00\u59CB\u7684\u4E00\u6BB5\u8FDE\u7EED\u7684\u6570\u8D4B\u503C\u7ED9 f.begin() \u5230 f.end()\\r\\n        iota(f.begin(), f.end(), 0);\\r\\n\\r\\n        // \u5C06 sz \u7684 size \u8BBE\u7F6E\u4E3A n + 1, \u5E76\u521D\u59CB\u5316\u4E3A 1\\r\\n        sz.assign(n + 1, 1);\\r\\n\\r\\n        // \u5BF9\u4E8E vector \u7684\u521D\u59CB\u5316\\r\\n        // \u5982\u679C\u53EA\u9700\u8981\u8BBE\u7F6E size, \u4E0D\u9700\u8981\u8BBE\u7F6E\u521D\u503C, \u7528 resize\\r\\n        // \u5982\u679C\u65E2\u9700\u8981\u8BBE\u7F6E size, \u4E5F\u9700\u8981\u8BBE\u7F6E\u521D\u503C, \u7528 assign\\r\\n    }\\r\\n\\r\\n    // \u8DEF\u5F84\u538B\u7F29\\r\\n    int find(int x) {\\r\\n        return f[x] == x ? f[x] : f[x] = find(f[x]);\\r\\n    }\\r\\n\\r\\n    // \u5224\u65AD x, y \u662F\u5426\u5728\u540C\u4E00\u96C6\u5408\\r\\n    bool same(int x, int y) {\\r\\n        return find(x) == find(y);\\r\\n    }\\r\\n\\r\\n    // \u542F\u53D1\u5F0F\u5408\u5E76\\r\\n    int merge(int x, int y) {\\r\\n        x = find(x), y = find(y);\\r\\n        if (x == y) return x;\\r\\n      \\r\\n        // \u5C06 sz\u5C0F\u7684 \u5408\u5E76\u5230 sz\u5927\u7684\\r\\n        if (sz[x] < sz[y]) swap(x, y);\\r\\n        sz[x] += sz[y], f[y] = x;\\r\\n      \\r\\n        return x;\\r\\n    }\\r\\n\\r\\n    // \u8FD4\u56DE x \u6240\u5728\u7684\u96C6\u5408\u7684\u5927\u5C0F\\r\\n    int size(int x) {\\r\\n        return sz[find(x)];\\r\\n    }\\r\\n};\\r\\n```","owner":2,"domainId":"lzoi2025","docType":30,"docId":"6938cbac736919eae1137a6c","assign":["20250804\u4E0A\u5348"],"penaltySince":"2027-08-21T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"title":"\u3010\u7B97\u6CD5\u5165\u95E8-21\u3011\u751F\u6210\u6811\u4E0E\u5E76\u67E5\u96C6","rule":"homework","beginAt":"2025-12-13T00:00:00.000Z","endAt":"2027-08-21T15:59:00.000Z","pids":[209,217,210,211,212,213,216,433,214,215],"attend":37,"rated":false,"langs":[],"maintainer":[2],"files":[{"_id":"\u751F\u6210\u6811\u4E0E\u5E76\u67E5\u96C6.pdf","name":"\u751F\u6210\u6811\u4E0E\u5E76\u67E5\u96C6.pdf","size":2475312,"lastModified":"2025-12-13T05:29:11.635Z","etag":"L2RhdGEvZmlsZS9oeWRyby94bTgvOHFwM2hyb2Q0eGN3OHk5ZTdiZXNjLnBkZg=="}],"url":"/d/lzoi2025/homework/6938cbac736919eae1137a6c"},{"_id":"692ed81da16808069bde8c9e","content":"\u3010\u7B97\u6CD5\u5165\u95E8-20\u3011\u524D\u7F00\u548C\u4F18\u5316\u6280\u5DE7\\r\\n- \u8BFE\u4EF6\\r\\n  - [\u524D\u7F00\u548C\u4F18\u5316\u6280\u5DE7.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/692ed81da16808069bde8c9e/file/public/%E5%89%8D%E7%BC%80%E5%92%8C%E4%BC%98%E5%8C%96%E6%8A%80%E5%B7%A7.pdf)","owner":2,"domainId":"lzoi2025","docType":30,"docId":"692ed81da16808069bde8c9e","assign":["20250804\u4E0A\u5348"],"penaltySince":"2027-08-20T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"title":"\u3010\u7B97\u6CD5\u5165\u95E8-20\u3011\u524D\u7F00\u548C\u4F18\u5316\u6280\u5DE7","rule":"homework","beginAt":"2025-12-06T00:00:00.000Z","endAt":"2027-08-20T15:59:00.000Z","pids":[201,200,203,202,205,198,199,206,204],"attend":43,"rated":false,"langs":[],"maintainer":[2],"files":[{"_id":"\u524D\u7F00\u548C\u4F18\u5316\u6280\u5DE7.pdf","name":"\u524D\u7F00\u548C\u4F18\u5316\u6280\u5DE7.pdf","size":1651445,"lastModified":"2025-12-06T05:14:14.744Z","etag":"L2RhdGEvZmlsZS9oeWRyby9yY2gvOWRvemJ1d21pbnhianF2czVkYTBuLnBkZg=="}],"url":"/d/lzoi2025/homework/692ed81da16808069bde8c9e"},{"_id":"692671f0ce9c6f6f1ad9ba22","content":"\u3010\u7B97\u6CD5\u5165\u95E8-19\u3011\u795E\u5947\u7684\u6839\u53F7\u7B97\u6CD5\\r\\n- \u8FD9\u662F\u4E00\u671F\u79D1\u666E\u5185\u5BB9\uFF0C${\\\\color{orange}{\\\\bf \u5185\u5BB9\u8F83\u96BE\uFF0C\u4F46\u975E\u5E38\u6709\u610F\u601D}}$\\r\\n- \u6839\u53F7\u7B97\u6CD5\u4E00\u822C\u51FA\u73B0\u5728 ${\\\\color{blue}{\\\\bf \u63D0\u9AD8/\u7701\u9009}}$ \u7EA7\u522B\u7684\u9898\u76EE\u4E2D\\r\\n- \u4F5C\u4E1A\u5C3D\u529B\u5C31\u597D\uFF0C\u5E0C\u671B\u5927\u5BB6\u5B66\u7684\u5F00\u5FC3\\r\\n\\r\\n- \u8BFE\u4EF6\\r\\n  - [\u795E\u5947\u7684\u6839\u53F7\u7B97\u6CD5.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/692671f0ce9c6f6f1ad9ba22/file/public/%E7%A5%9E%E5%A5%87%E7%9A%84%E6%A0%B9%E5%8F%B7%E7%AE%97%E6%B3%95.pdf)","owner":2,"domainId":"lzoi2025","docType":30,"docId":"692671f0ce9c6f6f1ad9ba22","assign":["20250804\u4E0A\u5348"],"penaltySince":"2027-08-19T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"title":"\u3010\u7B97\u6CD5\u5165\u95E8-19\u3011\u795E\u5947\u7684\u6839\u53F7\u7B97\u6CD5","rule":"homework","beginAt":"2025-11-29T00:00:00.000Z","endAt":"2027-08-19T15:59:00.000Z","pids":[190,191,138,192,193,196,197],"attend":41,"rated":false,"langs":[],"maintainer":[2],"files":[{"_id":"\u795E\u5947\u7684\u6839\u53F7\u7B97\u6CD5.pdf","name":"\u795E\u5947\u7684\u6839\u53F7\u7B97\u6CD5.pdf","size":2031110,"lastModified":"2025-11-29T05:37:13.457Z","etag":"L2RhdGEvZmlsZS9oeWRyby9oOGMvMHNmcnliam0weHpzeXVlem4xdWR4LnBkZg=="}],"url":"/d/lzoi2025/homework/692671f0ce9c6f6f1ad9ba22"},{"_id":"691afe5917726c08837084b7","content":"\u3010\u7B97\u6CD5\u5165\u95E8-18\u3011\u5C3A\u53D6\u6CD5\u548C\u53CC\u6307\u9488\\r\\n- \u8BFE\u4EF6\\r\\n  - [\u5C3A\u53D6\u6CD5\u548C\u53CC\u6307\u9488.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/691afe5917726c08837084b7/file/public/%E5%B0%BA%E5%8F%96%E6%B3%95%E5%92%8C%E5%8F%8C%E6%8C%87%E9%92%88.pdf)","owner":2,"domainId":"lzoi2025","docType":30,"docId":"691afe5917726c08837084b7","assign":["20250804\u4E0A\u5348"],"penaltySince":"2027-08-18T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"title":"\u3010\u7B97\u6CD5\u5165\u95E8-18\u3011\u5C3A\u53D6\u6CD5\u548C\u53CC\u6307\u9488","rule":"homework","beginAt":"2025-11-22T00:00:00.000Z","endAt":"2027-08-18T15:59:00.000Z","pids":[182,183,184,180,185,188,186,187,181],"attend":45,"rated":false,"langs":[],"maintainer":[2],"files":[{"_id":"\u5C3A\u53D6\u6CD5\u548C\u53CC\u6307\u9488.pdf","name":"\u5C3A\u53D6\u6CD5\u548C\u53CC\u6307\u9488.pdf","size":828008,"lastModified":"2025-11-22T05:39:50.178Z","etag":"L2RhdGEvZmlsZS9oeWRyby96emgvd294Y3RkZDVwcTJkemY3empidmR1LnBkZg=="}],"url":"/d/lzoi2025/homework/691afe5917726c08837084b7"},{"_id":"6915789c648edc5ab68a9f17","content":"\u3010\u7B97\u6CD5\u5165\u95E8-17\u3011\u5982\u4F55\u8BBE\u8BA1\u4F60\u7684\u72B6\u6001\\r\\n\\r\\n- \u8BFE\u4EF6\\r\\n  - [\u5982\u4F55\u8BBE\u8BA1\u4F60\u7684\u72B6\u6001.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/6915789c648edc5ab68a9f17/file/public/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%BD%A0%E7%9A%84%E7%8A%B6%E6%80%81.pdf)","owner":2,"domainId":"lzoi2025","docType":30,"docId":"6915789c648edc5ab68a9f17","assign":["20250804\u4E0A\u5348"],"penaltySince":"2027-08-17T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"title":"\u3010\u7B97\u6CD5\u5165\u95E8-17\u3011\u5982\u4F55\u8BBE\u8BA1\u4F60\u7684\u72B6\u6001","rule":"homework","beginAt":"2025-11-15T00:00:00.000Z","endAt":"2027-08-17T15:59:00.000Z","pids":[172,174,173,176,168,169,170,177,171,178,175],"attend":45,"rated":false,"langs":[],"maintainer":[2],"files":[{"_id":"\u5982\u4F55\u8BBE\u8BA1\u4F60\u7684\u72B6\u6001.pdf","name":"\u5982\u4F55\u8BBE\u8BA1\u4F60\u7684\u72B6\u6001.pdf","size":1436568,"lastModified":"2025-11-15T03:33:37.157Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lNWYvOGRtbHhyN3VydXpvcm1xbXFtbDFwLnBkZg=="}],"url":"/d/lzoi2025/homework/6915789c648edc5ab68a9f17"},{"_id":"69085f10fd80d5b0ebdc54da","content":"\u3010\u7B97\u6CD5\u5165\u95E8-16\u3011\u8D21\u732E\u6CD5\u548C\u5355\u8C03\u6808\\r\\n- \u8BFE\u4EF6\\r\\n  - [\u8D21\u732E\u601D\u7EF4\u548C\u5355\u8C03\u6808.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/69085f10fd80d5b0ebdc54da/file/public/%E8%B4%A1%E7%8C%AE%E6%80%9D%E7%BB%B4%E5%92%8C%E5%8D%95%E8%B0%83%E6%A0%88.pdf)\\r\\n \\r\\n- \u5355\u8C03\u6808\u6A21\u677F\\r\\n```c++\\r\\nint gao(const vector<int>& a) {\\r\\n    int n = a.size();\\r\\n\\r\\n    // L(i): \u5DE6\u8FB9\u7B2C\u4E00\u4E2A <= a[i] \u7684\u6570\u7684\u4E0B\u6807 \\r\\n    vector<int> L(n, -1);\\r\\n\\r\\n    // R(i): \u53F3\u8FB9\u7B2C\u4E00\u4E2A < a[i] \u7684\u6570\u7684\u4E0B\u6807\\r\\n    vector<int> R(n, n);\\r\\n\\r\\n    vector<int> s(n);  // \u7528\u6765\u4ECE\u5DE6\u5F80\u53F3\u653E\u5165 a[i]\\r\\n    int e = 0;  // s \u4E2D\u5143\u7D20\u7684\u4E2A\u6570\\r\\n\\r\\n    for (int i = 0; i < n; i++) {\\r\\n        // \u5728 s \u91CC\u4ECE\u540E\u5F80\u524D\u627E\u5230\u7B2C\u4E00\u4E2A <= a[i]\\r\\n        // \u62FF\u51FA\u7684\u65F6\u5019\u786E\u5B9A\u53F3\u8FB9\u7B2C\u4E00\u4E2A < a[s[e - 1]] \u7684\u5C31\u662F a[i]\\r\\n        while (e > 0 && a[s[e - 1]] > a[i]) R[s[--e]] = i;\\r\\n\\r\\n        // \u653E\u5165\u7684\u65F6\u5019\u786E\u5B9A\u5DE6\u8FB9\u7B2C\u4E00\u4E2A <= a[i] \u7684\\r\\n        if (e != 0) L[i] = s[e - 1];\\r\\n        s[e++] = i;\\r\\n    }\\r\\n\\r\\n    i64 ans = 0;\\r\\n    for (int i = 0; i < n; i++) {\\r\\n        ans = (ans + (i64) (i - L[i]) * (R[i] - i) * a[i]) % P;\\r\\n    }\\r\\n    return ans;\\r\\n}\\r\\n```","owner":2,"domainId":"lzoi2025","docType":30,"docId":"69085f10fd80d5b0ebdc54da","assign":["20250804\u4E0A\u5348"],"penaltySince":"2027-08-16T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"title":"\u3010\u7B97\u6CD5\u5165\u95E8-16\u3011\u8D21\u732E\u601D\u7EF4\u548C\u5355\u8C03\u6808","rule":"homework","beginAt":"2025-11-08T00:00:00.000Z","endAt":"2027-08-16T15:59:00.000Z","pids":[165,159,162,160,161,163,164,166,167],"attend":43,"rated":false,"langs":[],"maintainer":[2],"files":[{"_id":"\u8D21\u732E\u601D\u7EF4\u548C\u5355\u8C03\u6808.pdf","name":"\u8D21\u732E\u601D\u7EF4\u548C\u5355\u8C03\u6808.pdf","size":1945697,"lastModified":"2025-11-07T11:43:06.758Z","etag":"L2RhdGEvZmlsZS9oeWRyby90dHMvMHFhZnJ6MGFxb3NkMGJianE5bXhqLnBkZg=="}],"url":"/d/lzoi2025/homework/69085f10fd80d5b0ebdc54da"},{"_id":"68d9d6717fd8fcac1ed2807f","content":"\u3010\u7B97\u6CD5\u5165\u95E8-15\u3011\u6570\u8BBA\u5206\u5757","owner":2,"domainId":"lzoi2025","docType":30,"docId":"68d9d6717fd8fcac1ed2807f","assign":["20250804\u4E0A\u5348"],"penaltySince":"2027-08-15T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"title":"\u3010\u7B97\u6CD5\u5165\u95E8-15\u3011\u6570\u8BBA\u5206\u5757","rule":"homework","beginAt":"2025-12-01T16:00:00.000Z","endAt":"2027-08-15T15:59:00.000Z","pids":[137,130,138],"attend":32,"rated":false,"langs":[],"maintainer":[2],"url":"/d/lzoi2025/homework/68d9d6717fd8fcac1ed2807f"},{"_id":"68d762cbc69a4e0706158d7e","content":"\u3010\u7B97\u6CD5\u5165\u95E8-14\u3011\u7B5B\u6CD5\u53EA\u80FD\u6C42\u8D28\u6570\uFF1F\\r\\n- \u4E0A\u8BFE\u7684\u8BFE\u4EF6\\r\\n  - [\u7B5B\u6CD5\u53EA\u80FD\u6C42\u8D28\u6570.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/68d762cbc69a4e0706158d7e/file/public/%E7%AD%9B%E6%B3%95%E5%8F%AA%E8%83%BD%E6%B1%82%E8%B4%A8%E6%95%B0.pdf)\\r\\n- \u53C2\u8003\u8D44\u6599\\r\\n  - [OiWiki\uFF1A\u7B5B\u6CD5\u6C42\u8D28\u6570\uFF0C\u6B27\u62C9\u51FD\u6570\uFF0C\u7EA6\u6570\u4E2A\u6570\uFF0C\u7EA6\u6570\u548C](https://oiwiki.org/math/number-theory/sieve/)\\r\\n  - [\u7EBF\u6027\u7B5B\u6C42 \u7EA6\u6570\u4E2A\u6570 \u4E0E \u7EA6\u6570\u548C](https://www.cnblogs.com/littlehb/p/16650121.html)\\r\\n  - [OiWiki\uFF1Abitset \u4F18\u5316\u7B5B\u6CD5](https://oiwiki.org/lang/csl/bitset/#%E4%B8%8E%E5%9F%83%E6%B0%8F%E7%AD%9B%E7%BB%93%E5%90%88)\\r\\n  - [\u533A\u95F4\u7B5B\u6CD5](https://blog.csdn.net/qq_52143183/article/details/123758398)\\r\\n  - [B \u7AD9\u89C6\u9891\uFF1A\u6B27\u62C9\u7B5B](https://www.bilibili.com/video/BV1H8411E7hn/?share_source=copy_web&vd_source=037e882c0cdcb03fb30079bba610dae3%60)\\r\\n\\r\\n- \u91CD\u70B9\\r\\n  - \u4E00\u4E2A\u5408\u6570 $n$ \u5FC5\u7136\u5B58\u5728\u4E0D\u8D85\u8FC7 $\\\\sqrt{n}$ \u7684\u8D28\u56E0\u5B50\\r\\n  - \u5047\u8BBE\u4E00\u4E2A\u6570\u5206\u89E3\u8D28\u56E0\u6570\u540E\u4E3A $x = a_1^{b_1} \\\\times a_2^{b_2} \\\\times a_3^{b_3}$\\r\\n  - \u90A3\u4E48 $x$ \u7684\u7EA6\u6570\u4E2A\u6570\u4E3A: $(b_1 + 1) \\\\times (b_2 + 1) \\\\times (b_3 + 1)$\\r\\n  - \u90A3\u4E48 $x$ \u7684\u7EA6\u6570\u548C\u4E3A: $(1 + a_1^1 + a_1^2 + \\\\cdots + a_1^{b_1}) \\\\times (1 + a_2^1 + a_2^2 + \\\\cdots + a_2^{b_2} \\\\times (1 + a_3^1 + a_3^2 + \\\\cdots + a_3^{b_3})$\\r\\n  - \u5C0F\u4E8E $x$ \u4E14\u4E0E $x$ \u4E92\u8D28\u7684\u6570\u7684\u4E2A\u6570\uFF1A$\\\\phi(x)=x \\\\times (1-\\\\frac{1}{a_1}) \\\\times (1-\\\\frac{1}{a_2}) \\\\times (1-\\\\frac{1}{a_3})$\\r\\n  - \u6BD4\u5982 $12 = 2 ^ 2 \\\\times 3 ^ 1$\\r\\n  - \u90A3\u4E48 $12$ \u7684\u7EA6\u6570\u4E2A\u6570\u4E3A\uFF1A$(2 + 1) \\\\times (1 + 1) = 6$\\r\\n  - \u90A3\u4E48 $12$ \u7684\u7EA6\u6570\u548C\u4E3A\uFF1A$(1 + 2 + 4) \\\\times (1 + 3) = 28$\\r\\n  - \u5C0F\u4E8E $12$ \u4E14\u4E0E $12$ \u4E92\u8D28\u7684\u6570\u7684\u4E2A\u6570\uFF1A$\\\\phi(12)=12 \\\\times (1-\\\\frac{1}{2}) \\\\times (1-\\\\frac{1}{3})=4$","owner":2,"domainId":"lzoi2025","docType":30,"docId":"68d762cbc69a4e0706158d7e","assign":["20250804\u4E0A\u5348"],"penaltySince":"2027-08-14T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"title":"\u3010\u7B97\u6CD5\u5165\u95E8-14\u3011\u7B5B\u6CD5\u53EA\u80FD\u6C42\u8D28\u6570\uFF1F","rule":"homework","beginAt":"2025-10-08T00:00:00.000Z","endAt":"2027-08-14T15:59:00.000Z","pids":[134,136,139,142,131,141,143,135],"attend":35,"rated":false,"langs":[],"maintainer":[],"files":[{"_id":"\u7B5B\u6CD5\u53EA\u80FD\u6C42\u8D28\u6570.pdf","name":"\u7B5B\u6CD5\u53EA\u80FD\u6C42\u8D28\u6570.pdf","size":2856719,"lastModified":"2025-10-08T03:00:02.761Z","etag":"L2RhdGEvZmlsZS9oeWRyby9mY2wvdDhjamNvbWx2YTkxN3owa3J6b3F0LnBkZg=="}],"url":"/d/lzoi2025/homework/68d762cbc69a4e0706158d7e"},{"_id":"68c28292fe802d7961adcfcd","content":"\u3010\u7B97\u6CD5\u5165\u95E8-13\u3011\u533A\u95F4\u7EDF\u8BA1\u95EE\u9898\u7814\u7A76\\r\\n\\r\\n- \u8BFE\u4EF6\\r\\n  - [\u533A\u95F4\u7EDF\u8BA1\u95EE\u9898\u7814\u7A76.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/68c28292fe802d7961adcfcd/file/public/%E5%8C%BA%E9%97%B4%E7%BB%9F%E8%AE%A1%E9%97%AE%E9%A2%98%E7%A0%94%E7%A9%B6.pdf)\\r\\n- \u4ECA\u5929\u7684\u9898\u76EE\\r\\n  - \u53EF\u4EE5\u7528 **<font color=\\"#FF0000\\">\u6811\u72B6\u6570\u7EC4</font>**\uFF0C\u5FD8\u8BB0\u7684\u540C\u5B66\u53EF\u4EE5\u53C2\u8003 [LS0010. \u3010\u8BFE\u4EF6\u3011\u795E\u5947\u7684\u6811\u72B6\u6570\u7EC4](https://www.gzlzoi.cn/d/lzoi2025/p/LS0010)\\r\\n  - \u4E5F\u53EF\u7528 **<font color=\\"#FF0000\\">\u5355\u8C03\u961F\u5217\uFF08\u4EE5\u540E\u4F1A\u8BB2\uFF09</font>**\\r\\n  - \u8BF7\u5927\u5BB6\u5148\u7528\u4ECA\u5929\u8BB2\u5230\u7684 **<font color=\\"#FF0000\\">\u7EBF\u6BB5\u6811</font>** \u5B8C\u6210\\r\\n  - \u4ECA\u5929\u7684\u9898\u76EE\u91CC\u9762\u7ED9\u5927\u5BB6\u7559\u4E86\u4E00\u9053 **<font color=\\"#FF0000\\">\u8111\u7B4B\u6025\u8F6C\u5F2F</font>**\uFF0C\u8BF7\u5927\u5BB6\u81EA\u884C\u5224\u522B\\r\\n\\r\\n- \u53C2\u8003\u4EE3\u7801\uFF08**<font color=\\"#FF0000\\">\u8BF7\u5927\u5BB6\u7406\u89E3\u540E\uFF0C\u81EA\u5DF1\u5199\u4E00\u904D\uFF01\uFF01\uFF01</font>**\uFF09\\r\\n  - [P3374_\u5355\u70B9\u66F4\u65B0_\u533A\u95F4\u6C42\u548C\uFF0C\u6811\u72B6\u6570\u7EC4\u5B9E\u73B0](https://www.gzlzoi.cn/d/lzoi2025/p/P3374/solution/689b02d2f8a9d7efd04ad5c7)\\r\\n  - [P3374_\u5355\u70B9\u66F4\u65B0_\u533A\u95F4\u6C42\u548C\uFF0C\u7EBF\u6BB5\u6811\u5B9E\u73B0](https://www.gzlzoi.cn/d/lzoi2025/p/P3374/solution/68c4e483007b85fdfae7a955)\\r\\n  - [LS1227_\u5355\u70B9\u66F4\u65B0_\u533A\u95F4\u6700\u503C\uFF0C\u6811\u72B6\u6570\u7EC4\u5B9E\u73B0](https://www.gzlzoi.cn/d/lzoi2025/p/LS1227/solution/68c38aa1e1b585b55d44fd8d)\uFF0C**<font color=\\"#FF0000\\">\u8FD9\u4E2A\u65B9\u6CD5\u5E76\u4E0D\u4F18\u7F8E\uFF0C\u5927\u5BB6\u4E86\u89E3\u5C31\u597D\uFF0C\u4E0D\u63A8\u8350</font>**\\r\\n  - [LS1227_\u5355\u70B9\u66F4\u65B0_\u533A\u95F4\u6700\u503C\uFF0C\u7EBF\u6BB5\u6811\u5B9E\u73B0](https://www.gzlzoi.cn/d/lzoi2025/p/LS1227/solution/68c4e3fc007b85fdfae7a945)\uFF0C**<font color=\\"#00DD00\\">\u7B80\u6D01\u4F18\u7F8E\uFF0C\u6269\u5C55\u6027\u5F3A\uFF0C\u63A8\u8350</font>**\\r\\n  - [\u7528 sort\uFF0Cunique\uFF0Cerase\uFF0Clower_bound \u79BB\u6563\u5316\u4E00\u4E2A\u6570\u7EC4](https://www.gzlzoi.cn/d/lzoi2025/p/LS1226/solution/68c392efe1b585b55d44fdaa)","owner":2,"domainId":"lzoi2025","docType":30,"docId":"68c28292fe802d7961adcfcd","assign":["20250804\u4E0A\u5348"],"penaltySince":"2027-08-13T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"title":"\u3010\u7B97\u6CD5\u5165\u95E8-13\u3011\u533A\u95F4\u7EDF\u8BA1\u95EE\u9898\u7814\u7A76","rule":"homework","beginAt":"2025-09-13T00:00:00.000Z","endAt":"2027-08-13T15:59:00.000Z","pids":[114,81,83,124,128,125,126,127],"attend":34,"rated":false,"langs":[],"maintainer":[2],"files":[{"_id":"\u533A\u95F4\u7EDF\u8BA1\u95EE\u9898\u7814\u7A76.pdf","name":"\u533A\u95F4\u7EDF\u8BA1\u95EE\u9898\u7814\u7A76.pdf","size":1690839,"lastModified":"2025-09-13T00:33:47.315Z","etag":"L2RhdGEvZmlsZS9oeWRyby9nMTQvY3dydHp2aWcycXlzbWM3NHhjcmRpLnBkZg=="}],"url":"/d/lzoi2025/homework/68c28292fe802d7961adcfcd"},{"_id":"68b555293ef0b4af1ee9bdd2","content":"\u3010\u7B97\u6CD5\u5165\u95E8-12\u3011\u7ECF\u5178\u52A8\u6001\u89C4\u5212\u95EE\u9898","owner":2,"domainId":"lzoi2025","docType":30,"docId":"68b555293ef0b4af1ee9bdd2","assign":["20250804\u4E0A\u5348"],"penaltySince":"2027-08-12T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"title":"\u3010\u7B97\u6CD5\u5165\u95E8-12\u3011\u7ECF\u5178\u52A8\u6001\u89C4\u5212\u95EE\u9898","rule":"homework","beginAt":"2025-11-29T00:00:00.000Z","endAt":"2027-08-12T15:59:00.000Z","pids":[26],"attend":30,"rated":false,"langs":[],"maintainer":[],"url":"/d/lzoi2025/homework/68b555293ef0b4af1ee9bdd2"},{"_id":"68b5545c3ef0b4af1ee9bdc7","content":"\u3010\u7B97\u6CD5\u5165\u95E8-11\u3011\u66B4\u529B\u679A\u4E3E\u7684\u827A\u672F\\r\\n\\r\\n- \u8BFE\u4EF6\uFF08\u8BFE\u4EF6\u91CC\u9762\u5185\u5BB9\u4E0D\u591A\uFF0C\u5927\u5BB6\u4E3B\u8981\u53BB\u9898\u5E93\u91CC\u9762\u770B\u9898\u89E3\uFF09\\r\\n  - [\u66B4\u529B\u679A\u4E3E\u7684\u827A\u672F.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/68b5545c3ef0b4af1ee9bdc7/file/public/%E6%9A%B4%E5%8A%9B%E6%9E%9A%E4%B8%BE%E7%9A%84%E8%89%BA%E6%9C%AF.pdf)","owner":2,"domainId":"lzoi2025","docType":30,"docId":"68b5545c3ef0b4af1ee9bdc7","assign":["20250804\u4E0A\u5348"],"penaltySince":"2027-08-11T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"title":"\u3010\u7B97\u6CD5\u5165\u95E8-11\u3011\u66B4\u529B\u679A\u4E3E\u7684\u827A\u672F","rule":"homework","beginAt":"2025-10-15T00:00:00.000Z","endAt":"2027-08-11T15:59:00.000Z","pids":[148,145,146,147,152,154,144,150,155],"attend":37,"rated":false,"langs":[],"maintainer":[2],"files":[{"_id":"\u66B4\u529B\u679A\u4E3E\u7684\u827A\u672F.pdf","name":"\u66B4\u529B\u679A\u4E3E\u7684\u827A\u672F.pdf","size":1074607,"lastModified":"2025-10-24T06:39:50.580Z","etag":"L2RhdGEvZmlsZS9oeWRyby9zcXcvYmhxaXlwOW9wdXdja2xycnMycHFvLnBkZg=="}],"url":"/d/lzoi2025/homework/68b5545c3ef0b4af1ee9bdc7"},{"_id":"68b5516c3ef0b4af1ee9bdb8","content":"\u3010\u7B97\u6CD5\u5165\u95E8-10\u3011\u80CC\u5305\u4E5D\u8BB2\\r\\n\\r\\n- \u8BFE\u4EF6\\r\\n  - [\u80CC\u5305\u4E5D\u8BB2.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/68b5516c3ef0b4af1ee9bdb8/file/public/%E8%83%8C%E5%8C%85%E4%B9%9D%E8%AE%B2.pdf)","owner":2,"domainId":"lzoi2025","docType":30,"docId":"68b5516c3ef0b4af1ee9bdb8","assign":["20250804\u4E0A\u5348"],"penaltySince":"2027-08-10T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"title":"\u3010\u7B97\u6CD5\u5165\u95E8-10\u3011\u80CC\u5305\u4E5D\u8BB2","rule":"homework","beginAt":"2025-09-13T00:00:00.000Z","endAt":"2027-08-10T15:59:00.000Z","pids":[123,3,132,4,122,115,116,117,118,119,129],"attend":38,"rated":false,"langs":[],"maintainer":[2],"files":[{"_id":"\u80CC\u5305\u4E5D\u8BB2.pdf","name":"\u80CC\u5305\u4E5D\u8BB2.pdf","size":2323907,"lastModified":"2025-09-20T00:33:37.557Z","etag":"L2RhdGEvZmlsZS9oeWRyby95ZGwvbXVocmpxZmZ1cjN3cGppbGgwYmMwLnBkZg=="}],"url":"/d/lzoi2025/homework/68b5516c3ef0b4af1ee9bdb8"},{"_id":"68b550933ef0b4af1ee9bdb6","content":"\u3010\u7B97\u6CD5\u5165\u95E8-09\u3011\u4E8C\u5206\u679A\u4E3E\u4E0E\u6309\u4F4D\u679A\u4E3E\\r\\n\\r\\n- \u8BFE\u4EF6\\r\\n  - [\u4E8C\u5206\u679A\u4E3E.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/68b550933ef0b4af1ee9bdb6/file/public/%E4%BA%8C%E5%88%86%E6%9E%9A%E4%B8%BE.pdf)\\r\\n \\r\\n- \u63D0\u793A\uFF1A\\r\\n  - \u4ECA\u5929\u7684\u9898\u76EE\u91CC\u9762\u7ED9\u5927\u5BB6\u7559\u4E86\u4E00\u9053 **<font color=\\"#FF0000\\">\u8111\u7B4B\u6025\u8F6C\u5F2F</font>**\uFF0C\u8BF7\u5927\u5BB6\u81EA\u884C\u5224\u522B","owner":2,"domainId":"lzoi2025","docType":30,"docId":"68b550933ef0b4af1ee9bdb6","assign":["20250804\u4E0A\u5348"],"penaltySince":"2027-08-09T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"title":"\u3010\u7B97\u6CD5\u5165\u95E8-09\u3011\u4E8C\u5206\u679A\u4E3E\u4E0E\u6309\u4F4D\u679A\u4E3E","rule":"homework","beginAt":"2025-09-06T00:00:00.000Z","endAt":"2027-08-09T15:59:00.000Z","pids":[102,104,103,109,105,112,107,108,111,113],"attend":38,"rated":false,"langs":[],"maintainer":[2],"files":[{"_id":"\u4E8C\u5206\u679A\u4E3E.pdf","name":"\u4E8C\u5206\u679A\u4E3E.pdf","size":2269878,"lastModified":"2025-09-05T10:30:27.811Z","etag":"L2RhdGEvZmlsZS9oeWRyby9mcTIvNWNhd3Ywem5oZ3R1ZmhwcHJsdjBmLnBkZg=="}],"url":"/d/lzoi2025/homework/68b550933ef0b4af1ee9bdb6"},{"_id":"689c3e70256bc353a88824f8","content":"\u3010\u7B97\u6CD5\u5165\u95E8-08\u3011\u542C\u8BF4\u5927\u5BB6\u90FD\u5B66\u8FC7\u8D2A\u5FC3\\r\\n- \u8BFE\u4EF6\\r\\n  - [\u542C\u8BF4\u5927\u5BB6\u90FD\u5B66\u8FC7\u8D2A\u5FC3.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/689c3e70256bc353a88824f8/file/public/%E5%90%AC%E8%AF%B4%E5%A4%A7%E5%AE%B6%E9%83%BD%E5%AD%A6%E8%BF%87%E8%B4%AA%E5%BF%83.pdf)\\r\\n\\r\\n- \u8D2A\u5FC3\u7B97\u6CD5\u7684 $3$ \u5927\u5957\u8DEF\uFF1A\\r\\n- 1\uFF09\u7EBF\u6BB5\u8986\u76D6\u95EE\u9898\\r\\n  - [LS1058:\u3010\u5165\u95E8\u3011\u770B\u7535\u5F71](https://www.gzlzoi.cn/d/lzoi2025/p/LS1058)\\r\\n  - [LS1060:\u3010\u5165\u95E8\u3011\u7EBF\u6BB5\u8986\u76D6](https://www.gzlzoi.cn/d/lzoi2025/p/LS1060)\\r\\n- 2\uFF09\u6392\u5E8F\u8D2A\u5FC3\\r\\n  - [LS1061:\u3010\u5165\u95E8\u3011\u6392\u961F\u96BE\u9898](https://www.gzlzoi.cn/d/lzoi2025/p/LS1061)\\r\\n  - [LS1062:\u3010\u5165\u95E8\u3011\u62FC\u63A5\u5B57\u7B26\u4E32](https://www.gzlzoi.cn/d/lzoi2025/p/LS1062)\\r\\n- 3\uFF09\u540E\u6094\u8D2A\u5FC3\\r\\n  - [LS1197:\u3010\u666E\u53CA\u3011\u540E\u6094\u8D2A\u5FC3](https://www.gzlzoi.cn/d/lzoi2025/p/LS1197)\\r\\n  - [LS1065:\u3010\u666E\u53CA\u3011\u901B\u8D85\u5E02_\u56F0\u96BE](https://www.gzlzoi.cn/d/lzoi2025/p/LS1065)\\r\\n\\r\\n\u5176\u4ED6\u9898\u76EE\uFF0C\u5927\u5BB6\u4E0D\u662F\u5FC5\u987B\u8981\u505A\uFF0C\u56E0\u4E3A\u8D2A\u5FC3\u95EE\u9898\u5B9E\u5728\u662F\u592A\u591A\u4E86\u3002\u3002\u3002","owner":2,"domainId":"lzoi2025","docType":30,"docId":"689c3e70256bc353a88824f8","penaltySince":"2027-08-08T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"assign":["20250804\u4E0A\u5348"],"title":"\u3010\u7B97\u6CD5\u5165\u95E8-08\u3011\u542C\u8BF4\u5927\u5BB6\u90FD\u5B66\u8FC7\u8D2A\u5FC3","rule":"homework","beginAt":"2025-08-14T00:00:00.000Z","endAt":"2027-08-08T15:59:00.000Z","pids":[88,90,91,92,87,94,95,89,96,93],"attend":35,"rated":false,"maintainer":[],"files":[{"_id":"\u542C\u8BF4\u5927\u5BB6\u90FD\u5B66\u8FC7\u8D2A\u5FC3.pdf","name":"\u542C\u8BF4\u5927\u5BB6\u90FD\u5B66\u8FC7\u8D2A\u5FC3.pdf","size":869165,"lastModified":"2025-08-13T13:49:31.691Z","etag":"L2RhdGEvZmlsZS9oeWRyby90bXAvb2Zid3MwYjN6ZHNha254c3ZuZHhqLnBkZg=="}],"langs":[],"url":"/d/lzoi2025/homework/689c3e70256bc353a88824f8"},{"_id":"689ae85ef8a9d7efd04acea0","content":"\u3010\u7B97\u6CD5\u5165\u95E8-07\u3011\u795E\u5947\u7684\u6811\u72B6\u6570\u7EC4","owner":2,"domainId":"lzoi2025","docType":30,"docId":"689ae85ef8a9d7efd04acea0","penaltySince":"2027-08-07T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"assign":["20250804\u4E0A\u5348"],"title":"\u3010\u7B97\u6CD5\u5165\u95E8-07\u3011\u795E\u5947\u7684\u6811\u72B6\u6570\u7EC4","rule":"homework","beginAt":"2025-08-13T00:00:00.000Z","endAt":"2027-08-07T15:59:00.000Z","pids":[85,81,86,82,84,83],"attend":38,"rated":false,"maintainer":[],"url":"/d/lzoi2025/homework/689ae85ef8a9d7efd04acea0"},{"_id":"689993ef3466cac7af56b652","content":"\u3010\u7B97\u6CD5\u5165\u95E8-06\u3011\u542C\u8BF4\u5927\u5BB6\u559C\u6B22\u6570\u5B66\u9898\\r\\n\\r\\n\\r\\n**<font color=\\"#FF0000\\">\u6CE8\u610F\uFF1A\u8FD9\u6B21\u7684\u5185\u5BB9\u4EE5\u79D1\u666E\u4E3A\u4E3B\uFF0C\u5927\u5BB6\u542C\u7684\u5F00\u5FC3\u5C31\u597D\uFF0C\u4F5C\u4E1A\u6BD4\u8F83\u96BE\uFF0C\u53EF\u4EE5\u4E0D\u505A</font>**\\r\\n\\r\\n- \u8BFE\u4EF6\\r\\n  - [\u77E9\u9635\u5FEB\u901F\u5E42.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/689993ef3466cac7af56b652/file/public/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82.pdf)\\r\\n  - [\u4E58\u6CD5\u9006\u5143.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/689993ef3466cac7af56b652/file/public/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83.pdf)","owner":2,"domainId":"lzoi2025","docType":30,"docId":"689993ef3466cac7af56b652","penaltySince":"2027-08-06T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"assign":["20250804\u4E0A\u5348"],"title":"\u3010\u7B97\u6CD5\u5165\u95E8-06\u3011\u542C\u8BF4\u5927\u5BB6\u559C\u6B22\u6570\u5B66\u9898","rule":"homework","beginAt":"2025-08-12T00:00:00.000Z","endAt":"2027-08-06T15:59:00.000Z","pids":[78,79,80,6],"attend":39,"rated":false,"maintainer":[],"files":[{"_id":"\u77E9\u9635\u5FEB\u901F\u5E42.pdf","name":"\u77E9\u9635\u5FEB\u901F\u5E42.pdf","size":798390,"lastModified":"2025-08-11T08:10:05.897Z","etag":"L2RhdGEvZmlsZS9oeWRyby9rZ2UvbGR1bWNod3FqZWdhYXpjdW52aG5rLnBkZg=="},{"_id":"\u4E58\u6CD5\u9006\u5143.pdf","name":"\u4E58\u6CD5\u9006\u5143.pdf","size":3267215,"lastModified":"2025-08-11T10:18:04.703Z","etag":"L2RhdGEvZmlsZS9oeWRyby93bmMvZnM4ZWV5aTR1YWw4YmxlMWhmbDNrLnBkZg=="}],"langs":[],"url":"/d/lzoi2025/homework/689993ef3466cac7af56b652"},{"_id":"68944890c2f34c36e4fe8b2e","content":"\u3010\u7B97\u6CD5\u5165\u95E8-05\u3011\u56FE\u8BBA\u4E0E\u6700\u77ED\u8DEF\u7B97\u6CD5\\r\\n\\r\\n- \u8BFE\u4EF6\\r\\n  - [\u56FE\u8BBA\u4E0E\u6700\u77ED\u8DEF\u7B97\u6CD5.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/68944890c2f34c36e4fe8b2e/file/public/%E5%9B%BE%E8%AE%BA%E4%B8%8E%E6%9C%80%E7%9F%AD%E8%B7%AF%E7%AE%97%E6%B3%95.pdf)\\r\\n  - [\u5E38\u89C1\u6700\u77ED\u8DEF\u6A21\u578B.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/68944890c2f34c36e4fe8b2e/file/public/%E5%B8%B8%E8%A7%81%E6%9C%80%E7%9F%AD%E8%B7%AF%E6%A8%A1%E5%9E%8B.pdf)","owner":2,"domainId":"lzoi2025","docType":30,"docId":"68944890c2f34c36e4fe8b2e","penaltySince":"2027-08-05T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"assign":["20250804\u4E0A\u5348"],"title":"\u3010\u7B97\u6CD5\u5165\u95E8-05\u3011\u56FE\u8BBA\u4E0E\u6700\u77ED\u8DEF\u7B97\u6CD5","rule":"homework","beginAt":"2025-08-08T00:00:00.000Z","endAt":"2027-08-05T15:59:00.000Z","pids":[69,37,68,70,73,75,71,76,77],"attend":38,"rated":false,"maintainer":[2],"files":[{"_id":"\u56FE\u8BBA\u4E0E\u6700\u77ED\u8DEF\u7B97\u6CD5.pdf","name":"\u56FE\u8BBA\u4E0E\u6700\u77ED\u8DEF\u7B97\u6CD5.pdf","size":1861470,"lastModified":"2025-08-07T12:28:02.774Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wdjcvM2hsbGhuMm13OHVuaXF0Ymd6bDA3LnBkZg=="},{"_id":"\u5E38\u89C1\u6700\u77ED\u8DEF\u6A21\u578B.pdf","name":"\u5E38\u89C1\u6700\u77ED\u8DEF\u6A21\u578B.pdf","size":1275496,"lastModified":"2025-08-10T10:33:28.148Z","etag":"L2RhdGEvZmlsZS9oeWRyby9mdWUvamx5Yjd2ODEwcGFmdGZ3OWl4bnM1LnBkZg=="}],"langs":[],"url":"/d/lzoi2025/homework/68944890c2f34c36e4fe8b2e"},{"_id":"6887290a5c77c0f877120fc9","content":"\u3010\u7B97\u6CD5\u5165\u95E8-04\u3011\u7F51\u683C\u5BFB\u8DEF\u4E0Ebfs\\r\\n\\r\\n**<font color=\\"#FF0000\\">\u6CE8\u610F\uFF1A\u5927\u5BB6\u4E0D\u7528\u7740\u6025\u5199\u4F5C\u4E1A\u7684\uFF08\u8FD9\u662F\u4E24\u5468\u7684\u9898\u76EE\uFF09\uFF0C\u6211\u4EEC\u4F1A\u7559\u65F6\u95F4\u8BA9\u5927\u5BB6\u5728\u8BFE\u5802\u4E0A\u5199\u4F5C\u4E1A\u7684</font>**\\r\\n\\r\\n**<font color=\\"#FF0000\\">\u6CE8\u610F\uFF1A\u4E0B\u8BFE\u540E\u7684\u65F6\u95F4\u5927\u5BB6\u53EF\u4EE5\u81EA\u7531\u5B89\u6392\uFF01\uFF01\uFF01\uFF01\uFF01</font>**\\r\\n\\r\\n- \u8BF7\u5927\u5BB6\u5B8C\u6210\u4E0B\u5217\u6E38\u620F\u7684 AI \u7A0B\u5E8F\uFF0C\u524D\u4E09\u4E2A\u5C0F\u6E38\u620F\u4F9D\u8D56 python\uFF0C\u8BF7\u5148\u5B89\u88C5 python\\r\\n  - [\u8FF7\u5BAB\u5BFB\u8DEF](https://www.gzlzoi.cn/d/lzoi2025/homework/6887290a5c77c0f877120fc9/file/public/%E8%BF%B7%E5%AE%AB%E5%AF%BB%E8%B7%AF.zip)\\r\\n  - [\u63A8\u7BB1\u5B501](https://www.gzlzoi.cn/d/lzoi2025/homework/6887290a5c77c0f877120fc9/file/public/%E6%8E%A8%E7%AE%B1%E5%AD%901.zip)\\r\\n  - [\u63A8\u7BB1\u5B502](https://www.gzlzoi.cn/d/lzoi2025/homework/6887290a5c77c0f877120fc9/file/public/%E6%8E%A8%E7%AE%B1%E5%AD%902.zip)\\r\\n  - [\u5766\u514B\u5927\u6218](https://www.gzlzoi.cn/d/lzoi2025/homework/6887290a5c77c0f877120fc9/file/public/%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98.zip)\\r\\n  - [\u5766\u514B\u5927\u6218\u95EF\u5173\u7248_pygame](https://www.gzlzoi.cn/d/lzoi2025/homework/6887290a5c77c0f877120fc9/file/public/%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98_%E9%97%AF%E5%85%B3%E7%89%88_pygame.zip)\\r\\n\\r\\n- \u8BFE\u4EF6\\r\\n  - [\u7F51\u683C\u5BFB\u8DEF\u4E0Ebfs.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/6887290a5c77c0f877120fc9/file/public/%E7%BD%91%E6%A0%BC%E5%AF%BB%E8%B7%AF(bfs).pdf)\\r\\n  - [\u8FDE\u901A\u5757\u4E0E\u8F93\u51FA\u8DEF\u5F84.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/6887290a5c77c0f877120fc9/file/public/%E8%BF%9E%E9%80%9A%E5%9D%97%E4%B8%8E%E8%BE%93%E5%87%BA%E8%B7%AF%E5%BE%84.pdf)\\r\\n  - [\u66F4\u590D\u6742\u7684\u8DEF\u5F84.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/6887290a5c77c0f877120fc9/file/public/%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84%E8%B7%AF%E5%BE%84.pdf)\\r\\n  - [\u4F60\u771F\u7684\u7406\u89E3bfs\u5417.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/6887290a5c77c0f877120fc9/file/public/%E4%BD%A0%E7%9C%9F%E7%9A%84%E7%90%86%E8%A7%A3bfs.pdf)\\r\\n\\r\\n- \u4EE3\u7801\u627E\u832C\\r\\n  - [B3625 \u80FD\u5426\u901A\u8FC7\u8FF7\u5BAB](https://www.gzlzoi.cn/d/lzoi2025/p/B3625/solution)\\r\\n  - [P1443 \u9A6C\u7684\u904D\u5386](https://www.gzlzoi.cn/d/lzoi2025/p/P1443/solution)\\r\\n  - [P1649.\u3010\u666E\u53CA\u3011\u6700\u5C11\u62D0\u5F2F\u6B21\u6570](https://www.gzlzoi.cn/d/lzoi2025/p/P1649/solution)\\r\\n  - [D0326.\u3010\u666E\u53CA\u3011\u6DF7\u6C34\u6478\u9C7C](https://www.gzlzoi.cn/d/lzoi2025/p/D0326/solution)\\r\\n  - [P1825 \u3010\u666E\u53CA\u3011\u4F20\u9001\u8FF7\u5BAB](https://www.gzlzoi.cn/d/lzoi2025/p/P1825/solution)","owner":2,"domainId":"lzoi2025","docType":30,"docId":"6887290a5c77c0f877120fc9","penaltySince":"2027-08-04T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"assign":["20250804\u4E0A\u5348"],"title":"\u3010\u7B97\u6CD5\u5165\u95E8-04\u3011\u7F51\u683C\u5BFB\u8DEF\u4E0Ebfs","rule":"homework","beginAt":"2025-08-04T01:00:00.000Z","endAt":"2027-08-04T15:59:00.000Z","pids":[64,56,57,58,59,55,60,63,61,62,65,54,67,66],"attend":38,"rated":false,"maintainer":[],"files":[{"_id":"\u5766\u514B\u5927\u6218.zip","name":"\u5766\u514B\u5927\u6218.zip","size":11824972,"lastModified":"2025-08-03T11:37:08.309Z","etag":"L2RhdGEvZmlsZS9oeWRyby9sMzAvbW55Y3c3cmM0dGpqczBucXU4YnpzLnppcA=="},{"_id":"\u7F51\u683C\u5BFB\u8DEF(bfs).pdf","name":"\u7F51\u683C\u5BFB\u8DEF(bfs).pdf","size":1810272,"lastModified":"2025-08-04T04:24:56.454Z","etag":"L2RhdGEvZmlsZS9oeWRyby9oZTcvazZyb244eno4b2hhcjZzcWhvbDI4LnBkZg=="},{"_id":"\u8FDE\u901A\u5757\u4E0E\u8F93\u51FA\u8DEF\u5F84.pdf","name":"\u8FDE\u901A\u5757\u4E0E\u8F93\u51FA\u8DEF\u5F84.pdf","size":1629960,"lastModified":"2025-08-04T07:51:32.114Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lZ2gvZnRkY216ZHN4b3Z4a29oNWNlMXIyLnBkZg=="},{"_id":"\u66F4\u590D\u6742\u7684\u8DEF\u5F84.pdf","name":"\u66F4\u590D\u6742\u7684\u8DEF\u5F84.pdf","size":481163,"lastModified":"2025-08-04T08:38:38.131Z","etag":"L2RhdGEvZmlsZS9oeWRyby92bm8vbzVqeGh0czA1d2t1YjBjd25pZTVnLnBkZg=="},{"_id":"\u8FF7\u5BAB\u5BFB\u8DEF.zip","name":"\u8FF7\u5BAB\u5BFB\u8DEF.zip","size":585134,"lastModified":"2025-08-05T06:38:27.985Z","etag":"L2RhdGEvZmlsZS9oeWRyby9mdDIvbGdjc2JqbXdwamcwNjYyNHBnaHZ1LnppcA=="},{"_id":"\u63A8\u7BB1\u5B501.zip","name":"\u63A8\u7BB1\u5B501.zip","size":478452,"lastModified":"2025-08-06T02:55:18.699Z","etag":"L2RhdGEvZmlsZS9oeWRyby8ybHIvN2Ywd3NxbWJibmgwYWVibnFnbHllLnppcA=="},{"_id":"\u63A8\u7BB1\u5B502.zip","name":"\u63A8\u7BB1\u5B502.zip","size":483182,"lastModified":"2025-08-06T02:55:18.761Z","etag":"L2RhdGEvZmlsZS9oeWRyby9keW4vb3NpaGJxcXVzaTRxbHQzZWd6MTBvLnppcA=="},{"_id":"\u4F60\u771F\u7684\u7406\u89E3bfs.pdf","name":"\u4F60\u771F\u7684\u7406\u89E3bfs.pdf","size":1051139,"lastModified":"2025-08-06T12:11:02.761Z","etag":"L2RhdGEvZmlsZS9oeWRyby9zZnUvemsyeXZob3JlemdjdzZqYWNjeW4wLnBkZg=="},{"_id":"\u5766\u514B\u5927\u6218_\u95EF\u5173\u7248_pygame.zip","name":"\u5766\u514B\u5927\u6218_\u95EF\u5173\u7248_pygame.zip","size":3490201,"lastModified":"2025-08-08T07:59:10.666Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kd3cvdHFzcm5keXpkbnJuM3N3M2d2Mnk4LnppcA=="}],"langs":[],"url":"/d/lzoi2025/homework/6887290a5c77c0f877120fc9"},{"_id":"685e36acc6c0836c1dd8328e","content":"\u3010\u7B97\u6CD5\u5165\u95E8-03\u3011STL\u5E93\u7684\u5E94\u7528\\r\\n- \u4E0A\u8BFE\u8BFE\u4EF6\uFF1A\\r\\n  - [\u3010C++\u8BED\u6CD5\u5165\u95E804\u3011\u5411\u91CF\u5BB9\u5668vector\u548Cstring.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/685e36acc6c0836c1dd8328e/file/public/%E3%80%90C%2B%2B%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A804%E3%80%91%E5%90%91%E9%87%8F%E5%AE%B9%E5%99%A8vector%E5%92%8Cstring.pdf)\\r\\n  - [STL\u5E93\u7684\u5E94\u7528.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/685e36acc6c0836c1dd8328e/file/public/STL%E5%BA%93%E7%9A%84%E5%BA%94%E7%94%A8.pdf)\\r\\n- \u89C6\u9891\u56DE\u653E\uFF1A\\r\\n  - [B \u7AD9\uFF1A\u3010C++\u8BED\u6CD5\u5165\u95E804\u3011\u5411\u91CF\u5BB9\u5668vector\u548C\u5B57\u7B26\u4E32string](https://www.bilibili.com/video/BV1xs7AzyEcB/?spm_id_from=333.1387.homepage.video_card.click)","owner":2,"domainId":"lzoi2025","docType":30,"docId":"685e36acc6c0836c1dd8328e","penaltySince":"2027-08-03T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"assign":["20250804\u4E0A\u5348"],"title":"\u3010\u7B97\u6CD5\u5165\u95E8-03\u3011STL\u5E93\u7684\u5E94\u7528","rule":"homework","beginAt":"2025-07-02T00:00:00.000Z","endAt":"2027-08-03T15:59:00.000Z","pids":[31,32,19,36,37,33,35,38,34,39],"attend":78,"rated":false,"maintainer":[],"files":[{"_id":"\u3010C++\u8BED\u6CD5\u5165\u95E804\u3011\u5411\u91CF\u5BB9\u5668vector\u548Cstring.pdf","name":"\u3010C++\u8BED\u6CD5\u5165\u95E804\u3011\u5411\u91CF\u5BB9\u5668vector\u548Cstring.pdf","size":2249898,"lastModified":"2025-07-01T09:13:11.853Z","etag":"L2RhdGEvZmlsZS9oeWRyby82ZDQvdGJ2dGMxYzlhcmg5ZG9lN3AxenhpLnBkZg=="},{"_id":"STL\u5E93\u7684\u5E94\u7528.pdf","name":"STL\u5E93\u7684\u5E94\u7528.pdf","size":1494491,"lastModified":"2025-07-06T00:29:19.743Z","etag":"L2RhdGEvZmlsZS9oeWRyby9xNDQvc3RnaGEwYzEwbG44anRzcjR2ZDcxLnBkZg=="}],"langs":[],"url":"/d/lzoi2025/homework/685e36acc6c0836c1dd8328e"}]}';
+      window.UserContextNew = '{}';
+    </script>
+  </body>
+</html>

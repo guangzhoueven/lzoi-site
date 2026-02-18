@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html data-page="contest_detail_problem" data-layout="basic" class="layout--basic page--contest_detail_problem theme--dark nojs" data-mantine-color-scheme="dark" lang="zh" data-app="Hydro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.gzlzoi.cn/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../../favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../../android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="../../../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../../favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://www.gzlzoi.cn/p/LS1050?tid=685fc10ec497f34a9db3c4fe">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="乐知课堂" />
+  <meta property="og:url" content="https://www.gzlzoi.cn/p/LS1050" />
+  <meta property="og:image" content="/favicon-96x96.png" />
+                                  <meta property="og:locale" content="zh" />
+              <meta property="og:title" content="LS1050. 【入门】小苹果 - 乐知课堂" />
+    <meta property="og:description" content="题目描述
+小 Y 的桌子上放着 n 个苹果从左到右排成一列，编号为从 1 到 n。
+小苞是小 Y 的好朋友，每天她都会从中拿走一些苹果。
+每天在拿的时候，小苞都是从左侧第 1 个苹果开始、每隔 2 个..." />
+    <title>【入门】小苹果 - 题目详情 - 乐知课堂</title>
+  <style>
+    body {
+      --font-family: "Microsoft Yahei", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Consolas", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="../../../theme-4.58.0-beta.17.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      window.UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","hydroacFeatures":[],"blspHost":"wss://ws.hydrooj.com","constantVersion":"1c07a499","domainId":"lzoi2025","domain":{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"},"extraTitleContent":"\u3010\u5165\u95E8\u3011\u5C0F\u82F9\u679C","SWConfig":{"preload":"","hosts":["http://www.gzlzoi.cn","https://www.gzlzoi.cn","https://www.gzlzoi.cn/","/"],"assets":[],"domains":[]}}';
+      window.UserContext = '{"_id":39,"mail":"202610319@gzlzoi.cn","uname":"202610319","hashType":"hydro","priv":4,"regat":"2025-07-01T02:30:33.477Z","loginat":"2026-02-06T00:24:21.126Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921","role":"\u5B66\u751F","scope":"BigInt::-1","tfa":false,"authn":false,"group":["20250702\u4E0A\u5348","\u4E34\u65F6\u5C0F\u7EC4","20250804\u4E0A\u5348","39"],"domains":[{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"}],"viewLang":"zh","timeZone":"Asia/Shanghai","codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","avatar":"gravatar:202610319@gzlzoi.cn","qq":"","gender":"2","bio":"<blockquote class=\\"note\\">\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: yellow;\\">\u4E66\u5C71\u6709\u8DEF\u52E4\u4E3A\u5F84\uFF0C\u5B66\u6D77\u65E0\u6DAF\u82E6\u4F5C\u821F\u3002</p></h3>\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: #12DA72;\\">Diligence is the path to the mountain of knowledge, hard-working is the boat to the endless sea of learning.</p></h3>\\r\\n</blockquote>","school":"\u5E7F\u5DDE\u5E02\u5929\u6CB3\u533A\u9A8F\u666F\u5C0F\u5B66","studentId":"","backgroundImage":"/d/lzoi2025/file/39/%E4%B9%90%E7%9F%A5%E8%AF%BE%E5%A0%82%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.png","unreadMsg":0,"pinnedDomains":["lzoi2025"],"rounded":true,"skipAnimate":false,"showTimeAgo":true,"fontFamily":"Microsoft Yahei","codeFontFamily":"Consolas","theme":"dark","preferredEditorType":"sv","showInvisibleChar":false,"formatCode":true,"displayName":"\u9EC4\u98DE\u535A","rpInfo":{"problem":237.2780396214451,"contest":8.25},"nAccept":191,"nSubmit":194,"rp":245.5280396214451,"rank":2,"level":8,"join":true,"avatarUrl":"//cn.gravatar.com/avatar/2dbb0a041212ea8df395e4d4418e92fa?d=mm&s=128"}';
+    </script>
+      </head>
+<body>
+      <script type="text/javascript" src="../../../resource/1c07a499/entry.js"></script>
+    <script type="text/javascript" src="../../../resource/4.58.0-beta.17/lang-zh.js"></script>
+    <script type="text/javascript" src="../../../hydro-4.58.0-beta.17.js"></script>
+    <nav class="nav slideout-menu" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://www.gzlzoi.cn/"><img class="nav__logo" src="../../../components/navigation/nav-logo-small_dark.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="../contest.html" class="nav__item">
+    返回比赛列表
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../contest/685fc10ec497f34a9db3c4fe.html" class="nav__item nav--active">
+    第一天：欢迎来到乐知课堂！
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../contest/685fc10ec497f34a9db3c4fe/problems.html" class="nav__item">
+    题目列表
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="https://www.gzlzoi.cn/d/lzoi2025/contest/685fc10ec497f34a9db3c4fe/scoreboard" class="nav__item">
+    比赛成绩表
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="41@tid=685fc10ec497f34a9db3c4fe.html" class="nav__item nav--active">
+    A. 【入门】小苹果
+  </a>
+</li>
+      </ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+              <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-domain" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <span class="nav__item"><span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span> lzoi2025 <span class="icon icon-expand_more nojs--hide"></span></span>
+        <ol class="dropdown-target menu" id="menu-nav-domain"><li class="menu__item">
+              <a href="../index.html" class="menu__link">
+                <span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span>
+                lzoi2025              </a>
+            </li><li class="menu__seperator"></li><li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 管理
+            </a>
+          </li>
+        </ol>
+      </li>
+          <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <a href="../user/39.html" class="nav__item">202610319 <span class="icon icon-expand_more nojs--hide"></span></a>
+        <ol class="dropdown-target menu" id="menu-nav-user">
+          <li class="menu__item">
+            <a href="../user/39.html" class="menu__link">
+              <span class="icon icon-account--circle"></span> 我的资料
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/messages.html" class="menu__link">
+              <span class="icon icon-comment--multiple"></span> 站内消息
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> @ lzoi2025
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/account.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 账户设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/settings/preference.html" class="menu__link">
+              <span class="icon icon-sliders"></span> 偏好设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/security.html" class="menu__link">
+              <span class="icon icon-security"></span> 安全设置
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> 我的域
+            </a>
+          </li>
+                              <li class="menu__seperator"></li>
+                    <li class="menu__item">
+            <a href="../logout.html" class="menu__link" name="nav_logout">
+              <span class="icon icon-logout"></span> 登出
+            </a>
+          </li>
+        </ol>
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://www.gzlzoi.cn/" target="_self">
+        <img src="../../../components/navigation/nav-logo-small_dark.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+        <script>
+
+  
+  
+  
+  
+  
+  
+  
+</script>
+<div class="row" data-sticky-parent>
+  <div class="medium-9 columns">
+    <div class="section">
+      <div class="section__header">
+        <h1 class="section__title">
+                    A. 【入门】小苹果
+        </h1>
+                  <div class="section__tools contest-problems">
+                                                      <a href="41@tid=685fc10ec497f34a9db3c4fe.html"
+                 class="fail                         active">
+                <span class="id">A</span>
+                <span class="icon icon-close"></span>              </a>                                          <a href="42@tid=685fc10ec497f34a9db3c4fe.html"
+                 class="                        ">
+                <span class="id">B</span>
+                              </a>                                          <a href="15@tid=685fc10ec497f34a9db3c4fe.html"
+                 class="                        ">
+                <span class="id">C</span>
+                              </a>          </div>
+              </div>
+      <div class="section__body">
+        <ul class="problem__tags">
+                    <span class="problem__tag-item icon icon-book">传统题</span>
+                                <span class="problem__tag-item icon icon-stopwatch">1000ms</span>
+            <span class="problem__tag-item icon icon-comparison">256MiB</span>
+                                      </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="problem-content-container"><div class="problem-content" data-marker-enabled>
+        <div class="section__header non-scratchpad--hide">
+          <h1 class="section__title">【入门】小苹果</h1>
+        </div>
+                <div class="section__body typo richmedia" data-fragment-id="problem-description">
+                <blockquote class="note">
+      <p>比赛已经结束。新提交将被视为补题提交，不计入比赛成绩。</p>
+    </blockquote>
+                    <h1 id="%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0" tabindex="-1">题目描述</h1>
+<p>小 Y 的桌子上放着 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 个苹果从左到右排成一列，编号为从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>。</p>
+<p>小苞是小 Y 的好朋友，每天她都会从中拿走一些苹果。</p>
+<p>每天在拿的时候，小苞都是从左侧第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 个苹果开始、每隔 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span> 个苹果拿走 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 个苹果。随后小苞会将剩下的苹果按原先的顺序重新排成一列。</p>
+<p>小苞想知道，多少天能拿完所有的苹果，而编号为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 的苹果是在第几天被拿走的？</p>
+<h1 id="%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F" tabindex="-1">输入格式</h1>
+<p>输入的第一行包含一个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>，表示苹果的总数。</p>
+<h1 id="%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F" tabindex="-1">输出格式</h1>
+<p>输出一行包含两个正整数，两个整数之间由一个空格隔开，分别表示小苞拿走所有苹果所需的天数以及拿走编号为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 的苹果是在第几天。</p>
+<pre><code class="language-input1">8
+</code></pre>
+<pre><code class="language-output1">5 5
+</code></pre>
+<h2 id="%E6%8F%90%E7%A4%BA" tabindex="-1">提示</h2>
+<p><strong>【样例 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 解释】</strong></p>
+<p>小苞的桌上一共放了 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn></mrow><annotation encoding="application/x-tex">8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">8</span></span></span></span> 个苹果。
+小苞第一天拿走了编号为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn></mrow><annotation encoding="application/x-tex">7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">7</span></span></span></span> 的苹果。
+小苞第二天拿走了编号为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span></span></span></span> 的苹果。
+小苞第三天拿走了编号为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span> 的苹果。
+小苞第四天拿走了编号为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">5</span></span></span></span> 的苹果。
+小苞第五天拿走了编号为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn></mrow><annotation encoding="application/x-tex">8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">8</span></span></span></span> 的苹果。</p>
+<h1 id="%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1%E4%B8%8E%E9%99%90%E5%88%B6" tabindex="-1">数据规模与限制</h1>
+<ul>
+<li>对于所有测试数据有：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><msup><mn>10</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">1\leq n\leq 10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span>。</li>
+<li>1s, 1024KiB for each test case.</li>
+</ul>
+
+
+</div>      </div></div>
+    </div>
+  </div>
+  <div class="medium-3 columns"><div data-sticky="large">
+            <div class="section side section--problem-sidebar">
+  <div>
+    <ol class="menu">
+              <li class="menu__item scratchpad--hide nojs--hide"><a class="menu__link highlight" name="problem-sidebar__open-scratchpad" href="javascript:;" data-global-hotkey="alt+e" style="display: none;">
+        <span class="icon icon-enlarge"></span> 进入在线编程模式 (Alt+E)
+      </a></li>
+      <li class="menu__item non-scratchpad--hide"><a class="menu__link" name="problem-sidebar__quit-scratchpad" href="javascript:;" data-global-hotkey="alt+q">
+        <span class="icon icon-enlarge"></span> 退出在线编程模式 (Alt+Q)
+      </a></li>
+          <li class="menu__item scratchpad--hide"><a class="menu__link" href="LS1050/submit.html">
+        <span class="icon icon-send"></span> 递交
+      </a></li>
+              <li class="menu__item"><a class="menu__link" href="../problem/random@q=category%253Acsp-j.html">
+        <span class="icon icon-send"></span> 在题库中打开
+      </a></li>
+            </ol>
+  </div>
+</div>
+    <div class="section side">
+  <a class="contest-sidebar__bg" href="../contest/685fc10ec497f34a9db3c4fe.html">
+    <div class="section__body">
+      <h1>第一天：欢迎来到乐知课堂！</h1>
+      <div class="contest-sidebar__status">
+              <span class="icon icon-check"></span> 已参加
+            </div>
+    </div>
+  </a>
+  <div>
+    <ol class="menu">
+              <li class="menu__item"><a class="menu__link" href="../contest/685fc10ec497f34a9db3c4fe.html">
+        <span class="icon icon-award"></span> 查看比赛
+      </a></li>
+              <li class="menu__item"><a class="menu__link" href="../contest/685fc10ec497f34a9db3c4fe/problems.html">
+        <span class="icon icon-unordered_list"></span> 题目列表
+      </a></li>
+    
+          <li class="menu__item"><a class="menu__link" href="https://www.gzlzoi.cn/d/lzoi2025/contest/685fc10ec497f34a9db3c4fe/scoreboard">
+        <span class="icon icon-statistics"></span> 成绩表
+      </a></li>
+                          <li class="menu__item"><a class="menu__link" href="../discuss/contest/685fc10ec497f34a9db3c4fe.html">
+        <span class="icon icon-comment--text"></span> 讨论
+      </a></li>
+                  <li class="menu__item"><a class="menu__link" href="../record@tid=685fc10ec497f34a9db3c4fe&amp;uidOrName=39.html">
+        <span class="icon icon-flag"></span> 我的递交
+      </a></li>
+          <li class="menu__item"><a class="menu__link" href="../wiki/help.html#contest">
+        <span class="icon icon-help"></span> 帮助
+      </a></li>
+      <li class="menu__seperator"></li>
+    </ol>
+  </div>
+  <div class="section__body typo">
+    <dl class="large horizontal">
+      <dt>状态</dt>
+      <dd>
+        已结束
+                  (已参加)
+              </dd>
+      <dt>规则</dt><dd>IOI</dd>
+      <dt>题目</dt><dd>3</dd>
+      <dt>开始于</dt><dd><span class="time" data-timestamp="1751417301.754">2025-7-2 8:48</span>
+</dd>
+      <dt>结束于</dt><dd><span class="time" data-timestamp="1751420901.754">2025-7-2 9:48</span>
+</dd>
+      <dt>持续时间</dt><dd>1
+ 小时</dd>
+      <dt>主持人</dt><dd><span class="user-profile-link">
+      <img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20">
+    <a class="user-profile-name uname--lv3" href="../user/2.html">
+          liangsheng
+      </a>
+  </span>
+</dd>
+      <dt>参赛人数</dt><dd>68</dd>
+    </dl>
+  </div>
+</div>
+    </div></div>
+</div>
+<div style="display:none" class="outer-loader-container"><div class="loader"></div></div>
+<div class="scratchpad-container" style="display:none">
+  <div style="display:none" class="loader-container"><div class="loader"></div></div>
+  <div id="scratchpad" style="opacity:0"></div>
+</div>
+  </div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+      <div class="row footer__links">
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          状态
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://www.gzlzoi.cn/d/lzoi2025/record">评测队列</a></li>
+          <li class="footer__category__item"><a href="../status.html">服务状态</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          开发
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">开源</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          支持
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/help.html">帮助</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">联系我们</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable end">
+        <h1>
+          关于
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/about.html">关于</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#privacy">隐私</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#tos">服务条款</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">版权申诉</a></li>
+        </ul></div>
+      </div>
+    </div>
+      <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+                    <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-lang"><li class="menu__item"><a class="menu__link" href="../language/en.html">English</a></li><li class="menu__item"><a class="menu__link" href="../language/ko.html">한국어</a></li><li class="menu__item"><a class="menu__link" href="../language/zh.html">简体中文</a></li><li class="menu__item"><a class="menu__link" href="../language/zh_TW.html">正體中文</a></li></ol>
+          </li>
+          <li class="footer__extra-link-item">
+                          <a href="https://www.gzlzoi.cn/legacy?legacy=true">兼容模式</a>
+                      </li>
+          <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> 主题 <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-theme">
+              <li class="menu__item"><a class="menu__link" href="../set_theme/light.html">亮色</a></li>
+              <li class="menu__item"><a class="menu__link" href="../set_theme/dark.html">暗色</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><a href="https://beian.miit.gov.cn/">京ICP备2023010486号-3</a></li><li class="footer__extra-link-item">Worker 0, 14ms</li>
+          <!-- Prepare 4ms -->
+          <!-- Method 0ms -->
+          
+          
+          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v5.0.0-beta.16</a> Community</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      window.UiContextNew = '{"problemId":"LS1050","problemNumId":41,"codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","pdoc":{"_id":"685fbda3c497f34a9db3c4f3","content":"{\\"zh\\":\\"# \u9898\u76EE\u63CF\u8FF0\\\\n\\\\n\u5C0F Y \u7684\u684C\u5B50\u4E0A\u653E\u7740 $n$ \u4E2A\u82F9\u679C\u4ECE\u5DE6\u5230\u53F3\u6392\u6210\u4E00\u5217\uFF0C\u7F16\u53F7\u4E3A\u4ECE $1$ \u5230 $n$\u3002\\\\n\\\\n\u5C0F\u82DE\u662F\u5C0F Y \u7684\u597D\u670B\u53CB\uFF0C\u6BCF\u5929\u5979\u90FD\u4F1A\u4ECE\u4E2D\u62FF\u8D70\u4E00\u4E9B\u82F9\u679C\u3002\\\\n\\\\n\u6BCF\u5929\u5728\u62FF\u7684\u65F6\u5019\uFF0C\u5C0F\u82DE\u90FD\u662F\u4ECE\u5DE6\u4FA7\u7B2C $1$ \u4E2A\u82F9\u679C\u5F00\u59CB\u3001\u6BCF\u9694 $2$ \u4E2A\u82F9\u679C\u62FF\u8D70 $1$ \u4E2A\u82F9\u679C\u3002\u968F\u540E\u5C0F\u82DE\u4F1A\u5C06\u5269\u4E0B\u7684\u82F9\u679C\u6309\u539F\u5148\u7684\u987A\u5E8F\u91CD\u65B0\u6392\u6210\u4E00\u5217\u3002\\\\n\\\\n\u5C0F\u82DE\u60F3\u77E5\u9053\uFF0C\u591A\u5C11\u5929\u80FD\u62FF\u5B8C\u6240\u6709\u7684\u82F9\u679C\uFF0C\u800C\u7F16\u53F7\u4E3A $n$ \u7684\u82F9\u679C\u662F\u5728\u7B2C\u51E0\u5929\u88AB\u62FF\u8D70\u7684\uFF1F\\\\n\\\\n# \u8F93\u5165\u683C\u5F0F\\\\n\\\\n\u8F93\u5165\u7684\u7B2C\u4E00\u884C\u5305\u542B\u4E00\u4E2A\u6B63\u6574\u6570 $n$\uFF0C\u8868\u793A\u82F9\u679C\u7684\u603B\u6570\u3002\\\\n\\\\n# \u8F93\u51FA\u683C\u5F0F\\\\n\\\\n\u8F93\u51FA\u4E00\u884C\u5305\u542B\u4E24\u4E2A\u6B63\u6574\u6570\uFF0C\u4E24\u4E2A\u6574\u6570\u4E4B\u95F4\u7531\u4E00\u4E2A\u7A7A\u683C\u9694\u5F00\uFF0C\u5206\u522B\u8868\u793A\u5C0F\u82DE\u62FF\u8D70\u6240\u6709\u82F9\u679C\u6240\u9700\u7684\u5929\u6570\u4EE5\u53CA\u62FF\u8D70\u7F16\u53F7\u4E3A $n$ \u7684\u82F9\u679C\u662F\u5728\u7B2C\u51E0\u5929\u3002\\\\n\\\\n```input1\\\\n8\\\\n```\\\\n\\\\n```output1\\\\n5 5\\\\n```\\\\n\\\\n## \u63D0\u793A\\\\n\\\\n**\u3010\u6837\u4F8B $1$ \u89E3\u91CA\u3011**\\\\n\\\\n\u5C0F\u82DE\u7684\u684C\u4E0A\u4E00\u5171\u653E\u4E86 $8$ \u4E2A\u82F9\u679C\u3002\\\\n\u5C0F\u82DE\u7B2C\u4E00\u5929\u62FF\u8D70\u4E86\u7F16\u53F7\u4E3A $1$\u3001$4$\u3001$7$ \u7684\u82F9\u679C\u3002\\\\n\u5C0F\u82DE\u7B2C\u4E8C\u5929\u62FF\u8D70\u4E86\u7F16\u53F7\u4E3A $2$\u3001$6$ \u7684\u82F9\u679C\u3002\\\\n\u5C0F\u82DE\u7B2C\u4E09\u5929\u62FF\u8D70\u4E86\u7F16\u53F7\u4E3A $3$ \u7684\u82F9\u679C\u3002\\\\n\u5C0F\u82DE\u7B2C\u56DB\u5929\u62FF\u8D70\u4E86\u7F16\u53F7\u4E3A $5$ \u7684\u82F9\u679C\u3002\\\\n\u5C0F\u82DE\u7B2C\u4E94\u5929\u62FF\u8D70\u4E86\u7F16\u53F7\u4E3A $8$ \u7684\u82F9\u679C\u3002\\\\n\\\\n# \u6570\u636E\u89C4\u6A21\u4E0E\u9650\u5236\\\\n\\\\n* \u5BF9\u4E8E\u6240\u6709\u6D4B\u8BD5\u6570\u636E\u6709\uFF1A$1\\\\\\\\leq n\\\\\\\\leq 10^9$\u3002\\\\n* 1s, 1024KiB for each test case.\\\\n\\\\n\x3C!-- # \u6765\u6E90\\\\n\\\\n* [luogu_P9748 [CSP-J 2023] \u5C0F\u82F9\u679C](https://www.luogu.com.cn/problem/P9748?contestId=140858)\\\\n -->\\\\n\\"}","owner":2,"domainId":"lzoi2025","docType":10,"docId":41,"title":"\u3010\u5165\u95E8\u3011\u5C0F\u82F9\u679C","tag":[],"hidden":false,"pid":"LS1050","data":[{"_id":"1.in","name":"1.in","size":2,"lastModified":"2025-06-28T10:02:11.158Z","etag":"L2RhdGEvZmlsZS9oeWRyby9xc2IvM2xkcXh1ZjJzbTdtaXZ2MG1hb3N3Lmlu"},{"_id":"1.out","name":"1.out","size":4,"lastModified":"2025-06-28T10:02:11.163Z","etag":"L2RhdGEvZmlsZS9oeWRyby91bzUvcm45cDNpaXFxeXd0d3JkaXl2ZXJpLm91dA=="},{"_id":"10.in","name":"10.in","size":11,"lastModified":"2025-06-28T10:02:11.167Z","etag":"L2RhdGEvZmlsZS9oeWRyby94ODYvbmNlaTR4aXZ5N2twdnh2a2tkYnd3Lmlu"},{"_id":"10.out","name":"10.out","size":5,"lastModified":"2025-06-28T10:02:11.170Z","etag":"L2RhdGEvZmlsZS9oeWRyby9oMW8vaWFqMHoyMzFnMmRvdXQycXFmOHYzLm91dA=="},{"_id":"2.in","name":"2.in","size":3,"lastModified":"2025-06-28T10:02:11.182Z","etag":"L2RhdGEvZmlsZS9oeWRyby93Yngva2UyM2I1ZDBvMWFkbGN0cjM5cHpoLmlu"},{"_id":"2.out","name":"2.out","size":4,"lastModified":"2025-06-28T10:02:11.187Z","etag":"L2RhdGEvZmlsZS9oeWRyby9qYW8vZGNnY3FtcnF4bGx4bmN0eWt3cG5tLm91dA=="},{"_id":"3.in","name":"3.in","size":3,"lastModified":"2025-06-28T10:02:11.191Z","etag":"L2RhdGEvZmlsZS9oeWRyby84YnUvZjNwcDh0dm9qdG5ncjB1aDBuemUwLmlu"},{"_id":"3.out","name":"3.out","size":4,"lastModified":"2025-06-28T10:02:11.195Z","etag":"L2RhdGEvZmlsZS9oeWRyby9sbnEveGFia2R1eHBqN2RyMnRrbngwNHlwLm91dA=="},{"_id":"4.in","name":"4.in","size":3,"lastModified":"2025-06-28T10:02:11.201Z","etag":"L2RhdGEvZmlsZS9oeWRyby96ZXova2ZvZ3lqMHBuMGlvMXd1bmdhcGt3Lmlu"},{"_id":"4.out","name":"4.out","size":5,"lastModified":"2025-06-28T10:02:11.205Z","etag":"L2RhdGEvZmlsZS9oeWRyby82Y2UveWoybXJrY2VqcHBxMG9mYWFlanBhLm91dA=="},{"_id":"5.in","name":"5.in","size":4,"lastModified":"2025-06-28T10:02:11.209Z","etag":"L2RhdGEvZmlsZS9oeWRyby91am8vdmhzZHFsZnZ3OWZtc2h0ODZicDBiLmlu"},{"_id":"5.out","name":"5.out","size":5,"lastModified":"2025-06-28T10:02:11.213Z","etag":"L2RhdGEvZmlsZS9oeWRyby9qanYvbHJlbmJ3cGZwbHlydmFrNW1mZXB2Lm91dA=="},{"_id":"6.in","name":"6.in","size":5,"lastModified":"2025-06-28T10:02:11.217Z","etag":"L2RhdGEvZmlsZS9oeWRyby8zNjQvOWxrOXVwd2x6cWRyMHFoZXVnanQwLmlu"},{"_id":"6.out","name":"6.out","size":5,"lastModified":"2025-06-28T10:02:11.229Z","etag":"L2RhdGEvZmlsZS9oeWRyby9taHEveWZlYWE3cnlyYWdraWJtZ3Fsa2IzLm91dA=="},{"_id":"7.in","name":"7.in","size":6,"lastModified":"2025-06-28T10:02:11.243Z","etag":"L2RhdGEvZmlsZS9oeWRyby9hYXUvbHJkdjc3Y2lqOHpsY2gwNGxiYWZqLmlu"},{"_id":"7.out","name":"7.out","size":5,"lastModified":"2025-06-28T10:02:11.246Z","etag":"L2RhdGEvZmlsZS9oeWRyby9keGwvdzJvYmt2YWMwc3JmcG05ZTkyaDdsLm91dA=="},{"_id":"8.in","name":"8.in","size":7,"lastModified":"2025-06-28T10:02:11.250Z","etag":"L2RhdGEvZmlsZS9oeWRyby9zdzEvemRxbXVuaTd2czVvMGtjZ28wY3doLmlu"},{"_id":"8.out","name":"8.out","size":5,"lastModified":"2025-06-28T10:02:11.254Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ic2UvMWlnYWphMjlhcXo4YWVmNWt1ajJhLm91dA=="},{"_id":"9.in","name":"9.in","size":8,"lastModified":"2025-06-28T10:02:11.260Z","etag":"L2RhdGEvZmlsZS9oeWRyby95OHcvanRwZmZnYW01aWI4am0wa2VqYWpkLmlu"},{"_id":"9.out","name":"9.out","size":5,"lastModified":"2025-06-28T10:02:11.269Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wYmMvZWVlb3Z1czhobWZ0NGt4MHk1MGxtLm91dA=="}],"html":false,"config":{"count":10,"memoryMin":256,"memoryMax":256,"timeMin":1000,"timeMax":1000,"type":"default","langs":["cc","cc.cc14o2","cc.cc17o2","py","py.py3"]}},"tdoc":{"_id":"685fc10ec497f34a9db3c4fe","content":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802\uFF01","owner":2,"domainId":"lzoi2025","docType":30,"docId":"685fc10ec497f34a9db3c4fe","duration":1,"title":"\u7B2C\u4E00\u5929\uFF1A\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802\uFF01","rule":"ioi","beginAt":"2025-07-02T00:45:00.000Z","endAt":"2025-07-12T00:45:00.000Z","pids":[41,42,15],"attend":68,"rated":false,"allowViewCode":false,"assign":["20250702\u4E0A\u5348"],"autoHide":true,"lockAt":null,"maintainer":[2]},"tsdoc":{"attend":1,"startAt":"2025-07-02T00:48:21.754Z","endAt":"2025-07-02T01:48:21.754Z","detail":{"41":{"rid":"68648dd06b5083e45345f6d1","pid":41,"status":2,"score":30,"subtasks":{"1":{"type":"sum","score":30,"status":2}},"lang":"cc.cc14o2"}}},"canViewRecord":true,"postSubmitUrl":"/d/lzoi2025/p/41/submit","getSubmissionsUrl":"/d/lzoi2025/record?fullStatus=true&pid=41","getRecordDetailUrl":"/d/lzoi2025/record/%7Brid%7D","pretestConnUrl":"record-conn?pretest=1&uidOrName=39&pid=41&domainId=lzoi2025"}';
+      window.UserContextNew = '{}';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+void solves(int n, int m) {
+    int sum = 0, max1 = -1, min1 = 101, ans = INT_MAX;;
+    vector<int> a(n - 1);
+    for (int i = 0; i < n - 1; i++)   cin >> a[i];  // 前n-1场得分a[]，第n场得分为x
+    for (int x : a) {
+        sum += x;
+        max1 = max(max1, x);
+        min1 = min(min1, x);
+    }
+ 
+    if (sum - max1 >= m)   ans = 0;
+    if (sum - min1 >= m)   ans = min(ans, max1);
+ 
+    int required = m + max1 + min1 - sum;
+    if (required <= min1) {
+        int x = min1 + 1;
+        if (x < max1) {
+            ans = min(ans, x);
+        }
+    } else if (required < max1) {
+        ans = min(ans, required);
+    }
+ 
+    if (ans != INT_MAX && ans <= 100) {
+        cout << ans << endl;
+    } else {
+        cout << -1 << endl;
+    }
+}
+ 
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);  cout.tie(nullptr);
+ 
+    int n, m;
+    cin >> n >> m;
+    solves(n,m);
+    return 0;
+}

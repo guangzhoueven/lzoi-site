@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using i64 = long long;
+const int P = 998244353;
+
+int main() {	
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+
+    int n;
+    cin >> n;
+    vector<int> a(n, 0);
+    for (int i = 0; i < n; i++) cin >> a[i];
+
+    int ans = 0;
+    for (int l = 0; l < n; l++) {
+        int t = a[l];
+        for (int r = l; r < n; r++) {
+            t = min(t, a[r]);
+            ans = (ans + t) % P;
+        }
+    }
+    cout << ans << '\n';
+
+    return 0;
+}

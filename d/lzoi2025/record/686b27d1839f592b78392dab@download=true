@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+	int N, C;
+	cin >> N >> C;
+	vector<int> nums(N);
+	unordered_map<int, int> map_count;
+	
+	for (int i = 0; i < N; i++) {
+		cin >> nums[i];
+		map_count[nums[i]]++;
+	}
+	
+	long long ans = 0;
+	for (int num : nums) {
+		int t = num - C;
+		ans += map_count[t];
+	}
+	
+	cout << ans << endl;
+	
+	return 0;
+}

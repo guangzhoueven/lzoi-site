@@ -1,0 +1,55 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+const i64 MOD = 998244353;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n;
+	cin >> n;
+	vector<i64> a(n);
+	for (auto& x : a) cin >> x;
+
+	vector<i64> Lmin(n, -1), Rmin(n, n);
+	vector<i64> st;
+	
+	for (i64 i = 0; i < n; i++) {
+		while (!st.empty() && a[st.back()] >= a[i]) st.pop_back();
+		if (!st.empty()) Lmin[i] = st.back();
+		st.push_back(i);
+	}
+	st.clear();
+	
+	for (i64 i = n - 1; i >= 0; i--) {
+		while (!st.empty() && a[st.back()] > a[i]) st.pop_back();
+		if (!st.empty()) Rmin[i] = st.back();
+		st.push_back(i);
+	}
+	
+	i64 sum_min = 0;
+	for (i64 i = 0; i < n; i++)
+		sum_min = (sum_min + a[i] * (i - Lmin[i]) * (Rmin[i] - i)) % MOD;
+	
+	vector<i64> Lmax(n, -1), Rmax(n, n);
+	st.clear();
+	
+	for (i64 i = 0; i < n; i++) {
+		while (!st.empty() && a[st.back()] <= a[i]) st.pop_back();
+		if (!st.empty()) Lmax[i] = st.back();
+		st.push_back(i);
+	}
+	st.clear();
+	
+	for (i64 i = n - 1; i >= 0; i--) {
+		while (!st.empty() && a[st.back()] < a[i]) st.pop_back();
+		if (!st.empty()) Rmax[i] = st.back();
+		st.push_back(i);
+	}
+	
+	i64 sum_max = 0;
+	for (i64 i = 0; i < n; i++)
+		sum_max = (sum_max + a[i] * (i - Lmax[i]) * (Rmax[i] - i)) % MOD;
+	
+	cout << (sum_max - sum_min + MOD) % MOD << "\n";
+	return 0;
+}

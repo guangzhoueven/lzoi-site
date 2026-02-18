@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html data-page="contest_detail_problem" data-layout="basic" class="layout--basic page--contest_detail_problem theme--dark nojs" data-mantine-color-scheme="dark" lang="zh" data-app="Hydro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.gzlzoi.cn/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../../favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../../android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="../../../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../../favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://www.gzlzoi.cn/p/22?tid=6867962c378af7f9fb349365">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="乐知课堂" />
+  <meta property="og:url" content="https://www.gzlzoi.cn/p/22" />
+  <meta property="og:image" content="/favicon-96x96.png" />
+                                  <meta property="og:locale" content="zh" />
+              <meta property="og:title" content="MX28054. 【入门】统一颜色 - 乐知课堂" />
+    <meta property="og:description" content="题目描述
+有三种颜色的球，红色有 R 个，绿色有 G 个，蓝色有 B 个。
+每次操作你可以选择两个颜色不同的球（必须存在这两个球，即它们的个数至少为 1），将它们变成第三种颜色的球。
+例如拿出一个红色..." />
+    <title>【入门】统一颜色 - 题目详情 - 乐知课堂</title>
+  <style>
+    body {
+      --font-family: "Microsoft Yahei", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Consolas", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="../../../theme-4.58.0-beta.17.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      window.UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","hydroacFeatures":[],"blspHost":"wss://ws.hydrooj.com","constantVersion":"1c07a499","domainId":"lzoi2025","domain":{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"},"extraTitleContent":"\u3010\u5165\u95E8\u3011\u7EDF\u4E00\u989C\u8272","SWConfig":{"preload":"","hosts":["http://www.gzlzoi.cn","https://www.gzlzoi.cn","https://www.gzlzoi.cn/","/"],"assets":[],"domains":[]}}';
+      window.UserContext = '{"_id":39,"mail":"202610319@gzlzoi.cn","uname":"202610319","hashType":"hydro","priv":4,"regat":"2025-07-01T02:30:33.477Z","loginat":"2026-02-06T00:24:21.126Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921","role":"\u5B66\u751F","scope":"BigInt::-1","tfa":false,"authn":false,"group":["20250702\u4E0A\u5348","\u4E34\u65F6\u5C0F\u7EC4","20250804\u4E0A\u5348","39"],"domains":[{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"}],"viewLang":"zh","timeZone":"Asia/Shanghai","codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","avatar":"gravatar:202610319@gzlzoi.cn","qq":"","gender":"2","bio":"<blockquote class=\\"note\\">\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: yellow;\\">\u4E66\u5C71\u6709\u8DEF\u52E4\u4E3A\u5F84\uFF0C\u5B66\u6D77\u65E0\u6DAF\u82E6\u4F5C\u821F\u3002</p></h3>\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: #12DA72;\\">Diligence is the path to the mountain of knowledge, hard-working is the boat to the endless sea of learning.</p></h3>\\r\\n</blockquote>","school":"\u5E7F\u5DDE\u5E02\u5929\u6CB3\u533A\u9A8F\u666F\u5C0F\u5B66","studentId":"","backgroundImage":"/d/lzoi2025/file/39/%E4%B9%90%E7%9F%A5%E8%AF%BE%E5%A0%82%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.png","unreadMsg":0,"pinnedDomains":["lzoi2025"],"rounded":true,"skipAnimate":false,"showTimeAgo":true,"fontFamily":"Microsoft Yahei","codeFontFamily":"Consolas","theme":"dark","preferredEditorType":"sv","showInvisibleChar":false,"formatCode":true,"displayName":"\u9EC4\u98DE\u535A","rpInfo":{"problem":237.2780396214451,"contest":8.25},"nAccept":191,"nSubmit":194,"rp":245.5280396214451,"rank":2,"level":8,"join":true,"avatarUrl":"//cn.gravatar.com/avatar/2dbb0a041212ea8df395e4d4418e92fa?d=mm&s=128"}';
+    </script>
+      </head>
+<body>
+      <script type="text/javascript" src="../../../resource/1c07a499/entry.js"></script>
+    <script type="text/javascript" src="../../../resource/4.58.0-beta.17/lang-zh.js"></script>
+    <script type="text/javascript" src="../../../hydro-4.58.0-beta.17.js"></script>
+    <nav class="nav slideout-menu" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://www.gzlzoi.cn/"><img class="nav__logo" src="../../../components/navigation/nav-logo-small_dark.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="../contest.html" class="nav__item">
+    返回比赛列表
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../contest/6867962c378af7f9fb349365.html" class="nav__item nav--active">
+    第四天：回首往“题”
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../contest/6867962c378af7f9fb349365/problems.html" class="nav__item">
+    题目列表
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="https://www.gzlzoi.cn/d/lzoi2025/contest/6867962c378af7f9fb349365/scoreboard" class="nav__item">
+    比赛成绩表
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="22@tid=6867962c378af7f9fb349365.html" class="nav__item nav--active">
+    B. 【入门】统一颜色
+  </a>
+</li>
+      </ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+              <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-domain" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <span class="nav__item"><span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span> lzoi2025 <span class="icon icon-expand_more nojs--hide"></span></span>
+        <ol class="dropdown-target menu" id="menu-nav-domain"><li class="menu__item">
+              <a href="../index.html" class="menu__link">
+                <span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span>
+                lzoi2025              </a>
+            </li><li class="menu__seperator"></li><li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 管理
+            </a>
+          </li>
+        </ol>
+      </li>
+          <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <a href="../user/39.html" class="nav__item">202610319 <span class="icon icon-expand_more nojs--hide"></span></a>
+        <ol class="dropdown-target menu" id="menu-nav-user">
+          <li class="menu__item">
+            <a href="../user/39.html" class="menu__link">
+              <span class="icon icon-account--circle"></span> 我的资料
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/messages.html" class="menu__link">
+              <span class="icon icon-comment--multiple"></span> 站内消息
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> @ lzoi2025
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/account.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 账户设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/settings/preference.html" class="menu__link">
+              <span class="icon icon-sliders"></span> 偏好设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/security.html" class="menu__link">
+              <span class="icon icon-security"></span> 安全设置
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> 我的域
+            </a>
+          </li>
+                              <li class="menu__seperator"></li>
+                    <li class="menu__item">
+            <a href="../logout.html" class="menu__link" name="nav_logout">
+              <span class="icon icon-logout"></span> 登出
+            </a>
+          </li>
+        </ol>
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://www.gzlzoi.cn/" target="_self">
+        <img src="../../../components/navigation/nav-logo-small_dark.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+        <script>
+
+  
+  
+  
+  
+  
+  
+  
+</script>
+<div class="row" data-sticky-parent>
+  <div class="medium-9 columns">
+    <div class="section">
+      <div class="section__header">
+        <h1 class="section__title">
+                    B. 【入门】统一颜色
+        </h1>
+                  <div class="section__tools contest-problems">
+                                                      <a href="18@tid=6867962c378af7f9fb349365.html"
+                 class="pass                        ">
+                <span class="id">A</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="22@tid=6867962c378af7f9fb349365.html"
+                 class="fail                         active">
+                <span class="id">B</span>
+                <span class="icon icon-close"></span>              </a>                                          <a href="20@tid=6867962c378af7f9fb349365.html"
+                 class="fail                        ">
+                <span class="id">C</span>
+                <span class="icon icon-close"></span>              </a>                                          <a href="17@tid=6867962c378af7f9fb349365.html"
+                 class="pass                        ">
+                <span class="id">D</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="16@tid=6867962c378af7f9fb349365.html"
+                 class="fail                        ">
+                <span class="id">E</span>
+                <span class="icon icon-close"></span>              </a>                                          <a href="44@tid=6867962c378af7f9fb349365.html"
+                 class="                        ">
+                <span class="id">F</span>
+                              </a>                                          <a href="47@tid=6867962c378af7f9fb349365.html"
+                 class="                        ">
+                <span class="id">G</span>
+                              </a>                                          <a href="48@tid=6867962c378af7f9fb349365.html"
+                 class="                        ">
+                <span class="id">H</span>
+                              </a>          </div>
+              </div>
+      <div class="section__body">
+        <ul class="problem__tags">
+                    <span class="problem__tag-item icon icon-book">传统题</span>
+                                <span class="problem__tag-item icon icon-stopwatch">200ms</span>
+            <span class="problem__tag-item icon icon-comparison">128MiB</span>
+                                      </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="problem-content-container"><div class="problem-content" data-marker-enabled>
+        <div class="section__header non-scratchpad--hide">
+          <h1 class="section__title">【入门】统一颜色</h1>
+        </div>
+                <div class="section__body typo richmedia" data-fragment-id="problem-description">
+                <blockquote class="note">
+      <p>比赛已经结束。新提交将被视为补题提交，不计入比赛成绩。</p>
+    </blockquote>
+                    <h1 id="%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0" tabindex="-1">题目描述</h1>
+<p>有三种颜色的球，红色有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span> 个，绿色有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">G</span></span></span></span> 个，蓝色有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span></span> 个。</p>
+<p>每次操作你可以选择两个颜色不同的球（必须存在这两个球，即它们的个数至少为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>），将它们变成第三种颜色的球。</p>
+<p>例如拿出一个红色和一个绿色的球，把它们变成蓝色。</p>
+<p>求最小的操作次数使得所有球的颜色相同，如果无法达成则输出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>。</p>
+<h1 id="%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F" tabindex="-1">输入格式</h1>
+<p>第一行给定一个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>，表示数据组数。</p>
+<p>之后每组数据，给出三个非负整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo separator="true">,</mo><mi>G</mi><mo separator="true">,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">R,G,B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">G</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span></span>。</p>
+<h1 id="%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F" tabindex="-1">输出格式</h1>
+<p>对于每组数据，输出一个整数，表示答案</p>
+<pre><code class="language-input1">4
+1 2 2
+1 2 3
+1 2 4
+1 10 0
+</code></pre>
+<pre><code class="language-output1">2
+-1
+4
+10
+</code></pre>
+<h1 id="%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4%E4%B8%8E%E6%8F%90%E7%A4%BA" tabindex="-1">数据范围与提示</h1>
+<p><strong>【样例 1 解释】</strong></p>
+<ul>
+<li>对于第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 组数据，$(1, 2, 2) \Rightarrow (3, 1, 1) \Rightarrow (5, 0, 0)$</li>
+<li>对于第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span> 组数据，无法做到，输出 <code>-1</code></li>
+<li>对于第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span> 组数据，$(1, 2, 4) \Rightarrow (3, 1, 3) \Rightarrow (2, 3, 2) \Rightarrow (1, 5, 1) \Rightarrow (0, 7, 0)$</li>
+<li>对于第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span> 组数据，$(1, 10, 0) \Rightarrow (0, 9, 2) \Rightarrow (2, 8, 1) \Rightarrow (1, 7, 3) \Rightarrow (3, 6, 2) \Rightarrow (5, 5, 1) \Rightarrow (4, 4, 3) \Rightarrow (3, 3, 5) \Rightarrow (2, 2, 7) \Rightarrow (1, 1, 9) \Rightarrow (0, 0, 11)$</li>
+</ul>
+<p><strong>【提示】</strong></p>
+<ul>
+<li>一次操作相当于对 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo separator="true">,</mo><mi>G</mi><mo separator="true">,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">R, G, B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">G</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span></span> 分别执行了 <code>-1</code>, <code>-1</code>, <code>+2</code></li>
+<li>我们希望最后能够最后只有一种颜色，必然要将 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo separator="true">,</mo><mi>G</mi><mo separator="true">,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">R, G, B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">G</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span></span> 先转换为 <strong>至少有 2 个颜色相同</strong></li>
+</ul>
+<p><strong>【数据范围】</strong></p>
+<p>对于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>30</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">30\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">30%</span></span></span></span> 的数据，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>R</mi><mo separator="true">,</mo><mi>G</mi><mo separator="true">,</mo><mi>B</mi><mo>≤</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">0 \leq R,G,B \leq 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">G</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span>​​。</p>
+<p>对于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>60</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">60\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">60%</span></span></span></span> 的数据，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>R</mi><mo separator="true">,</mo><mi>G</mi><mo separator="true">,</mo><mi>B</mi><mo>≤</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">0 \leq R,G,B \leq 50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">G</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">50</span></span></span></span></p>
+<p>对于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">100\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">100%</span></span></span></span> 的数据，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>R</mi><mo separator="true">,</mo><mi>G</mi><mo separator="true">,</mo><mi>B</mi><mo>≤</mo><msup><mn>10</mn><mn>8</mn></msup><mo separator="true">,</mo><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">0 \leq R,G,B \leq 10^8,1 \leq T \leq 500</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">G</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0085em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">500</span></span></span></span></p>
+
+
+</div>      </div></div>
+    </div>
+  </div>
+  <div class="medium-3 columns"><div data-sticky="large">
+            <div class="section side section--problem-sidebar">
+  <div>
+    <ol class="menu">
+              <li class="menu__item scratchpad--hide nojs--hide"><a class="menu__link highlight" name="problem-sidebar__open-scratchpad" href="javascript:;" data-global-hotkey="alt+e" style="display: none;">
+        <span class="icon icon-enlarge"></span> 进入在线编程模式 (Alt+E)
+      </a></li>
+      <li class="menu__item non-scratchpad--hide"><a class="menu__link" name="problem-sidebar__quit-scratchpad" href="javascript:;" data-global-hotkey="alt+q">
+        <span class="icon icon-enlarge"></span> 退出在线编程模式 (Alt+Q)
+      </a></li>
+          <li class="menu__item scratchpad--hide"><a class="menu__link" href="MX28054/submit.html">
+        <span class="icon icon-send"></span> 递交
+      </a></li>
+              <li class="menu__item"><a class="menu__link" href="MX28054.html">
+        <span class="icon icon-send"></span> 在题库中打开
+      </a></li>
+            </ol>
+  </div>
+</div>
+    <div class="section side">
+  <a class="contest-sidebar__bg" href="../contest/6867962c378af7f9fb349365.html">
+    <div class="section__body">
+      <h1>第四天：回首往“题”</h1>
+      <div class="contest-sidebar__status">
+              <span class="icon icon-check"></span> 已参加
+            </div>
+    </div>
+  </a>
+  <div>
+    <ol class="menu">
+              <li class="menu__item"><a class="menu__link" href="../contest/6867962c378af7f9fb349365.html">
+        <span class="icon icon-award"></span> 查看比赛
+      </a></li>
+              <li class="menu__item"><a class="menu__link" href="../contest/6867962c378af7f9fb349365/problems.html">
+        <span class="icon icon-unordered_list"></span> 题目列表
+      </a></li>
+    
+          <li class="menu__item"><a class="menu__link" href="https://www.gzlzoi.cn/d/lzoi2025/contest/6867962c378af7f9fb349365/scoreboard">
+        <span class="icon icon-statistics"></span> 成绩表
+      </a></li>
+                          <li class="menu__item"><a class="menu__link" href="../discuss/contest/6867962c378af7f9fb349365.html">
+        <span class="icon icon-comment--text"></span> 讨论
+      </a></li>
+                  <li class="menu__item"><a class="menu__link" href="../record@tid=6867962c378af7f9fb349365&amp;uidOrName=39.html">
+        <span class="icon icon-flag"></span> 我的递交
+      </a></li>
+          <li class="menu__item"><a class="menu__link" href="../wiki/help.html#contest">
+        <span class="icon icon-help"></span> 帮助
+      </a></li>
+      <li class="menu__seperator"></li>
+    </ol>
+  </div>
+  <div class="section__body typo">
+    <dl class="large horizontal">
+      <dt>状态</dt>
+      <dd>
+        已结束
+                  (已参加)
+              </dd>
+      <dt>规则</dt><dd>IOI</dd>
+      <dt>题目</dt><dd>8</dd>
+      <dt>开始于</dt><dd><span class="time" data-timestamp="1751762035.008">2025-7-6 8:33</span>
+</dd>
+      <dt>结束于</dt><dd><span class="time" data-timestamp="1751776435.008">2025-7-6 12:33</span>
+</dd>
+      <dt>持续时间</dt><dd>4
+ 小时</dd>
+      <dt>主持人</dt><dd><span class="user-profile-link">
+      <img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20">
+    <a class="user-profile-name uname--lv3" href="../user/2.html">
+          liangsheng
+      </a>
+  </span>
+</dd>
+      <dt>参赛人数</dt><dd>57</dd>
+    </dl>
+  </div>
+</div>
+    </div></div>
+</div>
+<div style="display:none" class="outer-loader-container"><div class="loader"></div></div>
+<div class="scratchpad-container" style="display:none">
+  <div style="display:none" class="loader-container"><div class="loader"></div></div>
+  <div id="scratchpad" style="opacity:0"></div>
+</div>
+  </div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+      <div class="row footer__links">
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          状态
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://www.gzlzoi.cn/d/lzoi2025/record">评测队列</a></li>
+          <li class="footer__category__item"><a href="../status.html">服务状态</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          开发
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">开源</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          支持
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/help.html">帮助</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">联系我们</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable end">
+        <h1>
+          关于
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/about.html">关于</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#privacy">隐私</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#tos">服务条款</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">版权申诉</a></li>
+        </ul></div>
+      </div>
+    </div>
+      <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+                    <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-lang"><li class="menu__item"><a class="menu__link" href="../language/en.html">English</a></li><li class="menu__item"><a class="menu__link" href="../language/ko.html">한국어</a></li><li class="menu__item"><a class="menu__link" href="../language/zh.html">简体中文</a></li><li class="menu__item"><a class="menu__link" href="../language/zh_TW.html">正體中文</a></li></ol>
+          </li>
+          <li class="footer__extra-link-item">
+                          <a href="https://www.gzlzoi.cn/legacy?legacy=true">兼容模式</a>
+                      </li>
+          <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> 主题 <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-theme">
+              <li class="menu__item"><a class="menu__link" href="../set_theme/light.html">亮色</a></li>
+              <li class="menu__item"><a class="menu__link" href="../set_theme/dark.html">暗色</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><a href="https://beian.miit.gov.cn/">京ICP备2023010486号-3</a></li><li class="footer__extra-link-item">Worker 0, 16ms</li>
+          <!-- Prepare 4ms -->
+          <!-- Method 0ms -->
+          
+          
+          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v5.0.0-beta.16</a> Community</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      window.UiContextNew = '{"problemId":"MX28054","problemNumId":22,"codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","pdoc":{"_id":"685cbb2ac6c0836c1dd8316e","content":"{\\"zh\\":\\"# \u9898\u76EE\u63CF\u8FF0\\\\n\\\\n\u6709\u4E09\u79CD\u989C\u8272\u7684\u7403\uFF0C\u7EA2\u8272\u6709 $R$ \u4E2A\uFF0C\u7EFF\u8272\u6709 $G$ \u4E2A\uFF0C\u84DD\u8272\u6709 $B$ \u4E2A\u3002\\\\n\\\\n\u6BCF\u6B21\u64CD\u4F5C\u4F60\u53EF\u4EE5\u9009\u62E9\u4E24\u4E2A\u989C\u8272\u4E0D\u540C\u7684\u7403\uFF08\u5FC5\u987B\u5B58\u5728\u8FD9\u4E24\u4E2A\u7403\uFF0C\u5373\u5B83\u4EEC\u7684\u4E2A\u6570\u81F3\u5C11\u4E3A $1$\uFF09\uFF0C\u5C06\u5B83\u4EEC\u53D8\u6210\u7B2C\u4E09\u79CD\u989C\u8272\u7684\u7403\u3002\\\\n\\\\n\u4F8B\u5982\u62FF\u51FA\u4E00\u4E2A\u7EA2\u8272\u548C\u4E00\u4E2A\u7EFF\u8272\u7684\u7403\uFF0C\u628A\u5B83\u4EEC\u53D8\u6210\u84DD\u8272\u3002\\\\n\\\\n\u6C42\u6700\u5C0F\u7684\u64CD\u4F5C\u6B21\u6570\u4F7F\u5F97\u6240\u6709\u7403\u7684\u989C\u8272\u76F8\u540C\uFF0C\u5982\u679C\u65E0\u6CD5\u8FBE\u6210\u5219\u8F93\u51FA $-1$\u3002\\\\n\\\\n# \u8F93\u5165\u683C\u5F0F\\\\n\\\\n\\\\n\u7B2C\u4E00\u884C\u7ED9\u5B9A\u4E00\u4E2A\u6B63\u6574\u6570 $T$\uFF0C\u8868\u793A\u6570\u636E\u7EC4\u6570\u3002\\\\n\\\\n\u4E4B\u540E\u6BCF\u7EC4\u6570\u636E\uFF0C\u7ED9\u51FA\u4E09\u4E2A\u975E\u8D1F\u6574\u6570 $R,G,B$\u3002\\\\n\\\\n# \u8F93\u51FA\u683C\u5F0F\\\\n\\\\n\\\\n\u5BF9\u4E8E\u6BCF\u7EC4\u6570\u636E\uFF0C\u8F93\u51FA\u4E00\u4E2A\u6574\u6570\uFF0C\u8868\u793A\u7B54\u6848\\\\n\\\\n\\\\n```input1\\\\n4\\\\n1 2 2\\\\n1 2 3\\\\n1 2 4\\\\n1 10 0\\\\n```\\\\n\\\\n\\\\n```output1\\\\n2\\\\n-1\\\\n4\\\\n10\\\\n```\\\\n\\\\n# \u6570\u636E\u8303\u56F4\u4E0E\u63D0\u793A\\\\n\\\\n**\u3010\u6837\u4F8B 1 \u89E3\u91CA\u3011**\\\\n\\\\n- \u5BF9\u4E8E\u7B2C $1$ \u7EC4\u6570\u636E\uFF0C$(1, 2, 2) \\\\\\\\Rightarrow (3, 1, 1) \\\\\\\\Rightarrow (5, 0, 0)$\\\\n- \u5BF9\u4E8E\u7B2C $2$ \u7EC4\u6570\u636E\uFF0C\u65E0\u6CD5\u505A\u5230\uFF0C\u8F93\u51FA `-1`\\\\n- \u5BF9\u4E8E\u7B2C $3$ \u7EC4\u6570\u636E\uFF0C$(1, 2, 4) \\\\\\\\Rightarrow (3, 1, 3) \\\\\\\\Rightarrow (2, 3, 2) \\\\\\\\Rightarrow (1, 5, 1) \\\\\\\\Rightarrow (0, 7, 0)$\\\\n- \u5BF9\u4E8E\u7B2C $4$ \u7EC4\u6570\u636E\uFF0C$(1, 10, 0) \\\\\\\\Rightarrow (0, 9, 2) \\\\\\\\Rightarrow (2, 8, 1) \\\\\\\\Rightarrow (1, 7, 3) \\\\\\\\Rightarrow (3, 6, 2) \\\\\\\\Rightarrow (5, 5, 1) \\\\\\\\Rightarrow (4, 4, 3) \\\\\\\\Rightarrow (3, 3, 5) \\\\\\\\Rightarrow (2, 2, 7) \\\\\\\\Rightarrow (1, 1, 9) \\\\\\\\Rightarrow (0, 0, 11)$\\\\n\\\\n**\u3010\u63D0\u793A\u3011**\\\\n- \u4E00\u6B21\u64CD\u4F5C\u76F8\u5F53\u4E8E\u5BF9 $R, G, B$ \u5206\u522B\u6267\u884C\u4E86 `-1`, `-1`, `+2`\\\\n- \u6211\u4EEC\u5E0C\u671B\u6700\u540E\u80FD\u591F\u6700\u540E\u53EA\u6709\u4E00\u79CD\u989C\u8272\uFF0C\u5FC5\u7136\u8981\u5C06 $R, G, B$ \u5148\u8F6C\u6362\u4E3A **\u81F3\u5C11\u6709 2 \u4E2A\u989C\u8272\u76F8\u540C**\\\\n\\\\n**\u3010\u6570\u636E\u8303\u56F4\u3011**\\\\n\\\\n\u5BF9\u4E8E $30\\\\\\\\%$ \u7684\u6570\u636E\uFF0C$0 \\\\\\\\leq R,G,B \\\\\\\\leq 2$\u200B\u200B\u3002\\\\n\\\\n\u5BF9\u4E8E $60\\\\\\\\%$ \u7684\u6570\u636E\uFF0C$0 \\\\\\\\leq R,G,B \\\\\\\\leq 50$\\\\n\\\\n\u5BF9\u4E8E $100\\\\\\\\%$ \u7684\u6570\u636E\uFF0C$0 \\\\\\\\leq R,G,B \\\\\\\\leq 10^8,1 \\\\\\\\leq T \\\\\\\\leq 500$\\\\n\\\\n\\\\n\x3C!-- # \u6765\u6E90\\\\n- [D.  \u3010\u516D\u6708\u4EFD -- \u57FA\u7840\u8BED\u6CD5\u7EC4\u3011-- T4 -- \u4E09\u8272\u7403](https://www.mna.wang/contest/2805/problem/4) -->\\\\n\\"}","owner":2,"domainId":"lzoi2025","docType":10,"docId":22,"title":"\u3010\u5165\u95E8\u3011\u7EDF\u4E00\u989C\u8272","tag":[],"hidden":false,"pid":"MX28054","data":[{"_id":"1.in","name":"1.in","size":123,"lastModified":"2025-06-26T03:14:50.712Z","etag":"L2RhdGEvZmlsZS9oeWRyby9pOXEvamc0dnRzc2lmcTBzOGJ0Y2Y4YWZlLmlu"},{"_id":"1.out","name":"1.out","size":44,"lastModified":"2025-06-26T03:14:50.716Z","etag":"L2RhdGEvZmlsZS9oeWRyby96MHUvZWRuMmNyZWlzbDZnc3JhdGZqbGgxLm91dA=="},{"_id":"10.in","name":"10.in","size":483,"lastModified":"2025-06-26T03:14:50.719Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lZ3kvbWhkZTdjdW1oang2Yms5ZGMxcGNzLmlu"},{"_id":"10.out","name":"10.out","size":140,"lastModified":"2025-06-26T03:14:50.723Z","etag":"L2RhdGEvZmlsZS9oeWRyby9la3cvZWRvMjB3ZHZpZzJmMWtuZnJ2dGN4Lm91dA=="},{"_id":"2.in","name":"2.in","size":123,"lastModified":"2025-06-26T03:14:50.726Z","etag":"L2RhdGEvZmlsZS9oeWRyby9xMGQvdjM5eHJqMGdzcmloM3dyaTMycTJ1Lmlu"},{"_id":"2.out","name":"2.out","size":44,"lastModified":"2025-06-26T03:14:50.729Z","etag":"L2RhdGEvZmlsZS9oeWRyby9yZHQveWN4aGpjYW1xbzBvc3Z5dGZoNnZ4Lm91dA=="},{"_id":"3.in","name":"3.in","size":123,"lastModified":"2025-06-26T03:14:50.733Z","etag":"L2RhdGEvZmlsZS9oeWRyby91dGgvYnIzOTV0d3pqemlqOHNrZHU2ajJwLmlu"},{"_id":"3.out","name":"3.out","size":44,"lastModified":"2025-06-26T03:14:50.737Z","etag":"L2RhdGEvZmlsZS9oeWRyby81c3IvaGo5eXp2cG45ZG12YnZveGxvcWV1Lm91dA=="},{"_id":"4.in","name":"4.in","size":170,"lastModified":"2025-06-26T03:14:50.740Z","etag":"L2RhdGEvZmlsZS9oeWRyby92amovc3g3YmN3anR2cGxobHlkcWlyNjhyLmlu"},{"_id":"4.out","name":"4.out","size":60,"lastModified":"2025-06-26T03:14:50.744Z","etag":"L2RhdGEvZmlsZS9oeWRyby9leXAvYTZzeGFhdG8wc3ByM3N0YnZ4MGtuLm91dA=="},{"_id":"5.in","name":"5.in","size":173,"lastModified":"2025-06-26T03:14:50.747Z","etag":"L2RhdGEvZmlsZS9oeWRyby9uOTUvY3gwdnl5MGd2and6eDBmdmJoaW1kLmlu"},{"_id":"5.out","name":"5.out","size":60,"lastModified":"2025-06-26T03:14:50.750Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wb3UvejZlNmkxOXNhbW1zcmZtbnl5cGNyLm91dA=="},{"_id":"6.in","name":"6.in","size":172,"lastModified":"2025-06-26T03:14:50.755Z","etag":"L2RhdGEvZmlsZS9oeWRyby9pbXkvaHA0b3dkNnYyem9rcTZiMGVxcHYwLmlu"},{"_id":"6.out","name":"6.out","size":60,"lastModified":"2025-06-26T03:14:50.758Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wdzAvN2FlMzExemViZmtzeTdkZ2xnbnVtLm91dA=="},{"_id":"7.in","name":"7.in","size":363,"lastModified":"2025-06-26T03:14:50.761Z","etag":"L2RhdGEvZmlsZS9oeWRyby8xaWMvZHRwZmhqbmJqZmNxYnczbXVkYWVxLmlu"},{"_id":"7.out","name":"7.out","size":102,"lastModified":"2025-06-26T03:14:50.765Z","etag":"L2RhdGEvZmlsZS9oeWRyby9va3AvZWFyZHhrNGV1eTAzb3o2cmFmZnB4Lm91dA=="},{"_id":"8.in","name":"8.in","size":423,"lastModified":"2025-06-26T03:14:50.768Z","etag":"L2RhdGEvZmlsZS9oeWRyby9yOXMvazVoOWhhOWU0d2hodjEzN2dod2V5Lmlu"},{"_id":"8.out","name":"8.out","size":112,"lastModified":"2025-06-26T03:14:50.771Z","etag":"L2RhdGEvZmlsZS9oeWRyby9xdGQvcTB4bWt6cGJxMDFndXVpajByYThwLm91dA=="},{"_id":"9.in","name":"9.in","size":483,"lastModified":"2025-06-26T03:14:50.775Z","etag":"L2RhdGEvZmlsZS9oeWRyby9senMvZWx1bWduY3Z2eG4zc2pyamdweGt4Lmlu"},{"_id":"9.out","name":"9.out","size":145,"lastModified":"2025-06-26T03:14:50.778Z","etag":"L2RhdGEvZmlsZS9oeWRyby8weW8vNDZxMHd0MWJjbWs1bTNjbmJ6bWF0Lm91dA=="},{"_id":"config.yaml","name":"config.yaml","size":549,"lastModified":"2025-07-06T02:12:14.162Z","etag":"L2RhdGEvZmlsZS9oeWRyby90dW0va2c4cjh2MHJrdGVvaWhycThhdmE5LnlhbWw="}],"config":{"count":10,"memoryMin":128,"memoryMax":128,"timeMin":200,"timeMax":200,"type":"default","langs":["cc","cc.cc14o2","cc.cc17o2","py","py.py3"]},"additional_file":[{"_id":"check.cpp","name":"check.cpp","size":670,"lastModified":"2025-06-26T03:14:50.788Z","etag":"L2RhdGEvZmlsZS9oeWRyby9xdm4vanlrbXhlYnhmbWlmb2dtMnlrd3l5LmNwcA=="},{"_id":"gen.py","name":"gen.py","size":2167,"lastModified":"2025-06-26T03:14:50.793Z","etag":"L2RhdGEvZmlsZS9oeWRyby9zbm8vamd1MWVvMHNzdmwzMHRjbGhlZWdsLnB5"},{"_id":"get_problem.py","name":"get_problem.py","size":5281,"lastModified":"2025-06-26T03:14:50.797Z","etag":"L2RhdGEvZmlsZS9oeWRyby84bGovZ3FpYWJmdDA5cWh6OGVwZ2FtN25kLnB5"},{"_id":"make.sh","name":"make.sh","size":232,"lastModified":"2025-06-26T03:14:50.800Z","etag":"L2RhdGEvZmlsZS9oeWRyby9xYm4vdjMxN2ttaHloMGViemVlNWdxYzRxLnNo"},{"_id":"run.sh","name":"run.sh","size":392,"lastModified":"2025-06-26T03:14:50.803Z","etag":"L2RhdGEvZmlsZS9oeWRyby9oeXEvem5qMHd5dHVpdHk4d2Nyd3JkcnhiLnNo"},{"_id":"solution.cpp","name":"solution.cpp","size":478,"lastModified":"2025-06-26T03:14:50.808Z","etag":"L2RhdGEvZmlsZS9oeWRyby9nbmsvN2x4ZTJvaHNrenlwYWV1djBueW1kLmNwcA=="}],"html":false},"tdoc":{"_id":"6867962c378af7f9fb349365","content":"\u7ECF\u8FC7 3 \u5929\u7684\u5B66\u4E60\uFF0C\u518D\u770B\u770B\u7EC3\u4E60\u4E00\u548C\u7EC3\u4E60\u4E8C\u7684\u9898\u76EE\uFF0C\u6709\u6728\u6709\u7B80\u5355\u4E00\u4E9B\u5462\uFF1F","owner":2,"domainId":"lzoi2025","docType":30,"docId":"6867962c378af7f9fb349365","duration":4,"title":"\u7B2C\u56DB\u5929\uFF1A\u56DE\u9996\u5F80\u201C\u9898\u201D","rule":"ioi","beginAt":"2025-07-06T00:30:00.000Z","endAt":"2025-07-09T00:30:00.000Z","pids":[18,22,20,17,16,44,47,48],"attend":57,"rated":false,"allowViewCode":false,"assign":["20250804\u4E0A\u5348"],"autoHide":true,"lockAt":null,"maintainer":[2]},"tsdoc":{"attend":1,"startAt":"2025-07-06T00:33:55.008Z","endAt":"2025-07-06T04:33:55.008Z","detail":{"16":{"rid":"6869e4dc73edbe03a9bacf25","pid":16,"status":2,"score":0,"subtasks":{"1":{"type":"sum","score":0,"status":2}},"lang":"cc.cc17o2"},"17":{"rid":"6869e28e73edbe03a9bac42b","pid":17,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2"},"18":{"rid":"6869d33e73edbe03a9ba93aa","pid":18,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2"},"20":{"rid":"6869de6973edbe03a9bab772","pid":20,"status":2,"score":40,"subtasks":{"1":{"type":"sum","score":40,"status":2}},"lang":"cc.cc17o2"},"22":{"rid":"6869d8f673edbe03a9baaa74","pid":22,"status":2,"score":90,"subtasks":{"1":{"type":"sum","score":90,"status":2}},"lang":"cc.cc17o2"}}},"canViewRecord":true,"postSubmitUrl":"/d/lzoi2025/p/22/submit","getSubmissionsUrl":"/d/lzoi2025/record?fullStatus=true&pid=22","getRecordDetailUrl":"/d/lzoi2025/record/%7Brid%7D","pretestConnUrl":"record-conn?pretest=1&uidOrName=39&pid=22&domainId=lzoi2025"}';
+      window.UserContextNew = '{}';
+    </script>
+  </body>
+</html>

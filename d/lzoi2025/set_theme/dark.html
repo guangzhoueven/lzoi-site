@@ -1,0 +1,3235 @@
+<!DOCTYPE html>
+<html data-page="problem_main" data-layout="basic" class="layout--basic page--problem_main theme--dark nojs" data-mantine-color-scheme="dark" lang="zh_TW" data-app="Hydro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.gzlzoi.cn/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../../favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../../android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="../../../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../../favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://www.gzlzoi.cn/p">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="乐知课堂" />
+  <meta property="og:url" content="https://www.gzlzoi.cn/p" />
+  <meta property="og:image" content="/favicon-96x96.png" />
+      <title>題庫 - 乐知课堂</title>
+  <style>
+    body {
+      --font-family: "Microsoft Yahei", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Consolas", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="../../../theme-4.58.0-beta.17.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      window.UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","hydroacFeatures":[],"blspHost":"wss://ws.hydrooj.com","constantVersion":"1c07a499","domainId":"lzoi2025","domain":{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"},"SWConfig":{"preload":"","hosts":["http://www.gzlzoi.cn","https://www.gzlzoi.cn","https://www.gzlzoi.cn/","/"],"assets":[],"domains":[]}}';
+      window.UserContext = '{"_id":39,"mail":"202610319@gzlzoi.cn","uname":"202610319","hashType":"hydro","priv":4,"regat":"2025-07-01T02:30:33.477Z","loginat":"2026-02-06T00:24:21.126Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921","role":"\u5B66\u751F","scope":"BigInt::-1","tfa":false,"authn":false,"group":["20250702\u4E0A\u5348","\u4E34\u65F6\u5C0F\u7EC4","20250804\u4E0A\u5348","39"],"domains":[{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"}],"viewLang":"zh_TW","timeZone":"Asia/Shanghai","codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","avatar":"gravatar:202610319@gzlzoi.cn","qq":"","gender":"2","bio":"<blockquote class=\\"note\\">\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: yellow;\\">\u4E66\u5C71\u6709\u8DEF\u52E4\u4E3A\u5F84\uFF0C\u5B66\u6D77\u65E0\u6DAF\u82E6\u4F5C\u821F\u3002</p></h3>\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: #12DA72;\\">Diligence is the path to the mountain of knowledge, hard-working is the boat to the endless sea of learning.</p></h3>\\r\\n</blockquote>","school":"\u5E7F\u5DDE\u5E02\u5929\u6CB3\u533A\u9A8F\u666F\u5C0F\u5B66","studentId":"","backgroundImage":"/d/lzoi2025/file/39/%E4%B9%90%E7%9F%A5%E8%AF%BE%E5%A0%82%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.png","unreadMsg":0,"pinnedDomains":["lzoi2025"],"rounded":true,"skipAnimate":false,"showTimeAgo":true,"fontFamily":"Microsoft Yahei","codeFontFamily":"Consolas","theme":"dark","preferredEditorType":"sv","showInvisibleChar":false,"formatCode":true,"displayName":"\u9EC4\u98DE\u535A","rpInfo":{"problem":237.2780396214451,"contest":8.25},"nAccept":191,"nSubmit":194,"rp":245.5280396214451,"rank":2,"level":8,"join":true,"avatarUrl":"//cn.gravatar.com/avatar/2dbb0a041212ea8df395e4d4418e92fa?d=mm&s=128"}';
+    </script>
+      </head>
+<body>
+      <script type="text/javascript" src="../../../resource/1c07a499/entry.js"></script>
+    <script type="text/javascript" src="../../../resource/4.58.0-beta.17/lang-zh_TW.js"></script>
+    <script type="text/javascript" src="../../../hydro-4.58.0-beta.17.js"></script>
+    <nav class="nav slideout-menu" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://www.gzlzoi.cn/"><img class="nav__logo" src="../../../components/navigation/nav-logo-small_dark.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="../index.html" class="nav__item">
+    首頁
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="dark.html" class="nav__item nav--active">
+    題庫
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../training.html" class="nav__item">
+    訓練
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../contest.html" class="nav__item">
+    比賽
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../homework.html" class="nav__item">
+    功課
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../discuss.html" class="nav__item">
+    討論
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../record@uidOrName=39.html" class="nav__item">
+    評測佇列
+  </a>
+</li>
+      </ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+              <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-domain" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <span class="nav__item"><span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span> lzoi2025 <span class="icon icon-expand_more nojs--hide"></span></span>
+        <ol class="dropdown-target menu" id="menu-nav-domain"><li class="menu__item">
+              <a href="../index.html" class="menu__link">
+                <span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span>
+                lzoi2025              </a>
+            </li><li class="menu__seperator"></li><li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 管理
+            </a>
+          </li>
+        </ol>
+      </li>
+          <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <a href="../user/39.html" class="nav__item">202610319 <span class="icon icon-expand_more nojs--hide"></span></a>
+        <ol class="dropdown-target menu" id="menu-nav-user">
+          <li class="menu__item">
+            <a href="../user/39.html" class="menu__link">
+              <span class="icon icon-account--circle"></span> 我的資料
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/messages.html" class="menu__link">
+              <span class="icon icon-comment--multiple"></span> 站內訊息
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> @ lzoi2025
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/account.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 賬戶設定
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/settings/preference.html" class="menu__link">
+              <span class="icon icon-sliders"></span> 偏好設定
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/security.html" class="menu__link">
+              <span class="icon icon-security"></span> 安全設定
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> 我的域
+            </a>
+          </li>
+                              <li class="menu__seperator"></li>
+                    <li class="menu__item">
+            <a href="../logout.html" class="menu__link" name="nav_logout">
+              <span class="icon icon-logout"></span> 登出
+            </a>
+          </li>
+        </ol>
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://www.gzlzoi.cn/" target="_self">
+        <img src="../../../components/navigation/nav-logo-small_dark.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+          <div class="row">
+    <div class="medium-9 columns">
+      <div class="section display-mode">
+        <div class="section__body no-padding">
+          <form method="get" id="searchForm" action="dark.html">
+            <div class="search">
+              <input name="q" type="text" value="" placeholder="搜尋">
+              <div data-fragment-id="problem_stat">
+  <p>464 道題</p>
+</div>              <select name="sort" class="search-sort"><option value="default" selected>預設排序</option><option value="recent" >最新題目</option></select>
+              <button type="submit">
+                <span class="icon icon-search"></span>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="section__body no-padding">
+          <div data-fragment-id="problem_list">
+    <ul class="pager pager-top"><li>
+          <span class="pager__item current">1</span>
+        </li><li>
+          <a class="pager__item page link" href="../p@page=2.html">2</a>
+        </li><li>
+          <a class="pager__item page link" href="../p@page=3.html">3</a>
+        </li><li>
+          <a class="pager__item page link" href="../p@page=4.html">4</a>
+        </li><li>
+          <a class="pager__item page link" href="../p@page=5.html">5</a>
+        </li><li>
+          <a class="pager__item next link" href="../p@page=2.html">下一頁 ›</a>
+        </li><li>
+          <a class="pager__item last link" href="../p@page=5.html">末頁 »</a>
+        </li></ul>
+
+  <table class="data-table hide-problem-tag">
+    <colgroup>
+      <col class="col--checkbox display-mode-hide">
+      <col class="col--pid display-mode-hide">
+          <col class="col--status edit-mode-hide">
+          <col class="col--name">
+      <col class="col--ac-tried">
+      <col class="col--difficulty">
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" name="select_all" data-checkbox-toggle="problem">
+          </label>
+        </th>
+        <th class="col--pid display-mode-hide">ID</th>
+                  <th class="col--status record-status--border edit-mode-hide">狀態</th>
+                <th class="col--name">題目
+          <span class="nojs--hide toggle-tag tag--hide">顯示標籤</span>
+          <span class="nojs--hide toggle-tag notag--hide">隱藏標籤</span>
+        </th>
+        <th class="col--ac-tried">AC / 嘗試</th>
+        <th class="col--difficulty">難度</th>
+      </tr>
+    </thead>
+    <tbody>      <tr data-pid="502">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">502</td>
+                              <td class="col--status record-status--border edit-mode-hide"></td>
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/502"  data-star="">
+              <a href="../p/B2001.html"><b>B2001</b>
+&nbsp;&nbsp;入门测试题目</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E5%A6%AF%E2%84%83%E5%AB%99">模拟</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%A4%A4%E5%93%84%E7%B0%AD%E7%BC%81%E6%92%B4%E7%80%AF">顺序结构</a></li></ul>
+        </td>
+        <td class="col--ac-tried">1 / 1</td>
+        <td class="col--difficulty">1</td>
+      </tr>      <tr data-pid="390">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">390</td>
+                              <td class="col--status record-status--border edit-mode-hide"></td>
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/390"  data-star="">
+              <a href="../p/B3612.html"><b>B3612</b>
+&nbsp;&nbsp;【深进1.例1】求区间和</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3AO2%E6%B5%BC%E6%A8%BA%E5%AF%B2">O2优化</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%93%E5%B6%87%E7%B4%91%E9%8D%9C%8C">前缀和</a></li></ul>
+        </td>
+        <td class="col--ac-tried">5 / 7</td>
+        <td class="col--difficulty">9</td>
+      </tr>      <tr data-pid="64">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">64</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68901fd9741527cabc825925.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/64"  data-star="">
+              <a href="../p/B3616.html"><b>B3616</b>
+&nbsp;&nbsp;【模板】队列</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%81%E7%89%88%E5%B5%81%E7%BC%81%E6%92%B4%E7%80%AF">数据结构</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%97%83%E7%86%B7%E5%9E%AA">队列</a></li></ul>
+        </td>
+        <td class="col--ac-tried">34 / 83</td>
+        <td class="col--difficulty">5</td>
+      </tr>      <tr data-pid="56">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">56</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689024b8741527cabc825cc4.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/56"  data-star="">
+              <a href="../p/B3625.html"><b>B3625</b>
+&nbsp;&nbsp;能否通过迷宫</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%22%E9%AA%9E%E5%9E%AE%E5%AE%B3%E6%B5%BC%E6%A8%BA%E5%8E%9B%E9%8E%BC%E6%BB%85%E5%82%A8%20BFS%22">广度优先搜索 BFS</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%22%E5%A8%A3%E5%8D%9E%E5%AE%B3%E6%B5%BC%E6%A8%BA%E5%8E%9B%E9%8E%BC%E6%BB%85%E5%82%A8%20DFS%22">深度优先搜索 DFS</a></li></ul>
+        </td>
+        <td class="col--ac-tried">34 / 106</td>
+        <td class="col--difficulty">6</td>
+      </tr>      <tr data-pid="67">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">67</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68936b62fedf5b3e08dc8121.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/67"  data-star="">
+              <a href="../p/B3656.html"><b>B3656</b>
+&nbsp;&nbsp;【模板】双端队列 1</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3AO2%E6%B5%BC%E6%A8%BA%E5%AF%B2">O2优化</a></li></ul>
+        </td>
+        <td class="col--ac-tried">20 / 88</td>
+        <td class="col--difficulty">7</td>
+      </tr>      <tr data-pid="181">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">181</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6923e1140bfd17c4b0728bec.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/181"  data-star="">
+              <a href="../problem/random@q=category%253A2023.html"><b>B4196</b>
+&nbsp;&nbsp;[海淀区小学组 2023] 赛车游戏</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%81%E6%9D%BF%EE%84%9F">数学</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253A2023.html">2023</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%96%E6%A4%BE%E5%90%AB">北京</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253A%2522Special&#32;Judge%2522.html">Special Judge</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%22%E9%8D%99%E5%B1%BE%E5%AF%9A%E9%96%BD%88%20two-pointer%22">双指针 two-pointer</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%BB%89%E6%88%9D%E5%9E%B1%E5%A8%B2%E8%AF%B2%E5%A7%A9">科创活动</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%81%8F%E5%BF%93%EE%84%9F%E5%A8%B2%E8%AF%B2%E5%A7%A9">小学活动</a></li></ul>
+        </td>
+        <td class="col--ac-tried">7 / 20</td>
+        <td class="col--difficulty">8</td>
+      </tr>      <tr data-pid="17">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">17</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6869e28e73edbe03a9bac42b.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/17"  data-star="">
+              <a href="../p/CF2102A.html"><b>CF2102A</b>
+&nbsp;&nbsp;【入门】构造数组</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E6%9C%B5%E7%B2%AC">其他</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%81%E6%9D%BF%EE%84%9F">数学</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%8B%E5%8B%AF%E2%82%AC%A0">构造</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aliangsheng.html">liangsheng</a></li></ul>
+        </td>
+        <td class="col--ac-tried">9 / 20</td>
+        <td class="col--difficulty">7</td>
+      </tr>      <tr data-pid="54">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">54</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68948560c2f34c36e4fe977d.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/54"  data-star="">
+              <a href="../p/D0326.html"><b>D0326</b>
+&nbsp;&nbsp;【普及】混水摸鱼</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Abfs.html">bfs</a></li></ul>
+        </td>
+        <td class="col--ac-tried">20 / 125</td>
+        <td class="col--difficulty">8</td>
+      </tr>      <tr data-pid="18">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">18</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6869d33e73edbe03a9ba93aa.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/18"  data-star="">
+              <a href="../p/DTA1103.html"><b>DTA1103</b>
+&nbsp;&nbsp;【入门】商与余数之和</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aliangsheng.html">liangsheng</a></li></ul>
+        </td>
+        <td class="col--ac-tried">22 / 111</td>
+        <td class="col--difficulty">7</td>
+      </tr>      <tr data-pid="26">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">26</td>
+                              <td class="col--status record-status--border edit-mode-hide"></td>
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/26"  data-star="">
+              <a href="../p/LS0005.html"><b>LS0005</b>
+&nbsp;&nbsp;【课件】时间复杂度与排序</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E6%9C%B5%E7%B2%AC">其他</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%BA%E6%8E%91%E7%B0%AD">排序</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%87%E5%8F%A5%E6%AC%A2">课件</a></li></ul>
+        </td>
+        <td class="col--ac-tried">0 / 12</td>
+        <td class="col--difficulty">10</td>
+      </tr>      <tr data-pid="30">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">30</td>
+                              <td class="col--status record-status--border edit-mode-hide ignored">
+  <div class="col--status__text">
+    <span class="icon record-status--icon ignored"></span>
+    <a 
+      href="../record/686872606c26c17f9995eb67.html"
+      class="record-status--text ignored"
+    >
+            <span style="color: #ff4f4f">0</span>
+            Format Error
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/30"  data-star="">
+              <a href="../p/LS0006.html"><b>LS0006</b>
+&nbsp;&nbsp;【课件】STL库的应用</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%87%E5%8F%A5%E6%AC%A2">课件</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253ASTL.html">STL</a></li></ul>
+        </td>
+        <td class="col--ac-tried">0 / 11</td>
+        <td class="col--difficulty">10</td>
+      </tr>      <tr data-pid="110">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">110</td>
+                              <td class="col--status record-status--border edit-mode-hide"></td>
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/110"  data-star="">
+              <a href="../p/LS0007.html"><b>LS0007</b>
+&nbsp;&nbsp;【课件】二分查找与二分枚举</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%87%E5%8F%A5%E6%AC%A2">课件</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B5%9C%E5%B1%BD%E5%9E%8E">二分</a></li></ul>
+        </td>
+        <td class="col--ac-tried">0 / 0</td>
+        <td class="col--difficulty">(無)</td>
+      </tr>      <tr data-pid="123">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">123</td>
+                              <td class="col--status record-status--border edit-mode-hide"></td>
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/123"  data-star="">
+              <a href="../p/LS0008.html"><b>LS0008</b>
+&nbsp;&nbsp;【课件】背包九讲</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%94%E3%84%A6%E2%82%AC%E4%BD%BD%EE%9D%89%E9%8D%92%92">动态规划</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%91%B3%E5%B1%BD%E5%AF%98">背包</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%87%E5%8F%A5%E6%AC%A2">课件</a></li></ul>
+        </td>
+        <td class="col--ac-tried">0 / 13</td>
+        <td class="col--difficulty">10</td>
+      </tr>      <tr data-pid="85">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">85</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689bfd8d256bc353a8881253.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/85"  data-star="">
+              <a href="../p/LS0010.html"><b>LS0010</b>
+&nbsp;&nbsp;【课件】神奇的树状数组</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%81%E7%89%88%E5%B5%81%E7%BC%81%E6%92%B4%E7%80%AF">数据结构</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%8D%E6%88%A0%E5%A7%B8%E9%8F%81%E6%89%AE%E7%B2%8D">树状数组</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%87%E5%8F%A5%E6%AC%A2">课件</a></li></ul>
+        </td>
+        <td class="col--ac-tried">26 / 38</td>
+        <td class="col--difficulty">2</td>
+      </tr>      <tr data-pid="12">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">12</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68e08bf3a705326e8ae7e5a0.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/12"  data-star="">
+              <a href="../p/LS1012.html"><b>LS1012</b>
+&nbsp;&nbsp;【入门】约瑟夫环2</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%96%AB%E6%8E%91%E7%B6%8A">递归</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aliangsheng.html">liangsheng</a></li></ul>
+        </td>
+        <td class="col--ac-tried">34 / 125</td>
+        <td class="col--difficulty">6</td>
+      </tr>      <tr data-pid="172">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">172</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/69442024089b73f0bb3c0eca.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/172"  data-star="">
+              <a href="../p/LS1016.html"><b>LS1016</b>
+&nbsp;&nbsp;【入门】最大子数组和</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%94%E3%84%A6%E2%82%AC%E4%BD%BD%EE%9D%89%E9%8D%92%92">动态规划</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li></ul>
+        </td>
+        <td class="col--ac-tried">38 / 74</td>
+        <td class="col--difficulty">3</td>
+      </tr>      <tr data-pid="42">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">42</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6869205f6c26c17f9996dd3b.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/42"  data-star="">
+              <a href="../p/LS1019.html"><b>LS1019</b>
+&nbsp;&nbsp;【入门】蛇形方阵</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B5%9C%E5%B2%80%E6%B7%AE%E9%8F%81%E6%89%AE%E7%B2%8D">二维数组</a></li></ul>
+        </td>
+        <td class="col--ac-tried">17 / 64</td>
+        <td class="col--difficulty">7</td>
+      </tr>      <tr data-pid="29">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">29</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/686b1eec839f592b78390ab7.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/29"  data-star="">
+              <a href="../p/LS1020.html"><b>LS1020</b>
+&nbsp;&nbsp;【入门】数组的无限操作</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aliangsheng.html">liangsheng</a></li></ul>
+        </td>
+        <td class="col--ac-tried">13 / 282</td>
+        <td class="col--difficulty">9</td>
+      </tr>      <tr data-pid="5">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">5</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68e0bbdfa705326e8ae8094e.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/5"  data-star="">
+              <a href="../p/LS1023.html"><b>LS1023</b>
+&nbsp;&nbsp;【入门】计算乘方</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%96%AB%E6%8E%91%E7%B6%8A">递归</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aliangsheng.html">liangsheng</a></li></ul>
+        </td>
+        <td class="col--ac-tried">36 / 76</td>
+        <td class="col--difficulty">4</td>
+      </tr>      <tr data-pid="6">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">6</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6864f2a46b5083e453460433.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/6"  data-star="">
+              <a href="../p/LS1024.html"><b>LS1024</b>
+&nbsp;&nbsp;【普及】计算乘方和</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%96%AB%E6%8E%91%E7%B6%8A">递归</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aliangsheng.html">liangsheng</a></li></ul>
+        </td>
+        <td class="col--ac-tried">31 / 81</td>
+        <td class="col--difficulty">5</td>
+      </tr>      <tr data-pid="7">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">7</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6864e9306b5083e453460300.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/7"  data-star="">
+              <a href="../p/LS1025.html"><b>LS1025</b>
+&nbsp;&nbsp;【入门】最大公约数</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%96%AB%E6%8E%91%E7%B6%8A">递归</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aliangsheng.html">liangsheng</a></li></ul>
+        </td>
+        <td class="col--ac-tried">47 / 70</td>
+        <td class="col--difficulty">1</td>
+      </tr>      <tr data-pid="13">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">13</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68e09666a705326e8ae7ff55.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/13"  data-star="">
+              <a href="../p/LS1028.html"><b>LS1028</b>
+&nbsp;&nbsp;【入门】汉诺塔问题</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%96%AB%E6%8E%91%E7%B6%8A">递归</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aliangsheng.html">liangsheng</a></li></ul>
+        </td>
+        <td class="col--ac-tried">47 / 73</td>
+        <td class="col--difficulty">2</td>
+      </tr>      <tr data-pid="25">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">25</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/686526e36b5083e453460a21.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/25"  data-star="">
+              <a href="../p/LS1030.html"><b>LS1030</b>
+&nbsp;&nbsp;【入门】比较排序算法</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E6%9C%B5%E7%B2%AC">其他</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%BA%E6%8E%91%E7%B0%AD">排序</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aliangsheng.html">liangsheng</a></li></ul>
+        </td>
+        <td class="col--ac-tried">55 / 119</td>
+        <td class="col--difficulty">4</td>
+      </tr>      <tr data-pid="27">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">27</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68652c196b5083e453460ba2.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/27"  data-star="">
+              <a href="../p/LS1031.html"><b>LS1031</b>
+&nbsp;&nbsp;【入门】排序后输出位置</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E6%9C%B5%E7%B2%AC">其他</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%BA%E6%8E%91%E7%B0%AD">排序</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aliangsheng.html">liangsheng</a></li></ul>
+        </td>
+        <td class="col--ac-tried">47 / 118</td>
+        <td class="col--difficulty">5</td>
+      </tr>      <tr data-pid="28">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">28</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/686946736c26c17f9996e66c.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/28"  data-star="">
+              <a href="../p/LS1032.html"><b>LS1032</b>
+&nbsp;&nbsp;【普及】求两数之和的最大值</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E6%9C%B5%E7%B2%AC">其他</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%BA%E6%8E%91%E7%B0%AD">排序</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aliangsheng.html">liangsheng</a></li></ul>
+        </td>
+        <td class="col--ac-tried">21 / 182</td>
+        <td class="col--difficulty">9</td>
+      </tr>      <tr data-pid="31">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">31</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/686621530407a1392fe8b300.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/31"  data-star="">
+              <a href="../p/LS1033.html"><b>LS1033</b>
+&nbsp;&nbsp;【入门】坐标排序</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253ASTL.html">STL</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Asort.html">sort</a></li></ul>
+        </td>
+        <td class="col--ac-tried">47 / 80</td>
+        <td class="col--difficulty">2</td>
+      </tr>      <tr data-pid="32">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">32</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/686623670407a1392fe8b352.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/32"  data-star="">
+              <a href="../p/LS1034.html"><b>LS1034</b>
+&nbsp;&nbsp;【入门】去重后第k小整数</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253ASTL.html">STL</a></li></ul>
+        </td>
+        <td class="col--ac-tried">48 / 136</td>
+        <td class="col--difficulty">5</td>
+      </tr>      <tr data-pid="33">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">33</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68662f2f0407a1392fe8b486.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/33"  data-star="">
+              <a href="../p/LS1035.html"><b>LS1035</b>
+&nbsp;&nbsp;【入门】上网统计</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253ASTL.html">STL</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Amap.html">map</a></li></ul>
+        </td>
+        <td class="col--ac-tried">27 / 47</td>
+        <td class="col--difficulty">3</td>
+      </tr>      <tr data-pid="34">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">34</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/686674150407a1392fe8bcee.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/34"  data-star="">
+              <a href="../p/LS1036.html"><b>LS1036</b>
+&nbsp;&nbsp;【入门】出题法则</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253ASTL.html">STL</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aset.html">set</a></li></ul>
+        </td>
+        <td class="col--ac-tried">17 / 26</td>
+        <td class="col--difficulty">4</td>
+      </tr>      <tr data-pid="35">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">35</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6866416f0407a1392fe8b6b5.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/35"  data-star="">
+              <a href="../problem/random@q=category%253Apriority_queue.html"><b>LS1037</b>
+&nbsp;&nbsp;【入门】有序表的最小和</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253ASTL.html">STL</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Apriority_queue.html">priority_queue</a></li></ul>
+        </td>
+        <td class="col--ac-tried">23 / 63</td>
+        <td class="col--difficulty">5</td>
+      </tr>      <tr data-pid="36">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">36</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/686628250407a1392fe8b3c7.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/36"  data-star="">
+              <a href="../problem/random@q=category%253Avector.html"><b>LS1038</b>
+&nbsp;&nbsp;【入门】二维vector</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253ASTL.html">STL</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Avector.html">vector</a></li></ul>
+        </td>
+        <td class="col--ac-tried">36 / 74</td>
+        <td class="col--difficulty">4</td>
+      </tr>      <tr data-pid="37">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">37</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/686629880407a1392fe8b3ec.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/37"  data-star="">
+              <a href="../p/LS1039.html"><b>LS1039</b>
+&nbsp;&nbsp;【入门】多个priority_queue</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253ASTL.html">STL</a></li></ul>
+        </td>
+        <td class="col--ac-tried">47 / 102</td>
+        <td class="col--difficulty">4</td>
+      </tr>      <tr data-pid="38">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">38</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68666e510407a1392fe8bb1a.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/38"  data-star="">
+              <a href="../problem/random@q=category%253Amap.html"><b>LS1040</b>
+&nbsp;&nbsp;【入门】数据流中的众数</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253ASTL.html">STL</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Amap.html">map</a></li></ul>
+        </td>
+        <td class="col--ac-tried">25 / 69</td>
+        <td class="col--difficulty">5</td>
+      </tr>      <tr data-pid="39">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">39</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6867efa3378af7f9fb349bb6.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/39"  data-star="">
+              <a href="../problem/random@q=category%253Aset.html"><b>LS1041</b>
+&nbsp;&nbsp;【提高】数据流中的中位数</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%BB%E6%84%B0%E7%8F%AE">提高</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253ASTL.html">STL</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aset.html">set</a></li></ul>
+        </td>
+        <td class="col--ac-tried">17 / 33</td>
+        <td class="col--difficulty">4</td>
+      </tr>      <tr data-pid="14">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">14</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6868da3b6c26c17f9996b7fb.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/14"  data-star="">
+              <a href="../p/LS1044.html"><b>LS1044</b>
+&nbsp;&nbsp;【入门】回文时间</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E5%A8%B4%E9%94%8B%E7%A9%A9%E9%8D%96%BA">海淀区</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253A2023.html">2023</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%81%8F%E5%BF%93%EE%84%9F">小学</a></li></ul>
+        </td>
+        <td class="col--ac-tried">6 / 11</td>
+        <td class="col--difficulty">9</td>
+      </tr>      <tr data-pid="41">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">41</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/686925d06c26c17f9996df86.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/41"  data-star="">
+              <a href="../problem/random@q=category%253Acsp-j.html"><b>LS1050</b>
+&nbsp;&nbsp;【入门】小苹果</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Acsp-j.html">csp-j</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253A2023.html">2023</a></li></ul>
+        </td>
+        <td class="col--ac-tried">10 / 91</td>
+        <td class="col--difficulty">9</td>
+      </tr>      <tr data-pid="88">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">88</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689d3d86bbeb552d59dc9c58.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/88"  data-star="">
+              <a href="../p/LS1058.html"><b>LS1058</b>
+&nbsp;&nbsp;【入门】看电影</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%90%EE%81%84%E7%B8%BE">贪心</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li></ul>
+        </td>
+        <td class="col--ac-tried">26 / 54</td>
+        <td class="col--difficulty">4</td>
+      </tr>      <tr data-pid="89">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">89</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689de604bbeb552d59dcd0b2.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/89"  data-star="">
+              <a href="../p/LS1059.html"><b>LS1059</b>
+&nbsp;&nbsp;【入门】剪刀石头布</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%90%EE%81%84%E7%B8%BE">贪心</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li></ul>
+        </td>
+        <td class="col--ac-tried">5 / 14</td>
+        <td class="col--difficulty">9</td>
+      </tr>      <tr data-pid="90">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">90</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689d4160bbeb552d59dca08c.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/90"  data-star="">
+              <a href="../p/LS1060.html"><b>LS1060</b>
+&nbsp;&nbsp;【入门】线段覆盖</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%90%EE%81%84%E7%B8%BE">贪心</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li></ul>
+        </td>
+        <td class="col--ac-tried">22 / 74</td>
+        <td class="col--difficulty">6</td>
+      </tr>      <tr data-pid="91">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">91</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689d468dbbeb552d59dca57a.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/91"  data-star="">
+              <a href="../p/LS1061.html"><b>LS1061</b>
+&nbsp;&nbsp;【入门】排队难题</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%90%EE%81%84%E7%B8%BE">贪心</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li></ul>
+        </td>
+        <td class="col--ac-tried">25 / 58</td>
+        <td class="col--difficulty">4</td>
+      </tr>      <tr data-pid="92">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">92</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689d4e00bbeb552d59dcaa47.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/92"  data-star="">
+              <a href="../p/LS1062.html"><b>LS1062</b>
+&nbsp;&nbsp;【入门】拼接字符串</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%90%EE%81%84%E7%B8%BE">贪心</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aabc.html">abc</a></li></ul>
+        </td>
+        <td class="col--ac-tried">11 / 77</td>
+        <td class="col--difficulty">8</td>
+      </tr>      <tr data-pid="93">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">93</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689dcfc8bbeb552d59dcc86b.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/93"  data-star="">
+              <a href="../problem/random@q=category%253Aleetcode.html"><b>LS1063</b>
+&nbsp;&nbsp;【入门】添加最少硬币</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%90%EE%81%84%E7%B8%BE">贪心</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%AC%E6%BF%88%E6%B7%AE">思维</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aleetcode.html">leetcode</a></li></ul>
+        </td>
+        <td class="col--ac-tried">7 / 21</td>
+        <td class="col--difficulty">7</td>
+      </tr>      <tr data-pid="94">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">94</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689d713fbbeb552d59dcb88b.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/94"  data-star="">
+              <a href="../p/LS1064.html"><b>LS1064</b>
+&nbsp;&nbsp;【入门】逛超市_简单</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%90%EE%81%84%E7%B8%BE">贪心</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Anowcoder.html">nowcoder</a></li></ul>
+        </td>
+        <td class="col--ac-tried">10 / 22</td>
+        <td class="col--difficulty">6</td>
+      </tr>      <tr data-pid="95">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">95</td>
+                              <td class="col--status record-status--border edit-mode-hide fail">
+  <div class="col--status__text">
+    <span class="icon record-status--icon fail"></span>
+    <a 
+      href="../record/68cede62eeca0d74bea32a3b.html"
+      class="record-status--text fail"
+    >
+            <span style="color: #ecdb44">60</span>
+            Wrong Answer
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/95"  data-star="">
+              <a href="../problem/random@q=category%253Anowcoder.html"><b>LS1065</b>
+&nbsp;&nbsp;【普及】逛超市_困难</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%90%EE%81%84%E7%B8%BE">贪心</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%AC%E6%BF%88%E6%B7%AE">思维</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Anowcoder.html">nowcoder</a></li></ul>
+        </td>
+        <td class="col--ac-tried">4 / 45</td>
+        <td class="col--difficulty">9</td>
+      </tr>      <tr data-pid="96">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">96</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689dbd3dbbeb552d59dcc438.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/96"  data-star="">
+              <a href="../p/LS1066.html"><b>LS1066</b>
+&nbsp;&nbsp;【入门】最小差值</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%90%EE%81%84%E7%B8%BE">贪心</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li></ul>
+        </td>
+        <td class="col--ac-tried">6 / 19</td>
+        <td class="col--difficulty">8</td>
+      </tr>      <tr data-pid="102">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">102</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68bb95a32f12db0eae472788.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/102"  data-star="">
+              <a href="../p/LS1072.html"><b>LS1072</b>
+&nbsp;&nbsp;【入门】分割数组的最大值</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B5%9C%E5%B1%BD%E5%9E%8E">二分</a></li></ul>
+        </td>
+        <td class="col--ac-tried">27 / 46</td>
+        <td class="col--difficulty">3</td>
+      </tr>      <tr data-pid="103">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">103</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68c16e6c61bf1594a17e5931.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/103"  data-star="">
+              <a href="../p/LS1073.html"><b>LS1073</b>
+&nbsp;&nbsp;【入门】查找元素位置</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B5%9C%E5%B1%BD%E5%9E%8E">二分</a></li></ul>
+        </td>
+        <td class="col--ac-tried">23 / 40</td>
+        <td class="col--difficulty">3</td>
+      </tr>      <tr data-pid="104">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">104</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68bb98bd2f12db0eae472ce4.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/104"  data-star="">
+              <a href="../p/LS1074.html"><b>LS1074</b>
+&nbsp;&nbsp;【入门】分割数组的最小值</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B5%9C%E5%B1%BD%E5%9E%8E">二分</a></li></ul>
+        </td>
+        <td class="col--ac-tried">26 / 51</td>
+        <td class="col--difficulty">4</td>
+      </tr>      <tr data-pid="105">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">105</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68c185ec61bf1594a17e5cf6.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/105"  data-star="">
+              <a href="../p/LS1075.html"><b>LS1075</b>
+&nbsp;&nbsp;【入门】青蛙过河</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B5%9C%E5%B1%BD%E5%9E%8E">二分</a></li></ul>
+        </td>
+        <td class="col--ac-tried">14 / 24</td>
+        <td class="col--difficulty">5</td>
+      </tr>      <tr data-pid="106">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">106</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68da95877fd8fcac1ed28a52.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/106"  data-star="">
+              <a href="../p/LS1076.html"><b>LS1076</b>
+&nbsp;&nbsp;【入门】愤怒的牛</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B5%9C%E5%B1%BD%E5%9E%8E">二分</a></li></ul>
+        </td>
+        <td class="col--ac-tried">3 / 3</td>
+        <td class="col--difficulty">10</td>
+      </tr>      <tr data-pid="107">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">107</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68c1820c61bf1594a17e5bf3.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/107"  data-star="">
+              <a href="../p/LS1077.html"><b>LS1077</b>
+&nbsp;&nbsp;【入门】数的三次方根</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B5%9C%E5%B1%BD%E5%9E%8E">二分</a></li></ul>
+        </td>
+        <td class="col--ac-tried">23 / 27</td>
+        <td class="col--difficulty">1</td>
+      </tr>      <tr data-pid="108">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">108</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68c256ccfe802d7961adca86.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/108"  data-star="">
+              <a href="../p/LS1078.html"><b>LS1078</b>
+&nbsp;&nbsp;【入门】最大化平均值</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B5%9C%E5%B1%BD%E5%9E%8E">二分</a></li></ul>
+        </td>
+        <td class="col--ac-tried">11 / 14</td>
+        <td class="col--difficulty">7</td>
+      </tr>      <tr data-pid="109">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">109</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68c175bd61bf1594a17e59ed.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/109"  data-star="">
+              <a href="../p/LS1079.html"><b>LS1079</b>
+&nbsp;&nbsp;【入门】导弹拦截</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B5%9C%E5%B1%BD%E5%9E%8E">二分</a></li></ul>
+        </td>
+        <td class="col--ac-tried">19 / 49</td>
+        <td class="col--difficulty">5</td>
+      </tr>      <tr data-pid="3">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">3</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68e0b6eea705326e8ae8063f.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/3"  data-star="">
+              <a href="../p/LS1082.html"><b>LS1082</b>
+&nbsp;&nbsp;【入门】01背包</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%94%E3%84%A6%E2%82%AC%E4%BD%BD%EE%9D%89%E9%8D%92%92">动态规划</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%91%B3%E5%B1%BD%E5%AF%98">背包</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aliangsheng.html">liangsheng</a></li></ul>
+        </td>
+        <td class="col--ac-tried">49 / 148</td>
+        <td class="col--difficulty">6</td>
+      </tr>      <tr data-pid="4">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">4</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68cd6b02abe35c9fa99899b2.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/4"  data-star="">
+              <a href="../problem/random@q=category%253Aliangsheng.html"><b>LS1083</b>
+&nbsp;&nbsp;【入门】完全背包</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%94%E3%84%A6%E2%82%AC%E4%BD%BD%EE%9D%89%E9%8D%92%92">动态规划</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%91%B3%E5%B1%BD%E5%AF%98">背包</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aliangsheng.html">liangsheng</a></li></ul>
+        </td>
+        <td class="col--ac-tried">45 / 86</td>
+        <td class="col--difficulty">3</td>
+      </tr>      <tr data-pid="122">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">122</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68cd6fa2abe35c9fa9989b10.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/122"  data-star="">
+              <a href="../p/LS1084.html"><b>LS1084</b>
+&nbsp;&nbsp;【入门】多重背包</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%94%E3%84%A6%E2%82%AC%E4%BD%BD%EE%9D%89%E9%8D%92%92">动态规划</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%91%B3%E5%B1%BD%E5%AF%98">背包</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li></ul>
+        </td>
+        <td class="col--ac-tried">22 / 47</td>
+        <td class="col--difficulty">4</td>
+      </tr>      <tr data-pid="115">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">115</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68cd7142abe35c9fa9989b57.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/115"  data-star="">
+              <a href="../p/LS1085.html"><b>LS1085</b>
+&nbsp;&nbsp;【入门】混合背包</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%94%E3%84%A6%E2%82%AC%E4%BD%BD%EE%9D%89%E9%8D%92%92">动态规划</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%91%B3%E5%B1%BD%E5%AF%98">背包</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li></ul>
+        </td>
+        <td class="col--ac-tried">19 / 31</td>
+        <td class="col--difficulty">3</td>
+      </tr>      <tr data-pid="116">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">116</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68cd730cabe35c9fa9989be4.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/116"  data-star="">
+              <a href="../p/LS1086.html"><b>LS1086</b>
+&nbsp;&nbsp;【入门】二维费用背包</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%94%E3%84%A6%E2%82%AC%E4%BD%BD%EE%9D%89%E9%8D%92%92">动态规划</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%91%B3%E5%B1%BD%E5%AF%98">背包</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li></ul>
+        </td>
+        <td class="col--ac-tried">17 / 19</td>
+        <td class="col--difficulty">4</td>
+      </tr>      <tr data-pid="117">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">117</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68cd7431abe35c9fa9989c80.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/117"  data-star="">
+              <a href="../p/LS1087.html"><b>LS1087</b>
+&nbsp;&nbsp;【普及】分组背包</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%94%E3%84%A6%E2%82%AC%E4%BD%BD%EE%9D%89%E9%8D%92%92">动态规划</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%91%B3%E5%B1%BD%E5%AF%98">背包</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aacwing.html">acwing</a></li></ul>
+        </td>
+        <td class="col--ac-tried">19 / 27</td>
+        <td class="col--difficulty">3</td>
+      </tr>      <tr data-pid="118">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">118</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68cd7794abe35c9fa9989d08.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/118"  data-star="">
+              <a href="../problem/random@q=category%253Aacwing.html"><b>LS1088</b>
+&nbsp;&nbsp;【普及】有依赖的背包</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%94%E3%84%A6%E2%82%AC%E4%BD%BD%EE%9D%89%E9%8D%92%92">动态规划</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%91%B3%E5%B1%BD%E5%AF%98">背包</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%8D%E6%88%9D%E8%88%B0dp">树形dp</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aacwing.html">acwing</a></li></ul>
+        </td>
+        <td class="col--ac-tried">14 / 18</td>
+        <td class="col--difficulty">5</td>
+      </tr>      <tr data-pid="16">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">16</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689f5c95ffa3b15028b1895b.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/16"  data-star="">
+              <a href="../p/LS1089.html"><b>LS1089</b>
+&nbsp;&nbsp;【入门】电子显示屏</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aluogu.html">luogu</a></li></ul>
+        </td>
+        <td class="col--ac-tried">5 / 39</td>
+        <td class="col--difficulty">8</td>
+      </tr>      <tr data-pid="119">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">119</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68ce186e23d5fad6fb8eb600.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/119"  data-star="">
+              <a href="../p/LS1093.html"><b>LS1093</b>
+&nbsp;&nbsp;【普及】求背包的具体方案</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%94%E3%84%A6%E2%82%AC%E4%BD%BD%EE%9D%89%E9%8D%92%92">动态规划</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%91%B3%E5%B1%BD%E5%AF%98">背包</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li></ul>
+        </td>
+        <td class="col--ac-tried">10 / 41</td>
+        <td class="col--difficulty">7</td>
+      </tr>      <tr data-pid="75">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">75</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6899544a3466cac7af569d96.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/75"  data-star="">
+              <a href="../p/LS1095.html"><b>LS1095</b>
+&nbsp;&nbsp;【普及】旅游巴士</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%A5%E5%89%A7%E7%B2%A8%E9%8F%8B%84">图结构</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%88%E2%82%AC%E9%90%AD%EE%85%A1%E7%9F%BE">最短路</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Acsp-j.html">csp-j</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253A2023.html">2023</a></li></ul>
+        </td>
+        <td class="col--ac-tried">13 / 55</td>
+        <td class="col--difficulty">7</td>
+      </tr>      <tr data-pid="86">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">86</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689c0159256bc353a88817bc.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/86"  data-star="">
+              <a href="../problem/random@q=category%253Aloj.html"><b>LS1104</b>
+&nbsp;&nbsp;【普及】差分与前缀和</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%BC%81%E5%8B%AB%E6%82%8E%E9%8F%81%E6%9D%BF%EE%84%9F">组合数学</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E5%AE%B8%EE%86%BC%E5%9E%8E">差分</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%93%E5%B6%87%E7%B4%91%E9%8D%9C%8C">前缀和</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aloj.html">loj</a></li></ul>
+        </td>
+        <td class="col--ac-tried">20 / 61</td>
+        <td class="col--difficulty">6</td>
+      </tr>      <tr data-pid="77">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">77</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6899e2cb3466cac7af56c4e2.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/77"  data-star="">
+              <a href="../p/LS1108.html"><b>LS1108</b>
+&nbsp;&nbsp;【普及】聚会</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%A5%E5%89%A7%E7%B2%A8%E9%8F%8B%84">图结构</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%88%E2%82%AC%E9%90%AD%EE%85%A1%E7%9F%BE">最短路</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aacwing.html">acwing</a></li></ul>
+        </td>
+        <td class="col--ac-tried">11 / 29</td>
+        <td class="col--difficulty">6</td>
+      </tr>      <tr data-pid="8">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">8</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/697f0e32bd915e0092f87f44.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/8"  data-star="">
+              <a href="../p/LS1117.html"><b>LS1117</b>
+&nbsp;&nbsp;【入门】滑雪</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%94%E3%84%A6%E2%82%AC%E4%BD%BD%EE%9D%89%E9%8D%92%92">动态规划</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%BC%E6%BB%85%E5%82%A8">搜索</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%81%E6%9D%BF%E7%B9%82%E9%8D%96%E6%A0%A8%E6%82%B3%E7%BB%B1%A2">记忆化搜索</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aacwing.html">acwing</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aliangsheng.html">liangsheng</a></li></ul>
+        </td>
+        <td class="col--ac-tried">32 / 70</td>
+        <td class="col--difficulty">4</td>
+      </tr>      <tr data-pid="144">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">144</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68fe16ef45e206b3556a1ce0.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/144"  data-star="">
+              <a href="../problem/random@q=category%253Aatcoder.html"><b>LS1128</b>
+&nbsp;&nbsp;【入门】铺地砖</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%86%E6%9D%91%E5%A7%8F%E9%8F%8B%E6%B0%AB%E5%A6%87">暴力枚举</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Adfs.html">dfs</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aatcoder.html">atcoder</a></li></ul>
+        </td>
+        <td class="col--ac-tried">12 / 23</td>
+        <td class="col--difficulty">5</td>
+      </tr>      <tr data-pid="145">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">145</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68ef9f255615474a9f8dd26b.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/145"  data-star="">
+              <a href="../problem/random@q=category%253Aluogu.html"><b>LS1129</b>
+&nbsp;&nbsp;【入门】排列数字</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%86%E6%9D%91%E5%A7%8F%E9%8F%8B%E6%B0%AB%E5%A6%87">暴力枚举</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Adfs.html">dfs</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aluogu.html">luogu</a></li></ul>
+        </td>
+        <td class="col--ac-tried">28 / 36</td>
+        <td class="col--difficulty">1</td>
+      </tr>      <tr data-pid="146">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">146</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68efa15a5615474a9f8dd297.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/146"  data-star="">
+              <a href="../p/LS1130.html"><b>LS1130</b>
+&nbsp;&nbsp;【入门】组合数字</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%86%E6%9D%91%E5%A7%8F%E9%8F%8B%E6%B0%AB%E5%A6%87">暴力枚举</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Adfs.html">dfs</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aluogu.html">luogu</a></li></ul>
+        </td>
+        <td class="col--ac-tried">24 / 32</td>
+        <td class="col--difficulty">2</td>
+      </tr>      <tr data-pid="147">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">147</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68efa6a55615474a9f8dd2e1.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/147"  data-star="">
+              <a href="../p/LS1131.html"><b>LS1131</b>
+&nbsp;&nbsp;【入门】八皇后</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%86%E6%9D%91%E5%A7%8F%E9%8F%8B%E6%B0%AB%E5%A6%87">暴力枚举</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Adfs.html">dfs</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aluogu.html">luogu</a></li></ul>
+        </td>
+        <td class="col--ac-tried">23 / 50</td>
+        <td class="col--difficulty">4</td>
+      </tr>      <tr data-pid="148">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">148</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68ef96565615474a9f8dd1f4.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/148"  data-star="">
+              <a href="../problem/random@q=category%253Adfs.html"><b>LS1133</b>
+&nbsp;&nbsp;【入门】部分和问题</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%86%E6%9D%91%E5%A7%8F%E9%8F%8B%E6%B0%AB%E5%A6%87">暴力枚举</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Adfs.html">dfs</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%B8%E6%88%9E%E5%9E%AC%E7%BB%8B%E5%AC%AA%E7%B0%AD%E7%92%81%E6%8D%90%EE%85%B8%E7%BB%94%E7%82%B6%E7%A6%8C">挑战程序设计竞赛</a></li></ul>
+        </td>
+        <td class="col--ac-tried">27 / 64</td>
+        <td class="col--difficulty">5</td>
+      </tr>      <tr data-pid="149">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">149</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/69145ad52608fe0230877aa6.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/149"  data-star="">
+              <a href="../p/LS1134.html"><b>LS1134</b>
+&nbsp;&nbsp;【普及】部分和问题_大数据</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%86%E6%9D%91%E5%A7%8F%E9%8F%8B%E6%B0%AB%E5%A6%87">暴力枚举</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Adfs.html">dfs</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%B8%E6%88%9E%E5%9E%AC%E7%BB%8B%E5%AC%AA%E7%B0%AD%E7%92%81%E6%8D%90%EE%85%B8%E7%BB%94%E7%82%B6%E7%A6%8C">挑战程序设计竞赛</a></li></ul>
+        </td>
+        <td class="col--ac-tried">3 / 4</td>
+        <td class="col--difficulty">10</td>
+      </tr>      <tr data-pid="78">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">78</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689a00de3466cac7af56c8be.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/78"  data-star="">
+              <a href="../p/LS1156.html"><b>LS1156</b>
+&nbsp;&nbsp;【提高】斐波那契数列_矩阵加速</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%BB%E6%84%B0%E7%8F%AE">提高</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%90%AD%E2%95%85%E6%A8%80%E8%B9%87%EE%82%A6%E2%82%AC%E7%86%B7%E7%AE%93">矩阵快速幂</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aluogu.html">luogu</a></li></ul>
+        </td>
+        <td class="col--ac-tried">11 / 14</td>
+        <td class="col--difficulty">7</td>
+      </tr>      <tr data-pid="79">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">79</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689be052256bc353a88808c0.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/79"  data-star="">
+              <a href="../p/LS1161.html"><b>LS1161</b>
+&nbsp;&nbsp;【提高】斐波那契数列_更复杂</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%BB%E6%84%B0%E7%8F%AE">提高</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%90%AD%E2%95%85%E6%A8%80%E8%B9%87%EE%82%A6%E2%82%AC%E7%86%B7%E7%AE%93">矩阵快速幂</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aluogu.html">luogu</a></li></ul>
+        </td>
+        <td class="col--ac-tried">4 / 16</td>
+        <td class="col--difficulty">9</td>
+      </tr>      <tr data-pid="134">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">134</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68e5af1d8cb060a6856d3910.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/134"  data-star="">
+              <a href="../p/LS1163.html"><b>LS1163</b>
+&nbsp;&nbsp;【普及】埃氏筛和欧拉筛</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%BB%9B%E6%B6%99%E7%A1%B6">筛法</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aluogu.html">luogu</a></li></ul>
+        </td>
+        <td class="col--ac-tried">25 / 46</td>
+        <td class="col--difficulty">3</td>
+      </tr>      <tr data-pid="135">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">135</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68e92020cff3a7b1c09e81d5.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/135"  data-star="">
+              <a href="../p/LS1164.html"><b>LS1164</b>
+&nbsp;&nbsp;【普及】约数个数_约数和_欧拉函数</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%BB%9B%E6%B6%99%E7%A1%B6">筛法</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E5%A8%86%D1%84%E5%AA%BA%E9%8D%91%E8%8A%A5%E6%9A%9F">欧拉函数</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aacwing.html">acwing</a></li></ul>
+        </td>
+        <td class="col--ac-tried">10 / 25</td>
+        <td class="col--difficulty">6</td>
+      </tr>      <tr data-pid="168">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">168</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/69442573089b73f0bb3c0f25.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/168"  data-star="">
+              <a href="../p/LS1176.html"><b>LS1176</b>
+&nbsp;&nbsp;【入门】买卖股票的最佳时机_1</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%94%E3%84%A6%E2%82%AC%E4%BD%BD%EE%9D%89%E9%8D%92%92">动态规划</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aleetcode.html">leetcode</a></li></ul>
+        </td>
+        <td class="col--ac-tried">36 / 55</td>
+        <td class="col--difficulty">2</td>
+      </tr>      <tr data-pid="169">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">169</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/694426b2089b73f0bb3c0f3e.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/169"  data-star="">
+              <a href="../p/LS1177.html"><b>LS1177</b>
+&nbsp;&nbsp;【普及】买卖股票的最佳时机_2</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%94%E3%84%A6%E2%82%AC%E4%BD%BD%EE%9D%89%E9%8D%92%92">动态规划</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aleetcode.html">leetcode</a></li></ul>
+        </td>
+        <td class="col--ac-tried">32 / 49</td>
+        <td class="col--difficulty">2</td>
+      </tr>      <tr data-pid="170">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">170</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6944275e089b73f0bb3c0f54.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/170"  data-star="">
+              <a href="../p/LS1178.html"><b>LS1178</b>
+&nbsp;&nbsp;【普及】买卖股票的最佳时机_3</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%94%E3%84%A6%E2%82%AC%E4%BD%BD%EE%9D%89%E9%8D%92%92">动态规划</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aleetcode.html">leetcode</a></li></ul>
+        </td>
+        <td class="col--ac-tried">31 / 45</td>
+        <td class="col--difficulty">1</td>
+      </tr>      <tr data-pid="171">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">171</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6919e55c7916b159558c22fb.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/171"  data-star="">
+              <a href="../p/LS1179.html"><b>LS1179</b>
+&nbsp;&nbsp;【普及】买卖股票的最佳时机含冷冻期</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%94%E3%84%A6%E2%82%AC%E4%BD%BD%EE%9D%89%E9%8D%92%92">动态规划</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aleetcode.html">leetcode</a></li></ul>
+        </td>
+        <td class="col--ac-tried">14 / 37</td>
+        <td class="col--difficulty">6</td>
+      </tr>      <tr data-pid="173">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">173</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/691941df7916b159558c1c30.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/173"  data-star="">
+              <a href="../p/LS1181.html"><b>LS1181</b>
+&nbsp;&nbsp;【普及】最大2段和</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%94%E3%84%A6%E2%82%AC%E4%BD%BD%EE%9D%89%E9%8D%92%92">动态规划</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aacwing.html">acwing</a></li></ul>
+        </td>
+        <td class="col--ac-tried">25 / 82</td>
+        <td class="col--difficulty">6</td>
+      </tr>      <tr data-pid="40">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">40</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/686b1f15839f592b78390baa.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/40"  data-star="">
+              <a href="../p/LS1182.html"><b>LS1182</b>
+&nbsp;&nbsp;【入门】酒店</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li></ul>
+        </td>
+        <td class="col--ac-tried">32 / 295</td>
+        <td class="col--difficulty">9</td>
+      </tr>      <tr data-pid="43">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">43</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/686b22fa839f592b78391cac.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/43"  data-star="">
+              <a href="../p/LS1185.html"><b>LS1185</b>
+&nbsp;&nbsp;【普及】带余除法</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E6%9C%B5%E7%B2%AC">其他</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%81%E6%9D%BF%EE%84%9F">数学</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%AC%E6%BF%88%E6%B7%AE">思维</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aluogu.html">luogu</a></li></ul>
+        </td>
+        <td class="col--ac-tried">10 / 209</td>
+        <td class="col--difficulty">9</td>
+      </tr>      <tr data-pid="150">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">150</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68fe22dc45e206b3556a1e0e.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/150"  data-star="">
+              <a href="../problem/random@q=category%253Aabc.html"><b>LS1193</b>
+&nbsp;&nbsp;【普及】激光枪</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%86%E6%9D%91%E5%A7%8F">暴力</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%BA%E6%8E%91%E5%9E%AA">排列</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%BC%81%E5%8B%AB%E6%82%8E">组合</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B5%9C%E5%B2%83%E7%B9%98%E9%8D%92%B6">二进制</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aabc.html">abc</a></li></ul>
+        </td>
+        <td class="col--ac-tried">5 / 15</td>
+        <td class="col--difficulty">8</td>
+      </tr>      <tr data-pid="151">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">151</td>
+                              <td class="col--status record-status--border edit-mode-hide"></td>
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/151"  data-star="">
+              <a href="../p/LS1194.html"><b>LS1194</b>
+&nbsp;&nbsp;【提高】因式分解</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%BB%E6%84%B0%E7%8F%AE">提高</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%86%E6%9D%91%E5%A7%8F%E9%8F%8B%E6%B0%AB%E5%A6%87">暴力枚举</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%92%E5%97%9A%D0%92%E7%92%90%E3%84%A5%E6%B4%9C%E9%8F%81%B0">分解质因数</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%BE%B6%E6%B0%B6%E3%80%8D%E5%AF%AE%8F">多项式</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B7%87%E2%80%B3%E5%BC%B8%E9%97%83%9F">信友队</a></li></ul>
+        </td>
+        <td class="col--ac-tried">1 / 1</td>
+        <td class="col--difficulty">10</td>
+      </tr>      <tr data-pid="87">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">87</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689d5147bbeb552d59dcac8e.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/87"  data-star="">
+              <a href="../p/LS1197.html"><b>LS1197</b>
+&nbsp;&nbsp;【普及】后悔贪心</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%90%EE%81%84%E7%B8%BE">贪心</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li></ul>
+        </td>
+        <td class="col--ac-tried">13 / 25</td>
+        <td class="col--difficulty">5</td>
+      </tr>      <tr data-pid="160">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">160</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6910b230ed71b1291c0b3dca.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/160"  data-star="">
+              <a href="../p/LS1199.html"><b>LS1199</b>
+&nbsp;&nbsp;【普及】柱状图中最大的矩形</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%97%E6%9B%A1%E7%9A%9F%E9%8F%8D%88">单调栈</a></li></ul>
+        </td>
+        <td class="col--ac-tried">24 / 61</td>
+        <td class="col--difficulty">5</td>
+      </tr>      <tr data-pid="161">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">161</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6910b4dbed71b1291c0b3deb.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/161"  data-star="">
+              <a href="../p/LS1200.html"><b>LS1200</b>
+&nbsp;&nbsp;【普及】最大矩形</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%97%E6%9B%A1%E7%9A%9F%E9%8F%8D%88">单调栈</a></li></ul>
+        </td>
+        <td class="col--ac-tried">15 / 32</td>
+        <td class="col--difficulty">5</td>
+      </tr>      <tr data-pid="2">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">2</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68e09f22a705326e8ae7fff9.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/2"  data-star="">
+              <a href="../p/LS1209.html"><b>LS1209</b>
+&nbsp;&nbsp;【入门】斐波那契数列</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%96%AB%E6%8E%91%E7%B6%8A">递归</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aliangsheng.html">liangsheng</a></li></ul>
+        </td>
+        <td class="col--ac-tried">57 / 98</td>
+        <td class="col--difficulty">2</td>
+      </tr>      <tr data-pid="45">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">45</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/686b27d1839f592b78392dab.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/45"  data-star="">
+              <a href="../p/LS1211.html"><b>LS1211</b>
+&nbsp;&nbsp;【入门】AB数对</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253ASTL.html">STL</a></li></ul>
+        </td>
+        <td class="col--ac-tried">14 / 176</td>
+        <td class="col--difficulty">9</td>
+      </tr>      <tr data-pid="46">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">46</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68652b916b5083e453460b57.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/46"  data-star="">
+              <a href="../problem/random@q=category%253Asort.html"><b>LS1212</b>
+&nbsp;&nbsp;【入门】自定义排序</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Asort.html">sort</a></li></ul>
+        </td>
+        <td class="col--ac-tried">55 / 110</td>
+        <td class="col--difficulty">4</td>
+      </tr>      <tr data-pid="60">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">60</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6890b522741527cabc827f97.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/60"  data-star="">
+              <a href="../p/LS1216.html"><b>LS1216</b>
+&nbsp;&nbsp;【普及】迷宫寻路</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Abfs.html">bfs</a></li></ul>
+        </td>
+        <td class="col--ac-tried">29 / 74</td>
+        <td class="col--difficulty">5</td>
+      </tr>      <tr data-pid="61">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">61</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6890c102741527cabc8281aa.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/61"  data-star="">
+              <a href="../problem/random@q=category%253Abfs.html"><b>LS1217</b>
+&nbsp;&nbsp;【普及】推箱子1</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Abfs.html">bfs</a></li></ul>
+        </td>
+        <td class="col--ac-tried">26 / 93</td>
+        <td class="col--difficulty">6</td>
+      </tr>      <tr data-pid="62">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">62</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6890c93a741527cabc828428.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/62"  data-star="">
+              <a href="../p/LS1218.html"><b>LS1218</b>
+&nbsp;&nbsp;【普及】推箱子2</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Abfs.html">bfs</a></li></ul>
+        </td>
+        <td class="col--ac-tried">17 / 100</td>
+        <td class="col--difficulty">8</td>
+      </tr>      <tr data-pid="69">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">69</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/6895616bf0b745f736ceeed3.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/69"  data-star="">
+              <a href="../problem/random@q=category%253Atemplate.html"><b>LS1219</b>
+&nbsp;&nbsp;【普及】如何封装我的算法</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Astruct.html">struct</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Atemplate.html">template</a></li></ul>
+        </td>
+        <td class="col--ac-tried">27 / 75</td>
+        <td class="col--difficulty">5</td>
+      </tr>      <tr data-pid="80">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">80</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689ae1e2f8a9d7efd04acd5b.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/80"  data-star="">
+              <a href="../problem/random@q=category%253Agcd.html"><b>LS1220</b>
+&nbsp;&nbsp;【普及】扩展欧几里得算法</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E6%9C%B5%E7%B2%AC">其他</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%81%E6%9D%BF%EE%84%9F">数学</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%BB%E6%84%B0%E7%8F%AE">提高</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Agcd.html">gcd</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../p@q=category%253Aluogu.html">luogu</a></li></ul>
+        </td>
+        <td class="col--ac-tried">6 / 9</td>
+        <td class="col--difficulty">9</td>
+      </tr>      <tr data-pid="97">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">97</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689e8ec8ffa3b15028b15cc3.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/97"  data-star="true">
+              <a href="../p/LS1221.html"><b>LS1221</b>
+&nbsp;&nbsp;【入门】4的倍数</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%AC%E6%BF%88%E6%B7%AE">思维</a></li></ul>
+        </td>
+        <td class="col--ac-tried">24 / 192</td>
+        <td class="col--difficulty">8</td>
+      </tr>      <tr data-pid="98">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">98</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689ee0a7ffa3b15028b18120.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/98"  data-star="true">
+              <a href="../p/LS1222.html"><b>LS1222</b>
+&nbsp;&nbsp;【入门】能否相同</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%AC%E6%BF%88%E6%B7%AE">思维</a></li></ul>
+        </td>
+        <td class="col--ac-tried">7 / 65</td>
+        <td class="col--difficulty">9</td>
+      </tr>      <tr data-pid="99">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">99</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68baeadf7ae62d9eeb82c8ee.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/99"  data-star="true">
+              <a href="../p/LS1223.html"><b>LS1223</b>
+&nbsp;&nbsp;【入门】数组转换</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%AC%E6%BF%88%E6%B7%AE">思维</a></li></ul>
+        </td>
+        <td class="col--ac-tried">5 / 52</td>
+        <td class="col--difficulty">9</td>
+      </tr>      <tr data-pid="100">
+        <td class="col--checkbox display-mode-hide">
+          <label class="compact checkbox">
+            <input type="checkbox" data-checkbox-group="problem" data-checkbox-range>
+          </label>
+        </td>
+        <td class="col--pid display-mode-hide">100</td>
+                              <td class="col--status record-status--border edit-mode-hide pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/689ebff2ffa3b15028b17c12.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                          <td class="col--name col--problem-name" data-star-action="/d/lzoi2025/p/100"  data-star="true">
+              <a href="../p/LS1224.html"><b>LS1224</b>
+&nbsp;&nbsp;【入门】组合方块</a><ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E3%83%A9%E6%A3%AC">入门</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%AC%E6%BF%88%E6%B7%AE">思维</a></li></ul>
+        </td>
+        <td class="col--ac-tried">27 / 73</td>
+        <td class="col--difficulty">5</td>
+      </tr></tbody>
+  </table>
+    <ul class="pager pager-bottom"><li>
+          <span class="pager__item current">1</span>
+        </li><li>
+          <a class="pager__item page link" href="../p@page=2.html">2</a>
+        </li><li>
+          <a class="pager__item page link" href="../p@page=3.html">3</a>
+        </li><li>
+          <a class="pager__item page link" href="../p@page=4.html">4</a>
+        </li><li>
+          <a class="pager__item page link" href="../p@page=5.html">5</a>
+        </li><li>
+          <a class="pager__item next link" href="../p@page=2.html">下一頁 ›</a>
+        </li><li>
+          <a class="pager__item last link" href="../p@page=5.html">末頁 »</a>
+        </li></ul>
+
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="medium-3 columns">
+              <div class="section side nojs--hide">
+          <ol class="menu">
+            <a href="javascript:;" class="menu__link edit-mode-hide" name="enter-edit-mode">
+              <span class="icon icon-edit"></span>
+              進入編輯模式
+            </a>
+            <a href="javascript:;" class="menu__link display-mode-hide" name="leave-edit-mode">
+              <span class="icon icon-edit"></span>
+              離開編輯模式
+            </a>
+            <div id="problem_selection" class="display-mode-hide"></div>
+                        <a href="javascript:;" class="menu__link display-mode-hide" name="copy_selected_problems">
+              <span class="icon icon-copy"></span>
+              複製選中
+            </a>
+          </ol>
+        </div>
+                  <div class="section side">
+        <div class="section__header edit-mode-hide">
+          <h1 class="section__title">分類</h1>
+        </div>
+        <div class="section__body">
+          <ul class="group-list" data-widget-cf-container>
+  <li class="group-list__item">
+      <h2 class="section__title">
+        <a href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%94%E3%84%A6%E2%82%AC%E4%BD%BD%EE%9D%89%E9%8D%92%92">动态规划</a>
+      </h2>
+              <ol class="chip-list"><li class="chip-list__item">
+              <a class="typo-a" href="../p@q=category%253ALCS.html">LCS</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="../p@q=category%253ALIS.html">LIS</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%91%B3%E5%B1%BD%E5%AF%98">背包</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%97%E6%9B%A1%E7%9A%9F%E9%8E%AC%EE%9C%8AP">单调性DP</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%90%9C%EE%88%9A%E8%88%B0DP">环形DP</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%8D%E6%88%9D%E8%88%B0DP">树形DP</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%90%98%E8%88%B5%E2%82%AC%E4%BD%B8%E5%B8%87%E7%BC%82%E3%80%A5P">状态压缩DP</a>
+            </li></ol>
+          </li><li class="group-list__item">
+      <h2 class="section__title">
+        <a href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%BC%E6%BB%85%E5%82%A8">搜索</a>
+      </h2>
+              <ol class="chip-list"><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%8B%E6%B0%AB%E5%A6%87">枚举</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%BC%E6%BB%85%E5%82%A8%E6%B6%93%E5%BA%A1%E5%A3%80%E9%8F%8B%9D">搜索与剪枝</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%9A%EE%88%9A%E5%BD%82%E5%AF%AE%E5%BF%94%E6%82%B3%E7%BB%B1%A2">启发式搜索</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="../p@q=category%253ADLX.html">DLX</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%99%E5%B1%BD%E6%82%9C%E9%8E%BC%E6%BB%85%E5%82%A8">双向搜索</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%B6%E6%A8%BA%E5%B4%90%E9%8E%BC%E6%BB%85%E5%82%A8">折半搜索</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%81%E6%9D%BF%E7%B9%82%E9%8D%96%E6%A0%A8%E6%82%B3%E7%BB%B1%A2">记忆化搜索</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E5%A6%AF%E2%84%83%E5%AB%99%E9%96%AB%E2%82%AC%E9%90%8F%AB">模拟退火</a>
+            </li></ol>
+          </li><li class="group-list__item">
+      <h2 class="section__title">
+        <a href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%81%EF%BC%84%E7%95%BB%E9%8D%91%E7%8A%B1%E7%B6%8D">计算几何</a>
+      </h2>
+              <ol class="chip-list"><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%97%E5%A9%82%E9%92%A9%E9%97%88%EE%9D%AD%E6%B0%A6">半平面交</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%91%E7%A8%BF%E5%AF%98">凸包</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%91%E7%8A%B1%E7%B6%8D%E9%8D%A5%E6%83%A7%E8%88%B0%E9%90%A8%E5%8B%AA%E6%B0%A6%E6%B6%93%E5%BA%A1%E8%8B%9F">几何图形的交与并</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%83%E5%AC%AD%E6%B5%86%E9%8D%97%E2%80%B3%EF%BC%93">旋转卡壳</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%90%90%E7%91%B0%E7%95%BE%E6%B5%A3%8D">点定位</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%A7%E6%84%AD%E7%88%A3%E9%8D%99%E6%A8%BB%E5%B4%B2">坐标变换</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%BB%82%E7%BB%98%E6%9A%8E%E9%8D%96%E6%A0%A6%E7%AC%8C%E9%8E%B5%EE%82%A3%E5%BC%BF">离散化与扫描</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%99%E5%B6%86%E7%B4%A8">反演</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3AVoronoi%E9%8D%A5%BE">Voronoi图</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%AA%9E%E6%8A%BD%E6%BD%B0%E9%8D%A5%E5%89%A7%E6%AE%91%E7%80%B5%E7%91%B0%E4%BC%93%E9%8D%A5%BE">平面图的对偶图</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B6%93%E5%A4%8E%EE%9D%97%E9%8D%93%E6%A0%A7%E5%9E%8E">三角剖分</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E5%A7%8A%EE%88%9A%E8%88%B0%E9%8D%93%E6%A0%A7%E5%9E%8E">梯形剖分</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%91%E7%8A%B1%E7%B6%8D%E9%90%AD%E3%83%A8%E7%98%91">几何知识</a>
+            </li></ol>
+          </li><li class="group-list__item">
+      <h2 class="section__title">
+        <a href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%90%EE%81%84%E7%B8%BE">贪心</a>
+      </h2>
+          </li><li class="group-list__item">
+      <h2 class="section__title">
+        <a href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%8D%E6%88%A0%E7%B2%A8%E9%8F%8B%84">树结构</a>
+      </h2>
+              <ol class="chip-list"><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%88%E2%82%AC%E6%9D%A9%E6%88%9D%E5%8F%95%E9%8D%8F%E8%BE%A9%EE%9A%9B%E9%8D%8F%88">最近公共祖先</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%90%A2%E7%86%B8%E5%9E%9A%E9%8F%8D%91">生成树</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E5%A8%86%E2%80%B3%E7%9A%AC%E9%90%A2%E7%86%B8%E5%9E%9A%E9%8F%8D%91">次小生成树</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3ADFS%E6%90%B4%E5%BF%93%E5%9E%AA">DFS序列</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%8D%E6%88%9C%E7%AC%82%E9%8D%8A%E5%B6%85%EE%96%83">树上倍增</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%8D%E6%88%A0%E6%AE%91%E9%8D%92%E5%97%98%E4%B8%8D">树的分治</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%8D%E6%88%A6%E6%91%BC%E9%8D%93%E6%A0%A7%E5%9E%8E">树链剖分</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="../p@q=category%253ALink-Cut-Tree.html">Link-Cut-Tree</a>
+            </li></ol>
+          </li><li class="group-list__item">
+      <h2 class="section__title">
+        <a href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%A5%E5%89%A7%E7%B2%A8%E9%8F%8B%84">图结构</a>
+      </h2>
+              <ol class="chip-list"><li class="chip-list__item">
+              <a class="typo-a" href="../p@q=category%253AFloyd.html">Floyd</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="../p@q=category%253ADijkstra.html">Dijkstra</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="../p@q=category%253ASPFA.html">SPFA</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%90%E7%86%B8%E6%BD%88%E6%9D%88%B9">负权边</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%AA%9E%E6%8A%BD%E6%BD%B0%E9%8D%A5%BE">平面图</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B5%9C%E5%B1%BD%E5%9E%8E%E9%8D%A5%BE">二分图</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B5%9C%E5%B1%BD%E5%9E%8E%E9%8D%A5%E6%83%A7%E5%B0%AE%E9%96%B0%8D">二分图匹配</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%88%E2%82%AC%E9%90%AD%EE%85%A1%E7%9F%BE">最短路</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E5%AE%B8%EE%86%BC%E5%9E%8E%E7%BB%BE%EF%B8%BD%E6%BD%AB">差分约束</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%B7%E6%92%B4%E5%A2%A4%E9%8E%BA%E6%8E%91%E7%B0%AD">拓扑排序</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%BC%83%E6%88%A0%E7%B2%B6%E5%A8%B4%81">网络流</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E5%AF%AE%E9%B8%BF%E7%B9%9B%E9%96%AB%E6%B0%AC%E5%9E%8E%E9%96%B2%8F">强连通分量</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%93%E8%8C%AC%E5%81%A3%E9%8D%93%E8%8C%B6%E7%AB%9F">割点割边</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E5%A8%86%D1%84%E5%AA%BA%E9%8D%A5%E7%82%B6%E7%9F%BE">欧拉回路</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="../p@q=category%253A2-SAT.html">2-SAT</a>
+            </li></ol>
+          </li><li class="group-list__item">
+      <h2 class="section__title">
+        <a href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%81%E6%8B%8C%EE%86%91">数论</a>
+      </h2>
+              <ol class="chip-list"><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%BB%B1%E7%8A%B3%E6%9A%9F%E9%8D%92%E3%82%85%E7%95%BE">素数判定</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E5%A8%86%D1%83%E5%9A%91%E9%96%B2%E5%B1%BD%E7%B7%B1%E7%BB%A0%E6%A5%81%E7%A1%B6">欧几里得算法</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B6%93%E5%B6%85%E7%95%BE%E9%8F%82%E5%9C%AD%E2%96%BC">不定方程</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%81%E9%A2%81%E7%B6%85%E7%BC%81%E7%86%BB%EE%85%B8">数位统计</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%91%99%EF%BD%87%E5%9A%8E%E9%8E%AC%D1%83%E6%82%93%E6%B5%A3%E6%AC%90%E6%9F%9F%E7%BB%8B%8B">解线性同余方程</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="../p@q=category%253Ababy-step-giant-step.html">baby-step-giant-step</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3APell%E9%8F%82%E5%9C%AD%E2%96%BC">Pell方程</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%BE%B6%D1%84%E6%9A%A3%E9%8F%81%E6%8B%8C%E5%B7%9D%E9%8D%A5%E7%8A%B3%E6%9A%9F%E9%8D%92%E5%97%9A%D0%92">大整数质因数分解</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%95%E6%8D%90%E5%81%82%E9%8F%82%E5%9C%AD%E2%96%BC">勾股方程</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%BB%89%EE%88%9B%E2%82%AC%D1%83%E5%9A%B1%E9%8F%81%B0">积性函数</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3AFibonacci%E9%8F%81%E6%9D%BF%E5%9E%AA">Fibonacci数列</a>
+            </li></ol>
+          </li><li class="group-list__item">
+      <h2 class="section__title">
+        <a href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E5%A6%AF%E2%84%83%E5%AB%99">模拟</a>
+      </h2>
+          </li><li class="group-list__item">
+      <h2 class="section__title">
+        <a href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%81%E7%89%88%E5%B5%81%E7%BC%81%E6%92%B4%E7%80%AF">数据结构</a>
+      </h2>
+              <ol class="chip-list"><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%8D%88">栈</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%97%83%E7%86%B7%E5%9E%AA">队列</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%96%BE%E6%8D%90%E3%80%83">链表</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%97%E6%9B%A1%E7%9A%9F%E9%97%83%E7%86%B7%E5%9E%AA">单调队列</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%AA%9E%E8%88%B5%E7%85%A1%E9%97%86%86">并查集</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%AB%86">堆</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%AA%9E%E5%AE%A0%E3%80%80%E9%8F%8D%91">平衡树</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%BB%BE%E6%8C%8E%EE%86%8C%E9%8F%8D%91">线段树</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%8D%E6%88%A0%E5%A7%B8%E9%8F%81%E6%89%AE%E7%B2%8D">树状数组</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%8D%E6%88%9D%EE%9A%9C%E9%8F%8D%91">树套树</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%A5%E6%B6%98%E5%9E%8E%E9%8F%8D%91">四分树</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%92%E6%8E%91%E5%9E%8E%E9%8F%8D%91">划分树</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E8%A4%B0%E6%8E%91%E8%8B%9F%E9%8F%8D%91">归并树</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%87%E8%B7%A8%E5%A7%9C%E7%BC%87%E5%A9%83%E7%88%B2">替罪羊树</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E5%AE%B8%EF%B9%80%E4%BA%B8%E9%8F%8D%91">左偏树</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3Ak-d%E9%8F%8D%91">k-d树</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%A7%E6%A5%83%E5%A7%B8%E9%96%BE%E6%8D%90%E3%80%83">块状链表</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="../p@q=category%253AHashing.html">Hashing</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%91%E8%8A%A5%E6%9A%9F%E5%AF%AE%E5%BF%95%E7%B4%AA%E7%BB%8B%8B">函数式编程</a>
+            </li></ol>
+          </li><li class="group-list__item">
+      <h2 class="section__title">
+        <a href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%97%E6%B0%AC%E7%B4%99%E7%92%81%BA">博弈论</a>
+      </h2>
+              <ol class="chip-list"><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E5%AE%B8%E7%BF%A0%E7%B2%88%E9%8D%97%E6%B0%AC%E7%B4%99">巴什博弈</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%81%8F%E7%85%8E%EE%9D%8B%E9%8D%97%E6%B0%AC%E7%B4%99">尼姆博弈</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%BF%9E%E4%BD%B7%E7%B6%88%E6%BE%B6%EE%82%A2%E5%B4%A5%E5%AF%AE%88">威佐夫博弈</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%82%E6%84%AD%E5%B0%9D%E9%96%AD%EF%BD%85%EE%9A%96%E9%8D%97%E6%B0%AC%E7%B4%99">斐波那契博弈</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3ASG%E7%80%B9%E6%B0%B1%E6%82%8A">SG定理</a>
+            </li></ol>
+          </li><li class="group-list__item">
+      <h2 class="section__title">
+        <a href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%80%9B%E6%A5%83%EE%83%81%E6%B6%93%B2">字符串</a>
+      </h2>
+              <ol class="chip-list"><li class="chip-list__item">
+              <a class="typo-a" href="../p@q=category%253AKMP.html">KMP</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%9A%E5%BA%A3%E7%B4%91%E9%8F%81%E7%89%88%E5%B5%81%E7%BC%81%E6%92%B4%E7%80%AF">后缀数据结构</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3ATrie%E9%8F%8D%91">Trie树</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3AAC%E9%91%B7%EE%81%84%E5%A7%A9%E9%8F%88%BA">AC自动机</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="../p@q=category%253AManacher.html">Manacher</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%90%9B%E3%84%A8%E6%8F%AA%E5%AF%AE%E5%BF%93%EE%98%A9%E9%90%9E%86">表达式处理</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%88%E2%82%AC%E7%81%8F%E5%BF%9A%E3%80%83%E7%BB%80%E7%83%98%E7%A1%B6">最小表示法</a>
+            </li></ol>
+          </li><li class="group-list__item">
+      <h2 class="section__title">
+        <a href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%BC%81%E5%8B%AB%E6%82%8E%E9%8F%81%E6%9D%BF%EE%84%9F">组合数学</a>
+      </h2>
+              <ol class="chip-list"><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%A5%A6%E7%95%8C%EE%83%97">鸽笼</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%90%A2%E7%86%B8%E5%9E%9A%E9%8D%91%E8%8A%A5%E6%9A%9F">生成函数</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%80%B9%E8%A7%84%E6%9E%BC%E9%8D%98%E7%86%BA%E6%82%8A">容斥原理</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%90%B4%E9%94%8B%E5%A2%AD%E7%81%9E%E6%9B%9E%E7%B4%91">康托展开</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3ACatalan%E9%8F%81%E6%9D%BF%E5%9E%AA">Catalan数列</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3AStirling%E9%8F%81%B0">Stirling数</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E5%AE%B8%EE%86%BC%E5%9E%8E">差分</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3APolya%E7%80%B9%E6%B0%B1%E6%82%8A">Polya定理</a>
+            </li></ol>
+          </li><li class="group-list__item">
+      <h2 class="section__title">
+        <a href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%BB%BE%E6%8C%8E%E2%82%AC%D1%82%E5%94%AC%E9%8F%81%B0">线性代数</a>
+      </h2>
+              <ol class="chip-list"><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%90%AD%E2%95%85%E6%A8%80%E6%B6%94%E6%A8%BB%E7%A1%B6">矩阵乘法</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%A5%82%E6%A8%BB%E6%9F%89%E5%A8%91%E5%A0%9D%E5%8E%93">高斯消元</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%BB%BE%E6%8C%8E%E2%82%AC%D1%86%EE%9D%89%E9%8D%92%92">线性规划</a>
+            </li></ol>
+          </li><li class="group-list__item">
+      <h2 class="section__title">
+        <a href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%A5%82%E6%A8%BC%E7%B0%BF%E6%90%B4%A6">高精度</a>
+      </h2>
+              <ol class="chip-list"><li class="chip-list__item">
+              <a class="typo-a" href="../p@q=category%253AFFT.html">FFT</a>
+            </li></ol>
+          </li><li class="group-list__item">
+      <h2 class="section__title">
+        <a href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%96%AB%E6%8E%93%E5%B8%B9">递推</a>
+      </h2>
+          </li><li class="group-list__item">
+      <h2 class="section__title">
+        <a href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E5%A7%92%E5%82%9C%E5%B7%BC%E7%92%81%BA">概率论</a>
+      </h2>
+              <ol class="chip-list"><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%97%85%E5%BF%94%E6%BA%80%E9%8D%96%96">随机化</a>
+            </li></ol>
+          </li><li class="group-list__item">
+      <h2 class="section__title">
+        <a href="../p@q=category%253ANPC.html">NPC</a>
+      </h2>
+          </li><li class="group-list__item">
+      <h2 class="section__title">
+        <a href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%8F%E6%9C%B5%E7%B2%AC">其他</a>
+      </h2>
+              <ol class="chip-list"><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B5%9C%E5%B1%BD%E5%9E%8E%E9%8F%8C%E3%83%A6%E5%A3%98">二分查找</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B6%93%E5%A4%8A%E5%9E%8E%E9%8F%8C%E3%83%A6%E5%A3%98">三分查找</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%99%E5%B1%BE%E5%AF%9A%E9%96%BD%E5%A0%9F%E5%A3%82%E9%8E%BB%8F">双指针扫描</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%92%E5%97%98%E4%B8%8D">分治</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%92%E5%97%97%E6%BD%A1">分块</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="../p@q=category%253ARMQ.html">RMQ</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E8%B9%87%EE%82%A6%E2%82%AC%E7%86%B7%E7%AE%93">快速幂</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%81%E6%9D%BF%EE%84%9F">数学</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%BA%E6%8E%91%E7%B0%AD">排序</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%8B%E5%8B%AF%E2%82%AC%A0">构造</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8E%B5%E6%92%B9%E3%80%83">打表</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B5%A3%E5%B6%88%E7%B9%8D%E7%BB%A0%97">位运算</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%BB%82%E7%BB%98%E6%9A%8E%E9%8D%96%96">离散化</a>
+            </li><li class="chip-list__item">
+              <a class="typo-a" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%91%BE%EE%82%A6%E6%A7%A6">莫队</a>
+            </li></ol>
+          </li></ul>        </div>
+        <div class="section__body edit-mode-hide">
+          <div data-fragment-id="problem_lucky">
+  <p>
+    <a href="../problem/random.html" class="expanded button" target="_blank">
+      <span class="icon icon-feeling-lucky"></span> 試試手氣
+    </a>
+  </p>
+  <div class="typo supplementary">
+    <p>根據當前過濾條件隨機選擇一道題</p>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+      <div class="row footer__links">
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          狀態
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://www.gzlzoi.cn/d/lzoi2025/record">評測佇列</a></li>
+          <li class="footer__category__item"><a href="../status.html">服務狀態</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          開發
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">開源</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          支援
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/help.html">幫助</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">聯絡我們</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable end">
+        <h1>
+          關於
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/about.html">關於</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#privacy">隱私</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#tos">服務條款</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">版權申訴</a></li>
+        </ul></div>
+      </div>
+    </div>
+      <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+                    <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-lang"><li class="menu__item"><a class="menu__link" href="../language/en.html">English</a></li><li class="menu__item"><a class="menu__link" href="../language/ko.html">한국어</a></li><li class="menu__item"><a class="menu__link" href="../language/zh.html">简体中文</a></li><li class="menu__item"><a class="menu__link" href="../language/zh_TW.html">正體中文</a></li></ol>
+          </li>
+          <li class="footer__extra-link-item">
+                          <a href="https://www.gzlzoi.cn/legacy?legacy=true">相容模式</a>
+                      </li>
+          <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> 主題 <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-theme">
+              <li class="menu__item"><a class="menu__link" href="light.html">亮色</a></li>
+              <li class="menu__item"><a class="menu__link" href="dark.html">暗色</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><a href="https://beian.miit.gov.cn/">京ICP备2023010486号-3</a></li><li class="footer__extra-link-item">Worker 0, 29ms</li>
+          <!-- Prepare 0ms -->
+          <!-- Method 4ms -->
+          
+          
+          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v5.0.0-beta.16</a> Community</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      window.UiContextNew = '{}';
+      window.UserContextNew = '{}';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using i64 = long long;
+
+i64 solve(const string& s, int k) {
+    int n = s.size(), maxi = 0;
+    i64 ans = 0;
+    vector<int> cnt(26, 0);
+    for (int i = 0, r = -1; i < n; i++) {
+        while (maxi < k && r + 1 < n) {
+            maxi = max(maxi, ++cnt[s[++r] - 'a']);
+        }
+        if (maxi >= k) {
+            ans += n - r;
+            cnt[s[i] - 'a']--;
+            if (s[i] == s[r]) maxi--;
+        } else break;
+    }
+    return ans;
+}
+
+int main() {	
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+    
+    int n, k;
+    string s;
+    cin >> n >> k >> s;
+    cout << solve(s, k) << '\n';
+
+    return 0;
+}

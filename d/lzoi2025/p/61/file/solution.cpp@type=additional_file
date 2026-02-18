@@ -1,0 +1,110 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using pii = pair<int, int>;
+
+// 表示一个很大的数
+const int N = 50, inf = 1000000000;
+using p4i = tuple<int, int, int, int>;
+
+// d[x][y][u][v] 表示人在(x, y), 箱子在 (u, v) 的最短路
+int d[N][N][N][N];
+
+// p[x][y][u][v] 表示人在(x, y), 箱子在 (u, v) 的上一步人和箱子都在哪
+p4i p[N][N][N][N];
+
+// 在地图 g 中从 (px, py) 开始推箱子
+string getPath(vector<string>& g, int px, int py) {
+	// h: 地图的高, w: 地图的宽
+	int h = g.size(), w = g[0].size();
+	
+	// 找到箱子和目标的位置
+	int bx, by, tx, ty;
+	for (int i = 0; i < h; i++) for (int j = 0; j < w; j++) {
+		if (g[i][j] == '$') bx = i, by = j;
+		if (g[i][j] == '.') tx = i, ty = j;
+	}
+	
+	// 按字典序从小到大, D < L < R < U
+	vector<int> dx = {1,  0, 0, -1};
+	vector<int> dy = {0, -1, 1,  0};
+	vector<string> f = {"D", "L", "R", "U"};
+	
+	for (int x = 0; x < h; x++) for (int y = 0; y < w; y++) {
+		for (int u = 0; u < h; u++) for (int v = 0; v < w; v++) {
+			d[x][y][u][v] = inf;
+			p[x][y][u][v] = {-1, -1, -1, -1};
+		}
+	}
+	
+	d[px][py][bx][by] = 0;
+	queue<p4i> q;
+	q.push({px, py, bx, by});
+	while (!q.empty()) {
+		auto [px, py, bx, by] = q.front();  // 取队首
+		q.pop();   // 将队首弹出
+//		cout << "px= " << px << ", py= " << py << ", bx= " << bx << ", by= " << by << ", d= " << d[px][py][bx][by] << '\n';
+		for (int k = 0; k < 4; k++) {
+			
+			// 人的新位置
+			int pu = px + dx[k], pv = py + dy[k];
+			if (pu < 0 || pu >= h || pv < 0 || pv >= w) continue;
+			if (g[pu][pv] == '#') continue;  // 障碍
+			
+			// 箱子的新位置
+			int bu = bx, bv = by;
+			if (pu == bx && pv == by) {  // 推了一下
+				bu = bx + dx[k], bv = by + dy[k];
+				if (bu < 0 || bu >= h || bv < 0 || bv >= w) continue;
+				if (g[bu][bv] == '#') continue;  // 障碍
+			}
+			
+			if (d[pu][pv][bu][bv] != inf) continue;     // 有其他更近的路
+			
+			d[pu][pv][bu][bv] = d[px][py][bx][by] + 1;  // 更新 d[u][v]
+			p[pu][pv][bu][bv] = {px, py, bx, by};       // 记录到达 (u, v) 的方向
+			
+			q.push({pu, pv, bu, bv});
+		}
+	}
+	
+	// 找到最终状态
+	int ex = -1, ey = -1, dis = inf;
+	for (int i = 0; i < h; i++) for (int j = 0; j < w; j++) {
+		if (d[i][j][tx][ty] < dis) {
+			dis = d[i][j][tx][ty];
+			ex = i, ey = j;
+		}
+	}
+	
+	// 终点不可达
+	if (ex == -1) return "-1";
+	
+	string path;
+	int x = ex, y = ey, u = tx, v = ty;
+	while (!(x == px && y == py && u == bx && v == by)) {
+		auto [a, b, c, d] = p[x][y][u][v];
+		if (x == a + 1) path += "D";
+		else if (x == a - 1) path += "U";
+		else if (y == b + 1) path += "R";
+		else if (y == b - 1) path += "L";
+		x = a, y = b, u = c, v = d;
+	}
+	reverse(path.begin(), path.end());
+	return path;
+}
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr); cout.tie(nullptr);
+	
+	// h: 地图的高, w: 地图的宽, px, py: 选手位置
+	int h, w, px, py;
+	cin >> h >> w >> px >> py;
+	vector<string> g(h);
+	for (int i = 0; i < h; i++) cin >> g[i];
+	
+	cout << getPath(g, px, py) << '\n';
+	
+	return 0;
+}

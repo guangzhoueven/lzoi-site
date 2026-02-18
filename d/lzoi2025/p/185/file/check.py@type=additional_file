@@ -1,0 +1,24 @@
+# https://leetcode.cn/problems/count-substrings-with-k-frequency-characters-i/solutions/2957691/on-hua-dong-chuang-kou-pythonjavacgo-by-1xgqm
+import math
+from typing import List
+from bisect import bisect_right
+from collections import deque
+from collections import defaultdict
+
+class Solution:
+    def numberOfSubstrings(self, s: str, k: int) -> int:
+        ans = left = 0
+        cnt = defaultdict(int)
+        for c in s:
+            cnt[c] += 1
+            while cnt[c] >= k:
+                cnt[s[left]] -= 1
+                left += 1
+            ans += left
+        return ans
+
+n, k  = map(int, input().split(' '))
+s = input()
+
+sol = Solution()
+print(sol.numberOfSubstrings(s, k))

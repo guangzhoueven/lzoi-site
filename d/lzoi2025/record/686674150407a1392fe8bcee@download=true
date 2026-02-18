@@ -1,0 +1,83 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	int n, m;
+	cin >> n >> m;
+	vector<set<int>> s(n + 1);
+	vector<set<int>> fs(n + 1);
+	
+	// 初始化所有题目
+	set<int> all_problems;
+	for (int i = 1; i <= m; ++i) {
+		all_problems.insert(i);
+	}
+	
+	// 读取每个学生的做题记录
+	for (int i = 1; i <= n; ++i) {
+		int p;
+		cin >> p;
+		for (int j = 0; j < p; ++j) {
+			int problem;
+			cin >> problem;
+			s[i].insert(problem);
+		}
+		// 计算没做过的题目
+		set<int> temp = all_problems;
+		for (int prob : s[i]) {
+			temp.erase(prob);
+		}
+		fs[i] = temp;
+	}
+	
+	int k;
+	cin >> k;
+	while (k--) {
+		int type, q;
+		cin >> type >> q;
+		vector<int> students(q);
+		for (int i = 0; i < q; ++i) {
+			cin >> students[i];
+		}
+		
+		set<int> result;
+		if (type == 0) { // 比赛：所有学生都没做过的题目
+			set<int> union_done;
+			for (int student : students) {
+				for (int prob : s[student]) {
+					union_done.insert(prob);
+				}
+			}
+			for (int prob : all_problems) {
+				if (union_done.find(prob) == union_done.end()) {
+					result.insert(prob);
+				}
+			}
+		} else { // 训练：所有学生都做过的题目
+			if (students.empty()) {
+				result = all_problems;
+			} else {
+				result = s[students[0]];
+				for (int i = 1; i < students.size(); ++i) {
+					set<int> temp;
+					set_intersection(result.begin(), result.end(),
+									 s[students[i]].begin(), s[students[i]].end(),
+									 inserter(temp, temp.begin()));
+					result = temp;
+					if (result.empty()) break;
+				}
+			}
+		}
+		
+		if (result.empty()) {
+			cout << "\n";
+		} else {
+			for (auto it = result.begin(); it != result.end(); ++it) {
+				if (it != result.begin()) cout << " ";
+				cout << *it;
+			}
+			cout << "\n";
+		}
+	}
+	
+	return 0;
+}

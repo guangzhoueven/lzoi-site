@@ -1,0 +1,140 @@
+# /root/anaconda3/envs/py311/bin/python3.11
+# https://curlconverter.com/
+import requests
+
+# https://pypi.org/project/beautifulsoup4/
+from bs4 import BeautifulSoup
+
+# https://pypi.org/project/markdownify/
+from markdownify import MarkdownConverter
+import re
+
+cookies = {
+    'login': '%5B%22X-NOIP-444%22%2C%22c37c304f908a0732155445ac9dda25ee%22%5D',
+    'connect.sid': 's%3At-2BV0KbcU4xpdhCFPVVWPHroAotPClL.tnGfjgEnZdxZ7tDUqOw275rh9JVuYWUalCStrDfsfzM',
+}
+
+headers = {
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+    'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8,ru;q=0.7,zh-TW;q=0.6',
+    'Cache-Control': 'no-cache',
+    'Connection': 'keep-alive',
+    'Pragma': 'no-cache',
+    'Sec-Fetch-Dest': 'document',
+    'Sec-Fetch-Mode': 'navigate',
+    'Sec-Fetch-Site': 'none',
+    'Sec-Fetch-User': '?1',
+    'Upgrade-Insecure-Requests': '1',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36',
+    'sec-ch-ua': '"Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    # 'Cookie': 'login=%5B%22X-NOIP-444%22%2C%22c37c304f908a0732155445ac9dda25ee%22%5D; connect.sid=s%3At-2BV0KbcU4xpdhCFPVVWPHroAotPClL.tnGfjgEnZdxZ7tDUqOw275rh9JVuYWUalCStrDfsfzM',
+}
+
+
+# Create shorthand method for conversion
+def md(soup, **options):
+    return MarkdownConverter(**options).convert_soup(soup)
+    
+# 将 soup 类型转换为 md 格式, 保留 latex 公式
+def soup_to_md(soup_o):
+    s = str(soup_o)
+
+    # mx 题目里面的 latex 公式以 <svg>.....<title>e=mc^2</title>......</svg> 的形式展示
+    # 将 <svg>.....<title> 替换为 $, ? 表示不要贪婪匹配, 尽可能短的匹配, 问 deepseek
+    s = re.sub(r'<svg.*?<title>', '$', s) 
+
+    # 将 </title>......</svg> 替换为 $, ? 表示不要贪婪匹配, 尽可能短的匹配
+    s = re.sub(r'</title>.*?</svg>?', '$', s)
+
+    # 将 s 重新封装成 soup
+    # 因为直接将 str 转 md 的话, \frac 会变成 rac
+    s = BeautifulSoup(s, 'lxml')
+
+    # 将 soup 转变成 md 格式的 str
+    # 来自: # https://pypi.org/project/markdownify/
+    # escape_underscores=False: 不要把 _ 变成 \_
+    # escape_asterisks=False: 不要把 * 变成 \*
+    return md(s, escape_underscores=False, escape_asterisks=False)
+
+
+def get_problem(problem_url):
+    response = requests.get(problem_url, cookies=cookies, headers=headers)
+    soup = BeautifulSoup(response.text, 'lxml')
+
+    # 标题
+    mx_problem_title = soup.find('h1').text.strip()
+
+    # 题目描述
+    mx_problem_text = '# 题目描述\n' + soup_to_md(soup.find_all('div')[20])
+
+    # 输入格式
+    mx_problem_input = '# 输入格式\n' + soup_to_md(soup.find_all('div')[24])
+
+    # 输出格式
+    mx_problem_output = '# 输出格式\n' + soup_to_md(soup.find_all('div')[28])
+
+    # 样例
+    mx_problem_sample = soup_to_md(soup.find_all('div')[32])
+
+    # 数据范围和提示
+    mx_problem_data = soup_to_md(soup.find_all('div')[38])
+
+    total_zh = mx_problem_text + mx_problem_input + mx_problem_output + mx_problem_sample + mx_problem_data
+
+    # 把多个 # 变成 1 个
+    total_zh = re.sub(r'#+', '#', total_zh)
+
+    # 删除 # 样例
+    total_zh = re.sub(r'# 样例\n', '', total_zh)
+
+    # 删除 # 【样例 1 输入】
+    total_zh = re.sub(r'# 【样例 \d 输入】', '', total_zh)
+
+    # 删除 # 【样例 1 输出】
+    total_zh = re.sub(r'# 【样例 \d 输出】', '', total_zh)
+
+    # 样例组数
+    case_num = total_zh.count('```') // 4
+    for i in range(1, case_num + 1):
+        matches = list(re.finditer(r'```', total_zh))
+        
+        # 在 ``` 后面添加样例编号
+        x = 4 * (i - 1)
+        start, end = matches[x].start(), matches[x].end()
+        total_zh = total_zh[:start] + '```input' + str(i) + total_zh[end:]    
+
+        matches = list(re.finditer(r'```', total_zh))
+        x = x + 2
+        start, end = matches[x].start(), matches[x].end()
+        total_zh = total_zh[:start] + '```output' + str(i) + total_zh[end:]   
+
+    # 将样例解释放到后面
+    data_explain = ""
+    for i in range(1, case_num + 1):
+        matches = list(re.finditer(r'```', total_zh))
+        if len(matches) == i * 4:
+            break
+        l, r = matches[i * 4 - 1].start() + 3,  matches[i * 4].start()
+        data_explain += total_zh[l : r] + '\n'
+        total_zh = total_zh[: l] + '\n' + total_zh[r: ]
+
+    # 前后加上 **
+    data_explain = re.sub(r'# ', '**', data_explain)
+    data_explain = re.sub(r'】', '】**', data_explain)
+
+    # 将 data_explain 放到 # 数据范围与提示
+    p = total_zh.find('# 数据范围与提示') + len('# 数据范围与提示')
+    total_zh = total_zh[: p] + '\n' + data_explain + '**【数据范围】**' + total_zh[p: ]
+
+    # 最后加上来源
+    total_zh = total_zh + '# 来源' + '\n'
+    total_zh = total_zh + '- [' + mx_problem_title + '](' + problem_url + ')'
+
+    return total_zh
+
+
+problem_url = 'https://www.mna.wang/contest/2003/problem/4'
+zh = get_problem(problem_url)
+print(zh)

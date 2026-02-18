@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n;
+	cin >> n;
+	
+	vector<i64> phi(n + 1);				// 欧拉函数phi[i]:小于等于i且与i互质的数的个数。对质数p：phi[p] = p-1
+	iota(phi.begin(), phi.end(), 0);   	// iota()自动生成连续递增数值序列
+	
+	for (i64 i = 2; i <= n; i++) {		// 埃筛法计算欧拉函数
+		if (phi[i] == i) {  			// i为质数
+			for (i64 j = i; j <= n; j += i) 
+				phi[j] -= phi[j] / i;	// 每个质数i的倍数j，phi[j] = phi[j] * (1 - 1/i)
+		}
+	}
+
+	vector<i64> s_phi(n + 1);
+	for (i64 i = 1; i <= n; i++) s_phi[i] = s_phi[i - 1] + phi[i];  // 计算欧拉函数的前缀和
+	
+	i64 ans = 0;
+	for (i64 d = 1; d <= n; d++) {			// 计算答案：sum_{d=1}^n d * (2 * sum_{i=1}^{floor(n/d)} phi(i) - 1)
+		i64 m = n / d;  					// m = floor(n/d)
+		ans += (i64)d * (2 * s_phi[m] - 1);	// 2*s_phi[m]-1 表示 gcd(i,j)=d 的数对个数
+	}
+	cout << ans << "\n";  					//【ans = ∑(d=1,n​) d * ​(2*∑(i=1,n/d)*​φ(i)−1)】
+	return 0;
+}

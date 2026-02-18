@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 T;
+	cin >> T;
+	
+	while (T--) {
+		i64 n, L;  				// 加速带数量n,两地总距离s
+		cin >> n >> L;
+		vector<i64> a(n);		// 加速带
+		for (auto& x : a) cin >> x;
+		
+		i64 i = 0, j = n - 1;			// 初始化两端起始点指针
+		double pos1 = 0.0, pos2 = L;	// 初始位置（左端、右端）
+		double v1 = 1.0, v2 = 1.0;		// 初始速度（遇到每个加速带都会+1）
+		double ans = 0.0;				// 相遇时间
+		
+		while (i <= j && pos1 < pos2) {
+			double t1 = (a[i] - pos1) / v1; // 甲（从左向右走）：遇到加速带a[i]前,走的一段距离a[i]-pos1所用的时间
+			double t2 = (pos2 - a[j]) / v2;	// 乙（从右向左走）：遇到加速带a[i]前,走的一段距离pos2-a[i]所用的时间
+			
+			bool left_first = t1 < t2;			// 判断甲是否先到达加速带
+			double dt = left_first ? t1 : t2;	// 取较小的时间增量(甲先到用t1，乙先到用t2)
+			
+			pos1 += v1 * dt;				// 甲走的距离（每一段累加）
+			pos2 -= v2 * dt;				// 乙走的距离（每一段累加）
+			ans += dt;						// 累加时间
+
+			left_first ? (v1 += 1.0, i++) : (v2 += 1.0, j--);	// 甲加速并移动到下一个加速带 或 乙加速并移动到下一个加速带
+		}	
+		if (pos1 < pos2) ans += (pos2 - pos1) / (v1 + v2);  // 相向而行，直至相遇
+		
+//		cout << fixed << setprecision(16) << ans << "\n";
+		stringstream ss;
+		ss << fixed << setprecision(16) << ans;
+		cout << ss.str().substr(0, 17) << "\n";
+	}
+	return 0;
+}

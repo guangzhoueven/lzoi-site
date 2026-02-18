@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using pii = pair<int, int>;
+
+int solve(vector<int>& a) {
+    int n = a.size(), ans = 0;
+    for (int l = 0; l < n; l++) {
+        int y = 0, s = 0;
+        for (int r = l; r < n; r++) {
+            y ^= a[r];
+            s += (a[r] % 2 ? 1 : -1);
+            if (y == 0 && s == 0) ans = max(ans, r - l + 1);
+        }
+    }
+    return ans;
+}
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
+
+	int T, n;
+	cin >> T;
+	while (T--) {
+		cin >> n;
+		vector<int> a(n);
+		for (int i = 0; i < n; i++) cin >> a[i];
+		cout << solve(a) << '\n';
+	}
+	return 0;
+}

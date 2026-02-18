@@ -1,0 +1,28 @@
+# https://leetcode.cn/problems/find-maximum-balanced-xor-subarray-length/solutions/3839716/qian-zhui-he-yu-ha-xi-biao-pythonjavacgo-2504/
+import math
+from typing import List
+from bisect import bisect_right
+from collections import deque
+from collections import defaultdict
+
+class Solution:
+    def maxBalancedSubarray(self, nums: List[int]) -> int:
+        ans = 0
+        pos = {(0, 0): -1}  # 空前缀的位置视作 -1
+        xor = diff = 0
+        for i, x in enumerate(nums):
+            xor ^= x
+            diff += 1 if x % 2 else -1
+            t = (xor, diff)
+            if t in pos:
+                ans = max(ans, i - pos[t])
+            else:
+                pos[t] = i
+        return ans
+
+T = int(input())
+for _ in range(T):
+    n = int(input())
+    a = map(int, input().split(' '))
+    sol = Solution()
+    print(sol.maxBalancedSubarray(a))

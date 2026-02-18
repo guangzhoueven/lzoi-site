@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int cmp_fx_max(int l, int r, int a) {
+    int f1 = r / a + r % a;			// 计算右边界 f(r) 
+    int f2 = (r / a - 1) + (a - 1); // 计算最大的满足 x%a = a-1的数的函数值
+    int x = min(r, (r / a) * a - 1);// 找[l,r]区间内满足x%a=a-1的最大数
+    if (x >= l) {					// 数在区间内，返回f1和f2中较大值
+        return max(f1, f2);
+    }
+    return f1;						// 返回右边界函数值 
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0);  cout.tie(0); 
+    
+    int T;
+    cin >> T;
+    while (T--) {
+        int l, r, a;
+        cin >> l >> r >> a; 
+        cout << cmp_fx_max(l, r, a) << "\n";
+    }
+    return 0;
+}

@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t; cin >> t;
+	while (t--) {
+		int r, g, q; cin >> r >> g >> q;
+		int a = r - g, b = r - q;
+		int sum = 1e9+7;
+		for (int i = 0; i <= 2; i++) {
+			int x = 0, y = 0, z = 0;
+			if (i == 0) x = r + g + q;
+			if (i == 1) y = r + g + q;
+			if (i == 2) z = r + g + q;
+			a = r - g - (x - y);
+			b = r - q - (x - z);
+			if (a % 3 || b % 3) continue;
+			else {
+				int ans = 0;
+				a /= 3, b /= 3;
+				if (a < 0 || b < 0) {
+					ans += max(-a, -b);
+					a += ans, b += ans;
+				}
+				ans += a, ans += b;
+				sum = min(sum, ans);
+			}
+		}
+		if (sum > 1e9) cout << "-1\n";
+		else cout << sum << '\n';
+	}
+	return 0;
+}

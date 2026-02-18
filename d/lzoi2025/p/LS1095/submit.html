@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html data-page="problem_submit" data-layout="basic" class="layout--basic page--problem_submit theme--dark nojs" data-mantine-color-scheme="dark" lang="zh" data-app="Hydro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.gzlzoi.cn/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../../../favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../../../android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="../../../../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../../../favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://www.gzlzoi.cn/p/LS1095/submit">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="乐知课堂" />
+  <meta property="og:url" content="https://www.gzlzoi.cn/p/LS1095/submit" />
+  <meta property="og:image" content="/favicon-96x96.png" />
+      <title>【普及】旅游巴士 - 递交代码 - 乐知课堂</title>
+  <style>
+    body {
+      --font-family: "Microsoft Yahei", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Consolas", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="../../../../theme-4.58.0-beta.17.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      window.UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","hydroacFeatures":[],"blspHost":"wss://ws.hydrooj.com","constantVersion":"1c07a499","domainId":"lzoi2025","domain":{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"},"extraTitleContent":"\u3010\u666E\u53CA\u3011\u65C5\u6E38\u5DF4\u58EB","SWConfig":{"preload":"","hosts":["http://www.gzlzoi.cn","https://www.gzlzoi.cn","https://www.gzlzoi.cn/","/"],"assets":[],"domains":[]}}';
+      window.UserContext = '{"_id":39,"mail":"202610319@gzlzoi.cn","uname":"202610319","hashType":"hydro","priv":4,"regat":"2025-07-01T02:30:33.477Z","loginat":"2026-02-06T00:24:21.126Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921","role":"\u5B66\u751F","scope":"BigInt::-1","tfa":false,"authn":false,"group":["20250702\u4E0A\u5348","\u4E34\u65F6\u5C0F\u7EC4","20250804\u4E0A\u5348","39"],"domains":[{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"}],"viewLang":"zh","timeZone":"Asia/Shanghai","codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","avatar":"gravatar:202610319@gzlzoi.cn","qq":"","gender":"2","bio":"<blockquote class=\\"note\\">\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: yellow;\\">\u4E66\u5C71\u6709\u8DEF\u52E4\u4E3A\u5F84\uFF0C\u5B66\u6D77\u65E0\u6DAF\u82E6\u4F5C\u821F\u3002</p></h3>\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: #12DA72;\\">Diligence is the path to the mountain of knowledge, hard-working is the boat to the endless sea of learning.</p></h3>\\r\\n</blockquote>","school":"\u5E7F\u5DDE\u5E02\u5929\u6CB3\u533A\u9A8F\u666F\u5C0F\u5B66","studentId":"","backgroundImage":"/d/lzoi2025/file/39/%E4%B9%90%E7%9F%A5%E8%AF%BE%E5%A0%82%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.png","unreadMsg":0,"pinnedDomains":["lzoi2025"],"rounded":true,"skipAnimate":false,"showTimeAgo":true,"fontFamily":"Microsoft Yahei","codeFontFamily":"Consolas","theme":"dark","preferredEditorType":"sv","showInvisibleChar":false,"formatCode":true,"displayName":"\u9EC4\u98DE\u535A","rpInfo":{"problem":237.2780396214451,"contest":8.25},"nAccept":191,"nSubmit":194,"rp":245.5280396214451,"rank":2,"level":8,"join":true,"avatarUrl":"//cn.gravatar.com/avatar/2dbb0a041212ea8df395e4d4418e92fa?d=mm&s=128"}';
+    </script>
+      </head>
+<body>
+      <script type="text/javascript" src="../../../../resource/1c07a499/entry.js"></script>
+    <script type="text/javascript" src="../../../../resource/4.58.0-beta.17/lang-zh.js"></script>
+    <script type="text/javascript" src="../../../../hydro-4.58.0-beta.17.js"></script>
+    <nav class="nav slideout-menu" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://www.gzlzoi.cn/"><img class="nav__logo" src="../../../../components/navigation/nav-logo-small_dark.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="../../index.html" class="nav__item">
+    首页
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../set_theme/dark.html" class="nav__item nav--active">
+    题库
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../training.html" class="nav__item">
+    训练
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../contest.html" class="nav__item">
+    比赛
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../homework.html" class="nav__item">
+    作业
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../discuss.html" class="nav__item">
+    讨论
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../record@uidOrName=39.html" class="nav__item">
+    评测记录
+  </a>
+</li>
+      </ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+              <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-domain" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <span class="nav__item"><span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span> lzoi2025 <span class="icon icon-expand_more nojs--hide"></span></span>
+        <ol class="dropdown-target menu" id="menu-nav-domain"><li class="menu__item">
+              <a href="../../index.html" class="menu__link">
+                <span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span>
+                lzoi2025              </a>
+            </li><li class="menu__seperator"></li><li class="menu__item">
+            <a href="../../home/domain.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 管理
+            </a>
+          </li>
+        </ol>
+      </li>
+          <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <a href="../../user/39.html" class="nav__item">202610319 <span class="icon icon-expand_more nojs--hide"></span></a>
+        <ol class="dropdown-target menu" id="menu-nav-user">
+          <li class="menu__item">
+            <a href="../../user/39.html" class="menu__link">
+              <span class="icon icon-account--circle"></span> 我的资料
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../../home/messages.html" class="menu__link">
+              <span class="icon icon-comment--multiple"></span> 站内消息
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../../home/settings/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> @ lzoi2025
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../../home/settings/account.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 账户设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../../home/settings/preference.html" class="menu__link">
+              <span class="icon icon-sliders"></span> 偏好设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../../home/security.html" class="menu__link">
+              <span class="icon icon-security"></span> 安全设置
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../../home/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> 我的域
+            </a>
+          </li>
+                              <li class="menu__seperator"></li>
+                    <li class="menu__item">
+            <a href="../../logout.html" class="menu__link" name="nav_logout">
+              <span class="icon icon-logout"></span> 登出
+            </a>
+          </li>
+        </ol>
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://www.gzlzoi.cn/" target="_self">
+        <img src="../../../../components/navigation/nav-logo-small_dark.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+        
+<div class="row">
+  <div class="medium-9 columns">
+    <div class="section">
+      <div class="section__header">
+        <h1 class="section__title">递交以评测</h1>
+      </div>
+      <div class="section__body typo" name="submit_section">
+        <form method="post" enctype="multipart/form-data">
+          <div class="hasjs--hide">
+            <div class="row">
+  <div
+    class="medium-5 columns form__item end"
+      >
+        <label>
+      代码语言
+            
+<div
+  name="form_item_lang"
+    class="select-container"
+
+>
+  <select
+    name="lang"
+      class="select"
+                  
+  ><option value="cc">
+      C++
+    </option><option value="cc.cc14o2">
+      C++14(O2)
+    </option><option value="cc.cc17o2" selected>
+      C++17(O2)
+    </option><option value="py">
+      Python
+    </option><option value="py.py3">
+      Python 3
+    </option></select>
+</div>
+
+      </label>
+      </div>
+</div>
+
+
+          </div>
+          <div class="row nojs--hide" id="codelang-selector"></div>
+          <div class="row">
+  <div
+    class="medium-12 columns form__item end"
+      >
+        <label>
+      代码
+            
+<div
+  name="form_item_code"
+    class="textarea-container monospace"
+
+>
+  <textarea
+    name="code"
+    placeholder=""
+        spellcheck="false"      class="textbox monospace"
+      autofocus data-autofocus            
+  ></textarea>
+</div>
+
+      </label>
+      </div>
+</div>
+
+
+          <div class="row">
+            <div class="medium-12 columns">
+              <p>或者上传一个文件： <input type="file" name="file"></p>
+              <br />
+            </div>
+          </div>
+          <div class="row"><div class="columns">
+            <input type="submit" class="rounded primary button" value="递交">
+          </div></div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="medium-3 columns">
+        <div class="section side section--problem-sidebar">
+  <div class="section__header">
+    <h1 class="section__title">【普及】旅游巴士</h1>
+  </div>
+  <div>
+    <ol class="menu">
+              <li class="menu__item"><a class="menu__link" href="../LS1095.html">
+        <span class="icon icon-flag"></span> 查看题目
+      </a></li>
+              <li class="menu__item scratchpad--hide"><a class="menu__link active" href="submit.html">
+        <span class="icon icon-send"></span> 递交
+      </a></li>
+                      <li class="menu__seperator"></li>
+              <li class="menu__item"><a class="menu__link" href="../../discuss/problem/75.html">
+        <span class="icon icon-comment--text"></span> 讨论 (0)      </a></li>
+              <li class="menu__item"><a class="menu__link" href="solution.html">
+        <span class="icon icon-comment--text"></span> 题解 (0)      </a></li>
+          <li class="menu__item"><a class="menu__link" href="files.html">
+        <span class="icon icon-file"></span> 文件
+      </a></li>
+      <li class="menu__item"><a class="menu__link" href="stat.html">
+        <span class="icon icon-statistics"></span> 统计
+      </a></li>
+            </ol>
+  </div>
+</div>
+<div class="section side">
+  <div class="section__header">
+    <h1 class="section__title">信息</h1>
+  </div>
+  <div class="section__body typo" data-fragment-id="problem-sidebar-information">
+  <dl class="large horizontal">
+    <dt>ID</dt>
+    <dd>75</dd>
+    <dt>时间</dt>
+    <dd>1000ms</dd>
+    <dt>内存</dt>
+    <dd>256MiB</dd>
+    <dt>难度</dt>
+    <dd>7</dd>
+    <dt>标签</dt>
+    <dd>
+      <ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8D%A5%E5%89%A7%E7%B2%A8%E9%8F%8B%84">图结构</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%88%E2%82%AC%E9%90%AD%EE%85%A1%E7%9F%BE">最短路</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E9%8F%85%EE%86%BC%E5%BC%B7">普及</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../../p@q=category%253Acsp-j.html">csp-j</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="../../p@q=category%253A2023.html">2023</a></li></ul>
+    </dd>
+    <dt>递交数</dt>
+    <dd><a href="https://www.gzlzoi.cn/d/lzoi2025/record?pid=75">55</a></dd>
+    <dt>已通过</dt>
+    <dd>13</dd>
+    <dt>上传者</dt>
+    <dd><span class="user-profile-link">
+      <img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20">
+    <a class="user-profile-name uname--lv3" href="../../user/2.html">
+          liangsheng
+      </a>
+  </span>
+</dd>
+  </dl>
+</div></div>
+  </div>
+</div>
+
+  </div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+      <div class="row footer__links">
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          状态
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://www.gzlzoi.cn/d/lzoi2025/record">评测队列</a></li>
+          <li class="footer__category__item"><a href="../../status.html">服务状态</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          开发
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">开源</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          支持
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../../wiki/help.html">帮助</a></li>
+          <li class="footer__category__item"><a href="../../wiki/about.html#contact">联系我们</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable end">
+        <h1>
+          关于
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../../wiki/about.html">关于</a></li>
+          <li class="footer__category__item"><a href="../../wiki/about.html#privacy">隐私</a></li>
+          <li class="footer__category__item"><a href="../../wiki/about.html#tos">服务条款</a></li>
+          <li class="footer__category__item"><a href="../../wiki/about.html#contact">版权申诉</a></li>
+        </ul></div>
+      </div>
+    </div>
+      <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+                    <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-lang"><li class="menu__item"><a class="menu__link" href="../../language/en.html">English</a></li><li class="menu__item"><a class="menu__link" href="../../language/ko.html">한국어</a></li><li class="menu__item"><a class="menu__link" href="../../language/zh.html">简体中文</a></li><li class="menu__item"><a class="menu__link" href="../../language/zh_TW.html">正體中文</a></li></ol>
+          </li>
+          <li class="footer__extra-link-item">
+                          <a href="https://www.gzlzoi.cn/legacy?legacy=true">兼容模式</a>
+                      </li>
+          <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> 主题 <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-theme">
+              <li class="menu__item"><a class="menu__link" href="../../set_theme/light.html">亮色</a></li>
+              <li class="menu__item"><a class="menu__link" href="../../set_theme/dark.html">暗色</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><a href="https://beian.miit.gov.cn/">京ICP备2023010486号-3</a></li><li class="footer__extra-link-item">Worker 0, 7ms</li>
+          <!-- Prepare 3ms -->
+          <!-- Method 0ms -->
+          
+          
+          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v5.0.0-beta.16</a> Community</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      window.UiContextNew = '{"pdoc":{"_id":"68980f07060e4cf9c8985409","content":"{\\"zh\\":\\"# \u9898\u76EE\u63CF\u8FF0\\\\n\\\\n\u5C0F Z \u6253\u7B97\u5728\u56FD\u5E86\u5047\u671F\u671F\u95F4\u642D\u4E58\u65C5\u6E38\u5DF4\u58EB\u53BB\u4E00\u5904\u4ED6\u5411\u5F80\u5DF2\u4E45\u7684\u666F\u70B9\u65C5\u6E38\u3002\\\\n\\\\n\u65C5\u6E38\u666F\u70B9\u7684\u5730\u56FE\u5171\u6709 $n$ \u5904\u5730\u70B9\uFF0C\u5728\u8FD9\u4E9B\u5730\u70B9\u4E4B\u95F4\u8FDE\u6709 $m$ \u6761\u9053\u8DEF\u3002\u5176\u4E2D $1$ \u53F7\u5730\u70B9\u4E3A\u666F\u533A\u5165\u53E3\uFF0C$n$ \u53F7\u5730\u70B9\u4E3A\u666F\u533A\u51FA\u53E3\u3002\u6211\u4EEC\u628A\u4E00\u5929\u5F53\u4E2D\u666F\u533A\u5F00\u95E8\u8425\u4E1A\u7684\u65F6\u95F4\u8BB0\u4E3A $0$ \u65F6\u523B\uFF0C\u5219\u4ECE $0$ \u65F6\u523B\u8D77\uFF0C\u6BCF\u95F4\u9694 $k$ \u5355\u4F4D\u65F6\u95F4\u4FBF\u6709\u4E00\u8F86\u65C5\u6E38\u5DF4\u58EB\u5230\u8FBE\u666F\u533A\u5165\u53E3\uFF0C\u540C\u65F6\u6709\u4E00\u8F86\u65C5\u6E38\u5DF4\u58EB\u4ECE\u666F\u533A\u51FA\u53E3\u9A76\u79BB\u666F\u533A\u3002\\\\n\\\\n\u6240\u6709\u9053\u8DEF\u5747\u53EA\u80FD **<font color=\\\\\\"#FF0000\\\\\\">\u5355\u5411\u901A\u884C</font>**\u3002\u5BF9\u4E8E\u6BCF\u6761\u9053\u8DEF\uFF0C\u6E38\u5BA2\u6B65\u884C\u901A\u8FC7\u7684\u7528\u65F6\u5747\u4E3A\u6070\u597D $1$ \u5355\u4F4D\u65F6\u95F4\u3002\\\\n\\\\n\u5C0F Z \u5E0C\u671B\u4E58\u5750\u65C5\u6E38\u5DF4\u58EB\u5230\u8FBE\u666F\u533A\u5165\u53E3\uFF0C\u5E76\u6CBF\u7740\u81EA\u5DF1\u9009\u62E9\u7684\u4EFB\u610F\u8DEF\u5F84\u8D70\u5230\u666F\u533A\u51FA\u53E3\uFF0C\u518D\u4E58\u5750\u65C5\u6E38\u5DF4\u58EB\u79BB\u5F00\uFF0C\u8FD9\u610F\u5473\u7740\u4ED6\u5230\u8FBE\u548C\u79BB\u5F00\u666F\u533A\u7684\u65F6\u95F4\u90FD\u5FC5\u987B\u662F **<font color=\\\\\\"#FF0000\\\\\\"> $k$ \u7684\u975E\u8D1F\u6574\u6570\u500D </font>** \u3002\u7531\u4E8E\u8282\u5047\u65E5\u5BA2\u6D41\u4F17\u591A\uFF0C\u5C0F Z \u5728\u65C5\u6E38\u5DF4\u58EB\u79BB\u5F00\u666F\u533A\u524D\u53EA\u60F3 **<font color=\\\\\\"#FF0000\\\\\\">\u4E00\u76F4\u6CBF\u7740\u666F\u533A\u9053\u8DEF\u79FB\u52A8\uFF0C\u800C\u4E0D\u60F3\u5728\u4EFB\u4F55\u5730\u70B9\uFF08\u5305\u62EC\u666F\u533A\u5165\u53E3\u548C\u51FA\u53E3\uFF09\u6216\u8005\u9053\u8DEF\u4E0A\u505C\u7559 </font>**\u3002\\\\n\\\\n\u51FA\u53D1\u524D\uFF0C\u5C0F Z \u5FFD\u7136\u5F97\u77E5\uFF1A\u666F\u533A\u91C7\u53D6\u4E86\u9650\u5236\u5BA2\u6D41\u7684\u65B9\u6CD5\uFF0C\u5BF9\u4E8E\u6BCF\u6761\u9053\u8DEF\u5747\u8BBE\u7F6E\u4E86\u4E00\u4E2A\\\\n\u201C\u5F00\u653E\u65F6\u95F4\u201D$a _ i$\uFF0C\u6E38\u5BA2\u53EA\u6709 **<font color=\\\\\\"#FF0000\\\\\\">\u4E0D\u65E9\u4E8E $a _ i$ \u65F6\u523B</font>** \u624D\u80FD\u901A\u8FC7\u8FD9\u6761\u9053\u8DEF\u3002\\\\n\\\\n\u8BF7\u5E2E\u52A9\u5C0F Z \u8BBE\u8BA1\u4E00\u4E2A\u65C5\u6E38\u65B9\u6848\uFF0C\u4F7F\u5F97\u4ED6\u4E58\u5750\u65C5\u6E38\u5DF4\u58EB\u79BB\u5F00\u666F\u533A\u7684\u65F6\u95F4\u5C3D\u91CF\u5730\u65E9\u3002\\\\n\\\\n# \u8F93\u5165\u683C\u5F0F\\\\n\\\\n\u8F93\u5165\u7684\u7B2C\u4E00\u884C\u5305\u542B 3 \u4E2A\u6B63\u6574\u6570 $n, m, k$\uFF0C\u8868\u793A\u65C5\u6E38\u666F\u70B9\u7684\u5730\u70B9\u6570\u3001\u9053\u8DEF\u6570\uFF0C\u4EE5\u53CA\u65C5\u6E38\u5DF4\u58EB\u7684\u53D1\u8F66\u95F4\u9694\u3002\\\\n\\\\n\u8F93\u5165\u7684\u63A5\u4E0B\u6765 $m$ \u884C\uFF0C\u6BCF\u884C\u5305\u542B 3 \u4E2A\u975E\u8D1F\u6574\u6570 $u _ i, v _ i, a_ i$\uFF0C\u8868\u793A\u7B2C $i$ \u6761\u9053\u8DEF\u4ECE\u5730\u70B9 $u _ i$ \u51FA\u53D1\uFF0C\u5230\u8FBE\u5730\u70B9 $v _ i$\uFF0C\u9053\u8DEF\u7684\u201C\u5F00\u653E\u65F6\u95F4\u201D\u4E3A $a _ i$\u3002\\\\n\\\\n# \u8F93\u51FA\u683C\u5F0F\\\\n\\\\n\u8F93\u51FA\u4E00\u884C\uFF0C\u4EC5\u5305\u542B\u4E00\u4E2A\u6574\u6570\uFF0C\u8868\u793A\u5C0F Z \u6700\u65E9\u4E58\u5750\u65C5\u6E38\u5DF4\u58EB\u79BB\u5F00\u666F\u533A\u7684\u65F6\u523B\u3002\u5982\u679C\u4E0D\u5B58\u5728\u7B26\u5408\u8981\u6C42\u7684\u65C5\u6E38\u65B9\u6848\uFF0C\u8F93\u51FA `-1`\u3002\\\\n\\\\n```input1\\\\n5 5 3\\\\n1 2 0\\\\n2 5 1\\\\n1 3 0\\\\n3 4 3\\\\n4 5 1\\\\n```\\\\n\\\\n```output1\\\\n6\\\\n```\\\\n\\\\n# \u63D0\u793A\\\\n\\\\n**\u3010\u6837\u4F8B #1 \u89E3\u91CA\u3011**\\\\n\\\\n\u5C0F Z \u53EF\u4EE5\u5728 $3$ \u65F6\u523B\u5230\u8FBE\u666F\u533A\u5165\u53E3\uFF0C\u6CBF $1 \\\\\\\\to 3 \\\\\\\\to 4 \\\\\\\\to 5$ \u7684\u987A\u5E8F\u8D70\u5230\u666F\u533A\u51FA\u53E3\uFF0C\u5E76\u5728 $6$ \u65F6\u523B\u79BB\u5F00\u3002\\\\n\\\\n![img](file://\u65C5\u6E38\u5DF4\u58EB.png)\\\\n\\\\n<details>\\\\n<summary><font color=\\\\\\"#FF0000\\\\\\">\u8BF7\u601D\u8003\u540E\u518D\u70B9\u51FB\u67E5\u770B\u63D0\u793A</font></summary>\\\\n\\\\n* \u72B6\u6001\u8868\u793A\uFF1A$dp(u, i)$: \u5728 $\\\\\\\\%k=i$ \u65F6\u523B\u5230\u8FBE $u$ \u70B9\u7684\u6700\u77ED\u65F6\u95F4, \u6211\u4EEC\u8981\u6C42\u7684\u662F $dp(n, 0)$\\\\n* \u72B6\u6001\u8F6C\u79FB\uFF1A\u5047\u8BBE\u4ECE\u70B9 $u$ \u5230\u70B9 $v$ \u6709\u4E00\u6761\u8FB9, \u5176\u6700\u65E9\u5230\u8FBE\u65F6\u95F4\u662F $t$\\\\n* \u5C06\u72B6\u6001 $dp(u, i)$ \u5F53\u505A\u56FE\u4E2D\u7684\u70B9, \u5C06\u8F6C\u79FB\u5F53\u505A\u56FE\u4E2D\u7684\u8FB9, \u7136\u540E\u8DD1\u6700\u77ED\u8DEF\\\\n\\\\n$$\\\\n\\\\\\\\begin{equation}\\\\ndp(u,i) = \\\\\\\\left\\\\\\\\{\\\\n\\\\\\\\begin{array}{lr}\\\\ndp(v,(i+1)\\\\\\\\%k), & i \\\\\\\\geq t \\\\\\\\\\\\\\\\\\\\ndp(v,(i+(t-i+k-1)/k*k+1))\\\\\\\\%k, & i \\\\\\\\lt t\\\\n\\\\\\\\end{array}\\\\n\\\\\\\\right.\\\\n\\\\\\\\end{equation}\\\\n$$\\\\n\\\\n</details>\\\\n\\\\n# \u6570\u636E\u89C4\u6A21\u4E0E\u9650\u5236\\\\n\\\\n* $2 \\\\\\\\leq n \\\\\\\\leq 10 ^ 4$\\\\n* $1 \\\\\\\\leq m \\\\\\\\leq 2 \\\\\\\\times 10 ^ 4$\\\\n* $1 \\\\\\\\leq k \\\\\\\\leq 100$\\\\n* $1 \\\\\\\\leq u _ i, v _ i \\\\\\\\leq n$\\\\n* $0 \\\\\\\\leq a _ i \\\\\\\\leq 10 ^ 6$\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">\u63D0\u4EA4\u8BED\u8A00\u8BF7\u9009\u62E9 C++17(O2), \u6267\u884C\u901F\u5EA6\u4F1A\u5FEB\u5F88\u591A</font>**\\\\n\\\\n# \u6765\u6E90\\\\n\\\\n* [luogu: P9751 [CSP-J 2023] \u65C5\u6E38\u5DF4\u58EB](https://www.luogu.com.cn/problem/P9751)\\\\n\\\\n\\\\n\\"}","owner":2,"domainId":"lzoi2025","docType":10,"docId":75,"title":"\u3010\u666E\u53CA\u3011\u65C5\u6E38\u5DF4\u58EB","tag":["\u56FE\u7ED3\u6784","\u6700\u77ED\u8DEF","\u666E\u53CA","csp-j","2023"],"hidden":false,"nSubmit":55,"nAccept":13,"pid":"LS1095","data":[{"_id":"bus1.ans","name":"bus1.ans","size":4,"lastModified":"2025-08-10T03:19:28.712Z","etag":"L2RhdGEvZmlsZS9oeWRyby93dW4venJoZWVwYTB3Znkza3FhNzhhbGR5LmFucw=="},{"_id":"bus1.in","name":"bus1.in","size":92,"lastModified":"2025-08-10T03:19:28.756Z","etag":"L2RhdGEvZmlsZS9oeWRyby90ZmoveXNkdmJxazhvcXQxMG5kNHVrcXllLmlu"},{"_id":"bus2.ans","name":"bus2.ans","size":3,"lastModified":"2025-08-10T03:19:28.801Z","etag":"L2RhdGEvZmlsZS9oeWRyby9leDUva2huZm82eXF4OW00aTkyeHB6anR0LmFucw=="},{"_id":"bus2.in","name":"bus2.in","size":96,"lastModified":"2025-08-10T03:19:28.835Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ua2wvdmdoZ2VleGRrZ3d2MzgwMjBrbW1vLmlu"},{"_id":"bus3.ans","name":"bus3.ans","size":7,"lastModified":"2025-08-10T03:19:28.872Z","etag":"L2RhdGEvZmlsZS9oeWRyby9tbzQvMW5qbGlqanY1NXdxajM4ZXplOHB4LmFucw=="},{"_id":"bus3.in","name":"bus3.in","size":159,"lastModified":"2025-08-10T03:19:28.909Z","etag":"L2RhdGEvZmlsZS9oeWRyby9mYzcvZ2o2cGdhM3k5MHJyenhscnBsamZuLmlu"},{"_id":"bus4.ans","name":"bus4.ans","size":7,"lastModified":"2025-08-10T03:19:28.961Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kcXAveG15ZnFmem52MHFram1uOXBncWFyLmFucw=="},{"_id":"bus4.in","name":"bus4.in","size":172,"lastModified":"2025-08-10T03:19:29.014Z","etag":"L2RhdGEvZmlsZS9oeWRyby96cW0venUwNHprazh2ZDNtdXkxMXltOW5wLmlu"},{"_id":"bus5.ans","name":"bus5.ans","size":7,"lastModified":"2025-08-10T03:19:29.046Z","etag":"L2RhdGEvZmlsZS9oeWRyby95ZHUvdTkycnNpOWdrem9tc3A1OXRiYWIxLmFucw=="},{"_id":"bus5.in","name":"bus5.in","size":163,"lastModified":"2025-08-10T03:19:29.086Z","etag":"L2RhdGEvZmlsZS9oeWRyby9sdDMvb3VteWF2OXJ0ZWNuaWV4enBnbWo4Lmlu"},{"_id":"bus6.ans","name":"bus6.ans","size":5,"lastModified":"2025-08-10T03:19:29.124Z","etag":"L2RhdGEvZmlsZS9oeWRyby9pYTAvZGR1Ym0wemJkZ3pwd3pldGs3c292LmFucw=="},{"_id":"bus6.in","name":"bus6.in","size":227183,"lastModified":"2025-08-10T03:19:29.183Z","etag":"L2RhdGEvZmlsZS9oeWRyby9naG4vZ3lvNWg0YmFwMHR4cWIzb3V6aTkwLmlu"},{"_id":"bus7.ans","name":"bus7.ans","size":5,"lastModified":"2025-08-10T03:19:29.235Z","etag":"L2RhdGEvZmlsZS9oeWRyby9jMDcvYmxmdmxvZTdkeGxoZjZmaWdyMGhjLmFucw=="},{"_id":"bus7.in","name":"bus7.in","size":233986,"lastModified":"2025-08-10T03:19:29.293Z","etag":"L2RhdGEvZmlsZS9oeWRyby9zY2kvN2x4ZmJ3c29yMjJpcm5qc3l4enprLmlu"},{"_id":"bus8.ans","name":"bus8.ans","size":8,"lastModified":"2025-08-10T03:19:29.330Z","etag":"L2RhdGEvZmlsZS9oeWRyby9mc3Iva2RpMTAwMDlteHhwcWJ1NDR4cHRhLmFucw=="},{"_id":"bus8.in","name":"bus8.in","size":320362,"lastModified":"2025-08-10T03:19:29.394Z","etag":"L2RhdGEvZmlsZS9oeWRyby95bzEvZmd5enVzemx1b3hzY2JzdjVhdXc2Lmlu"},{"_id":"bus9.ans","name":"bus9.ans","size":7,"lastModified":"2025-08-10T03:19:29.433Z","etag":"L2RhdGEvZmlsZS9oeWRyby96aWQvcDlybG9iZGtzYmNmcjN5dmFka2VlLmFucw=="},{"_id":"bus9.in","name":"bus9.in","size":305536,"lastModified":"2025-08-10T03:19:29.498Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lczMvZWF5ejl2ZDR5MnJraW1sbHVob3BvLmlu"},{"_id":"bus10.ans","name":"bus10.ans","size":8,"lastModified":"2025-08-10T03:19:29.546Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kMGsvMHgwMnZpampkazdkY2FjdTBrdmViLmFucw=="},{"_id":"bus10.in","name":"bus10.in","size":308460,"lastModified":"2025-08-10T03:19:29.609Z","etag":"L2RhdGEvZmlsZS9oeWRyby9xMzUvamw2aHhqNGVjYmtweTh0bHBtd3NiLmlu"},{"_id":"bus11.ans","name":"bus11.ans","size":5,"lastModified":"2025-08-10T03:19:29.649Z","etag":"L2RhdGEvZmlsZS9oeWRyby9uY3QvbmR6dGVxdHBmY3hmcGV2bGZsbWxxLmFucw=="},{"_id":"bus11.in","name":"bus11.in","size":219432,"lastModified":"2025-08-10T03:19:29.700Z","etag":"L2RhdGEvZmlsZS9oeWRyby94cnMvYzc1Zm1pb29pbWpiZThiNXpiYXN5Lmlu"},{"_id":"bus12.ans","name":"bus12.ans","size":5,"lastModified":"2025-08-10T03:19:29.735Z","etag":"L2RhdGEvZmlsZS9oeWRyby9pc2UvZnRsMG91a3IwZGdxY2J6bWMzbHczLmFucw=="},{"_id":"bus12.in","name":"bus12.in","size":225124,"lastModified":"2025-08-10T03:19:29.788Z","etag":"L2RhdGEvZmlsZS9oeWRyby9mbTEvaXcxd3ZocHBqanQ1ZWQ5em13YTJnLmlu"},{"_id":"bus13.ans","name":"bus13.ans","size":5,"lastModified":"2025-08-10T03:19:29.824Z","etag":"L2RhdGEvZmlsZS9oeWRyby9uaGovMHBicTE5ZmptdW1zMmpzMXJ4Zno3LmFucw=="},{"_id":"bus13.in","name":"bus13.in","size":218026,"lastModified":"2025-08-10T03:19:29.874Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ybmkvY2xmenF4Y2JpOW52b3ZrN256ZWljLmlu"},{"_id":"bus14.ans","name":"bus14.ans","size":7,"lastModified":"2025-08-10T03:19:29.909Z","etag":"L2RhdGEvZmlsZS9oeWRyby9qdnQveW96dDUwcGxpM2p1b2xjOWhpbzJqLmFucw=="},{"_id":"bus14.in","name":"bus14.in","size":312966,"lastModified":"2025-08-10T03:19:29.972Z","etag":"L2RhdGEvZmlsZS9oeWRyby9icHgvdjMzOGt0aHExOGFpYXA3MWRqeGttLmlu"},{"_id":"bus15.ans","name":"bus15.ans","size":7,"lastModified":"2025-08-10T03:19:30.017Z","etag":"L2RhdGEvZmlsZS9oeWRyby80NHcvdWVkZGg0dDByem8zMWtjbG1wYXlxLmFucw=="},{"_id":"bus15.in","name":"bus15.in","size":315655,"lastModified":"2025-08-10T03:19:30.079Z","etag":"L2RhdGEvZmlsZS9oeWRyby9yam8vd3ZrYXNlb3Zram9sbmFqM2FoMGFmLmlu"},{"_id":"bus16.ans","name":"bus16.ans","size":7,"lastModified":"2025-08-10T03:19:30.117Z","etag":"L2RhdGEvZmlsZS9oeWRyby9heHIvcmd3OTBwa2JudXNnd3p1OG93aTFrLmFucw=="},{"_id":"bus16.in","name":"bus16.in","size":324957,"lastModified":"2025-08-10T03:19:30.178Z","etag":"L2RhdGEvZmlsZS9oeWRyby9mc2EvaWR4OThiOW9peGx4bjZyMDR5ODNlLmlu"},{"_id":"bus17.ans","name":"bus17.ans","size":8,"lastModified":"2025-08-10T03:19:30.215Z","etag":"L2RhdGEvZmlsZS9oeWRyby8xejAveHNhZXBkNmdieWp3MzZxcml4ZWh4LmFucw=="},{"_id":"bus17.in","name":"bus17.in","size":305969,"lastModified":"2025-08-10T03:19:30.274Z","etag":"L2RhdGEvZmlsZS9oeWRyby9qMHQvOXZkc2VybW8yeW5xdDVtcWR5Z3dsLmlu"},{"_id":"bus18.ans","name":"bus18.ans","size":7,"lastModified":"2025-08-10T03:19:30.321Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lYmUvcHFobmNvZWFmcWhweDlpYm12OGdjLmFucw=="},{"_id":"bus18.in","name":"bus18.in","size":312546,"lastModified":"2025-08-10T03:19:30.383Z","etag":"L2RhdGEvZmlsZS9oeWRyby9vZnAvdjQydWxpZ2dqcXdtcXlmYnYzNWV1Lmlu"},{"_id":"bus19.ans","name":"bus19.ans","size":8,"lastModified":"2025-08-10T03:19:30.418Z","etag":"L2RhdGEvZmlsZS9oeWRyby94M2EvenB1bTd3bWhpdW5qcmFiYnFqeWJ3LmFucw=="},{"_id":"bus19.in","name":"bus19.in","size":307009,"lastModified":"2025-08-10T03:19:30.491Z","etag":"L2RhdGEvZmlsZS9oeWRyby9qam8vZDJ5Mmx5dGdwcW12MG94bm53azB0Lmlu"},{"_id":"bus20.ans","name":"bus20.ans","size":8,"lastModified":"2025-08-10T03:19:30.540Z","etag":"L2RhdGEvZmlsZS9oeWRyby83MHQvYjB1ejBmNWM2ZzRpbDZkNjJjNnVxLmFucw=="},{"_id":"bus20.in","name":"bus20.in","size":322747,"lastModified":"2025-08-10T03:19:30.606Z","etag":"L2RhdGEvZmlsZS9oeWRyby9odWkvaWt4YjA1d2t4Z3cwZWN0ZDV1NnRnLmlu"}],"config":{"count":20,"memoryMin":256,"memoryMax":256,"timeMin":1000,"timeMax":1000,"type":"default","langs":["cc","cc.cc14o2","cc.cc17o2","py","py.py3"]},"additional_file":[{"_id":"\u65C5\u6E38\u5DF4\u58EB.png","name":"\u65C5\u6E38\u5DF4\u58EB.png","size":25066,"lastModified":"2025-08-10T03:16:23.343Z","etag":"L2RhdGEvZmlsZS9oeWRyby92ZzYvM2huMWd6cHgwZnJhZnZubGR0cDB3LnBuZw=="}],"difficulty":0,"html":false,"stats":{"AC":15,"WA":22,"TLE":7,"MLE":0,"RE":10,"SE":0,"IGN":0,"CE":1,"s0":11,"s5":6,"s10":1,"s15":1,"s20":1,"s25":4,"s30":3,"s35":6,"s75":6,"s85":1,"s100":15}}}';
+      window.UserContextNew = '{}';
+    </script>
+  </body>
+</html>

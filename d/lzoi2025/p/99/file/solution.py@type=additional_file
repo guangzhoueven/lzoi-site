@@ -1,0 +1,33 @@
+T = int(input())
+for _  in range(T):
+    n = int(input())
+    a = list(map(int, input().split()))
+    
+    def gao():
+        if n == 2:
+            return True
+        b = set(a)
+        if len(b) == 1:
+            return a[0] * 2 <= n or a[0] == n - 1
+        if len(b) > 2:
+            return False
+        m = dict()
+        for x in a:
+            if not (x in m):
+                m[x] = 0
+            m[x] += 1
+        c = list()
+        for k, v in m.items():
+            c.append((k, v))
+        m0, m0c = c[0]
+        m1, m1c = c[1]
+        if m0 > m1:
+            m0, m1 = m1, m0
+            m0c, m1c = m1c, m0c
+        if m0 + 1 != m1:
+            return False
+        if m0c != m1:
+            return False
+        return True
+        
+    print('Other' if gao() else 'Lie')

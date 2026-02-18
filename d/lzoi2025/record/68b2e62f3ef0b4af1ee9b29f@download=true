@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+/* 超市优惠券问题（最小化花费）【贪心算法】*/
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int T;
+	cin >> T;
+	while (T--) {
+		int n, a, b, x, y;
+		cin >> n >> a >> b >> x >> y;
+		vector<int> p(n);
+		for (int i = 0; i < n; i++) cin >> p[i];
+		vector<pair<double, int>> ZK_pay;
+		vector<pair<double, int>> LJ_pay;
+		for (int i = 0; i < n; i++) {
+			double ZK_cost = p[i] * x / 100.0;      // 折扣券支付金额
+			double LJ_cost = max(0, p[i] - y);      // 立减券支付金额
+			ZK_pay.emplace_back(ZK_cost, i);
+			LJ_pay.emplace_back(LJ_cost, i);
+		}
+
+		sort(ZK_pay.begin(), ZK_pay.end());
+		sort(LJ_pay.begin(), LJ_pay.end());	
+		double ans = 0.0;
+		vector<bool> used(n, false);
+		int ZK_used = 0, LJ_used = 0;
+		int i = 0, j = 0;
+
+		while (ZK_used + LJ_used < min(a + b, n)) {
+			if (ZK_used < a && (LJ_used >= b || ZK_pay[i].first <= LJ_pay[j].first)) {
+				if (!used[ZK_pay[i].second]) {
+					ans += ZK_pay[i].first;
+					used[ZK_pay[i].second] = true;
+					ZK_used++;
+				}
+				i++;
+			} else if (LJ_used < b) {
+				if (!used[LJ_pay[j].second]) {
+					ans += LJ_pay[j].first;
+					used[LJ_pay[j].second] = true;
+					LJ_used++;
+				}
+				j++;
+			}
+		}
+		for (int k = 0; k < n; k++) if (!used[k]) ans += p[k];	
+		cout << fixed << setprecision(4) << ans << "\n";
+	}
+	return 0;
+}

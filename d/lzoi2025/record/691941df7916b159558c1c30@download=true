@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n;
+	cin >> n;
+	vector<i64> a(n);
+	for (auto& x : a) cin >> x;
+	
+	vector<i64> pre(n), suf(n);  	// 前缀和、后缀和
+
+	i64 dp = a[0];
+	pre[0] = a[0];
+	for (i64 i = 1; i < n; i++) {	// 从左到右的最大子段和
+		dp = max(a[i], dp + a[i]);
+		pre[i] = max(pre[i-1], dp);
+	}
+	
+	dp = a[n-1];
+	suf[n-1] = a[n-1];
+	for (i64 i = n-2; i >= 0; i--) {// 从右到左的最大子段和
+		dp = max(a[i], dp + a[i]);
+		suf[i] = max(suf[i+1], dp);
+	}
+	
+	i64 ans = LLONG_MIN;
+	for (i64 i = 0; i < n-1; i++) 
+		ans = max(ans, pre[i] + suf[i+1]);
+	
+	cout << ans << "\n";
+	return 0;
+}

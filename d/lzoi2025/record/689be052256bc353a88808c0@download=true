@@ -1,0 +1,73 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+/*--------------------------------- 矩阵快速幂 begin--------------------------------------*/
+using i64 = long long;
+const i64 P = 1e+9 + 7;
+
+template<typename T>
+struct Matrix {
+	i64 n;  
+	vector<vector<T>> mat;  						// 存储矩阵元素
+	
+	Matrix(i64 n_, T x) {							// n_是矩阵大小，x 是对角线初值
+		n = n_;
+		mat.assign(n, vector<T>(n, 0));  			// 初始化n×n零矩阵
+		for (i64 i = 0; i < n; i++) mat[i][i] = x;  // 设置对角线元素
+	}
+	
+	Matrix operator*(const Matrix& b) {				// 矩阵乘法运算符重载
+		Matrix ans(n, 0);  							// 初始化结果矩阵
+		for (i64 i = 0; i < n; i++)					// 标准矩阵乘法三重循环
+			for (i64 j = 0; j < n; j++)
+				for (i64 k = 0; k < n; k++) {
+					ans.mat[i][j] = (ans.mat[i][j] + (i64)mat[i][k] * b.mat[k][j]) % P;// 累加并取模，防止溢出
+				}
+		return ans;
+	}
+};
+
+template<typename T>
+T power(T x, i64 n) {	// 矩阵快速幂模板函数，x：底数矩阵，n：指数
+	T ans = x;  		// 初始化结果为x
+	n -= 1;     		// 指数调整
+	
+	for (; n > 0; n >>= 1, x = x * x)  	// 快速幂算法：每次迭代指数减半，底数平方
+		if (n & 1) ans = ans * x;  		// 如果当前位为1，累乘到结果
+	return ans;
+}
+/*--------------------------------- 矩阵快速幂 end -------------------------------------*/
+
+i64 fn(i64 n) {			// 时间复杂度 O(4*4*4*log(n))
+	if (n <= 2) return 1 % P;
+	
+	Matrix<i64> trans(4, 0);
+	trans.mat = {      // 转移矩阵设计：
+		{3, 2, 4, 0},  // F(n)   = 3F(n-1) + 2F(n-2) + 4n + 0*1
+		{1, 0, 0, 0},  // F(n-1) = F(n-1) + 0 + 0 + 0
+		{0, 0, 1, 1},  // n      = 0 + 0 + 1*(n-1) + 1*1
+		{0, 0, 0, 1}   // 1      = 0 + 0 + 0 + 1*1
+	};
+	
+	Matrix<i64> init(4, 0);	// 初始状态向量
+	init.mat = {
+		{1},  // F(2) = 1
+		{1},  // F(1) = 1
+		{3},  // n = 3（n≥3）
+		{1}   // 常数项1
+	};
+	
+	Matrix<i64> res = power(trans, n - 2);	// 计算转移矩阵trans的(n-2)次幂
+	i64 ans = 0;
+	for (i64 k = 0; k < 4; k++) 
+		ans = (ans + (i64)res.mat[0][k] * init.mat[k][0]) % P;	// 计算结果：矩阵第一行与初始向量点积
+	return ans;
+}
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);	
+	i64 n;
+	cin >> n;  
+	cout << fn(n) << "\n"; 	
+	return 0;
+}

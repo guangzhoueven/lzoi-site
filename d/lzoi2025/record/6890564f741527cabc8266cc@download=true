@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int N, A, B;
+	cin >> N >> A >> B;
+	vector<int> K(N + 1);
+	for (int i = 1; i <= N; i++)  cin >> K[i];
+	if (A == B) {
+		cout << 0 << "\n";
+		return 0;
+	}
+
+	vector<int> steps(N + 1, -1);
+	queue<int> q;
+	q.push(A);
+	steps[A] = 0;
+
+	while (!q.empty()) {
+		auto current = q.front();
+		q.pop();
+
+		int up = current + K[current];
+		if (up <= N && steps[up] == -1) {
+			steps[up] = steps[current] + 1;
+			if (up == B) {
+				cout << steps[up] << "\n";
+				return 0;
+			}
+			q.push(up);
+		}
+
+		int down = current - K[current];
+		if (down >= 1 && steps[down] == -1) {
+			steps[down] = steps[current] + 1;
+			if (down == B) {
+				cout << steps[down] << "\n";
+				return 0;
+			}
+			q.push(down);
+		}
+	}
+	cout << -1 << "\n";
+	return 0;
+}

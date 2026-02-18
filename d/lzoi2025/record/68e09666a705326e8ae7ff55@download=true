@@ -1,0 +1,77 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+// n-圆盘数量, A-起始柱子, B-辅助柱子, C-目标柱子
+i64 solve(int n, string A, string B, string C) {	// 递归：（n ≤ 15）
+	if (n == 1) {
+		cout << A << "->" << C << "\n";
+		return 1;
+	}
+	i64 ans = solve(n - 1, A, C, B);	// 1. 将n-1个盘子从A借助C移到B
+	cout << A << "->" << C << "\n";		// 2. 将最大的盘子从A移到C
+	i64 res = solve(n - 1, B, A, C);	// 3. 将n-1个盘子从B借助A移到C
+	return ans + 1 + res;
+}
+
+i64 solve2(int n, string A, string B, string C) {	// 栈模拟递归（15 < n ≤ 20）
+	struct State {
+	int n;
+	string from, tmp, to;
+	int stage;	// 0:初始, 1:完成第一步
+};
+	
+	stack<State> st;
+	i64 step = 0;
+	st.push({n, A, B, C, 0});
+	
+	while (!st.empty()) {
+		State cur = st.top();
+		st.pop();
+		if (cur.n == 1) {
+			cout << cur.from << "->" << cur.to << "\n";
+			step++;
+		} else {
+			if (cur.stage == 0) {// 第一阶段：准备执行第一步
+				cur.stage = 1;
+				st.push(cur);
+				st.push({cur.n - 1, cur.from, cur.to, cur.tmp, 0});	// 第一步：将n-1个盘子从from通过to移到tmp
+			} else {
+				cout << cur.from << "->" << cur.to << "\n";			// 第二阶段：执行第二步
+				step++;
+				st.push({cur.n - 1, cur.tmp, cur.from, cur.to, 0});	// 第三步：将n-1个盘子从tmp通过from移到to
+			}
+		}
+	}
+	return step;
+}
+
+i64 solve3(int n) {		// 快速幂：仅计算移动次数（n > 20）
+	i64 res = 1, base = 2;
+	int exp = n;
+	while (exp > 0) {	// 汉诺塔移动次数公式：2^n - 1
+		if (exp & 1) res *= base;
+		base *= base;
+		exp >>= 1;
+	}
+	return res - 1;
+}
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n;
+	cin >> n;
+	i64 step;
+	
+	if (n <= 15) {
+		step = solve(n, "A", "B", "C");		// 递归法：输出详细步骤
+		cout << step << "\n";
+	} else if (n <= 20) {
+		step = solve2(n, "A", "B", "C");	// 迭代法：输出详细步骤
+		cout << step << "\n";
+	} else {
+		step = solve3(n);					// 公式法：仅计算总步数
+		cout << step << "\n";
+	}
+	return 0;
+}

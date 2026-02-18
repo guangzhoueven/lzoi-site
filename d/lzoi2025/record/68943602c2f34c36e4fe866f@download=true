@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);	
+	int sx = -1, sy = -1, ex = -1, ey = -1; 
+	int n;
+	cin >> n;	
+	vector<vector<vector<int>>> ok(n, vector<vector<int >> (n, vector<int>(4, INT_MAX)));
+	vector<vector<char>> grid(n, vector<char>(n));  // 若输入行无空格，则用string	
+	queue<tuple<int, int, int, int>> q; // x, y, k, t
+
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			cin >> grid[i][j];
+			if (grid[i][j] == 'A') { sx = i, sy = j; grid[i][j] = '.';}  	// 识别起点A(sx,sy)，设置可访问
+			if (grid[i][j] == 'B') { ex = i, ey = j; grid[i][j] = '.';} 	// 识别终点B(ex,ey)，设置可访问
+		}
+	}
+
+	vector<int> dx = {-1, 0, 1, 0};
+	vector<int> dy = {0, 1, 0, -1};
+	for (int k = 0; k < 4; k++) {
+		ok[sx][sy][k] = 0;
+		q.push({sx, sy, k, 0});   // 从起点(sx,sy)出发四个方向的转向次数为0
+	}
+
+	int cnt = -1;
+	while (!q.empty()) {
+		auto [x, y, k, t] = q.front();
+		q.pop();
+		if (x == ex && y == ey) {  // 到达终点的最少转弯次数
+			if (cnt == -1 || t < cnt) cnt = t;
+			continue;
+		}
+
+		for (int nk = 0; nk < 4; nk++) {
+			int nx = x + dx[nk];
+			int ny = y + dy[nk];
+			if (nx < 0 || nx >= n || ny < 0 || ny >= n || grid[nx][ny] != '.') 	continue; // 走出边界或碰到障碍x
+			int ans = t + (nk != k ? 1 : 0);   // 发生转弯
+			if (ok[nx][ny][nk] > ans) {
+				ok[nx][ny][nk] = ans;
+				q.push({nx, ny, nk, ans});
+			}
+		}
+	}
+	cout << cnt << "\n";
+	return 0;
+}

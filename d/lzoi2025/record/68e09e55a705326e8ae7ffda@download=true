@@ -1,0 +1,65 @@
+#include <bits/stdc++.h>
+using namespace std;
+using u_i64 = unsigned long long;
+
+u_i64 F1(u_i64 n, vector<u_i64>& a) {	// 方法1：递归带记忆化（适合小规模 n ≤ 1000）
+	if (n == 1 || n == 2) return 1;
+	if (a[n] != -1ULL) return a[n];
+	return a[n] = F1(n - 1, a) + F1(n - 2, a);
+}
+
+u_i64 F2(u_i64 n) {						// 方法2：迭代（适合中等规模 n ≤ 1e6）
+	if (n <= 2) return 1;
+	u_i64 a = 1, b = 1;
+	for (u_i64 i = 3; i <= n; i++) {
+		u_i64 c = a + b;
+		a = b;
+		b = c;
+	}
+	return b;
+}
+
+u_i64 F3(u_i64 n) {						// 方法3：矩阵快速幂（适合大规模 n ≤ 1e18）
+	if (n <= 2) return 1;
+	array<array<u_i64, 2>, 2> base = {{{1, 1}, {1, 0}}};
+	array<array<u_i64, 2>, 2> res = {{{1, 0}, {0, 1}}};
+	
+	u_i64 exp = n - 1;
+	while (exp) {
+		if (exp & 1) {
+			array<array<u_i64, 2>, 2> temp = {0};
+			for (int i = 0; i < 2; i++)
+				for (int j = 0; j < 2; j++)
+					for (int k = 0; k < 2; k++)
+						temp[i][j] += res[i][k] * base[k][j];
+			res = temp;
+		}
+		array<array<u_i64, 2>, 2> temp = {0};
+		for (int i = 0; i < 2; i++)
+			for (int j = 0; j < 2; j++)
+				for (int k = 0; k < 2; k++)
+					temp[i][j] += base[i][k] * base[k][j];
+		base = temp;
+		exp >>= 1;
+	}
+	
+	return res[0][0];
+}
+
+u_i64 F_auto(u_i64 n) {								// 智能求解器：根据数据规模自动选择最优算法
+	if (n <= 1e3) {									// 小规模：递归记忆化
+		vector<u_i64> a(1e3 + 1, -1ULL);
+		a[1] = a[2] = 1;
+		return F1(n, a);
+	} else if (n <= 1e6) return F2(n);				// 中等规模：迭代
+	else return F3(n);								// 大规模：矩阵快速幂
+}
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr);
+	u_i64 T, n;
+	cin >> T;
+	while (T-- && cin >> n) 
+		cout << F_auto(n) << "\n";	
+	return 0;
+}

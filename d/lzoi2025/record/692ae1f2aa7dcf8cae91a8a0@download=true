@@ -1,0 +1,63 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+struct Node {
+	i64 L, R, id;
+};
+
+i64 gcd(i64 x, i64 y) {
+	return y == 0 ? x : gcd(y, x % y);
+}
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, m;
+	cin >> n >> m;
+
+	vector<i64> a(n + 1);
+	for (i64 i = 1; i <= n; i++) cin >> a[i];
+
+	vector<Node> q(m);
+	for (i64 i = 0; i < m; i++) cin >> q[i].L >> q[i].R, q[i].id = i;
+
+	i64 d = sqrt(n);
+	sort(q.begin(), q.end(), [&](const Node & x, const Node & y) {
+		if (x.L / d != y.L / d) return x.L / d < y.L / d;
+		if (x.L / d & 1) return x.R < y.R;
+		return x.R > y.R;
+	});
+
+	vector<i64> cnt(n + 1, 0);
+	vector<pair<i64, i64>> ans(m);
+	i64 sum = 0, L = 1, R = 0;
+
+	for (i64 i = 0; i < m; i++) {
+		while (R < q[i].R) {
+			sum += cnt[a[++R]];
+			++cnt[a[R]];
+		}
+		while (L > q[i].L) {
+			sum += cnt[a[--L]];
+			++cnt[a[L]];
+		}
+		while (R > q[i].R) {
+			--cnt[a[R]];
+			sum -= cnt[a[R--]];
+		}
+		while (L < q[i].L) {
+			--cnt[a[L]];
+			sum -= cnt[a[L++]];
+		}
+
+		i64 len = q[i].R - q[i].L + 1;
+		i64 tol = len * (len - 1) / 2;
+		if (tol == 0) ans[q[i].id] = {0, 1};
+		else {
+			i64 g = gcd(sum, tol);
+			ans[q[i].id] = {sum / g, tol / g};
+		}
+	}
+	for (auto [x, y] : ans) cout << x << "/" << y << "\n";
+	return 0;
+}

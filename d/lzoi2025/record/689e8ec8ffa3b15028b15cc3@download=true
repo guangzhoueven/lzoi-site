@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+void solve() {
+	int n;
+	cin >> n;
+	vector<int> a(n);
+	vector<int> count(4, 0);
+	for (int i = 0; i < n; i++) {
+		cin >> a[i]; count[a[i] % 4]++;
+	} 
+	bool v = false;
+	if (count[0] >= 4) 	v = true;
+	if (count[0] >= 2 && count[1] >= 1 && count[3] >= 1) v = true;
+	if (count[0] >= 2 && count[2] >= 2) v = true;
+	if (count[0] >= 1 && count[1] >= 2 && count[2] >= 1) v = true;
+	if (count[0] >= 1 && count[2] >= 1 && count[3] >= 2) v = true;
+	if (count[1] >= 4) 	v = true;
+	if (count[1] >= 2 && count[3] >= 2) v = true;
+	if (count[1] >= 1 && count[2] >= 2 && count[3] >= 1) v = true;
+	if (count[2] >= 4) 	v = true;
+	if (count[3] >= 4) 	v = true;
+	cout << (v ? "YES" : "NO") << "\n";
+}
+int main() {
+    ios::sync_with_stdio(false),cin.tie(nullptr),cout.tie(nullptr);
+	int T;
+	cin >> T;
+	while (T--) solve();
+	return 0;
+}

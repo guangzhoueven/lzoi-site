@@ -1,0 +1,24 @@
+# https://leetcode.cn/problems/maximum-product-subarray/solutions/17709/duo-chong-si-lu-qiu-jie-by-powcai-3/
+
+class Solution:
+    def maxProduct(self, nums: list[int]) -> int:
+        if not nums: return 
+        res = nums[0]
+        pre_max = nums[0]
+        pre_min = nums[0]
+        i = 1
+        for num in nums[1:]:
+            cur_max = max(pre_max * num, pre_min * num, num)
+            cur_min = min(pre_max * num, pre_min * num, num)
+            res = max(res, cur_max)
+            pre_max = cur_max
+            pre_min = cur_min
+            # print(i, res)
+            i = i + 1
+        return res
+
+n = int(input())
+a = list(map(int, input().split(' ')))
+
+sol = Solution()
+print(sol.maxProduct(a))

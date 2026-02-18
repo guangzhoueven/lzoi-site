@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	int n;
+	cin >> n;
+	int days = 0;
+	int last_day = 0;
+	int r = n;
+	while (r > 0) {
+		days++;
+		int t = (r + 2) / 3;
+		if (r == n && t >= r - (r / 3) * 3) {
+		}
+		if (t == r) {
+			last_day = days;
+		}
+		r -= t;
+	}
+	cout << days << " " << last_day << endl;
+	return 0;
+}

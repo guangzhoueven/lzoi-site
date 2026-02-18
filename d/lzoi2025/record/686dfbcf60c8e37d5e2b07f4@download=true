@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long findans(long long n) {
+	// 使用二分查找来确定满足条件的最小 ans
+	// 初始左边界为 1，因为 ans 至少为 1
+	long long left = 1;
+	// 初始右边界设为 2 * n，因为对于大 n，ans ≈ n + sqrt(n) < 2n
+	long long right = 2 * n;
+	// 存储最终结果
+	long long ans = 0;
+
+	// 二分查找循环
+	while (left <= right) {
+		// 计算中间值，避免溢出
+		long long mid = left + (right - left) / 2;
+		// 计算 mid 的整数平方根
+		long long sqrt_mid = sqrt(mid);
+
+		// 检查 mid 是否满足条件：mid - sqrt(mid) >= n
+		// 这里 mid - sqrt(mid) 表示从 1 到 mid 的非完全平方数的数量
+		if (mid - sqrt_mid >= n) {
+			// 如果满足条件，尝试寻找更小的 ans
+			ans = mid;
+			right = mid - 1;
+		} else {
+			// 如果不满足条件，增大 mid
+			left = mid + 1;
+		}
+	}
+
+	// 返回找到的最小 ans
+	return ans;
+}
+int main() {
+	// 输入 n
+	long long n;
+	cin >> n;
+	// 输出第 n 个非完全平方数
+	cout << findans(n) << endl;
+	return 0;
+}

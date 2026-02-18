@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(0), cout.tie(nullptr);
+	int n, k;
+	cin >> n >> k;
+	vector<int> a(n);
+	for (int i = 0; i < n; i++) cin >> a[i];
+
+	vector<int> ans_min, ans_max;
+	vector<int> q_min(n), q_max(n);
+	int minF = 0, minR = 0;
+	int maxF = 0, maxR = 0;
+
+	for (int i = 0; i < n; i++) {
+		while (minF < minR && a[q_min[minR - 1]] >= a[i]) minR--;
+		q_min[minR++] = i;
+		
+		while (maxF < maxR && a[q_max[maxR - 1]] <= a[i]) maxR--;
+		q_max[maxR++] = i;
+
+		if (q_min[minF] <= i - k) minF++;
+		if (q_max[maxF] <= i - k) maxF++;
+
+		if (i >= k - 1) {
+			ans_min.push_back(a[q_min[minF]]);
+			ans_max.push_back(a[q_max[maxF]]);
+		}
+	}
+
+	for (int i = 0; i < (int)ans_min.size(); i++)
+		cout << ans_min[i] << " \n"[i == (int)ans_min.size() - 1];
+	
+	for (int i = 0; i < (int)ans_max.size(); i++)
+		cout << ans_max[i] << " \n"[i == (int)ans_max.size() - 1];
+
+	return 0;
+}

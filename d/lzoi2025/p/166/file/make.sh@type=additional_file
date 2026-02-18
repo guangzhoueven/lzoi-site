@@ -1,0 +1,10 @@
+# 删除之前数据, 编译, 重新生成数据
+rm ../testdata/*.in
+rm ../testdata/*.out
+g++ solution.cpp
+mv a.out ../testdata
+cp gen.py ../testdata
+cd ../testdata
+/root/anaconda3/envs/py311/bin/python3.11 gen.py
+rm a.out
+rm gen.py

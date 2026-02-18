@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n, m;
+	while (cin >> n >> m, n || m) {  // 输入0 0表示结束
+		vector<vector<int>> ok(n, vector<int>(m, INT_MAX));
+		vector<vector<char>> grid(n, vector<char>(m));
+		
+		for (int i = 0; i < n; i++) for (int j = 0; j < m; j++) cin >> grid[i][j];
+		int sx, sy, ex, ey;
+		cin >> sx >> sy >> ex >> ey;  // 起点(x1,y1),目标(x2,y2)
+		
+		priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, greater<tuple<int, int, int >>> pq; // 最小堆（最小费用）
+		ok[sx][sy] = 0;			// 起点
+		pq.push({0, sx, sy});
+
+		while (!pq.empty()) {
+			auto [cost, x, y] = pq.top();		// 堆顶最小费用
+			pq.pop();
+			if (x == ex && y == ey) {    		// 到达目标点，输出总费用
+				cout << cost << '\n';	break;
+			}
+			
+			if (ok[x][y] < cost) continue;    	// 存在比当前费用更小的路径
+			vector<int> dx = {-1, 1, 0, 0};
+			vector<int> dy = {0, 0, -1, 1};
+			for (int k = 0; k < 4; k++) {
+				int nx = x + dx[k], ny = y + dy[k];						// 移动坐标
+				if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue;  	// 已走出区域
+				int ans = cost + (grid[nx][ny] == grid[x][y] ? 0 : 1);  // 如果移动到同一类型的格子，则费用是 0，否则费用是 1
+				if (ans < ok[nx][ny]) {	// 已经是最小费用的路径了
+					ok[nx][ny] = ans;
+					pq.push({ans, nx, ny});
+				}
+			}
+		}
+	}
+	return 0;
+}

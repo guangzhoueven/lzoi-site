@@ -1,0 +1,79 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+struct DSU {
+	i64 n;
+
+	// p[] 为该节点指向的父节点，h[] 为该集合的高度，s[] 为该集合节点的数量
+	vector<i64> p, h, s;
+
+	DSU(i64 N): n(N) {
+		p.resize(n + 1);
+		h.resize(n + 1, 1);
+		s.resize(n + 1, 1);
+	}
+	void init(i64 n) {
+		iota(p.begin(), p.end(), 0);
+	}
+
+	// 查询元素 x 属于哪个集合
+	// 普通查找 ↓↓↓
+//	i64 find(i64 x) {
+//		return p[x] == x ? x : find(p[x]);
+//	}
+	// 升级版路径压缩查找 ↓↓↓
+	i64 find(i64 x) {
+		return p[x] == x ? x : p[x] = find(p[x]);
+	}
+
+	// 合并两个元素所属的集合(合并根节点)
+	// 由于 union 为关键字，改为 Union
+	void Union(i64 x, i64 y) {
+		i64 u = find(x), v = find(y);
+
+		// 普通合并 	查找效率低
+//		if (u != v) p[u] = v;
+
+
+		// 按树高矮合并 查找效率高
+//		if (u != v) {
+//			if (h[u] < h[v]) p[u] = v;
+//			else if (h[u] > h[v]) p[v] = u;
+//			else {
+//				p[u] = v;
+//				h[v]++;
+//			}
+//		}
+
+		// 按树大小合并 查找效率高
+		if (u != v) {
+			if (s[u] <= s[v]) {
+				p[u] = v;
+				s[v] += s[u];
+			} else {
+				p[v] = u;
+				s[u] += s[v];
+			}
+		}
+	}
+};
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, m, p;
+	cin >> n >> m >> p;
+	DSU root(n);
+	root.init(n);
+	while (m--) {
+		i64 x, y;
+		cin >> x >> y;
+		root.Union(x, y);
+	}
+	while (p--) {
+		i64 x, y;
+		cin >> x >> y;
+		cout << (root.find(x) == root.find(y) ? "Yes" : "No") << "\n";
+	}
+	return 0;
+}

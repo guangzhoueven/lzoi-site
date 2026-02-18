@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html data-page="problem_detail" data-layout="basic" class="layout--basic page--problem_detail theme--dark nojs" data-mantine-color-scheme="dark" lang="zh_TW" data-app="Hydro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.gzlzoi.cn/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../../favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../../android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="../../../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../../favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://www.gzlzoi.cn/p/LS0006">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="乐知课堂" />
+  <meta property="og:url" content="https://www.gzlzoi.cn/p/LS0006" />
+  <meta property="og:image" content="/favicon-96x96.png" />
+                                  <meta property="og:locale:alternate" content="zh" />
+              <meta property="og:title" content="LS0006. 【课件】STL库的应用 - 乐知课堂" />
+    <meta property="og:description" content="* 1、什么是 STL 库
+* 2、常用数学函数
+* 3、迭代器
+* 4、pair 类型
+* 5、序列容器
+* 5-1、vector
+* 5-2、deque
+* 5-3、queue
+* 5-4、sta..." />
+    <title>【课件】STL库的应用 - 題目詳情 - 乐知课堂</title>
+  <style>
+    body {
+      --font-family: "Microsoft Yahei", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Consolas", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="../../../theme-4.58.0-beta.17.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      window.UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","hydroacFeatures":[],"blspHost":"wss://ws.hydrooj.com","constantVersion":"1c07a499","domainId":"lzoi2025","domain":{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"},"extraTitleContent":"\u3010\u8BFE\u4EF6\u3011STL\u5E93\u7684\u5E94\u7528","SWConfig":{"preload":"","hosts":["http://www.gzlzoi.cn","https://www.gzlzoi.cn","https://www.gzlzoi.cn/","/"],"assets":[],"domains":[]}}';
+      window.UserContext = '{"_id":39,"mail":"202610319@gzlzoi.cn","uname":"202610319","hashType":"hydro","priv":4,"regat":"2025-07-01T02:30:33.477Z","loginat":"2026-02-06T00:24:21.126Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921","role":"\u5B66\u751F","scope":"BigInt::-1","tfa":false,"authn":false,"group":["20250702\u4E0A\u5348","\u4E34\u65F6\u5C0F\u7EC4","20250804\u4E0A\u5348","39"],"domains":[{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"}],"viewLang":"zh_TW","timeZone":"Asia/Shanghai","codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","avatar":"gravatar:202610319@gzlzoi.cn","qq":"","gender":"2","bio":"<blockquote class=\\"note\\">\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: yellow;\\">\u4E66\u5C71\u6709\u8DEF\u52E4\u4E3A\u5F84\uFF0C\u5B66\u6D77\u65E0\u6DAF\u82E6\u4F5C\u821F\u3002</p></h3>\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: #12DA72;\\">Diligence is the path to the mountain of knowledge, hard-working is the boat to the endless sea of learning.</p></h3>\\r\\n</blockquote>","school":"\u5E7F\u5DDE\u5E02\u5929\u6CB3\u533A\u9A8F\u666F\u5C0F\u5B66","studentId":"","backgroundImage":"/d/lzoi2025/file/39/%E4%B9%90%E7%9F%A5%E8%AF%BE%E5%A0%82%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.png","unreadMsg":0,"pinnedDomains":["lzoi2025"],"rounded":true,"skipAnimate":false,"showTimeAgo":true,"fontFamily":"Microsoft Yahei","codeFontFamily":"Consolas","theme":"dark","preferredEditorType":"sv","showInvisibleChar":false,"formatCode":true,"displayName":"\u9EC4\u98DE\u535A","rpInfo":{"problem":237.2780396214451,"contest":8.25},"nAccept":191,"nSubmit":194,"rp":245.5280396214451,"rank":2,"level":8,"join":true,"avatarUrl":"//cn.gravatar.com/avatar/2dbb0a041212ea8df395e4d4418e92fa?d=mm&s=128"}';
+    </script>
+      </head>
+<body>
+      <script type="text/javascript" src="../../../resource/1c07a499/entry.js"></script>
+    <script type="text/javascript" src="../../../resource/4.58.0-beta.17/lang-zh_TW.js"></script>
+    <script type="text/javascript" src="../../../hydro-4.58.0-beta.17.js"></script>
+    <nav class="nav slideout-menu" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://www.gzlzoi.cn/"><img class="nav__logo" src="../../../components/navigation/nav-logo-small_dark.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="../index.html" class="nav__item">
+    首頁
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../set_theme/dark.html" class="nav__item nav--active">
+    題庫
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../training.html" class="nav__item">
+    訓練
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../contest.html" class="nav__item">
+    比賽
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../homework.html" class="nav__item">
+    功課
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../discuss.html" class="nav__item">
+    討論
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../record@uidOrName=39.html" class="nav__item">
+    評測佇列
+  </a>
+</li>
+      </ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+              <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-domain" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <span class="nav__item"><span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span> lzoi2025 <span class="icon icon-expand_more nojs--hide"></span></span>
+        <ol class="dropdown-target menu" id="menu-nav-domain"><li class="menu__item">
+              <a href="../index.html" class="menu__link">
+                <span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span>
+                lzoi2025              </a>
+            </li><li class="menu__seperator"></li><li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 管理
+            </a>
+          </li>
+        </ol>
+      </li>
+          <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <a href="../user/39.html" class="nav__item">202610319 <span class="icon icon-expand_more nojs--hide"></span></a>
+        <ol class="dropdown-target menu" id="menu-nav-user">
+          <li class="menu__item">
+            <a href="../user/39.html" class="menu__link">
+              <span class="icon icon-account--circle"></span> 我的資料
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/messages.html" class="menu__link">
+              <span class="icon icon-comment--multiple"></span> 站內訊息
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> @ lzoi2025
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/account.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 賬戶設定
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/settings/preference.html" class="menu__link">
+              <span class="icon icon-sliders"></span> 偏好設定
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/security.html" class="menu__link">
+              <span class="icon icon-security"></span> 安全設定
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> 我的域
+            </a>
+          </li>
+                              <li class="menu__seperator"></li>
+                    <li class="menu__item">
+            <a href="../logout.html" class="menu__link" name="nav_logout">
+              <span class="icon icon-logout"></span> 登出
+            </a>
+          </li>
+        </ol>
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://www.gzlzoi.cn/" target="_self">
+        <img src="../../../components/navigation/nav-logo-small_dark.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+        <script>
+
+  
+  
+  
+  
+  
+</script>
+                                <meta property="og:locale:alternate" content="zh" />
+              <meta property="og:title" content="LS0006. 【课件】STL库的应用 - 乐知课堂" />
+    <meta property="og:description" content="* 1、什么是 STL 库
+* 2、常用数学函数
+* 3、迭代器
+* 4、pair 类型
+* 5、序列容器
+* 5-1、vector
+* 5-2、deque
+* 5-3、queue
+* 5-4、sta..." />
+  <div class="row" data-sticky-parent>
+  <div class="medium-9 columns">
+    <div class="section">
+      <div class="section__header">
+        <h1 class="section__title">
+                      <a href="../record/686872606c26c17f9995eb67.html">
+              <span class="icon record-status--icon ignored"></span>
+              <span class="record-status--text ignored">0</span>
+            </a>
+                                <form class="form--inline" action="LS0006.html" method="post">
+              <input type="hidden" name="star" value="true">
+              <input type="hidden" name="operation" value="star">
+              <button class="star" type="submit">
+                <span class="starred--hide"><span class="icon icon-star--outline" data-tooltip="收藏"></span></span>
+                <span class="starred--show"><span class="icon icon-star" data-tooltip="取消收藏"></span></span>
+              </button>
+            </form>
+          #LS0006. 【课件】STL库的应用
+        </h1>
+              </div>
+      <div class="section__body">
+        <ul class="problem__tags">
+                      <span class="problem__tag-item">ID: 30</span>
+                    <span class="problem__tag-item icon icon-book">傳統題</span>
+                                <span class="problem__tag-item icon icon-stopwatch">1000ms</span>
+            <span class="problem__tag-item icon icon-comparison">256MiB</span>
+                                <a class="problem__tag-item interactive" href="https://www.gzlzoi.cn/d/lzoi2025/record?pid=30">嘗試: 11</a>
+            <a class="problem__tag-item interactive" href="https://www.gzlzoi.cn/d/lzoi2025/record?pid=30&amp;status=1">已透過: 0</a>
+            <span class="problem__tag-item">難度: 10</span>
+            <span class="problem__tag-item interactive">上傳者: <span class="user-profile-link">
+      <img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20">
+    <a class="user-profile-name uname--lv3" href="../user/2.html">
+          liangsheng
+      </a>
+  </span>
+</span>
+                                <span name="show_tags" class="problem__tag-item interactive nojs--hide icon icon-tag">標籤&gt;</span><span class="problem__tag-item tags hasjs--hide">课件</span><span class="problem__tag-item tags hasjs--hide">STL</span>        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="problem-content-container"><div class="problem-content" data-marker-enabled>
+        <div class="section__header non-scratchpad--hide">
+          <h1 class="section__title">【课件】STL库的应用</h1>
+        </div>
+                <div class="section__body typo richmedia" data-fragment-id="problem-description">
+      <blockquote class="warn">
+      <p>當前沒有測試資料。</p>
+    </blockquote>
+                      <ul>
+<li><a href="LS0006.html#1%E4%BB%80%E4%B9%88%E6%98%AF-stl-%E5%BA%93">1、什么是 STL 库</a></li>
+<li><a href="LS0006.html#2%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0">2、常用数学函数</a></li>
+<li><a href="LS0006.html#3%E8%BF%AD%E4%BB%A3%E5%99%A8">3、迭代器</a></li>
+<li><a href="LS0006.html#4pair-%E7%B1%BB%E5%9E%8B">4、pair 类型</a></li>
+<li><a href="LS0006.html#5%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8">5、序列容器</a>
+<ul>
+<li><a href="LS0006.html#5-1vector">5-1、vector</a></li>
+<li><a href="LS0006.html#5-2deque">5-2、deque</a></li>
+<li><a href="LS0006.html#5-3queue">5-3、queue</a></li>
+<li><a href="LS0006.html#5-4stack">5-4、stack</a></li>
+<li><a href="LS0006.html#5-5priority_queue">5-5、priority_queue</a></li>
+</ul>
+</li>
+<li><a href="LS0006.html#6%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8">6、关联容器</a>
+<ul>
+<li><a href="LS0006.html#6-1set">6-1、set</a></li>
+<li><a href="LS0006.html#6-2map">6-2、map</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="1%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF-stl-%E5%BA%93" tabindex="-1">1、什么是 STL 库</h1>
+<ul>
+<li>STL 即标准模板库（Standard Template Library），是 C++ 标准库的一部分，里面包含了一些模板化的通用的数据结构和算法，<strong><font color="#FF0000">可以极大简化代码，对暴力题和骗分题极其友好</font></strong></li>
+<li><strong><font color="#FF0000">所以，大家务必从头到尾仔细阅读本课件，你会发现原来写代码可以这么简单</font></strong></li>
+</ul>
+<h1 id="2%E3%80%81%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0" tabindex="-1">2、常用数学函数</h1>
+<ul>
+<li>max, min, abs, floor, ceil, round, sqrt 具体见如下代码</li>
+</ul>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    int a = 1, b = 3;
+    double c = 2.0;
+
+    // max(a, b), 用于返回 a, b 中较大的值
+    // 注意: a, b 一定要是同类型的值
+    // 输出: max(a, b)返回 a, b 中较大的数是: 3
+    cout &lt;&lt; &quot;max(a, b)返回 a, b 中较大的数是: &quot; &lt;&lt; max(a, b) &lt;&lt; '\n';
+    // 错误: a 是 int, c 是 double, 会报编译错误
+    // cout &lt;&lt; max(a, c) &lt;&lt; '\n';
+    cout &lt;&lt; '\n';
+
+    // min(a, b), 用于返回 a, b 中较小的值
+    // 注意: a, b 一定要是同类型的值
+    // 输出: min(a, b)返回 a, b 中较小的数是: 1
+    cout &lt;&lt; &quot;min(a, b)返回 a, b 中较小的数是: &quot; &lt;&lt; min(a, b) &lt;&lt; '\n';
+    cout &lt;&lt; '\n';
+
+    // abs(a) 返回 a 的绝对值
+    // 输出: abs(1.2) 返回 1.2 的绝对值是: 1.2
+    cout &lt;&lt; &quot;abs(1.2) 返回 1.2 的绝对值是: &quot; &lt;&lt; abs(1.2) &lt;&lt; '\n';
+    // 输出: abs(-1.2) 返回 -1.2 的绝对值是: 1.2
+    cout &lt;&lt; &quot;abs(-1.2) 返回 -1.2 的绝对值是: &quot; &lt;&lt; abs(-1.2) &lt;&lt; '\n';
+    cout &lt;&lt; '\n';
+
+    // floor(x) 返回不超过 x 的最大 int 值
+    // 输出: floor(5) 返回不超过 5 的最大整数是: 5
+    cout &lt;&lt; &quot;floor(5) 返回不超过 5 的最大整数是: &quot; &lt;&lt; floor(5) &lt;&lt; '\n';
+    // 输出: floor(5.9) 返回不超过 5.9 的最大整数是: 5
+    cout &lt;&lt; &quot;floor(5.9) 返回不超过 5.9 的最大整数是: &quot; &lt;&lt; floor(5.9) &lt;&lt; '\n';
+    // 输出: floor(-5.9) 返回不超过 -5.9 的最大整数是: -6
+    cout &lt;&lt; &quot;floor(-5.9) 返回不超过 -5.9 的最大整数是: &quot; &lt;&lt; floor(-5.9) &lt;&lt; '\n';
+    cout &lt;&lt; '\n';
+
+    // ceil(x) 返回不小于 x 的最大 int 值
+    // 输出: ceil(5) 返回不小于 5 的最大整数是: 5
+    cout &lt;&lt; &quot;ceil(5) 返回不小于 5 的最大整数是: &quot; &lt;&lt; ceil(5) &lt;&lt; '\n';
+    // 输出: ceil(5.9) 返回不小于 5.9 的最大整数是: 6
+    cout &lt;&lt; &quot;ceil(5.9) 返回不小于 5.9 的最大整数是: &quot; &lt;&lt; ceil(5.9) &lt;&lt; '\n';
+    // 输出: ceil(-5.9) 返回不小于 -5.9 的最大整数是: -5
+    cout &lt;&lt; &quot;ceil(-5.9) 返回不小于 -5.9 的最大整数是: &quot; &lt;&lt; ceil(-5.9) &lt;&lt; '\n';    
+    cout &lt;&lt; '\n';
+
+    // round(x) 用于返回 x 四舍五入后的结果
+    // 输出: round(5.4)=5
+    cout &lt;&lt; &quot;round(5.4)=&quot; &lt;&lt; round(5.4) &lt;&lt; '\n';
+    // 输出: round(5.5)=6
+    cout &lt;&lt; &quot;round(5.5)=&quot; &lt;&lt; round(5.5) &lt;&lt; '\n';
+    // 输出: round(-5.4)=-5
+    cout &lt;&lt; &quot;round(-5.4)=&quot; &lt;&lt; round(-5.4) &lt;&lt; '\n';
+    // 输出: round(-5.5)=-6
+    cout &lt;&lt; &quot;round(-5.5)=&quot; &lt;&lt; round(-5.5) &lt;&lt; '\n'; 
+    cout &lt;&lt; '\n';
+
+    // sqrt(x) 返回 x 开方的结果
+    // 输出: sqrt(9)=3
+    cout &lt;&lt; &quot;sqrt(9)=&quot; &lt;&lt; sqrt(9) &lt;&lt; '\n';
+    // 输出: sqrt(10)=3.16228
+    cout &lt;&lt; &quot;sqrt(10)=&quot; &lt;&lt; sqrt(10) &lt;&lt; '\n';   
+    return 0;
+}
+</code></pre>
+<h1 id="3%E3%80%81%E8%BF%AD%E4%BB%A3%E5%99%A8" tabindex="-1">3、迭代器</h1>
+<ul>
+<li>我们在 <a href="http://www.gzezoi.cn/d/gzezoi2023/p/P0004">【课件】指针与函数</a> 中学习过数组和指针的关系（回忆下，数组名就是指向数组第一个元素的指针）</li>
+<li>对于向量容器 vector 来说, 迭代器就是 vector 的指针，可以用来标记 vector 中的某个位置</li>
+</ul>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; a;
+    for (int i = 0; i &lt; 5; i++) a.push_back(i * 2);
+    
+    // 输出: 0 2 4 6 8
+    for (int i = 0; i &lt; a.size(); i++) cout &lt;&lt; a[i] &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+    
+    // a.beign() 返回指向 a[0] 的指针
+    // 可以通过 *a.beign() 来获取 a[0] 的值
+    cout &lt;&lt; *a.begin() &lt;&lt; '\n';           // 输出: 0
+
+    // 迭代器可以做加法, 返回 a[1] 的值
+    cout &lt;&lt; *(a.begin() + 1) &lt;&lt; '\n';     // 输出: 2
+
+    // 返回 a[2] 的值
+    cout &lt;&lt; *(a.begin() + 2) &lt;&lt; '\n';     // 输出: 4
+
+    // a.end() 指向末尾元素的后一个(不存在的)元素
+    // 可以通过 a.end() - a.begin() 计算 a 中元素的个数
+    // 也可以用 a.size()
+    cout &lt;&lt; a.end() - a.begin() &lt;&lt; '\n';  // 输出: 5
+    
+    // 可以通过迭代器来遍历 a
+    // auto 可以代指任意类型
+    // 输出: 0 2 4 6 8
+    for (auto i = a.begin(); i != a.end(); i++) cout &lt;&lt; *i &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+
+    // 下面的方法更简单
+    // 输出: 0 2 4 6 8
+    for (int x: a) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+
+    // 也可以把 int x 换成 auto x
+    // 输出: 0 2 4 6 8
+    for (auto x: a) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+    return 0;
+}
+</code></pre>
+<ul>
+<li>可以通过 max_element(a.begin(), a.end())，返回 a 中的最大值的迭代器</li>
+<li>可以通过 reverse(a.begin(), a.end()) 来返回 a 中的值</li>
+<li>假设 a 已经排好序，可以通过 unique(a.begin(), a.end()) 将 a 中相邻的重复元素去掉，返回新的 end 迭代器</li>
+<li>还可以通过 a.erase(迭代器1, 迭代器2), 输出 2 个迭代器之间的元素</li>
+</ul>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; a = {2, 4, 4, 5, 2};
+
+    // 输出: 2 4 4 5 2
+    for (auto i = a.begin(); i != a.end(); i++) cout &lt;&lt; *i &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+    
+    // 输出: 5, 表示 a 中最大的元素是 5
+    cout &lt;&lt; *max_element(a.begin(), a.end()) &lt;&lt; '\n';
+    // 输出: 3, 表示 a 中最大的素数是 a[3]
+    cout &lt;&lt; max_element(a.begin(), a.end()) - a.begin() &lt;&lt; '\n';
+    
+    // 翻转 a
+    reverse(a.begin(), a.end());
+    // 输出: 2 5 4 4 2
+    for (auto i = a.begin(); i != a.end(); i++) cout &lt;&lt; *i &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+
+    // 将 a 从小到大 排序
+    sort(a.begin(), a.end());
+    // 输出: 2 2 4 4 5
+    for (auto i = a.begin(); i != a.end(); i++) cout &lt;&lt; *i &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+
+    // 通过 unique 去重, 返回新的 end
+    auto new_end = unique(a.begin(), a.end());
+    // 输出: 2 4 5
+    for (auto i = a.begin(); i != new_end; i++) cout &lt;&lt; *i &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+
+    // 还可以通过 erase 将 a 中去重后多余的部分删掉
+    // 这个时候 a.end() 就等于 new_end 了
+    a.erase(new_end, a.end());
+    // 输出: 2 4 5
+    for (auto i = a.begin(); i != a.end(); i++) cout &lt;&lt; *i &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+    return 0;
+}
+</code></pre>
+<h1 id="4%E3%80%81pair-%E7%B1%BB%E5%9E%8B" tabindex="-1">4、pair 类型</h1>
+<ul>
+<li>pair 类型可以将 2 个值绑定到一个变量中（这个 2 个值可以是同一类型，也可以是不同类型）</li>
+</ul>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    // pair&lt;int, int&gt; 表示将 2 个 int 类型的值绑定成新的类型
+    pair&lt;int, int&gt; a;
+    // 可以通过 a.first 获取第 1 个数, a.second 获取第二个数
+    a.first = 1, a.second = 2;
+
+    // 可以将不同类型的 2 个值绑定
+    // 比如第 1 个是 int 类型, 第 2 个是 double 类型
+    // 可以通过 {1, 1.5} 的形式生成 pair&lt;int, double&gt; 类型
+    pair&lt;int, double&gt; b = {1, 1.5};
+    // 输出: 1 1.5
+    cout &lt;&lt; b.first &lt;&lt; ' ' &lt;&lt; b.second &lt;&lt; '\n';
+
+    // 绑定 string 和 int
+    // 输出: liangsheng 32
+    pair&lt;string, int&gt; c = {&quot;liangsheng&quot;, 32};
+    cout &lt;&lt; c.first &lt;&lt; ' ' &lt;&lt; c.second &lt;&lt; '\n';
+
+    // 还可以绑定 vector
+    vector&lt;int&gt; arr = {1, 2, 3, 4};
+    pair&lt;int, vector&lt;int&gt;&gt; d = {1, arr};
+    // 输出: 1
+    cout &lt;&lt; d.first &lt;&lt; '\n';
+    // 输出: 1 2 3 4
+    for (auto x : d.second) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+
+    // pair 也可以嵌套绑定
+    pair&lt;int, pair&lt;int, int&gt;&gt; e = {1, {2, 3}};
+    // 输出: 1
+    cout &lt;&lt; e.first &lt;&lt; '\n';
+    // 输出: 2 3
+    cout &lt;&lt; e.second.first &lt;&lt; ' ' &lt;&lt; e.second.second &lt;&lt; '\n';
+    return 0;
+}
+</code></pre>
+<h1 id="5%E3%80%81%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8" tabindex="-1">5、序列容器</h1>
+<h2 id="5-1%E3%80%81vector" tabindex="-1">5-1、vector</h2>
+<ul>
+<li>vector 大家已经比较熟悉</li>
+<li>变长数组 vector 是标准模板库中的一种线性容器
+<ul>
+<li>数据在内存中连续存放，可以按下标任意访问</li>
+<li>可以很快地在容器尾添加和删除元素</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    // 申明数组 a, 包含 10 个 int 类型变量, 初始值都是 1
+    vector&lt;int&gt; a(10, 1);
+
+    // 通过 b.push_back(1) 在数组末尾添加元素
+    vector&lt;int&gt; b;
+    b.push_back(1);
+    b.push_back(2);
+
+    // 通过 b.size() 获取数组的长度
+    // 输出: 1 2
+    for (int i = 0; i &lt; b.size(); i++) cout &lt;&lt; b[i] &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+
+    // 申明 2 维数组 int b[10][5]，并且初始化全为 0
+    vector&lt;vector&lt;int&gt;&gt; b(10, vector&lt;int&gt;(5, 0));
+
+    // 申明 2 维数组 c（并未指定大小）
+    vector&lt;vector&lt;int&gt;&gt; c;
+
+    // 通过 assign 函数将 c 重置为 int c[3][4]，并初始化为 0
+    c.assign(3, vector&lt;int&gt;(4, 0));
+    return 0;
+}
+</code></pre>
+<ul>
+<li>还有很多关于 vector 中迭代器的用法，可参考本课件的迭代器部分</li>
+</ul>
+<h2 id="5-2%E3%80%81deque" tabindex="-1">5-2、deque</h2>
+<ul>
+<li>除了在容器末尾添加元素，有时我们还需要在容器开头添加元素</li>
+<li>可以使用标准模板库中的 deque 容器
+<ul>
+<li>不保证数据在内存中连续存放，但可以按下标任意访问</li>
+<li>可以很快地在容器的头尾添加和删除元素</li>
+<li>要在容器头添加元素，使用 push_front</li>
+<li>要在容器头删除元素，使用 pop_front</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef pair&lt;int, int&gt; pii;
+
+int main() {
+    deque&lt;int&gt; a;
+    
+    // 通过 push_back 在 a 末尾添加元素
+    a.push_back(1);  // a = [1]
+    a.push_back(2);  // a = [1, 2]
+    a.push_back(3);  // a = [1, 2, 3]
+
+    // 通过 push_front 在 a 开头添加元素
+    a.push_front(4);  // a = [4, 1, 2, 3]
+    a.push_front(5);  // a = [5, 4, 1, 2, 3];
+
+    // 通过迭代器遍历 a 中的元素
+    for (auto i = a.begin(); i != a.end(); i++) cout &lt;&lt; *i &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+
+    // 通过下标访问 a 中的元素
+    cout &lt;&lt; a[0] &lt;&lt; '\n';  // a[0] = 5;
+    cout &lt;&lt; a[1] &lt;&lt; '\n';  // a[1] = 4;
+    cout &lt;&lt; a[2] &lt;&lt; '\n';  // a[2] = 1;
+
+    // 删除 a 中最前面的元素
+    a.pop_front();  // a = [4, 1, 2, 3]
+    for (int x : a) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+
+    // 删除 a 中最后面的元素并
+    a.pop_back();  // a = [4, 1, 2]
+    for (int x : a) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+
+    return 0;
+}
+</code></pre>
+<h2 id="5-3%E3%80%81queue" tabindex="-1">5-3、queue</h2>
+<ul>
+<li>队列（queue）是 deque 的特殊情况</li>
+<li>队列（queue） 要求所有元素先进先出</li>
+<li><strong><font color="#FF0000">队列（queue） 总是在末尾添加元素，在开头删除元素</font></strong></li>
+</ul>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    // 申明队列时，需要指明类型
+    queue&lt;string&gt; qs;
+    queue&lt;int&gt; q;
+
+    // 通过 push 或者 emplace, 往队列里添加元素
+    // push 和 emplace 几乎是一样的
+    q.push(1);     // q = [1]
+    q.push(2);     // q = [1, 2]
+    q.emplace(3);  // q = [1, 2, 3]
+
+    // 通过 front() 取队列开头的元素
+    int x = q.front();
+    cout &lt;&lt; &quot;x= &quot; &lt;&lt; x &lt;&lt; '\n';  // x = 1
+    // 通过 pop() 将队列开头的元素弹出, q 变成 [2, 3]
+    q.pop();
+
+    int y = q.front();
+    cout &lt;&lt; &quot;y= &quot; &lt;&lt; y &lt;&lt; '\n';  // y = 2
+    q.pop();                     // q = [3]
+    return 0;
+}
+</code></pre>
+<ul>
+<li>队列（queue）也可以用 vector 来实现</li>
+</ul>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    // 假设队列最长是 100, l 和 r 分别指向队列的头和尾的后一个位置
+    int n = 100, l = 0, r = 0;
+    vector&lt;int&gt; q(n);
+
+    // 往队列里添加元素
+    q[r++] = 1;  // q = [1]
+    q[r++] = 2;  // q = [1, 2]
+    q[r++] = 3;  // q = [1, 2, 3]
+
+    // 取队列开头元素
+    int x = q[l];
+    cout &lt;&lt; &quot;x= &quot; &lt;&lt; x &lt;&lt; '\n';  // x = 1
+    // 通过 l++ 将队列开头的元素弹出, q 变成 [2, 3]
+    l++;
+
+    int y = q[l];
+    cout &lt;&lt; &quot;y= &quot; &lt;&lt; y &lt;&lt; '\n';  // y = 2
+    l++;                         // q = [3]
+    return 0;
+}
+</code></pre>
+<h2 id="5-4%E3%80%81stack" tabindex="-1">5-4、stack</h2>
+<ul>
+<li>栈（stack）是 deque 的特殊情况</li>
+<li>栈（stack）要求所有元素后进先出.</li>
+<li><strong><font color="#FF0000">栈（stack） 总是在末尾添加元素，在末尾删除元素</font></strong></li>
+</ul>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    // 申明栈时，需要指明类型
+    stack&lt;int&gt; s;
+
+    // 通过 push 或者 emplace, 往栈里添加元素
+    // push 和 emplace 几乎是一样的
+    s.push(1);     // s = [1]
+    s.push(2);     // s = [1, 2]
+    s.emplace(3);  // s = [1, 2, 3]
+
+    // 通过 front() 取栈顶的元素
+    int x = s.top();
+    cout &lt;&lt; &quot;x= &quot; &lt;&lt; x &lt;&lt; '\n';  // x = 3
+    // 通过 pop() 将栈顶的元素弹出, s 变成 [2, 3]
+    s.pop();
+
+    int y = s.top();
+    cout &lt;&lt; &quot;y= &quot; &lt;&lt; y &lt;&lt; '\n';  // y = 2
+    s.pop();                     // s = [3]
+    return 0;
+}
+</code></pre>
+<ul>
+<li>栈（stack）也可以用 vector 来实现</li>
+</ul>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    // 假设栈最长是 100, e 表示栈里元素的个数, 初始是 0
+    int n = 100, e = 0;
+    vector&lt;int&gt; s(n);
+
+    // 往栈里添加元素
+    s[e++] = 1;  // s = [1]
+    s[e++] = 2;  // s = [1, 2]
+    s[e++] = 3;  // s = [1, 2, 3]
+
+    // 取栈顶头元素
+    int x = s[e - 1];
+    cout &lt;&lt; &quot;x= &quot; &lt;&lt; x &lt;&lt; '\n';  // x = 3
+    // 通过 e-- 将栈顶的元素弹出, s 变成 [1, 2]
+    e--;
+
+    int y = s[e - 1];
+    cout &lt;&lt; &quot;y= &quot; &lt;&lt; y &lt;&lt; '\n';  // y = 2
+    e--;                         // s = [3]
+    return 0;
+}
+</code></pre>
+<h2 id="5-5%E3%80%81priority_queue" tabindex="-1">5-5、priority_queue</h2>
+<ul>
+<li>每次删除优先级最大的元素，不管这个元素是什么时候添加的</li>
+<li>这个数据结构称为优先队列（prioriyt_queue）</li>
+<li>下面的代码使用 priority_queue，将元素从大到小输出，也就是堆排序</li>
+</ul>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    // 优先队列申明时需要指明类型, 默认优先取出最大值
+    priority_queue&lt;string&gt; qs;
+    priority_queue&lt;int&gt; q;
+
+    q.push(1);
+    q.push(5);
+    q.push(4);
+    q.push(2);
+    q.push(3);
+
+    // 可以通过 empty() 判断是否为空, queue 和 stack 也有 empty() 方法
+    // 输出: 5 4 3 2 1
+    while (!q.empty()) {
+        int x = q.top();    // 通过 top() 每次取出最大元素
+        cout &lt;&lt; x &lt;&lt; ' ';
+        q.pop();            // 通过 pop() 将当前最大元素删除
+    }
+    cout &lt;&lt; '\n';
+    return 0;
+}
+</code></pre>
+<ul>
+<li>如果每次需要删除的是最小的数，可以在 push 的时候将数取反</li>
+</ul>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    // 优先队列申明时需要指明类型, 默认优先取出最大值
+    priority_queue&lt;int&gt; q;
+
+    // 如果每次需要删除的是最小的数，可以在 push 的时候将数取反
+    q.push(-1);
+    q.push(-5);
+    q.push(-4);
+    q.push(-2);
+    q.push(-3);
+
+    // 输出: 1 2 3 4 5
+    while (!q.empty()) {
+        int x = q.top();    // 通过 top() 每次取出最大元素
+        cout &lt;&lt; -x &lt;&lt; ' ';  // 输出的时候取反
+        q.pop();            // 通过 pop() 将当前最大元素删除
+    }
+    cout &lt;&lt; '\n';
+    return 0;
+}
+</code></pre>
+<ul>
+<li>或者再申明的时候告诉 priority_queue 每次删除最小的</li>
+</ul>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    // 申明有限队列时, 指定每次删除最小的
+    // 第 1 个参数 int 是指优先队列里的元素类型
+    // 第 2 个参数 vector&lt;int&gt; 是有限队列的实现方式
+    // 第 3 个参数 greater&lt;int&gt; 告诉优先队列 top() 取最小的数
+    priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; q;
+
+    q.push(1);
+    q.push(5);
+    q.push(4);
+    q.push(2);
+    q.push(3);
+
+    // 输出: 1 2 3 4 5
+    while (!q.empty()) {
+        int x = q.top();    // 通过 top() 每次取出最大元素
+        cout &lt;&lt; x &lt;&lt; ' ';  // 输出的时候取反
+        q.pop();            // 通过 pop() 将当前最大元素删除
+    }
+    cout &lt;&lt; '\n';
+    return 0;
+}
+</code></pre>
+<ul>
+<li>优先队列（priority_queue）可以用 <a href="http://www.gzezoi.cn/d/gzezoi2023/p/P0005">【课件】时间复杂度与排序</a> 中介绍的 堆（heap）来实现</li>
+</ul>
+<h1 id="6%E3%80%81%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8" tabindex="-1">6、关联容器</h1>
+<h2 id="6-1%E3%80%81set" tabindex="-1">6-1、set</h2>
+<ul>
+<li>set 代表集合容器，用以 <strong><font color="#FF0000">有序地存储互异元素的容器</font></strong></li>
+<li>每次添加新元素到集合时，都会判断该元素是否已经在集合里面
+<ul>
+<li>如果不在，则将该元素插入</li>
+<li>如果存在，则什么也不做</li>
+</ul>
+</li>
+<li>set 由红黑树实现（一类平衡二叉树，以后会讲到）</li>
+<li><strong><font color="#FF0000">insert（插入）, erase（删除）, find（查找）, count（查找）的时间复杂度都是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(log(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">))</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 是 set 中元素的个数</font></strong></li>
+</ul>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    set&lt;int&gt; s;
+
+    // 插入集合 s 中的元素, 默认从小到大排列
+    // 所以 set 也可以用来排序
+    s.insert(3);  // s = {3}
+    s.insert(2);  // s = {2, 3}
+    s.insert(1);  // s = {1, 2, 3}
+    s.insert(1);  // s = {1, 2, 3}, 元素 1 本来就存在
+
+    // 通过 s.beign() 获取 s 中最小的数的迭代器
+    // 通过 * 解引用, 可以获取迭代器指向的具体指
+    cout &lt;&lt; *s.begin() &lt;&lt; '\n';   // 输出: 1
+
+    // 通过 s.rbeign() 获取 s 中最小的数的迭代器
+    cout &lt;&lt; *s.rbegin() &lt;&lt; '\n';  // 输出: 3 
+
+    // 输出: 1 2 3
+    for (int x : s) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+
+    // 还可以通过迭代器遍历
+    // 输出: 1 2 3
+    for (auto i = s.begin(); i != s.end(); i++) cout &lt;&lt; *i &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+
+    // 通过 s.count(x) 判断元素 x 是否在集合 s 中
+    cout &lt;&lt; (s.count(1) ? &quot;s 中存在 1&quot; : &quot;s 中不存在 1&quot;) &lt;&lt; '\n';
+    cout &lt;&lt; (s.count(4) ? &quot;s 中存在 4&quot; : &quot;s 中不存在 4&quot;) &lt;&lt; '\n';
+
+    // 如果 s 中存在 x, 可以通过 s.find(x) 找到 x 对应的迭代器
+    if (s.count(2)) {
+        auto it = s.find(2);
+        // 输出: 1, 也就是集合 s 中 2 的前一个数
+        // 这里需要判断 it 是否是 s 的第 1 个指针
+        // 如果 it == s.beign(), it 就不能再往前移
+        if (it != s.begin()) {
+            auto pre = it;
+            cout &lt;&lt; *(--pre) &lt;&lt; '\n';
+        }
+        
+        // 输出: 3, 也就是集合 s 中 2 的后一个数
+        auto after = it;
+        // 这里需要判断 after == s.end()
+        if (++after != s.end()) cout &lt;&lt; *after &lt;&lt; '\n';
+    }
+
+    // 可以通过 s.erase(x), 删除 s 中的元素
+    // 如果 s 中存在 x, 则删除 x; 否则, 就什么也不做
+    s.erase(1);
+    // 输出: 2 3
+    for (int x : s) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+
+    // erase() 里面的参数也可以是迭代器
+    s.erase(s.find(2));
+    // 输出: 3
+    for (int x : s) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+
+    // 通过 s.size() 获取 s 中元素的个数
+    // 输出: 1
+    cout &lt;&lt; s.size() &lt;&lt; '\n';
+
+    // 通过 s.empty() 判断 s 是否为空集合
+    // 输出: s 不为空
+    cout &lt;&lt; (s.empty() ? &quot;s 为空&quot; : &quot;s 不为空&quot;) &lt;&lt; '\n';
+
+    // 通过 s.clear()，可以将 s 清空
+    s.clear();
+    cout &lt;&lt; (s.empty() ? &quot;s 为空&quot; : &quot;s 不为空&quot;) &lt;&lt; '\n';
+    return 0;
+}
+</code></pre>
+<ul>
+<li>set 中的元素默认会去重，如果想插入相同的数，可以利用 pair 类型， 给要插入的数匹配一个序</li>
+</ul>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    set&lt;int&gt; s;
+
+    s.insert(1);
+    s.insert(2);
+    s.insert(2);  // set 会去重, 前面已经插入过 2, 这里不会生效
+
+    // 输出: 1 2
+    for (int x : s) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+
+    // 如果想插入相同的数, 可以利用 pair 类型, 给要插入的数匹配一个序号
+    // pair 类型只有 pair 中的 2 个数都相同, 才会被判定相同
+    // 而 pair 之间比较大小, 是先比较 first, 再比较 second
+    set&lt;pair&lt;int, int&gt;&gt; ns;
+    ns.insert({1, 1});  // 第 1 次插入 1
+    ns.insert({2, 2});  // 第 2 次插入 2
+    ns.insert({2, 3});  // 第 3 次插入 2
+
+    // 输出: 1 2 2
+    for (auto i : ns) cout &lt;&lt; i.first &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+    return 0;
+}
+</code></pre>
+<h2 id="6-2%E3%80%81map" tabindex="-1">6-2、map</h2>
+<ul>
+<li>之前学过了数组，可以把下标对应到元素
+<ul>
+<li>a[1] = 2, 相当于把下标 1 对应到 2</li>
+<li>a[5] = 9, 相当于把下标 5 对应到 9</li>
+</ul>
+</li>
+<li>如果我们的下标不是整数，是字符串怎么办？
+<ul>
+<li>比如我想存储每个学生的姓名和成绩</li>
+<li>小明 80 分：&quot;xiaoming&quot; -&gt; 80</li>
+<li>小红 90 分：&quot;xiaohong&quot; -&gt; 90</li>
+</ul>
+</li>
+<li>可以使用 map，在两种任意类型的数据之间，形成映射</li>
+<li><strong><font color="#FF0000">可以把 map 理解为，下标是任意类型，值也是任意类型的数组！！</font></strong></li>
+</ul>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    // 将 string 映射到 int
+    // 我们把第 1 个类型 string 称为 key (键) 
+    // 把第 2 个类型 int 称为 value (值)
+    map&lt;string, int&gt; m;
+
+    // Bob 对应 80 分; Dog 对应 60 分; Alice 对应 90 分
+    m[&quot;Bob&quot;] = 80;
+    m[&quot;Dog&quot;] = 60;
+    m[&quot;Alice&quot;] = 90;
+    
+    // 可以通过下面的方式遍历 m
+    // i 是 pair&lt;string, int&gt; 类型
+    // 可以通过 i.first 获取 key, 通过 i.second 获取 value
+    // m 中的元素是按 key 值从小到大排序的
+    // 输出: Alice 90
+    // 输出: Bob 80
+    // 输出: Dog 60
+    for (auto i: m) {
+        cout &lt;&lt; i.first &lt;&lt; ' ' &lt;&lt; i.second &lt;&lt; '\n';
+    }
+
+    // 会修改 Alice 对应的值
+    m[&quot;Alice&quot;] = 95;
+    cout &lt;&lt; &quot;Alice 对应的值是: &quot; &lt;&lt; m[&quot;Alice&quot;] &lt;&lt; '\n';
+
+    // 也可以通过迭代器遍历
+    // 这里 i 是 pair&lt;string, int&gt; 类型的迭代器
+    // 可以通过 i-&gt;first, i-&gt;second 获取值
+    for (auto i = m.begin(); i != m.end(); i++) {
+        cout &lt;&lt; (i-&gt;first) &lt;&lt; ' ' &lt;&lt; (i-&gt;second) &lt;&lt; '\n';
+    }
+
+    // 可以通过 m.count(&quot;Bob&quot;) 查看 m 中是否存在 Bob 对应的值
+    if (m.count(&quot;Bob&quot;)) cout &lt;&lt; &quot;Bob 对应的值是: &quot; &lt;&lt; m[&quot;Bob&quot;] &lt;&lt; endl;
+    else cout &lt;&lt; &quot;不存在 Bod 对应的值&quot; &lt;&lt; '\n';
+    
+    // 可以通过 m.empty() 判断 m 是否为空
+    // 可以通过 m.size() 获取 m 中映射的个数
+    if (m.empty()) cout &lt;&lt; &quot;m 是空&quot; &lt;&lt; endl;
+    else cout &lt;&lt; &quot;m 的大小是: &quot; &lt;&lt; m.size() &lt;&lt; '\n';
+
+    // 可以通过 m.erase(&quot;Dog&quot;) 删除 key 是 Dog 的映射
+    // 如果不存在 key 是 Dog 的映射, 则什么也不做
+    m.erase(&quot;Dog&quot;);
+    for (auto i : m) cout &lt;&lt; i.first &lt;&lt; ' ' &lt;&lt; i.second &lt;&lt; '\n';
+
+    // 通过 m.clear()，可以将 m 清空
+    m.clear();
+    cout &lt;&lt; (m.empty() ? &quot;m 为空&quot; : &quot;m 不为空&quot;) &lt;&lt; endl;
+
+    // key 和 value 可以使复杂类型
+    // key 是 int, value 是 vector&lt;int&gt;
+    map&lt;int, vector&lt;int&gt;&gt; a;
+    a[123] = {1, 2, 3};
+    a[456] = {7, 8, 9};
+    // 输出: key= 123, value= 1 2 3
+    // 输出: key= 456, value= 7 8 9
+    for (auto i : a) {
+        cout &lt;&lt; &quot;key= &quot; &lt;&lt; i.first;
+        cout &lt;&lt; &quot;, value= &quot;; 
+        for (int j : i.second) cout &lt;&lt; j &lt;&lt; ' ';
+        cout &lt;&lt; '\n';
+    }
+
+    // key 是 vector&lt;int&gt;, value 是 string
+    map&lt;vector&lt;int&gt;, string&gt; b;
+    b[{1, 2, 3, 4}] = &quot;Hello&quot;;
+
+    // 在 map 中, 不存在的 key 对应 0(当 value 是 int 时)
+    map&lt;int, int&gt; t;
+    cout &lt;&lt; t[0] &lt;&lt; '\n';  // 输出: 0
+
+    // 在 map 中, 不存在的 key 对应空数组(当 value 是 vector&lt;int&gt; 时)
+    map&lt;int, vector&lt;int&gt;&gt; tr;
+    cout &lt;&lt; tr[0].size() &lt;&lt; '\n';  // 输出: 0
+
+    // 思考下下面这个复杂的 map, 要如何遍历
+    map&lt;vector&lt;int&gt;, pair&lt;int, set&lt;int&gt;&gt;&gt; f;
+    for (auto i : f) {
+        // i.first 是 vector&lt;int&gt;
+        cout &lt;&lt; &quot;key: &quot; &lt;&lt; '\n';
+        for (int j : i.first) cout &lt;&lt; ' ';
+        cout &lt;&lt; '\n';
+
+        // i.second 是 pair&lt;int, set&lt;int&gt;&gt;
+        cout &lt;&lt; &quot;value: &quot; &lt;&lt; '\n';
+        // i.second.first 是 int
+        cout &lt;&lt; i.second.first &lt;&lt; '\n';
+        // i.second.second 是 set&lt;int&gt;
+        for (int j : i.second.second) cout &lt;&lt; j &lt;&lt; ' ';
+        cout &lt;&lt; '\n';
+    }
+    return 0;
+}
+</code></pre>
+<ul>
+<li>和 set 一样，map 也是由红黑树实现（一种平衡二叉树，以后会讲）</li>
+<li>插入，find（查找），count（查找），erase（删除）的时间复杂度都是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(log(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">))</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 是 map 中元素的个数</li>
+</ul>
+
+</div>      </div></div>
+    </div>
+  </div>
+  <div class="medium-3 columns"><div data-sticky="large">
+        <div class="section side section--problem-sidebar">
+  <div>
+    <ol class="menu">
+                  <li class="menu__item scratchpad--hide nojs--hide"><a class="menu__link highlight" name="problem-sidebar__open-scratchpad" href="javascript:;" data-global-hotkey="alt+e" style="display: none;">
+        <span class="icon icon-enlarge"></span> 進入線上程式設計模式 (Alt+E)
+      </a></li>
+      <li class="menu__item non-scratchpad--hide"><a class="menu__link" name="problem-sidebar__quit-scratchpad" href="javascript:;" data-global-hotkey="alt+q">
+        <span class="icon icon-enlarge"></span> 退出線上程式設計模式 (Alt+Q)
+      </a></li>
+                  <li class="menu__item scratchpad--hide"><a class="menu__link" href="LS0006/submit.html">
+        <span class="icon icon-send"></span> 遞交
+      </a></li>
+                      <li class="menu__seperator"></li>
+              <li class="menu__item"><a class="menu__link" href="../discuss/problem/30.html">
+        <span class="icon icon-comment--text"></span> 討論 (0)      </a></li>
+              <li class="menu__item"><a class="menu__link" href="LS0006/solution.html">
+        <span class="icon icon-comment--text"></span> 題解 (0)      </a></li>
+          <li class="menu__item"><a class="menu__link" href="LS0006/files.html">
+        <span class="icon icon-file"></span> 檔案
+      </a></li>
+      <li class="menu__item"><a class="menu__link" href="LS0006/stat.html">
+        <span class="icon icon-statistics"></span> 統計
+      </a></li>
+              <li class="menu__seperator nojs--hide"></li>
+                    <li class="menu__item nojs--hide"><a class="menu__link" href="javascript:;" name="problem-sidebar__copy">
+          <span class="icon icon-copy"></span> 複製
+        </a></li>
+              </ol>
+  </div>
+</div>
+  </div></div>
+</div>
+<div style="display:none" class="outer-loader-container"><div class="loader"></div></div>
+<div class="scratchpad-container" style="display:none">
+  <div style="display:none" class="loader-container"><div class="loader"></div></div>
+  <div id="scratchpad" style="opacity:0"></div>
+</div>
+  </div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+      <div class="row footer__links">
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          狀態
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://www.gzlzoi.cn/d/lzoi2025/record">評測佇列</a></li>
+          <li class="footer__category__item"><a href="../status.html">服務狀態</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          開發
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">開源</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          支援
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/help.html">幫助</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">聯絡我們</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable end">
+        <h1>
+          關於
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/about.html">關於</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#privacy">隱私</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#tos">服務條款</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">版權申訴</a></li>
+        </ul></div>
+      </div>
+    </div>
+      <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+                    <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-lang"><li class="menu__item"><a class="menu__link" href="../language/en.html">English</a></li><li class="menu__item"><a class="menu__link" href="../language/ko.html">한국어</a></li><li class="menu__item"><a class="menu__link" href="../language/zh.html">简体中文</a></li><li class="menu__item"><a class="menu__link" href="../language/zh_TW.html">正體中文</a></li></ol>
+          </li>
+          <li class="footer__extra-link-item">
+                          <a href="https://www.gzlzoi.cn/legacy?legacy=true">相容模式</a>
+                      </li>
+          <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> 主題 <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-theme">
+              <li class="menu__item"><a class="menu__link" href="../set_theme/light.html">亮色</a></li>
+              <li class="menu__item"><a class="menu__link" href="../set_theme/dark.html">暗色</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><a href="https://beian.miit.gov.cn/">京ICP备2023010486号-3</a></li><li class="footer__extra-link-item">Worker 0, 25ms</li>
+          <!-- Prepare 2ms -->
+          <!-- Method 1ms -->
+          
+          
+          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v5.0.0-beta.16</a> Community</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      window.UiContextNew = '{"problemId":"LS0006","problemNumId":30,"codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","pdoc":{"_id":"685e35f2c6c0836c1dd8326e","content":"{\\"zh\\":\\"- [1\u3001\u4EC0\u4E48\u662F STL \u5E93](#1\u4EC0\u4E48\u662F-stl-\u5E93)\\\\n- [2\u3001\u5E38\u7528\u6570\u5B66\u51FD\u6570](#2\u5E38\u7528\u6570\u5B66\u51FD\u6570)\\\\n- [3\u3001\u8FED\u4EE3\u5668](#3\u8FED\u4EE3\u5668)\\\\n- [4\u3001pair \u7C7B\u578B](#4pair-\u7C7B\u578B)\\\\n- [5\u3001\u5E8F\u5217\u5BB9\u5668](#5\u5E8F\u5217\u5BB9\u5668)\\\\n  - [5-1\u3001vector](#5-1vector)\\\\n  - [5-2\u3001deque](#5-2deque)\\\\n  - [5-3\u3001queue](#5-3queue)\\\\n  - [5-4\u3001stack](#5-4stack)\\\\n  - [5-5\u3001priority\\\\\\\\_queue](#5-5priority_queue)\\\\n- [6\u3001\u5173\u8054\u5BB9\u5668](#6\u5173\u8054\u5BB9\u5668)\\\\n  - [6-1\u3001set](#6-1set)\\\\n  - [6-2\u3001map](#6-2map)\\\\n\\\\n# 1\u3001\u4EC0\u4E48\u662F STL \u5E93\\\\n\\\\n* STL \u5373\u6807\u51C6\u6A21\u677F\u5E93\uFF08Standard Template Library\uFF09\uFF0C\u662F C++ \u6807\u51C6\u5E93\u7684\u4E00\u90E8\u5206\uFF0C\u91CC\u9762\u5305\u542B\u4E86\u4E00\u4E9B\u6A21\u677F\u5316\u7684\u901A\u7528\u7684\u6570\u636E\u7ED3\u6784\u548C\u7B97\u6CD5\uFF0C**<font color=\\\\\\"#FF0000\\\\\\">\u53EF\u4EE5\u6781\u5927\u7B80\u5316\u4EE3\u7801\uFF0C\u5BF9\u66B4\u529B\u9898\u548C\u9A97\u5206\u9898\u6781\u5176\u53CB\u597D</font>**\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">\u6240\u4EE5\uFF0C\u5927\u5BB6\u52A1\u5FC5\u4ECE\u5934\u5230\u5C3E\u4ED4\u7EC6\u9605\u8BFB\u672C\u8BFE\u4EF6\uFF0C\u4F60\u4F1A\u53D1\u73B0\u539F\u6765\u5199\u4EE3\u7801\u53EF\u4EE5\u8FD9\u4E48\u7B80\u5355</font>**\\\\n\\\\n# 2\u3001\u5E38\u7528\u6570\u5B66\u51FD\u6570\\\\n\\\\n* max, min, abs, floor, ceil, round, sqrt \u5177\u4F53\u89C1\u5982\u4E0B\u4EE3\u7801\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint main() {\\\\n    int a = 1, b = 3;\\\\n    double c = 2.0;\\\\n\\\\n    // max(a, b), \u7528\u4E8E\u8FD4\u56DE a, b \u4E2D\u8F83\u5927\u7684\u503C\\\\n    // \u6CE8\u610F: a, b \u4E00\u5B9A\u8981\u662F\u540C\u7C7B\u578B\u7684\u503C\\\\n    // \u8F93\u51FA: max(a, b)\u8FD4\u56DE a, b \u4E2D\u8F83\u5927\u7684\u6570\u662F: 3\\\\n    cout << \\\\\\"max(a, b)\u8FD4\u56DE a, b \u4E2D\u8F83\u5927\u7684\u6570\u662F: \\\\\\" << max(a, b) << \'\\\\\\\\n\';\\\\n    // \u9519\u8BEF: a \u662F int, c \u662F double, \u4F1A\u62A5\u7F16\u8BD1\u9519\u8BEF\\\\n    // cout << max(a, c) << \'\\\\\\\\n\';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // min(a, b), \u7528\u4E8E\u8FD4\u56DE a, b \u4E2D\u8F83\u5C0F\u7684\u503C\\\\n    // \u6CE8\u610F: a, b \u4E00\u5B9A\u8981\u662F\u540C\u7C7B\u578B\u7684\u503C\\\\n    // \u8F93\u51FA: min(a, b)\u8FD4\u56DE a, b \u4E2D\u8F83\u5C0F\u7684\u6570\u662F: 1\\\\n    cout << \\\\\\"min(a, b)\u8FD4\u56DE a, b \u4E2D\u8F83\u5C0F\u7684\u6570\u662F: \\\\\\" << min(a, b) << \'\\\\\\\\n\';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // abs(a) \u8FD4\u56DE a \u7684\u7EDD\u5BF9\u503C\\\\n    // \u8F93\u51FA: abs(1.2) \u8FD4\u56DE 1.2 \u7684\u7EDD\u5BF9\u503C\u662F: 1.2\\\\n    cout << \\\\\\"abs(1.2) \u8FD4\u56DE 1.2 \u7684\u7EDD\u5BF9\u503C\u662F: \\\\\\" << abs(1.2) << \'\\\\\\\\n\';\\\\n    // \u8F93\u51FA: abs(-1.2) \u8FD4\u56DE -1.2 \u7684\u7EDD\u5BF9\u503C\u662F: 1.2\\\\n    cout << \\\\\\"abs(-1.2) \u8FD4\u56DE -1.2 \u7684\u7EDD\u5BF9\u503C\u662F: \\\\\\" << abs(-1.2) << \'\\\\\\\\n\';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // floor(x) \u8FD4\u56DE\u4E0D\u8D85\u8FC7 x \u7684\u6700\u5927 int \u503C\\\\n    // \u8F93\u51FA: floor(5) \u8FD4\u56DE\u4E0D\u8D85\u8FC7 5 \u7684\u6700\u5927\u6574\u6570\u662F: 5\\\\n    cout << \\\\\\"floor(5) \u8FD4\u56DE\u4E0D\u8D85\u8FC7 5 \u7684\u6700\u5927\u6574\u6570\u662F: \\\\\\" << floor(5) << \'\\\\\\\\n\';\\\\n    // \u8F93\u51FA: floor(5.9) \u8FD4\u56DE\u4E0D\u8D85\u8FC7 5.9 \u7684\u6700\u5927\u6574\u6570\u662F: 5\\\\n    cout << \\\\\\"floor(5.9) \u8FD4\u56DE\u4E0D\u8D85\u8FC7 5.9 \u7684\u6700\u5927\u6574\u6570\u662F: \\\\\\" << floor(5.9) << \'\\\\\\\\n\';\\\\n    // \u8F93\u51FA: floor(-5.9) \u8FD4\u56DE\u4E0D\u8D85\u8FC7 -5.9 \u7684\u6700\u5927\u6574\u6570\u662F: -6\\\\n    cout << \\\\\\"floor(-5.9) \u8FD4\u56DE\u4E0D\u8D85\u8FC7 -5.9 \u7684\u6700\u5927\u6574\u6570\u662F: \\\\\\" << floor(-5.9) << \'\\\\\\\\n\';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // ceil(x) \u8FD4\u56DE\u4E0D\u5C0F\u4E8E x \u7684\u6700\u5927 int \u503C\\\\n    // \u8F93\u51FA: ceil(5) \u8FD4\u56DE\u4E0D\u5C0F\u4E8E 5 \u7684\u6700\u5927\u6574\u6570\u662F: 5\\\\n    cout << \\\\\\"ceil(5) \u8FD4\u56DE\u4E0D\u5C0F\u4E8E 5 \u7684\u6700\u5927\u6574\u6570\u662F: \\\\\\" << ceil(5) << \'\\\\\\\\n\';\\\\n    // \u8F93\u51FA: ceil(5.9) \u8FD4\u56DE\u4E0D\u5C0F\u4E8E 5.9 \u7684\u6700\u5927\u6574\u6570\u662F: 6\\\\n    cout << \\\\\\"ceil(5.9) \u8FD4\u56DE\u4E0D\u5C0F\u4E8E 5.9 \u7684\u6700\u5927\u6574\u6570\u662F: \\\\\\" << ceil(5.9) << \'\\\\\\\\n\';\\\\n    // \u8F93\u51FA: ceil(-5.9) \u8FD4\u56DE\u4E0D\u5C0F\u4E8E -5.9 \u7684\u6700\u5927\u6574\u6570\u662F: -5\\\\n    cout << \\\\\\"ceil(-5.9) \u8FD4\u56DE\u4E0D\u5C0F\u4E8E -5.9 \u7684\u6700\u5927\u6574\u6570\u662F: \\\\\\" << ceil(-5.9) << \'\\\\\\\\n\';    \\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // round(x) \u7528\u4E8E\u8FD4\u56DE x \u56DB\u820D\u4E94\u5165\u540E\u7684\u7ED3\u679C\\\\n    // \u8F93\u51FA: round(5.4)=5\\\\n    cout << \\\\\\"round(5.4)=\\\\\\" << round(5.4) << \'\\\\\\\\n\';\\\\n    // \u8F93\u51FA: round(5.5)=6\\\\n    cout << \\\\\\"round(5.5)=\\\\\\" << round(5.5) << \'\\\\\\\\n\';\\\\n    // \u8F93\u51FA: round(-5.4)=-5\\\\n    cout << \\\\\\"round(-5.4)=\\\\\\" << round(-5.4) << \'\\\\\\\\n\';\\\\n    // \u8F93\u51FA: round(-5.5)=-6\\\\n    cout << \\\\\\"round(-5.5)=\\\\\\" << round(-5.5) << \'\\\\\\\\n\'; \\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // sqrt(x) \u8FD4\u56DE x \u5F00\u65B9\u7684\u7ED3\u679C\\\\n    // \u8F93\u51FA: sqrt(9)=3\\\\n    cout << \\\\\\"sqrt(9)=\\\\\\" << sqrt(9) << \'\\\\\\\\n\';\\\\n    // \u8F93\u51FA: sqrt(10)=3.16228\\\\n    cout << \\\\\\"sqrt(10)=\\\\\\" << sqrt(10) << \'\\\\\\\\n\';   \\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n# 3\u3001\u8FED\u4EE3\u5668\\\\n\\\\n* \u6211\u4EEC\u5728 [\u3010\u8BFE\u4EF6\u3011\u6307\u9488\u4E0E\u51FD\u6570](http://www.gzezoi.cn/d/gzezoi2023/p/P0004) \u4E2D\u5B66\u4E60\u8FC7\u6570\u7EC4\u548C\u6307\u9488\u7684\u5173\u7CFB\uFF08\u56DE\u5FC6\u4E0B\uFF0C\u6570\u7EC4\u540D\u5C31\u662F\u6307\u5411\u6570\u7EC4\u7B2C\u4E00\u4E2A\u5143\u7D20\u7684\u6307\u9488\uFF09\\\\n* \u5BF9\u4E8E\u5411\u91CF\u5BB9\u5668 vector \u6765\u8BF4, \u8FED\u4EE3\u5668\u5C31\u662F vector \u7684\u6307\u9488\uFF0C\u53EF\u4EE5\u7528\u6765\u6807\u8BB0 vector \u4E2D\u7684\u67D0\u4E2A\u4F4D\u7F6E\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint main() {\\\\n    vector<int> a;\\\\n    for (int i = 0; i < 5; i++) a.push_back(i * 2);\\\\n    \\\\n    // \u8F93\u51FA: 0 2 4 6 8\\\\n    for (int i = 0; i < a.size(); i++) cout << a[i] << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n    \\\\n    // a.beign() \u8FD4\u56DE\u6307\u5411 a[0] \u7684\u6307\u9488\\\\n    // \u53EF\u4EE5\u901A\u8FC7 *a.beign() \u6765\u83B7\u53D6 a[0] \u7684\u503C\\\\n    cout << *a.begin() << \'\\\\\\\\n\';           // \u8F93\u51FA: 0\\\\n\\\\n    // \u8FED\u4EE3\u5668\u53EF\u4EE5\u505A\u52A0\u6CD5, \u8FD4\u56DE a[1] \u7684\u503C\\\\n    cout << *(a.begin() + 1) << \'\\\\\\\\n\';     // \u8F93\u51FA: 2\\\\n\\\\n    // \u8FD4\u56DE a[2] \u7684\u503C\\\\n    cout << *(a.begin() + 2) << \'\\\\\\\\n\';     // \u8F93\u51FA: 4\\\\n\\\\n    // a.end() \u6307\u5411\u672B\u5C3E\u5143\u7D20\u7684\u540E\u4E00\u4E2A(\u4E0D\u5B58\u5728\u7684)\u5143\u7D20\\\\n    // \u53EF\u4EE5\u901A\u8FC7 a.end() - a.begin() \u8BA1\u7B97 a \u4E2D\u5143\u7D20\u7684\u4E2A\u6570\\\\n    // \u4E5F\u53EF\u4EE5\u7528 a.size()\\\\n    cout << a.end() - a.begin() << \'\\\\\\\\n\';  // \u8F93\u51FA: 5\\\\n    \\\\n    // \u53EF\u4EE5\u901A\u8FC7\u8FED\u4EE3\u5668\u6765\u904D\u5386 a\\\\n    // auto \u53EF\u4EE5\u4EE3\u6307\u4EFB\u610F\u7C7B\u578B\\\\n    // \u8F93\u51FA: 0 2 4 6 8\\\\n    for (auto i = a.begin(); i != a.end(); i++) cout << *i << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // \u4E0B\u9762\u7684\u65B9\u6CD5\u66F4\u7B80\u5355\\\\n    // \u8F93\u51FA: 0 2 4 6 8\\\\n    for (int x: a) cout << x << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // \u4E5F\u53EF\u4EE5\u628A int x \u6362\u6210 auto x\\\\n    // \u8F93\u51FA: 0 2 4 6 8\\\\n    for (auto x: a) cout << x << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n* \u53EF\u4EE5\u901A\u8FC7 max_element(a.begin(), a.end())\uFF0C\u8FD4\u56DE a \u4E2D\u7684\u6700\u5927\u503C\u7684\u8FED\u4EE3\u5668\\\\n* \u53EF\u4EE5\u901A\u8FC7 reverse(a.begin(), a.end()) \u6765\u8FD4\u56DE a \u4E2D\u7684\u503C\\\\n* \u5047\u8BBE a \u5DF2\u7ECF\u6392\u597D\u5E8F\uFF0C\u53EF\u4EE5\u901A\u8FC7 unique(a.begin(), a.end()) \u5C06 a \u4E2D\u76F8\u90BB\u7684\u91CD\u590D\u5143\u7D20\u53BB\u6389\uFF0C\u8FD4\u56DE\u65B0\u7684 end \u8FED\u4EE3\u5668\\\\n* \u8FD8\u53EF\u4EE5\u901A\u8FC7 a.erase(\u8FED\u4EE3\u56681, \u8FED\u4EE3\u56682), \u8F93\u51FA 2 \u4E2A\u8FED\u4EE3\u5668\u4E4B\u95F4\u7684\u5143\u7D20\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint main() {\\\\n    vector<int> a = {2, 4, 4, 5, 2};\\\\n\\\\n    // \u8F93\u51FA: 2 4 4 5 2\\\\n    for (auto i = a.begin(); i != a.end(); i++) cout << *i << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n    \\\\n    // \u8F93\u51FA: 5, \u8868\u793A a \u4E2D\u6700\u5927\u7684\u5143\u7D20\u662F 5\\\\n    cout << *max_element(a.begin(), a.end()) << \'\\\\\\\\n\';\\\\n    // \u8F93\u51FA: 3, \u8868\u793A a \u4E2D\u6700\u5927\u7684\u7D20\u6570\u662F a[3]\\\\n    cout << max_element(a.begin(), a.end()) - a.begin() << \'\\\\\\\\n\';\\\\n    \\\\n    // \u7FFB\u8F6C a\\\\n    reverse(a.begin(), a.end());\\\\n    // \u8F93\u51FA: 2 5 4 4 2\\\\n    for (auto i = a.begin(); i != a.end(); i++) cout << *i << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // \u5C06 a \u4ECE\u5C0F\u5230\u5927 \u6392\u5E8F\\\\n    sort(a.begin(), a.end());\\\\n    // \u8F93\u51FA: 2 2 4 4 5\\\\n    for (auto i = a.begin(); i != a.end(); i++) cout << *i << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // \u901A\u8FC7 unique \u53BB\u91CD, \u8FD4\u56DE\u65B0\u7684 end\\\\n    auto new_end = unique(a.begin(), a.end());\\\\n    // \u8F93\u51FA: 2 4 5\\\\n    for (auto i = a.begin(); i != new_end; i++) cout << *i << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // \u8FD8\u53EF\u4EE5\u901A\u8FC7 erase \u5C06 a \u4E2D\u53BB\u91CD\u540E\u591A\u4F59\u7684\u90E8\u5206\u5220\u6389\\\\n    // \u8FD9\u4E2A\u65F6\u5019 a.end() \u5C31\u7B49\u4E8E new_end \u4E86\\\\n    a.erase(new_end, a.end());\\\\n    // \u8F93\u51FA: 2 4 5\\\\n    for (auto i = a.begin(); i != a.end(); i++) cout << *i << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n# 4\u3001pair \u7C7B\u578B\\\\n\\\\n* pair \u7C7B\u578B\u53EF\u4EE5\u5C06 2 \u4E2A\u503C\u7ED1\u5B9A\u5230\u4E00\u4E2A\u53D8\u91CF\u4E2D\uFF08\u8FD9\u4E2A 2 \u4E2A\u503C\u53EF\u4EE5\u662F\u540C\u4E00\u7C7B\u578B\uFF0C\u4E5F\u53EF\u4EE5\u662F\u4E0D\u540C\u7C7B\u578B\uFF09\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint main() {\\\\n    // pair<int, int> \u8868\u793A\u5C06 2 \u4E2A int \u7C7B\u578B\u7684\u503C\u7ED1\u5B9A\u6210\u65B0\u7684\u7C7B\u578B\\\\n    pair<int, int> a;\\\\n    // \u53EF\u4EE5\u901A\u8FC7 a.first \u83B7\u53D6\u7B2C 1 \u4E2A\u6570, a.second \u83B7\u53D6\u7B2C\u4E8C\u4E2A\u6570\\\\n    a.first = 1, a.second = 2;\\\\n\\\\n    // \u53EF\u4EE5\u5C06\u4E0D\u540C\u7C7B\u578B\u7684 2 \u4E2A\u503C\u7ED1\u5B9A\\\\n    // \u6BD4\u5982\u7B2C 1 \u4E2A\u662F int \u7C7B\u578B, \u7B2C 2 \u4E2A\u662F double \u7C7B\u578B\\\\n    // \u53EF\u4EE5\u901A\u8FC7 {1, 1.5} \u7684\u5F62\u5F0F\u751F\u6210 pair<int, double> \u7C7B\u578B\\\\n    pair<int, double> b = {1, 1.5};\\\\n    // \u8F93\u51FA: 1 1.5\\\\n    cout << b.first << \' \' << b.second << \'\\\\\\\\n\';\\\\n\\\\n    // \u7ED1\u5B9A string \u548C int\\\\n    // \u8F93\u51FA: liangsheng 32\\\\n    pair<string, int> c = {\\\\\\"liangsheng\\\\\\", 32};\\\\n    cout << c.first << \' \' << c.second << \'\\\\\\\\n\';\\\\n\\\\n    // \u8FD8\u53EF\u4EE5\u7ED1\u5B9A vector\\\\n    vector<int> arr = {1, 2, 3, 4};\\\\n    pair<int, vector<int>> d = {1, arr};\\\\n    // \u8F93\u51FA: 1\\\\n    cout << d.first << \'\\\\\\\\n\';\\\\n    // \u8F93\u51FA: 1 2 3 4\\\\n    for (auto x : d.second) cout << x << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // pair \u4E5F\u53EF\u4EE5\u5D4C\u5957\u7ED1\u5B9A\\\\n    pair<int, pair<int, int>> e = {1, {2, 3}};\\\\n    // \u8F93\u51FA: 1\\\\n    cout << e.first << \'\\\\\\\\n\';\\\\n    // \u8F93\u51FA: 2 3\\\\n    cout << e.second.first << \' \' << e.second.second << \'\\\\\\\\n\';\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n# 5\u3001\u5E8F\u5217\u5BB9\u5668\\\\n\\\\n## 5-1\u3001vector\\\\n\\\\n* vector \u5927\u5BB6\u5DF2\u7ECF\u6BD4\u8F83\u719F\u6089\\\\n* \u53D8\u957F\u6570\u7EC4 vector \u662F\u6807\u51C6\u6A21\u677F\u5E93\u4E2D\u7684\u4E00\u79CD\u7EBF\u6027\u5BB9\u5668\\\\n  * \u6570\u636E\u5728\u5185\u5B58\u4E2D\u8FDE\u7EED\u5B58\u653E\uFF0C\u53EF\u4EE5\u6309\u4E0B\u6807\u4EFB\u610F\u8BBF\u95EE\\\\n  * \u53EF\u4EE5\u5F88\u5FEB\u5730\u5728\u5BB9\u5668\u5C3E\u6DFB\u52A0\u548C\u5220\u9664\u5143\u7D20\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint main() {\\\\n    // \u7533\u660E\u6570\u7EC4 a, \u5305\u542B 10 \u4E2A int \u7C7B\u578B\u53D8\u91CF, \u521D\u59CB\u503C\u90FD\u662F 1\\\\n    vector<int> a(10, 1);\\\\n\\\\n    // \u901A\u8FC7 b.push_back(1) \u5728\u6570\u7EC4\u672B\u5C3E\u6DFB\u52A0\u5143\u7D20\\\\n    vector<int> b;\\\\n    b.push_back(1);\\\\n    b.push_back(2);\\\\n\\\\n    // \u901A\u8FC7 b.size() \u83B7\u53D6\u6570\u7EC4\u7684\u957F\u5EA6\\\\n    // \u8F93\u51FA: 1 2\\\\n    for (int i = 0; i < b.size(); i++) cout << b[i] << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // \u7533\u660E 2 \u7EF4\u6570\u7EC4 int b[10][5]\uFF0C\u5E76\u4E14\u521D\u59CB\u5316\u5168\u4E3A 0\\\\n    vector<vector<int>> b(10, vector<int>(5, 0));\\\\n\\\\n    // \u7533\u660E 2 \u7EF4\u6570\u7EC4 c\uFF08\u5E76\u672A\u6307\u5B9A\u5927\u5C0F\uFF09\\\\n    vector<vector<int>> c;\\\\n\\\\n    // \u901A\u8FC7 assign \u51FD\u6570\u5C06 c \u91CD\u7F6E\u4E3A int c[3][4]\uFF0C\u5E76\u521D\u59CB\u5316\u4E3A 0\\\\n    c.assign(3, vector<int>(4, 0));\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n* \u8FD8\u6709\u5F88\u591A\u5173\u4E8E vector \u4E2D\u8FED\u4EE3\u5668\u7684\u7528\u6CD5\uFF0C\u53EF\u53C2\u8003\u672C\u8BFE\u4EF6\u7684\u8FED\u4EE3\u5668\u90E8\u5206\\\\n\\\\n## 5-2\u3001deque\\\\n\\\\n* \u9664\u4E86\u5728\u5BB9\u5668\u672B\u5C3E\u6DFB\u52A0\u5143\u7D20\uFF0C\u6709\u65F6\u6211\u4EEC\u8FD8\u9700\u8981\u5728\u5BB9\u5668\u5F00\u5934\u6DFB\u52A0\u5143\u7D20\\\\n* \u53EF\u4EE5\u4F7F\u7528\u6807\u51C6\u6A21\u677F\u5E93\u4E2D\u7684 deque \u5BB9\u5668\\\\n  * \u4E0D\u4FDD\u8BC1\u6570\u636E\u5728\u5185\u5B58\u4E2D\u8FDE\u7EED\u5B58\u653E\uFF0C\u4F46\u53EF\u4EE5\u6309\u4E0B\u6807\u4EFB\u610F\u8BBF\u95EE\\\\n  * \u53EF\u4EE5\u5F88\u5FEB\u5730\u5728\u5BB9\u5668\u7684\u5934\u5C3E\u6DFB\u52A0\u548C\u5220\u9664\u5143\u7D20\\\\n  * \u8981\u5728\u5BB9\u5668\u5934\u6DFB\u52A0\u5143\u7D20\uFF0C\u4F7F\u7528 push_front\\\\n  * \u8981\u5728\u5BB9\u5668\u5934\u5220\u9664\u5143\u7D20\uFF0C\u4F7F\u7528 pop_front\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\ntypedef pair<int, int> pii;\\\\n\\\\nint main() {\\\\n    deque<int> a;\\\\n    \\\\n    // \u901A\u8FC7 push_back \u5728 a \u672B\u5C3E\u6DFB\u52A0\u5143\u7D20\\\\n    a.push_back(1);  // a = [1]\\\\n    a.push_back(2);  // a = [1, 2]\\\\n    a.push_back(3);  // a = [1, 2, 3]\\\\n\\\\n    // \u901A\u8FC7 push_front \u5728 a \u5F00\u5934\u6DFB\u52A0\u5143\u7D20\\\\n    a.push_front(4);  // a = [4, 1, 2, 3]\\\\n    a.push_front(5);  // a = [5, 4, 1, 2, 3];\\\\n\\\\n    // \u901A\u8FC7\u8FED\u4EE3\u5668\u904D\u5386 a \u4E2D\u7684\u5143\u7D20\\\\n    for (auto i = a.begin(); i != a.end(); i++) cout << *i << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // \u901A\u8FC7\u4E0B\u6807\u8BBF\u95EE a \u4E2D\u7684\u5143\u7D20\\\\n    cout << a[0] << \'\\\\\\\\n\';  // a[0] = 5;\\\\n    cout << a[1] << \'\\\\\\\\n\';  // a[1] = 4;\\\\n    cout << a[2] << \'\\\\\\\\n\';  // a[2] = 1;\\\\n\\\\n    // \u5220\u9664 a \u4E2D\u6700\u524D\u9762\u7684\u5143\u7D20\\\\n    a.pop_front();  // a = [4, 1, 2, 3]\\\\n    for (int x : a) cout << x << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // \u5220\u9664 a \u4E2D\u6700\u540E\u9762\u7684\u5143\u7D20\u5E76\\\\n    a.pop_back();  // a = [4, 1, 2]\\\\n    for (int x : a) cout << x << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n## 5-3\u3001queue\\\\n\\\\n* \u961F\u5217\uFF08queue\uFF09\u662F deque \u7684\u7279\u6B8A\u60C5\u51B5\\\\n* \u961F\u5217\uFF08queue\uFF09 \u8981\u6C42\u6240\u6709\u5143\u7D20\u5148\u8FDB\u5148\u51FA\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">\u961F\u5217\uFF08queue\uFF09 \u603B\u662F\u5728\u672B\u5C3E\u6DFB\u52A0\u5143\u7D20\uFF0C\u5728\u5F00\u5934\u5220\u9664\u5143\u7D20</font>**\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint main() {\\\\n    // \u7533\u660E\u961F\u5217\u65F6\uFF0C\u9700\u8981\u6307\u660E\u7C7B\u578B\\\\n    queue<string> qs;\\\\n    queue<int> q;\\\\n\\\\n    // \u901A\u8FC7 push \u6216\u8005 emplace, \u5F80\u961F\u5217\u91CC\u6DFB\u52A0\u5143\u7D20\\\\n    // push \u548C emplace \u51E0\u4E4E\u662F\u4E00\u6837\u7684\\\\n    q.push(1);     // q = [1]\\\\n    q.push(2);     // q = [1, 2]\\\\n    q.emplace(3);  // q = [1, 2, 3]\\\\n\\\\n    // \u901A\u8FC7 front() \u53D6\u961F\u5217\u5F00\u5934\u7684\u5143\u7D20\\\\n    int x = q.front();\\\\n    cout << \\\\\\"x= \\\\\\" << x << \'\\\\\\\\n\';  // x = 1\\\\n    // \u901A\u8FC7 pop() \u5C06\u961F\u5217\u5F00\u5934\u7684\u5143\u7D20\u5F39\u51FA, q \u53D8\u6210 [2, 3]\\\\n    q.pop();\\\\n\\\\n    int y = q.front();\\\\n    cout << \\\\\\"y= \\\\\\" << y << \'\\\\\\\\n\';  // y = 2\\\\n    q.pop();                     // q = [3]\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n* \u961F\u5217\uFF08queue\uFF09\u4E5F\u53EF\u4EE5\u7528 vector \u6765\u5B9E\u73B0\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint main() {\\\\n    // \u5047\u8BBE\u961F\u5217\u6700\u957F\u662F 100, l \u548C r \u5206\u522B\u6307\u5411\u961F\u5217\u7684\u5934\u548C\u5C3E\u7684\u540E\u4E00\u4E2A\u4F4D\u7F6E\\\\n    int n = 100, l = 0, r = 0;\\\\n    vector<int> q(n);\\\\n\\\\n    // \u5F80\u961F\u5217\u91CC\u6DFB\u52A0\u5143\u7D20\\\\n    q[r++] = 1;  // q = [1]\\\\n    q[r++] = 2;  // q = [1, 2]\\\\n    q[r++] = 3;  // q = [1, 2, 3]\\\\n\\\\n    // \u53D6\u961F\u5217\u5F00\u5934\u5143\u7D20\\\\n    int x = q[l];\\\\n    cout << \\\\\\"x= \\\\\\" << x << \'\\\\\\\\n\';  // x = 1\\\\n    // \u901A\u8FC7 l++ \u5C06\u961F\u5217\u5F00\u5934\u7684\u5143\u7D20\u5F39\u51FA, q \u53D8\u6210 [2, 3]\\\\n    l++;\\\\n\\\\n    int y = q[l];\\\\n    cout << \\\\\\"y= \\\\\\" << y << \'\\\\\\\\n\';  // y = 2\\\\n    l++;                         // q = [3]\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n## 5-4\u3001stack\\\\n\\\\n* \u6808\uFF08stack\uFF09\u662F deque \u7684\u7279\u6B8A\u60C5\u51B5\\\\n* \u6808\uFF08stack\uFF09\u8981\u6C42\u6240\u6709\u5143\u7D20\u540E\u8FDB\u5148\u51FA.\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">\u6808\uFF08stack\uFF09 \u603B\u662F\u5728\u672B\u5C3E\u6DFB\u52A0\u5143\u7D20\uFF0C\u5728\u672B\u5C3E\u5220\u9664\u5143\u7D20</font>**\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint main() {\\\\n    // \u7533\u660E\u6808\u65F6\uFF0C\u9700\u8981\u6307\u660E\u7C7B\u578B\\\\n    stack<int> s;\\\\n\\\\n    // \u901A\u8FC7 push \u6216\u8005 emplace, \u5F80\u6808\u91CC\u6DFB\u52A0\u5143\u7D20\\\\n    // push \u548C emplace \u51E0\u4E4E\u662F\u4E00\u6837\u7684\\\\n    s.push(1);     // s = [1]\\\\n    s.push(2);     // s = [1, 2]\\\\n    s.emplace(3);  // s = [1, 2, 3]\\\\n\\\\n    // \u901A\u8FC7 front() \u53D6\u6808\u9876\u7684\u5143\u7D20\\\\n    int x = s.top();\\\\n    cout << \\\\\\"x= \\\\\\" << x << \'\\\\\\\\n\';  // x = 3\\\\n    // \u901A\u8FC7 pop() \u5C06\u6808\u9876\u7684\u5143\u7D20\u5F39\u51FA, s \u53D8\u6210 [2, 3]\\\\n    s.pop();\\\\n\\\\n    int y = s.top();\\\\n    cout << \\\\\\"y= \\\\\\" << y << \'\\\\\\\\n\';  // y = 2\\\\n    s.pop();                     // s = [3]\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n* \u6808\uFF08stack\uFF09\u4E5F\u53EF\u4EE5\u7528 vector \u6765\u5B9E\u73B0\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint main() {\\\\n    // \u5047\u8BBE\u6808\u6700\u957F\u662F 100, e \u8868\u793A\u6808\u91CC\u5143\u7D20\u7684\u4E2A\u6570, \u521D\u59CB\u662F 0\\\\n    int n = 100, e = 0;\\\\n    vector<int> s(n);\\\\n\\\\n    // \u5F80\u6808\u91CC\u6DFB\u52A0\u5143\u7D20\\\\n    s[e++] = 1;  // s = [1]\\\\n    s[e++] = 2;  // s = [1, 2]\\\\n    s[e++] = 3;  // s = [1, 2, 3]\\\\n\\\\n    // \u53D6\u6808\u9876\u5934\u5143\u7D20\\\\n    int x = s[e - 1];\\\\n    cout << \\\\\\"x= \\\\\\" << x << \'\\\\\\\\n\';  // x = 3\\\\n    // \u901A\u8FC7 e-- \u5C06\u6808\u9876\u7684\u5143\u7D20\u5F39\u51FA, s \u53D8\u6210 [1, 2]\\\\n    e--;\\\\n\\\\n    int y = s[e - 1];\\\\n    cout << \\\\\\"y= \\\\\\" << y << \'\\\\\\\\n\';  // y = 2\\\\n    e--;                         // s = [3]\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n## 5-5\u3001priority_queue\\\\n\\\\n* \u6BCF\u6B21\u5220\u9664\u4F18\u5148\u7EA7\u6700\u5927\u7684\u5143\u7D20\uFF0C\u4E0D\u7BA1\u8FD9\u4E2A\u5143\u7D20\u662F\u4EC0\u4E48\u65F6\u5019\u6DFB\u52A0\u7684\\\\n* \u8FD9\u4E2A\u6570\u636E\u7ED3\u6784\u79F0\u4E3A\u4F18\u5148\u961F\u5217\uFF08prioriyt_queue\uFF09\\\\n* \u4E0B\u9762\u7684\u4EE3\u7801\u4F7F\u7528 priority_queue\uFF0C\u5C06\u5143\u7D20\u4ECE\u5927\u5230\u5C0F\u8F93\u51FA\uFF0C\u4E5F\u5C31\u662F\u5806\u6392\u5E8F\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint main() {\\\\n    // \u4F18\u5148\u961F\u5217\u7533\u660E\u65F6\u9700\u8981\u6307\u660E\u7C7B\u578B, \u9ED8\u8BA4\u4F18\u5148\u53D6\u51FA\u6700\u5927\u503C\\\\n    priority_queue<string> qs;\\\\n    priority_queue<int> q;\\\\n\\\\n    q.push(1);\\\\n    q.push(5);\\\\n    q.push(4);\\\\n    q.push(2);\\\\n    q.push(3);\\\\n\\\\n    // \u53EF\u4EE5\u901A\u8FC7 empty() \u5224\u65AD\u662F\u5426\u4E3A\u7A7A, queue \u548C stack \u4E5F\u6709 empty() \u65B9\u6CD5\\\\n    // \u8F93\u51FA: 5 4 3 2 1\\\\n    while (!q.empty()) {\\\\n        int x = q.top();    // \u901A\u8FC7 top() \u6BCF\u6B21\u53D6\u51FA\u6700\u5927\u5143\u7D20\\\\n        cout << x << \' \';\\\\n        q.pop();            // \u901A\u8FC7 pop() \u5C06\u5F53\u524D\u6700\u5927\u5143\u7D20\u5220\u9664\\\\n    }\\\\n    cout << \'\\\\\\\\n\';\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n* \u5982\u679C\u6BCF\u6B21\u9700\u8981\u5220\u9664\u7684\u662F\u6700\u5C0F\u7684\u6570\uFF0C\u53EF\u4EE5\u5728 push \u7684\u65F6\u5019\u5C06\u6570\u53D6\u53CD\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint main() {\\\\n    // \u4F18\u5148\u961F\u5217\u7533\u660E\u65F6\u9700\u8981\u6307\u660E\u7C7B\u578B, \u9ED8\u8BA4\u4F18\u5148\u53D6\u51FA\u6700\u5927\u503C\\\\n    priority_queue<int> q;\\\\n\\\\n    // \u5982\u679C\u6BCF\u6B21\u9700\u8981\u5220\u9664\u7684\u662F\u6700\u5C0F\u7684\u6570\uFF0C\u53EF\u4EE5\u5728 push \u7684\u65F6\u5019\u5C06\u6570\u53D6\u53CD\\\\n    q.push(-1);\\\\n    q.push(-5);\\\\n    q.push(-4);\\\\n    q.push(-2);\\\\n    q.push(-3);\\\\n\\\\n    // \u8F93\u51FA: 1 2 3 4 5\\\\n    while (!q.empty()) {\\\\n        int x = q.top();    // \u901A\u8FC7 top() \u6BCF\u6B21\u53D6\u51FA\u6700\u5927\u5143\u7D20\\\\n        cout << -x << \' \';  // \u8F93\u51FA\u7684\u65F6\u5019\u53D6\u53CD\\\\n        q.pop();            // \u901A\u8FC7 pop() \u5C06\u5F53\u524D\u6700\u5927\u5143\u7D20\u5220\u9664\\\\n    }\\\\n    cout << \'\\\\\\\\n\';\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n* \u6216\u8005\u518D\u7533\u660E\u7684\u65F6\u5019\u544A\u8BC9 priority_queue \u6BCF\u6B21\u5220\u9664\u6700\u5C0F\u7684\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint main() {\\\\n    // \u7533\u660E\u6709\u9650\u961F\u5217\u65F6, \u6307\u5B9A\u6BCF\u6B21\u5220\u9664\u6700\u5C0F\u7684\\\\n    // \u7B2C 1 \u4E2A\u53C2\u6570 int \u662F\u6307\u4F18\u5148\u961F\u5217\u91CC\u7684\u5143\u7D20\u7C7B\u578B\\\\n    // \u7B2C 2 \u4E2A\u53C2\u6570 vector<int> \u662F\u6709\u9650\u961F\u5217\u7684\u5B9E\u73B0\u65B9\u5F0F\\\\n    // \u7B2C 3 \u4E2A\u53C2\u6570 greater<int> \u544A\u8BC9\u4F18\u5148\u961F\u5217 top() \u53D6\u6700\u5C0F\u7684\u6570\\\\n    priority_queue<int, vector<int>, greater<int>> q;\\\\n\\\\n    q.push(1);\\\\n    q.push(5);\\\\n    q.push(4);\\\\n    q.push(2);\\\\n    q.push(3);\\\\n\\\\n    // \u8F93\u51FA: 1 2 3 4 5\\\\n    while (!q.empty()) {\\\\n        int x = q.top();    // \u901A\u8FC7 top() \u6BCF\u6B21\u53D6\u51FA\u6700\u5927\u5143\u7D20\\\\n        cout << x << \' \';  // \u8F93\u51FA\u7684\u65F6\u5019\u53D6\u53CD\\\\n        q.pop();            // \u901A\u8FC7 pop() \u5C06\u5F53\u524D\u6700\u5927\u5143\u7D20\u5220\u9664\\\\n    }\\\\n    cout << \'\\\\\\\\n\';\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n* \u4F18\u5148\u961F\u5217\uFF08priority_queue\uFF09\u53EF\u4EE5\u7528 [\u3010\u8BFE\u4EF6\u3011\u65F6\u95F4\u590D\u6742\u5EA6\u4E0E\u6392\u5E8F](http://www.gzezoi.cn/d/gzezoi2023/p/P0005) \u4E2D\u4ECB\u7ECD\u7684 \u5806\uFF08heap\uFF09\u6765\u5B9E\u73B0\\\\n\\\\n# 6\u3001\u5173\u8054\u5BB9\u5668\\\\n\\\\n## 6-1\u3001set\\\\n\\\\n* set \u4EE3\u8868\u96C6\u5408\u5BB9\u5668\uFF0C\u7528\u4EE5 **<font color=\\\\\\"#FF0000\\\\\\">\u6709\u5E8F\u5730\u5B58\u50A8\u4E92\u5F02\u5143\u7D20\u7684\u5BB9\u5668</font>**\\\\n* \u6BCF\u6B21\u6DFB\u52A0\u65B0\u5143\u7D20\u5230\u96C6\u5408\u65F6\uFF0C\u90FD\u4F1A\u5224\u65AD\u8BE5\u5143\u7D20\u662F\u5426\u5DF2\u7ECF\u5728\u96C6\u5408\u91CC\u9762\\\\n  * \u5982\u679C\u4E0D\u5728\uFF0C\u5219\u5C06\u8BE5\u5143\u7D20\u63D2\u5165\\\\n  * \u5982\u679C\u5B58\u5728\uFF0C\u5219\u4EC0\u4E48\u4E5F\u4E0D\u505A\\\\n* set \u7531\u7EA2\u9ED1\u6811\u5B9E\u73B0\uFF08\u4E00\u7C7B\u5E73\u8861\u4E8C\u53C9\u6811\uFF0C\u4EE5\u540E\u4F1A\u8BB2\u5230\uFF09\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">insert\uFF08\u63D2\u5165\uFF09, erase\uFF08\u5220\u9664\uFF09, find\uFF08\u67E5\u627E\uFF09, count\uFF08\u67E5\u627E\uFF09\u7684\u65F6\u95F4\u590D\u6742\u5EA6\u90FD\u662F $O(log(n))$\uFF0C$n$ \u662F set \u4E2D\u5143\u7D20\u7684\u4E2A\u6570</font>**\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint main() {\\\\n    set<int> s;\\\\n\\\\n    // \u63D2\u5165\u96C6\u5408 s \u4E2D\u7684\u5143\u7D20, \u9ED8\u8BA4\u4ECE\u5C0F\u5230\u5927\u6392\u5217\\\\n    // \u6240\u4EE5 set \u4E5F\u53EF\u4EE5\u7528\u6765\u6392\u5E8F\\\\n    s.insert(3);  // s = {3}\\\\n    s.insert(2);  // s = {2, 3}\\\\n    s.insert(1);  // s = {1, 2, 3}\\\\n    s.insert(1);  // s = {1, 2, 3}, \u5143\u7D20 1 \u672C\u6765\u5C31\u5B58\u5728\\\\n\\\\n    // \u901A\u8FC7 s.beign() \u83B7\u53D6 s \u4E2D\u6700\u5C0F\u7684\u6570\u7684\u8FED\u4EE3\u5668\\\\n    // \u901A\u8FC7 * \u89E3\u5F15\u7528, \u53EF\u4EE5\u83B7\u53D6\u8FED\u4EE3\u5668\u6307\u5411\u7684\u5177\u4F53\u6307\\\\n    cout << *s.begin() << \'\\\\\\\\n\';   // \u8F93\u51FA: 1\\\\n\\\\n    // \u901A\u8FC7 s.rbeign() \u83B7\u53D6 s \u4E2D\u6700\u5C0F\u7684\u6570\u7684\u8FED\u4EE3\u5668\\\\n    cout << *s.rbegin() << \'\\\\\\\\n\';  // \u8F93\u51FA: 3 \\\\n\\\\n    // \u8F93\u51FA: 1 2 3\\\\n    for (int x : s) cout << x << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // \u8FD8\u53EF\u4EE5\u901A\u8FC7\u8FED\u4EE3\u5668\u904D\u5386\\\\n    // \u8F93\u51FA: 1 2 3\\\\n    for (auto i = s.begin(); i != s.end(); i++) cout << *i << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // \u901A\u8FC7 s.count(x) \u5224\u65AD\u5143\u7D20 x \u662F\u5426\u5728\u96C6\u5408 s \u4E2D\\\\n    cout << (s.count(1) ? \\\\\\"s \u4E2D\u5B58\u5728 1\\\\\\" : \\\\\\"s \u4E2D\u4E0D\u5B58\u5728 1\\\\\\") << \'\\\\\\\\n\';\\\\n    cout << (s.count(4) ? \\\\\\"s \u4E2D\u5B58\u5728 4\\\\\\" : \\\\\\"s \u4E2D\u4E0D\u5B58\u5728 4\\\\\\") << \'\\\\\\\\n\';\\\\n\\\\n    // \u5982\u679C s \u4E2D\u5B58\u5728 x, \u53EF\u4EE5\u901A\u8FC7 s.find(x) \u627E\u5230 x \u5BF9\u5E94\u7684\u8FED\u4EE3\u5668\\\\n    if (s.count(2)) {\\\\n        auto it = s.find(2);\\\\n        // \u8F93\u51FA: 1, \u4E5F\u5C31\u662F\u96C6\u5408 s \u4E2D 2 \u7684\u524D\u4E00\u4E2A\u6570\\\\n        // \u8FD9\u91CC\u9700\u8981\u5224\u65AD it \u662F\u5426\u662F s \u7684\u7B2C 1 \u4E2A\u6307\u9488\\\\n        // \u5982\u679C it == s.beign(), it \u5C31\u4E0D\u80FD\u518D\u5F80\u524D\u79FB\\\\n        if (it != s.begin()) {\\\\n            auto pre = it;\\\\n            cout << *(--pre) << \'\\\\\\\\n\';\\\\n        }\\\\n        \\\\n        // \u8F93\u51FA: 3, \u4E5F\u5C31\u662F\u96C6\u5408 s \u4E2D 2 \u7684\u540E\u4E00\u4E2A\u6570\\\\n        auto after = it;\\\\n        // \u8FD9\u91CC\u9700\u8981\u5224\u65AD after == s.end()\\\\n        if (++after != s.end()) cout << *after << \'\\\\\\\\n\';\\\\n    }\\\\n\\\\n    // \u53EF\u4EE5\u901A\u8FC7 s.erase(x), \u5220\u9664 s \u4E2D\u7684\u5143\u7D20\\\\n    // \u5982\u679C s \u4E2D\u5B58\u5728 x, \u5219\u5220\u9664 x; \u5426\u5219, \u5C31\u4EC0\u4E48\u4E5F\u4E0D\u505A\\\\n    s.erase(1);\\\\n    // \u8F93\u51FA: 2 3\\\\n    for (int x : s) cout << x << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // erase() \u91CC\u9762\u7684\u53C2\u6570\u4E5F\u53EF\u4EE5\u662F\u8FED\u4EE3\u5668\\\\n    s.erase(s.find(2));\\\\n    // \u8F93\u51FA: 3\\\\n    for (int x : s) cout << x << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // \u901A\u8FC7 s.size() \u83B7\u53D6 s \u4E2D\u5143\u7D20\u7684\u4E2A\u6570\\\\n    // \u8F93\u51FA: 1\\\\n    cout << s.size() << \'\\\\\\\\n\';\\\\n\\\\n    // \u901A\u8FC7 s.empty() \u5224\u65AD s \u662F\u5426\u4E3A\u7A7A\u96C6\u5408\\\\n    // \u8F93\u51FA: s \u4E0D\u4E3A\u7A7A\\\\n    cout << (s.empty() ? \\\\\\"s \u4E3A\u7A7A\\\\\\" : \\\\\\"s \u4E0D\u4E3A\u7A7A\\\\\\") << \'\\\\\\\\n\';\\\\n\\\\n    // \u901A\u8FC7 s.clear()\uFF0C\u53EF\u4EE5\u5C06 s \u6E05\u7A7A\\\\n    s.clear();\\\\n    cout << (s.empty() ? \\\\\\"s \u4E3A\u7A7A\\\\\\" : \\\\\\"s \u4E0D\u4E3A\u7A7A\\\\\\") << \'\\\\\\\\n\';\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n* set \u4E2D\u7684\u5143\u7D20\u9ED8\u8BA4\u4F1A\u53BB\u91CD\uFF0C\u5982\u679C\u60F3\u63D2\u5165\u76F8\u540C\u7684\u6570\uFF0C\u53EF\u4EE5\u5229\u7528 pair \u7C7B\u578B\uFF0C \u7ED9\u8981\u63D2\u5165\u7684\u6570\u5339\u914D\u4E00\u4E2A\u5E8F\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint main() {\\\\n    set<int> s;\\\\n\\\\n    s.insert(1);\\\\n    s.insert(2);\\\\n    s.insert(2);  // set \u4F1A\u53BB\u91CD, \u524D\u9762\u5DF2\u7ECF\u63D2\u5165\u8FC7 2, \u8FD9\u91CC\u4E0D\u4F1A\u751F\u6548\\\\n\\\\n    // \u8F93\u51FA: 1 2\\\\n    for (int x : s) cout << x << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n\\\\n    // \u5982\u679C\u60F3\u63D2\u5165\u76F8\u540C\u7684\u6570, \u53EF\u4EE5\u5229\u7528 pair \u7C7B\u578B, \u7ED9\u8981\u63D2\u5165\u7684\u6570\u5339\u914D\u4E00\u4E2A\u5E8F\u53F7\\\\n    // pair \u7C7B\u578B\u53EA\u6709 pair \u4E2D\u7684 2 \u4E2A\u6570\u90FD\u76F8\u540C, \u624D\u4F1A\u88AB\u5224\u5B9A\u76F8\u540C\\\\n    // \u800C pair \u4E4B\u95F4\u6BD4\u8F83\u5927\u5C0F, \u662F\u5148\u6BD4\u8F83 first, \u518D\u6BD4\u8F83 second\\\\n    set<pair<int, int>> ns;\\\\n    ns.insert({1, 1});  // \u7B2C 1 \u6B21\u63D2\u5165 1\\\\n    ns.insert({2, 2});  // \u7B2C 2 \u6B21\u63D2\u5165 2\\\\n    ns.insert({2, 3});  // \u7B2C 3 \u6B21\u63D2\u5165 2\\\\n\\\\n    // \u8F93\u51FA: 1 2 2\\\\n    for (auto i : ns) cout << i.first << \' \';\\\\n    cout << \'\\\\\\\\n\';\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n## 6-2\u3001map\\\\n\\\\n* \u4E4B\u524D\u5B66\u8FC7\u4E86\u6570\u7EC4\uFF0C\u53EF\u4EE5\u628A\u4E0B\u6807\u5BF9\u5E94\u5230\u5143\u7D20\\\\n  * a[1] = 2, \u76F8\u5F53\u4E8E\u628A\u4E0B\u6807 1 \u5BF9\u5E94\u5230 2\\\\n  * a[5] = 9, \u76F8\u5F53\u4E8E\u628A\u4E0B\u6807 5 \u5BF9\u5E94\u5230 9\\\\n* \u5982\u679C\u6211\u4EEC\u7684\u4E0B\u6807\u4E0D\u662F\u6574\u6570\uFF0C\u662F\u5B57\u7B26\u4E32\u600E\u4E48\u529E\uFF1F\\\\n  * \u6BD4\u5982\u6211\u60F3\u5B58\u50A8\u6BCF\u4E2A\u5B66\u751F\u7684\u59D3\u540D\u548C\u6210\u7EE9\\\\n  * \u5C0F\u660E 80 \u5206\uFF1A\\\\\\"xiaoming\\\\\\" -> 80\\\\n  * \u5C0F\u7EA2 90 \u5206\uFF1A\\\\\\"xiaohong\\\\\\" -> 90\\\\n* \u53EF\u4EE5\u4F7F\u7528 map\uFF0C\u5728\u4E24\u79CD\u4EFB\u610F\u7C7B\u578B\u7684\u6570\u636E\u4E4B\u95F4\uFF0C\u5F62\u6210\u6620\u5C04\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">\u53EF\u4EE5\u628A map \u7406\u89E3\u4E3A\uFF0C\u4E0B\u6807\u662F\u4EFB\u610F\u7C7B\u578B\uFF0C\u503C\u4E5F\u662F\u4EFB\u610F\u7C7B\u578B\u7684\u6570\u7EC4\uFF01\uFF01</font>**\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint main() {\\\\n    // \u5C06 string \u6620\u5C04\u5230 int\\\\n    // \u6211\u4EEC\u628A\u7B2C 1 \u4E2A\u7C7B\u578B string \u79F0\u4E3A key (\u952E) \\\\n    // \u628A\u7B2C 2 \u4E2A\u7C7B\u578B int \u79F0\u4E3A value (\u503C)\\\\n    map<string, int> m;\\\\n\\\\n    // Bob \u5BF9\u5E94 80 \u5206; Dog \u5BF9\u5E94 60 \u5206; Alice \u5BF9\u5E94 90 \u5206\\\\n    m[\\\\\\"Bob\\\\\\"] = 80;\\\\n    m[\\\\\\"Dog\\\\\\"] = 60;\\\\n    m[\\\\\\"Alice\\\\\\"] = 90;\\\\n    \\\\n    // \u53EF\u4EE5\u901A\u8FC7\u4E0B\u9762\u7684\u65B9\u5F0F\u904D\u5386 m\\\\n    // i \u662F pair<string, int> \u7C7B\u578B\\\\n    // \u53EF\u4EE5\u901A\u8FC7 i.first \u83B7\u53D6 key, \u901A\u8FC7 i.second \u83B7\u53D6 value\\\\n    // m \u4E2D\u7684\u5143\u7D20\u662F\u6309 key \u503C\u4ECE\u5C0F\u5230\u5927\u6392\u5E8F\u7684\\\\n    // \u8F93\u51FA: Alice 90\\\\n    // \u8F93\u51FA: Bob 80\\\\n    // \u8F93\u51FA: Dog 60\\\\n    for (auto i: m) {\\\\n        cout << i.first << \' \' << i.second << \'\\\\\\\\n\';\\\\n    }\\\\n\\\\n    // \u4F1A\u4FEE\u6539 Alice \u5BF9\u5E94\u7684\u503C\\\\n    m[\\\\\\"Alice\\\\\\"] = 95;\\\\n    cout << \\\\\\"Alice \u5BF9\u5E94\u7684\u503C\u662F: \\\\\\" << m[\\\\\\"Alice\\\\\\"] << \'\\\\\\\\n\';\\\\n\\\\n    // \u4E5F\u53EF\u4EE5\u901A\u8FC7\u8FED\u4EE3\u5668\u904D\u5386\\\\n    // \u8FD9\u91CC i \u662F pair<string, int> \u7C7B\u578B\u7684\u8FED\u4EE3\u5668\\\\n    // \u53EF\u4EE5\u901A\u8FC7 i->first, i->second \u83B7\u53D6\u503C\\\\n    for (auto i = m.begin(); i != m.end(); i++) {\\\\n        cout << (i->first) << \' \' << (i->second) << \'\\\\\\\\n\';\\\\n    }\\\\n\\\\n    // \u53EF\u4EE5\u901A\u8FC7 m.count(\\\\\\"Bob\\\\\\") \u67E5\u770B m \u4E2D\u662F\u5426\u5B58\u5728 Bob \u5BF9\u5E94\u7684\u503C\\\\n    if (m.count(\\\\\\"Bob\\\\\\")) cout << \\\\\\"Bob \u5BF9\u5E94\u7684\u503C\u662F: \\\\\\" << m[\\\\\\"Bob\\\\\\"] << endl;\\\\n    else cout << \\\\\\"\u4E0D\u5B58\u5728 Bod \u5BF9\u5E94\u7684\u503C\\\\\\" << \'\\\\\\\\n\';\\\\n    \\\\n    // \u53EF\u4EE5\u901A\u8FC7 m.empty() \u5224\u65AD m \u662F\u5426\u4E3A\u7A7A\\\\n    // \u53EF\u4EE5\u901A\u8FC7 m.size() \u83B7\u53D6 m \u4E2D\u6620\u5C04\u7684\u4E2A\u6570\\\\n    if (m.empty()) cout << \\\\\\"m \u662F\u7A7A\\\\\\" << endl;\\\\n    else cout << \\\\\\"m \u7684\u5927\u5C0F\u662F: \\\\\\" << m.size() << \'\\\\\\\\n\';\\\\n\\\\n    // \u53EF\u4EE5\u901A\u8FC7 m.erase(\\\\\\"Dog\\\\\\") \u5220\u9664 key \u662F Dog \u7684\u6620\u5C04\\\\n    // \u5982\u679C\u4E0D\u5B58\u5728 key \u662F Dog \u7684\u6620\u5C04, \u5219\u4EC0\u4E48\u4E5F\u4E0D\u505A\\\\n    m.erase(\\\\\\"Dog\\\\\\");\\\\n    for (auto i : m) cout << i.first << \' \' << i.second << \'\\\\\\\\n\';\\\\n\\\\n    // \u901A\u8FC7 m.clear()\uFF0C\u53EF\u4EE5\u5C06 m \u6E05\u7A7A\\\\n    m.clear();\\\\n    cout << (m.empty() ? \\\\\\"m \u4E3A\u7A7A\\\\\\" : \\\\\\"m \u4E0D\u4E3A\u7A7A\\\\\\") << endl;\\\\n\\\\n    // key \u548C value \u53EF\u4EE5\u4F7F\u590D\u6742\u7C7B\u578B\\\\n    // key \u662F int, value \u662F vector<int>\\\\n    map<int, vector<int>> a;\\\\n    a[123] = {1, 2, 3};\\\\n    a[456] = {7, 8, 9};\\\\n    // \u8F93\u51FA: key= 123, value= 1 2 3\\\\n    // \u8F93\u51FA: key= 456, value= 7 8 9\\\\n    for (auto i : a) {\\\\n        cout << \\\\\\"key= \\\\\\" << i.first;\\\\n        cout << \\\\\\", value= \\\\\\"; \\\\n        for (int j : i.second) cout << j << \' \';\\\\n        cout << \'\\\\\\\\n\';\\\\n    }\\\\n\\\\n    // key \u662F vector<int>, value \u662F string\\\\n    map<vector<int>, string> b;\\\\n    b[{1, 2, 3, 4}] = \\\\\\"Hello\\\\\\";\\\\n\\\\n    // \u5728 map \u4E2D, \u4E0D\u5B58\u5728\u7684 key \u5BF9\u5E94 0(\u5F53 value \u662F int \u65F6)\\\\n    map<int, int> t;\\\\n    cout << t[0] << \'\\\\\\\\n\';  // \u8F93\u51FA: 0\\\\n\\\\n    // \u5728 map \u4E2D, \u4E0D\u5B58\u5728\u7684 key \u5BF9\u5E94\u7A7A\u6570\u7EC4(\u5F53 value \u662F vector<int> \u65F6)\\\\n    map<int, vector<int>> tr;\\\\n    cout << tr[0].size() << \'\\\\\\\\n\';  // \u8F93\u51FA: 0\\\\n\\\\n    // \u601D\u8003\u4E0B\u4E0B\u9762\u8FD9\u4E2A\u590D\u6742\u7684 map, \u8981\u5982\u4F55\u904D\u5386\\\\n    map<vector<int>, pair<int, set<int>>> f;\\\\n    for (auto i : f) {\\\\n        // i.first \u662F vector<int>\\\\n        cout << \\\\\\"key: \\\\\\" << \'\\\\\\\\n\';\\\\n        for (int j : i.first) cout << \' \';\\\\n        cout << \'\\\\\\\\n\';\\\\n\\\\n        // i.second \u662F pair<int, set<int>>\\\\n        cout << \\\\\\"value: \\\\\\" << \'\\\\\\\\n\';\\\\n        // i.second.first \u662F int\\\\n        cout << i.second.first << \'\\\\\\\\n\';\\\\n        // i.second.second \u662F set<int>\\\\n        for (int j : i.second.second) cout << j << \' \';\\\\n        cout << \'\\\\\\\\n\';\\\\n    }\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n* \u548C set \u4E00\u6837\uFF0Cmap \u4E5F\u662F\u7531\u7EA2\u9ED1\u6811\u5B9E\u73B0\uFF08\u4E00\u79CD\u5E73\u8861\u4E8C\u53C9\u6811\uFF0C\u4EE5\u540E\u4F1A\u8BB2\uFF09\\\\n* \u63D2\u5165\uFF0Cfind\uFF08\u67E5\u627E\uFF09\uFF0Ccount\uFF08\u67E5\u627E\uFF09\uFF0Cerase\uFF08\u5220\u9664\uFF09\u7684\u65F6\u95F4\u590D\u6742\u5EA6\u90FD\u662F $O(log(n))$\uFF0C$n$ \u662F map \u4E2D\u5143\u7D20\u7684\u4E2A\u6570\\\\n\\\\n\\"}","owner":2,"domainId":"lzoi2025","docType":10,"docId":30,"title":"\u3010\u8BFE\u4EF6\u3011STL\u5E93\u7684\u5E94\u7528","tag":["\u8BFE\u4EF6","STL"],"hidden":false,"nSubmit":11,"nAccept":0,"pid":"LS0006","stats":{"AC":0,"WA":0,"TLE":0,"MLE":0,"RE":0,"SE":0,"IGN":0,"CE":0,"s0":11},"config":{"count":0,"memoryMin":256,"memoryMax":256,"timeMin":1000,"timeMax":1000,"type":"default","langs":["cc","cc.cc14o2","cc.cc17o2","py","py.py3"]}},"canViewRecord":true,"postSubmitUrl":"/d/lzoi2025/p/30/submit","getSubmissionsUrl":"/d/lzoi2025/record?fullStatus=true&pid=30","getRecordDetailUrl":"/d/lzoi2025/record/%7Brid%7D","pretestConnUrl":"record-conn?pretest=1&uidOrName=39&pid=30&domainId=lzoi2025"}';
+      window.UserContextNew = '{}';
+    </script>
+  </body>
+</html>

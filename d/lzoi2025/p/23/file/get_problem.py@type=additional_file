@@ -1,0 +1,49 @@
+# /root/anaconda3/envs/py311/bin/python3.11
+# https://curlconverter.com/
+import requests, json
+
+cookies = {
+    '_pk_id.1.b38a': '971f7ecb208e1a66.1743065473.',
+    '_pk_ref.1.b38a': '%5B%22%22%2C%22%22%2C1749018590%2C%22https%3A%2F%2Fgithub.com%2Fhydro-dev%2FHydro%22%5D',
+    '_pk_ses.1.b38a': '1',
+    'sid': 'EA7K9LHl36tBh8IqoimzmkJRJdgDJqur',
+    'sid.sig': 'fpuy7rX3wmEdqvEHd2YqLHJpXss',
+    'test': '865732742519266',
+    'v': '49cdc6d9a8f89b14ef0e66f43c5845e6',
+}
+
+headers = {
+    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+    'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,ru;q=0.7,zh-TW;q=0.6',
+    'cache-control': 'no-cache',
+    'pragma': 'no-cache',
+    'priority': 'u=0, i',
+    'referer': 'https://hydro.ac/d/topoac/p/CSP1300?tid=6829a553937e13a60d0eba24',
+    'sec-ch-ua': '"Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'navigate',
+    'sec-fetch-site': 'same-origin',
+    'upgrade-insecure-requests': '1',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36',
+    # 'cookie': '_pk_id.1.b38a=971f7ecb208e1a66.1743065473.; _pk_ref.1.b38a=%5B%22%22%2C%22%22%2C1749018590%2C%22https%3A%2F%2Fgithub.com%2Fhydro-dev%2FHydro%22%5D; _pk_ses.1.b38a=1; sid=EA7K9LHl36tBh8IqoimzmkJRJdgDJqur; sid.sig=fpuy7rX3wmEdqvEHd2YqLHJpXss; test=865732742519266; v=49cdc6d9a8f89b14ef0e66f43c5845e6',
+}
+
+params = {
+    'noTemplate': '1',
+}
+
+# problem_url = 'https://hydro.ac/d/topoac/p/CSP1300'
+problem_url = 'https://hydro.ac/d/topoac/p/R1095'
+response = requests.get(problem_url, params=params, cookies=cookies, headers=headers)
+
+data = json.loads(response.text)
+problem_zh = json.loads(data['pdoc']['content'])['zh']
+title = data['pdoc']['title'].strip()
+
+# 最后加上来源
+problem_zh = problem_zh + '\n# 来源' + '\n'
+problem_zh = problem_zh + '- [' + title + '](' + problem_url + ')'
+
+print(problem_zh)

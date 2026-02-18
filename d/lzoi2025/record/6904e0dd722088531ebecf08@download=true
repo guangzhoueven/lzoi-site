@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n;
+	cin >> n;
+	vector<i64> a(n), sum(1 << n);;
+	for (i64 i = 0; i < n; i++) cin >> a[i];
+	for (i64 k = 1; k < (1 << n); k++) {
+		i64 t = k & -k;  // 获取最低位的1
+		sum[k] = sum[k ^ t] + a[__builtin_ctz(t)];// __builtin_ctzll计算整数的二进制中末尾0的个数
+	}
+
+	i64 cnt = 0;
+	for (i64 k = 1; k < (1 << n); k++) {
+		i64 tmp = sum[k];
+		i64 size = __builtin_popcount(k);
+		if (size >= 2 && tmp % 2 == 0) {
+			i64 ok = tmp / 2;
+			bitset<2000001> dp;
+			dp[0] = 1;
+
+			for (i64 i = 0; i < n; i++) 
+				if (k >> i & 1) 
+					dp |= dp << a[i];
+
+			if (dp[ok]) cnt++;
+		}
+	}
+	cout << cnt << "\n";
+	return 0;
+}

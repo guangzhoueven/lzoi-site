@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+using pii = pair<i64, i64>;
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n;
+	cin >> n;
+	vector<pii> a(n);                   			// a[a_i, b_i]
+	for (i64 i = 0; i < n; i++) 			      	// 0-based
+		cin >> a[i].first >> a[i].second; 			// 每个游客的暴躁值、买票时间
+
+	// 按贪心策略排序：比较两种排列方式的总不愉快值
+	sort(a.begin(), a.end(), [&](const auto & x, const auto & y) {
+//		i64 s1 = x.first * x.second + y.first * (x.second + y.second);
+//		i64 s2 = y.first * y.second + x.first * (y.second + x.second);
+//-------------------👇化简后👇----------------------------------------
+		i64 s1 = y.first * x.second;	// y的暴躁值 * x的买票时间
+		i64 s2 = x.first * y.second;	// x的暴躁在 * y的买票时间
+		return s1 < s2;
+	});
+
+	i64 ans = 0, time = 0;				// 初始化
+	for (auto t : a) {
+		time += t.second;               // 累计买票时间
+		ans += t.first * time;       	// 计算当前游客的不愉快值
+	}
+	cout << ans << "\n";
+	return 0;
+}

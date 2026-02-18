@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n;
+	cin >> n;
+	vector<i64> a(n);
+	for (auto& x : a) cin >> x;
+
+	i64 buy1 = LLONG_MIN, buy2 = LLONG_MIN, sell1 = 0, sell2 = 0;
+	for (i64 i = 0; i < n; i++) {
+		buy1 = max(buy1, -a[i]);
+		sell1 = max(sell1, buy1 + a[i]);
+
+		buy2 = max(buy2, sell1 - a[i]);
+		sell2 = max(sell2, buy2 + a[i]);
+	}
+	cout << sell2 << "\n";
+	return 0;
+}

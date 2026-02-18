@@ -1,0 +1,100 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+const int inf = numeric_limits<int>::max() / 2;
+
+struct SegmentTree {
+	int n;
+	vector<int> a;
+	
+	SegmentTree(int n_) : n(n_) {
+		a.assign(4 << __lg(n), inf);
+	}
+	
+	// 单点更新
+	void update(int k, int s, int t, int p, int val) {
+		if (s == t) {
+			a[k] = min(a[k], val);
+			return ;
+		}
+		int mid = (s + t) >> 1;
+		if (p <= mid) update(k << 1, s, mid, p, val);
+		else update(k << 1 | 1, mid + 1, t, p, val);
+		a[k] = min(a[k << 1], a[k << 1 | 1]);
+	}
+	
+	void update(int p, int val) {
+		update(1, 1, n, p, val);
+	}
+	
+	int query(int k, int s, int t, int l, int r) {
+		if (t < l || s > r) return inf;
+		if (s >= l && t <= r) return a[k];
+		int mid = (s + t) >> 1;
+		return min(query(k << 1, s, mid, l, r), query(k << 1 | 1, mid + 1, t, l, r));
+	}
+	
+	int query(int l, int r) {
+		return query(1, 1, n, l, r);
+	}
+};
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
+	
+//	freopen("rating5.in", "r", stdin);
+
+	int n, k;
+	cin >> n >> k;
+	vector<int> a(n + 1);
+	for (int i = 1; i <= n; i++) cin >> a[i];
+	
+	// 计算出每个人的 a[i] - k * i
+	vector<int> c(n);
+	for (int i = 1; i <= n; i++) c[i - 1] = a[i] - k * i;
+	
+	// 离散化
+	sort(c.begin(), c.end());
+	c.erase(unique(c.begin(), c.end()), c.end());
+	int e = c.size();
+	
+	vector<int> b(n + 1);
+	for (int i = 1; i <= n; i++) {
+		// 把 a[i] - k * i 离散化到 [1, e]
+		b[i] = lower_bound(c.begin(), c.end(), a[i] - k * i) - c.begin() + 1;
+	}
+	
+	// R[i]: 表示 i 不修改的情况下, [i, n] 最少修改几个
+	vector<int> R(n + 2, 0);
+	SegmentTree seg(e);
+	for (int i = n; i >= 1; i--) {
+//		R[i] = n - i;
+//		for (int j = i + 1; j <= n; j++) if (b[j] <= b[i]) {
+//			R[i] = min(R[i], j - i - 1 + R[j]);
+//		}
+		
+		R[i] = min(n - i, seg.query(1, b[i]) - i - 1);
+		seg.update(b[i], i + R[i]);
+	}
+//	for (int i = 1; i <= n; i++) cout << R[i] << " \n"[i == n];
+	
+	// L[i]: 表示 i 不修改的情况下, [1, n] 最少修改几个
+	vector<int> L(n + 2, 0);
+	seg = SegmentTree(e);
+	for (int i = 1; i <= n; i++) {
+//		L[i] = i - 1;
+//		for (int j = i - 1; j >= 1; j--) if (b[j] >= b[i]) {
+//			L[i] = min(L[i], i - j - 1 + L[j]);
+//		}
+		
+		L[i] = min(i - 1, seg.query(b[i], e) + i - 1);
+		seg.update(b[i], L[i] - i);
+	}
+//	for (int i = 1; i <= n; i++) cout << L[i] << " \n"[i == n];
+	
+	int ans = n - 1;
+	for (int i = 1; i <= n; i++) ans = min(ans, L[i] + R[i]);
+	cout << ans << '\n';
+	return 0;
+}

@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    
+    int n, m, L;
+    cin >> n >> m >> L;
+    
+    vector<int> a(n), b(m);
+    for (int i = 0; i < n; ++i) cin >> a[i];
+    for (int i = 0; i < m; ++i) cin >> b[i];
+    
+    // 存储禁止的组合
+    unordered_map<int, unordered_set<int>> forbidden;
+    for (int i = 0; i < L; ++i) {
+        int x, y;
+        cin >> x >> y;
+        forbidden[x-1].insert(y-1); // 转换为0-based索引
+    }
+    
+    // 获取a和b数组中最大的几个元素及其索引
+    vector<pair<int, int>> a_sorted, b_sorted;
+    for (int i = 0; i < n; ++i) a_sorted.emplace_back(a[i], i);
+    for (int i = 0; i < m; ++i) b_sorted.emplace_back(b[i], i);
+    
+    // 降序排序
+    sort(a_sorted.rbegin(), a_sorted.rend());
+    sort(b_sorted.rbegin(), b_sorted.rend());
+    
+    int max_sum = 0;
+    // 检查前100个最大的a和b的组合
+    const int CHECK_NUM = 100;
+    for (int i = 0; i < min(CHECK_NUM, n); ++i) {
+        for (int j = 0; j < min(CHECK_NUM, m); ++j) {
+            int a_idx = a_sorted[i].second;
+            int b_idx = b_sorted[j].second;
+            // 如果这个组合不被禁止
+            if (forbidden.count(a_idx) == 0 || forbidden[a_idx].count(b_idx) == 0) {
+                max_sum = max(max_sum, a_sorted[i].first + b_sorted[j].first);
+            }
+        }
+    }
+    
+    cout << max_sum << endl;
+    return 0;
+}

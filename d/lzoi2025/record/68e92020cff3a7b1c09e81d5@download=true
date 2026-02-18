@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+const int N = 1e6;
+vector<i64> spf(N + 1);  					// 存储最小质因子
+
+void ok() {                        			// 预处理最小质因子
+	iota(spf.begin(), spf.end(), 0);  		// iota用于生成连续数值序列，初始化spf[i] = i
+	for (i64 i = 2; i <= N; i++) {
+		if (spf[i] == i)        			// i是质数
+			for (i64 j = i; j <= N; j += i) 
+				if (spf[j] == j) spf[j] = i;// 记录最小质因子
+	}
+}
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	ok();
+	i64 T, n;
+	cin >> T;
+	while (T-- && cin >> n) {
+		i64 cnt = 1, sum = 1, phi = n;
+		
+		for (i64 tmp = n; tmp > 1; ) {
+			i64 p = spf[tmp], k = 0;
+			while (tmp % p == 0) k++, tmp /= p;
+			
+			cnt *= k + 1;
+			i64 t = 0, pow_x = 1;
+			for (i64 i = 0; i <= k; i++) t += pow_x, pow_x *= p;
+			sum *= t;
+			phi -= phi / p;
+		}
+		cout << cnt << " " << sum << " " << phi << "\n";
+	}	
+	return 0;
+}

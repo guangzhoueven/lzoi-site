@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 T;
+	cin >> T;
+	while (T--) {
+		i64 n;
+		cin >> n;
+		vector<i64> a(n + 1);
+		for (i64 i = 1; i <= n; i++) cin >> a[i];
+		map<pair<i64, i64>, i64> q;
+		q[{0, 0}] = 0;
+
+		i64 y = 0, s = 0, ans = 0;
+		for (i64 i = 1; i <= n; i++) {
+			y = y ^ a[i];
+			s = s + (a[i] % 2 ? 1 : -1);
+			if (q.count({y, s})) ans = max(ans, i - q[{y, s}]);
+			else q[{y, s}] = i;
+		}
+		cout << ans << "\n";
+	}
+	return 0;
+}

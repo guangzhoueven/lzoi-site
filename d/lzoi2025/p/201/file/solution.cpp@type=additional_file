@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int solve(vector<int>& a) {
+    int n = a.size(), ans = 0;
+    unordered_map<int, int> q;
+
+	// q[i] = j: 前缀奇偶数之差为 y 的最小下标为 j
+    q[0] = 0;
+    for (int i = 1, s = 0; i <= n; i++) {
+        s += (a[i - 1] ? 1 : -1);
+
+		// 两个前缀和相减, 就可以得到一段连续子数组
+        if (q.count(s)) ans = max(ans, i - q[s]);
+        else q[s] = i;
+    }
+    return ans;
+}
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
+
+	int T, n;
+	cin >> T;
+	while (T--) {
+		cin >> n;
+		vector<int> a(n);
+		for (int i = 0; i < n; i++) cin >> a[i];
+		cout << solve(a) << '\n';
+	}
+	return 0;
+}

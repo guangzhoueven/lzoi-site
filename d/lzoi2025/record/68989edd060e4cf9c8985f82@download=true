@@ -1,0 +1,65 @@
+#include <bits/stdc++.h>
+using namespace std;
+template <typename T>	// C++特有的模版
+
+struct Graph {
+	int n;
+	vector<vector<pair<int, T>>> g;  	// 存储图,pair<目标节点v，边权值w>
+	vector<int> d, cnt;					// d[i]为起点到节点i的距离; cnt为每个节点遍历次数；
+	vector<bool> visited;
+
+	Graph(int n_) : n(n_) {				// 初始化 1-based
+		g.resize(n + 1);				// 调整vector长度存储图
+		d.resize(n + 1, INT_MAX); 		// 调整vector长度存储路径，初始化值为无穷大
+		cnt.resize(n + 1, 0);			// 初始化节点遍历次数为0
+		visited.resize(n + 1, false);	// 所有节点访问状态初始化
+	}
+
+	void add_edge(int u, int v, T w) {	// 构建 u -> v 的边（边权w）
+		g[u].push_back({v, w});
+	}
+
+	bool spfa_heap(int s) {	       		// 从起点s开始查找环路，以及环路上边权值之和
+//		priority_queue<pair<int, T>> q;
+//		q.push({s, -(d[s] = 0)});		// 初始化起点s，距离为0（使用负数实现最小堆）
+
+		priority_queue<pair<int, T>, vector<pair<int, T>>, greater<pair<int, T >>> q;  // 最小堆
+		q.push({s, (d[s] = 0)});		// 初始化起点s，距离为0（使用最小堆）
+		visited[s] = true;
+
+		while (!q.empty()) {
+			auto [u, w] = q.top();
+			q.pop();
+			visited[u] = false;
+
+			for (auto [v, w] : g[u]) {	// 遍历u的所有邻接节点
+				if (d[u] + w < d[v]) {  // 此场景适合最短路径的环
+					d[v] = d[u] + w;
+					if (!visited[v]) {
+						q.push({v, d[v]});
+						visited[v] = true;
+						if (++cnt[v] > n) return true;  // 存在负环
+					}
+				}
+			}
+		}
+		return false;  // 不存在环路
+	}
+};
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int T, n, m,  u, v, w,  s = 1;
+	cin >> T;
+	while (T--) {
+		cin >> n >> m;
+		Graph<int> G(n);						// 创建图
+		while (m--) {
+			cin >> u >> v >> w;
+			G.add_edge(u, v, w); 				// 有向图只添加 1 条边
+			if (w >= 0) G.add_edge(v, u, w);	// 无向图要添加 2 条边
+		}
+		cout << (G.spfa_heap(s) ? "YES" : "NO") << "\n";  // 是否存在从顶点s=1出发能到达的负环(环形路径上存在边权之和为负数)
+	}
+	return 0;
+}

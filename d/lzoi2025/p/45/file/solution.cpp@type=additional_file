@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using i64 = long long;
+
+int main() {
+	int n, c, x;
+	map<int, int> q;
+	cin >> n >> c;
+	for (int i = 0; i < n; i++) {
+		cin >> x;
+		q[x]++;
+	}
+	
+	i64 ans = 0;
+	for (auto [b, cnt] : q) {
+		int a = b + c;
+		if (q.count(a)) ans += (i64) cnt * q[a];
+	}
+	cout << ans << '\n';
+	return 0;
+}

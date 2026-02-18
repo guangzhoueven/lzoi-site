@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, m, ans = 0;
+	cin >> n >> m;
+	vector<vector<i64>> d(n, vector<i64>(m)), dp(n, vector<i64>(m));
+	for (auto& x : d) for (auto& y : x) cin >> y;
+
+	function<i64(i64, i64)> solve = [&](i64 x, i64 y) {
+		if (dp[x][y] != 0) return dp[x][y];
+		dp[x][y] = 1;
+		vector<i64> dx = {0,  0, -1, 1};
+		vector<i64> dy = {1, -1,  0, 0};
+		for (i64 i = 0; i < 4; i++) {
+			i64 u = x + dx[i], v = y + dy[i];
+			if (u < 0 || u >= n || v < 0 || v >= m) continue;
+			if (d[u][v] < d[x][y]) dp[x][y] = max(dp[x][y], solve(u, v) + 1);
+		}
+		return dp[x][y];
+	};
+	for (i64 i = 0; i < n; i++) {
+		for (i64 j = 0; j < n; j++) {
+			ans = max(ans, solve(i, j));
+		}
+	}
+	cout << ans << "\n";
+	return 0;
+}

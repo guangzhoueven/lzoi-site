@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, k;
+	cin >> n >> k;
+	vector<i64> a(n);
+	for (auto& x : a) cin >> x;
+
+	// 方法1：dfs递归（lambda函数）+ 剪枝优化
+	function<bool(i64, i64)> dfs = [&](i64 i, i64 sum) {
+		if (sum == k) return true;
+		if (i == n || sum > k) return false;  				// 提前剪枝
+		return dfs(i + 1, sum) || dfs(i + 1, sum + a[i]);   // 不选当前数 或 选当前数
+	};
+
+	// 方法2：二进制枚举法
+	auto ok = [&]() {
+		for (i64 st = 0; st < (1 << n); st++) {							// 从0到2^n-1枚举
+			i64 sum = 0;
+			for (i64 i = 0; i < n; i++) if ((st >> i) & 1) sum += a[i]; // 检查第i位是否为1（选择第i个元素）
+			if (sum == k) return true;
+		}
+		return false;
+	};
+
+//	cout << (dfs(0, 0) ? "Yes" : "No") << '\n';   	// 方法1输出
+	cout << (ok() ? "Yes" : "No") << '\n';			// 方法2输出
+	return 0;
+}

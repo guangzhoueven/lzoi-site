@@ -1,0 +1,111 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Graph {
+	int n, k;
+	vector<vector<pair<int, int>>> g;   // 邻接表
+	vector<int> dist;                   // 最短距离
+	vector<int> cnt;              		// 遍历次数统计
+
+	Graph(int n_, int k_) : n(n_), k(k_) {
+		g.resize(n + 2);               // 1-based + 超级源点0
+		dist.assign(n + 2, INT_MAX);   // 初始化距离
+		cnt.assign(n + 2, 0);    	   // 初始化遍历次数
+	}
+
+	void add_edge(int u, int v, int w) {
+		g[v].emplace_back(u, w);       // x_u - x_v ≤ w → 边v→u，权值w
+	}
+
+	bool BellmanFord() {			   // 添加超级源点0到所有节点的边，权值为0
+		for (int i = 1; i <= n; i++) {
+			g[0].emplace_back(i, 0);
+		}
+
+		using Node = pair<int, int>;   // first:距离, second:节点
+		priority_queue<Node, vector<Node>, greater<Node >> q;
+
+		dist[0] = 0;                  // 超级源点到自己的距离为0
+		q.push({0, 0});
+
+		while (!q.empty()) {
+			auto [d, u] = q.top();
+			q.pop();
+
+			if (d > dist[u]) continue; // 已经处理过更优的解
+
+			for (auto& [v, w] : g[u]) {
+				if (dist[v] > dist[u] + w) {
+					dist[v] = dist[u] + w;
+					cnt[v] = cnt[u] + 1;
+					
+					if (cnt[v] > n) {// 检测负权环（松弛次数超过n次）
+						return false;
+					}
+
+					q.push({dist[v], v});
+				}
+			}
+		}
+		return true;  // 无负权环
+	}
+
+	void min_ans() {                   // 去掉超级源点的距离值
+		int min_val = *min_element(dist.begin() + 1, dist.end());
+		for (int i = 1; i <= n; i++) {
+			if (dist[i] != INT_MAX) {
+				dist[i] -= min_val;
+			}
+		}
+	}
+};
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n, k;
+	cin >> n >> k;
+
+	Graph g(n, k);
+	for (int i = 0; i < k; i++) {
+		int u, v, w;
+		cin >> u >> v >> w;
+		g.add_edge(u, v, w);
+	}
+
+	if (!g.BellmanFord()) {
+		cout << "NO\n";
+	} else {
+		g.min_ans();
+		for (int i = 1; i <= n; i++) {
+			cout << g.dist[i] << " \n"[i == n];
+		}
+	}
+	return 0;
+}
+/*
+input：
+3 3
+1 2 3
+2 3 -2
+1 3 1
+*/
+
+/*
+output：
+2 0 2
+3 1 3
+4 2 4
+5 3 5
+...
+*/
+/*【无解，输出“NO”】
+input：
+3 3
+1 2 1
+2 3 1
+3 1 -3
+*/
+/*
+output：
+NO
+*/

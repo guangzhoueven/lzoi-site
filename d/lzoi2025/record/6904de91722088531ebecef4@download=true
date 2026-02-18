@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	i64 n, cnt = 0;
+	cin >> n;
+	vector<i64> a(n), sum(1 << n);
+	for (i64 i = 0; i < n; i++) cin >> a[i];
+	
+	for (i64 k = 1; k < (1 << n); k++) {
+		i64 t = k & -k;		// 获取最低位的1
+		sum[k] = sum[k ^ t] + a[__builtin_ctzll(t)]; // __builtin_ctzll计算整数的二进制中末尾0的个数
+	}
+	
+	for (i64 k = 1; k < (1 << n); k++) {
+		if (__builtin_popcountll(k) < 2 || sum[k] % 2) continue;
+		for (i64 j = k & (k - 1); j; j = (j - 1) & k) {
+			if (sum[j] * 2 == sum[k]) {
+				cnt++;
+				break;   // 剪枝
+			}
+		}
+	}	
+	cout << cnt << "\n";
+	return 0;
+}

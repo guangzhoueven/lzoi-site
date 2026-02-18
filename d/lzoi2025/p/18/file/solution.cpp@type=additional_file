@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int T, l, r, a;
+	cin >> T;
+	while (T--) {
+        cin >> l >> r >> a;
+        int x = l / a, y = r / a;
+        if (x == y) cout << y + r % a << '\n';
+        else  {
+            cout << max(y - 1 + a - 1, y + r % a) << '\n';
+        } 
+    }
+    return 0;
+}

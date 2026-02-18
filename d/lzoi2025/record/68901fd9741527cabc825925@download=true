@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	ios::sync_with_stdio(false), cin.tie(0), cout.tie(0);
+	int n;
+	cin>>n;
+	queue<int> a;
+	while(n--) {
+		int op;
+		cin>>op;
+		switch(op) {
+			case 1: {
+				int x;
+				cin>>x;
+				a.push(x); 
+				break;
+			}
+			case 2: {
+				if(a.empty()) cout<<"ERR_CANNOT_POP\n";
+				else a.pop();
+				break;
+			}
+			case 3: {
+				if(a.empty()) cout<<"ERR_CANNOT_QUERY\n";
+				else cout<<a.front()<<"\n";
+				break;
+			}
+			case 4: {
+				cout<<a.size()<<"\n";
+				break;
+			}
+		}
+	}
+	return 0;
+} 

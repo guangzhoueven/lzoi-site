@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, q;
+	cin >> n >> q;
+	vector<i64> a(n);
+	vector<vector<i64>> op(q, vector<i64>(2));
+	for (auto& x : a) cin >> x;
+	for (auto& x : op) for (auto& y : x) cin >> y;
+
+	vector<i64> p(n + 1), prefix(n + 1);	// prefix[]是p[]的前缀和数组
+	for (i64 i = 1, j = 1; i <= n; i++, j = max(i, j)) {
+		while (j + 1 <= n && a[j] >= a[j - 1]) j++;
+		p[i] = j;
+		prefix[i] = prefix[i - 1] + p[i];
+	}
+
+	vector<i64> ans(q);
+	for (i64 i = 0; i < q; i++) {
+		i64 L = op[i][0] + 1, R = op[i][1] + 1;
+
+		i64 x = lower_bound(p.begin() + L, p.begin() + R + 1, R) - p.begin();
+		ans[i] = prefix[x - 1] - prefix[L - 1];
+
+		// 等差数列
+		i64 d = R - x + 1;
+		ans[i] += (1 + d) * d / 2;
+	}
+	for (i64 i = 0; i < q; i++) cout << ans[i] << " \n"[i == q - 1];
+	return 0;
+}

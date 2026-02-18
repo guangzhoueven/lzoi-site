@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0);	cout.tie(0);
+
+	int n;  cin >> n;
+	int cnt = 0, k = 0; //cnt天拿完，编号n的苹果在第k天拿走
+	while (n > 0) {
+		cnt++;
+        // cnt == 0 表示还没被拿走，n % 3==1表示3个为一段划分，拿走的是每段的第1个
+		if (k == 0 && n % 3 == 1) k = cnt;
+		n =  2 * n / 3; //n分成n/3段（每段3个），每次拿走每段的第1个，剩下2个: n = n-n/3 = 2*n/3
+	}
+	cout << cnt << " " << k << "\n";
+	return 0;
+}

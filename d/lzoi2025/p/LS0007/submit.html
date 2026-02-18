@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html data-page="problem_submit" data-layout="basic" class="layout--basic page--problem_submit theme--dark nojs" data-mantine-color-scheme="dark" lang="zh" data-app="Hydro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.gzlzoi.cn/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../../../favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../../../android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="../../../../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../../../favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://www.gzlzoi.cn/p/LS0007/submit">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="乐知课堂" />
+  <meta property="og:url" content="https://www.gzlzoi.cn/p/LS0007/submit" />
+  <meta property="og:image" content="/favicon-96x96.png" />
+      <title>【课件】二分查找与二分枚举 - 递交代码 - 乐知课堂</title>
+  <style>
+    body {
+      --font-family: "Microsoft Yahei", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Consolas", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="../../../../theme-4.58.0-beta.17.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      window.UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","hydroacFeatures":[],"blspHost":"wss://ws.hydrooj.com","constantVersion":"1c07a499","domainId":"lzoi2025","domain":{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"},"extraTitleContent":"\u3010\u8BFE\u4EF6\u3011\u4E8C\u5206\u67E5\u627E\u4E0E\u4E8C\u5206\u679A\u4E3E","SWConfig":{"preload":"","hosts":["http://www.gzlzoi.cn","https://www.gzlzoi.cn","https://www.gzlzoi.cn/","/"],"assets":[],"domains":[]}}';
+      window.UserContext = '{"_id":39,"mail":"202610319@gzlzoi.cn","uname":"202610319","hashType":"hydro","priv":4,"regat":"2025-07-01T02:30:33.477Z","loginat":"2026-02-06T00:24:21.126Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921","role":"\u5B66\u751F","scope":"BigInt::-1","tfa":false,"authn":false,"group":["20250702\u4E0A\u5348","\u4E34\u65F6\u5C0F\u7EC4","20250804\u4E0A\u5348","39"],"domains":[{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"}],"viewLang":"zh","timeZone":"Asia/Shanghai","codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","avatar":"gravatar:202610319@gzlzoi.cn","qq":"","gender":"2","bio":"<blockquote class=\\"note\\">\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: yellow;\\">\u4E66\u5C71\u6709\u8DEF\u52E4\u4E3A\u5F84\uFF0C\u5B66\u6D77\u65E0\u6DAF\u82E6\u4F5C\u821F\u3002</p></h3>\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: #12DA72;\\">Diligence is the path to the mountain of knowledge, hard-working is the boat to the endless sea of learning.</p></h3>\\r\\n</blockquote>","school":"\u5E7F\u5DDE\u5E02\u5929\u6CB3\u533A\u9A8F\u666F\u5C0F\u5B66","studentId":"","backgroundImage":"/d/lzoi2025/file/39/%E4%B9%90%E7%9F%A5%E8%AF%BE%E5%A0%82%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.png","unreadMsg":0,"pinnedDomains":["lzoi2025"],"rounded":true,"skipAnimate":false,"showTimeAgo":true,"fontFamily":"Microsoft Yahei","codeFontFamily":"Consolas","theme":"dark","preferredEditorType":"sv","showInvisibleChar":false,"formatCode":true,"displayName":"\u9EC4\u98DE\u535A","rpInfo":{"problem":237.2780396214451,"contest":8.25},"nAccept":191,"nSubmit":194,"rp":245.5280396214451,"rank":2,"level":8,"join":true,"avatarUrl":"//cn.gravatar.com/avatar/2dbb0a041212ea8df395e4d4418e92fa?d=mm&s=128"}';
+    </script>
+      </head>
+<body>
+      <script type="text/javascript" src="../../../../resource/1c07a499/entry.js"></script>
+    <script type="text/javascript" src="../../../../resource/4.58.0-beta.17/lang-zh.js"></script>
+    <script type="text/javascript" src="../../../../hydro-4.58.0-beta.17.js"></script>
+    <nav class="nav slideout-menu" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://www.gzlzoi.cn/"><img class="nav__logo" src="../../../../components/navigation/nav-logo-small_dark.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="../../index.html" class="nav__item">
+    首页
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../set_theme/dark.html" class="nav__item nav--active">
+    题库
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../training.html" class="nav__item">
+    训练
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../contest.html" class="nav__item">
+    比赛
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../homework.html" class="nav__item">
+    作业
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../discuss.html" class="nav__item">
+    讨论
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../../record@uidOrName=39.html" class="nav__item">
+    评测记录
+  </a>
+</li>
+      </ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+              <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-domain" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <span class="nav__item"><span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span> lzoi2025 <span class="icon icon-expand_more nojs--hide"></span></span>
+        <ol class="dropdown-target menu" id="menu-nav-domain"><li class="menu__item">
+              <a href="../../index.html" class="menu__link">
+                <span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span>
+                lzoi2025              </a>
+            </li><li class="menu__seperator"></li><li class="menu__item">
+            <a href="../../home/domain.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 管理
+            </a>
+          </li>
+        </ol>
+      </li>
+          <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <a href="../../user/39.html" class="nav__item">202610319 <span class="icon icon-expand_more nojs--hide"></span></a>
+        <ol class="dropdown-target menu" id="menu-nav-user">
+          <li class="menu__item">
+            <a href="../../user/39.html" class="menu__link">
+              <span class="icon icon-account--circle"></span> 我的资料
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../../home/messages.html" class="menu__link">
+              <span class="icon icon-comment--multiple"></span> 站内消息
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../../home/settings/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> @ lzoi2025
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../../home/settings/account.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 账户设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../../home/settings/preference.html" class="menu__link">
+              <span class="icon icon-sliders"></span> 偏好设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../../home/security.html" class="menu__link">
+              <span class="icon icon-security"></span> 安全设置
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../../home/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> 我的域
+            </a>
+          </li>
+                              <li class="menu__seperator"></li>
+                    <li class="menu__item">
+            <a href="../../logout.html" class="menu__link" name="nav_logout">
+              <span class="icon icon-logout"></span> 登出
+            </a>
+          </li>
+        </ol>
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://www.gzlzoi.cn/" target="_self">
+        <img src="../../../../components/navigation/nav-logo-small_dark.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+        
+<div class="row">
+  <div class="medium-9 columns">
+    <div class="section">
+      <div class="section__header">
+        <h1 class="section__title">递交以评测</h1>
+      </div>
+      <div class="section__body typo" name="submit_section">
+        <form method="post" enctype="multipart/form-data">
+          <div class="hasjs--hide">
+            <div class="row">
+  <div
+    class="medium-5 columns form__item end"
+      >
+        <label>
+      代码语言
+            
+<div
+  name="form_item_lang"
+    class="select-container"
+
+>
+  <select
+    name="lang"
+      class="select"
+                  
+  ><option value="cc">
+      C++
+    </option><option value="cc.cc14o2">
+      C++14(O2)
+    </option><option value="cc.cc17o2" selected>
+      C++17(O2)
+    </option><option value="py">
+      Python
+    </option><option value="py.py3">
+      Python 3
+    </option></select>
+</div>
+
+      </label>
+      </div>
+</div>
+
+
+          </div>
+          <div class="row nojs--hide" id="codelang-selector"></div>
+          <div class="row">
+  <div
+    class="medium-12 columns form__item end"
+      >
+        <label>
+      代码
+            
+<div
+  name="form_item_code"
+    class="textarea-container monospace"
+
+>
+  <textarea
+    name="code"
+    placeholder=""
+        spellcheck="false"      class="textbox monospace"
+      autofocus data-autofocus            
+  ></textarea>
+</div>
+
+      </label>
+      </div>
+</div>
+
+
+          <div class="row">
+            <div class="medium-12 columns">
+              <p>或者上传一个文件： <input type="file" name="file"></p>
+              <br />
+            </div>
+          </div>
+          <div class="row"><div class="columns">
+            <input type="submit" class="rounded primary button" value="递交">
+          </div></div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="medium-3 columns">
+        <div class="section side section--problem-sidebar">
+  <div class="section__header">
+    <h1 class="section__title">【课件】二分查找与二分枚举</h1>
+  </div>
+  <div>
+    <ol class="menu">
+              <li class="menu__item"><a class="menu__link" href="../LS0007.html">
+        <span class="icon icon-flag"></span> 查看题目
+      </a></li>
+              <li class="menu__item scratchpad--hide"><a class="menu__link active" href="submit.html">
+        <span class="icon icon-send"></span> 递交
+      </a></li>
+                      <li class="menu__seperator"></li>
+              <li class="menu__item"><a class="menu__link" href="../../discuss/problem/110.html">
+        <span class="icon icon-comment--text"></span> 讨论 (0)      </a></li>
+              <li class="menu__item"><a class="menu__link" href="solution.html">
+        <span class="icon icon-comment--text"></span> 题解 (0)      </a></li>
+          <li class="menu__item"><a class="menu__link" href="files.html">
+        <span class="icon icon-file"></span> 文件
+      </a></li>
+      <li class="menu__item"><a class="menu__link" href="stat.html">
+        <span class="icon icon-statistics"></span> 统计
+      </a></li>
+            </ol>
+  </div>
+</div>
+<div class="section side">
+  <div class="section__header">
+    <h1 class="section__title">信息</h1>
+  </div>
+  <div class="section__body typo" data-fragment-id="problem-sidebar-information">
+  <dl class="large horizontal">
+    <dt>ID</dt>
+    <dd>110</dd>
+    <dt>时间</dt>
+    <dd>1000ms</dd>
+    <dt>内存</dt>
+    <dd>256MiB</dd>
+    <dt>难度</dt>
+    <dd>(无)</dd>
+    <dt>标签</dt>
+    <dd>
+      <ul class="problem__tags">        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E7%92%87%E5%8F%A5%E6%AC%A2">课件</a></li>        <li class="problem__tag"><a class="problem__tag-link" href="https://www.gzlzoi.cn/d/lzoi2025/p?q=category%3A%E6%B5%9C%E5%B1%BD%E5%9E%8E">二分</a></li></ul>
+    </dd>
+    <dt>递交数</dt>
+    <dd><a href="https://www.gzlzoi.cn/d/lzoi2025/record?pid=110">0</a></dd>
+    <dt>已通过</dt>
+    <dd>0</dd>
+    <dt>上传者</dt>
+    <dd><span class="user-profile-link">
+      <img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20">
+    <a class="user-profile-name uname--lv3" href="../../user/2.html">
+          liangsheng
+      </a>
+  </span>
+</dd>
+  </dl>
+</div></div>
+  </div>
+</div>
+
+  </div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+      <div class="row footer__links">
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          状态
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://www.gzlzoi.cn/d/lzoi2025/record">评测队列</a></li>
+          <li class="footer__category__item"><a href="../../status.html">服务状态</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          开发
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">开源</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          支持
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../../wiki/help.html">帮助</a></li>
+          <li class="footer__category__item"><a href="../../wiki/about.html#contact">联系我们</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable end">
+        <h1>
+          关于
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../../wiki/about.html">关于</a></li>
+          <li class="footer__category__item"><a href="../../wiki/about.html#privacy">隐私</a></li>
+          <li class="footer__category__item"><a href="../../wiki/about.html#tos">服务条款</a></li>
+          <li class="footer__category__item"><a href="../../wiki/about.html#contact">版权申诉</a></li>
+        </ul></div>
+      </div>
+    </div>
+      <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+                    <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-lang"><li class="menu__item"><a class="menu__link" href="../../language/en.html">English</a></li><li class="menu__item"><a class="menu__link" href="../../language/ko.html">한국어</a></li><li class="menu__item"><a class="menu__link" href="../../language/zh.html">简体中文</a></li><li class="menu__item"><a class="menu__link" href="../../language/zh_TW.html">正體中文</a></li></ol>
+          </li>
+          <li class="footer__extra-link-item">
+                          <a href="https://www.gzlzoi.cn/legacy?legacy=true">兼容模式</a>
+                      </li>
+          <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> 主题 <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-theme">
+              <li class="menu__item"><a class="menu__link" href="../../set_theme/light.html">亮色</a></li>
+              <li class="menu__item"><a class="menu__link" href="../../set_theme/dark.html">暗色</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><a href="https://beian.miit.gov.cn/">京ICP备2023010486号-3</a></li><li class="footer__extra-link-item">Worker 0, 7ms</li>
+          <!-- Prepare 2ms -->
+          <!-- Method 0ms -->
+          
+          
+          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v5.0.0-beta.16</a> Community</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      window.UiContextNew = '{"pdoc":{"_id":"68b7eb1b3ef0b4af1ee9dc34","content":"{\\"zh\\":\\"- [1\u3001\u4E8C\u5206\u67E5\u627E](#1\u3001\u4E8C\u5206\u67E5\u627E)\\\\n- [1-1\u3001\u4E00\u4E2A\u6570\u5728\u6709\u5E8F\u6570\u7EC4\u4E2D\u7684\u4F4D\u7F6E](#1-1\u3001\u4E00\u4E2A\u6570\u5728\u6709\u5E8F\u6570\u7EC4\u4E2D\u7684\u4F4D\u7F6E)\\\\n- [1-2\u3001STL \u4E2D\u7684 lower\\\\\\\\_bound \u548C upper\\\\\\\\_bound](#1-2\u3001stl-\u4E2D\u7684-lower_bound-\u548C-upper_bound)\\\\n- [2\u3001\u4E8C\u5206\u679A\u4E3E](#2\u3001\u4E8C\u5206\u679A\u4E3E)\\\\n  - [2-1\u3001\u5047\u5B9A\u4E00\u4E2A\u89E3\u5E76\u5224\u5B9A\u662F\u5426\u53EF\u884C](#2-1\u3001\u5047\u5B9A\u4E00\u4E2A\u89E3\u5E76\u5224\u5B9A\u662F\u5426\u53EF\u884C)\\\\n  - [2-2\u3001\u6700\u5927\u503C\u6700\u5C0F\u95EE\u9898](#2-2\u3001\u6700\u5927\u503C\u6700\u5C0F\u95EE\u9898)\\\\n  - [2-3\u3001\u6700\u5C0F\u503C\u6700\u5927\u95EE\u9898](#2-3\u3001\u6700\u5C0F\u503C\u6700\u5927\u95EE\u9898)\\\\n  - [2-4\u3001\u6D6E\u70B9\u6570\u4E8C\u5206](#2-4\u3001\u6D6E\u70B9\u6570\u4E8C\u5206)\\\\n\\\\n# 1\u3001\u4E8C\u5206\u67E5\u627E\\\\n\\\\n- [\u4E8C\u5206\u679A\u4E3E\u548C\u4E8C\u8FDB\u5236\u679A\u4E3E.pptx](file://\u4E8C\u5206\u679A\u4E3E\u548C\u4E8C\u8FDB\u5236\u679A\u4E3E.pptx)\\\\n- [\u4E8C\u5206\u679A\u4E3E\u548C\u4E8C\u8FDB\u5236\u679A\u4E3E.pdf](file://\u4E8C\u5206\u679A\u4E3E\u548C\u4E8C\u8FDB\u5236\u679A\u4E3E.pdf)\\\\n\\\\n- **<font color=\\\\\\"#FF0000\\\\\\">\u4E8C\u5206\u67E5\u627E\u662F\u901A\u8FC7\u4E0D\u65AD\u7F29\u5C0F\u89E3\u53EF\u80FD\u5B58\u5728\u7684\u8303\u56F4\uFF08\u5F80\u5F80\u662F\u6BCF\u6B21\u7F29\u5C0F\u4E00\u534A\uFF09\uFF0C\u4ECE\u800C\u6C42\u5F97\u95EE\u9898\u6700\u4F18\u89E3\u7684\u65B9\u6CD5\uFF0C\u7ECF\u5E38\u53EF\u4EE5\u770B\u5230\u4E8C\u5206+\u8D2A\u5FC3\uFF0C\u4E8C\u5206+\u52A8\u89C4\u7684\u9898\u76EE\u3002</font>**\\\\n\\\\n# 1-1\u3001\u4E00\u4E2A\u6570\u5728\u6709\u5E8F\u6570\u7EC4\u4E2D\u7684\u4F4D\u7F6E\\\\n\\\\n<table><tr><td bgcolor=\\\\\\"#D2D2D2\\\\\\">\\\\n\u9898\u610F\uFF1A\u7ED9\u5B9A\u4E00\u4E2A\u957F\u5EA6\u4E3A $n$ \u7684\u5355\u8C03\u4E0D\u4E0B\u964D\u7684\u6570\u7EC4 $a = [a_0, a_1, ..., a_n]$ \u548C\u4E00\u4E2A\u6570 $k$\uFF0C\u6C42\u6EE1\u8DB3 $a_i \\\\\\\\ge k$ \u7684\u6700\u5C0F $i$\uFF0C\u4E0D\u5B58\u5728\u7684\u60C5\u51B5\u4E0B\u8F93\u51FA $n$\\\\n</td></tr></table>\\\\n\\\\n* \u6BD4\u5982: $a = [2, 3, 3, 5, 6], k = 3$\\\\n* \u6700\u5C0F\u7684 $i = 1$, \u56E0\u4E3A $a_1 = 3 \\\\\\\\ge k$\uFF0C\u800C $a_0 = 2 \\\\\\\\lt k$\\\\n\\\\n\u5F53\u7136\u5982\u679C\u6734\u7D20\u7684\u6309\u5E8F\u67E5\u627E\uFF0C\u4E5F\u53EF\u4EE5\u6C42\u5F97\u7B54\u6848\u3002\u4F46\u5982\u679C **<font color=\\\\\\"#FF0000\\\\\\">\u5229\u7528\u6570\u7EC4\u6709\u5E8F\u8FD9\u4E00\u6761\u4EF6</font>**\uFF0C\u5219\u53EF\u4EE5\u5F97\u5230\u66F4\u9AD8\u6548\u7684\u7B97\u6CD5\u3002\\\\n\\\\n* \u9996\u5148\u770B $a[n / 2]$\uFF0C\u5982\u679C $a[n / 2] \\\\\\\\ge k$ \u7684\uFF0C\u5C31\u53EF\u4EE5\u77E5\u9053\u89E3\u7684\u8303\u56F4\u4E0D\u5927\u4E8E $n / 2$\uFF1B\\\\n* \u53CD\u4E4B\uFF0C\u5982\u679C $a[n / 2] \\\\\\\\lt k$\uFF0C\u65E2\u53EF\u4EE5\u77E5\u9053\u89E3\u5927\u4E8E $n / 2$;\\\\n* \u901A\u8FC7\u8FD9\u6837\u4E00\u6B21\u6BD4\u8F83\uFF0C\u5C31\u5C06\u89E3\u7684\u8303\u56F4\u7F29\u5C0F\u4E86\u4E00\u534A\\\\n* \u53CD\u590D\u4E0E\u533A\u95F4\u7684\u4E2D\u70B9\u6BD4\u8F83\uFF0C\u5C31\u53EF\u4EE5\u4E0D\u65AD\u5730\u628A\u89E3\u7684\u8303\u56F4\u7F29\u5C0F\u5230\u539F\u6765\u7684\u4E00\u534A\uFF0C\u6700\u7EC8\u5728 $O(logn)$ \u6B21\u7684\u6BD4\u8F83\u5185\u6C42\u5F97\u6700\u7EC8\u89E3\\\\n\\\\n![\u89E3\u7684\u8303\u56F4\u7684\u53D8\u5316\u8FC7\u7A0B](file://\u89E3\u7684\u8303\u56F4\u7684\u53D8\u5316\u8FC7\u7A0B.png)\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\n// \u67E5\u627E a \u4E2D\u7B2C\u4E00\u4E2A\u5927\u4E8E\u7B49\u4E8E k \u7684\u6570\u7684\u4E0B\u6807; \u5982\u679C\u6CA1\u6709, \u5C31\u8FD4\u56DE n\\\\nint my_lower_bound(vector<int>& a, int k) {\\\\n    int n = a.size();\\\\n    if (a[n - 1] < k) return n;  // a \u4E2D\u6240\u6709\u7684\u6570\u90FD\u6BD4 k \u5C0F, \u76F4\u63A5\u8FD4\u56DE n\\\\n    int l = 0, r = n - 1, mid;   // \u521D\u59CB\u8303\u56F4\u662F [l, r]\\\\n    while (l != r) {\\\\n        mid = (l + r) / 2;\\\\n        if (a[mid] >= k) r = mid;  // \u5982\u679C mid \u6EE1\u8DB3\u6761\u4EF6, \u89E3\u7684\u8303\u56F4\u53D8\u6210 [l, mid]\\\\n        else l = mid + 1;          // \u5982\u679C mid \u4E0D\u6EE1\u8DB3\u6761\u4EF6, \u89E3\u7684\u8303\u56F4\u53D8\u6210 [mid + 1, r]\\\\n    }\\\\n    return l;\\\\n}\\\\n\\\\n// \u67E5\u627E a \u4E2D\u7B2C\u4E00\u4E2A\u5927\u4E8E k \u7684\u6570\u7684\u4E0B\u6807; \u5982\u679C\u6CA1\u6709, \u5C31\u8FD4\u56DE n\\\\nint my_upper_bound(vector<int>& a, int k) {\\\\n    int n = a.size();\\\\n    if (a[n - 1] <= k) return n;  // a \u4E2D\u6240\u6709\u7684\u6570\u90FD\u4E0D\u8D85\u8FC7 k, \u76F4\u63A5\u8FD4\u56DE n\\\\n    int l = 0, r = n - 1, mid;    // \u521D\u59CB\u8303\u56F4\u662F [l, r]\\\\n    while (l != r) {\\\\n        mid = (l + r) / 2;\\\\n        if (a[mid] > k) r = mid;  // \u5982\u679C mid \u6EE1\u8DB3\u6761\u4EF6, \u89E3\u7684\u8303\u56F4\u53D8\u6210 [l, mid]\\\\n        else l = mid + 1;         // \u5982\u679C mid \u4E0D\u6EE1\u8DB3\u6761\u4EF6, \u89E3\u7684\u8303\u56F4\u53D8\u6210 [mid + 1, r]\\\\n    }\\\\n    return l;\\\\n}\\\\n\\\\nint main() {\\\\n    vector<int> a = {2, 3, 3, 5, 6};\\\\n    int k = 3;\\\\n\\\\n    // \u67E5\u627E a \u4E2D\u7B2C\u4E00\u4E2A\u5927\u4E8E\u7B49\u4E8E k \u7684\u6570\u7684\u4E0B\u6807; \u5982\u679C\u6CA1\u6709, \u5C31\u8FD4\u56DE n\\\\n    // \u8F93\u51FA: 1\\\\n    cout << my_lower_bound(a, k) << \'\\\\\\\\n\';\\\\n\\\\n    // \u67E5\u627E a \u4E2D\u7B2C\u4E00\u4E2A\u5927\u4E8E k \u7684\u6570\u7684\u4E0B\u6807; \u5982\u679C\u6CA1\u6709, \u5C31\u8FD4\u56DE n\\\\n    // \u8F93\u51FA: 3\\\\n    cout << my_upper_bound(a, k) << \'\\\\\\\\n\';\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n* \u4E0A\u8FF0\u4EE3\u7801\u5B9E\u73B0\u4E86 2 \u4E2A\u51FD\u6570\\\\n* my_lower_bound(): \u67E5\u627E a \u4E2D **<font color=\\\\\\"#FF0000\\\\\\">\u7B2C\u4E00\u4E2A\u5927\u4E8E\u7B49\u4E8E k </font>** \u7684\u6570\u7684\u4E0B\u6807; \u5982\u679C\u6CA1\u6709, \u5C31\u8FD4\u56DE n\\\\n* my_upper_bound(): \u67E5\u627E a \u4E2D **<font color=\\\\\\"#FF0000\\\\\\"> \u7B2C\u4E00\u4E2A\u5927\u4E8E k </font>** \u7684\u6570\u7684\u4E0B\u6807; \u5982\u679C\u6CA1\u6709, \u5C31\u8FD4\u56DE n\\\\n\\\\n# 1-2\u3001STL \u4E2D\u7684 lower_bound \u548C upper_bound\\\\n\\\\n* \u5728 STL \u5E93\u4E2D\u5176\u5B9E\u5DF2\u7ECF\u63D0\u4F9B\u4E86\u4E0A\u8FF0\u4E24\u4E2A\u51FD\u6570\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint main() {\\\\n    vector<int> a = {2, 3, 3, 5, 6};\\\\n    int k = 3;\\\\n\\\\n    // \u67E5\u627E a \u4E2D\u7B2C\u4E00\u4E2A\u5927\u4E8E\u7B49\u4E8E k \u7684\u6570\u7684\u4E0B\u6807; \u5982\u679C\u6CA1\u6709, \u5C31\u8FD4\u56DE n\\\\n    cout << lower_bound(a.begin(), a.end(), k) - a.begin() << \'\\\\\\\\n\';\\\\n\\\\n    // \u67E5\u627E a \u4E2D\u7B2C\u4E00\u4E2A\u5927\u4E8E k \u7684\u6570\u7684\u4E0B\u6807; \u5982\u679C\u6CA1\u6709, \u5C31\u8FD4\u56DE n\\\\n    // \u8F93\u51FA: 3\\\\n    cout << upper_bound(a.begin(), a.end(), k) - a.begin() << \'\\\\\\\\n\';\\\\n    \\\\n    // \u8F93\u51FA: 5, \u4E5F\u5C31\u662F\u6570\u7EC4 a \u7684\u5927\u5C0F n, \u56E0\u4E3A\u627E\u4E0D\u5230\u5927\u4E8E\u7B49\u4E8E 10 \u7684\u6570\\\\n    cout << lower_bound(a.begin(), a.end(), 10) - a.begin() << \'\\\\\\\\n\';    \\\\n    \\\\n    // \u8F93\u51FA: 5, \u4E5F\u5C31\u662F\u6570\u7EC4 a \u7684\u5927\u5C0F n, \u56E0\u4E3A\u627E\u4E0D\u5230\u5927\u4E8E 10 \u7684\u6570\\\\n    cout << upper_bound(a.begin(), a.end(), 10) - a.begin() << \'\\\\\\\\n\';     \\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n* \u9700\u8981\u6CE8\u610F\u7684\u662F\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">lower_bound(a.beign(), a.end(), k) \u8FD4\u56DE\u7684\u662F\u8FED\u4EE3\u5668</font>**\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">\u9700\u8981 lower_bound(a.beign(), a.end(), k) - a.begin() \u624D\u80FD\u5F97\u5230\u5BF9\u5E94\u7684\u4E0B\u6807</font>**\\\\n* upper_bound() \u540C\u7406\\\\n\\\\n# 2\u3001\u4E8C\u5206\u679A\u4E3E\\\\n\\\\n\u4E8C\u5206\u67E5\u627E\u7B97\u6CD5\u9664\u4E86\u5728\u6709\u5E8F\u6570\u7EC4\u4E2D\u627E\u503C\u5916\uFF0C\u5728\u6C42\u89E3\u6700\u4F18\u89E3\u95EE\u9898\u4E0A\u4E5F\u975E\u5E38\u6709\u7528\\\\n\\\\n\u8BA9\u6211\u4EEC\u8003\u8651\u4E0B \u201C\u6C42\u6EE1\u8DB3\u67D0\u4E2A\u6761\u4EF6 $C(x)$ \u7684\u6700\u5C0F $x$\u201D \u8FD9\u4E00\u95EE\u9898\\\\n\\\\n* \u5BF9\u4E8E\u4EFB\u610F\u6EE1\u8DB3 $C(x)$ \u7684 $x$\uFF0C\u5982\u679C\u6240\u6709\u7684 $x\' \\\\\\\\ge x$ \u4E5F\u6EE1\u8DB3 $C(x\')$ \u7684\u8BDD\uFF0C\u6211\u4EEC\u5C31\u53EF\u4EE5\u7528\u4E8C\u5206\u641C\u7D22\u6765\u6C42\u5F97\u6700\u5C0F\u7684 $x$\\\\n* \u6700\u5927\u5316\u95EE\u9898\u4E5F\u53EF\u4EE5\u7528\u540C\u6837\u7684\u65B9\u6CD5\u6C42\u89E3\\\\n\\\\n## 2-1\u3001\u5047\u5B9A\u4E00\u4E2A\u89E3\u5E76\u5224\u5B9A\u662F\u5426\u53EF\u884C\\\\n\\\\n<table><tr><td bgcolor=\\\\\\"#D2D2D2\\\\\\">\\\\n\u9898\u610F\uFF1A\u6709 $n$ \u6761\u7EF3\u5B50\uFF0C\u5B83\u4EEC\u7684\u957F\u5EA6\u5206\u522B\u662F $a_0, a_1, ..., a_{n-1}$\u3002\u5982\u679C\u4ECE\u5B83\u4EEC\u4E2D\u5207\u5272\u51FA $k$ \u6761\u957F\u5EA6\u76F8\u540C\u7684\u7EF3\u5B50\uFF0C\u8FD9 $k$ \u6761\u7EF3\u5B50\u6BCF\u6761\u6700\u957F\u80FD\u6709\u591A\u957F\uFF1F\uFF08\u539F\u7EF3\u5B50\u548C\u5207\u5272\u540E\u7684\u7EF3\u5B50\u7684\u957F\u5EA6\u90FD\u662F\u6574\u6570\uFF09\\\\n</td></tr></table>\\\\n\\\\n* \u6BD4\u5982 $a = [8, 7, 4, 5], k = 11$\\\\n* \u6211\u4EEC\u53EF\u4EE5\u5207\u5272\u51FA $11$ \u6761\u957F\u5EA6\u4E3A $2$ \u7684\u7EF3\u5B50\uFF08\u56DB\u6761\u7EF3\u5B50\u5206\u522B\u5207\u5272\u51FA 4, 3, 2, 2, \u6761\u7EF3\u5B50\uFF09\\\\n* \u4F46\u662F\u53EA\u80FD\u5207\u5272 $6$ \u6761\u957F\u5EA6\u4E3A $3$ \u7684\u7EF3\u5B50\\\\n* \u6240\u4EE5\u6700\u540E\u7684\u7ED3\u679C\u662F $2$\\\\n\\\\n\u6211\u4EEC\u6765\u5957\u7528\u4E8C\u5206\u641C\u7D22\u7684\u6A21\u578B\u6765\u89E3\u51B3\u95EE\u9898\\\\n\\\\n* \u4EE4 $C(x)$ \u4E3A\u53EF\u4EE5\u5F97\u5230 $k$ \u6761\u957F\u5EA6\u4E3A $x$ \u7684\u7EF3\u5B50\\\\n* \u5219\u95EE\u9898\u53D8\u4E3A\u4E86\u6C42\u6EE1\u8DB3 $C(x)$ \u6761\u4EF6\u7684\u6700\u5927\u7684 $x$\\\\n* \u82E5 $x$ \u6EE1\u8DB3\u6761\u4EF6\uFF0C\u90A3\u4E48\u6240\u6709 $x\' \\\\\\\\le x$ \u5FC5\u7136\u4E5F\u80FD\u6EE1\u8DB3\u6761\u4EF6\uFF0C\u7B26\u5408\u4E8C\u5206\u641C\u7D22\u7684\u6761\u4EF6\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint main() {\\\\n    int n = 4, k = 11;\\\\n    vector<int> a = {8, 7, 4, 5};\\\\n\\\\n    // \u53EF\u4EE5\u7406\u89E3\u4E3A\u5B9A\u4E49\u4E86\u51FD\u6570 C(int mid)\\\\n    // auto \u51FD\u6570\u540D [&](\u53D8\u91CF\u7C7B\u578B \u53D8\u91CF\u540D) { };\\\\n    auto C = [&](int mid) {\\\\n        int cnt = 0;\\\\n        // \u8BA1\u7B97\u80FD\u5207\u5272\u51FA\u591A\u5C11\u957F\u5EA6\u4E3A $mid$ \u7684\u7EF3\u5B50\\\\n        for (int i = 0; i < n; i++) cnt += a[i] / mid;\\\\n        // \u5F53 cnt >= k \u65F6, mid \u624D\u6EE1\u8DB3\u8981\u6C42\\\\n        return cnt >= k;\\\\n    };\\\\n\\\\n    // *max_element() \u8868\u793A\u6C42\u6700\u5927\u503C\\\\n    // \u8BED\u6CD5: *max_element(\u8D77\u59CB\u8FED\u4EE3\u5668, \u7EC8\u6B62\u8FED\u4EE3\u5668)\\\\n    // \u5207\u5272\u51FA\u6765\u7684\u7EF3\u5B50\u6700\u77ED\u662F l = 1, \u6700\u957F\u662F\u7EF3\u5B50\u7684\u6700\u5927\u503C\\\\n    int l = 1, r = *max_element(a.begin(), a.end()), mid;\\\\n    while (l != r) {\\\\n        mid = (l + r + 1) / 2;  // \u6CE8\u610F: \u8FD9\u91CC\u8981 +1, \u4E0D\u7136\u4F1A\u6B7B\u5FAA\u73AF\\\\n        if (C(mid)) l = mid;    // \u5982\u679C mid \u6EE1\u8DB3\u6761\u4EF6, \u5219\u89E3\u5FC5\u7136\u5927\u4E8E\u7B49\u4E8E mid, \u89E3\u7684\u8303\u56F4\u53D8\u6210 [mid, r]\\\\n        else r = mid - 1;       // \u5982\u679C mid \u4E0D\u6EE1\u8DB3\u6761\u4EF6, \u89E3\u7684\u8303\u56F4\u53D8\u6210 [l, mid - 1]\\\\n    }\\\\n\\\\n    // \u5982\u679C mid = (l + r) / 2 \u6CA1\u6709 +1 \u7684\u8BDD, \u4F1A\u6B7B\u5FAA\u73AF\\\\n    // \u53EF\u4EE5\u6267\u884C\u4E0B\u4E0B\u9762\u7684\u4EE3\u7801\\\\n    // int l = 1, r = accumulate(a.begin(), a.end(), 0), mid;\\\\n    // while (l != r) {\\\\n    //     mid = (l + r) / 2;\\\\n    //     cout << \\\\\\"l= \\\\\\" << l << \\\\\\", r= \\\\\\" << r << \\\\\\", mid= \\\\\\" << mid << \\\\\\" \\\\\\" << C(mid) << \'\\\\\\\\n\';\\\\n    //     if (C(mid)) l = mid;\\\\n    //     else r = mid - 1;\\\\n    // }\\\\n\\\\n    cout << l << \'\\\\\\\\n\';\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n## 2-2\u3001\u6700\u5927\u503C\u6700\u5C0F\u95EE\u9898\\\\n\\\\n\u4E8C\u5206\u7C7B\u95EE\u9898\u7ECF\u5E38\u4F1A\u51FA\u73B0\u6C42 **<font color=\\\\\\"#FF0000\\\\\\">\u6700\u5C0F\u503C\u6700\u5927</font>** \u6216\u8005 **<font color=\\\\\\"#FF0000\\\\\\">\u6700\u5927\u503C\u6700\u5C0F</font>** \u7684\u5B57\u773C\u3002\u8FD9\u4E24\u7C7B\u95EE\u9898\u5728\u4E8C\u5206\u7684\u5199\u6CD5\u4E0A\u7565\u6709\u4E0D\u540C\u3002\\\\n\\\\n\u8FD9\u7C7B\u95EE\u9898\u7684\u4E00\u822C\u89E3\u51B3\u65B9\u6CD5\u662F\uFF1A\\\\n\\\\n* 1\u3001\u9996\u5148\u5224\u65AD\u95EE\u9898\u7684\u7B54\u6848\u662F\u5426\u6EE1\u8DB3\u4E8C\u5206\u6027\u8D28\uFF0C\u662F\u6C42 **<font color=\\\\\\"#FF0000\\\\\\">\u6700\u5927\u503C\u6700\u5C0F</font>**\uFF0C\u8FD8\u662F\u6C42 **<font color=\\\\\\"#FF0000\\\\\\">\u6700\u5C0F\u503C\u6700\u5927</font>**\\\\n* 2\u3001\u786E\u5B9A\u8FB9\u754C $l, r$\\\\n* 3\u3001\u786E\u5B9A\u5224\u5B9A\u903B\u8F91\uFF08\u901A\u5E38\u662F\u4E00\u4E2A\u8D2A\u5FC3\u7B97\u6CD5\uFF09\\\\n\\\\n\u6211\u4EEC\u6765\u770B\u4E00\u4E2A\u6700\u5927\u503C\u6700\u5C0F\u7684\u4F8B\u5B50\uFF1A[\u3010\u5165\u95E8\u3011\u5206\u5272\u6570\u7EC4\u7684\u6700\u5927\u503C](https://www.gzlzoi.cn/d/lzoi2025/p/LS1072)\\\\n\\\\n<table><tr><td bgcolor=\\\\\\"#D2D2D2\\\\\\">\\\\n\u9898\u610F\uFF1A\u7ED9\u5B9A\u4E00\u4E2A\u975E\u8D1F\u6574\u6570\u6570\u7EC4 $a$ \u548C\u4E00\u4E2A\u6574\u6570 $k$ \uFF0C\u4F60\u9700\u8981\u5C06\u8FD9\u4E2A\u6570\u7EC4\u5206\u6210 $k$ \u4E2A\u975E\u7A7A\u7684\u8FDE\u7EED\u5B50\u6570\u7EC4\u3002\u8BBE\u8BA1\u4E00\u4E2A\u7B97\u6CD5\u4F7F\u5F97\u8FD9 $k$ \u4E2A\u5B50\u6570\u7EC4\u5404\u81EA\u548C\u7684 <font color=\\\\\\"#FF0000\\\\\\">\u6700\u5927\u503C\u6700\u5C0F</font>\\\\n</td></tr></table>\\\\n\\\\n* \u6837\u4F8B: $a = [7, 2, 5, 10, 8], k = 2$\\\\n* \u53EF\u4EE5\u5C06 $a$ \u5206\u5272\u6210 $[7, 2, 5]$ \u548C $[10, 8]$\\\\n* \u4E24\u4E2A\u5B50\u6570\u7EC4\u7684\u548C\u662F 14 \u548C 18\uFF0C\u56E0\u6B64 **<font color=\\\\\\"#FF0000\\\\\\">\u6700\u5927\u503C\u6700\u5C0F</font>** \u662F 18\\\\n\\\\n\u6211\u4EEC\u6765\u5957\u7528\u4E8C\u5206\u641C\u7D22\u7684\u6A21\u578B\u6765\u89E3\u51B3\u95EE\u9898\\\\n\\\\n* \u4EE4 $C(x)$ \u8868\u793A\u53EF\u4EE5\u5C06\u6570\u7EC4\u5206\u5272\u6210 $k$ \u6BB5\uFF0C\u4E14 **<font color=\\\\\\"#FF0000\\\\\\">\u6700\u5927\u5B50\u6BB5\u548C\u4E0D\u8D85\u8FC7 $x$ </font>**\\\\n* \u82E5 $x$ \u6EE1\u8DB3\u6761\u4EF6\uFF0C\u90A3\u4E48\u6240\u6709 $x\' \\\\\\\\ge x$ \u5FC5\u7136\u4E5F\u80FD\u6EE1\u8DB3\u6761\u4EF6\uFF0C\u7B26\u5408\u4E8C\u5206\u641C\u7D22\u7684\u6761\u4EF6\\\\n* \u5219\u95EE\u9898\u53D8\u4E3A\u4E86\u6C42\u6EE1\u8DB3 $C(x)$ \u6761\u4EF6\u7684 **<font color=\\\\\\"#FF0000\\\\\\">\u6700\u5C0F</font>** \u7684 $x$\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint solve(vector<int>& a, int k) {\\\\n    int n = a.size();\\\\n    // accumulate() \u7528\u6765\u6C42\u548C\\\\n    // \u786E\u5B9A\u8FB9\u754C, l = 0, r \u6700\u5927\u4E3A\u6570\u7EC4\u7684\u548C\\\\n    int l = 0, r = accumulate(a.begin(), a.end(), 0), mid;\\\\n\\\\n    // \u53EF\u4EE5\u7406\u89E3\u4E3A\u7533\u660E\u4E00\u4E2A\u51FD\u6570 gao(int tmp)\\\\n    auto gao = [&](int tmp) {\\\\n        int d = 0;\\\\n        for (int i = 0; i < n; i++) {\\\\n            if (a[i] > tmp) return false;\\\\n\\\\n            // \u5728\u548C\u4E0D\u8D85\u8FC7 tmp \u7684\u524D\u63D0\u4E0B\uFF0C\u6BCF\u4E2A\u5B50\u6BB5\u90FD\u8D2A\u5FC3\u5730\u9009\u62E9\u5C3D\u53EF\u80FD\u591A\u7684\u6570\\\\n            int sum = a[i];\\\\n            while (i + 1 < n && sum + a[i + 1] <= tmp) sum += a[++i];\\\\n            d++;\\\\n        }\\\\n        // \u5982\u679C\u5206\u5272\u51FA\u6765\u7684\u5B50\u6BB5\u4E2A\u6570\u4E0D\u8D85\u8FC7 k, \u90A3\u4E48 tmp \u5C31\u53EF\u884C\\\\n        return d <= k;\\\\n    };\\\\n\\\\n    // \u4E8C\u5206\u679A\u4E3E\u7B54\u6848, \u8FD9\u91CC\u6C42\u6700\u5927\u503C\u6700\u5C0F, \u6CE8\u610F\u8FB9\u754C\\\\n    while (l != r) {\\\\n        mid = (l + r) / 2;      // \u6CE8\u610F\uFF1A\u8FD9\u91CC\u6CA1\u6709 +1\\\\n        if (gao(mid)) r = mid;  // mid \u6EE1\u8DB3\u6761\u4EF6, r = mid\\\\n        else l = mid + 1;       // mid \u4E0D\u6EE1\u8DB3\u6761\u4EF6, l = mid + 1\\\\n    }\\\\n    return l;\\\\n}\\\\n\\\\nint main() {\\\\n    // \u4E0B\u9762 2 \u53E5\u662F\u4E3A\u4E86\u8BA9 cin, cout \u66F4\u5FEB, \u4E0D\u7406\u89E3\u53EF\u4EE5\u5148\u4E0D\u5199\\\\n    ios::sync_with_stdio(false);\\\\n    cin.tie(nullptr);\\\\n\\\\n    int n, k;\\\\n    while (cin >> n >> k) {\\\\n        vector<int> a(n);\\\\n        for (int i = 0; i < n; i++) cin >> a[i];\\\\n        cout << solve(a, k) << \'\\\\\\\\n\';\\\\n    }\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n**<font color=\\\\\\"#FF0000\\\\\\">\u6700\u5927\u503C\u6700\u5C0F\u95EE\u9898\u7684\u89E3\u7B54\u6A21\u677F</font>**\\\\n\\\\n```c++\\\\nwhile (l != r) {\\\\n    mid = (l + r) / 2;    // \u6CE8\u610F\uFF1A\u91CC\u6CA1\u6709 +1\\\\n    if (C(mid)) r = mid;  // [l, r] => [l, mid]\\\\n    else l = mid + 1;     // [l, r] => [mid + 1, r]\\\\n}\\\\n```\\\\n\\\\n## 2-3\u3001\u6700\u5C0F\u503C\u6700\u5927\u95EE\u9898\\\\n\\\\n\u518D\u6765\u770B\u53E6\u4E00\u4E2A\u6700\u5927\u503C\u6700\u5C0F\u7684\u4F8B\u5B50\uFF1A[\u3010\u5165\u95E8\u3011\u5206\u5272\u6570\u7EC4\u7684\u6700\u5C0F\u503C](https://www.gzlzoi.cn/d/lzoi2025/p/LS1074)\\\\n\\\\n<table><tr><td bgcolor=\\\\\\"#D2D2D2\\\\\\">\\\\n\u9898\u610F\uFF1A\u7ED9\u5B9A\u4E00\u4E2A\u975E\u8D1F\u6574\u6570\u6570\u7EC4 $a$ \u548C\u4E00\u4E2A\u6574\u6570 $k$ \uFF0C\u4F60\u9700\u8981\u5C06\u8FD9\u4E2A\u6570\u7EC4\u5206\u6210 $k$ \u4E2A\u975E\u7A7A\u7684\u8FDE\u7EED\u5B50\u6570\u7EC4\u3002\u8BBE\u8BA1\u4E00\u4E2A\u7B97\u6CD5\u4F7F\u5F97\u8FD9 $k$ \u4E2A\u5B50\u6570\u7EC4\u5404\u81EA\u548C\u7684 <font color=\\\\\\"#FF0000\\\\\\">\u6700\u5C0F\u503C\u6700\u5927</font>\\\\n</td></tr></table>\\\\n\\\\n* \u6837\u4F8B: $a = [7, 2, 5, 10, 8], k = 2$\\\\n* \u53EF\u4EE5\u5C06 $a$ \u5206\u5272\u6210 $[7, 2, 5]$ \u548C $[10, 8]$\\\\n* \u4E24\u4E2A\u5B50\u6570\u7EC4\u7684\u548C\u662F 14 \u548C 18\uFF0C\u56E0\u6B64 **<font color=\\\\\\"#FF0000\\\\\\">\u6700\u5C0F\u503C\u6700\u5927</font>** \u662F 14\\\\n\\\\n\u6211\u4EEC\u6765\u5957\u7528\u4E8C\u5206\u641C\u7D22\u7684\u6A21\u578B\u6765\u89E3\u51B3\u95EE\u9898\\\\n\\\\n* \u4EE4 $C(x)$ \u8868\u793A\u53EF\u4EE5\u5C06\u6570\u7EC4\u5206\u5272\u6210 $k$ \u6BB5\uFF0C\u4E14 **<font color=\\\\\\"#FF0000\\\\\\"> \u6700\u5C0F\u5B50\u6BB5\u548C\u4E0D\u5C0F\u4E8E $x$ </font>**\\\\n* \u82E5 $x$ \u6EE1\u8DB3\u6761\u4EF6\uFF0C\u90A3\u4E48\u6240\u6709 $x\' \\\\\\\\le x$ \u5FC5\u7136\u4E5F\u80FD\u6EE1\u8DB3\u6761\u4EF6\uFF0C\u7B26\u5408\u4E8C\u5206\u641C\u7D22\u7684\u6761\u4EF6\\\\n* \u5219\u95EE\u9898\u53D8\u4E3A\u4E86\u6C42\u6EE1\u8DB3 $C(x)$ \u6761\u4EF6\u7684 **<font color=\\\\\\"#FF0000\\\\\\">\u6700\u5927</font>** \u7684 $x$\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nint solve(vector<int>& a, int k) {\\\\n    int n = a.size();\\\\n    // accumulate() \u7528\u6765\u6C42\u548C\\\\n    int l = 0, r = accumulate(a.begin(), a.end(), 0), mid;\\\\n\\\\n    // \u53EF\u4EE5\u7406\u89E3\u4E3A\u7533\u660E\u53E6\u5916\u4E00\u4E2A\u51FD\u6570 gao(int tmp)\\\\n    auto gao = [&](int tmp) {\\\\n        int d = 0;\\\\n        for (int i = 0; i < n; i++) {\\\\n            // \u5728\u548C\u4E0D\u5C0F\u4E8E tmp \u7684\u524D\u63D0\u4E0B\uFF0C\u6BCF\u4E2A\u5B50\u6BB5\u90FD\u8D2A\u5FC3\u5730\u9009\u62E9\u5C3D\u53EF\u80FD\u5C11\u7684\u6570\\\\n            int sum = a[i];\\\\n            while (sum < tmp && i + 1 < n) sum += a[++i];\\\\n            if (sum < tmp) return false;\\\\n            if (++d >= k) return true;\\\\n        }\\\\n        // \u5982\u679C\u5206\u5272\u51FA\u6765\u7684\u5B50\u6BB5\u4E2A\u6570\u4E0D\u5C0F\u4E8E k, \u90A3\u4E48 tmp \u5C31\u53EF\u884C\\\\n        return d >= k;\\\\n    };\\\\n\\\\n    // \u4E8C\u5206\u679A\u4E3E\u7B54\u6848, \u8FD9\u91CC\u662F\u6C42\u6700\u5C0F\u503C\u6700\u5927, \u6CE8\u610F\u8FB9\u754C\\\\n    while (l != r) {\\\\n        mid = (l + r + 1) / 2;  // \u6CE8\u610F, \u6C42\u6700\u5C0F\u503C\u6700\u5927, \u8FD9\u91CC\u9700\u8981 + 1\\\\n        if (gao(mid)) l = mid;  // mid \u6EE1\u8DB3\u6761\u4EF6, l = mid\\\\n        else r = mid - 1;       // mid \u4E0D\u6EE1\u8DB3\u6761\u4EF6, r = mid - 1\\\\n    }\\\\n\\\\n    // \u6CE8\u610F: \u4E0B\u9762\u7684\u4EE3\u7801\u662F\u6C42\u6700\u5927\u503C\u6700\u5C0F, \u5BF9\u6BD4\u4E0B\u533A\u522B!!\\\\n    // \u4E8C\u5206\u679A\u4E3E\u7B54\u6848, \u8FD9\u91CC\u662F\u6C42\u6700\u5927\u503C\u6700\u5C0F, \u6CE8\u610F\u8FB9\u754C\\\\n    // while (l != r) {\\\\n    //     mid = (l + r) / 2;\\\\n    //     if (gao(mid)) r = mid;\\\\n    //     else l = mid + 1;\\\\n    // }\\\\n    return l;\\\\n}\\\\n\\\\nint main() {\\\\n    // \u4E0B\u9762 2 \u53E5\u662F\u4E3A\u4E86\u8BA9 cin, cout \u66F4\u5FEB, \u4E0D\u7406\u89E3\u53EF\u4EE5\u5148\u4E0D\u5199\\\\n    ios::sync_with_stdio(false);\\\\n    cin.tie(nullptr);\\\\n\\\\n    int n, k;\\\\n    while (cin >> n >> k) {\\\\n        vector<int> a(n);\\\\n        for (int i = 0; i < n; i++) cin >> a[i];\\\\n        cout << solve(a, k) << \'\\\\\\\\n\';\\\\n    }\\\\n    return 0;\\\\n}\\\\n```\\\\n\\\\n**<font color=\\\\\\"#FF0000\\\\\\">\u6700\u5C0F\u503C\u6700\u5927\u95EE\u9898\u7684\u89E3\u7B54\u6A21\u677F</font>**\\\\n\\\\n```c++\\\\nwhile (l != r) {\\\\n    mid = (l + r + 1) / 2;  // \u6CE8\u610F\uFF1A\u8FD9\u91CC +1\\\\n    if (C(mid)) l = mid;  // [l, r] => [mid, r]\\\\n    else r = mid - 1;     // [l, r] => [l, mid - 1]\\\\n}\\\\n```\\\\n\\\\n## 2-4\u3001\u6D6E\u70B9\u6570\u4E8C\u5206\\\\n\\\\n* \u524D\u9762\u7684\u9898\u76EE\uFF0C\u6211\u4EEC\u7528\u6765\u4E8C\u5206\u7684\u7B54\u6848\u90FD\u662F\u6574\u6570\\\\n* \u5176\u5B9E\uFF0C\u6D6E\u70B9\u6570\u4E5F\u53EF\u4EE5\u7528\u6765\u4E8C\u5206\\\\n\\\\n[\u3010\u5165\u95E8\u3011\u6570\u7684\u4E09\u6B21\u65B9\u6839](https://www.gzlzoi.cn/d/lzoi2025/p/LS1077)\\\\n\\\\n<table><tr><td bgcolor=\\\\\\"#D2D2D2\\\\\\">\\\\n\u9898\u610F\uFF1A\u7ED9\u5B9A\u4E00\u4E2A\u6D6E\u70B9\u6570 $n$\uFF0C\u6C42\u5B83\u7684\u4E09\u6B21\u65B9\u6839\u3002\\\\n</td></tr></table>\\\\n\\\\n* \u6211\u4EEC\u77E5\u9053\u4E09\u6B21\u51FD\u6570\u662F\u4E00\u4E2A\u5355\u70B9\u51FD\u6570\uFF0C\u6EE1\u8DB3\u5982\u679C $x \\\\\\\\le y$\uFF0C\u90A3\u4E48 $x^3 \\\\\\\\le y^3$\\\\n* \u4EE4 $C(x)$ \u8868\u793A $x$ \u6EE1\u8DB3 $x^3$ \u4E0D\u8D85\u8FC7 $n$\\\\n* \u82E5 $x$ \u6EE1\u8DB3\u6761\u4EF6 $C(x)$\uFF0C\u90A3\u4E48\u6240\u6709 $x\' \\\\\\\\le x$ \u5FC5\u7136\u4E5F\u80FD\u6EE1\u8DB3\u6761\u4EF6 $C(x\')\uFF0C\u7B26\u5408\u4E8C\u5206\u641C\u7D22\u7684\u6761\u4EF6\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\n// eps = 0.00000001\\\\nconst double eps = 1e-8;\\\\n\\\\nint main() {\\\\n    // \u4E0B\u9762 2 \u53E5\u8BDD\u662F\u4E3A\u4E86\u8BA9 cin, cout \u66F4\u5FEB, \u5E76\u4E0D\u7406\u89E3\u53EF\u4EE5\u5148\u4E0D\u5199\\\\n    ios::sync_with_stdio(false);\\\\n    cin.tie(nullptr);\\\\n    \\\\n    double n;\\\\n    cin >> n;\\\\n\\\\n    double l = -1000, r = 1000, mid;\\\\n\\\\n    // \u6CE8\u610F: \u7531\u4E8E\u7CBE\u5EA6\u95EE\u9898\uFF0C\u6D6E\u70B9\u6570\u4E8C\u5206\u65F6\uFF0C\u9700\u8981\u8BBE\u7F6E\u4E8C\u5206\u6B21\u6570\uFF0C\u9632\u6B62\u6B7B\u5FAA\u73AF\\\\n    // \u56E0\u4E3A\u5F53 l \u548C r \u5F88\u63A5\u8FD1\u7684\u65F6\u5019, \u4E0D\u7BA1 mid \u662F\u5426\u6EE1\u8DB3\u6761\u4EF6, l \u548C r \u7684\u53D8\u5316\u90FD\u5F88\u5C0F\\\\n    // \u4E0D\u80FD\u5199: while (abs(r - l) >= 0.000001) \\\\n    // \u4E8C\u5206\u6B21\u6570\u53EF\u4EE5\u6839\u636E\u9898\u76EE\u6570\u636E\u5927\u5C0F\u53D8\u5316,\\\\n    // \u4E00\u822C\u6765\u8BF4 50 \u5230 60 \u6B21\u8DB3\u4EE5\u89E3\u51B3\u5927\u90E8\u5206\u95EE\u9898\\\\n    for (int i = 0; i < 60; i++) {\\\\n        mid = (l + r) / 2;\\\\n        if (mid * mid * mid < n) l = mid;\\\\n        else r = mid;\\\\n    }\\\\n    cout << fixed << setprecision(8) << l << \'\\\\\\\\n\';\\\\n    return 0;\\\\n}\\\\n```\\\\n\\"}","owner":2,"domainId":"lzoi2025","docType":10,"docId":110,"title":"\u3010\u8BFE\u4EF6\u3011\u4E8C\u5206\u67E5\u627E\u4E0E\u4E8C\u5206\u679A\u4E3E","tag":["\u8BFE\u4EF6","\u4E8C\u5206"],"hidden":false,"nSubmit":0,"nAccept":0,"data":[],"additional_file":[{"_id":"\u4E8C\u5206\u679A\u4E3E\u548C\u4E8C\u8FDB\u5236\u679A\u4E3E.pdf","name":"\u4E8C\u5206\u679A\u4E3E\u548C\u4E8C\u8FDB\u5236\u679A\u4E3E.pdf","size":1359191,"lastModified":"2025-09-03T07:15:39.476Z","etag":"L2RhdGEvZmlsZS9oeWRyby9naGsvNHQwbmN3bmRsd3Vjc2FuY25mdGlzLnBkZg=="},{"_id":"\u4E8C\u5206\u679A\u4E3E\u548C\u4E8C\u8FDB\u5236\u679A\u4E3E.pptx","name":"\u4E8C\u5206\u679A\u4E3E\u548C\u4E8C\u8FDB\u5236\u679A\u4E3E.pptx","size":465414,"lastModified":"2025-09-03T07:15:39.481Z","etag":"L2RhdGEvZmlsZS9oeWRyby9odXEva2tiYWJyN3ZlMHdhemN6dTB6Y2I5LnBwdHg="},{"_id":"\u89E3\u7684\u8303\u56F4\u7684\u53D8\u5316\u8FC7\u7A0B.png","name":"\u89E3\u7684\u8303\u56F4\u7684\u53D8\u5316\u8FC7\u7A0B.png","size":268498,"lastModified":"2025-09-03T07:15:39.493Z","etag":"L2RhdGEvZmlsZS9oeWRyby8xenkvYWd4dHBrd2hzMHZlaXB5YnV3Y3g4LnBuZw=="}],"pid":"LS0007","difficulty":0,"html":false,"config":{"count":0,"memoryMin":256,"memoryMax":256,"timeMin":1000,"timeMax":1000,"type":"default","langs":["cc","cc.cc14o2","cc.cc17o2","py","py.py3"]}}}';
+      window.UserContextNew = '{}';
+    </script>
+  </body>
+</html>

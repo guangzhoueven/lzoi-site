@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 T;
+	cin >> T;
+	while (T--) {
+		i64 n, m, ans = 0;
+		cin >> n >> m;
+		for (i64 l = 1, r; l <= min(n, m); l = r + 1) {
+			r = min(n / (n / l), m / (m / l));
+			ans += (n / l) * (m / l) * (r - l + 1);
+		}
+		cout << ans << "\n";
+	}
+	return 0;
+}

@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+auto ok(const vector<vector<i64>>& g, i64 n, i64 m) {
+	map<pair<i64, i64>, i64 > memo;
+	auto dfs = [&](auto&& self, i64 row, i64 prev_mask) -> i64 {
+		if (row == n) return 0;
+		
+		auto key = make_pair(row, prev_mask);
+		if (auto it = memo.find(key); it != memo.end()) return it->second;
+
+		i64 res = 0, state = 1 << m;
+		for (i64 mask = 0; mask < state; mask++) {
+			if (mask & (mask >> 1)) continue;
+			if (prev_mask & (mask | (mask >> 1) | (mask << 1))) continue;
+
+			i64 sum = 0;
+			for (i64 j = 0; j < m; j++)
+				if (mask >> j & 1) sum += g[row][j];
+
+			res = max(res, sum + self(self, row + 1, mask));
+		}
+		return memo[key] = res;
+	};
+	return dfs(dfs, 0, 0);
+}
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 T;
+	cin >> T;
+	while (T--) {
+		i64 n, m;
+		cin >> n >> m;
+		vector<vector<i64>> g(n, vector<i64>(m));
+		for (auto& row : g)	for (auto& x : row)	cin >> x;
+		cout << ok(g, n, m) << "\n";
+	}
+	return 0;
+}

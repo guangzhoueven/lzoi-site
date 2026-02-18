@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+const int INF = INT_MAX;
+int h, w;
+string GetPath(vector<string>& g, int sx, int sy, int ex, int ey) {
+	// 按照字典序：D < L < R < U
+	vector<int> dx = {1,  0, 0, -1};
+	vector<int> dy = {0, -1, 1,  0};
+	vector<string> f = {"D", "L", "R", "U"};
+
+	vector<vector<int>> d(h, vector<int>(w, INF));
+	vector<vector<int>> p(h, vector<int>(w, INF));
+
+	d[sx][sy] = 0;
+	queue<pair<int, int>> q;
+	q.push({sx, sy});
+	while(!q.empty()) {
+		auto [x, y] = q.front();
+		q.pop();
+		for(int k = 0; k<4; k++) {
+			int nx = x + dx[k], ny = y + dy[k];
+			if( (nx < 0 || nx >= h || ny < 0 || ny >= w)
+			    || (g[nx][ny] == '1')			// 如果是障碍
+			    || (d[nx][ny] != INF) )			// 有其他更近的路线
+				continue;
+			d[nx][ny] = d[x][y] + 1;
+			p[nx][ny] = k;
+			q.push({nx, ny});
+		}
+	}
+	if (d[ex][ey] == INF) return "-1";		// 终点不可达
+
+	string Path;
+	int x = ex, y = ey;
+	while (!(x == sx && y == sy)) {
+		int z = p[x][y];
+		Path += f[z];
+		x -= dx[z], y -= dy[z];
+	}
+	reverse(Path.begin(), Path.end());	// 反转字符串
+	return Path;
+}
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int sx, sy, ex, ey;
+	cin >> h >> w >> sx >> sy >> ex >> ey;
+	vector<string> g(h);
+	for (int i = 0; i < h; i++) cin >> g[i];
+	cout << GetPath(g, sx, sy, ex, ey) << "\n";
+	return 0;
+}

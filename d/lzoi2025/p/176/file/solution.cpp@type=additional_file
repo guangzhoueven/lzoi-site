@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int maxSum(const vector<int>& a) {
+    int n = a.size(), ans = a[0], now = a[0];
+
+	// now: 以 a(i) 结尾的最大子数组和
+    for (int i = 1; i < n; i++) {
+        now = max(a[i], now + a[i]);
+        ans = max(ans, now);
+    }
+    return ans;
+}
+
+int solve(vector<int>& a) {
+    int n = a.size(), ans = maxSum(a);
+    
+    // 说明数组全是负数
+    if (ans < 0) return ans;
+    
+    // 如果最后取环形, 相当于取中间一段最小
+    // 考虑把 a 全部取反, 再求 maxSum() 就好
+    // 注意上面特判全负数的情况
+    int sum = accumulate(a.begin(), a.end(), 0);
+    for (int i = 0; i < n; i++) a[i] = -a[i];
+    ans = max(ans, sum + maxSum(a));
+
+    return ans;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) cin >> a[i];
+    cout << solve(a) << '\n';
+
+    return 0;
+}

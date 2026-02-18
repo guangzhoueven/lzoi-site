@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, m;
+	cin >> n >> m;
+	vector<i64> p(n);
+	for (auto& x : p) cin >> x;
+
+	auto sums = [&](const auto & v) {
+		vector<i64> res = {0};
+		for (auto x : v) {
+			vector<i64> tmp = res;
+			for (auto& s : tmp) s += x;
+			res.insert(res.end(), tmp.begin(), tmp.end());
+		}
+		return res;
+	};
+
+	i64 half = n / 2;
+	auto L = sums(vector(p.begin(), p.begin() + half));
+	auto R = sums(vector(p.begin() + half, p.end()));
+
+	sort(R.begin(), R.end());
+	i64 ans = 0;
+	for (auto x : L) if (x <= m)
+			ans += upper_bound(R.begin(), R.end(), m - x) - R.begin();
+	cout << ans << "\n";
+}

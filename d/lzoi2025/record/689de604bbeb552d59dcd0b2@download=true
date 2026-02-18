@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+char BWin_PK(char c) {		   // PK对抗：Bob能赢的出拳策略
+	if (c == 'S') return 'R';  // A剪刀->B石头
+	if (c == 'R') return 'P';  // A石头->B布
+	if (c == 'P') return 'S';  // A布->B剪刀
+	return ' ';
+}
+
+int main() {
+	ios_base::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int T;
+	cin >> T;
+	while (T--) {
+		int n;
+		string s, ans = "";
+		cin >> n >> s;
+
+		int cnt = 0, win_target = n / 2 + 1; // Bob获胜轮数超过⌊ n/2 ⌋
+		string Q = {'P', 'R', 'S' };   		 // 字典顺序P->R->S
+
+		for (int i = 0; i < n; i++) {
+			char win = BWin_PK(s[i]);		 // Bob能赢的出拳
+			for (auto c : Q) {				 // c[0]='P',c[1]='R',c[2]='S'
+				int add = (c == win) ? 1 : 0;// Bob实际出拳，赢了cnt+1
+				if (cnt + add + (n - 1 - i) >= win_target) {  // cnt次赢后，其他出拳按字典顺序
+					ans += c;				 // 出拳结果
+					cnt += add;
+					break;
+				}
+			}
+		}
+		cout << ans << "\n";
+	}
+	return 0;
+}

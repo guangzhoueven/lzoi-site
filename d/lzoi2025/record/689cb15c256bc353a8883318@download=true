@@ -1,0 +1,62 @@
+#include <bits/stdc++.h>
+using namespace std;
+template <typename T>
+
+struct Graph {
+	int n;							// 节点数n（运送每件物品过后必须返回邮局，送到2~n个节点)
+	vector<vector<pair<int, T>>> g; // 邻接表（节点u，边权时间w）
+	vector<T> d;                    // 最短时间
+	vector<bool> visited;           // 状态标记
+
+	Graph(int n_) : n(n_) {
+		g.resize(n + 1);            // 1-based
+		d.assign(n + 1, INT_MAX);
+		visited.assign(n + 1, false);
+	}
+
+	void add_edge(int u, int v, T w, bool p = false) { // p=false为默认单边，p = true为双边（无向）
+		g[u].push_back({v, w});  				// 构建 u -> v 的边（边权w）【有向图单边】
+		if (p == true) g[v].push_back({u, w});	// 构建 v -> u 的边（边权w）【无向图双边】
+	}
+
+	T spfa_heap(int st) {
+		using Node = pair<T, int>;
+		priority_queue<Node, vector<Node>, greater<Node >> q; // 最小堆
+		q.push({(d[st] = 0), st});	// 邮局在起点s=1，边权时间w=0
+		visited[st] = true;			// 起点状态标记
+
+		while (!q.empty()) {
+			auto [w, u] = q.top();
+			q.pop();
+			visited[u] = true;
+
+			for (auto [v, w] : g[u]) {
+				if (d[v] > d[u] + w) {
+					d[v] = d[u] + w;
+					q.push({d[v], v});
+					visited[v] = true;
+				}
+			}
+		}
+
+		T min_time = 0;
+		for (int i = 2; i <= n; i++) min_time += d[i];	// 计算邮局1到达所有目标点2~n的最少时间
+		return min_time;
+	}
+};
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n, m,   u, v, w,   s = 1;	// 邮局在节点s=1
+	cin >> n >> m;					// 节点数n，边数m
+	Graph<int> G_Forward(n);  		// 邮局 --> 目的点(2 ~ n）, G_Forward(n)中的n不用再+1
+	Graph<int> G_Reverse(n);		// 目的点(2 ~ n) --> 邮局 , G_Reverse(n)中的n不用再+1
+
+	while (m--) {
+		cin >> u >> v >> w;
+		G_Forward.add_edge(u, v, w, false);	// 参数false=单向图（邮局→目的地,）参数true=双向图（增加：目的地→邮局）
+		G_Reverse.add_edge(v, u, w, false);
+	}
+	cout << G_Forward.spfa_heap(s) + G_Reverse.spfa_heap(s) << "\n";	// 输出邮局s=1到所有目标点的最短距离，双向 = 正向最短 + 反向最短
+	return 0;
+}

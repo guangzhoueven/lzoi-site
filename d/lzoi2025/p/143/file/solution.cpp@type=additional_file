@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using i64 = long long;
+
+vector<int> euler(int n) {
+    vector<bool> is_p(n + 1, true);  // 是否为质数
+    vector<int> phi(n + 1, 1);       // phi(i)
+    vector<int> p;                   // 存储质数
+    for (int i = 2; i <= n; i++) {
+        if (is_p[i]) {
+            p.push_back(i);
+            phi[i] = i - 1;  // 质数的 phi 为 i - 1
+        }
+        for (int t : p) {
+            if (i * t > n) break;
+            is_p[i * t] = false;
+            if (i % t == 0) {
+                // i 里面有 t
+                phi[i * t] = phi[i] * t;
+                break;
+            } else {
+                phi[i * t] = phi[i] * (t - 1);
+            }
+        }
+    }
+    return phi;
+}
+
+int main() {	
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+
+    // O(n) 预处理除所有的 phi
+    vector<int> phi = euler(1000000);
+
+    int T, n, d;
+    cin >> T;
+    while (T--) {
+        cin >> n >> d;
+        if (n % d) cout << 0 << '\n';  // d 不是 n 的约数
+        else cout << phi[n / d] << '\n';
+    }
+    return 0;
+}

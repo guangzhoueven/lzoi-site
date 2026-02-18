@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n, m, k;
+	
+	// n 个 1, m 个 0
+	cin >> n >> m >> k;
+	
+    // 先放 k 个 0
+	for (int i = 0; i < k; i++) cout << "0";
+	
+	int d = min(n, m - k);
+
+    // 再放 d 个 10
+	for (int i = 0; i < d; i++) cout << "10";
+
+    // 把剩下的 1 放在最后
+	for (int i = 0; i < n - d; i++) cout << "1";
+	cout << '\n';
+
+	return 0;
+}

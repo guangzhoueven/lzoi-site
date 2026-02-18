@@ -1,0 +1,86 @@
+#include <bits/stdc++.h>
+using namespace std;
+template <typename T>
+
+struct Graph {
+	int n;                              // 谷仓数n
+	vector<vector<pair<int, T>>> g;     // 邻接表（节点u，边权w）
+	vector<T> d;                        // 最短距离
+	vector<bool> visited;               // 状态标记
+	
+	Graph(int n_) : n(n_) {
+		g.resize(n + 1);                // 1-based
+		d.assign(n + 1, INT_MAX);
+		visited.assign(n + 1, false);
+	}
+	
+	void add_edge(int u, int v, T w = 1, bool p = false) { // w =1 固定，p控制双向
+		g[u].emplace_back(v, w); 
+		if (p) g[v].emplace_back(u, w);
+	}
+	
+	void dijkstra_heap(int st) {
+		using Node = pair<T, int>;
+		priority_queue<Node, vector<Node>, greater<Node>> q; // 最小堆
+		q.push({(d[st] = 0), st});
+		visited[st] = true;
+		
+		while (!q.empty()) {
+			auto [dist_u, u] = q.top();
+			q.pop();
+			visited[u] = true; 
+			
+			for (auto [v, w] : g[u]) { 
+				if (d[v] > d[u] + w) {
+					d[v] = d[u] + w;
+					q.push({d[v], v});
+					visited[v] = true;
+				}
+			}
+		}
+	}
+};
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n, m, k, s;
+	cin >> n >> m >> k >> s;
+	
+	vector<int> a(n + 1);               	// 谷仓i的干草类型a_i
+	vector<vector<int>> barns_tp(k + 1); 	// 每种干草对应的谷仓列表
+	Graph<int> G(n);                     	
+	
+	for (int i = 1; i <= n; i++) {
+		cin >> a[i];
+		barns_tp[a[i]].push_back(i);
+	}
+	
+	while (m--) {
+		int u, v;
+		cin >> u >> v;
+		G.add_edge(u, v, 1, true);      // 双向道路，边权固定w=1
+	}
+	
+	// 每种干草类型到所有谷仓的最短距离
+	vector<vector<int>> dist(k + 1, vector<int>(n + 1, INT_MAX));
+	for (int t = 1; t <= k; t++) {		// 共有k中干草
+		Graph<int> tempG = G;            // 农场构建图
+		for (int barn : barns_tp[t]) 	
+			tempG.add_edge(0, barn, 0); // 超级源点0 到 该类型所有谷仓
+		tempG.dijkstra_heap(0);
+		dist[t] = tempG.d;
+	}
+	
+	for (int i = 1; i <= n; i++) {	// 计算每个谷仓i的最小总成本
+		vector<int> costs;
+		for (int t = 1; t <= k; t++) 
+			if (t != a[i]) costs.push_back(dist[t][i]);
+		// nth_element(costs.begin(),k,costs.end())主要功能是将序列中第 k 小的元素放到第 k 个位置上，
+		// 重新排序,并且保证所有在它之前的元素都不大于它，所有在它之后的元素都不小于它【快速选择插入】
+		nth_element(costs.begin(), costs.begin() + s - 1, costs.end());   // 插入第s个到数组中自动排列
+		// accumulate(costs.begin(),costs.begin(),初始值,自定义函数(如累加、累乘等)),
+		// 用于对容器内元素进行累加或其他自定义操作的函数
+		cout << accumulate(costs.begin(), costs.begin() + s - 1, 0) << " \n"[i == n];
+	}
+	return 0;
+}

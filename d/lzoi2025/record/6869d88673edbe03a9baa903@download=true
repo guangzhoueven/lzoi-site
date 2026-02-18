@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int solve(int r, int g, int b) {  
+    if ((g - b) % 3 == 0)   // 全变成红色
+        return max(g, b);  
+    if ((r - b) % 3 == 0)   // 全变成绿色
+        return max(r, b);    
+    if ((r - g) % 3 == 0)    // 全部变成蓝色
+        return max(r, g);
+    return -1;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0); 
+    
+    int T;
+    cin >> T;
+    while (T--) {
+        int R, G, B;
+        cin >> R >> G >> B;
+        cout << solve(R, G, B) << "\n";
+    }
+    return 0;
+}

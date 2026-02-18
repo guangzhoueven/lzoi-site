@@ -1,0 +1,45 @@
+// https://www.luogu.com.cn/article/cwtnrpd1
+#include <bits/stdc++.h>
+using namespace std;
+
+/*--------------------------------- 扩展欧几里得 begin ---------------------------------------------*/
+// 来自: https://www.cnblogs.com/WIDA/p/17633758.html#05---%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97exgcd
+// 来自: https://oi-wiki.org/math/number-theory/gcd/#%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95
+
+template<typename T>
+T gcd(T a, T b) {
+    return b ? gcd(b, a % b) : a;
+}
+
+// xa + yb = gcd(a, b)
+// |x| <= b, |y| <= a
+template<typename T>
+T extgcd(T a, T b, T &x, T &y) {
+    if (!b) {
+        x = 1, y = 0;
+        return a;
+    }
+    // 注意这里 x, y 反过来了
+    T g = extgcd(b, a % b, y, x);
+    y -= a / b * x;
+    return g;
+}
+
+/*--------------------------------- 扩展欧几里得 end -----------------------------------------------*/
+
+using i64 = long long;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr); cout.tie(nullptr);
+
+    i64 T, a, b, c, x, y;
+    cin >> T;
+    while (T--) {
+        cin >> a >> b >> c;
+        i64 d = extgcd(a, b, x, y);
+        if (c % d) cout << "0 0" << '\n';
+        else cout << x * c / d << ' ' << y * c / d << '\n';
+    }
+    return 0;
+}

@@ -1,0 +1,120 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+using pii = pair<int, int>;
+const int N = 15, INF = INT_MAX;
+using t6i = tuple<int, int, int, int, int, int>;
+int d[N][N][N][N][N][N];
+t6i p[N][N][N][N][N][N];
+int h, w;
+string GetPath(vector<string>& g, int px, int py) {
+	int bx1 = -1, bx2, by1, by2, tx1 = -1, tx2, ty1, ty2;
+	for (int i = 0; i < h; i++) {
+		for (int j = 0; j < w; j++) {
+			if (g[i][j] == '$') {
+				if (bx1 == -1) bx1 = i, by1 = j;
+				else bx2 = i, by2 = j;
+			}
+			if (g[i][j] == '.') {
+				if (tx1 == -1) tx1 = i, ty1 = j;
+				else tx2 = i, ty2 = j;
+			}
+		}
+	}
+	// 按照字典序：D < L < R < U
+	vector<int> dx = {1,  0, 0, -1};
+	vector<int> dy = {0, -1, 1,  0};
+	vector<string> f = {"D", "L", "R", "U"};
+
+	for (int x = 0; x < h; x++) {
+		for (int y = 0; y < w; y++) {
+			for (int u = 0; u < h; u++) {
+				for (int v = 0; v < w; v++) {
+					for (int a = 0; a < h; a++) {
+						for (int b = 0; b < w; b++) {
+							d[x][y][u][v][a][b] = INF;
+							p[x][y][u][v][a][b] = {-1, -1, -1, -1, -1, -1};
+						}
+					}
+				}
+			}
+		}
+	}
+
+	d[px][py][bx1][by1][bx2][by2] = 0;
+	queue<t6i> q;
+	q.push({px, py, bx1, by1, bx2, by2});
+	while (!q.empty()) {
+		auto [px, py, bx1, by1, bx2, by2] = q.front();
+		q.pop();
+
+		for (int k = 0; k < 4; k++) {
+			// 玩家的新位置
+			int pu = px + dx[k], pv = py + dy[k];			// 	↓有障碍↓
+			if ((pu < 0 || pu >= h || pv < 0 || pv >= w) || (g[pu][pv] == '#')) continue;
+
+			// 第一个箱子的新位置
+			int bu1 = bx1, bv1 = by1;
+			if (pu == bx1 && pv == by1) {	// 箱子被推了1下
+				bu1 = bx1 + dx[k], bv1 = by1 + dy[k];
+				if ( (bu1 < 0 || bu1 >= h || bv1 < 0 || bv1 >= w)
+				     || (g[bu1][bv1] == '#')	// 有障碍
+				     || (bu1 == bx2 && bv1 == by2) )	// 有另外一个箱子
+					continue;
+			}
+
+			// 第二个箱子的新位置
+			int bu2 = bx2, bv2 = by2;
+			if (pu == bx2 && pv == by2) {	// 箱子被推了1下
+				bu2 = bx2 + dx[k], bv2 = by2 + dy[k];
+				if ( (bu2 < 0 || bu2 >= h || bv2 < 0 || bv2 >= w)
+				     || (g[bu2][bv2] == '#')	// 有障碍
+				     || (bu2 == bx1 && bv2 == by1) )	// 有另外一个箱子
+					continue;
+			}
+
+			if (d[pu][pv][bu1][bv1][bu2][bv2] != INF) continue;     // 有其他更短路径
+
+			d[pu][pv][bu1][bv1][bu2][bv2] = d[px][py][bx1][by1][bx2][by2] + 1;  // 更新 d[u][v]
+			p[pu][pv][bu1][bv1][bu2][bv2] = {px, py, bx1, by1, bx2, by2};       // 记录到达 (u, v) 的方向
+
+			q.push({pu, pv, bu1, bv1, bu2, bv2});
+		}
+	}
+
+	int ex = -1, ey = -1, u, v, a, b, dis = INF;
+	for (int i = 0; i < h; i++) for (int j = 0; j < w; j++) {
+			if (d[i][j][tx1][ty1][tx2][ty2] < dis) {
+				dis = d[i][j][tx1][ty1][tx2][ty2];
+				ex = i, ey = j, u = tx1, v = ty1, a = tx2, b = ty2;
+			}
+			if (d[i][j][tx2][ty2][tx1][ty1] < dis) {
+				dis = d[i][j][tx2][ty2][tx1][ty1];
+				ex = i, ey = j, u = tx2, v = ty2, a = tx1, b = ty1;
+			}
+		}
+
+	if (ex == -1) return "-1";	// 终点不可到达
+
+	string Path;
+	while (!(ex == px && ey == py && u == bx1 && v == by1 && a == bx2 && b == by2)) {
+		auto [_ex, _ey, _u, _v, _a, _b] = p[ex][ey][u][v][a][b];
+		if (ex == _ex + 1) Path += "D";
+		else if (ex == _ex - 1) Path += "U";
+		else if (ey == _ey + 1) Path += "R";
+		else if (ey == _ey - 1) Path += "L";
+		ex = _ex, ey = _ey;
+		u = _u, v = _v, a = _a, b = _b;
+	}
+	reverse(Path.begin(), Path.end());	// 反转字符串
+	return Path;
+}
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int px, py;
+	cin >> h >> w >> px >> py;
+	vector<string> g(h);
+	for (int i = 0; i < h; i++) cin >> g[i];
+	cout << GetPath(g, px, py) << "\n";
+	return 0;
+}

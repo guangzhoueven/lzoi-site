@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+void mid_num(vector<ll> a) {
+	sort(a.begin(), a.end());
+	if (a.size() % 2 != 0) {
+		cout << a[(a.size() - 1) / 2] << " ";
+	} else {
+		cout << (a[a.size() / 2 - 1] + a[a.size() / 2]) / 2 << " ";
+	}
+}
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+	ll n;
+	cin >> n;
+	vector<ll> a;
+	for (ll i = 0; i < n; i++) {
+		ll x;
+		cin >> x;
+		a.push_back(x);
+		mid_num(a);
+	}
+	return 0;
+}

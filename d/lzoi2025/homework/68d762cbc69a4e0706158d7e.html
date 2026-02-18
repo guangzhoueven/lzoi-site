@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html data-page="homework_detail" data-layout="basic" class="layout--basic page--homework_detail theme--dark nojs" data-mantine-color-scheme="dark" lang="zh" data-app="Hydro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.gzlzoi.cn/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../../favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../../android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="../../../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../../favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://www.gzlzoi.cn/homework/68d762cbc69a4e0706158d7e">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="乐知课堂" />
+  <meta property="og:url" content="https://www.gzlzoi.cn/homework/68d762cbc69a4e0706158d7e" />
+  <meta property="og:image" content="/favicon-96x96.png" />
+      <title>作业详情 - 乐知课堂</title>
+  <style>
+    body {
+      --font-family: "Microsoft Yahei", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Consolas", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="../../../theme-4.58.0-beta.17.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      window.UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","hydroacFeatures":[],"blspHost":"wss://ws.hydrooj.com","constantVersion":"1c07a499","domainId":"lzoi2025","domain":{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"},"SWConfig":{"preload":"","hosts":["http://www.gzlzoi.cn","https://www.gzlzoi.cn","https://www.gzlzoi.cn/","/"],"assets":[],"domains":[]}}';
+      window.UserContext = '{"_id":39,"mail":"202610319@gzlzoi.cn","uname":"202610319","hashType":"hydro","priv":4,"regat":"2025-07-01T02:30:33.477Z","loginat":"2026-02-06T00:24:21.126Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921","role":"\u5B66\u751F","scope":"BigInt::-1","tfa":false,"authn":false,"group":["20250702\u4E0A\u5348","\u4E34\u65F6\u5C0F\u7EC4","20250804\u4E0A\u5348","39"],"domains":[{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"}],"viewLang":"zh","timeZone":"Asia/Shanghai","codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","avatar":"gravatar:202610319@gzlzoi.cn","qq":"","gender":"2","bio":"<blockquote class=\\"note\\">\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: yellow;\\">\u4E66\u5C71\u6709\u8DEF\u52E4\u4E3A\u5F84\uFF0C\u5B66\u6D77\u65E0\u6DAF\u82E6\u4F5C\u821F\u3002</p></h3>\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: #12DA72;\\">Diligence is the path to the mountain of knowledge, hard-working is the boat to the endless sea of learning.</p></h3>\\r\\n</blockquote>","school":"\u5E7F\u5DDE\u5E02\u5929\u6CB3\u533A\u9A8F\u666F\u5C0F\u5B66","studentId":"","backgroundImage":"/d/lzoi2025/file/39/%E4%B9%90%E7%9F%A5%E8%AF%BE%E5%A0%82%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.png","unreadMsg":0,"pinnedDomains":["lzoi2025"],"rounded":true,"skipAnimate":false,"showTimeAgo":true,"fontFamily":"Microsoft Yahei","codeFontFamily":"Consolas","theme":"dark","preferredEditorType":"sv","showInvisibleChar":false,"formatCode":true,"displayName":"\u9EC4\u98DE\u535A","rpInfo":{"problem":237.2780396214451,"contest":8.25},"nAccept":191,"nSubmit":194,"rp":245.5280396214451,"rank":2,"level":8,"join":true,"avatarUrl":"//cn.gravatar.com/avatar/2dbb0a041212ea8df395e4d4418e92fa?d=mm&s=128"}';
+    </script>
+      </head>
+<body>
+      <script type="text/javascript" src="../../../resource/1c07a499/entry.js"></script>
+    <script type="text/javascript" src="../../../resource/4.58.0-beta.17/lang-zh.js"></script>
+    <script type="text/javascript" src="../../../hydro-4.58.0-beta.17.js"></script>
+    <nav class="nav slideout-menu" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://www.gzlzoi.cn/"><img class="nav__logo" src="../../../components/navigation/nav-logo-small_dark.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="../index.html" class="nav__item">
+    首页
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../set_theme/dark.html" class="nav__item">
+    题库
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../training.html" class="nav__item">
+    训练
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../contest.html" class="nav__item">
+    比赛
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../homework.html" class="nav__item nav--active">
+    作业
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../discuss.html" class="nav__item">
+    讨论
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../record@uidOrName=39.html" class="nav__item">
+    评测记录
+  </a>
+</li>
+      </ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+              <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-domain" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <span class="nav__item"><span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span> lzoi2025 <span class="icon icon-expand_more nojs--hide"></span></span>
+        <ol class="dropdown-target menu" id="menu-nav-domain"><li class="menu__item">
+              <a href="../index.html" class="menu__link">
+                <span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span>
+                lzoi2025              </a>
+            </li><li class="menu__seperator"></li><li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 管理
+            </a>
+          </li>
+        </ol>
+      </li>
+          <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <a href="../user/39.html" class="nav__item">202610319 <span class="icon icon-expand_more nojs--hide"></span></a>
+        <ol class="dropdown-target menu" id="menu-nav-user">
+          <li class="menu__item">
+            <a href="../user/39.html" class="menu__link">
+              <span class="icon icon-account--circle"></span> 我的资料
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/messages.html" class="menu__link">
+              <span class="icon icon-comment--multiple"></span> 站内消息
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> @ lzoi2025
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/account.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 账户设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/settings/preference.html" class="menu__link">
+              <span class="icon icon-sliders"></span> 偏好设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/security.html" class="menu__link">
+              <span class="icon icon-security"></span> 安全设置
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> 我的域
+            </a>
+          </li>
+                              <li class="menu__seperator"></li>
+                    <li class="menu__item">
+            <a href="../logout.html" class="menu__link" name="nav_logout">
+              <span class="icon icon-logout"></span> 登出
+            </a>
+          </li>
+        </ol>
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://www.gzlzoi.cn/" target="_self">
+        <img src="../../../components/navigation/nav-logo-small_dark.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+        
+
+<div class="row">
+  <div class="medium-9 columns">
+    <div class="section">
+      <div class="section__header">
+        <h1 class="section__title">作业介绍</h1>
+      </div>
+      <div class="section__body typo richmedia">
+        <p>【算法入门-14】筛法只能求质数？</p>
+<ul>
+<li>
+<p>上课的课件</p>
+<ul>
+<li><a href="https://www.gzlzoi.cn/d/lzoi2025/homework/68d762cbc69a4e0706158d7e/file/public/%E7%AD%9B%E6%B3%95%E5%8F%AA%E8%83%BD%E6%B1%82%E8%B4%A8%E6%95%B0.pdf">筛法只能求质数.pdf</a></li>
+</ul>
+</li>
+<li>
+<p>参考资料</p>
+<ul>
+<li><a href="https://oiwiki.org/math/number-theory/sieve/">OiWiki：筛法求质数，欧拉函数，约数个数，约数和</a></li>
+<li><a href="https://www.cnblogs.com/littlehb/p/16650121.html">线性筛求 约数个数 与 约数和</a></li>
+<li><a href="https://oiwiki.org/lang/csl/bitset/#%E4%B8%8E%E5%9F%83%E6%B0%8F%E7%AD%9B%E7%BB%93%E5%90%88">OiWiki：bitset 优化筛法</a></li>
+<li><a href="https://blog.csdn.net/qq_52143183/article/details/123758398">区间筛法</a></li>
+<li><a href="https://www.bilibili.com/video/BV1H8411E7hn/?share_source=copy_web&amp;vd_source=037e882c0cdcb03fb30079bba610dae3%60">B 站视频：欧拉筛</a></li>
+</ul>
+</li>
+<li>
+<p>重点</p>
+<ul>
+<li>一个合数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 必然存在不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mi>n</mi></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.2397em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8003em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathnormal">n</span></span></span><span style="top:-2.7603em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2397em;"><span></span></span></span></span></span></span></span></span> 的质因子</li>
+<li>假设一个数分解质因数后为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msubsup><mi>a</mi><mn>1</mn><msub><mi>b</mi><mn>1</mn></msub></msubsup><mo>×</mo><msubsup><mi>a</mi><mn>2</mn><msub><mi>b</mi><mn>2</mn></msub></msubsup><mo>×</mo><msubsup><mi>a</mi><mn>3</mn><msub><mi>b</mi><mn>3</mn></msub></msubsup></mrow><annotation encoding="application/x-tex">x = a_1^{b_1} \times a_2^{b_2} \times a_3^{b_3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1973em;vertical-align:-0.2663em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.931em;"><span style="top:-2.4337em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span><span style="top:-3.1449em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2663em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1973em;vertical-align:-0.2663em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.931em;"><span style="top:-2.4337em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span><span style="top:-3.1449em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2663em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1973em;vertical-align:-0.2663em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.931em;"><span style="top:-2.4337em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span><span style="top:-3.1449em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2663em;"><span></span></span></span></span></span></span></span></span></span></li>
+<li>那么 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> 的约数个数为: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>b</mi><mn>1</mn></msub><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>×</mo><mo stretchy="false">(</mo><msub><mi>b</mi><mn>2</mn></msub><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>×</mo><mo stretchy="false">(</mo><msub><mi>b</mi><mn>3</mn></msub><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(b_1 + 1) \times (b_2 + 1) \times (b_3 + 1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+<li>那么 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> 的约数和为: $(1 + a_1^1 + a_1^2 + \cdots + a_1^{b_1}) \times (1 + a_2^1 + a_2^2 + \cdots + a_2^{b_2} \times (1 + a_3^1 + a_3^2 + \cdots + a_3^{b_3})$</li>
+<li>小于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> 且与 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> 互质的数的个数：$\phi(x)=x \times (1-\frac{1}{a_1}) \times (1-\frac{1}{a_2}) \times (1-\frac{1}{a_3})$</li>
+<li>比如 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>12</mn><mo>=</mo><msup><mn>2</mn><mn>2</mn></msup><mo>×</mo><msup><mn>3</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">12 = 2 ^ 2 \times 3 ^ 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">12</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">3</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></li>
+<li>那么 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>12</mn></mrow><annotation encoding="application/x-tex">12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">12</span></span></span></span> 的约数个数为：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>×</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">(2 + 1) \times (1 + 1) = 6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span></span></span></span></li>
+<li>那么 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>12</mn></mrow><annotation encoding="application/x-tex">12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">12</span></span></span></span> 的约数和为：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>4</mn><mo stretchy="false">)</mo><mo>×</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mn>3</mn><mo stretchy="false">)</mo><mo>=</mo><mn>28</mn></mrow><annotation encoding="application/x-tex">(1 + 2 + 4) \times (1 + 3) = 28</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">4</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">3</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">28</span></span></span></span></li>
+<li>小于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>12</mn></mrow><annotation encoding="application/x-tex">12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">12</span></span></span></span> 且与 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>12</mn></mrow><annotation encoding="application/x-tex">12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">12</span></span></span></span> 互质的数的个数：$\phi(12)=12 \times (1-\frac{1}{2}) \times (1-\frac{1}{3})=4$</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+    <div class="section">
+      <div class="section__header">
+        <h1 class="section__title">题目</h1>
+      </div>
+          <div class="section__body no-padding">
+        <table class="data-table">
+          <colgroup>
+                      <col class="col--status">
+            <col class="col--submit-at">
+                      <col class="col--problem">
+          </colgroup>
+          <thead>
+            <tr>
+                          <th class="col--status record-status--border">状态</th>
+              <th class="col--submit-at">最后递交于</th>
+                          <th class="col--problem">题目</th>
+            </tr>
+          </thead>
+          <tbody>
+                    <tr>
+                                                                                      <td class="col--status record-status--border  pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68e5af1d8cb060a6856d3910.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                                    <td class="col--submit-at"><span class="time relative" data-timestamp="1759883037">2025-10-8 8:23:57</span></td>
+                                            <td class="col--problem col--problem-name">
+                                      <a href="../p/LS1163@tid=68d762cbc69a4e0706158d7e.html"><b>LS1163</b>
+&nbsp;&nbsp;【普及】埃氏筛和欧拉筛</a>
+                              </td>
+            </tr><tr>
+                                                                                      <td class="col--status record-status--border  pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68e8e6a2cff3a7b1c09e7d71.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                                    <td class="col--submit-at"><span class="time relative" data-timestamp="1760093858">2025-10-10 18:57:38</span></td>
+                                            <td class="col--problem col--problem-name">
+                                      <a href="../p/LS1233@tid=68d762cbc69a4e0706158d7e.html"><b>LS1233</b>
+&nbsp;&nbsp;【入门】多个数分解质因数</a>
+                              </td>
+            </tr><tr>
+                                                                                      <td class="col--status record-status--border  pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68e91037cff3a7b1c09e808c.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                                    <td class="col--submit-at"><span class="time relative" data-timestamp="1760104503">2025-10-10 21:55:03</span></td>
+                                            <td class="col--problem col--problem-name">
+                                      <a href="../p/LS1234@tid=68d762cbc69a4e0706158d7e.html"><b>LS1234</b>
+&nbsp;&nbsp;【普及】相等</a>
+                              </td>
+            </tr><tr>
+                                                                                      <td class="col--status record-status--border  pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68e8e62ecff3a7b1c09e7d45.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                                    <td class="col--submit-at"><span class="time relative" data-timestamp="1760093742">2025-10-10 18:55:42</span></td>
+                                            <td class="col--problem col--problem-name">
+                                      <a href="../p/LS1236@tid=68d762cbc69a4e0706158d7e.html"><b>LS1236</b>
+&nbsp;&nbsp;【普及】区间筛法</a>
+                              </td>
+            </tr><tr>
+                                                                                      <td class="col--status record-status--border  pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68e91769cff3a7b1c09e818a.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                                    <td class="col--submit-at"><span class="time relative" data-timestamp="1760106345">2025-10-10 22:25:45</span></td>
+                                            <td class="col--problem col--problem-name">
+                                      <a href="../p/LS1231@tid=68d762cbc69a4e0706158d7e.html"><b>LS1231</b>
+&nbsp;&nbsp;【提高】连续的自然数</a>
+                              </td>
+            </tr><tr>
+                                                                                      <td class="col--status record-status--border  pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68e8e5a2cff3a7b1c09e7d16.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                                    <td class="col--submit-at"><span class="time relative" data-timestamp="1760093602">2025-10-10 18:53:22</span></td>
+                                            <td class="col--problem col--problem-name">
+                                      <a href="../p/LS1235@tid=68d762cbc69a4e0706158d7e.html"><b>LS1235</b>
+&nbsp;&nbsp;【普及】最值求商</a>
+                              </td>
+            </tr><tr>
+                                                                                      <td class="col--status record-status--border  pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68e91bd5cff3a7b1c09e81b4.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                                    <td class="col--submit-at"><span class="time relative" data-timestamp="1760107477">2025-10-10 22:44:37</span></td>
+                                            <td class="col--problem col--problem-name">
+                                      <a href="../p/LS1237@tid=68d762cbc69a4e0706158d7e.html"><b>LS1237</b>
+&nbsp;&nbsp;【普及】最大公约数计数</a>
+                              </td>
+            </tr><tr>
+                                                                                      <td class="col--status record-status--border  pass">
+  <div class="col--status__text">
+    <span class="icon record-status--icon pass"></span>
+    <a 
+      href="../record/68e92020cff3a7b1c09e81d5.html"
+      class="record-status--text pass"
+    >
+            <span style="color: #25ad40">100</span>
+            Accepted
+    </a>
+  </div>
+  </td>
+
+                                    <td class="col--submit-at"><span class="time relative" data-timestamp="1760108576">2025-10-10 23:02:56</span></td>
+                                            <td class="col--problem col--problem-name">
+                                      <a href="../p/LS1164@tid=68d762cbc69a4e0706158d7e.html"><b>LS1164</b>
+&nbsp;&nbsp;【普及】约数个数_约数和_欧拉函数</a>
+                              </td>
+            </tr></tbody>
+        </table>
+      </div>
+        </div>
+  </div>
+  <div class="medium-3 columns">
+    <div class="section side">
+  <div>
+    <ol class="menu">
+                  <li class="menu__item"><a class="menu__link" href="https://www.gzlzoi.cn/d/lzoi2025/homework/68d762cbc69a4e0706158d7e/scoreboard">
+        <span class="icon icon-statistics"></span> 成绩表
+      </a></li>
+                  <li class="menu__item"><a class="menu__link" href="../record@uidOrName=39&amp;tid=68d762cbc69a4e0706158d7e.html">
+        <span class="icon icon-flag"></span> 我的最近递交记录
+      </a></li>
+          <li class="menu__item"><a class="menu__link" href="https://www.gzlzoi.cn/d/lzoi2025Error:&#32;No&#32;route&#32;found&#32;for&#32;name:&#32;wiki#homework">
+        <span class="icon icon-help"></span> 帮助
+      </a></li>
+      <li class="menu__seperator"></li>
+    </ol>
+  </div>
+  <div class="section__body typo">
+    <dl class="large horizontal">
+      <dt>状态</dt><dd>正在进行…</dd>
+      <dt>题目</dt><dd>8</dd>
+      <dt>开始时间</dt><dd><span class="time" data-timestamp="1759881600">2025-10-8 8:00</span>
+</dd>
+      <dt>截止时间</dt><dd><span class="time" data-timestamp="1818259140">2027-8-14 23:59</span>
+</dd>
+      <dt>可延期</dt><dd>24
+ 小时</dd>
+    </dl>
+  </div>
+</div>  </div>
+</div>
+  </div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+      <div class="row footer__links">
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          状态
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://www.gzlzoi.cn/d/lzoi2025/record">评测队列</a></li>
+          <li class="footer__category__item"><a href="../status.html">服务状态</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          开发
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">开源</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          支持
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/help.html">帮助</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">联系我们</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable end">
+        <h1>
+          关于
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/about.html">关于</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#privacy">隐私</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#tos">服务条款</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">版权申诉</a></li>
+        </ul></div>
+      </div>
+    </div>
+      <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+                    <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-lang"><li class="menu__item"><a class="menu__link" href="../language/en.html">English</a></li><li class="menu__item"><a class="menu__link" href="../language/ko.html">한국어</a></li><li class="menu__item"><a class="menu__link" href="../language/zh.html">简体中文</a></li><li class="menu__item"><a class="menu__link" href="../language/zh_TW.html">正體中文</a></li></ol>
+          </li>
+          <li class="footer__extra-link-item">
+                          <a href="https://www.gzlzoi.cn/legacy?legacy=true">兼容模式</a>
+                      </li>
+          <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> 主题 <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-theme">
+              <li class="menu__item"><a class="menu__link" href="../set_theme/light.html">亮色</a></li>
+              <li class="menu__item"><a class="menu__link" href="../set_theme/dark.html">暗色</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><a href="https://beian.miit.gov.cn/">京ICP备2023010486号-3</a></li><li class="footer__extra-link-item">Worker 0, 18ms</li>
+          <!-- Prepare 0ms -->
+          <!-- Method 5ms -->
+          
+          
+          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v5.0.0-beta.16</a> Community</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      window.UiContextNew = '{"tdoc":{"_id":"68d762cbc69a4e0706158d7e","content":"\u3010\u7B97\u6CD5\u5165\u95E8-14\u3011\u7B5B\u6CD5\u53EA\u80FD\u6C42\u8D28\u6570\uFF1F\\r\\n- \u4E0A\u8BFE\u7684\u8BFE\u4EF6\\r\\n  - [\u7B5B\u6CD5\u53EA\u80FD\u6C42\u8D28\u6570.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/68d762cbc69a4e0706158d7e/file/public/%E7%AD%9B%E6%B3%95%E5%8F%AA%E8%83%BD%E6%B1%82%E8%B4%A8%E6%95%B0.pdf)\\r\\n- \u53C2\u8003\u8D44\u6599\\r\\n  - [OiWiki\uFF1A\u7B5B\u6CD5\u6C42\u8D28\u6570\uFF0C\u6B27\u62C9\u51FD\u6570\uFF0C\u7EA6\u6570\u4E2A\u6570\uFF0C\u7EA6\u6570\u548C](https://oiwiki.org/math/number-theory/sieve/)\\r\\n  - [\u7EBF\u6027\u7B5B\u6C42 \u7EA6\u6570\u4E2A\u6570 \u4E0E \u7EA6\u6570\u548C](https://www.cnblogs.com/littlehb/p/16650121.html)\\r\\n  - [OiWiki\uFF1Abitset \u4F18\u5316\u7B5B\u6CD5](https://oiwiki.org/lang/csl/bitset/#%E4%B8%8E%E5%9F%83%E6%B0%8F%E7%AD%9B%E7%BB%93%E5%90%88)\\r\\n  - [\u533A\u95F4\u7B5B\u6CD5](https://blog.csdn.net/qq_52143183/article/details/123758398)\\r\\n  - [B \u7AD9\u89C6\u9891\uFF1A\u6B27\u62C9\u7B5B](https://www.bilibili.com/video/BV1H8411E7hn/?share_source=copy_web&vd_source=037e882c0cdcb03fb30079bba610dae3%60)\\r\\n\\r\\n- \u91CD\u70B9\\r\\n  - \u4E00\u4E2A\u5408\u6570 $n$ \u5FC5\u7136\u5B58\u5728\u4E0D\u8D85\u8FC7 $\\\\sqrt{n}$ \u7684\u8D28\u56E0\u5B50\\r\\n  - \u5047\u8BBE\u4E00\u4E2A\u6570\u5206\u89E3\u8D28\u56E0\u6570\u540E\u4E3A $x = a_1^{b_1} \\\\times a_2^{b_2} \\\\times a_3^{b_3}$\\r\\n  - \u90A3\u4E48 $x$ \u7684\u7EA6\u6570\u4E2A\u6570\u4E3A: $(b_1 + 1) \\\\times (b_2 + 1) \\\\times (b_3 + 1)$\\r\\n  - \u90A3\u4E48 $x$ \u7684\u7EA6\u6570\u548C\u4E3A: $(1 + a_1^1 + a_1^2 + \\\\cdots + a_1^{b_1}) \\\\times (1 + a_2^1 + a_2^2 + \\\\cdots + a_2^{b_2} \\\\times (1 + a_3^1 + a_3^2 + \\\\cdots + a_3^{b_3})$\\r\\n  - \u5C0F\u4E8E $x$ \u4E14\u4E0E $x$ \u4E92\u8D28\u7684\u6570\u7684\u4E2A\u6570\uFF1A$\\\\phi(x)=x \\\\times (1-\\\\frac{1}{a_1}) \\\\times (1-\\\\frac{1}{a_2}) \\\\times (1-\\\\frac{1}{a_3})$\\r\\n  - \u6BD4\u5982 $12 = 2 ^ 2 \\\\times 3 ^ 1$\\r\\n  - \u90A3\u4E48 $12$ \u7684\u7EA6\u6570\u4E2A\u6570\u4E3A\uFF1A$(2 + 1) \\\\times (1 + 1) = 6$\\r\\n  - \u90A3\u4E48 $12$ \u7684\u7EA6\u6570\u548C\u4E3A\uFF1A$(1 + 2 + 4) \\\\times (1 + 3) = 28$\\r\\n  - \u5C0F\u4E8E $12$ \u4E14\u4E0E $12$ \u4E92\u8D28\u7684\u6570\u7684\u4E2A\u6570\uFF1A$\\\\phi(12)=12 \\\\times (1-\\\\frac{1}{2}) \\\\times (1-\\\\frac{1}{3})=4$","owner":2,"domainId":"lzoi2025","docType":30,"docId":"68d762cbc69a4e0706158d7e","assign":["20250804\u4E0A\u5348"],"penaltySince":"2027-08-14T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"title":"\u3010\u7B97\u6CD5\u5165\u95E8-14\u3011\u7B5B\u6CD5\u53EA\u80FD\u6C42\u8D28\u6570\uFF1F","rule":"homework","beginAt":"2025-10-08T00:00:00.000Z","endAt":"2027-08-15T15:59:00.000Z","pids":[134,136,139,142,131,141,143,135],"attend":35,"rated":false,"langs":[],"maintainer":[],"files":[{"_id":"\u7B5B\u6CD5\u53EA\u80FD\u6C42\u8D28\u6570.pdf","name":"\u7B5B\u6CD5\u53EA\u80FD\u6C42\u8D28\u6570.pdf","size":2856719,"lastModified":"2025-10-08T03:00:02.761Z","etag":"L2RhdGEvZmlsZS9oeWRyby9mY2wvdDhjamNvbWx2YTkxN3owa3J6b3F0LnBkZg=="}]},"tsdoc":{"_id":"68d7b159fa8bfed207438e3c","uid":39,"docId":"68d762cbc69a4e0706158d7e","docType":30,"domainId":"lzoi2025","attend":1,"counter":1,"startAt":"2025-10-08T00:01:39.679Z","journal":[{"rid":"68e5af1d8cb060a6856d3910","pid":134,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":1437},{"rid":"68e8e5a2cff3a7b1c09e7d16","pid":141,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":212002},{"rid":"68e8e62ecff3a7b1c09e7d45","pid":142,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":212142},{"rid":"68e8e687cff3a7b1c09e7d5c","pid":136,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":212231},{"rid":"68e8e6a2cff3a7b1c09e7d71","pid":136,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":212258},{"rid":"68e91037cff3a7b1c09e808c","pid":139,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":222903},{"rid":"68e91769cff3a7b1c09e818a","pid":131,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":224745},{"rid":"68e91bd5cff3a7b1c09e81b4","pid":143,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":225877},{"rid":"68e92020cff3a7b1c09e81d5","pid":135,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":226976}],"rev":40,"detail":{"131":{"rid":"68e91769cff3a7b1c09e818a","pid":131,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":224745},"134":{"rid":"68e5af1d8cb060a6856d3910","pid":134,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":1437},"135":{"rid":"68e92020cff3a7b1c09e81d5","pid":135,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":226976},"136":{"rid":"68e8e6a2cff3a7b1c09e7d71","pid":136,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":212258},"139":{"rid":"68e91037cff3a7b1c09e808c","pid":139,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":222903},"141":{"rid":"68e8e5a2cff3a7b1c09e7d16","pid":141,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":212002},"142":{"rid":"68e8e62ecff3a7b1c09e7d45","pid":142,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":212142},"143":{"rid":"68e91bd5cff3a7b1c09e81b4","pid":143,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":225877}},"penaltyScore":800,"score":800,"time":1538340}}';
+      window.UserContextNew = '{}';
+    </script>
+  </body>
+</html>

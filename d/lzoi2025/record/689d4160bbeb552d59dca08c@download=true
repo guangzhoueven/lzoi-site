@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+using pii = pair<i64, i64>;
+int main() {
+    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int m, n;
+	cin >> m >> n;							// m: 要覆盖点的个数, n: 线段数
+	vector<pii> a(n);						// 存储线段: a[L, R]
+	for (int i = 0; i < n; i++)				// 0-based
+		cin >> a[i].first >> a[i].second;	// 输入线段的长度区间[L，R]
+
+	sort(a.begin(), a.end(), [&](const auto & u, const auto & v) {
+//		return u.first != v.first ? u.first < v.first : u.second > v.second;
+		return u.first < v.first;
+	});
+
+	i64 ans = 0, now = 1;                				// ans: 已选线段数, now: 当前要覆盖的点
+	for (int i = 0; i < n; i++) {
+		ans++;                                 			// 每次循环必选一个线段
+		i64 tmp = a[i].second;        					// 当前可覆盖的最远右端点
+
+		while (i + 1 < n && a[i + 1].first <= now)		// 现在要覆盖 now，找到所有左端点 <= now 的线段中,右端点最大的
+			tmp = max(tmp, a[++i].second);
+		now = tmp + 1;
+		if (now > m) break;               				// 无法继续覆盖，退出循环
+	}
+	cout << ans << "\n";
+	return 0;
+}

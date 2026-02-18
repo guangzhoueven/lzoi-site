@@ -1,0 +1,139 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using i64 = long long;
+const int P = 998244353;
+
+inline int add(int x) {
+	if (x >= P) x -= P;
+	return x;
+}
+
+inline int dec(int x) {
+	if (x < 0) x += P;
+	return x;
+}
+
+// 最麻烦的方法, O(n^2)
+int fun1(int n) {
+	// f[i][j]: i 划分成恰好 j 个数的划分数
+	vector<vector<int>> f(n + 1, vector<int>(n + 1));
+	f[0][0] = 1;
+	for (int i = 1; i <= n; i++) {
+		f[i][1] = 1;
+		for (int j = 2; j <= i; j++) {
+			f[i][j]  = f[i - 1][j - 1];  // 有 1
+			f[i][j] = add(f[i][j] + f[i - j][j]);   // 没 1
+		}
+	}
+	int ans = 0;
+	for (int j = 1; j <= n; j++) ans = add(ans + f[n][j]);
+	return ans;
+}
+
+// 完全背包求划分数
+// 最简单, 但是依然很慢的方法, O(n^2)
+int fun2(int n) {
+	
+	// f[i][j]: 把 j 划分成 [1, i] 的数的和的划分数, 就是完全背包
+	vector<int> f(n + 1, 0);
+	f[0] = 1;
+	for (int i = 1; i <= n; i++) for (int j = i; j <= n; j++) {
+		f[j] = add(f[j] + f[j - i]);
+	}
+	return f[n];
+}
+
+// 最巧妙, 最快的方法, O(n * sqrt(n))
+int fun3(int n) {
+	int x = sqrt(n);
+	vector<vector<int>> f(2, vector<int>(n + 1, 0));
+	
+	int now = 0, pre = 1;
+	
+	// 完全背包
+	// f[i][j]: 把 j 划分成 [1, i] 的数的和的划分数, 就是完全背包
+	f[now][0] = 1;
+	for (int i = 1; i <= x - 1; i++) {
+		for (int j = i; j <= n; j++) f[now][j] = add(f[now][j] + f[now][j - i]);
+	}
+	
+	// 现在的 p[i] 只划分成了 [1, x - 1] 的数的和
+	vector<int> p = f[now];
+	
+	// 下面计算划分成包含 >= x 的数的和
+	// 枚举 >= x 的数的个数, 最多不超过 n / x 个
+	int mx = n / x;
+	for (int i = 1; i <= mx; i++) {
+		// 在这一轮中计算的 
+		// f[now][j]: 将 j 划分为恰好有 i 个数 >= x 的划分数
+		
+		swap(now, pre);
+		fill(f[now].begin(), f[now].end(), 0);
+		
+		for (int j = x * i; j <= n; j++) {
+			// f[now][j - i]: 在 >= x 的数中, 没有一个数 = x, 把每个数都 -1
+			// f[pre][j - x]: 在 >= x 的数中, 至少有一个 = x, 把这个 = x 的数删掉
+			f[now][j] = add(f[now][j - i] + f[pre][j - x]);  
+			
+			p[j] = add(p[j] + f[now][j]);
+		}
+	}
+	
+	return p[n];
+}
+
+// 最巧妙, 最快的方法, O(n * sqrt(n))
+// 更灵活, 将 n 划分成 [l, r] 中的数的和的划分数
+int fun4(int n, int l, int r) {
+	int x = min(r + 1, max(l, (int)sqrt(n)));
+	int mx = x > r ? 0 : n / x;
+
+	vector<vector<int>> f(2, vector<int>(n + 1, 0));
+	f[0][0] = 1;
+	
+	// 完全背包: f[j]: 表示 j 划分成 l 到 x - 1 种的数的划分数
+	// 这么简答的方法, 为何之前没有学过.......
+	// 注意: 这里 i 是从 l 开始
+	for (int i = l; i <= x - 1; i++) for (int j = i; j <= n; j++) {
+		f[0][j] = add(f[0][j] + f[0][j - i]);
+	}
+	
+	vector<int> p = f[0];
+	
+	for (int i = 1; i <= mx; i++) {
+		// 在这一轮中计算的 
+		// f[i & 1][j]: 将 j 划分为恰好有 i 个数 >= x 的划分数
+		
+		fill(f[i & 1].begin(), f[i & 1].end(), 0);
+	
+		for (int j = x * i; j <= n; j++) {
+			// f[i & 1][j - i]: 在 >= x 的数中, 没有一个数 = x, 把每个数都 -1
+			// f[(i & 1) ^ 1][j - x]: 在 >= x 的数中, 至少有一个 = x, 把这个 = x 的数删掉
+			f[i & 1][j] = add(f[i & 1][j - i] + f[(i & 1) ^ 1][j - x]);
+			
+			// 减去出现了 >= r + 1 的数的情况
+			// 这种情况只可能由 f[i & 1][j - i] 中有 = r 的情况, 然后每个数 + 1 转移得来
+			// f[i & 1][j - i] 中有 = r 的数, 把这个 r 删掉, 就得到 f[(i & 1) ^ 1][j - i - r]
+			if (j - r - i >= 0) {
+				f[i & 1][j] = dec(f[i & 1][j] - f[(i & 1) ^ 1][j - r - i]);
+			}
+			p[j] = add(p[j] + f[i & 1][j]);
+		}
+	}
+	
+	return p[n];
+}
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
+
+	int n, l, r;
+	cin >> n >> l >> r;
+	// cout << fun1(n) << '\n';        // O(n^2), 既不简洁, 也不快
+	// cout << fun2(n) << '\n';        // O(n^2), 简洁, 好写
+	// cout << fun3(n) << '\n';        // O(n * sqrt(n))
+	cout << fun4(n, l, r) << '\n';  // O(n * sqrt(n))
+	return 0;
+}

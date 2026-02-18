@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+	string s, a = "";
+	cin >> s;
+	s = "+" + s;
+	long long n = s.size(), ans = 0, j = 0;
+	for (long long i = j; i < n; i++) {
+		if (s[i] == '+') {
+			for (j = i + 1; s[j] != '+' && s[j] != '-'; j++) {
+				a += s[j];
+			}
+			ans += stoi(a);
+			a = "";
+		}
+		if (s[i] == '-') {
+			for (j = i + 1; s[j] != '+' && s[j] != '-'; j++) {
+				a += s[j];
+			}
+			ans -= stoi(a);
+			a = "";
+		}
+	}
+	cout << ans << "\n";
+	return 0;
+}

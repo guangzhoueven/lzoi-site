@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+const int MOD = 998244353;  //常用质数
+// 快速幂函数：利用二进制拆分指数 n，将幂运算分解为多次平方和乘法。 例如 x^5 = x^(4+1) = (x^2)^2 * x
+
+long long qpow(long long x, long long n, int mod) {
+    long long res = 1;
+    x %= mod;               // 先取模，防止溢出
+    while (n > 0) {         
+        if (n % 2 == 1) {   // 指数n拆分为二进制
+            res = (res * x) % mod; 
+        }
+        x = (x * x) % mod;  // 每次循环将底数平方，指数减半，计算 x^n % mod 的值,实现 O (log n) 复杂度 
+        n /= 2;             // 指数n向右移一位（相当于除以2）或 n >> 1;
+    }
+    return res;
+}
+
+// 等比数列求和公式： Sn = x^0 + x^1 + x^2 + x^3 + …… + x^n 
+//                 Sn = a0*(1-q^(n+1)) / (1-q),  其中a0 = x0 = 1，q = x，代入后如下
+//                 Sn = (1 - x^(n+1)) / (1-x)，即 Sn = (x^(n+1) - 1) / (x - 1)
+int main() {
+    long long x, n;
+    cin >> x >> n;
+    
+    if (x == 1) {   // 当公比为1时，总和为S = n+1 (从0位到n位)
+        cout << (n + 1) % MOD << '\n';
+    } else {        // 当公比 x不为1时，等比数列总和Sn = (x^(n+1) - 1) / (x - 1)  , 从 x0 到 xn 有n+1个数
+
+    // 利用费马小定理：(a / b) % mod = (a * b^(mod-2)) % mod（仅当 mod 为质数时成立，998244353 是常用质数）
+        long long num = (qpow(x, n + 1, MOD) - 1 + MOD) % MOD;  // 计算分子a = x^(n+1) - 1，+MOD为了防止结果为负数
+
+        long long inv = qpow(x - 1, MOD - 2, MOD);              // 计算分母b的逆元：根据费马小定理，b的逆元为b^(MOD-2) % MOD
+
+        long long ans = (num * inv) % MOD;                      // 计算结果（利用费马小定理）：a/b = 分子乘以分母的逆元并取模
+        cout << ans << endl;
+    }
+    
+    return 0;
+}

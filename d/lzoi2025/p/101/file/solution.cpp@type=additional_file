@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
+	
+	int T, a, b;
+	cin >> T;
+	while (T--) {
+		cin >> a >> b;
+		if (a <= b) cout << 3 << '\n' << 3 * a - 2 *b << ' ' << b << ' ' << b << '\n';
+		else cout << 3 << '\n' << b << ' ' << b << ' ' << 3 * a - 2 * b << '\n';
+	}
+	return 0;
+}

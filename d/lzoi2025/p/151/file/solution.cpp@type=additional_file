@@ -1,0 +1,107 @@
+// https://contest.xinyoudui.com/contest/280/problem/1440
+// 造数据用的展开计算器: https://zs.symbolab.com/solver/expand-calculator
+#include <bits/stdc++.h>
+using namespace std;
+
+using i64 = long long;
+using pii = pair<int, int>;
+const int MOD = 998244353;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr); cout.tie(nullptr);
+
+    // freopen("decompose.in",  "r", stdin);
+    // freopen("decompose.out", "w", stdout);
+
+    // a 表示的多项式 除以 (x + d)
+    auto div = [&](vector<int>& a, int n, int d) {
+        vector<int> b(n + 1, 0);
+        while (a[n] == 0) b[n--] = 0;
+        b[n] = 0, b[n - 1] = 1;
+        for (int i = n - 2; i >= 0; i--) {
+            b[i] = a[i + 1] - d * b[i + 1];
+        }
+        return b;
+    };
+
+    // 计算值
+    vector<int> t(21, 1);
+    for (int i = 1; i <= 20; i++) t[i] = (i64) t[i - 1] * 10 % MOD;
+    auto cal = [&](vector<int>& a, int n, int x) {
+        int ans = 0, y = 1;
+        for (int i = 0; i <= n; i++) {
+            ans = (ans + (i64) y * a[i] % MOD) % MOD;
+            y = (i64) y * x % MOD;
+        }
+        return ans;
+    };
+
+    // x^3+2x^2-5x-6
+    string s;
+    cin >> s;
+    int m = s.size(), n = 1;
+    vector<int> a(21, 0);
+    for (int i = 0; i < m; i++) {
+        int l = i, r = i;
+        while (r + 1 < m && (s[r + 1] != '+' && s[r + 1] != '-')) r++;
+
+        string t = s.substr(l, r - l + 1);
+        int f = ((l != 0 && s[l - 1] == '-') ? -1 : 1);       // 系数的正负 
+        int px = t.find('x');                                 // x 的位置
+        int p6 = t.find('^');                                 // ^ 的位置
+        if (px != 0) f = f * stoi(t.substr(0, px));           // 确定系数
+
+        // 确定次方
+        int c = 0;
+        if (px != t.npos) {
+            if (p6 == t.npos) c = 1;
+            else c = stoi(t.substr(p6 + 1));
+        }
+        n = max(n, c);
+        a[c] = f;
+
+        // cout << "l= " << l << ", r= " << r << ", t= " << t << ", f= " << f << ", c= " << c << '\n';
+        i = r + 1;
+    }
+    a.resize(n + 1);  // 多余的系数删除
+
+    // cout << "n= " << n << '\n';
+    // for (int i = n; i >= 0; i--) cout << a[i] << " \n"[i == 0];
+
+    int abs0 = abs(a[0]);
+    set<int> tmp;
+    for (int i = 1; i * i <= abs0; i++) if (abs0 % i == 0) {
+        tmp.insert(i), tmp.insert(-i);
+        tmp.insert(abs0 / i), tmp.insert(-abs0 / i);
+    } 
+
+    // 试根
+    vector<pii> ans;
+    for (int y : tmp) {
+        int res = cal(a, n, y);
+        // cout << "y= " << y << ", res= " << res << '\n';
+        if (res != 0) continue;
+
+        // 找到一个根
+        int d = -y, c = 0;
+        // cout << "d= " << d << '\n';
+        while (res == 0) {
+            c++;
+            a = div(a, n, d);
+            res = cal(a, n, y);
+            // for (int i = n; i >= 0; i--) cout << a[i] << " \n"[i == 0];
+            // cout << "res= " << res << '\n';
+        }
+        ans.push_back({d, c});
+    }
+    reverse(ans.begin(), ans.end());
+    for (auto [d, c] : ans) {
+        if (d > 0) cout << "(x+" << d << ")";
+        else cout << "(x" << d << ")";
+        if (c > 1) cout << "^" << c;
+    }
+    cout << '\n';
+
+    return 0;
+}

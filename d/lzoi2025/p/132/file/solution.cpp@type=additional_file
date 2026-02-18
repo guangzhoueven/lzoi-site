@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+const int inf = numeric_limits<int>::max() / 2;
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
+	
+	int n, m, tol = 0;
+	cin >> n >> m;
+
+	vector<int> v(n + 1), w(n + 1);
+	for (int i = 1; i <= n; i++) {
+		cin >> v[i] >> w[i];
+		tol += w[i];  // 总价值
+	}
+
+	// f(j) 价值为 j 的最小体积
+	vector<int> f(tol + 1, inf);
+	f[0] = 0;
+	for (int i = 1; i <= n; i++) {
+		for (int j = tol; j >= w[i]; j--) f[j] = min(f[j], f[j - w[i]] + v[i]); 
+	}
+
+	int ans = 0;
+	for (int j = tol; j >= 0; j--) if (f[j] <= m) {
+		ans = j;
+		break;
+	}
+	cout << ans << '\n';
+	return 0;
+}

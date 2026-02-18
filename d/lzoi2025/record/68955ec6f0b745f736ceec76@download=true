@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+const int INF = INT_MAX;
+template <typename T>	// C++特有的模板
+struct Graph {
+	int n;
+	vector<vector<pair<int, int>>> g;
+	vector<T> d;
+
+	Graph(int n_): n(n_) {	// 初始化
+		g.resize(n + 1);
+		d.resize(n + 1);
+	}
+
+	void add_edge(int u, int v, int w) {	// 添加节点
+		g[u].push_back({v, w});
+	}
+
+	void spfa_heap(int s) {			// 最短路
+		for (int i = 1; i <= n; i++) d[i] = INF;
+
+		priority_queue<pair<T, int>> q;
+		q.push({-(d[s] = 0), s});
+
+		while (!q.empty()) {
+			auto [w, u] = q.top();
+			q.pop();
+			if (d[u] != -w) continue;
+			for (auto [v, w] : g[u]) {
+				T tmp = d[u] + w;
+				if (tmp < d[v]) q.push({-(d[v] = tmp), v});
+			}
+		}
+	}
+};
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n, m, s, u, v, w;
+	cin >> n >> m >> s;
+	Graph<int> G(n);
+	while (m--) {
+		cin >> u >> v >> w;
+		G.add_edge(u, v, w);  // 有向图只添加 1 条边
+//		G.add_edge(v, u, w);  // 无向图要添加 2 条边
+	}
+	G.spfa_heap(s);
+	for (int i = 1; i <= n; i++) cout << G.d[i] << " \n"[i == n];	// 如果不是最后一个元素就输出 空格(" ")，否则输出 换行("\n")
+	return 0;
+}

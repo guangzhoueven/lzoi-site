@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	
+	int n, m, L;
+	cin >> n >> m >> L;
+
+	vector<int> a(n), b(m);
+	for (auto &x : a) cin >> x;
+	for (auto &x : b) cin >> x;
+
+	unordered_set<long long> f;
+	while (L--) {
+		int x, y;
+		cin >> x >> y;
+		f.insert((long long)(x-1)*m + (y-1));
+	}
+
+	auto max_a = max_element(a.begin(), a.end());
+	auto max_b = max_element(b.begin(), b.end());
+
+	if (!f.count((max_a-a.begin())*m + (max_b-b.begin()))) {
+		cout << *max_a + *max_b;
+		return 0;
+	}
+
+	int ans = 0;
+	for (int i = 0; i < n; ++i)
+		for (int j = 0; j < m; ++j)
+			if (!f.count(i*m + j))
+				ans = max(ans, a[i] + b[j]);
+
+	cout << ans;
+	return 0;
+}

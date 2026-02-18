@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html data-page="contest_detail_problem" data-layout="basic" class="layout--basic page--contest_detail_problem theme--dark nojs" data-mantine-color-scheme="dark" lang="zh" data-app="Hydro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.gzlzoi.cn/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../../favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../../android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="../../../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../../favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://www.gzlzoi.cn/p/LS1211?tid=686b1060839f592b7838df6a">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="乐知课堂" />
+  <meta property="og:url" content="https://www.gzlzoi.cn/p/LS1211" />
+  <meta property="og:image" content="/favicon-96x96.png" />
+                                  <meta property="og:locale" content="zh" />
+              <meta property="og:title" content="LS1211. 【入门】AB数对 - 乐知课堂" />
+    <meta property="og:description" content="[入门] 序列
+给出一串正整数数列以及一个正整数 C，要求计算出所有满足 A−B=C 的数对（A， B）的个数
+不同位置的数字一样的数对算不同的数对。
+提示：
+* 注意观察数据范围，比如数组的长度，计..." />
+    <title>【入门】AB数对 - 题目详情 - 乐知课堂</title>
+  <style>
+    body {
+      --font-family: "Microsoft Yahei", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Consolas", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="../../../theme-4.58.0-beta.17.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      window.UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","hydroacFeatures":[],"blspHost":"wss://ws.hydrooj.com","constantVersion":"1c07a499","domainId":"lzoi2025","domain":{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"},"extraTitleContent":"\u3010\u5165\u95E8\u3011AB\u6570\u5BF9","SWConfig":{"preload":"","hosts":["http://www.gzlzoi.cn","https://www.gzlzoi.cn","https://www.gzlzoi.cn/","/"],"assets":[],"domains":[]}}';
+      window.UserContext = '{"_id":39,"mail":"202610319@gzlzoi.cn","uname":"202610319","hashType":"hydro","priv":4,"regat":"2025-07-01T02:30:33.477Z","loginat":"2026-02-06T00:24:21.126Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921","role":"\u5B66\u751F","scope":"BigInt::-1","tfa":false,"authn":false,"group":["20250702\u4E0A\u5348","\u4E34\u65F6\u5C0F\u7EC4","20250804\u4E0A\u5348","39"],"domains":[{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"}],"viewLang":"zh","timeZone":"Asia/Shanghai","codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","avatar":"gravatar:202610319@gzlzoi.cn","qq":"","gender":"2","bio":"<blockquote class=\\"note\\">\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: yellow;\\">\u4E66\u5C71\u6709\u8DEF\u52E4\u4E3A\u5F84\uFF0C\u5B66\u6D77\u65E0\u6DAF\u82E6\u4F5C\u821F\u3002</p></h3>\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: #12DA72;\\">Diligence is the path to the mountain of knowledge, hard-working is the boat to the endless sea of learning.</p></h3>\\r\\n</blockquote>","school":"\u5E7F\u5DDE\u5E02\u5929\u6CB3\u533A\u9A8F\u666F\u5C0F\u5B66","studentId":"","backgroundImage":"/d/lzoi2025/file/39/%E4%B9%90%E7%9F%A5%E8%AF%BE%E5%A0%82%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.png","unreadMsg":0,"pinnedDomains":["lzoi2025"],"rounded":true,"skipAnimate":false,"showTimeAgo":true,"fontFamily":"Microsoft Yahei","codeFontFamily":"Consolas","theme":"dark","preferredEditorType":"sv","showInvisibleChar":false,"formatCode":true,"displayName":"\u9EC4\u98DE\u535A","rpInfo":{"problem":237.2780396214451,"contest":8.25},"nAccept":191,"nSubmit":194,"rp":245.5280396214451,"rank":2,"level":8,"join":true,"avatarUrl":"//cn.gravatar.com/avatar/2dbb0a041212ea8df395e4d4418e92fa?d=mm&s=128"}';
+    </script>
+      </head>
+<body>
+      <script type="text/javascript" src="../../../resource/1c07a499/entry.js"></script>
+    <script type="text/javascript" src="../../../resource/4.58.0-beta.17/lang-zh.js"></script>
+    <script type="text/javascript" src="../../../hydro-4.58.0-beta.17.js"></script>
+    <nav class="nav slideout-menu" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://www.gzlzoi.cn/"><img class="nav__logo" src="../../../components/navigation/nav-logo-small_dark.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="../contest.html" class="nav__item">
+    返回比赛列表
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../contest/686b1060839f592b7838df6a.html" class="nav__item nav--active">
+    第五天：青山不改，绿水长流
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../contest/686b1060839f592b7838df6a/problems.html" class="nav__item">
+    题目列表
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="https://www.gzlzoi.cn/d/lzoi2025/contest/686b1060839f592b7838df6a/scoreboard" class="nav__item">
+    比赛成绩表
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="45@tid=686b1060839f592b7838df6a.html" class="nav__item nav--active">
+    D. 【入门】AB数对
+  </a>
+</li>
+      </ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+              <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-domain" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <span class="nav__item"><span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span> lzoi2025 <span class="icon icon-expand_more nojs--hide"></span></span>
+        <ol class="dropdown-target menu" id="menu-nav-domain"><li class="menu__item">
+              <a href="../index.html" class="menu__link">
+                <span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span>
+                lzoi2025              </a>
+            </li><li class="menu__seperator"></li><li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 管理
+            </a>
+          </li>
+        </ol>
+      </li>
+          <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <a href="../user/39.html" class="nav__item">202610319 <span class="icon icon-expand_more nojs--hide"></span></a>
+        <ol class="dropdown-target menu" id="menu-nav-user">
+          <li class="menu__item">
+            <a href="../user/39.html" class="menu__link">
+              <span class="icon icon-account--circle"></span> 我的资料
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/messages.html" class="menu__link">
+              <span class="icon icon-comment--multiple"></span> 站内消息
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> @ lzoi2025
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/account.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 账户设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/settings/preference.html" class="menu__link">
+              <span class="icon icon-sliders"></span> 偏好设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/security.html" class="menu__link">
+              <span class="icon icon-security"></span> 安全设置
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> 我的域
+            </a>
+          </li>
+                              <li class="menu__seperator"></li>
+                    <li class="menu__item">
+            <a href="../logout.html" class="menu__link" name="nav_logout">
+              <span class="icon icon-logout"></span> 登出
+            </a>
+          </li>
+        </ol>
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://www.gzlzoi.cn/" target="_self">
+        <img src="../../../components/navigation/nav-logo-small_dark.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+        <script>
+
+  
+  
+  
+  
+  
+  
+  
+</script>
+<div class="row" data-sticky-parent>
+  <div class="medium-9 columns">
+    <div class="section">
+      <div class="section__header">
+        <h1 class="section__title">
+                    D. 【入门】AB数对
+        </h1>
+                  <div class="section__tools contest-problems">
+                                                      <a href="40@tid=686b1060839f592b7838df6a.html"
+                 class="pass                        ">
+                <span class="id">A</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="29@tid=686b1060839f592b7838df6a.html"
+                 class="pass                        ">
+                <span class="id">B</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="43@tid=686b1060839f592b7838df6a.html"
+                 class="pass                        ">
+                <span class="id">C</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="45@tid=686b1060839f592b7838df6a.html"
+                 class="pass                         active">
+                <span class="id">D</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="49@tid=686b1060839f592b7838df6a.html"
+                 class="pass                        ">
+                <span class="id">E</span>
+                <span class="icon icon-check"></span>              </a>          </div>
+              </div>
+      <div class="section__body">
+        <ul class="problem__tags">
+                    <span class="problem__tag-item icon icon-book">传统题</span>
+                                <span class="problem__tag-item icon icon-stopwatch">200ms</span>
+            <span class="problem__tag-item icon icon-comparison">128MiB</span>
+                                      </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="problem-content-container"><div class="problem-content" data-marker-enabled>
+        <div class="section__header non-scratchpad--hide">
+          <h1 class="section__title">【入门】AB数对</h1>
+        </div>
+                <div class="section__body typo richmedia" data-fragment-id="problem-description">
+                <blockquote class="note">
+      <p>比赛已经结束。新提交将被视为补题提交，不计入比赛成绩。</p>
+    </blockquote>
+                    <h1 id="%5B%E5%85%A5%E9%97%A8%5D-%E5%BA%8F%E5%88%97" tabindex="-1">[入门] 序列</h1>
+<p>给出一串正整数数列以及一个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span></span></span></span>，要求计算出所有满足 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>−</mo><mi>B</mi><mo>=</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">A - B = C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span></span></span></span> 的数对（A， B）的个数</p>
+<p>不同位置的数字一样的数对算不同的数对。</p>
+<p><code>提示</code>：</p>
+<ul>
+<li>注意观察数据范围，比如数组的长度，计算下时间复杂度，超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mn>10</mn><mn>8</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(10^8)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 是会超时的</li>
+<li>注意观察数据范围，比如 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>C</mi><mo>&lt;</mo><msup><mn>10</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">1 \leq C &lt; 10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span></li>
+<li><font color="#FF0000">想一想最近学过的工具，哪个可以用上，翻一翻这几天的课件，你是做过类似题目的</font></li>
+<li>想一想最后的结果会不会超过 <code>int</code> 的最大值</li>
+</ul>
+<h1 id="%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F" tabindex="-1">输入格式</h1>
+<p>输入共两行。</p>
+<p>第一行，两个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo separator="true">,</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">N,C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span></span></span></span>。</p>
+<p>第二行，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 个正整数，作为要求处理的那串数。</p>
+<h1 id="%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F" tabindex="-1">输出格式</h1>
+<p>一行，表示该串正整数中包含的满足 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>−</mo><mi>B</mi><mo>=</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">A - B = C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span></span></span></span> 的数对（A， B）的个数。</p>
+<pre><code class="language-input1">4 1
+1 1 2 3
+</code></pre>
+<pre><code class="language-output1">3
+</code></pre>
+<h1 id="%E6%8F%90%E7%A4%BA" tabindex="-1">提示</h1>
+<p><strong>【样例 1 解释】</strong></p>
+<ul>
+<li>(1, 2), (1, 2), (2, 3) 是满足条件的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span> 个数对</li>
+</ul>
+<p><strong>【数据范围】</strong></p>
+<ul>
+<li>对于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>20</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">20\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">20%</span></span></span></span> 的数据，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>2000</mn></mrow><annotation encoding="application/x-tex">1 \leq N \leq 2000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2000</span></span></span></span>。</li>
+<li>对于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">100\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">100%</span></span></span></span> 的数据，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>2</mn><mo>×</mo><msup><mn>10</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">1 \leq N \leq 2 \times 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><msub><mi>a</mi><mi>i</mi></msub><mo>&lt;</mo><msup><mn>10</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">0 \leq a_i &lt; 10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6891em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>C</mi><mo>&lt;</mo><msup><mn>10</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">1 \leq C &lt; 10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span>。</li>
+</ul>
+<details>
+<summary><font color="#FF0000">请思考后再点击查看提示</font></summary>
+</details>
+
+</div>      </div></div>
+    </div>
+  </div>
+  <div class="medium-3 columns"><div data-sticky="large">
+            <div class="section side section--problem-sidebar">
+  <div>
+    <ol class="menu">
+              <li class="menu__item scratchpad--hide nojs--hide"><a class="menu__link highlight" name="problem-sidebar__open-scratchpad" href="javascript:;" data-global-hotkey="alt+e" style="display: none;">
+        <span class="icon icon-enlarge"></span> 进入在线编程模式 (Alt+E)
+      </a></li>
+      <li class="menu__item non-scratchpad--hide"><a class="menu__link" name="problem-sidebar__quit-scratchpad" href="javascript:;" data-global-hotkey="alt+q">
+        <span class="icon icon-enlarge"></span> 退出在线编程模式 (Alt+Q)
+      </a></li>
+          <li class="menu__item scratchpad--hide"><a class="menu__link" href="LS1211/submit.html">
+        <span class="icon icon-send"></span> 递交
+      </a></li>
+              <li class="menu__item"><a class="menu__link" href="LS1211.html">
+        <span class="icon icon-send"></span> 在题库中打开
+      </a></li>
+            </ol>
+  </div>
+</div>
+    <div class="section side">
+  <a class="contest-sidebar__bg" href="../contest/686b1060839f592b7838df6a.html">
+    <div class="section__body">
+      <h1>第五天：青山不改，绿水长流</h1>
+      <div class="contest-sidebar__status">
+              <span class="icon icon-check"></span> 已参加
+            </div>
+    </div>
+  </a>
+  <div>
+    <ol class="menu">
+              <li class="menu__item"><a class="menu__link" href="../contest/686b1060839f592b7838df6a.html">
+        <span class="icon icon-award"></span> 查看比赛
+      </a></li>
+              <li class="menu__item"><a class="menu__link" href="../contest/686b1060839f592b7838df6a/problems.html">
+        <span class="icon icon-unordered_list"></span> 题目列表
+      </a></li>
+    
+          <li class="menu__item"><a class="menu__link" href="https://www.gzlzoi.cn/d/lzoi2025/contest/686b1060839f592b7838df6a/scoreboard">
+        <span class="icon icon-statistics"></span> 成绩表
+      </a></li>
+                          <li class="menu__item"><a class="menu__link" href="../discuss/contest/686b1060839f592b7838df6a.html">
+        <span class="icon icon-comment--text"></span> 讨论
+      </a></li>
+                  <li class="menu__item"><a class="menu__link" href="../record@tid=686b1060839f592b7838df6a&amp;uidOrName=39.html">
+        <span class="icon icon-flag"></span> 我的递交
+      </a></li>
+          <li class="menu__item"><a class="menu__link" href="../wiki/help.html#contest">
+        <span class="icon icon-help"></span> 帮助
+      </a></li>
+      <li class="menu__seperator"></li>
+    </ol>
+  </div>
+  <div class="section__body typo">
+    <dl class="large horizontal">
+      <dt>状态</dt>
+      <dd>
+        已结束
+                  (已参加)
+              </dd>
+      <dt>规则</dt><dd>IOI</dd>
+      <dt>题目</dt><dd>5</dd>
+      <dt>开始于</dt><dd><span class="time" data-timestamp="1751848766.341">2025-7-7 8:39</span>
+</dd>
+      <dt>结束于</dt><dd><span class="time" data-timestamp="1751857766.341">2025-7-7 11:09</span>
+</dd>
+      <dt>持续时间</dt><dd>2.5
+ 小时</dd>
+      <dt>主持人</dt><dd><span class="user-profile-link">
+      <img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20">
+    <a class="user-profile-name uname--lv3" href="../user/2.html">
+          liangsheng
+      </a>
+  </span>
+</dd>
+      <dt>参赛人数</dt><dd>63</dd>
+    </dl>
+  </div>
+</div>
+    </div></div>
+</div>
+<div style="display:none" class="outer-loader-container"><div class="loader"></div></div>
+<div class="scratchpad-container" style="display:none">
+  <div style="display:none" class="loader-container"><div class="loader"></div></div>
+  <div id="scratchpad" style="opacity:0"></div>
+</div>
+  </div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+      <div class="row footer__links">
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          状态
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://www.gzlzoi.cn/d/lzoi2025/record">评测队列</a></li>
+          <li class="footer__category__item"><a href="../status.html">服务状态</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          开发
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">开源</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          支持
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/help.html">帮助</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">联系我们</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable end">
+        <h1>
+          关于
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/about.html">关于</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#privacy">隐私</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#tos">服务条款</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">版权申诉</a></li>
+        </ul></div>
+      </div>
+    </div>
+      <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+                    <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-lang"><li class="menu__item"><a class="menu__link" href="../language/en.html">English</a></li><li class="menu__item"><a class="menu__link" href="../language/ko.html">한국어</a></li><li class="menu__item"><a class="menu__link" href="../language/zh.html">简体中文</a></li><li class="menu__item"><a class="menu__link" href="../language/zh_TW.html">正體中文</a></li></ol>
+          </li>
+          <li class="footer__extra-link-item">
+                          <a href="https://www.gzlzoi.cn/legacy?legacy=true">兼容模式</a>
+                      </li>
+          <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> 主题 <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-theme">
+              <li class="menu__item"><a class="menu__link" href="../set_theme/light.html">亮色</a></li>
+              <li class="menu__item"><a class="menu__link" href="../set_theme/dark.html">暗色</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><a href="https://beian.miit.gov.cn/">京ICP备2023010486号-3</a></li><li class="footer__extra-link-item">Worker 0, 16ms</li>
+          <!-- Prepare 3ms -->
+          <!-- Method 0ms -->
+          
+          
+          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v5.0.0-beta.16</a> Community</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      window.UiContextNew = '{"problemId":"LS1211","problemNumId":45,"codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","pdoc":{"_id":"68622c6617784e3f22a8f645","content":"{\\"zh\\":\\"# [\u5165\u95E8] \u5E8F\u5217\\\\n\\\\n\u7ED9\u51FA\u4E00\u4E32\u6B63\u6574\u6570\u6570\u5217\u4EE5\u53CA\u4E00\u4E2A\u6B63\u6574\u6570 $C$\uFF0C\u8981\u6C42\u8BA1\u7B97\u51FA\u6240\u6709\u6EE1\u8DB3 $A - B = C$ \u7684\u6570\u5BF9\uFF08A\uFF0C B\uFF09\u7684\u4E2A\u6570\\\\n\\\\n\u4E0D\u540C\u4F4D\u7F6E\u7684\u6570\u5B57\u4E00\u6837\u7684\u6570\u5BF9\u7B97\u4E0D\u540C\u7684\u6570\u5BF9\u3002\\\\n\\\\n`\u63D0\u793A`\uFF1A\\\\n- \u6CE8\u610F\u89C2\u5BDF\u6570\u636E\u8303\u56F4\uFF0C\u6BD4\u5982\u6570\u7EC4\u7684\u957F\u5EA6\uFF0C\u8BA1\u7B97\u4E0B\u65F6\u95F4\u590D\u6742\u5EA6\uFF0C\u8D85\u8FC7 $O(10^8)$ \u662F\u4F1A\u8D85\u65F6\u7684\\\\n- \u6CE8\u610F\u89C2\u5BDF\u6570\u636E\u8303\u56F4\uFF0C\u6BD4\u5982 $1 \\\\\\\\leq C < 10^9$\\\\n- <font color=\\\\\\"#FF0000\\\\\\">\u60F3\u4E00\u60F3\u6700\u8FD1\u5B66\u8FC7\u7684\u5DE5\u5177\uFF0C\u54EA\u4E2A\u53EF\u4EE5\u7528\u4E0A\uFF0C\u7FFB\u4E00\u7FFB\u8FD9\u51E0\u5929\u7684\u8BFE\u4EF6\uFF0C\u4F60\u662F\u505A\u8FC7\u7C7B\u4F3C\u9898\u76EE\u7684</font>\\\\n- \u60F3\u4E00\u60F3\u6700\u540E\u7684\u7ED3\u679C\u4F1A\u4E0D\u4F1A\u8D85\u8FC7 `int` \u7684\u6700\u5927\u503C\\\\n\\\\n# \u8F93\u5165\u683C\u5F0F\\\\n\\\\n\u8F93\u5165\u5171\u4E24\u884C\u3002\\\\n\\\\n\u7B2C\u4E00\u884C\uFF0C\u4E24\u4E2A\u6B63\u6574\u6570 $N,C$\u3002\\\\n\\\\n\u7B2C\u4E8C\u884C\uFF0C$N$ \u4E2A\u6B63\u6574\u6570\uFF0C\u4F5C\u4E3A\u8981\u6C42\u5904\u7406\u7684\u90A3\u4E32\u6570\u3002\\\\n\\\\n# \u8F93\u51FA\u683C\u5F0F\\\\n\\\\n\u4E00\u884C\uFF0C\u8868\u793A\u8BE5\u4E32\u6B63\u6574\u6570\u4E2D\u5305\u542B\u7684\u6EE1\u8DB3 $A - B = C$ \u7684\u6570\u5BF9\uFF08A\uFF0C B\uFF09\u7684\u4E2A\u6570\u3002\\\\n\\\\n```input1\\\\n4 1\\\\n1 1 2 3\\\\n```\\\\n\\\\n```output1\\\\n3\\\\n```\\\\n\\\\n# \u63D0\u793A\\\\n\\\\n**\u3010\u6837\u4F8B 1 \u89E3\u91CA\u3011**\\\\n- (1, 2), (1, 2), (2, 3) \u662F\u6EE1\u8DB3\u6761\u4EF6\u7684 $3$ \u4E2A\u6570\u5BF9\\\\n\\\\n\\\\n**\u3010\u6570\u636E\u8303\u56F4\u3011**\\\\n- \u5BF9\u4E8E $20\\\\\\\\%$ \u7684\u6570\u636E\uFF0C$1 \\\\\\\\leq N \\\\\\\\leq 2000$\u3002\\\\n- \u5BF9\u4E8E $100\\\\\\\\%$ \u7684\u6570\u636E\uFF0C$1 \\\\\\\\leq N \\\\\\\\leq 2 \\\\\\\\times 10^5$\uFF0C$0 \\\\\\\\leq a_i < 10^9$\uFF0C$1 \\\\\\\\leq C < 10^9$\u3002\\\\n\\\\n<details>\\\\n<summary><font color=\\\\\\"#FF0000\\\\\\">\u8BF7\u601D\u8003\u540E\u518D\u70B9\u51FB\u67E5\u770B\u63D0\u793A</font></summary>\\\\n\\\\n</details>\\\\n\\\\n\x3C!-- # \u6765\u6E90\\\\n* [\u6D1B\u8C37 P1102 A-B \u6570\u5BF9](https://www.luogu.com.cn/problem/P1102) -->\\"}","owner":2,"domainId":"lzoi2025","docType":10,"docId":45,"title":"\u3010\u5165\u95E8\u3011AB\u6570\u5BF9","tag":[],"hidden":false,"pid":"LS1211","data":[{"_id":"1.in","name":"1.in","size":14,"lastModified":"2025-06-30T06:19:18.611Z","etag":"L2RhdGEvZmlsZS9oeWRyby9qNWUvNW8wOTRla3gybjI2OWUwMnVsc3JiLmlu"},{"_id":"1.out","name":"1.out","size":2,"lastModified":"2025-06-30T06:19:18.615Z","etag":"L2RhdGEvZmlsZS9oeWRyby9hYnUvaGE3MHBpdDB5Y20xeWF4NGxhZ2oyLm91dA=="},{"_id":"10.in","name":"10.in","size":200009,"lastModified":"2025-06-30T06:19:18.619Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ocDUvMHNjMzl5M3gwYmxpcTc2YTZrNHZ5Lmlu"},{"_id":"10.out","name":"10.out","size":11,"lastModified":"2025-06-30T06:19:18.623Z","etag":"L2RhdGEvZmlsZS9oeWRyby84b3cvc3hpMHhzb25lNGh4bDZ2enlheWhkLm91dA=="},{"_id":"2.in","name":"2.in","size":2640,"lastModified":"2025-06-30T06:19:18.626Z","etag":"L2RhdGEvZmlsZS9oeWRyby94bGYvdWhxYm8waXNnZG5rY2pjcHN2a3piLmlu"},{"_id":"2.out","name":"2.out","size":6,"lastModified":"2025-06-30T06:19:18.629Z","etag":"L2RhdGEvZmlsZS9oeWRyby9zd2UvYjcwaG1rbGF5eGw0eXAyMHh2ZmFoLm91dA=="},{"_id":"3.in","name":"3.in","size":8512,"lastModified":"2025-06-30T06:19:18.632Z","etag":"L2RhdGEvZmlsZS9oeWRyby9vMnEvMHYyYnR0dGhuaW84aXphYmJmenA0Lmlu"},{"_id":"3.out","name":"3.out","size":8,"lastModified":"2025-06-30T06:19:18.638Z","etag":"L2RhdGEvZmlsZS9oeWRyby9maHQvdmF6cXdzYjZiN3Fhd3R4eDR2dGN5Lm91dA=="},{"_id":"4.in","name":"4.in","size":169409,"lastModified":"2025-06-30T06:19:18.647Z","etag":"L2RhdGEvZmlsZS9oeWRyby9majkveDBtcmx1c3R6OXE1ZnQ3aTVsZnlsLmlu"},{"_id":"4.out","name":"4.out","size":8,"lastModified":"2025-06-30T06:19:18.652Z","etag":"L2RhdGEvZmlsZS9oeWRyby9reG8vb2Npb3cwYXBoajV3aWRzZmNoeTF3Lm91dA=="},{"_id":"5.in","name":"5.in","size":295909,"lastModified":"2025-06-30T06:19:18.656Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lYzkvZmNpenJvbnhieGl2c2VycWZiMHd6Lmlu"},{"_id":"5.out","name":"5.out","size":8,"lastModified":"2025-06-30T06:19:18.659Z","etag":"L2RhdGEvZmlsZS9oeWRyby95OXovaXE1ZnRhdHNmN2N3dGUzMWd5aHNpLm91dA=="},{"_id":"6.in","name":"6.in","size":145683,"lastModified":"2025-06-30T06:19:18.663Z","etag":"L2RhdGEvZmlsZS9oeWRyby9zdWkvOXhucHZ3YjRnZWdsdGp0bnk3MDBqLmlu"},{"_id":"6.out","name":"6.out","size":7,"lastModified":"2025-06-30T06:19:18.667Z","etag":"L2RhdGEvZmlsZS9oeWRyby93Y2QvMGptb3MxZHM5NTBnZGVrbXdwaTAwLm91dA=="},{"_id":"7.in","name":"7.in","size":163635,"lastModified":"2025-06-30T06:19:18.671Z","etag":"L2RhdGEvZmlsZS9oeWRyby9rZ3AvZWF4M3ltaWhyNG13b3Zod2d6cjQzLmlu"},{"_id":"7.out","name":"7.out","size":7,"lastModified":"2025-06-30T06:19:18.674Z","etag":"L2RhdGEvZmlsZS9oeWRyby9qZmsvc2psd2NzaGRqZDZhZ3cwdGhhbG52Lm91dA=="},{"_id":"8.in","name":"8.in","size":247449,"lastModified":"2025-06-30T06:19:18.677Z","etag":"L2RhdGEvZmlsZS9oeWRyby9nZHYvcnU2YXJjc3ZqeXNtMGhsa2RiMmVyLmlu"},{"_id":"8.out","name":"8.out","size":8,"lastModified":"2025-06-30T06:19:18.680Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kbGsvZmZ6aDIwaXhvM3ljajR0NHFkZ21lLm91dA=="},{"_id":"9.in","name":"9.in","size":364854,"lastModified":"2025-06-30T06:19:18.684Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ubngvcnNrcm93OHI2ZWZ6dm8wZ3JtaWkxLmlu"},{"_id":"9.out","name":"9.out","size":8,"lastModified":"2025-06-30T06:19:18.687Z","etag":"L2RhdGEvZmlsZS9oeWRyby90NDAvbzk2dG5raDVweThocXFra3owOGlvLm91dA=="},{"_id":"config.yaml","name":"config.yaml","size":549,"lastModified":"2025-06-30T06:26:36.854Z","etag":"L2RhdGEvZmlsZS9oeWRyby9heGYvaWJlcGtkYXV1cW9qNWRqODB4Z2t5LnlhbWw="}],"config":{"count":10,"memoryMin":128,"memoryMax":128,"timeMin":200,"timeMax":200,"type":"default","langs":["cc","cc.cc14o2","cc.cc17o2","py","py.py3"]},"additional_file":[{"_id":"gen.py","name":"gen.py","size":2680,"lastModified":"2025-06-30T06:19:18.697Z","etag":"L2RhdGEvZmlsZS9oeWRyby9hbHgva2IwdnFkeXhoM2c3ZmdsbnAza2d6LnB5"},{"_id":"make.sh","name":"make.sh","size":232,"lastModified":"2025-06-30T06:19:18.701Z","etag":"L2RhdGEvZmlsZS9oeWRyby9wMHkvdXAzMzNidnlpZXBhYXAzcm9kZmU2LnNo"},{"_id":"run.sh","name":"run.sh","size":392,"lastModified":"2025-06-30T06:19:18.704Z","etag":"L2RhdGEvZmlsZS9oeWRyby9qenYvc2k3czFsbTR4eGJ4cWJ2YXV6aHZ3LnNo"},{"_id":"solution.cpp","name":"solution.cpp","size":328,"lastModified":"2025-06-30T06:19:18.708Z","etag":"L2RhdGEvZmlsZS9oeWRyby9sYjAvZXpkZnJkbmd0aHB4YXA3ZXVqZDBqLmNwcA=="}],"html":false},"tdoc":{"_id":"686b1060839f592b7838df6a","content":"\u9752\u5C71\u4E0D\u6539\uFF0C\u7EFF\u6C34\u957F\u6D41\uFF0C\u76F8\u4FE1\u6211\u4EEC\u5F88\u5FEB\u4F1A\u518D\u89C1\u9762\uFF0C\\r\\n\u540C\u5B66\u4EEC\uFF0C\u540E\u4F1A\u6709\u671F\uFF01\uFF01","owner":2,"domainId":"lzoi2025","docType":30,"docId":"686b1060839f592b7838df6a","duration":2.5,"title":"\u7B2C\u4E94\u5929\uFF1A\u9752\u5C71\u4E0D\u6539\uFF0C\u7EFF\u6C34\u957F\u6D41","rule":"ioi","beginAt":"2025-07-07T00:30:00.000Z","endAt":"2025-07-17T00:30:00.000Z","pids":[40,29,43,45,49],"attend":63,"rated":true,"allowViewCode":false,"assign":["20250804\u4E0A\u5348"],"autoHide":true,"lockAt":null,"maintainer":[2]},"tsdoc":{"attend":1,"startAt":"2025-07-07T00:39:26.341Z","endAt":"2025-07-07T03:09:26.341Z","detail":{"29":{"rid":"686b1eec839f592b78390ab7","pid":29,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2"},"40":{"rid":"686b1f15839f592b78390baa","pid":40,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2"},"43":{"rid":"686b22fa839f592b78391cac","pid":43,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2"},"45":{"rid":"686b27d1839f592b78392dab","pid":45,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2"},"49":{"rid":"686b2d56839f592b78394163","pid":49,"status":1,"score":100,"subtasks":{"1":{"type":"min","score":30,"status":1},"2":{"type":"min","score":30,"status":1},"3":{"type":"min","score":40,"status":1}},"lang":"cc.cc17o2"}}},"canViewRecord":true,"postSubmitUrl":"/d/lzoi2025/p/45/submit","getSubmissionsUrl":"/d/lzoi2025/record?fullStatus=true&pid=45","getRecordDetailUrl":"/d/lzoi2025/record/%7Brid%7D","pretestConnUrl":"record-conn?pretest=1&uidOrName=39&pid=45&domainId=lzoi2025"}';
+      window.UserContextNew = '{}';
+    </script>
+  </body>
+</html>

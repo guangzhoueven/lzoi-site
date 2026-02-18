@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
+
+	int T, m, x;
+    string cmd;
+	cin >> T;
+	while (T--) {
+		cin >> m;
+		map<int, int> q;
+
+        int tmp = 0;  // 数组中的数 +tmp 后才是真实的值
+        while (m--) {
+            cin >> cmd >> x;
+            if (cmd == "P") q[x - tmp]++;
+            else if (cmd == "A") tmp += x;
+            else {
+                if (q.count(x - tmp)) cout << q[x - tmp] << '\n';
+                else cout << 0 << '\n';
+            }
+        }
+	}
+	return 0;
+}

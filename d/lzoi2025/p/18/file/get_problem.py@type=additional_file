@@ -1,0 +1,44 @@
+# /root/anaconda3/envs/py311/bin/python3.11
+# https://curlconverter.com/
+import requests, json
+
+cookies = {
+    'sid': 'TnGIuLaNhI444JqgrT2Ak2w6FYDutfCi',
+    'sid.sig': 'xZNRKdKY-G00Eu1t4ISBY0tkMfw',
+}
+
+headers = {
+    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+    'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,ru;q=0.7,zh-TW;q=0.6',
+    'cache-control': 'no-cache',
+    'pragma': 'no-cache',
+    'priority': 'u=0, i',
+    'referer': 'https://dtoj.team/p',
+    'sec-ch-ua': '"Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    'sec-fetch-dest': 'document',
+    'sec-fetch-mode': 'navigate',
+    'sec-fetch-site': 'same-origin',
+    'sec-fetch-user': '?1',
+    'upgrade-insecure-requests': '1',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36',
+    # 'cookie': 'sid=TnGIuLaNhI444JqgrT2Ak2w6FYDutfCi; sid.sig=xZNRKdKY-G00Eu1t4ISBY0tkMfw',
+}
+
+params = {
+    'noTemplate': '1',
+}
+
+problem_url = 'https://dtoj.team/p/LazyA1103'
+response = requests.get(problem_url, params=params, cookies=cookies, headers=headers)
+
+data = json.loads(response.text)
+problem_zh = json.loads(data['pdoc']['content'])['zh']
+title = data['pdoc']['title'].strip()
+
+# 最后加上来源
+problem_zh = total_zh + '\n# 来源' + '\n'
+problem_zh = total_zh + '- [' + title + '](' + problem_url + ')'
+
+print(problem_zh)

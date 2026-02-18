@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+const ll P = 1e+9 + 7;
+template<typename T>	// C++特有的模版
+struct F {
+	ll n;
+	vector<vector<T>> mat;
+
+	F(ll n_, T x): n(n_) {
+		mat.assign(n, vector<T>(n, 0));
+		for (ll i = 0; i < n; i++) mat[i][i] = x;
+	}
+
+	F operator*(const F& b) {
+		F ans(n, 0);
+		for (ll i = 0; i < n; i++) for (ll j = 0; j < n; j++) {
+				for (ll k = 0; k < n; k++) {
+					ans.mat[i][j] = (ans.mat[i][j] + (ll) mat[i][k] * b.mat[k][j]) % P;
+				}
+			}
+		return ans;
+	}
+};
+
+// 二进制求快速幂
+template<typename T>
+T power(T x, ll n) {
+	T ans = x;
+	n -= 1;
+	for (; n > 0; n >>= 1, x = x * x) if (n & 1) ans = ans * x;
+	return ans;
+}
+
+ll solve(ll n) {
+	F<ll> a(2, 0);
+	a.mat = {
+		{0, 1},
+		{1, 1}
+	};
+	a = power(a, n - 2);
+	ll fn = (a.mat[0][1] + a.mat[1][1]) % P;
+	return fn;
+}
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	ll n;
+	cin >> n;
+	if (n <= 2) {
+		cout << 1 << "\n";
+		return 0;
+	}
+	cout << solve(n) << "\n";
+	return 0;
+}

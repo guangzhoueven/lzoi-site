@@ -1,0 +1,65 @@
+#include <bits/stdc++.h>
+using namespace std;
+template <typename T>					// C++特有的模版
+
+struct Graph {
+	int n, k;  							// 节点数（城市数量）
+	vector<vector<pair<int, int>>> g;  	// 邻接表存储图, pair<目标节点v，边权值w>
+	vector<vector<T>> d;  				// d[u][k]为 u点用了k次免费的最小花费
+	vector<vector<bool>> visited;  		// visited[u][k]为 访问状态和使用k次免费的标记
+
+	Graph(int n_, int k_) : n(n_), k(k_) {
+		g.resize(n + 1);
+		d.assign(n + 1, vector<T>(k + 1, INT_MAX));
+		visited.resize(n + 1, vector<bool>(k + 1, false));
+	}
+
+	void add_edge(int u, int v, T w, bool p = false) {
+		g[u].push_back({v, w});  				// 构建 u -> v 的边（边权w）【有向图单边】
+		if (!p) g[v].push_back({u, w});			// 构建 v -> u 的边（边权w）【无向图双边】
+	}
+	
+	T dijkstra(int st, int ed, int k) {			// 起点st，终点ed，免费使用k次
+		using Node = tuple<int, int, int>;
+		priority_queue<Node, vector<Node>, greater<Node>> q; // 最小堆：当前花费，节点号，已使用的免费次数
+
+		for (int i = 0; i <= k; i++) d[st][i] = 0;			// 初始化：起点st处使用k次免费的最小花费为0
+															// 起点st处，花费0，使用免费次数0
+		q.push({0, st, 0});  								// 【插入队列到队尾并排序。先创建临时对象{}，再将其拷贝或移动到容器中】		 
+		//q.emplace(0, st, 0); 								// 【原地构造一个元素插入队尾。直接在容器内存中调用参数构造对象，无需创建临时对象{}】
+		
+		while (!q.empty()) {
+			auto [w, u, cnt_k] = q.top();  				  	// 取最小堆的堆顶：出当前最小花费
+			q.pop();
+			if (visited[u][cnt_k]) continue;
+			visited[u][cnt_k] = true;
+
+			for (auto [v, w] : g[u]) {						 // 遍历u的所有邻接节点
+				if (d[v][cnt_k] > d[u][cnt_k] + w) {   			 // 不使用免费机会
+					d[v][cnt_k] = d[u][cnt_k] + w;
+					q.push({d[v][cnt_k], v, cnt_k});
+				}
+				
+				if (cnt_k < k && d[v][cnt_k + 1] > d[u][cnt_k] ) {	 // 使用了免费机会
+					d[v][cnt_k + 1] = d[u][cnt_k] ;  				 // 免费乘坐，花费不变
+					q.push({d[v][cnt_k + 1], v, cnt_k + 1});  // 已用次数+1
+				}
+			}
+		}
+		return *min_element(d[ed].begin(), d[ed].end());	// 返回到达终点ed的最小花费（min(d[ed][0..k])）
+	}
+};
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n, m, k,   st, ed;
+	cin >> n >> m >> k >> st >> ed;
+	Graph<int> G(n, k);  			// 创建图（1-based）
+	while (m--) {				    // 添加所有边（航线）
+		int a, b, c;
+		cin >> a >> b >> c;
+		G.add_edge(a, b, c, 0);  	// 无向图（双边）
+	}
+	cout << G.dijkstra(st, ed, k) << "\n";
+	return 0;
+}

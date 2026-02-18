@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html data-page="problem_detail" data-layout="basic" class="layout--basic page--problem_detail theme--dark nojs" data-mantine-color-scheme="dark" lang="zh" data-app="Hydro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.gzlzoi.cn/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../../favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../../android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="../../../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../../favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://www.gzlzoi.cn/p/LS1238">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="乐知课堂" />
+  <meta property="og:url" content="https://www.gzlzoi.cn/p/LS1238" />
+  <meta property="og:image" content="/favicon-96x96.png" />
+                                  <meta property="og:locale" content="zh" />
+              <meta property="og:title" content="LS1238. 【省选】附魔 - 乐知课堂" />
+    <meta property="og:description" content="【省选】附魔
+史蒂夫有 n 本相同的附魔书。
+史蒂夫把 n 本附魔书分成若干堆，每堆的大小（书的数量）不少于 l 本且不大于 r 本。
+史蒂夫将大小相同的堆放入同一个书架，书架的大小为放入的堆数。
+无..." />
+    <title>【省选】附魔 - 题目详情 - 乐知课堂</title>
+  <style>
+    body {
+      --font-family: "Microsoft Yahei", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Consolas", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="../../../theme-4.58.0-beta.17.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      window.UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","hydroacFeatures":[],"blspHost":"wss://ws.hydrooj.com","constantVersion":"1c07a499","domainId":"lzoi2025","domain":{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"},"extraTitleContent":"\u3010\u7701\u9009\u3011\u9644\u9B54","SWConfig":{"preload":"","hosts":["http://www.gzlzoi.cn","https://www.gzlzoi.cn","https://www.gzlzoi.cn/","/"],"assets":[],"domains":[]}}';
+      window.UserContext = '{"_id":39,"mail":"202610319@gzlzoi.cn","uname":"202610319","hashType":"hydro","priv":4,"regat":"2025-07-01T02:30:33.477Z","loginat":"2026-02-06T00:24:21.126Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921","role":"\u5B66\u751F","scope":"BigInt::-1","tfa":false,"authn":false,"group":["20250702\u4E0A\u5348","\u4E34\u65F6\u5C0F\u7EC4","20250804\u4E0A\u5348","39"],"domains":[{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"}],"viewLang":"zh","timeZone":"Asia/Shanghai","codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","avatar":"gravatar:202610319@gzlzoi.cn","qq":"","gender":"2","bio":"<blockquote class=\\"note\\">\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: yellow;\\">\u4E66\u5C71\u6709\u8DEF\u52E4\u4E3A\u5F84\uFF0C\u5B66\u6D77\u65E0\u6DAF\u82E6\u4F5C\u821F\u3002</p></h3>\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: #12DA72;\\">Diligence is the path to the mountain of knowledge, hard-working is the boat to the endless sea of learning.</p></h3>\\r\\n</blockquote>","school":"\u5E7F\u5DDE\u5E02\u5929\u6CB3\u533A\u9A8F\u666F\u5C0F\u5B66","studentId":"","backgroundImage":"/d/lzoi2025/file/39/%E4%B9%90%E7%9F%A5%E8%AF%BE%E5%A0%82%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.png","unreadMsg":0,"pinnedDomains":["lzoi2025"],"rounded":true,"skipAnimate":false,"showTimeAgo":true,"fontFamily":"Microsoft Yahei","codeFontFamily":"Consolas","theme":"dark","preferredEditorType":"sv","showInvisibleChar":false,"formatCode":true,"displayName":"\u9EC4\u98DE\u535A","rpInfo":{"problem":237.2780396214451,"contest":8.25},"nAccept":191,"nSubmit":194,"rp":245.5280396214451,"rank":2,"level":8,"join":true,"avatarUrl":"//cn.gravatar.com/avatar/2dbb0a041212ea8df395e4d4418e92fa?d=mm&s=128"}';
+    </script>
+      </head>
+<body>
+      <script type="text/javascript" src="../../../resource/1c07a499/entry.js"></script>
+    <script type="text/javascript" src="../../../resource/4.58.0-beta.17/lang-zh.js"></script>
+    <script type="text/javascript" src="../../../hydro-4.58.0-beta.17.js"></script>
+    <nav class="nav slideout-menu" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://www.gzlzoi.cn/"><img class="nav__logo" src="../../../components/navigation/nav-logo-small_dark.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="../index.html" class="nav__item">
+    首页
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../set_theme/dark.html" class="nav__item nav--active">
+    题库
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../training.html" class="nav__item">
+    训练
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../contest.html" class="nav__item">
+    比赛
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../homework.html" class="nav__item">
+    作业
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../discuss.html" class="nav__item">
+    讨论
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../record@uidOrName=39.html" class="nav__item">
+    评测记录
+  </a>
+</li>
+      </ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+              <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-domain" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <span class="nav__item"><span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span> lzoi2025 <span class="icon icon-expand_more nojs--hide"></span></span>
+        <ol class="dropdown-target menu" id="menu-nav-domain"><li class="menu__item">
+              <a href="../index.html" class="menu__link">
+                <span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span>
+                lzoi2025              </a>
+            </li><li class="menu__seperator"></li><li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 管理
+            </a>
+          </li>
+        </ol>
+      </li>
+          <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <a href="../user/39.html" class="nav__item">202610319 <span class="icon icon-expand_more nojs--hide"></span></a>
+        <ol class="dropdown-target menu" id="menu-nav-user">
+          <li class="menu__item">
+            <a href="../user/39.html" class="menu__link">
+              <span class="icon icon-account--circle"></span> 我的资料
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/messages.html" class="menu__link">
+              <span class="icon icon-comment--multiple"></span> 站内消息
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> @ lzoi2025
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/account.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 账户设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/settings/preference.html" class="menu__link">
+              <span class="icon icon-sliders"></span> 偏好设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/security.html" class="menu__link">
+              <span class="icon icon-security"></span> 安全设置
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> 我的域
+            </a>
+          </li>
+                              <li class="menu__seperator"></li>
+                    <li class="menu__item">
+            <a href="../logout.html" class="menu__link" name="nav_logout">
+              <span class="icon icon-logout"></span> 登出
+            </a>
+          </li>
+        </ol>
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://www.gzlzoi.cn/" target="_self">
+        <img src="../../../components/navigation/nav-logo-small_dark.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+        <script>
+
+  
+  
+  
+  
+  
+</script>
+                                <meta property="og:locale" content="zh" />
+              <meta property="og:title" content="LS1238. 【省选】附魔 - 乐知课堂" />
+    <meta property="og:description" content="【省选】附魔
+史蒂夫有 n 本相同的附魔书。
+史蒂夫把 n 本附魔书分成若干堆，每堆的大小（书的数量）不少于 l 本且不大于 r 本。
+史蒂夫将大小相同的堆放入同一个书架，书架的大小为放入的堆数。
+无..." />
+  <div class="row" data-sticky-parent>
+  <div class="medium-9 columns">
+    <div class="section">
+      <div class="section__header">
+        <h1 class="section__title">
+                      <a href="../record/69134f58d4ff13d6f007c434.html">
+              <span class="icon record-status--icon pass"></span>
+              <span class="record-status--text pass">100</span>
+            </a>
+                                <form class="form--inline" action="LS1238.html" method="post">
+              <input type="hidden" name="star" value="true">
+              <input type="hidden" name="operation" value="star">
+              <button class="star" type="submit">
+                <span class="starred--hide"><span class="icon icon-star--outline" data-tooltip="收藏"></span></span>
+                <span class="starred--show"><span class="icon icon-star" data-tooltip="取消收藏"></span></span>
+              </button>
+            </form>
+          #LS1238. 【省选】附魔
+        </h1>
+              </div>
+      <div class="section__body">
+        <ul class="problem__tags">
+                      <span class="problem__tag-item">ID: 156</span>
+                    <span class="problem__tag-item icon icon-book">传统题</span>
+                                <span class="problem__tag-item icon icon-stopwatch">1000ms</span>
+            <span class="problem__tag-item icon icon-comparison">64MiB</span>
+                                <a class="problem__tag-item interactive" href="https://www.gzlzoi.cn/d/lzoi2025/record?pid=156">尝试: 4</a>
+            <a class="problem__tag-item interactive" href="https://www.gzlzoi.cn/d/lzoi2025/record?pid=156&amp;status=1">已通过: 2</a>
+            <span class="problem__tag-item">难度: 10</span>
+            <span class="problem__tag-item interactive">上传者: <span class="user-profile-link">
+      <img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20">
+    <a class="user-profile-name uname--lv3" href="../user/2.html">
+          liangsheng
+      </a>
+  </span>
+</span>
+                                <span name="show_tags" class="problem__tag-item interactive nojs--hide icon icon-tag">标签&gt;</span><span class="problem__tag-item tags hasjs--hide">动态规划</span><span class="problem__tag-item tags hasjs--hide">省选</span><span class="problem__tag-item tags hasjs--hide">划分数</span><span class="problem__tag-item tags hasjs--hide">根号分治</span>        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="problem-content-container"><div class="problem-content" data-marker-enabled>
+        <div class="section__header non-scratchpad--hide">
+          <h1 class="section__title">【省选】附魔</h1>
+        </div>
+                <div class="section__body typo richmedia" data-fragment-id="problem-description">
+                      <h1 id="%E3%80%90%E7%9C%81%E9%80%89%E3%80%91%E9%99%84%E9%AD%94" tabindex="-1">【省选】附魔</h1>
+<p>史蒂夫有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 本相同的附魔书。</p>
+<p>史蒂夫把 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 本附魔书分成若干堆，每堆的大小（书的数量）不少于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span></span></span></span> 本且不大于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span> 本。</p>
+<p>史蒂夫将大小相同的堆放入同一个书架，书架的大小为放入的堆数。</p>
+<p>无论书架大小，一个书架的占地面积是一格，史蒂夫将所有大小不少于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> 的书架摆在书房中。</p>
+<p><strong>所有附魔书都是一样的，且每种划分的概率都是相同的（详见样例解释）。</strong></p>
+<p>请问书房中的书架的占地总面积的期望是多少。</p>
+<h1 id="%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F" tabindex="-1">输入格式</h1>
+<p>一行四个整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>k</mi><mo separator="true">,</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">n, k, l, r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span></p>
+<h1 id="%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F" tabindex="-1">输出格式</h1>
+<p>对于每组数据输出一行，表示答案，对 <code>998244353</code> 取模</p>
+<pre><code class="language-input1">6 1 1 6
+</code></pre>
+<pre><code class="language-output1">181498975
+</code></pre>
+<pre><code class="language-input2">6 2 1 6
+</code></pre>
+<pre><code class="language-output2">181498974
+</code></pre>
+<pre><code class="language-input3">2333 22 33 666
+</code></pre>
+<pre><code class="language-output3">621612544
+</code></pre>
+<h1 id="%E6%8F%90%E7%A4%BA" tabindex="-1">提示</h1>
+<p><strong>【样例 1 解释】</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">附魔书划分方案</th>
+<th style="text-align:left">书架个数</th>
+<th style="text-align:left">大小至少为2的书架个数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span></span></span></span></td>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+<td style="text-align:left" rowspan="3"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">5+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+<td style="text-align:left" rowspan="3"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">4+2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>+</mo><mn>1</mn><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">4+1+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+<td style="text-align:left" rowspan="4"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:left" rowspan="2"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>+</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">3+3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span></td>
+<td style="text-align:left" rowspan="3"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+</tr>
+<tr></tr>
+<tr>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">2+2+2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>1</mn><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2+2+1+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+<td style="text-align:left" rowspan="2"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span></td>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>+</mo><mn>1</mn><mo>+</mo><mn>1</mn><mo>+</mo><mn>1</mn><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2+1+1+1+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+<td style="text-align:left" rowspan="2"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mn>1</mn><mo>+</mo><mn>1</mn><mo>+</mo><mn>1</mn><mo>+</mo><mn>1</mn><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1+1+1+1+1+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>共 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>11</mn></mrow><annotation encoding="application/x-tex">11</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">11</span></span></span></span> 种划分</li>
+<li>共 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>19</mn></mrow><annotation encoding="application/x-tex">19</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">19</span></span></span></span> 个（书架）</li>
+<li>共 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn></mrow><annotation encoding="application/x-tex">8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">8</span></span></span></span> 个（大小至少是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span> 的书架）</li>
+<li>样例一的答案为：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>19</mn><mn>11</mn></mfrac><mtext> </mtext><mo lspace="0.22em" rspace="0.22em"><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow></mo><mtext> </mtext><mi>P</mi><mo>=</mo><mn>181498975</mn></mrow><annotation encoding="application/x-tex">\frac{19}{11} \bmod P = 181498975</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1901em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">11</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">19</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.0556em;"></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin"><span class="mord"><span class="mord mathrm">mod</span></span></span><span class="mspace" style="margin-right:0.0556em;"></span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">181498975</span></span></span></span></li>
+<li>样例二的答案为：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>8</mn><mn>11</mn></mfrac><mtext> </mtext><mo lspace="0.22em" rspace="0.22em"><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow></mo><mtext> </mtext><mi>P</mi><mo>=</mo><mn>181498974</mn></mrow><annotation encoding="application/x-tex">\frac{8}{11} \bmod P = 181498974</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1901em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">11</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">8</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.0556em;"></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin"><span class="mord"><span class="mord mathrm">mod</span></span></span><span class="mspace" style="margin-right:0.0556em;"></span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">181498974</span></span></span></span></li>
+</ul>
+<p><strong>【数据范围】</strong></p>
+<ul>
+<li>subtask-1（8 pt）：保证 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mi>k</mi><mo>=</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">l=1, k=n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span></li>
+<li>subtask-2（16 pt）：保证 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>≤</mo><mn>700</mn></mrow><annotation encoding="application/x-tex">r \le 700</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">700</span></span></span></span></li>
+<li>subtask-3（36 pt）：保证 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mo>≥</mo><mn>700</mn></mrow><annotation encoding="application/x-tex">l \ge 700</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">700</span></span></span></span></li>
+<li>subtask-4（12 pt）：保证 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≤</mo><msup><mn>10</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">n \le 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></li>
+<li>subtask-5（28 pt）：无特殊限制</li>
+<li>保证 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mo>≤</mo><mi>r</mi><mo separator="true">,</mo><mn>1</mn><mo>≤</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo separator="true">,</mo><mi>k</mi><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>5</mn><mo>×</mo><msup><mn>10</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">l \le r, 1 \le l, r, k \le n \le 5 \times 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></li>
+</ul>
+<details>
+<summary><font color="#FF0000">请思考后再点击查看提示</font></summary>
+</details>
+<h1 id="%E6%9D%A5%E6%BA%90" tabindex="-1">来源</h1>
+<ul>
+<li><a href="https://htoj.com.cn/cpp/oj/problem/detail?pid=22442783624832&amp;cid=22442845613696">核桃070，CSP-S，T4：附魔</a></li>
+</ul>
+
+</div>      </div></div>
+    </div>
+  </div>
+  <div class="medium-3 columns"><div data-sticky="large">
+        <div class="section side section--problem-sidebar">
+  <div>
+    <ol class="menu">
+                  <li class="menu__item scratchpad--hide nojs--hide"><a class="menu__link highlight" name="problem-sidebar__open-scratchpad" href="javascript:;" data-global-hotkey="alt+e" style="display: none;">
+        <span class="icon icon-enlarge"></span> 进入在线编程模式 (Alt+E)
+      </a></li>
+      <li class="menu__item non-scratchpad--hide"><a class="menu__link" name="problem-sidebar__quit-scratchpad" href="javascript:;" data-global-hotkey="alt+q">
+        <span class="icon icon-enlarge"></span> 退出在线编程模式 (Alt+Q)
+      </a></li>
+                  <li class="menu__item scratchpad--hide"><a class="menu__link" href="LS1238/submit.html">
+        <span class="icon icon-send"></span> 递交
+      </a></li>
+                      <li class="menu__seperator"></li>
+              <li class="menu__item"><a class="menu__link" href="../discuss/problem/156.html">
+        <span class="icon icon-comment--text"></span> 讨论 (0)      </a></li>
+              <li class="menu__item"><a class="menu__link" href="LS1238/solution.html">
+        <span class="icon icon-comment--text"></span> 题解 (0)      </a></li>
+          <li class="menu__item"><a class="menu__link" href="LS1238/files.html">
+        <span class="icon icon-file"></span> 文件
+      </a></li>
+      <li class="menu__item"><a class="menu__link" href="LS1238/stat.html">
+        <span class="icon icon-statistics"></span> 统计
+      </a></li>
+              <li class="menu__seperator nojs--hide"></li>
+                    <li class="menu__item nojs--hide"><a class="menu__link" href="javascript:;" name="problem-sidebar__copy">
+          <span class="icon icon-copy"></span> 复制
+        </a></li>
+              </ol>
+  </div>
+</div>
+  </div></div>
+</div>
+<div style="display:none" class="outer-loader-container"><div class="loader"></div></div>
+<div class="scratchpad-container" style="display:none">
+  <div style="display:none" class="loader-container"><div class="loader"></div></div>
+  <div id="scratchpad" style="opacity:0"></div>
+</div>
+  </div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+      <div class="row footer__links">
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          状态
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://www.gzlzoi.cn/d/lzoi2025/record">评测队列</a></li>
+          <li class="footer__category__item"><a href="../status.html">服务状态</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          开发
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">开源</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          支持
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/help.html">帮助</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">联系我们</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable end">
+        <h1>
+          关于
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/about.html">关于</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#privacy">隐私</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#tos">服务条款</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">版权申诉</a></li>
+        </ul></div>
+      </div>
+    </div>
+      <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+                    <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-lang"><li class="menu__item"><a class="menu__link" href="../language/en.html">English</a></li><li class="menu__item"><a class="menu__link" href="../language/ko.html">한국어</a></li><li class="menu__item"><a class="menu__link" href="../language/zh.html">简体中文</a></li><li class="menu__item"><a class="menu__link" href="../language/zh_TW.html">正體中文</a></li></ol>
+          </li>
+          <li class="footer__extra-link-item">
+                          <a href="https://www.gzlzoi.cn/legacy?legacy=true">兼容模式</a>
+                      </li>
+          <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> 主题 <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-theme">
+              <li class="menu__item"><a class="menu__link" href="../set_theme/light.html">亮色</a></li>
+              <li class="menu__item"><a class="menu__link" href="../set_theme/dark.html">暗色</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><a href="https://beian.miit.gov.cn/">京ICP备2023010486号-3</a></li><li class="footer__extra-link-item">Worker 0, 31ms</li>
+          <!-- Prepare 2ms -->
+          <!-- Method 1ms -->
+          
+          
+          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v5.0.0-beta.16</a> Community</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      window.UiContextNew = '{"problemId":"LS1238","problemNumId":156,"codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","pdoc":{"_id":"68eca302c79c6c8149f664f8","content":"{\\"zh\\":\\"# \u3010\u7701\u9009\u3011\u9644\u9B54\\\\n\\\\n\u53F2\u8482\u592B\u6709 $n$ \u672C\u76F8\u540C\u7684\u9644\u9B54\u4E66\u3002\\\\n\\\\n\u53F2\u8482\u592B\u628A $n$ \u672C\u9644\u9B54\u4E66\u5206\u6210\u82E5\u5E72\u5806\uFF0C\u6BCF\u5806\u7684\u5927\u5C0F\uFF08\u4E66\u7684\u6570\u91CF\uFF09\u4E0D\u5C11\u4E8E $l$ \u672C\u4E14\u4E0D\u5927\u4E8E $r$ \u672C\u3002\\\\n\\\\n\u53F2\u8482\u592B\u5C06\u5927\u5C0F\u76F8\u540C\u7684\u5806\u653E\u5165\u540C\u4E00\u4E2A\u4E66\u67B6\uFF0C\u4E66\u67B6\u7684\u5927\u5C0F\u4E3A\u653E\u5165\u7684\u5806\u6570\u3002\\\\n\\\\n\u65E0\u8BBA\u4E66\u67B6\u5927\u5C0F\uFF0C\u4E00\u4E2A\u4E66\u67B6\u7684\u5360\u5730\u9762\u79EF\u662F\u4E00\u683C\uFF0C\u53F2\u8482\u592B\u5C06\u6240\u6709\u5927\u5C0F\u4E0D\u5C11\u4E8E $k$ \u7684\u4E66\u67B6\u6446\u5728\u4E66\u623F\u4E2D\u3002\\\\n\\\\n**\u6240\u6709\u9644\u9B54\u4E66\u90FD\u662F\u4E00\u6837\u7684\uFF0C\u4E14\u6BCF\u79CD\u5212\u5206\u7684\u6982\u7387\u90FD\u662F\u76F8\u540C\u7684\uFF08\u8BE6\u89C1\u6837\u4F8B\u89E3\u91CA\uFF09\u3002**\\\\n\\\\n\u8BF7\u95EE\u4E66\u623F\u4E2D\u7684\u4E66\u67B6\u7684\u5360\u5730\u603B\u9762\u79EF\u7684\u671F\u671B\u662F\u591A\u5C11\u3002\\\\n\\\\n\\\\n# \u8F93\u5165\u683C\u5F0F\\\\n\\\\n\u4E00\u884C\u56DB\u4E2A\u6574\u6570 $n, k, l, r$\\\\n \\\\n# \u8F93\u51FA\u683C\u5F0F\\\\n\\\\n\u5BF9\u4E8E\u6BCF\u7EC4\u6570\u636E\u8F93\u51FA\u4E00\u884C\uFF0C\u8868\u793A\u7B54\u6848\uFF0C\u5BF9 `998244353` \u53D6\u6A21\\\\n\\\\n```input1\\\\n6 1 1 6\\\\n```\\\\n\\\\n```output1\\\\n181498975\\\\n```\\\\n\\\\n```input2\\\\n6 2 1 6\\\\n```\\\\n\\\\n```output2\\\\n181498974\\\\n```\\\\n\\\\n```input3\\\\n2333 22 33 666\\\\n```\\\\n\\\\n```output3\\\\n621612544\\\\n```\\\\n\\\\n# \u63D0\u793A\\\\n\\\\n**\u3010\u6837\u4F8B 1 \u89E3\u91CA\u3011**\\\\n\\\\n| \u9644\u9B54\u4E66\u5212\u5206\u65B9\u6848 | \u4E66\u67B6\u4E2A\u6570 | \u5927\u5C0F\u81F3\u5C11\u4E3A2\u7684\u4E66\u67B6\u4E2A\u6570 |\\\\n| :----| :---- | :---- |\\\\n| $6$ | $1$ | $0$ |\\\\n| $5+1$ | $2$ | $0$ |\\\\n| $4+2$ | $2$ | $0$ |\\\\n| $4+1+1$ | $2$ | $1$ |\\\\n| $3+3$ | $1$ | $1$ |\\\\n| $3+3$ | $1$ | $1$ |\\\\n| $2+2+2$ | $1$ | $1$ |\\\\n| $2+2+1+1$ | $2$ | $2$ |\\\\n| $2+1+1+1+1$ | $2$ | $1$ |\\\\n| $1+1+1+1+1+1$ | $1$ | $1$ |\\\\n\\\\n- \u5171 $11$ \u79CD\u5212\u5206\\\\n- \u5171 $19$ \u4E2A\uFF08\u4E66\u67B6\uFF09\\\\n- \u5171 $8$ \u4E2A\uFF08\u5927\u5C0F\u81F3\u5C11\u662F $2$ \u7684\u4E66\u67B6\uFF09\\\\n- \u6837\u4F8B\u4E00\u7684\u7B54\u6848\u4E3A\uFF1A$\\\\\\\\frac{19}{11} \\\\\\\\bmod P = 181498975$\\\\n- \u6837\u4F8B\u4E8C\u7684\u7B54\u6848\u4E3A\uFF1A$\\\\\\\\frac{8}{11} \\\\\\\\bmod P = 181498974$\\\\n\\\\n**\u3010\u6570\u636E\u8303\u56F4\u3011**\\\\n- subtask-1\uFF088 pt\uFF09\uFF1A\u4FDD\u8BC1 $l=1, k=n$\\\\n- subtask-2\uFF0816 pt\uFF09\uFF1A\u4FDD\u8BC1 $r \\\\\\\\le 700$\\\\n- subtask-3\uFF0836 pt\uFF09\uFF1A\u4FDD\u8BC1 $l \\\\\\\\ge 700$\\\\n- subtask-4\uFF0812 pt\uFF09\uFF1A\u4FDD\u8BC1 $n \\\\\\\\le 10^5$\\\\n- subtask-5\uFF0828 pt\uFF09\uFF1A\u65E0\u7279\u6B8A\u9650\u5236\\\\n- \u4FDD\u8BC1 $l \\\\\\\\le r, 1 \\\\\\\\le l, r, k \\\\\\\\le n \\\\\\\\le 5 \\\\\\\\times 10^5$\\\\n\\\\n<details>\\\\n<summary><font color=\\\\\\"#FF0000\\\\\\">\u8BF7\u601D\u8003\u540E\u518D\u70B9\u51FB\u67E5\u770B\u63D0\u793A</font></summary>\\\\n\\\\n</details>\\\\n\\\\n# \u6765\u6E90\\\\n- [\u6838\u6843070\uFF0CCSP-S\uFF0CT4\uFF1A\u9644\u9B54](https://htoj.com.cn/cpp/oj/problem/detail?pid=22442783624832&cid=22442845613696)\\\\n\\\\n\\"}","owner":2,"domainId":"lzoi2025","docType":10,"docId":156,"title":"\u3010\u7701\u9009\u3011\u9644\u9B54","tag":["\u52A8\u6001\u89C4\u5212","\u7701\u9009","\u5212\u5206\u6570","\u6839\u53F7\u5206\u6CBB"],"hidden":false,"nSubmit":4,"nAccept":2,"data":[{"_id":"1-1.in","name":"1-1.in","size":14,"lastModified":"2025-10-13T06:58:10.658Z","etag":"L2RhdGEvZmlsZS9oeWRyby9hd3QvNXZvcXJzYnFpNWI2MHF1bjd2OTRrLmlu"},{"_id":"1-1.out","name":"1-1.out","size":10,"lastModified":"2025-10-13T06:58:10.662Z","etag":"L2RhdGEvZmlsZS9oeWRyby92ZXkvdmhxNHIxZTRpdnFzbWMweHgwd3prLm91dA=="},{"_id":"1-2.in","name":"1-2.in","size":20,"lastModified":"2025-10-13T06:58:10.667Z","etag":"L2RhdGEvZmlsZS9oeWRyby93Z3gvdG80MGoxdXB5MHR4YWxiMTVvMXZuLmlu"},{"_id":"1-2.out","name":"1-2.out","size":10,"lastModified":"2025-10-13T06:58:10.670Z","etag":"L2RhdGEvZmlsZS9oeWRyby92ZTQvY3JkeG9qY2FmbDd4Z3BkanZjY2t4Lm91dA=="},{"_id":"1-3.in","name":"1-3.in","size":22,"lastModified":"2025-10-13T06:58:10.673Z","etag":"L2RhdGEvZmlsZS9oeWRyby90dWsvM2J2MHNpdHl4aWJkZXAwdnNpa2N3Lmlu"},{"_id":"1-3.out","name":"1-3.out","size":10,"lastModified":"2025-10-13T06:58:10.676Z","etag":"L2RhdGEvZmlsZS9oeWRyby8yZHMvcGszYmR2bHVhMGc4NHYwMXRlbXZjLm91dA=="},{"_id":"1-4.in","name":"1-4.in","size":23,"lastModified":"2025-10-13T06:58:10.681Z","etag":"L2RhdGEvZmlsZS9oeWRyby9reHIvYm11cHUyOTBmbXk2aXEyMDBzcjliLmlu"},{"_id":"1-4.out","name":"1-4.out","size":10,"lastModified":"2025-10-13T06:58:10.685Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wanIvZ2hhYXVuZmk0bGtzY3pvcDV0cGpzLm91dA=="},{"_id":"1-5.in","name":"1-5.in","size":23,"lastModified":"2025-10-13T06:58:10.690Z","etag":"L2RhdGEvZmlsZS9oeWRyby8za3Evam9idm1xenA1YmNncjM2NGhsZHY0Lmlu"},{"_id":"1-5.out","name":"1-5.out","size":10,"lastModified":"2025-10-13T06:58:10.696Z","etag":"L2RhdGEvZmlsZS9oeWRyby9jY3EvMW82dW52ZGt0c2RueGNzamt6eHNyLm91dA=="},{"_id":"1-6.in","name":"1-6.in","size":23,"lastModified":"2025-10-13T06:58:10.700Z","etag":"L2RhdGEvZmlsZS9oeWRyby9taWovdXZycnFvZ3N2ZWZ4a3JsZHFtZHFlLmlu"},{"_id":"1-6.out","name":"1-6.out","size":10,"lastModified":"2025-10-13T06:58:10.704Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kenovbXBoamF0cTkwc3g3ajBnaGF6a3lsLm91dA=="},{"_id":"1-7.in","name":"1-7.in","size":23,"lastModified":"2025-10-13T06:58:10.708Z","etag":"L2RhdGEvZmlsZS9oeWRyby96d2EvdTlvcGZ2bGVxZHF1NmV4cG00aGRwLmlu"},{"_id":"1-7.out","name":"1-7.out","size":10,"lastModified":"2025-10-13T06:58:10.712Z","etag":"L2RhdGEvZmlsZS9oeWRyby9jcjcvdm5sZXpkZmZkYW1oMmdsOWdrN2R6Lm91dA=="},{"_id":"1-8.in","name":"1-8.in","size":23,"lastModified":"2025-10-13T06:58:10.715Z","etag":"L2RhdGEvZmlsZS9oeWRyby9hYnMvcGp4MDhyYnB2ZTI0ZWJ0bHk1ZXpsLmlu"},{"_id":"1-8.out","name":"1-8.out","size":10,"lastModified":"2025-10-13T06:58:10.719Z","etag":"L2RhdGEvZmlsZS9oeWRyby93OXUvcmM4OXNlMjB2cjdxcnE2MHBxaGJqLm91dA=="},{"_id":"2-1.in","name":"2-1.in","size":12,"lastModified":"2025-10-13T06:58:10.723Z","etag":"L2RhdGEvZmlsZS9oeWRyby9xcTgvN2NvMmF5dnlxaGhseHR6Z3R5dTJvLmlu"},{"_id":"2-1.out","name":"2-1.out","size":10,"lastModified":"2025-10-13T06:58:10.728Z","etag":"L2RhdGEvZmlsZS9oeWRyby9yam0vZjBubW1odnlvcnViYm5kdmk4aDBwLm91dA=="},{"_id":"2-2.in","name":"2-2.in","size":16,"lastModified":"2025-10-13T06:58:10.731Z","etag":"L2RhdGEvZmlsZS9oeWRyby9pMDcvd24wMHU2b2U0dm45bHFtMGVqaW14Lmlu"},{"_id":"2-2.out","name":"2-2.out","size":10,"lastModified":"2025-10-13T06:58:10.734Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wamwvZmtmN3E1YXJwbWIzZjB2MThrZHN2Lm91dA=="},{"_id":"2-3.in","name":"2-3.in","size":17,"lastModified":"2025-10-13T06:58:10.737Z","etag":"L2RhdGEvZmlsZS9oeWRyby94bngvem9vMGV5d2l0OHFzaXp0Y3B1MXB3Lmlu"},{"_id":"2-3.out","name":"2-3.out","size":10,"lastModified":"2025-10-13T06:58:10.740Z","etag":"L2RhdGEvZmlsZS9oeWRyby8xaWEvb2dycnl2dzF4bHZ2dWx0eWZ3eTAwLm91dA=="},{"_id":"2-4.in","name":"2-4.in","size":16,"lastModified":"2025-10-13T06:58:10.743Z","etag":"L2RhdGEvZmlsZS9oeWRyby8zZm0vbDQwdzZtaG1kZTY3c3c1bjdxb3R2Lmlu"},{"_id":"2-4.out","name":"2-4.out","size":10,"lastModified":"2025-10-13T06:58:10.745Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lZWIvZ25oeHlhZ2ViaXp0cWZ4OW5ucGV1Lm91dA=="},{"_id":"2-5.in","name":"2-5.in","size":16,"lastModified":"2025-10-13T06:58:10.748Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wbHovNHIyZG55dHN2OG5sZXh5aG8ycHdjLmlu"},{"_id":"2-5.out","name":"2-5.out","size":10,"lastModified":"2025-10-13T06:58:10.752Z","etag":"L2RhdGEvZmlsZS9oeWRyby93NnYva2Flc3ZlanRseXk3d3FwdTh4eHhmLm91dA=="},{"_id":"2-6.in","name":"2-6.in","size":16,"lastModified":"2025-10-13T06:58:10.759Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wb24va29pYXpvbWV6dmowMHN2Ymlnd21nLmlu"},{"_id":"2-6.out","name":"2-6.out","size":10,"lastModified":"2025-10-13T06:58:10.762Z","etag":"L2RhdGEvZmlsZS9oeWRyby9neXAveXVqaXMyd3ZwZW9xdnNvdHRzbmhmLm91dA=="},{"_id":"2-7.in","name":"2-7.in","size":17,"lastModified":"2025-10-13T06:58:10.765Z","etag":"L2RhdGEvZmlsZS9oeWRyby94dXEvc2UwY3p1MHNpajhqeGJ2Y2lyeGQ2Lmlu"},{"_id":"2-7.out","name":"2-7.out","size":10,"lastModified":"2025-10-13T06:58:10.767Z","etag":"L2RhdGEvZmlsZS9oeWRyby8yMHkvYjJweGJueGptaXQ1Y3pxeHRscmY1Lm91dA=="},{"_id":"2-8.in","name":"2-8.in","size":17,"lastModified":"2025-10-13T06:58:10.773Z","etag":"L2RhdGEvZmlsZS9oeWRyby91OHUvd3BrYTEwcXVwc2lzd3RwanhsZmo1Lmlu"},{"_id":"2-8.out","name":"2-8.out","size":10,"lastModified":"2025-10-13T06:58:10.778Z","etag":"L2RhdGEvZmlsZS9oeWRyby93Z2ovbWk3emd1a3c3dnhyczd0d2NxbW56Lm91dA=="},{"_id":"3-1.in","name":"3-1.in","size":14,"lastModified":"2025-10-13T06:58:10.782Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ncDkvYm0yYXYxbnZ1d2M5Znkxc2RpeG1iLmlu"},{"_id":"3-1.out","name":"3-1.out","size":2,"lastModified":"2025-10-13T06:58:10.787Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ucWsvcDBxeGFlcW9obDh5eWQwZTZidGR0Lm91dA=="},{"_id":"3-2.in","name":"3-2.in","size":19,"lastModified":"2025-10-13T06:58:10.790Z","etag":"L2RhdGEvZmlsZS9oeWRyby80c2Mvb2dpcmR4c2gyZXdya2pmdnB5ZGNrLmlu"},{"_id":"3-2.out","name":"3-2.out","size":10,"lastModified":"2025-10-13T06:58:10.793Z","etag":"L2RhdGEvZmlsZS9oeWRyby9xd2MvMTkwd3BzZXRkNHk4MzF6cmQycm9vLm91dA=="},{"_id":"3-3.in","name":"3-3.in","size":22,"lastModified":"2025-10-13T06:58:10.796Z","etag":"L2RhdGEvZmlsZS9oeWRyby9keXcvc3F3eGF5aGZyMnF0bGNpbmZldHJyLmlu"},{"_id":"3-3.out","name":"3-3.out","size":10,"lastModified":"2025-10-13T06:58:10.799Z","etag":"L2RhdGEvZmlsZS9oeWRyby9rYnYvNnFpamZ1MWZhMGNvenU5YXN2M2JkLm91dA=="},{"_id":"3-4.in","name":"3-4.in","size":21,"lastModified":"2025-10-13T06:58:10.802Z","etag":"L2RhdGEvZmlsZS9oeWRyby95bTcvbHEwcHRvNGNoY3JvZm1lamNkbnNyLmlu"},{"_id":"3-4.out","name":"3-4.out","size":10,"lastModified":"2025-10-13T06:58:10.808Z","etag":"L2RhdGEvZmlsZS9oeWRyby9uc2MveWVzNDdpdHljaWd3YzVvYXJsdDJnLm91dA=="},{"_id":"3-5.in","name":"3-5.in","size":23,"lastModified":"2025-10-13T06:58:10.812Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lN2IvZ3psanNsbXZra3NzNWlzZzJ6ZWVkLmlu"},{"_id":"3-5.out","name":"3-5.out","size":2,"lastModified":"2025-10-13T06:58:10.818Z","etag":"L2RhdGEvZmlsZS9oeWRyby9va2QvendpeWxrbWhnc3h4MTV0eWN5dHcyLm91dA=="},{"_id":"3-6.in","name":"3-6.in","size":23,"lastModified":"2025-10-13T06:58:10.825Z","etag":"L2RhdGEvZmlsZS9oeWRyby95djAvZ2Z4MGJzOWUxcTAwa3Nrd3IxcWJ5Lmlu"},{"_id":"3-6.out","name":"3-6.out","size":2,"lastModified":"2025-10-13T06:58:10.828Z","etag":"L2RhdGEvZmlsZS9oeWRyby94cW8vMjVpanJmb3F5cXJzZW1pNXQwcTVvLm91dA=="},{"_id":"3-7.in","name":"3-7.in","size":23,"lastModified":"2025-10-13T06:58:10.832Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kYTUvbnMwZmdraTRsMDV4Y3l4eWxiNG1hLmlu"},{"_id":"3-7.out","name":"3-7.out","size":2,"lastModified":"2025-10-13T06:58:10.834Z","etag":"L2RhdGEvZmlsZS9oeWRyby9yOXkveGFzaXNuY3hrbzJoY294dGdiNmJuLm91dA=="},{"_id":"3-8.in","name":"3-8.in","size":23,"lastModified":"2025-10-13T06:58:10.839Z","etag":"L2RhdGEvZmlsZS9oeWRyby9nbXQvaXRxdncwdjhvcmRqcHF0dHYzdjJtLmlu"},{"_id":"3-8.out","name":"3-8.out","size":10,"lastModified":"2025-10-13T06:58:10.842Z","etag":"L2RhdGEvZmlsZS9oeWRyby9hdXkva2ZjYWVhenQzM3FsbG5xNHlhMG8zLm91dA=="},{"_id":"4-1.in","name":"4-1.in","size":20,"lastModified":"2025-10-13T06:58:10.846Z","etag":"L2RhdGEvZmlsZS9oeWRyby9wNHkvZnI2ZXMxNXRieG5vcnJhdWRtcGtsLmlu"},{"_id":"4-1.out","name":"4-1.out","size":2,"lastModified":"2025-10-13T06:58:10.848Z","etag":"L2RhdGEvZmlsZS9oeWRyby9tbnovZDBjem8wZW1tcXRycnNja3IwcHpyLm91dA=="},{"_id":"4-2.in","name":"4-2.in","size":20,"lastModified":"2025-10-13T06:58:10.851Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wbXkvanhzbnRodTk5ZHZ5Z29pN3JraDIwLmlu"},{"_id":"4-2.out","name":"4-2.out","size":10,"lastModified":"2025-10-13T06:58:10.854Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kdnkvMmNsaXZhcmRwbWV3aWtxMG43YW5hLm91dA=="},{"_id":"4-3.in","name":"4-3.in","size":20,"lastModified":"2025-10-13T06:58:10.856Z","etag":"L2RhdGEvZmlsZS9oeWRyby90YW4veHlpZ3VjNXp2aW41NWVkaXhqdWg0Lmlu"},{"_id":"4-3.out","name":"4-3.out","size":2,"lastModified":"2025-10-13T06:58:10.859Z","etag":"L2RhdGEvZmlsZS9oeWRyby9yb24vZ2VjcG54dHV1amYwMHkyNWx6ajBqLm91dA=="},{"_id":"4-4.in","name":"4-4.in","size":20,"lastModified":"2025-10-13T06:58:10.862Z","etag":"L2RhdGEvZmlsZS9oeWRyby9qaGgvNHQzZ2h3d2toZXd0ZWZvZGZwZXo5Lmlu"},{"_id":"4-4.out","name":"4-4.out","size":2,"lastModified":"2025-10-13T06:58:10.866Z","etag":"L2RhdGEvZmlsZS9oeWRyby9oenova2tldWowaDEwbm5xMHB6eGhiZ2VxLm91dA=="},{"_id":"4-5.in","name":"4-5.in","size":20,"lastModified":"2025-10-13T06:58:10.869Z","etag":"L2RhdGEvZmlsZS9oeWRyby84cHAvMGxjZ2VnNHZiaDVxM25ydGUwYmFyLmlu"},{"_id":"4-5.out","name":"4-5.out","size":2,"lastModified":"2025-10-13T06:58:10.910Z","etag":"L2RhdGEvZmlsZS9oeWRyby8ycWMvaXgwZGpvN3NhYzByc25mMGN4a3RxLm91dA=="},{"_id":"4-6.in","name":"4-6.in","size":20,"lastModified":"2025-10-13T06:58:10.914Z","etag":"L2RhdGEvZmlsZS9oeWRyby9xeGcvM2kxYjNuM3dkaHpwenJtaHFzNWRkLmlu"},{"_id":"4-6.out","name":"4-6.out","size":2,"lastModified":"2025-10-13T06:58:10.918Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lanYvYmJzZXRuZXB4ZnRiZnN1M2wxY2RzLm91dA=="},{"_id":"4-7.in","name":"4-7.in","size":18,"lastModified":"2025-10-13T06:58:10.922Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lbmcvdGdvbnlhMGxyZTRyYW12cjBkeTE4Lmlu"},{"_id":"4-7.out","name":"4-7.out","size":10,"lastModified":"2025-10-13T06:58:10.925Z","etag":"L2RhdGEvZmlsZS9oeWRyby9vNmgvbTJyZjBxM3hvOGNraWx3MHdvemNhLm91dA=="},{"_id":"4-8.in","name":"4-8.in","size":20,"lastModified":"2025-10-13T06:58:10.928Z","etag":"L2RhdGEvZmlsZS9oeWRyby9jaHUvenFkZTN4ZnJrejQ0YjByNnM0Zm9zLmlu"},{"_id":"4-8.out","name":"4-8.out","size":10,"lastModified":"2025-10-13T06:58:10.931Z","etag":"L2RhdGEvZmlsZS9oeWRyby83M2MvaTFqNW9vcjB2aTRueGFwd21lNnU3Lm91dA=="},{"_id":"5-1.in","name":"5-1.in","size":14,"lastModified":"2025-10-13T06:58:10.935Z","etag":"L2RhdGEvZmlsZS9oeWRyby9nd2MvMDV4anZhcXVucW5teDFuc2x3NGd4Lmlu"},{"_id":"5-1.out","name":"5-1.out","size":2,"lastModified":"2025-10-13T06:58:10.938Z","etag":"L2RhdGEvZmlsZS9oeWRyby93eW0vZWZzaHZ4aGluNWtrbWxsdnp5a3FjLm91dA=="},{"_id":"5-2.in","name":"5-2.in","size":18,"lastModified":"2025-10-13T06:58:10.941Z","etag":"L2RhdGEvZmlsZS9oeWRyby9wa3cvbm4xMW50YnZhc215ZmdoZ3hubncwLmlu"},{"_id":"5-2.out","name":"5-2.out","size":10,"lastModified":"2025-10-13T06:58:10.944Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lb2kvZnN6Z3U2dzZpYWdvMGNscXBvanlvLm91dA=="},{"_id":"5-3.in","name":"5-3.in","size":22,"lastModified":"2025-10-13T06:58:10.947Z","etag":"L2RhdGEvZmlsZS9oeWRyby96a2MvaXVmcWJydjV2ZGFuYnJxNDJma3BjLmlu"},{"_id":"5-3.out","name":"5-3.out","size":2,"lastModified":"2025-10-13T06:58:10.950Z","etag":"L2RhdGEvZmlsZS9oeWRyby84MGcvMHd0eXUwNnh6b3lnd2M5cDNxYm44Lm91dA=="},{"_id":"5-4.in","name":"5-4.in","size":21,"lastModified":"2025-10-13T06:58:10.952Z","etag":"L2RhdGEvZmlsZS9oeWRyby96eXAvemx1a3Rnd2V3YndzZ2hsMmlxdHc1Lmlu"},{"_id":"5-4.out","name":"5-4.out","size":10,"lastModified":"2025-10-13T06:58:10.955Z","etag":"L2RhdGEvZmlsZS9oeWRyby8yZnUvZ2djYjZpa3RtdXVveWRleHBocGFxLm91dA=="},{"_id":"5-5.in","name":"5-5.in","size":22,"lastModified":"2025-10-13T06:58:10.959Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lZ2sveG5lYW1lcmVob2NsbWpwZDA5YWMxLmlu"},{"_id":"5-5.out","name":"5-5.out","size":2,"lastModified":"2025-10-13T06:58:10.962Z","etag":"L2RhdGEvZmlsZS9oeWRyby96b2gvZmFob2RldXYwMmRydzRpMHFnenp4Lm91dA=="},{"_id":"5-6.in","name":"5-6.in","size":23,"lastModified":"2025-10-13T06:58:10.965Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lM2UvMjh5c21wbXVxbnFoMXg0Y2wwaTJwLmlu"},{"_id":"5-6.out","name":"5-6.out","size":2,"lastModified":"2025-10-13T06:58:10.967Z","etag":"L2RhdGEvZmlsZS9oeWRyby91aHkvcnRkb2ZhNGFvYzhjcHR1c2pka3RkLm91dA=="},{"_id":"5-7.in","name":"5-7.in","size":23,"lastModified":"2025-10-13T06:58:10.970Z","etag":"L2RhdGEvZmlsZS9oeWRyby91Z3MvZ3poY2puZDBlcWFwa3loN3lhMmRpLmlu"},{"_id":"5-7.out","name":"5-7.out","size":2,"lastModified":"2025-10-13T06:58:10.973Z","etag":"L2RhdGEvZmlsZS9oeWRyby94bG0vc2h1YTEyeHkzOXNsdjA4bjBjY3BsLm91dA=="},{"_id":"5-8.in","name":"5-8.in","size":22,"lastModified":"2025-10-13T06:58:10.979Z","etag":"L2RhdGEvZmlsZS9oeWRyby8xZzAvaXJtcW00YWhsbW96Y2YyZ3dodWllLmlu"},{"_id":"5-8.out","name":"5-8.out","size":9,"lastModified":"2025-10-13T06:58:10.982Z","etag":"L2RhdGEvZmlsZS9oeWRyby9idnIvc29vNG5hbGtoZ2NtYjlucDl6YWVjLm91dA=="},{"_id":"config.yaml","name":"config.yaml","size":2189,"lastModified":"2025-10-13T07:05:39.853Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wcGovMm5yOGprMHJndDhmYXB0bG5idzhhLnlhbWw="}],"additional_file":[{"_id":"check.cpp","name":"check.cpp","size":781,"lastModified":"2025-10-13T06:58:10.989Z","etag":"L2RhdGEvZmlsZS9oeWRyby9rc3cvemFybnd6NTZybzgwcXNuNDBjdHF3LmNwcA=="},{"_id":"gen.py","name":"gen.py","size":3807,"lastModified":"2025-10-13T06:58:10.992Z","etag":"L2RhdGEvZmlsZS9oeWRyby81bzAvZzBjNnJwajNybTB2MG5qNTNzZWNxLnB5"},{"_id":"make.sh","name":"make.sh","size":232,"lastModified":"2025-10-13T06:58:10.998Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kbHIvdmJyYmF0amZvbWxqdnpua2N0dDEyLnNo"},{"_id":"run.sh","name":"run.sh","size":392,"lastModified":"2025-10-13T06:58:11.002Z","etag":"L2RhdGEvZmlsZS9oeWRyby9peG8vcjE5ZGpsbjB4ZnBvdDBjenQ1MDBoLnNo"},{"_id":"solution.cpp","name":"solution.cpp","size":1225,"lastModified":"2025-10-13T06:58:11.005Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ma3IvaDc5NXBzdzU0em9jeXVvaTdsbG1yLmNwcA=="}],"pid":"LS1238","config":{"count":40,"memoryMin":64,"memoryMax":64,"timeMin":1000,"timeMax":1000,"type":"default","langs":["cc","cc.cc14o2","cc.cc17o2","py","py.py3"]},"stats":{"AC":2,"WA":0,"TLE":0,"MLE":0,"RE":2,"SE":0,"IGN":0,"CE":0,"s0":2,"s100":2},"difficulty":0,"html":false},"canViewRecord":true,"postSubmitUrl":"/d/lzoi2025/p/156/submit","getSubmissionsUrl":"/d/lzoi2025/record?fullStatus=true&pid=156","getRecordDetailUrl":"/d/lzoi2025/record/%7Brid%7D","pretestConnUrl":"record-conn?pretest=1&uidOrName=39&pid=156&domainId=lzoi2025"}';
+      window.UserContextNew = '{}';
+    </script>
+  </body>
+</html>

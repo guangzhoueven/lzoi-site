@@ -1,0 +1,54 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+
+    int n;
+    cin >> n;
+    vector<int> w(n + 1);  // w(i): i 的最小质因子
+
+    // i 是否为质数, bool 数组请务必用 vector, 不要用数组！！
+    vector<bool> is_p(n + 1, true);
+    vector<int> p;  // 筛出来的质数
+
+    for (int i = 2; i <= n; i++) {
+        if (is_p[i]) {
+            p.push_back(i);  // i 是质数
+            w[i] = i;        // 质数的最小质因子就是自己
+        }
+        for (int t : p) {
+            if (i * t > n) break;
+            int c = i * t;
+            is_p[c] = false;  // i * t 不是质数
+            w[c] = t;         // i * t 的最小质因子是 t
+
+            if (i % t == 0) {
+                // i % t == 0
+                // 换言之, i 之前被 t 筛掉了
+                // 由于 p 里面质数是从小到大的
+                // 所以 i 乘上其他的质数的结果一定会被 t 筛掉
+                // 就不需要在这里先筛一次, 直接 break 就好
+                break;
+            }
+        }
+    }
+
+    // cnt[i]: 表示 i 在 n! 中的次方
+    vector<int> cnt(n + 1, 0);
+    for (int i = 2; i <= n; i++) {
+        int x = i;
+        while (x != 1) {
+            cnt[w[x]]++;
+
+            // 不断地将 x 除以 mp[x], 就可以将 x 分解质因数
+            x /= w[x];
+        }
+    }
+    for (int i = 2; i <= n; i++) if (cnt[i] > 0) {
+        cout << i << ' ' << cnt[i] << '\n';
+    }
+
+    return 0;
+}

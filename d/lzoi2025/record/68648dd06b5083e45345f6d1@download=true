@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	long long a;
+	cin>>a;
+	int c = 0,b = 1;
+	int d = 1;
+	bool ans = 0;
+	while(a != 0){
+		if(a <= 3){
+			a--;
+			c++;
+		}
+		if(a >= 4){
+			c++;
+			for(int i = 1;i <= a;i = i + 2){
+				a--;
+			} 
+		}
+		if(ans == 0){
+			if(a - 1 % 2 == 0){
+				b++;
+				b = d;
+				ans = 1;
+			}
+			else{
+				b++;
+			}	
+		}
+	}
+	cout<<c<<" ";
+	if(ans == 0){
+		cout<<b;
+	}
+	else{
+		cout<<d;
+	}
+	return 0;
+}

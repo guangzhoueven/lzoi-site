@@ -1,0 +1,52 @@
+# https://leetcode.cn/problems/count-stable-subarrays/solutions/3832945/fen-duan-er-fen-cha-zhao-qian-zhui-he-py-ukgs/
+import math
+from typing import List
+from bisect import bisect_right
+
+class Solution:
+    def countStableSubarrays(self, nums: List[int], queries: List[List[int]]) -> List[int]:
+        n = len(nums)
+        # 找递增段
+        left = []  # 递增段的左端点
+        s = [0]  # 递增子数组个数的前缀和
+        start = 0
+        for i, x in enumerate(nums):
+            if i == n - 1 or x > nums[i + 1]:
+                # 找到了一个递增段 [start, i]
+                left.append(start)
+                m = i - start + 1
+                # 长为 m 的子数组中有 m*(m+1)/2 个递增子数组
+                # 计算 m*(m+1)/2 的前缀和
+                s.append(s[-1] + m * (m + 1) // 2)
+                start = i + 1  # 下一个递增段的左端点
+
+        ans = []
+        for l, r in queries:
+            # https://zhuanlan.zhihu.com/p/655310134
+            # https://docs.python.org/zh-cn/3.12/library/bisect.html
+            i = bisect_right(left, l)  # 左端点严格大于 l 的第一个区间
+            j = bisect_right(left, r) - 1  # 包含 r 的最后一个区间
+
+            # l 和 r 在同一个区间
+            if i > j:
+                m = r - l + 1
+                ans.append(m * (m + 1) // 2)
+                continue
+
+            # l 和 r 在不同区间
+            # 分成三段 [l, left[i]) + [left[i], left[j]) + [left[j], r]
+            # 中间那段的子数组个数用前缀和计算
+            m = left[i] - l
+            m2 = r - left[j] + 1
+            ans.append(m * (m + 1) // 2 + (s[j] - s[i]) + m2 * (m2 + 1) // 2)
+        return ans
+
+n, m = map(int, input().split(' '))
+a = list(map(int, input().split(' ')))
+q = list()
+for _ in range(m):
+    l, r = map(int, input().split(' '))
+    q.append((l, r))
+
+sol = Solution()
+print(' '.join(map(str, sol.countStableSubarrays(a, q))))

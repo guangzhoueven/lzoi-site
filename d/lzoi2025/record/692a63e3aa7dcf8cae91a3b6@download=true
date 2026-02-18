@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+struct Node {
+	i64 L, R, id;
+};
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, m;
+	cin >> n >> m;
+
+	vector<i64> a(n + 1);
+	for (i64 i = 1; i <= n; i++) cin >> a[i];
+
+	vector<Node> q(m);
+	for (i64 i = 0; i < m; i++) cin >> q[i].L >> q[i].R, q[i].id = i;
+
+	i64 d = sqrt(n);
+	sort(q.begin(), q.end(), [&](const Node & x, const Node & y) {
+		if (x.L / d != y.L / d) return x.L / d < y.L / d;
+		if (x.L / d & 1) return x.R < y.R;
+		return x.R > y.R;
+	});
+
+	i64 tol = 0, L = 1, R = 0;
+	vector<i64> cnt(n + 1, 0);
+	vector<bool> ans(m);
+
+	for (i64 i = 0; i < m; i++) {
+		while (R < q[i].R) tol += (++cnt[a[++R]] == 1);
+		while (L > q[i].L) tol += (++cnt[a[--L]] == 1);
+		while (R > q[i].R) tol -= (--cnt[a[R--]] == 0);
+		while (L < q[i].L) tol -= (--cnt[a[L++]] == 0);
+
+		ans[q[i].id] = (tol == q[i].R - q[i].L + 1);
+	}
+	for (i64 i = 0; i < m; i++) cout << (ans[i] ? "Yes" : "No") << "\n";
+	return 0;
+}

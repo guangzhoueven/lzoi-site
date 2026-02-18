@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html data-page="homework_detail_problem" data-layout="basic" class="layout--basic page--homework_detail_problem theme--dark nojs" data-mantine-color-scheme="dark" lang="zh" data-app="Hydro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.gzlzoi.cn/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../../favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../../android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="../../../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../../favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://www.gzlzoi.cn/p/LS1077?tid=68b550933ef0b4af1ee9bdb6">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="乐知课堂" />
+  <meta property="og:url" content="https://www.gzlzoi.cn/p/LS1077" />
+  <meta property="og:image" content="/favicon-96x96.png" />
+                                  <meta property="og:locale" content="zh" />
+              <meta property="og:title" content="LS1077. 【入门】数的三次方根 - 乐知课堂" />
+    <meta property="og:description" content="题目描述
+给定一个浮点数 n，求它的三次方根。
+输入格式
+共一行，包含一个浮点数 n。
+输出格式
+共一行，包含一个浮点数，表示问题的解。
+注意，结果保留 6 位小数。
+1000.00
+10.00000..." />
+    <title>【入门】数的三次方根 - 题目详情 - 乐知课堂</title>
+  <style>
+    body {
+      --font-family: "Microsoft Yahei", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Consolas", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="../../../theme-4.58.0-beta.17.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      window.UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","hydroacFeatures":[],"blspHost":"wss://ws.hydrooj.com","constantVersion":"1c07a499","domainId":"lzoi2025","domain":{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"},"extraTitleContent":"\u3010\u5165\u95E8\u3011\u6570\u7684\u4E09\u6B21\u65B9\u6839","SWConfig":{"preload":"","hosts":["http://www.gzlzoi.cn","https://www.gzlzoi.cn","https://www.gzlzoi.cn/","/"],"assets":[],"domains":[]}}';
+      window.UserContext = '{"_id":39,"mail":"202610319@gzlzoi.cn","uname":"202610319","hashType":"hydro","priv":4,"regat":"2025-07-01T02:30:33.477Z","loginat":"2026-02-06T00:24:21.126Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921","role":"\u5B66\u751F","scope":"BigInt::-1","tfa":false,"authn":false,"group":["20250702\u4E0A\u5348","\u4E34\u65F6\u5C0F\u7EC4","20250804\u4E0A\u5348","39"],"domains":[{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"}],"viewLang":"zh","timeZone":"Asia/Shanghai","codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","avatar":"gravatar:202610319@gzlzoi.cn","qq":"","gender":"2","bio":"<blockquote class=\\"note\\">\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: yellow;\\">\u4E66\u5C71\u6709\u8DEF\u52E4\u4E3A\u5F84\uFF0C\u5B66\u6D77\u65E0\u6DAF\u82E6\u4F5C\u821F\u3002</p></h3>\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: #12DA72;\\">Diligence is the path to the mountain of knowledge, hard-working is the boat to the endless sea of learning.</p></h3>\\r\\n</blockquote>","school":"\u5E7F\u5DDE\u5E02\u5929\u6CB3\u533A\u9A8F\u666F\u5C0F\u5B66","studentId":"","backgroundImage":"/d/lzoi2025/file/39/%E4%B9%90%E7%9F%A5%E8%AF%BE%E5%A0%82%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.png","unreadMsg":0,"pinnedDomains":["lzoi2025"],"rounded":true,"skipAnimate":false,"showTimeAgo":true,"fontFamily":"Microsoft Yahei","codeFontFamily":"Consolas","theme":"dark","preferredEditorType":"sv","showInvisibleChar":false,"formatCode":true,"displayName":"\u9EC4\u98DE\u535A","rpInfo":{"problem":237.2780396214451,"contest":8.25},"nAccept":191,"nSubmit":194,"rp":245.5280396214451,"rank":2,"level":8,"join":true,"avatarUrl":"//cn.gravatar.com/avatar/2dbb0a041212ea8df395e4d4418e92fa?d=mm&s=128"}';
+    </script>
+      </head>
+<body>
+      <script type="text/javascript" src="../../../resource/1c07a499/entry.js"></script>
+    <script type="text/javascript" src="../../../resource/4.58.0-beta.17/lang-zh.js"></script>
+    <script type="text/javascript" src="../../../hydro-4.58.0-beta.17.js"></script>
+    <nav class="nav slideout-menu" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://www.gzlzoi.cn/"><img class="nav__logo" src="../../../components/navigation/nav-logo-small_dark.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="../index.html" class="nav__item">
+    首页
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../set_theme/dark.html" class="nav__item">
+    题库
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../training.html" class="nav__item">
+    训练
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../contest.html" class="nav__item">
+    比赛
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../homework.html" class="nav__item nav--active">
+    作业
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../discuss.html" class="nav__item">
+    讨论
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../record@uidOrName=39.html" class="nav__item">
+    评测记录
+  </a>
+</li>
+      </ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+              <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-domain" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <span class="nav__item"><span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span> lzoi2025 <span class="icon icon-expand_more nojs--hide"></span></span>
+        <ol class="dropdown-target menu" id="menu-nav-domain"><li class="menu__item">
+              <a href="../index.html" class="menu__link">
+                <span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span>
+                lzoi2025              </a>
+            </li><li class="menu__seperator"></li><li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 管理
+            </a>
+          </li>
+        </ol>
+      </li>
+          <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <a href="../user/39.html" class="nav__item">202610319 <span class="icon icon-expand_more nojs--hide"></span></a>
+        <ol class="dropdown-target menu" id="menu-nav-user">
+          <li class="menu__item">
+            <a href="../user/39.html" class="menu__link">
+              <span class="icon icon-account--circle"></span> 我的资料
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/messages.html" class="menu__link">
+              <span class="icon icon-comment--multiple"></span> 站内消息
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> @ lzoi2025
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/account.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 账户设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/settings/preference.html" class="menu__link">
+              <span class="icon icon-sliders"></span> 偏好设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/security.html" class="menu__link">
+              <span class="icon icon-security"></span> 安全设置
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> 我的域
+            </a>
+          </li>
+                              <li class="menu__seperator"></li>
+                    <li class="menu__item">
+            <a href="../logout.html" class="menu__link" name="nav_logout">
+              <span class="icon icon-logout"></span> 登出
+            </a>
+          </li>
+        </ol>
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://www.gzlzoi.cn/" target="_self">
+        <img src="../../../components/navigation/nav-logo-small_dark.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+        <script>
+
+  
+  
+  
+  
+  
+  
+  
+</script>
+<div class="row" data-sticky-parent>
+  <div class="medium-9 columns">
+    <div class="section">
+      <div class="section__header">
+        <h1 class="section__title">
+                    G. 【入门】数的三次方根
+        </h1>
+                  <div class="section__tools contest-problems">
+                                                      <a href="102@tid=68b550933ef0b4af1ee9bdb6.html"
+                 class="pass                        ">
+                <span class="id">A</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="104@tid=68b550933ef0b4af1ee9bdb6.html"
+                 class="pass                        ">
+                <span class="id">B</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="103@tid=68b550933ef0b4af1ee9bdb6.html"
+                 class="pass                        ">
+                <span class="id">C</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="109@tid=68b550933ef0b4af1ee9bdb6.html"
+                 class="pass                        ">
+                <span class="id">D</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="105@tid=68b550933ef0b4af1ee9bdb6.html"
+                 class="pass                        ">
+                <span class="id">E</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="112@tid=68b550933ef0b4af1ee9bdb6.html"
+                 class="pass                        ">
+                <span class="id">F</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="107@tid=68b550933ef0b4af1ee9bdb6.html"
+                 class="pass                         active">
+                <span class="id">G</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="108@tid=68b550933ef0b4af1ee9bdb6.html"
+                 class="pass                        ">
+                <span class="id">H</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="111@tid=68b550933ef0b4af1ee9bdb6.html"
+                 class="pass                        ">
+                <span class="id">I</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="113@tid=68b550933ef0b4af1ee9bdb6.html"
+                 class="pass                        ">
+                <span class="id">J</span>
+                <span class="icon icon-check"></span>              </a>          </div>
+              </div>
+      <div class="section__body">
+        <ul class="problem__tags">
+                    <span class="problem__tag-item icon icon-book">传统题</span>
+                                <span class="problem__tag-item icon icon-stopwatch">1000ms</span>
+            <span class="problem__tag-item icon icon-comparison">256MiB</span>
+                                      </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="problem-content-container"><div class="problem-content" data-marker-enabled>
+        <div class="section__header non-scratchpad--hide">
+          <h1 class="section__title">【入门】数的三次方根</h1>
+        </div>
+                <div class="section__body typo richmedia" data-fragment-id="problem-description">
+                            <h1 id="%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0" tabindex="-1">题目描述</h1>
+<p>给定一个浮点数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>，求它的三次方根。</p>
+<h1 id="%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F" tabindex="-1">输入格式</h1>
+<p>共一行，包含一个浮点数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>。</p>
+<h1 id="%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F" tabindex="-1">输出格式</h1>
+<p>共一行，包含一个浮点数，表示问题的解。</p>
+<p>注意，结果保留 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span></span></span></span> 位小数。</p>
+<pre><code class="language-input1">1000.00
+</code></pre>
+<pre><code class="language-output1">10.000000
+</code></pre>
+<h1 id="%E6%8F%90%E7%A4%BA" tabindex="-1">提示</h1>
+<p><strong>【样例解释 1】</strong></p>
+<ul>
+<li><strong><font color="#FF0000">浮点数的二分枚举，一定要设置最大的二分次数，否则在极端数据下会死循环！！</font></strong></li>
+</ul>
+<pre><code class="language-c++">double l = -1000, r = 1000, mid;
+
+// 注意: 浮点数二分时, 可以直接设置二分次数，防止死循环
+// 一般设置 60 次左右即可, 如果答案精度不够, 可以适当加大次数
+for (int i = 0; i &lt; 60; i++) {  // 不要写 while (abs(l - r) &gt; 1e-6)
+    mid = (l + r) / 2;
+    if (mid * mid * mid &lt; n) l = mid;
+    else r = mid;
+}
+</code></pre>
+<details>
+<summary><font color="#FF0000">请思考后再点击查看提示</font></summary>
+</details>
+<h1 id="%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1%E4%B8%8E%E9%99%90%E5%88%B6" tabindex="-1">数据规模与限制</h1>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1000</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>1000</mn></mrow><annotation encoding="application/x-tex">-1000 \le n \le 1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">−</span><span class="mord">1000</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1000</span></span></span></span></li>
+<li>1s, 1024KiB for each test case.</li>
+</ul>
+
+
+</div>      </div></div>
+    </div>
+  </div>
+  <div class="medium-3 columns"><div data-sticky="large">
+            <div class="section side section--problem-sidebar">
+  <div>
+    <ol class="menu">
+              <li class="menu__item scratchpad--hide nojs--hide"><a class="menu__link highlight" name="problem-sidebar__open-scratchpad" href="javascript:;" data-global-hotkey="alt+e" style="display: none;">
+        <span class="icon icon-enlarge"></span> 进入在线编程模式 (Alt+E)
+      </a></li>
+      <li class="menu__item non-scratchpad--hide"><a class="menu__link" name="problem-sidebar__quit-scratchpad" href="javascript:;" data-global-hotkey="alt+q">
+        <span class="icon icon-enlarge"></span> 退出在线编程模式 (Alt+Q)
+      </a></li>
+          <li class="menu__item scratchpad--hide"><a class="menu__link" href="LS1077/submit@tid=68b550933ef0b4af1ee9bdb6.html">
+        <span class="icon icon-send"></span> 递交
+      </a></li>
+            </ol>
+  </div>
+</div>    <div class="section side">
+  <a class="contest-sidebar__bg" href="../homework/68b550933ef0b4af1ee9bdb6.html">
+    <div class="section__body">
+      <h1>【算法入门-09】二分枚举与按位枚举</h1>
+      <div class="contest-sidebar__status">
+              <span class="icon icon-check"></span> 已认领
+            </div>
+    </div>
+  </a>
+  <div>
+    <ol class="menu">
+          <li class="menu__item"><a class="menu__link" href="../homework/68b550933ef0b4af1ee9bdb6.html">
+        <span class="icon icon-homework"></span> 查看作业
+      </a></li>
+                  <li class="menu__item"><a class="menu__link" href="https://www.gzlzoi.cn/d/lzoi2025/homework/68b550933ef0b4af1ee9bdb6/scoreboard">
+        <span class="icon icon-statistics"></span> 成绩表
+      </a></li>
+                  <li class="menu__item"><a class="menu__link" href="../record@uidOrName=39&amp;tid=68b550933ef0b4af1ee9bdb6.html">
+        <span class="icon icon-flag"></span> 我的最近递交记录
+      </a></li>
+          <li class="menu__item"><a class="menu__link" href="https://www.gzlzoi.cn/d/lzoi2025Error:&#32;No&#32;route&#32;found&#32;for&#32;name:&#32;wiki#homework">
+        <span class="icon icon-help"></span> 帮助
+      </a></li>
+      <li class="menu__seperator"></li>
+    </ol>
+  </div>
+  <div class="section__body typo">
+    <dl class="large horizontal">
+      <dt>状态</dt><dd>正在进行…</dd>
+      <dt>题目</dt><dd>10</dd>
+      <dt>开始时间</dt><dd><span class="time" data-timestamp="1757116800">2025-9-6 8:00</span>
+</dd>
+      <dt>截止时间</dt><dd><span class="time" data-timestamp="1817827140">2027-8-9 23:59</span>
+</dd>
+      <dt>可延期</dt><dd>24
+ 小时</dd>
+    </dl>
+  </div>
+</div>    </div></div>
+</div>
+<div style="display:none" class="outer-loader-container"><div class="loader"></div></div>
+<div class="scratchpad-container" style="display:none">
+  <div style="display:none" class="loader-container"><div class="loader"></div></div>
+  <div id="scratchpad" style="opacity:0"></div>
+</div>
+  </div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+      <div class="row footer__links">
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          状态
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://www.gzlzoi.cn/d/lzoi2025/record">评测队列</a></li>
+          <li class="footer__category__item"><a href="../status.html">服务状态</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          开发
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">开源</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          支持
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/help.html">帮助</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">联系我们</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable end">
+        <h1>
+          关于
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/about.html">关于</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#privacy">隐私</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#tos">服务条款</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">版权申诉</a></li>
+        </ul></div>
+      </div>
+    </div>
+      <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+                    <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-lang"><li class="menu__item"><a class="menu__link" href="../language/en.html">English</a></li><li class="menu__item"><a class="menu__link" href="../language/ko.html">한국어</a></li><li class="menu__item"><a class="menu__link" href="../language/zh.html">简体中文</a></li><li class="menu__item"><a class="menu__link" href="../language/zh_TW.html">正體中文</a></li></ol>
+          </li>
+          <li class="footer__extra-link-item">
+                          <a href="https://www.gzlzoi.cn/legacy?legacy=true">兼容模式</a>
+                      </li>
+          <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> 主题 <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-theme">
+              <li class="menu__item"><a class="menu__link" href="../set_theme/light.html">亮色</a></li>
+              <li class="menu__item"><a class="menu__link" href="../set_theme/dark.html">暗色</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><a href="https://beian.miit.gov.cn/">京ICP备2023010486号-3</a></li><li class="footer__extra-link-item">Worker 0, 12ms</li>
+          <!-- Prepare 4ms -->
+          <!-- Method 0ms -->
+          
+          
+          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v5.0.0-beta.16</a> Community</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      window.UiContextNew = '{"problemId":"LS1077","problemNumId":107,"codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","pdoc":{"_id":"68b6aa893ef0b4af1ee9cda3","content":"{\\"zh\\":\\"# \u9898\u76EE\u63CF\u8FF0\\\\n\\\\n\u7ED9\u5B9A\u4E00\u4E2A\u6D6E\u70B9\u6570 $n$\uFF0C\u6C42\u5B83\u7684\u4E09\u6B21\u65B9\u6839\u3002\\\\n\\\\n# \u8F93\u5165\u683C\u5F0F\\\\n\\\\n\u5171\u4E00\u884C\uFF0C\u5305\u542B\u4E00\u4E2A\u6D6E\u70B9\u6570 $n$\u3002\\\\n\\\\n# \u8F93\u51FA\u683C\u5F0F\\\\n\\\\n\u5171\u4E00\u884C\uFF0C\u5305\u542B\u4E00\u4E2A\u6D6E\u70B9\u6570\uFF0C\u8868\u793A\u95EE\u9898\u7684\u89E3\u3002\\\\n\\\\n\u6CE8\u610F\uFF0C\u7ED3\u679C\u4FDD\u7559 $6$ \u4F4D\u5C0F\u6570\u3002\\\\n\\\\n```input1\\\\n1000.00\\\\n```\\\\n\\\\n```output1\\\\n10.000000\\\\n```\\\\n\\\\n# \u63D0\u793A\\\\n\\\\n**\u3010\u6837\u4F8B\u89E3\u91CA 1\u3011**\\\\n\\\\n* **<font color=\\\\\\"#FF0000\\\\\\">\u6D6E\u70B9\u6570\u7684\u4E8C\u5206\u679A\u4E3E\uFF0C\u4E00\u5B9A\u8981\u8BBE\u7F6E\u6700\u5927\u7684\u4E8C\u5206\u6B21\u6570\uFF0C\u5426\u5219\u5728\u6781\u7AEF\u6570\u636E\u4E0B\u4F1A\u6B7B\u5FAA\u73AF\uFF01\uFF01</font>**\\\\n\\\\n```c++\\\\ndouble l = -1000, r = 1000, mid;\\\\n\\\\n// \u6CE8\u610F: \u6D6E\u70B9\u6570\u4E8C\u5206\u65F6, \u53EF\u4EE5\u76F4\u63A5\u8BBE\u7F6E\u4E8C\u5206\u6B21\u6570\uFF0C\u9632\u6B62\u6B7B\u5FAA\u73AF\\\\n// \u4E00\u822C\u8BBE\u7F6E 60 \u6B21\u5DE6\u53F3\u5373\u53EF, \u5982\u679C\u7B54\u6848\u7CBE\u5EA6\u4E0D\u591F, \u53EF\u4EE5\u9002\u5F53\u52A0\u5927\u6B21\u6570\\\\nfor (int i = 0; i < 60; i++) {  // \u4E0D\u8981\u5199 while (abs(l - r) > 1e-6)\\\\n    mid = (l + r) / 2;\\\\n    if (mid * mid * mid < n) l = mid;\\\\n    else r = mid;\\\\n}\\\\n```\\\\n\\\\n<details>\\\\n<summary><font color=\\\\\\"#FF0000\\\\\\">\u8BF7\u601D\u8003\u540E\u518D\u70B9\u51FB\u67E5\u770B\u63D0\u793A</font></summary>\\\\n\\\\n</details>\\\\n\\\\n# \u6570\u636E\u89C4\u6A21\u4E0E\u9650\u5236\\\\n\\\\n- $-1000 \\\\\\\\le n \\\\\\\\le 1000$\\\\n- 1s, 1024KiB for each test case.\\\\n\\\\n\x3C!-- # \u6765\u6E90\\\\n\\\\n* [acwing_790_\u6570\u7684\u4E09\u6B21\u65B9\u6839](https://www.acwing.com/problem/content/792/) -->\\\\n\\\\n\\"}","owner":2,"domainId":"lzoi2025","docType":10,"docId":107,"title":"\u3010\u5165\u95E8\u3011\u6570\u7684\u4E09\u6B21\u65B9\u6839","tag":[],"hidden":false,"data":[{"_id":"1.in","name":"1.in","size":5,"lastModified":"2025-09-02T08:27:53.563Z","etag":"L2RhdGEvZmlsZS9oeWRyby84bmYvNmF5eDA3cHYwZnRuemFqdXRhZGoxLmlu"},{"_id":"1.out","name":"1.out","size":12,"lastModified":"2025-09-02T08:27:53.566Z","etag":"L2RhdGEvZmlsZS9oeWRyby9tNWYvcTFkcmVmdWZsZGNwcGFnazVxbXhwLm91dA=="},{"_id":"10.in","name":"10.in","size":5,"lastModified":"2025-09-02T08:27:53.569Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ranMvZ2M3OXl5eGxrd3h0bDVoemNsa2R1Lmlu"},{"_id":"10.out","name":"10.out","size":12,"lastModified":"2025-09-02T08:27:53.572Z","etag":"L2RhdGEvZmlsZS9oeWRyby85djAva25pbzlyM3E2cG1uY21yYzY3ZTRuLm91dA=="},{"_id":"2.in","name":"2.in","size":4,"lastModified":"2025-09-02T08:27:53.575Z","etag":"L2RhdGEvZmlsZS9oeWRyby9tNWsvbGp3M2l4aHM3emUwODlmcWcwcHc1Lmlu"},{"_id":"2.out","name":"2.out","size":11,"lastModified":"2025-09-02T08:27:53.578Z","etag":"L2RhdGEvZmlsZS9oeWRyby8ydWsvb21xYnV4Zm5hdWhvcG9pZmltbmswLm91dA=="},{"_id":"3.in","name":"3.in","size":5,"lastModified":"2025-09-02T08:27:53.581Z","etag":"L2RhdGEvZmlsZS9oeWRyby90a3Uvd3l6eXVlYWQ2M2dqcXhha3UwcnVhLmlu"},{"_id":"3.out","name":"3.out","size":12,"lastModified":"2025-09-02T08:27:53.584Z","etag":"L2RhdGEvZmlsZS9oeWRyby90Yncvb2VlMGkyMDc1eXU1dW1teWhhd25nLm91dA=="},{"_id":"4.in","name":"4.in","size":5,"lastModified":"2025-09-02T08:27:53.587Z","etag":"L2RhdGEvZmlsZS9oeWRyby9iMHcvbXl1d3NuZXh4ZTJsdmEwdzU4d3diLmlu"},{"_id":"4.out","name":"4.out","size":12,"lastModified":"2025-09-02T08:27:53.590Z","etag":"L2RhdGEvZmlsZS9oeWRyby9iMHAvdHIydnpiMWowdWZrc2tqdmxybXdoLm91dA=="},{"_id":"5.in","name":"5.in","size":5,"lastModified":"2025-09-02T08:27:53.593Z","etag":"L2RhdGEvZmlsZS9oeWRyby9uaTAvanAyZ2N3dXgwaDB4OXp1emhzZ3ZoLmlu"},{"_id":"5.out","name":"5.out","size":12,"lastModified":"2025-09-02T08:27:53.597Z","etag":"L2RhdGEvZmlsZS9oeWRyby94Y3IvdTRraWV0bXc1Zmhhd2RiaXExNWhmLm91dA=="},{"_id":"6.in","name":"6.in","size":5,"lastModified":"2025-09-02T08:27:53.600Z","etag":"L2RhdGEvZmlsZS9oeWRyby92cDMvcGJibm10OGluZ3N0cXFkam9yNGl0Lmlu"},{"_id":"6.out","name":"6.out","size":12,"lastModified":"2025-09-02T08:27:53.602Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kMTEvcnhscHgwOGNoaTBmeHByZHE2bXB4Lm91dA=="},{"_id":"7.in","name":"7.in","size":4,"lastModified":"2025-09-02T08:27:53.605Z","etag":"L2RhdGEvZmlsZS9oeWRyby82ZTkvOGN6YnpxbjZvcnZlcTEzMWt0ZXFsLmlu"},{"_id":"7.out","name":"7.out","size":11,"lastModified":"2025-09-02T08:27:53.608Z","etag":"L2RhdGEvZmlsZS9oeWRyby85cjcveGVrYW94ZWI4aGFxbXVqcHd0Ym1rLm91dA=="},{"_id":"8.in","name":"8.in","size":5,"lastModified":"2025-09-02T08:27:53.614Z","etag":"L2RhdGEvZmlsZS9oeWRyby9nMG8vdHR6bzBsendwYmM4enBodGxudWl2Lmlu"},{"_id":"8.out","name":"8.out","size":12,"lastModified":"2025-09-02T08:27:53.617Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wNDgvdHFjd2Y1Z3RpZ3dhdXc1aWRvbHMwLm91dA=="},{"_id":"9.in","name":"9.in","size":4,"lastModified":"2025-09-02T08:27:53.620Z","etag":"L2RhdGEvZmlsZS9oeWRyby9hZ3AvYjY5YW9td2tlYm4wa2x0emo1cmpkLmlu"},{"_id":"9.out","name":"9.out","size":11,"lastModified":"2025-09-02T08:27:53.622Z","etag":"L2RhdGEvZmlsZS9oeWRyby93MXoveHIwMGNodmFtMGRmZGw1aXdxbXFlLm91dA=="},{"_id":"config.yaml","name":"config.yaml","size":52,"lastModified":"2025-09-02T08:27:53.625Z","etag":"L2RhdGEvZmlsZS9oeWRyby95NWMvZXR4cHBmZXVxbWtnYm43amFib2djLnlhbWw="},{"_id":"spj.cc","name":"spj.cc","size":429,"lastModified":"2025-09-02T08:27:53.629Z","etag":"L2RhdGEvZmlsZS9oeWRyby82MjUvbmF6emhrdHZxcWNnbXZjZXVoaXU2LmNj"}],"additional_file":[],"pid":"LS1077","config":{"count":10,"memoryMin":256,"memoryMax":256,"timeMin":1000,"timeMax":1000,"type":"default","langs":["cc","cc.cc14o2","cc.cc17o2","py","py.py3"]},"html":false},"tdoc":{"_id":"68b550933ef0b4af1ee9bdb6","content":"\u3010\u7B97\u6CD5\u5165\u95E8-09\u3011\u4E8C\u5206\u679A\u4E3E\u4E0E\u6309\u4F4D\u679A\u4E3E\\r\\n\\r\\n- \u8BFE\u4EF6\\r\\n  - [\u4E8C\u5206\u679A\u4E3E.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/68b550933ef0b4af1ee9bdb6/file/public/%E4%BA%8C%E5%88%86%E6%9E%9A%E4%B8%BE.pdf)\\r\\n \\r\\n- \u63D0\u793A\uFF1A\\r\\n  - \u4ECA\u5929\u7684\u9898\u76EE\u91CC\u9762\u7ED9\u5927\u5BB6\u7559\u4E86\u4E00\u9053 **<font color=\\"#FF0000\\">\u8111\u7B4B\u6025\u8F6C\u5F2F</font>**\uFF0C\u8BF7\u5927\u5BB6\u81EA\u884C\u5224\u522B","owner":2,"domainId":"lzoi2025","docType":30,"docId":"68b550933ef0b4af1ee9bdb6","assign":["20250804\u4E0A\u5348"],"penaltySince":"2027-08-09T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"title":"\u3010\u7B97\u6CD5\u5165\u95E8-09\u3011\u4E8C\u5206\u679A\u4E3E\u4E0E\u6309\u4F4D\u679A\u4E3E","rule":"homework","beginAt":"2025-09-06T00:00:00.000Z","endAt":"2027-08-10T15:59:00.000Z","pids":[102,104,103,109,105,112,107,108,111,113],"attend":38,"rated":false,"langs":[],"maintainer":[2],"files":[{"_id":"\u4E8C\u5206\u679A\u4E3E.pdf","name":"\u4E8C\u5206\u679A\u4E3E.pdf","size":2269878,"lastModified":"2025-09-05T10:30:27.811Z","etag":"L2RhdGEvZmlsZS9oeWRyby9mcTIvNWNhd3Ywem5oZ3R1ZmhwcHJsdjBmLnBkZg=="}]},"tsdoc":{"attend":1,"startAt":"2025-09-06T00:03:57.704Z","detail":{"102":{"rid":"68bb95a32f12db0eae472788","pid":102,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":7203},"103":{"rid":"68c16e6c61bf1594a17e5931","pid":103,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":390380},"104":{"rid":"68bb98bd2f12db0eae472ce4","pid":104,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":7997},"105":{"rid":"68c185ec61bf1594a17e5cf6","pid":105,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":396396},"107":{"rid":"68c1820c61bf1594a17e5bf3","pid":107,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":395404},"108":{"rid":"68c256ccfe802d7961adca86","pid":108,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":449868},"109":{"rid":"68c175bd61bf1594a17e59ed","pid":109,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc17o2","penaltyScore":100,"time":392253},"111":{"rid":"68c26110fe802d7961adce2f","pid":111,"status":1,"score":100,"subtasks":{"1":{"status":1,"score":100},"2":{"status":1,"score":100},"3":{"status":1,"score":100},"4":{"status":1,"score":100},"5":{"status":1,"score":100}},"lang":"cc.cc17o2","penaltyScore":100,"time":452496},"112":{"rid":"68bb97d82f12db0eae472b24","pid":112,"status":1,"score":100,"subtasks":{"0":{"status":1,"score":100}},"lang":"cc.cc17o2","penaltyScore":100,"time":7768},"113":{"rid":"68c26716fe802d7961adcf93","pid":113,"status":1,"score":100,"subtasks":{"0":{"status":1,"score":100}},"lang":"cc.cc17o2","penaltyScore":100,"time":454038}}},"canViewRecord":true,"postSubmitUrl":"/d/lzoi2025/p/107/submit?tid=68b550933ef0b4af1ee9bdb6","getSubmissionsUrl":"/d/lzoi2025/record?fullStatus=true&pid=107&tid=68b550933ef0b4af1ee9bdb6","getRecordDetailUrl":"/d/lzoi2025/record/%7Brid%7D?tid=68b550933ef0b4af1ee9bdb6","pretestConnUrl":"record-conn?pretest=1&uidOrName=39&pid=107&domainId=lzoi2025&tid=68b550933ef0b4af1ee9bdb6"}';
+      window.UserContextNew = '{}';
+    </script>
+  </body>
+</html>

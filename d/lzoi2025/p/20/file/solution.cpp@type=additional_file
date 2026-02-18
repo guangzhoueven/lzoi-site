@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+
+	int n, m, sum = 0, mini = 101, maxi = -1;
+	cin >> n >> m;
+	vector<int> a(n);
+	for (int i = 0; i < n - 1; i++) {
+		cin >> a[i];
+		sum += a[i];
+		mini = min(mini, a[i]);
+		maxi = max(maxi, a[i]);
+	}
+
+	if (sum - maxi >= m) cout << 0 << '\n';
+	else if (sum - mini < m) cout << -1 << '\n';
+	else cout << m - (sum - mini - maxi) << '\n';
+	return 0;
+}

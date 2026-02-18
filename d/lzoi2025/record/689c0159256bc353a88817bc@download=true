@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using i64 = long long;
+template <typename T>  		// C++特有模板，支持多种数据类型
+struct Fenwick {
+	int n;
+	vector<T> a;        	// 树状数组（1-based索引）
+
+	Fenwick(int n_) : n(n_), a(n_ + 2, 0) {}  // 初始化大小为n_+2
+
+	void add(int p, T v) {	// 更新操作：不断 p += lowbit(p)，向上更新父节点
+		for (; p <= n; p += p & -p) a[p] += v;
+	}
+
+	T get(int p) {			// 求前缀和: sum(a[1..p]), 不断 p -= lowbit(p)，累加子节点值
+		T ans = 0;
+		for (; p > 0; p -= p & -p) ans += a[p];
+		return ans;
+	}
+
+	T get(int L, int R) {	// 求区间和(1-based): sum(a[1..R]) - sum(a[1..(L-1)])
+		return get(R) - get(L - 1);
+	}
+};
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n, q;
+	cin >> n >> q;  						// 读取数列长度和操作数
+
+	vector<i64> a(n + 1);  					// 原始数组（1-based）
+	Fenwick<i64> diff(n);  					// 差分数组树状数组
+
+	for (int i = 1; i <= n; i++) {			// 读取初始数列并构建差分数组
+		cin >> a[i];
+		diff.add(i, a[i] - a[i - 1]);  		// 初始化差分数组
+	}
+
+	while (q--) {							// q 为操作次数
+		int L, R, x;
+		cin >> L >> R >> x;
+		diff.add(L, x);  					// 差分数组左端点+x
+		diff.add(R + 1, -x);  				// 差分数组右端点+1处-x
+	}
+
+	for (int i = 1; i <= n; i++) {
+		cout << diff.get(i) << " \n"[i == n]; // 输出前缀和：q 次操作后的数组
+	}
+
+	return 0;
+}

@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+const i64 MOD = 998244353;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, ans = 0;
+	cin >> n;
+	vector<i64> a(n);
+	for (auto& x : a) cin >> x;
+
+	for (i64 k = 0; k < 31; k++) {
+		i64 cnt = 0;
+		for (i64 i = 0; i < n; i++)
+			if (a[i] & (1 << k)) cnt++;
+		ans = (ans + cnt * (n - cnt) * (1LL << k)) % MOD;
+	}
+	cout << ans << "\n";
+	return 0;
+}

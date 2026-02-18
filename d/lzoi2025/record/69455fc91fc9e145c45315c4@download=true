@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, m;
+	cin >> n >> m;
+	vector<i64> a(n);
+	for (auto& x : a) cin >> x;
+
+	i64 x = 0, y = n - 1, tol = 0;
+	unordered_map<i64, i64> cnt;
+	for (i64 L = 0, R = -1; L < n; L++) {
+		while (tol < m && R + 1 < n) {
+			if (++cnt[a[++R]] == 1) tol++;
+		}
+		if (tol == m && R - L < y - x) x = L, y = R;
+		if (--cnt[a[L]] == 0) tol--;
+	}
+	cout << x << " " << y << "\n";
+	return 0;
+}

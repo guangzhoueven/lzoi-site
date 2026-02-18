@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html data-page="problem_detail" data-layout="basic" class="layout--basic page--problem_detail theme--dark nojs" data-mantine-color-scheme="dark" lang="zh" data-app="Hydro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.gzlzoi.cn/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../../favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../../android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="../../../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../../favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://www.gzlzoi.cn/p/LS1193">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="乐知课堂" />
+  <meta property="og:url" content="https://www.gzlzoi.cn/p/LS1193" />
+  <meta property="og:image" content="/favicon-96x96.png" />
+                                  <meta property="og:locale" content="zh" />
+              <meta property="og:title" content="LS1193. 【普及】激光枪 - 乐知课堂" />
+    <meta property="og:description" content="[普及] 激光枪
+有一台印刷机，它可以在发射激光束的同时在 xy 平面上印刷一条线段。
+* 打印开始时，激光照射位置位于坐标 (0, 0)。
+* 打印线段时，遵循以下流程。
+* 首先，将激光照射位置移..." />
+    <title>【普及】激光枪 - 题目详情 - 乐知课堂</title>
+  <style>
+    body {
+      --font-family: "Microsoft Yahei", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Consolas", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="../../../theme-4.58.0-beta.17.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      window.UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","hydroacFeatures":[],"blspHost":"wss://ws.hydrooj.com","constantVersion":"1c07a499","domainId":"lzoi2025","domain":{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"},"extraTitleContent":"\u3010\u666E\u53CA\u3011\u6FC0\u5149\u67AA","SWConfig":{"preload":"","hosts":["http://www.gzlzoi.cn","https://www.gzlzoi.cn","https://www.gzlzoi.cn/","/"],"assets":[],"domains":[]}}';
+      window.UserContext = '{"_id":39,"mail":"202610319@gzlzoi.cn","uname":"202610319","hashType":"hydro","priv":4,"regat":"2025-07-01T02:30:33.477Z","loginat":"2026-02-06T00:24:21.126Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921","role":"\u5B66\u751F","scope":"BigInt::-1","tfa":false,"authn":false,"group":["20250702\u4E0A\u5348","\u4E34\u65F6\u5C0F\u7EC4","20250804\u4E0A\u5348","39"],"domains":[{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"}],"viewLang":"zh","timeZone":"Asia/Shanghai","codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","avatar":"gravatar:202610319@gzlzoi.cn","qq":"","gender":"2","bio":"<blockquote class=\\"note\\">\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: yellow;\\">\u4E66\u5C71\u6709\u8DEF\u52E4\u4E3A\u5F84\uFF0C\u5B66\u6D77\u65E0\u6DAF\u82E6\u4F5C\u821F\u3002</p></h3>\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: #12DA72;\\">Diligence is the path to the mountain of knowledge, hard-working is the boat to the endless sea of learning.</p></h3>\\r\\n</blockquote>","school":"\u5E7F\u5DDE\u5E02\u5929\u6CB3\u533A\u9A8F\u666F\u5C0F\u5B66","studentId":"","backgroundImage":"/d/lzoi2025/file/39/%E4%B9%90%E7%9F%A5%E8%AF%BE%E5%A0%82%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.png","unreadMsg":0,"pinnedDomains":["lzoi2025"],"rounded":true,"skipAnimate":false,"showTimeAgo":true,"fontFamily":"Microsoft Yahei","codeFontFamily":"Consolas","theme":"dark","preferredEditorType":"sv","showInvisibleChar":false,"formatCode":true,"displayName":"\u9EC4\u98DE\u535A","rpInfo":{"problem":237.2780396214451,"contest":8.25},"nAccept":191,"nSubmit":194,"rp":245.5280396214451,"rank":2,"level":8,"join":true,"avatarUrl":"//cn.gravatar.com/avatar/2dbb0a041212ea8df395e4d4418e92fa?d=mm&s=128"}';
+    </script>
+      </head>
+<body>
+      <script type="text/javascript" src="../../../resource/1c07a499/entry.js"></script>
+    <script type="text/javascript" src="../../../resource/4.58.0-beta.17/lang-zh.js"></script>
+    <script type="text/javascript" src="../../../hydro-4.58.0-beta.17.js"></script>
+    <nav class="nav slideout-menu" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://www.gzlzoi.cn/"><img class="nav__logo" src="../../../components/navigation/nav-logo-small_dark.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="../index.html" class="nav__item">
+    首页
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../set_theme/dark.html" class="nav__item nav--active">
+    题库
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../training.html" class="nav__item">
+    训练
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../contest.html" class="nav__item">
+    比赛
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../homework.html" class="nav__item">
+    作业
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../discuss.html" class="nav__item">
+    讨论
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../record@uidOrName=39.html" class="nav__item">
+    评测记录
+  </a>
+</li>
+      </ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+              <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-domain" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <span class="nav__item"><span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span> lzoi2025 <span class="icon icon-expand_more nojs--hide"></span></span>
+        <ol class="dropdown-target menu" id="menu-nav-domain"><li class="menu__item">
+              <a href="../index.html" class="menu__link">
+                <span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span>
+                lzoi2025              </a>
+            </li><li class="menu__seperator"></li><li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 管理
+            </a>
+          </li>
+        </ol>
+      </li>
+          <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <a href="../user/39.html" class="nav__item">202610319 <span class="icon icon-expand_more nojs--hide"></span></a>
+        <ol class="dropdown-target menu" id="menu-nav-user">
+          <li class="menu__item">
+            <a href="../user/39.html" class="menu__link">
+              <span class="icon icon-account--circle"></span> 我的资料
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/messages.html" class="menu__link">
+              <span class="icon icon-comment--multiple"></span> 站内消息
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> @ lzoi2025
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/account.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 账户设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/settings/preference.html" class="menu__link">
+              <span class="icon icon-sliders"></span> 偏好设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/security.html" class="menu__link">
+              <span class="icon icon-security"></span> 安全设置
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> 我的域
+            </a>
+          </li>
+                              <li class="menu__seperator"></li>
+                    <li class="menu__item">
+            <a href="../logout.html" class="menu__link" name="nav_logout">
+              <span class="icon icon-logout"></span> 登出
+            </a>
+          </li>
+        </ol>
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://www.gzlzoi.cn/" target="_self">
+        <img src="../../../components/navigation/nav-logo-small_dark.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+        <script>
+
+  
+  
+  
+  
+  
+</script>
+                                <meta property="og:locale" content="zh" />
+              <meta property="og:title" content="LS1193. 【普及】激光枪 - 乐知课堂" />
+    <meta property="og:description" content="[普及] 激光枪
+有一台印刷机，它可以在发射激光束的同时在 xy 平面上印刷一条线段。
+* 打印开始时，激光照射位置位于坐标 (0, 0)。
+* 打印线段时，遵循以下流程。
+* 首先，将激光照射位置移..." />
+  <div class="row" data-sticky-parent>
+  <div class="medium-9 columns">
+    <div class="section">
+      <div class="section__header">
+        <h1 class="section__title">
+                      <a href="../record/68fe22dc45e206b3556a1e0e.html">
+              <span class="icon record-status--icon pass"></span>
+              <span class="record-status--text pass">100</span>
+            </a>
+                                <form class="form--inline" action="../problem/random@q=category%253Aabc.html" method="post">
+              <input type="hidden" name="star" value="true">
+              <input type="hidden" name="operation" value="star">
+              <button class="star" type="submit">
+                <span class="starred--hide"><span class="icon icon-star--outline" data-tooltip="收藏"></span></span>
+                <span class="starred--show"><span class="icon icon-star" data-tooltip="取消收藏"></span></span>
+              </button>
+            </form>
+          #LS1193. 【普及】激光枪
+        </h1>
+              </div>
+      <div class="section__body">
+        <ul class="problem__tags">
+                      <span class="problem__tag-item">ID: 150</span>
+                    <span class="problem__tag-item icon icon-book">传统题</span>
+                                <span class="problem__tag-item icon icon-stopwatch">10ms</span>
+            <span class="problem__tag-item icon icon-comparison">32MiB</span>
+                                <a class="problem__tag-item interactive" href="https://www.gzlzoi.cn/d/lzoi2025/record?pid=150">尝试: 15</a>
+            <a class="problem__tag-item interactive" href="https://www.gzlzoi.cn/d/lzoi2025/record?pid=150&amp;status=1">已通过: 5</a>
+            <span class="problem__tag-item">难度: 8</span>
+            <span class="problem__tag-item interactive">上传者: <span class="user-profile-link">
+      <img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20">
+    <a class="user-profile-name uname--lv3" href="../user/2.html">
+          liangsheng
+      </a>
+  </span>
+</span>
+                                <span name="show_tags" class="problem__tag-item interactive nojs--hide icon icon-tag">标签&gt;</span><span class="problem__tag-item tags hasjs--hide">普及</span><span class="problem__tag-item tags hasjs--hide">暴力</span><span class="problem__tag-item tags hasjs--hide">排列</span><span class="problem__tag-item tags hasjs--hide">组合</span><span class="problem__tag-item tags hasjs--hide">二进制</span><span class="problem__tag-item tags hasjs--hide">abc</span>        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="problem-content-container"><div class="problem-content" data-marker-enabled>
+        <div class="section__header non-scratchpad--hide">
+          <h1 class="section__title">【普及】激光枪</h1>
+        </div>
+                <div class="section__body typo richmedia" data-fragment-id="problem-description">
+                      <h1 id="%5B%E6%99%AE%E5%8F%8A%5D-%E6%BF%80%E5%85%89%E6%9E%AA" tabindex="-1">[普及] 激光枪</h1>
+<p>有一台印刷机，它可以在发射激光束的同时在 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex"> xy </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> 平面上印刷一条线段。</p>
+<ul>
+<li>
+<p>打印开始时，激光照射位置位于坐标 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mtext> </mtext><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> (0,\ 0) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span>。</p>
+</li>
+<li>
+<p>打印线段时，遵循以下流程。</p>
+<ul>
+<li>首先，将激光照射位置移动到线段的任意一个端点。
+<ul>
+<li>绘图可以从任一端点开始。</li>
+</ul>
+</li>
+<li>然后，在激光照射的同时，将激光照射位置从一个端点直线移动到另一个端点。
+<ul>
+<li>不允许在线段中间停止打印。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>在不进行激光照射时，激光照射位置可以以每秒 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span> 的速度向任何方向移动。</p>
+</li>
+<li>
+<p>当激光照射时，激光照射位置可以以每秒 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span> 的速度沿打印线段移动。</p>
+</li>
+<li>
+<p>除了移动激光照射位置所需的时间外，其他所需的时间可以忽略不计。</p>
+</li>
+</ul>
+<p>现在希望用这台打印机打印 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 条线段。
+第 i 个线段连接坐标 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>A</mi><mi>i</mi></msub><mo separator="true">,</mo><mtext> </mtext><msub><mi>B</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> (A_i,\ B_i) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0502em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>C</mi><mi>i</mi></msub><mo separator="true">,</mo><mtext> </mtext><msub><mi>D</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> (C_i,\ D_i) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>。
+请注意，有几条线段可能会重叠，但每次都必须打印所有线段的重叠部分。</p>
+<p>当成功操作打印机时，完成打印所有线段所需的最短时间是多少？</p>
+<h1 id="%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F" tabindex="-1">输入格式</h1>
+<p>第一行为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span> 个整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo separator="true">,</mo><mtext> </mtext><mi>S</mi><mo separator="true">,</mo><mtext> </mtext><mi>T</mi></mrow><annotation encoding="application/x-tex">N, \ S, \ T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>。</p>
+<p>接下来 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 行，每行包含 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub><mo separator="true">,</mo><mtext> </mtext><msub><mi>B</mi><mi>i</mi></msub><mo separator="true">,</mo><mtext> </mtext><msub><mi>C</mi><mi>i</mi></msub><mo separator="true">,</mo><mtext> </mtext><msub><mi>D</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A_i,\ B_i, \ C_i, \ D_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0502em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+<h1 id="%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F" tabindex="-1">输出格式</h1>
+<p>输出答案。
+请注意，如果与真实值的绝对或相对误差小于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>10</mn><mrow><mo>−</mo><mn>6</mn></mrow></msup></mrow><annotation encoding="application/x-tex"> 10^{-6} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></span>，答案将被视为正确答案。</p>
+<pre><code class="language-input1">3 2 1
+1 3 2 1
+0 2 0 0
+3 0 2 0
+</code></pre>
+<pre><code class="language-output1">6.44317475868633722080
+</code></pre>
+<pre><code class="language-input2">2 1 1
+0 0 10 10
+0 2 2 0
+</code></pre>
+<pre><code class="language-output2">20.97056274847714058517
+</code></pre>
+<pre><code class="language-input3">6 3 2
+-1000 -1000 1000 1000
+1000 -1000 -1000 1000
+-1000 -1000 1000 1000
+1000 -1000 -1000 -1000 1000
+1000 1000 -1000 -1000 -1000
+-1000 1000 1000 -1000
+</code></pre>
+<pre><code class="language-output3">9623.35256169626864153344
+</code></pre>
+<pre><code class="language-input4">6 10 8
+1000 1000 -1000 -1000 -1000
+1000 -1000 -1000 -1000 -1000
+-1000 1000 1000 1000
+-1000 1000 -1000 -1000 -1000
+1000 1000 -1000 -1000
+1000 -1000 -1000 -1000 1000
+</code></pre>
+<pre><code class="language-output4">2048.52813742385702910909
+</code></pre>
+<h1 id="%E6%8F%90%E7%A4%BA" tabindex="-1">提示</h1>
+<p><strong>【样例 1 解释】</strong></p>
+<ul>
+<li>在发射激光的同时，激光照射位置从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> (0,0) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> 移动到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> (0,2) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2</span><span class="mclose">)</span></span></span></span> 并绘制 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex"> 2 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span> 线段。绘制所需的时间为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex"> 2 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span> 秒。</li>
+<li>将激光照射位置从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> (0,2) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2</span><span class="mclose">)</span></span></span></span> 移至 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>1</mn><mo separator="true">,</mo><mn>3</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> (1,3) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">3</span><span class="mclose">)</span></span></span></span>，不进行激光照射。- 这一移动所需的时间为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>2</mn></msqrt><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex"> \sqrt{2}/2 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1572em;vertical-align:-0.25em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9072em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord">2</span></span></span><span style="top:-2.8672em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1328em;"><span></span></span></span></span></span><span class="mord">/2</span></span></span></span> 秒。</li>
+<li>在激光照射的同时，激光照射位置从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>1</mn><mo separator="true">,</mo><mn>3</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> (1,3) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">3</span><span class="mclose">)</span></span></span></span> 移动到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>2</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> (2,1) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 并绘制 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex"> 1 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 第一条线段。- 绘制所需的时间为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>5</mn></msqrt></mrow><annotation encoding="application/x-tex"> \sqrt{5} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.1328em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9072em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord">5</span></span></span><span style="top:-2.8672em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1328em;"><span></span></span></span></span></span></span></span></span> 秒。</li>
+<li>将激光照射位置从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>2</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> (2,1) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 移到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>2</mn><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> (2,0) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span>，不进行激光照射。- 这一移动所需的时间为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex"> 1/2 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1/2</span></span></span></span> 秒。</li>
+<li>在发射激光的同时，将激光照射位置从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>2</mn><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> (2,0)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> 移至 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>3</mn><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> (3,0)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span>，并绘制第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span> 条线段。- 这次绘制所需的时间为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 秒。</li>
+<li>整体所需时间为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mtext> </mtext><mo>+</mo><mtext> </mtext><mo stretchy="false">(</mo><msqrt><mn>2</mn></msqrt><mi mathvariant="normal">/</mi><mn>2</mn><mo stretchy="false">)</mo><mo>+</mo><mtext> </mtext><msqrt><mn>5</mn></msqrt><mtext> </mtext><mo>+</mo><mtext> </mtext><mo stretchy="false">(</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn><mo stretchy="false">)</mo><mtext> </mtext><mo>+</mo><mtext> </mtext><mn>1</mn></mrow><annotation encoding="application/x-tex"> 2\ +\ (\sqrt{2}/2)+\  \sqrt{5}\ +\ (1/2)\ +\ 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1572em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9072em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord">2</span></span></span><span style="top:-2.8672em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1328em;"><span></span></span></span></span></span><span class="mord">/2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.1328em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9072em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord">5</span></span></span><span style="top:-2.8672em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1328em;"><span></span></span></span></span></span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1/2</span><span class="mclose">)</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 大约 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6.443175</mn></mrow><annotation encoding="application/x-tex">6.443175</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6.443175</span></span></span></span> 秒。</li>
+</ul>
+<p><strong>【样例 3 解释】</strong></p>
+<ul>
+<li>有几个重叠的线段，但每次都需要打印所有线段的重叠部分。</li>
+</ul>
+<p><strong>【数据范围】</strong></p>
+<ul>
+<li>所有输入都是整数</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>6</mn></mrow><annotation encoding="application/x-tex"> 1\le N \le 6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mtext> </mtext><mi>T</mi><mo>≤</mo><mtext> </mtext><mi>S</mi><mo>≤</mo><mtext> </mtext><mn>1000</mn></mrow><annotation encoding="application/x-tex"> 1\le\ T\le\ S\le\ 1000 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1000</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1000</mn><mo>≤</mo><msub><mi>A</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>B</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>C</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>D</mi><mi>i</mi></msub><mo>≤</mo><mn>1000</mn></mrow><annotation encoding="application/x-tex"> -1000 \le A_i,B_i,C_i,D_i \le 1000 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">−</span><span class="mord">1000</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0502em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1000</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>A</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>B</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo mathvariant="normal">≠</mo><mo stretchy="false">(</mo><msub><mi>C</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>D</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> (A_i,B_i) \neq (C_i,D_i) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0502em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="inner"><span class="mord"><span class="mrel"></span></span></span><span class="fix"></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> ( <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mtext> </mtext><mi>i</mi><mo>≤</mo><mtext> </mtext><mi>N</mi></mrow><annotation encoding="application/x-tex"> 1\le\ i\le\ N </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7955em;vertical-align:-0.136em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> )</li>
+</ul>
+<details>
+<summary><font color="#FF0000">请思考后再点击查看提示</font></summary>
+</details>
+<h1 id="%E6%9D%A5%E6%BA%90" tabindex="-1">来源</h1>
+
+
+</div>      </div></div>
+    </div>
+  </div>
+  <div class="medium-3 columns"><div data-sticky="large">
+        <div class="section side section--problem-sidebar">
+  <div>
+    <ol class="menu">
+                  <li class="menu__item scratchpad--hide nojs--hide"><a class="menu__link highlight" name="problem-sidebar__open-scratchpad" href="javascript:;" data-global-hotkey="alt+e" style="display: none;">
+        <span class="icon icon-enlarge"></span> 进入在线编程模式 (Alt+E)
+      </a></li>
+      <li class="menu__item non-scratchpad--hide"><a class="menu__link" name="problem-sidebar__quit-scratchpad" href="javascript:;" data-global-hotkey="alt+q">
+        <span class="icon icon-enlarge"></span> 退出在线编程模式 (Alt+Q)
+      </a></li>
+                  <li class="menu__item scratchpad--hide"><a class="menu__link" href="LS1193/submit.html">
+        <span class="icon icon-send"></span> 递交
+      </a></li>
+                      <li class="menu__seperator"></li>
+              <li class="menu__item"><a class="menu__link" href="../discuss/problem/150.html">
+        <span class="icon icon-comment--text"></span> 讨论 (0)      </a></li>
+              <li class="menu__item"><a class="menu__link" href="LS1193/solution.html">
+        <span class="icon icon-comment--text"></span> 题解 (0)      </a></li>
+          <li class="menu__item"><a class="menu__link" href="LS1193/files.html">
+        <span class="icon icon-file"></span> 文件
+      </a></li>
+      <li class="menu__item"><a class="menu__link" href="LS1193/stat.html">
+        <span class="icon icon-statistics"></span> 统计
+      </a></li>
+              <li class="menu__seperator nojs--hide"></li>
+                    <li class="menu__item nojs--hide"><a class="menu__link" href="javascript:;" name="problem-sidebar__copy">
+          <span class="icon icon-copy"></span> 复制
+        </a></li>
+              </ol>
+  </div>
+</div>
+<div class="section side">
+  <div class="section__header">
+    <h1 class="section__title">相关</h1>
+  </div>
+  <div class="section__body typo">
+          <p>在以下作业中: </p><p><a href="../homework/68b5545c3ef0b4af1ee9bdc7.html">【算法入门-11】暴力枚举的艺术</a></p>  </div>
+</div>
+  </div></div>
+</div>
+<div style="display:none" class="outer-loader-container"><div class="loader"></div></div>
+<div class="scratchpad-container" style="display:none">
+  <div style="display:none" class="loader-container"><div class="loader"></div></div>
+  <div id="scratchpad" style="opacity:0"></div>
+</div>
+  </div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+      <div class="row footer__links">
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          状态
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://www.gzlzoi.cn/d/lzoi2025/record">评测队列</a></li>
+          <li class="footer__category__item"><a href="../status.html">服务状态</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          开发
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">开源</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          支持
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/help.html">帮助</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">联系我们</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable end">
+        <h1>
+          关于
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/about.html">关于</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#privacy">隐私</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#tos">服务条款</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">版权申诉</a></li>
+        </ul></div>
+      </div>
+    </div>
+      <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+                    <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-lang"><li class="menu__item"><a class="menu__link" href="../language/en.html">English</a></li><li class="menu__item"><a class="menu__link" href="../language/ko.html">한국어</a></li><li class="menu__item"><a class="menu__link" href="../language/zh.html">简体中文</a></li><li class="menu__item"><a class="menu__link" href="../language/zh_TW.html">正體中文</a></li></ol>
+          </li>
+          <li class="footer__extra-link-item">
+                          <a href="https://www.gzlzoi.cn/legacy?legacy=true">兼容模式</a>
+                      </li>
+          <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> 主题 <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-theme">
+              <li class="menu__item"><a class="menu__link" href="../set_theme/light.html">亮色</a></li>
+              <li class="menu__item"><a class="menu__link" href="../set_theme/dark.html">暗色</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><a href="https://beian.miit.gov.cn/">京ICP备2023010486号-3</a></li><li class="footer__extra-link-item">Worker 0, 41ms</li>
+          <!-- Prepare 3ms -->
+          <!-- Method 1ms -->
+          
+          
+          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v5.0.0-beta.16</a> Community</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      window.UiContextNew = '{"problemId":"LS1193","problemNumId":150,"codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","pdoc":{"_id":"68e1c2cde50b3fc6df1dc0e6","content":"{\\"zh\\":\\"# [\u666E\u53CA] \u6FC0\u5149\u67AA\\\\n\\\\n\u6709\u4E00\u53F0\u5370\u5237\u673A\uFF0C\u5B83\u53EF\u4EE5\u5728\u53D1\u5C04\u6FC0\u5149\u675F\u7684\u540C\u65F6\u5728 $ xy $ \u5E73\u9762\u4E0A\u5370\u5237\u4E00\u6761\u7EBF\u6BB5\u3002\\\\n\\\\n\\\\n- \u6253\u5370\u5F00\u59CB\u65F6\uFF0C\u6FC0\u5149\u7167\u5C04\u4F4D\u7F6E\u4F4D\u4E8E\u5750\u6807 $ (0,\\\\\\\\ 0) $\u3002\\\\n- \u6253\u5370\u7EBF\u6BB5\u65F6\uFF0C\u9075\u5FAA\u4EE5\u4E0B\u6D41\u7A0B\u3002\\\\n  - \u9996\u5148\uFF0C\u5C06\u6FC0\u5149\u7167\u5C04\u4F4D\u7F6E\u79FB\u52A8\u5230\u7EBF\u6BB5\u7684\u4EFB\u610F\u4E00\u4E2A\u7AEF\u70B9\u3002\\\\n    - \u7ED8\u56FE\u53EF\u4EE5\u4ECE\u4EFB\u4E00\u7AEF\u70B9\u5F00\u59CB\u3002\\\\n  - \u7136\u540E\uFF0C\u5728\u6FC0\u5149\u7167\u5C04\u7684\u540C\u65F6\uFF0C\u5C06\u6FC0\u5149\u7167\u5C04\u4F4D\u7F6E\u4ECE\u4E00\u4E2A\u7AEF\u70B9\u76F4\u7EBF\u79FB\u52A8\u5230\u53E6\u4E00\u4E2A\u7AEF\u70B9\u3002\\\\n    - \u4E0D\u5141\u8BB8\u5728\u7EBF\u6BB5\u4E2D\u95F4\u505C\u6B62\u6253\u5370\u3002\\\\n   \\\\n\\\\n- \u5728\u4E0D\u8FDB\u884C\u6FC0\u5149\u7167\u5C04\u65F6\uFF0C\u6FC0\u5149\u7167\u5C04\u4F4D\u7F6E\u53EF\u4EE5\u4EE5\u6BCF\u79D2 $S$ \u7684\u901F\u5EA6\u5411\u4EFB\u4F55\u65B9\u5411\u79FB\u52A8\u3002\\\\n- \u5F53\u6FC0\u5149\u7167\u5C04\u65F6\uFF0C\u6FC0\u5149\u7167\u5C04\u4F4D\u7F6E\u53EF\u4EE5\u4EE5\u6BCF\u79D2 $T$ \u7684\u901F\u5EA6\u6CBF\u6253\u5370\u7EBF\u6BB5\u79FB\u52A8\u3002\\\\n- \u9664\u4E86\u79FB\u52A8\u6FC0\u5149\u7167\u5C04\u4F4D\u7F6E\u6240\u9700\u7684\u65F6\u95F4\u5916\uFF0C\u5176\u4ED6\u6240\u9700\u7684\u65F6\u95F4\u53EF\u4EE5\u5FFD\u7565\u4E0D\u8BA1\u3002\\\\n\\\\n\u73B0\u5728\u5E0C\u671B\u7528\u8FD9\u53F0\u6253\u5370\u673A\u6253\u5370 $N$ \u6761\u7EBF\u6BB5\u3002\\\\n\u7B2C i \u4E2A\u7EBF\u6BB5\u8FDE\u63A5\u5750\u6807 $ (A_i,\\\\\\\\ B_i) $ \u548C $ (C_i,\\\\\\\\ D_i) $\u3002\\\\n\u8BF7\u6CE8\u610F\uFF0C\u6709\u51E0\u6761\u7EBF\u6BB5\u53EF\u80FD\u4F1A\u91CD\u53E0\uFF0C\u4F46\u6BCF\u6B21\u90FD\u5FC5\u987B\u6253\u5370\u6240\u6709\u7EBF\u6BB5\u7684\u91CD\u53E0\u90E8\u5206\u3002\\\\n\\\\n\u5F53\u6210\u529F\u64CD\u4F5C\u6253\u5370\u673A\u65F6\uFF0C\u5B8C\u6210\u6253\u5370\u6240\u6709\u7EBF\u6BB5\u6240\u9700\u7684\u6700\u77ED\u65F6\u95F4\u662F\u591A\u5C11\uFF1F\\\\n\\\\n# \u8F93\u5165\u683C\u5F0F\\\\n\\\\n\u7B2C\u4E00\u884C\u4E3A $3$ \u4E2A\u6574\u6570 $N, \\\\\\\\ S, \\\\\\\\ T$\u3002\\\\n\\\\n\u63A5\u4E0B\u6765 $N$ \u884C\uFF0C\u6BCF\u884C\u5305\u542B $A_i,\\\\\\\\ B_i, \\\\\\\\ C_i, \\\\\\\\ D_i$\\\\n\\\\n# \u8F93\u51FA\u683C\u5F0F\\\\n\\\\n\u8F93\u51FA\u7B54\u6848\u3002\\\\n\u8BF7\u6CE8\u610F\uFF0C\u5982\u679C\u4E0E\u771F\u5B9E\u503C\u7684\u7EDD\u5BF9\u6216\u76F8\u5BF9\u8BEF\u5DEE\u5C0F\u4E8E $ 10^{-6} $\uFF0C\u7B54\u6848\u5C06\u88AB\u89C6\u4E3A\u6B63\u786E\u7B54\u6848\u3002\\\\n\\\\n```input1\\\\n3 2 1\\\\n1 3 2 1\\\\n0 2 0 0\\\\n3 0 2 0\\\\n```\\\\n\\\\n```output1\\\\n6.44317475868633722080\\\\n```\\\\n\\\\n```input2\\\\n2 1 1\\\\n0 0 10 10\\\\n0 2 2 0\\\\n```\\\\n\\\\n```output2\\\\n20.97056274847714058517\\\\n```\\\\n\\\\n```input3\\\\n6 3 2\\\\n-1000 -1000 1000 1000\\\\n1000 -1000 -1000 1000\\\\n-1000 -1000 1000 1000\\\\n1000 -1000 -1000 -1000 1000\\\\n1000 1000 -1000 -1000 -1000\\\\n-1000 1000 1000 -1000\\\\n```\\\\n\\\\n```output3\\\\n9623.35256169626864153344\\\\n```\\\\n\\\\n```input4\\\\n6 10 8\\\\n1000 1000 -1000 -1000 -1000\\\\n1000 -1000 -1000 -1000 -1000\\\\n-1000 1000 1000 1000\\\\n-1000 1000 -1000 -1000 -1000\\\\n1000 1000 -1000 -1000\\\\n1000 -1000 -1000 -1000 1000\\\\n```\\\\n\\\\n```output4\\\\n2048.52813742385702910909\\\\n```\\\\n\\\\n# \u63D0\u793A\\\\n\\\\n**\u3010\u6837\u4F8B 1 \u89E3\u91CA\u3011**\\\\n\\\\n- \u5728\u53D1\u5C04\u6FC0\u5149\u7684\u540C\u65F6\uFF0C\u6FC0\u5149\u7167\u5C04\u4F4D\u7F6E\u4ECE $ (0,0) $ \u79FB\u52A8\u5230 $ (0,2) $ \u5E76\u7ED8\u5236 $ 2 $ \u7EBF\u6BB5\u3002\u7ED8\u5236\u6240\u9700\u7684\u65F6\u95F4\u4E3A $ 2 $ \u79D2\u3002\\\\n- \u5C06\u6FC0\u5149\u7167\u5C04\u4F4D\u7F6E\u4ECE $ (0,2) $ \u79FB\u81F3 $ (1,3) $\uFF0C\u4E0D\u8FDB\u884C\u6FC0\u5149\u7167\u5C04\u3002- \u8FD9\u4E00\u79FB\u52A8\u6240\u9700\u7684\u65F6\u95F4\u4E3A $ \\\\\\\\sqrt{2}/2 $ \u79D2\u3002\\\\n- \u5728\u6FC0\u5149\u7167\u5C04\u7684\u540C\u65F6\uFF0C\u6FC0\u5149\u7167\u5C04\u4F4D\u7F6E\u4ECE $ (1,3) $ \u79FB\u52A8\u5230 $ (2,1) $ \u5E76\u7ED8\u5236 $ 1 $ \u7B2C\u4E00\u6761\u7EBF\u6BB5\u3002- \u7ED8\u5236\u6240\u9700\u7684\u65F6\u95F4\u4E3A $ \\\\\\\\sqrt{5} $ \u79D2\u3002\\\\n- \u5C06\u6FC0\u5149\u7167\u5C04\u4F4D\u7F6E\u4ECE $ (2,1) $ \u79FB\u5230 $ (2,0) $\uFF0C\u4E0D\u8FDB\u884C\u6FC0\u5149\u7167\u5C04\u3002- \u8FD9\u4E00\u79FB\u52A8\u6240\u9700\u7684\u65F6\u95F4\u4E3A $ 1/2 $ \u79D2\u3002\\\\n- \u5728\u53D1\u5C04\u6FC0\u5149\u7684\u540C\u65F6\uFF0C\u5C06\u6FC0\u5149\u7167\u5C04\u4F4D\u7F6E\u4ECE $ (2,0)$ \u79FB\u81F3 $ (3,0)$\uFF0C\u5E76\u7ED8\u5236\u7B2C $3$ \u6761\u7EBF\u6BB5\u3002- \u8FD9\u6B21\u7ED8\u5236\u6240\u9700\u7684\u65F6\u95F4\u4E3A $1$ \u79D2\u3002\\\\n- \u6574\u4F53\u6240\u9700\u65F6\u95F4\u4E3A $ 2\\\\\\\\ +\\\\\\\\ (\\\\\\\\sqrt{2}/2)+\\\\\\\\  \\\\\\\\sqrt{5}\\\\\\\\ +\\\\\\\\ (1/2)\\\\\\\\ +\\\\\\\\ 1$ \u5927\u7EA6 $6.443175$ \u79D2\u3002\\\\n\\\\n**\u3010\u6837\u4F8B 3 \u89E3\u91CA\u3011**\\\\n\\\\n- \u6709\u51E0\u4E2A\u91CD\u53E0\u7684\u7EBF\u6BB5\uFF0C\u4F46\u6BCF\u6B21\u90FD\u9700\u8981\u6253\u5370\u6240\u6709\u7EBF\u6BB5\u7684\u91CD\u53E0\u90E8\u5206\u3002\\\\n\\\\n**\u3010\u6570\u636E\u8303\u56F4\u3011**\\\\n\\\\n- \u6240\u6709\u8F93\u5165\u90FD\u662F\u6574\u6570\\\\n- $ 1\\\\\\\\le N \\\\\\\\le 6$\\\\n- $ 1\\\\\\\\le\\\\\\\\ T\\\\\\\\le\\\\\\\\ S\\\\\\\\le\\\\\\\\ 1000 $\\\\n- $ -1000 \\\\\\\\le A_i,B_i,C_i,D_i \\\\\\\\le 1000 $\\\\n- $ (A_i,B_i) \\\\\\\\neq (C_i,D_i) $ ( $ 1\\\\\\\\le\\\\\\\\ i\\\\\\\\le\\\\\\\\ N $ )\\\\n\\\\n<details>\\\\n<summary><font color=\\\\\\"#FF0000\\\\\\">\u8BF7\u601D\u8003\u540E\u518D\u70B9\u51FB\u67E5\u770B\u63D0\u793A</font></summary>\\\\n\\\\n</details>\\\\n\\\\n# \u6765\u6E90\\\\n\x3C!-- - [abc_374_D: Laser Marking](https://atcoder.jp/contests/abc374/tasks/abc374_d) -->\\\\n\\\\n\\\\n\\"}","owner":2,"domainId":"lzoi2025","docType":10,"docId":150,"title":"\u3010\u666E\u53CA\u3011\u6FC0\u5149\u67AA","tag":["\u666E\u53CA","\u66B4\u529B","\u6392\u5217","\u7EC4\u5408","\u4E8C\u8FDB\u5236","abc"],"hidden":false,"nSubmit":15,"nAccept":5,"data":[{"_id":"1.in","name":"1.in","size":41,"lastModified":"2025-10-05T00:58:53.573Z","etag":"L2RhdGEvZmlsZS9oeWRyby9xY2kvd3FiZDk3ZGJ3eWZocWdibHM3MG81Lmlu"},{"_id":"1.out","name":"1.out","size":26,"lastModified":"2025-10-05T00:58:53.576Z","etag":"L2RhdGEvZmlsZS9oeWRyby9zdHcvb2NhbjBrMHh0enBpdmszMDNrZnl1Lm91dA=="},{"_id":"10.in","name":"10.in","size":99,"lastModified":"2025-10-05T00:58:53.579Z","etag":"L2RhdGEvZmlsZS9oeWRyby9yNHMvNWQzYTRvYzAwemY0NzJjd2NsZnd2Lmlu"},{"_id":"10.out","name":"10.out","size":24,"lastModified":"2025-10-05T00:58:53.581Z","etag":"L2RhdGEvZmlsZS9oeWRyby9sdXgvbmZoa2N2bmV1dmdubjJqNmptanc0Lm91dA=="},{"_id":"11.in","name":"11.in","size":126,"lastModified":"2025-10-05T00:58:53.583Z","etag":"L2RhdGEvZmlsZS9oeWRyby9iZ2Uvc2huMHA5dXlqYzFlMzdkdnd6b3d2Lmlu"},{"_id":"11.out","name":"11.out","size":26,"lastModified":"2025-10-05T00:58:53.586Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kcGsvMGpodG1ucHkzem5kbzJ4OXRrNnB3Lm91dA=="},{"_id":"12.in","name":"12.in","size":25,"lastModified":"2025-10-05T00:58:53.588Z","etag":"L2RhdGEvZmlsZS9oeWRyby80eGEvbmZ4NmJncTFla3gydWExMDlreGI3Lmlu"},{"_id":"12.out","name":"12.out","size":25,"lastModified":"2025-10-05T00:58:53.590Z","etag":"L2RhdGEvZmlsZS9oeWRyby92aWYvZXgxcGJtaXdwN3NteHZsanMxZmN4Lm91dA=="},{"_id":"13.in","name":"13.in","size":39,"lastModified":"2025-10-05T00:58:53.592Z","etag":"L2RhdGEvZmlsZS9oeWRyby96MG8veGh2aGFyZmI3dGxnY2NzMDRoMm5lLmlu"},{"_id":"13.out","name":"13.out","size":23,"lastModified":"2025-10-05T00:58:53.595Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wbnovOWt0bGM0ajZva3FoeDgxZG4waG5jLm91dA=="},{"_id":"14.in","name":"14.in","size":59,"lastModified":"2025-10-05T00:58:53.597Z","etag":"L2RhdGEvZmlsZS9oeWRyby84c2UvcGh0Z2FtZnpuYW53Z2c3ZGd4dmt4Lmlu"},{"_id":"14.out","name":"14.out","size":24,"lastModified":"2025-10-05T00:58:53.599Z","etag":"L2RhdGEvZmlsZS9oeWRyby92ZG4vdHRlazBkbDBpOHh4aXd0cm5udHJjLm91dA=="},{"_id":"15.in","name":"15.in","size":76,"lastModified":"2025-10-05T00:58:53.601Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ndTUvYzN3ZmRrb3d4b3Z4ZWNoYmV0Z3RzLmlu"},{"_id":"15.out","name":"15.out","size":26,"lastModified":"2025-10-05T00:58:53.604Z","etag":"L2RhdGEvZmlsZS9oeWRyby9nbGUvdm4wZmF4dm53YmVuN3llZ2IwZmt4Lm91dA=="},{"_id":"16.in","name":"16.in","size":98,"lastModified":"2025-10-05T00:58:53.607Z","etag":"L2RhdGEvZmlsZS9oeWRyby93dXQvZjhwZTdlZ2Vna3FxdW1hbmN1Z3l2Lmlu"},{"_id":"16.out","name":"16.out","size":24,"lastModified":"2025-10-05T00:58:53.609Z","etag":"L2RhdGEvZmlsZS9oeWRyby93bmQvMDB0ZWtxczU5OGRwbWYwNGpuY2hsLm91dA=="},{"_id":"17.in","name":"17.in","size":114,"lastModified":"2025-10-05T00:58:53.611Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ob2UvYmh6cG9nbW9rZWNzaWlsdzJ5ejBhLmlu"},{"_id":"17.out","name":"17.out","size":24,"lastModified":"2025-10-05T00:58:53.613Z","etag":"L2RhdGEvZmlsZS9oeWRyby9za2MvZmZzaGU4N3gyYXR0c2x6ODdzY3Y0Lm91dA=="},{"_id":"18.in","name":"18.in","size":23,"lastModified":"2025-10-05T00:58:53.615Z","etag":"L2RhdGEvZmlsZS9oeWRyby92MGsvenB4dDM2ZmNza3A5MGdidXpnbWt6Lmlu"},{"_id":"18.out","name":"18.out","size":23,"lastModified":"2025-10-05T00:58:53.617Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kMWovdHNsZ29nenZvbDNqdWgxeHJhanI1Lm91dA=="},{"_id":"19.in","name":"19.in","size":39,"lastModified":"2025-10-05T00:58:53.620Z","etag":"L2RhdGEvZmlsZS9oeWRyby91YWUvNTh6bzRpZm15d2trcG1pZ3ViN3E0Lmlu"},{"_id":"19.out","name":"19.out","size":25,"lastModified":"2025-10-05T00:58:53.623Z","etag":"L2RhdGEvZmlsZS9oeWRyby9nNncvZGZ3MGhoaDVrbWNreGgwZ3gwMXhvLm91dA=="},{"_id":"2.in","name":"2.in","size":64,"lastModified":"2025-10-05T00:58:53.627Z","etag":"L2RhdGEvZmlsZS9oeWRyby9vaHQvZXo1bnZjcWlyNXd2c3Z0aDNxeHh0Lmlu"},{"_id":"2.out","name":"2.out","size":23,"lastModified":"2025-10-05T00:58:53.630Z","etag":"L2RhdGEvZmlsZS9oeWRyby9sZTcvbjNicjRwaHRuaHhnam04dzVnZnJmLm91dA=="},{"_id":"20.in","name":"20.in","size":64,"lastModified":"2025-10-05T00:58:53.633Z","etag":"L2RhdGEvZmlsZS9oeWRyby90M3AvaG5veGNqaTlhbHhoZmpoZmRwdzB5Lmlu"},{"_id":"20.out","name":"20.out","size":23,"lastModified":"2025-10-05T00:58:53.635Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ibHEveXNjYXc2NTFpd3hhaHlicGdleXFqLm91dA=="},{"_id":"21.in","name":"21.in","size":76,"lastModified":"2025-10-05T00:58:53.638Z","etag":"L2RhdGEvZmlsZS9oeWRyby91cncvaDI5Nm4wbzhsdzhxeW9jdHA3a3lpLmlu"},{"_id":"21.out","name":"21.out","size":24,"lastModified":"2025-10-05T00:58:53.640Z","etag":"L2RhdGEvZmlsZS9oeWRyby9tMmYveW15cjd0b2pnb2h1aWdnZ2F2cnpxLm91dA=="},{"_id":"22.in","name":"22.in","size":95,"lastModified":"2025-10-05T00:58:53.642Z","etag":"L2RhdGEvZmlsZS9oeWRyby9jb3kvY2lsd29qc3g5dHJ5b2JrN3dzdWtvLmlu"},{"_id":"22.out","name":"22.out","size":23,"lastModified":"2025-10-05T00:58:53.645Z","etag":"L2RhdGEvZmlsZS9oeWRyby9xMDgvNW02MmVtd254MmZsbW96enVpNnNlLm91dA=="},{"_id":"23.in","name":"23.in","size":103,"lastModified":"2025-10-05T00:58:53.647Z","etag":"L2RhdGEvZmlsZS9oeWRyby94Y2IvbGd6NTB1dDBpOWxkbTB1Y29pZ29vLmlu"},{"_id":"23.out","name":"23.out","size":23,"lastModified":"2025-10-05T00:58:53.650Z","etag":"L2RhdGEvZmlsZS9oeWRyby9wMXYvbzlhaHRtZmdocjBycGF0bWtmYnF2Lm91dA=="},{"_id":"24.in","name":"24.in","size":28,"lastModified":"2025-10-05T00:58:53.652Z","etag":"L2RhdGEvZmlsZS9oeWRyby92dDMvdWphMnlzenRlY2lxZHBrb2Zrd3dlLmlu"},{"_id":"24.out","name":"24.out","size":23,"lastModified":"2025-10-05T00:58:53.655Z","etag":"L2RhdGEvZmlsZS9oeWRyby9yeGkvYzIwMmpleWhtaWZ6Ymd3bnhpb2lyLm91dA=="},{"_id":"25.in","name":"25.in","size":42,"lastModified":"2025-10-05T00:58:53.657Z","etag":"L2RhdGEvZmlsZS9oeWRyby82Z2kvNWd6bDAzN2phZ2p6eDg3eXppZGRrLmlu"},{"_id":"25.out","name":"25.out","size":26,"lastModified":"2025-10-05T00:58:53.659Z","etag":"L2RhdGEvZmlsZS9oeWRyby9jcHEvZWNucWtscnhzYmxramUyZjBpd3AzLm91dA=="},{"_id":"26.in","name":"26.in","size":62,"lastModified":"2025-10-05T00:58:53.661Z","etag":"L2RhdGEvZmlsZS9oeWRyby9jdG0vOHNmeTBxM25jaWxuNnczbnZ2Yjh4Lmlu"},{"_id":"26.out","name":"26.out","size":24,"lastModified":"2025-10-05T00:58:53.663Z","etag":"L2RhdGEvZmlsZS9oeWRyby9uYmcva2RrOGFucmFreW1wMGxhYWlvY3MwLm91dA=="},{"_id":"27.in","name":"27.in","size":78,"lastModified":"2025-10-05T00:58:53.666Z","etag":"L2RhdGEvZmlsZS9oeWRyby93emEvNmVva2hub2FzaDRmbnozZHJmcG9wLmlu"},{"_id":"27.out","name":"27.out","size":26,"lastModified":"2025-10-05T00:58:53.668Z","etag":"L2RhdGEvZmlsZS9oeWRyby9oMmYvZnBmaW1oZ3RtdGNkZGo0c2ZhbGl3Lm91dA=="},{"_id":"28.in","name":"28.in","size":95,"lastModified":"2025-10-05T00:58:53.670Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lYnovaDdzNGJjb2NlN2t2ZmxwbWFyYW42Lmlu"},{"_id":"28.out","name":"28.out","size":26,"lastModified":"2025-10-05T00:58:53.673Z","etag":"L2RhdGEvZmlsZS9oeWRyby9jajcveWNlYnRob3hldmpjaDB5cjZ1ZWFkLm91dA=="},{"_id":"29.in","name":"29.in","size":118,"lastModified":"2025-10-05T00:58:53.675Z","etag":"L2RhdGEvZmlsZS9oeWRyby93bnIvaG9ibG16ajFmYW5mbGl3a2dhaHIwLmlu"},{"_id":"29.out","name":"29.out","size":24,"lastModified":"2025-10-05T00:58:53.677Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ubnMvc2IydHJsOXdiN3hrMzl4MmlndWY4Lm91dA=="},{"_id":"3.in","name":"3.in","size":83,"lastModified":"2025-10-05T00:58:53.680Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wZG8vdzBwcW5hbW9nZTBxOG13dW1xa2RqLmlu"},{"_id":"3.out","name":"3.out","size":26,"lastModified":"2025-10-05T00:58:53.682Z","etag":"L2RhdGEvZmlsZS9oeWRyby9rMHgvb3h0ZXprY3FpZG8waHNlNGZzbGN6Lm91dA=="},{"_id":"30.in","name":"30.in","size":24,"lastModified":"2025-10-05T00:58:53.686Z","etag":"L2RhdGEvZmlsZS9oeWRyby9iaWsvcGNyeXlnb3d6cnJ4emFkM291YXRsLmlu"},{"_id":"30.out","name":"30.out","size":25,"lastModified":"2025-10-05T00:58:53.689Z","etag":"L2RhdGEvZmlsZS9oeWRyby82ZXgvdmQweW10a2tiZGNmbnJ1bGw1aW5nLm91dA=="},{"_id":"31.in","name":"31.in","size":40,"lastModified":"2025-10-05T00:58:53.691Z","etag":"L2RhdGEvZmlsZS9oeWRyby9uYjMvdGh2ZmV4N3N1ZnhxZWtzemdycHVqLmlu"},{"_id":"31.out","name":"31.out","size":26,"lastModified":"2025-10-05T00:58:53.693Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wMGcvbmFjYmlkMnZsZnFqcWUwMGhhZmhmLm91dA=="},{"_id":"32.in","name":"32.in","size":58,"lastModified":"2025-10-05T00:58:53.696Z","etag":"L2RhdGEvZmlsZS9oeWRyby9hcTgvcHZ0bmduaDVhenJ3bWxzYmxwam5yLmlu"},{"_id":"32.out","name":"32.out","size":26,"lastModified":"2025-10-05T00:58:53.698Z","etag":"L2RhdGEvZmlsZS9oeWRyby9xYnYvZWowNXp5ajh3ZG5xM2tjaTRuc3RoLm91dA=="},{"_id":"33.in","name":"33.in","size":82,"lastModified":"2025-10-05T00:58:53.700Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kanAvNmZ5d3NwMDR0bWxkZWh0Mmw1eGd1Lmlu"},{"_id":"33.out","name":"33.out","size":26,"lastModified":"2025-10-05T00:58:53.703Z","etag":"L2RhdGEvZmlsZS9oeWRyby9manYvY2h1Y2Vnb2k0ejBpemZsbnNnYnpmLm91dA=="},{"_id":"34.in","name":"34.in","size":99,"lastModified":"2025-10-05T00:58:53.705Z","etag":"L2RhdGEvZmlsZS9oeWRyby9vZjgvNWJvaWd3cjB0ZWRmNGx0bnUwZWlwLmlu"},{"_id":"34.out","name":"34.out","size":24,"lastModified":"2025-10-05T00:58:53.708Z","etag":"L2RhdGEvZmlsZS9oeWRyby9seTAvMTdmdG45dHF2Y3IweWtzZ2J6bnBrLm91dA=="},{"_id":"35.in","name":"35.in","size":111,"lastModified":"2025-10-05T00:58:53.714Z","etag":"L2RhdGEvZmlsZS9oeWRyby96cm0vbnRubWN2MXB0dmZrdzhuaHQ3bGJxLmlu"},{"_id":"35.out","name":"35.out","size":27,"lastModified":"2025-10-05T00:58:53.716Z","etag":"L2RhdGEvZmlsZS9oeWRyby9maG4vcDhsYXp0eXVxZ2xza3c5N2VnMG53Lm91dA=="},{"_id":"36.in","name":"36.in","size":26,"lastModified":"2025-10-05T00:58:53.718Z","etag":"L2RhdGEvZmlsZS9oeWRyby90Y3kvYWt1Y25uazZzY2xjbDF0ZXQwdDJkLmlu"},{"_id":"36.out","name":"36.out","size":23,"lastModified":"2025-10-05T00:58:53.721Z","etag":"L2RhdGEvZmlsZS9oeWRyby9idzcvcXc4bjB5b3Vkd29veXpsbGZvdjBoLm91dA=="},{"_id":"37.in","name":"37.in","size":43,"lastModified":"2025-10-05T00:58:53.723Z","etag":"L2RhdGEvZmlsZS9oeWRyby96b3IvZzc5eGZhMjJwNm1zZWJmOTVvam56Lmlu"},{"_id":"37.out","name":"37.out","size":25,"lastModified":"2025-10-05T00:58:53.725Z","etag":"L2RhdGEvZmlsZS9oeWRyby95eWovY2x2dXdza3JkeGh3aTB1MDh0a3U4Lm91dA=="},{"_id":"38.in","name":"38.in","size":62,"lastModified":"2025-10-05T00:58:53.727Z","etag":"L2RhdGEvZmlsZS9oeWRyby94eHYvcGNibGVhbnNhdXZkb2N3dXdiazdsLmlu"},{"_id":"38.out","name":"38.out","size":24,"lastModified":"2025-10-05T00:58:53.730Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ieG0vdXptZ3oxZHB4YnhqOHc3eWZpMGtnLm91dA=="},{"_id":"39.in","name":"39.in","size":80,"lastModified":"2025-10-05T00:58:53.732Z","etag":"L2RhdGEvZmlsZS9oeWRyby9xaWovNm5tMDBueXFyZHE2dm9zbmt4ZTA1Lmlu"},{"_id":"39.out","name":"39.out","size":23,"lastModified":"2025-10-05T00:58:53.735Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wNXEvZW55cXRicWNjaTJ3dXFjNW82c2JoLm91dA=="},{"_id":"4.in","name":"4.in","size":100,"lastModified":"2025-10-05T00:58:53.738Z","etag":"L2RhdGEvZmlsZS9oeWRyby9vcDIvZTZhMDk3MTQ5dHR1ZG1tbmQ1YjV2Lmlu"},{"_id":"4.out","name":"4.out","size":25,"lastModified":"2025-10-05T00:58:53.741Z","etag":"L2RhdGEvZmlsZS9oeWRyby9uMHIvaTF0anZhbjR3eHFlZ2RuczNsdzB2Lm91dA=="},{"_id":"40.in","name":"40.in","size":100,"lastModified":"2025-10-05T00:58:53.743Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kZncvODZueGRud3V4aGV1cG10ZW5sMWswLmlu"},{"_id":"40.out","name":"40.out","size":23,"lastModified":"2025-10-05T00:58:53.746Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kdjcvaHkxbWlnY2thYWwwZWIwbjhsZm8wLm91dA=="},{"_id":"41.in","name":"41.in","size":104,"lastModified":"2025-10-05T00:58:53.748Z","etag":"L2RhdGEvZmlsZS9oeWRyby9wcG0vNTY1eW1lZXpvcWh4dDFlajdvZnhxLmlu"},{"_id":"41.out","name":"41.out","size":24,"lastModified":"2025-10-05T00:58:53.751Z","etag":"L2RhdGEvZmlsZS9oeWRyby9pNG4vNm9pcmoxbXdhd2ZoNmRyYTJqa2t3Lm91dA=="},{"_id":"42.in","name":"42.in","size":21,"lastModified":"2025-10-05T00:58:53.753Z","etag":"L2RhdGEvZmlsZS9oeWRyby9tdGkvZ3F3ZHNlc2kxMGQ1a3ZraWdvY3B3Lmlu"},{"_id":"42.out","name":"42.out","size":25,"lastModified":"2025-10-05T00:58:53.755Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ibTUvZWtlamlqaWpkeGJ4cGhiMmxvZWNpLm91dA=="},{"_id":"43.in","name":"43.in","size":39,"lastModified":"2025-10-05T00:58:53.758Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kdGovYXJwZWJocHV3cjA0ajNsdmozcGZwLmlu"},{"_id":"43.out","name":"43.out","size":26,"lastModified":"2025-10-05T00:58:53.760Z","etag":"L2RhdGEvZmlsZS9oeWRyby95M20vZHVpMHlpN3VuMmpzYW5yaGtoZmUwLm91dA=="},{"_id":"44.in","name":"44.in","size":60,"lastModified":"2025-10-05T00:58:53.762Z","etag":"L2RhdGEvZmlsZS9oeWRyby9mYjcveWxzMGF5cWplM3ZsNTlhNnJlc2R0Lmlu"},{"_id":"44.out","name":"44.out","size":26,"lastModified":"2025-10-05T00:58:53.765Z","etag":"L2RhdGEvZmlsZS9oeWRyby9odXUvNG0zdWQxM2IxOWcxcjN2a2puaWltLm91dA=="},{"_id":"45.in","name":"45.in","size":75,"lastModified":"2025-10-05T00:58:53.769Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wenAvbm0wejFkMTV6bHV2MzBmZDRrb3JmLmlu"},{"_id":"45.out","name":"45.out","size":26,"lastModified":"2025-10-05T00:58:53.771Z","etag":"L2RhdGEvZmlsZS9oeWRyby91ZHEvenA1bzMyMnVxY3N3Zmp1bGV5dWloLm91dA=="},{"_id":"46.in","name":"46.in","size":108,"lastModified":"2025-10-05T00:58:53.773Z","etag":"L2RhdGEvZmlsZS9oeWRyby9wZTAva2dsaW9oYXUyc2xkbHVrbjh5a24wLmlu"},{"_id":"46.out","name":"46.out","size":24,"lastModified":"2025-10-05T00:58:53.776Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lb24vaDI0c3BzNmVocW5samRtaGd3YTFwLm91dA=="},{"_id":"47.in","name":"47.in","size":123,"lastModified":"2025-10-05T00:58:53.778Z","etag":"L2RhdGEvZmlsZS9oeWRyby93eWcvaTFkNWJ1YmVraWViY2x1Zjdrd2F4Lmlu"},{"_id":"47.out","name":"47.out","size":26,"lastModified":"2025-10-05T00:58:53.781Z","etag":"L2RhdGEvZmlsZS9oeWRyby9scTYvenQ2Z3pzemZoMWx5b2xraGtnMGdnLm91dA=="},{"_id":"48.in","name":"48.in","size":22,"lastModified":"2025-10-05T00:58:53.783Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kdXYvYnhldWxkOXl1YXJiaWd3MHYwZmx3Lmlu"},{"_id":"48.out","name":"48.out","size":26,"lastModified":"2025-10-05T00:58:53.786Z","etag":"L2RhdGEvZmlsZS9oeWRyby9jZmcvOTB1ZjB3YmdudGpvbWl2cXV3cWp6Lm91dA=="},{"_id":"49.in","name":"49.in","size":43,"lastModified":"2025-10-05T00:58:53.788Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wc3Mvczd6MGhkaXFncHRqaHZ0djltaXJ3Lmlu"},{"_id":"49.out","name":"49.out","size":25,"lastModified":"2025-10-05T00:58:53.793Z","etag":"L2RhdGEvZmlsZS9oeWRyby95YWsvenVxdDgwOHp3MGowaTY1bjl3NnJ6Lm91dA=="},{"_id":"5.in","name":"5.in","size":106,"lastModified":"2025-10-05T00:58:53.796Z","etag":"L2RhdGEvZmlsZS9oeWRyby9uZmMvNTlseXFtYnM4Z2w1MHR6MXlndG9uLmlu"},{"_id":"5.out","name":"5.out","size":23,"lastModified":"2025-10-05T00:58:53.798Z","etag":"L2RhdGEvZmlsZS9oeWRyby92cnIvZnFnZ3k4MGp5b3k2MDlycGdkYnViLm91dA=="},{"_id":"50.in","name":"50.in","size":63,"lastModified":"2025-10-05T00:58:53.800Z","etag":"L2RhdGEvZmlsZS9oeWRyby9reDIva2QwbnNjYW05aHRjNXpuaGdvaHJjLmlu"},{"_id":"50.out","name":"50.out","size":24,"lastModified":"2025-10-05T00:58:53.803Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lMjAvdG9lZnRtcDk3dDZ2bTF2OXpmanVyLm91dA=="},{"_id":"51.in","name":"51.in","size":81,"lastModified":"2025-10-05T00:58:53.805Z","etag":"L2RhdGEvZmlsZS9oeWRyby9keW8veTRmeWlqbGZndnZwZjBhZWZhbW43Lmlu"},{"_id":"51.out","name":"51.out","size":23,"lastModified":"2025-10-05T00:58:53.807Z","etag":"L2RhdGEvZmlsZS9oeWRyby81bDAvbHBpcXB5b3drdTE2bDRkNGxpbW10Lm91dA=="},{"_id":"52.in","name":"52.in","size":91,"lastModified":"2025-10-05T00:58:53.810Z","etag":"L2RhdGEvZmlsZS9oeWRyby9xNHcvdG5zdmJmb2dqM2loZDB2djlsZ252Lmlu"},{"_id":"52.out","name":"52.out","size":26,"lastModified":"2025-10-05T00:58:53.812Z","etag":"L2RhdGEvZmlsZS9oeWRyby9tZzAveTFqb3o5aWI2dGNsNnJjMG9tYmRuLm91dA=="},{"_id":"53.in","name":"53.in","size":116,"lastModified":"2025-10-05T00:58:53.815Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wdnYvOWdkZmxudDFjd3l3aGtpaHBpZms0Lmlu"},{"_id":"53.out","name":"53.out","size":24,"lastModified":"2025-10-05T00:58:53.817Z","etag":"L2RhdGEvZmlsZS9oeWRyby91dnovZW9mbGRuZHBidmJnaG5veHNuZ2YxLm91dA=="},{"_id":"54.in","name":"54.in","size":27,"lastModified":"2025-10-05T00:58:53.820Z","etag":"L2RhdGEvZmlsZS9oeWRyby82YXEveTJvbXJnZjdkbTE2c3hscDB3NGdmLmlu"},{"_id":"54.out","name":"54.out","size":23,"lastModified":"2025-10-05T00:58:53.822Z","etag":"L2RhdGEvZmlsZS9oeWRyby9qd3UvY243aHA0anRyZWhldXc0ZnlmNXdnLm91dA=="},{"_id":"55.in","name":"55.in","size":42,"lastModified":"2025-10-05T00:58:53.825Z","etag":"L2RhdGEvZmlsZS9oeWRyby9pOHMvdmhmdGlxdWZtcGUwZGhjcGVjNGx4Lmlu"},{"_id":"55.out","name":"55.out","size":25,"lastModified":"2025-10-05T00:58:53.827Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ibDYvam9qcXZwczFiY3pzZXR4Nm9tZnllLm91dA=="},{"_id":"56.in","name":"56.in","size":62,"lastModified":"2025-10-05T00:58:53.830Z","etag":"L2RhdGEvZmlsZS9oeWRyby92ZnYvNnhkejduaG5pYmFzZ3hid21zdTBiLmlu"},{"_id":"56.out","name":"56.out","size":26,"lastModified":"2025-10-05T00:58:53.832Z","etag":"L2RhdGEvZmlsZS9oeWRyby9rbWIvYnplYjAwMmR1Y2w3M3VkcWJzMXI2Lm91dA=="},{"_id":"57.in","name":"57.in","size":81,"lastModified":"2025-10-05T00:58:53.835Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lZnMvcTBiaDJ5MHp0azR0Zmk3NGw3bHJtLmlu"},{"_id":"57.out","name":"57.out","size":24,"lastModified":"2025-10-05T00:58:53.837Z","etag":"L2RhdGEvZmlsZS9oeWRyby92a2kvM3A0a2prOHJsM3BjaWMwc25sMzdiLm91dA=="},{"_id":"58.in","name":"58.in","size":100,"lastModified":"2025-10-05T00:58:53.840Z","etag":"L2RhdGEvZmlsZS9oeWRyby9id2Ivc3NtOHp4c2R5a2pha29sYjJveDJoLmlu"},{"_id":"58.out","name":"58.out","size":24,"lastModified":"2025-10-05T00:58:53.842Z","etag":"L2RhdGEvZmlsZS9oeWRyby9iZ2EvdGRhdm40ZGhlMGx2YWdnMDdwczQxLm91dA=="},{"_id":"59.in","name":"59.in","size":114,"lastModified":"2025-10-05T00:58:53.845Z","etag":"L2RhdGEvZmlsZS9oeWRyby91YWgvaGZ4ZW1ocGlodzB2Y3loNnVtazkwLmlu"},{"_id":"59.out","name":"59.out","size":23,"lastModified":"2025-10-05T00:58:53.848Z","etag":"L2RhdGEvZmlsZS9oeWRyby91dGUvYzBtZXY5Z2Nhbm56amJpeHB1OWpiLm91dA=="},{"_id":"6.in","name":"6.in","size":28,"lastModified":"2025-10-05T00:58:53.850Z","etag":"L2RhdGEvZmlsZS9oeWRyby9naGwvaDZvZ29iNDE5YmxsYTY2eHBjc2R5Lmlu"},{"_id":"6.out","name":"6.out","size":23,"lastModified":"2025-10-05T00:58:53.853Z","etag":"L2RhdGEvZmlsZS9oeWRyby94c2MvOGNyaXY4eXBqenVlbThkbTdvMGdyLm91dA=="},{"_id":"60.in","name":"60.in","size":28,"lastModified":"2025-10-05T00:58:53.856Z","etag":"L2RhdGEvZmlsZS9oeWRyby9vc3QvazBrbXNzZ3hvd2Q0NmJtbWltdHQ0Lmlu"},{"_id":"60.out","name":"60.out","size":24,"lastModified":"2025-10-05T00:58:53.859Z","etag":"L2RhdGEvZmlsZS9oeWRyby9lNnUvZDJnZmZhM3Q1c3Rma21hbnRsc3cxLm91dA=="},{"_id":"61.in","name":"61.in","size":138,"lastModified":"2025-10-05T00:58:53.864Z","etag":"L2RhdGEvZmlsZS9oeWRyby9jb3UvYWhwdHF3dmZkanJxbGd2a2FsdmhrLmlu"},{"_id":"61.out","name":"61.out","size":27,"lastModified":"2025-10-05T00:58:53.867Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kY2svZXkwb3FyOGV1NWFvYWNhenN3ZHR2Lm91dA=="},{"_id":"62.in","name":"62.in","size":138,"lastModified":"2025-10-05T00:58:53.869Z","etag":"L2RhdGEvZmlsZS9oeWRyby93a3UveHFuZmgwdWtmMWVwamo0aGV3MmJmLmlu"},{"_id":"62.out","name":"62.out","size":27,"lastModified":"2025-10-05T00:58:53.872Z","etag":"L2RhdGEvZmlsZS9oeWRyby90dGkvdGZ1eGZoM2dobHJoaG1pandocWdvLm91dA=="},{"_id":"63.in","name":"63.in","size":20,"lastModified":"2025-10-05T00:58:53.875Z","etag":"L2RhdGEvZmlsZS9oeWRyby95ZnovYnYwZWhyeGdyZWFodXV1Mnl1c2x2Lmlu"},{"_id":"63.out","name":"63.out","size":23,"lastModified":"2025-10-05T00:58:53.877Z","etag":"L2RhdGEvZmlsZS9oeWRyby96eHcvY290YWowMjN6aTlhbHpibW5xemMwLm91dA=="},{"_id":"64.in","name":"64.in","size":20,"lastModified":"2025-10-05T00:58:53.880Z","etag":"L2RhdGEvZmlsZS9oeWRyby9pOHEvaWRreWp1bG5sb29xN2x0d3J4N2ZtLmlu"},{"_id":"64.out","name":"64.out","size":23,"lastModified":"2025-10-05T00:58:53.882Z","etag":"L2RhdGEvZmlsZS9oeWRyby94eHEvMGhld3IwMDR2ZHNncjJoNWN2aWRsLm91dA=="},{"_id":"65.in","name":"65.in","size":115,"lastModified":"2025-10-05T00:58:53.885Z","etag":"L2RhdGEvZmlsZS9oeWRyby95bDAvNnRsdG05dXd6YXF1MnhvYndzZW0yLmlu"},{"_id":"65.out","name":"65.out","size":27,"lastModified":"2025-10-05T00:58:53.887Z","etag":"L2RhdGEvZmlsZS9oeWRyby9tMHAvNmJ0c3RqZm5mcWt5eWl6dDFmenVhLm91dA=="},{"_id":"66.in","name":"66.in","size":125,"lastModified":"2025-10-05T00:58:53.890Z","etag":"L2RhdGEvZmlsZS9oeWRyby9qMW0vcjM3ajhlaWVjZ21wcTB0NXg2ZGt4Lmlu"},{"_id":"66.out","name":"66.out","size":27,"lastModified":"2025-10-05T00:58:53.893Z","etag":"L2RhdGEvZmlsZS9oeWRyby9nc3ovbWxneWtsaTBwOTgzdHRpMWxoMDloLm91dA=="},{"_id":"67.in","name":"67.in","size":106,"lastModified":"2025-10-05T00:58:53.895Z","etag":"L2RhdGEvZmlsZS9oeWRyby9vd2wvMHNkZWxhcW9ya2kwZDBzeDdvYjFpLmlu"},{"_id":"67.out","name":"67.out","size":27,"lastModified":"2025-10-05T00:58:53.898Z","etag":"L2RhdGEvZmlsZS9oeWRyby9qcDUvMDFvNG5nazRpY3V5bmhkdWNiMHFrLm91dA=="},{"_id":"68.in","name":"68.in","size":120,"lastModified":"2025-10-05T00:58:53.901Z","etag":"L2RhdGEvZmlsZS9oeWRyby9taWovcG9uMHRicTA5eWVpMjBha2hkZnBhLmlu"},{"_id":"68.out","name":"68.out","size":27,"lastModified":"2025-10-05T00:58:53.904Z","etag":"L2RhdGEvZmlsZS9oeWRyby9pc20vdHV3ZWZ4c2FwZDFmdTlxeW8xcWZ5Lm91dA=="},{"_id":"69.in","name":"69.in","size":114,"lastModified":"2025-10-05T00:58:53.906Z","etag":"L2RhdGEvZmlsZS9oeWRyby91Z3gvZDRwYjI2OGhweWpzanEwdXN1YXhjLmlu"},{"_id":"69.out","name":"69.out","size":27,"lastModified":"2025-10-05T00:58:53.909Z","etag":"L2RhdGEvZmlsZS9oeWRyby9rd3EvZXB3YW90cG5qd3d2dHBndm5za2F2Lm91dA=="},{"_id":"7.in","name":"7.in","size":41,"lastModified":"2025-10-05T00:58:53.912Z","etag":"L2RhdGEvZmlsZS9oeWRyby9obWwvcG9hajBremZmdG1ocXNkM2ljdGFmLmlu"},{"_id":"7.out","name":"7.out","size":26,"lastModified":"2025-10-05T00:58:53.916Z","etag":"L2RhdGEvZmlsZS9oeWRyby8yamMvOXF1Mnp1dWR3ZWp2b2djc25qcjFpLm91dA=="},{"_id":"70.in","name":"70.in","size":112,"lastModified":"2025-10-05T00:58:53.919Z","etag":"L2RhdGEvZmlsZS9oeWRyby81bHEvZzh4cTlzcjd4bHZsM29ib21mcWVyLmlu"},{"_id":"70.out","name":"70.out","size":26,"lastModified":"2025-10-05T00:58:53.922Z","etag":"L2RhdGEvZmlsZS9oeWRyby90dnkveDZ2NmR4bmxzM3U5dnRianVuOWRqLm91dA=="},{"_id":"8.in","name":"8.in","size":65,"lastModified":"2025-10-05T00:58:53.927Z","etag":"L2RhdGEvZmlsZS9oeWRyby9wOGovanp0eWxlZHkxamxwdWRvaGJ1NGFpLmlu"},{"_id":"8.out","name":"8.out","size":23,"lastModified":"2025-10-05T00:58:53.930Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ncDMvb3Bkb3ZjMGZvaHNvaHh6anJobXN0Lm91dA=="},{"_id":"9.in","name":"9.in","size":76,"lastModified":"2025-10-05T00:58:53.933Z","etag":"L2RhdGEvZmlsZS9oeWRyby9jcXMvMHg5YnphZnNyYmFua2w2eDdrZnhnLmlu"},{"_id":"9.out","name":"9.out","size":26,"lastModified":"2025-10-05T00:58:53.938Z","etag":"L2RhdGEvZmlsZS9oeWRyby9od2cvbWU1dHJiY2dpdGJwYXE0ZGs2bXEzLm91dA=="},{"_id":"config.yaml","name":"config.yaml","size":3225,"lastModified":"2025-10-05T01:31:04.459Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ndW8vN3ZmY2RobXpzMHpsZDRvMm1rZndxLnlhbWw="},{"_id":"spj.cc","name":"spj.cc","size":429,"lastModified":"2025-10-05T00:58:53.944Z","etag":"L2RhdGEvZmlsZS9oeWRyby9xcHUvemJmZWc5dXFuampzZjE1aWh0anduLmNj"}],"additional_file":[{"_id":"gen.py","name":"gen.py","size":2244,"lastModified":"2025-10-05T00:58:53.948Z","etag":"L2RhdGEvZmlsZS9oeWRyby90MGkvbm1ha25tZnVnOXNla3Y4dWpneXNyLnB5"},{"_id":"gen_data.cpp","name":"gen_data.cpp","size":953,"lastModified":"2025-10-05T00:58:53.951Z","etag":"L2RhdGEvZmlsZS9oeWRyby9veDMvczhobW5lMG5lbGhueGdkc3NndnFqLmNwcA=="},{"_id":"solution.cpp","name":"solution.cpp","size":1247,"lastModified":"2025-10-05T00:58:53.953Z","etag":"L2RhdGEvZmlsZS9oeWRyby8yOWgvZGRmbW41MmlyczB0YjhjanE2endnLmNwcA=="},{"_id":"solution_jiangly.cpp","name":"solution_jiangly.cpp","size":1279,"lastModified":"2025-10-05T00:58:53.956Z","etag":"L2RhdGEvZmlsZS9oeWRyby9pYzQvYmM3d29jb2Z6c3h5YWQzdzd3MHJoLmNwcA=="},{"_id":"\u5C06atcoder\u7684testcase\u8F6C\u6362.py","name":"\u5C06atcoder\u7684testcase\u8F6C\u6362.py","size":840,"lastModified":"2025-10-05T00:58:53.959Z","etag":"L2RhdGEvZmlsZS9oeWRyby93MDQvZHVvOWJybGFoY2RpdnVjMDB2Yzc1LnB5"}],"pid":"LS1193","config":{"count":70,"memoryMin":32,"memoryMax":32,"timeMin":10,"timeMax":10,"type":"default","langs":["cc","cc.cc14o2","cc.cc17o2","py","py.py3"]},"stats":{"AC":8,"WA":6,"TLE":0,"MLE":0,"RE":0,"SE":0,"IGN":0,"CE":1,"s0":1,"s27":6,"s100":8},"difficulty":0,"html":false},"canViewRecord":true,"postSubmitUrl":"/d/lzoi2025/p/150/submit","getSubmissionsUrl":"/d/lzoi2025/record?fullStatus=true&pid=150","getRecordDetailUrl":"/d/lzoi2025/record/%7Brid%7D","pretestConnUrl":"record-conn?pretest=1&uidOrName=39&pid=150&domainId=lzoi2025"}';
+      window.UserContextNew = '{}';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+const i64 MOD = 1e9 + 7;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 N, V;
+	cin >> N >> V;
+	vector<i64> v(N + 1), w(N + 1);
+	for (i64 i = 1; i <= N; i++) cin >> v[i] >> w[i];
+
+	vector<vector<i64>> dp(N + 2, vector<i64>(V + 1, 0));		// dp[i][j] 表示从第i个到第n个物品，体积不超过j的最大价值
+	vector<vector<bool>> F(N + 2, vector<bool>(V + 1, false));	// f[i][j] 表示在dp[i][j]中是否取了第i个物品
+	vector<vector<i64>> cnt(N + 2, vector<i64>(V + 1, 0));		// c[i][j] 表示达成dp[i][j]的方案数
+
+	for (i64 j = 0; j <= V; j++) cnt[N + 1][j] = 1;
+	for (i64 i = N; i >= 1; i--) {
+		for (i64 j = 0; j <= V; j++) {
+			// 不选第i个物品
+			dp[i][j] = dp[i + 1][j];
+			cnt[i][j] = cnt[i + 1][j];
+			F[i][j] = false;
+
+			// 如果可以选第i个物品
+			if (j >= v[i]) {
+				i64 temp_val = dp[i + 1][j - v[i]] + w[i];
+				if (temp_val > dp[i][j]) {			// 选第i个物品得到更大价值
+					dp[i][j] = temp_val;
+					cnt[i][j] = cnt[i + 1][j - v[i]];
+					F[i][j] = true;
+				} else if (temp_val == dp[i][j]) {	// 选和不选价值相同，方案数相加
+					cnt[i][j] = (cnt[i][j] + cnt[i + 1][j - v[i]]) % MOD;
+					F[i][j] = true;
+				}
+			}
+		}
+	}
+	cout << dp[1][V] << "\n";
+	cout << cnt[1][V] << "\n";
+
+	vector<i64> ans;
+	i64 tmp = V;
+	for (i64 i = 1; i <= N; i++) {
+		if (F[i][tmp]) {
+			ans.push_back(i);
+			tmp -= v[i];
+		}
+	}
+
+	for (i64 i = 0; i < (i64)ans.size(); i++)
+		cout << ans[i] << " \n"[i == (i64)ans.size() - 1];
+	return 0;
+}

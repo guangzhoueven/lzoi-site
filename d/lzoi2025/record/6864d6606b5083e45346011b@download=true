@@ -1,0 +1,36 @@
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int findKing(int n, int k, int m) {
+    vector<bool> circle(n, false);
+    int current = k, count = 0, alive = n;
+    
+    while (alive > 1) {
+        if (!circle[current]) {
+            count++;
+            if (count == m) {
+                circle[current] = true;
+                count = 0;
+                alive--;
+            }
+        }
+        current = (current + 1) % n;
+    }
+    
+    for (int i = 0; i < n; i++)
+        if (!circle[i]) return i;
+    return -1;
+}
+
+int main() {
+    int T;
+    cin >> T;
+    while (T--) {
+        int n, k, m;
+        cin >> n >> k >> m;
+        cout << findKing(n, k, m) << endl;
+    }
+    return 0;
+}

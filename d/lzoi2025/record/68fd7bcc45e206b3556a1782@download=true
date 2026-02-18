@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 T;
+	cin >> T;
+	while (T--) {
+		i64 n, m;
+		cin >> n >> m;
+		vector<vector<i64>> g(n, vector<i64>(m));
+		for (i64 i = 0; i < n; i++)
+			for (i64 j = 0; j < m; j++)
+				cin >> g[i][j];    
+		
+		i64 state = 1 << m;						  // 所有可能的状态数，每行有2^m种选择方式
+		vector<i64> dp(state), now_dp(state);	  // dp: 上一行的状态，ndp: 当前行的状态
+		
+		for (i64 i = 0; i < n; i++) {
+			fill(now_dp.begin(), now_dp.end(), 0); 
+			
+			for (i64 mask = 0; mask < state; mask++) {
+				if (mask & (mask >> 1)) continue; // 当前行不能有相邻的1（左右相邻）
+				
+				i64 sum = 0;
+				for (i64 j = 0; j < m; j++)
+					if (mask >> j & 1) sum += g[i][j];
+				
+				for (i64 pm = 0; pm < state; pm++) {
+					// 8个领域检查：上下相邻、左上到右下对角线相邻、右上到左下对角线相邻
+					if ((pm & mask) || (pm & (mask >> 1)) || (pm & (mask << 1))) continue;
+					// 状态转移：当前行状态mask的值 = 上一行状态pm的值 + 当前行选择的总和
+					now_dp[mask] = max(now_dp[mask], dp[pm] + sum);
+				}
+			}
+			swap(dp, now_dp);
+		}
+		cout << *max_element(dp.begin(), dp.end()) << "\n";
+	}
+	return 0;
+}

@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, m, ans = 0;
+	cin >> n >> m;
+	vector<i64> a(n);
+	for (auto& x : a) cin >> x;
+	for (i64 L = 0, R = n; L < n; L++) {
+		R = max(R, L + 1);
+		while (R - 1 > L && a[R - 1] + a[L] >= m) R--;
+		ans += n - R;
+	}
+	cout << ans << "\n";
+	return 0;
+}

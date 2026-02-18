@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int maxProduct(const vector<int>& a) {
+    int n = a.size();
+
+    // ma(i): 以 a(i) 结尾的最大子数组乘积
+    vector<int> ma(n);
+    
+    ma[0] = a[0];
+    for (int i = 1; i < n; i++) {
+        ma[i] = max(a[i], a[i] * ma[i - 1]);
+    }
+    return *max_element(ma.begin(), ma.end());
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) cin >> a[i];
+    cout << maxProduct(a) << '\n';
+
+    return 0;
+}

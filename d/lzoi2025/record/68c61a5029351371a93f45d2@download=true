@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	i64 n, k, cnt = 0;	// 最长保留天数cnt
+	cin >> n >> k;
+	vector<i64> a(n), b(n), d(n + 1, LLONG_MAX);
+	for (i64 i = 0; i < n; i++) {
+		cin >> a[i];
+		// 不存在a[i]−a[j] > (i−j)*k  转化为：a[i]-a[j] <= (i-j)*k   （其中j < i)最长非递增子序列
+		// 推导：a[i]-a[j] <= (i-j)*k  ===> a[i] - a[j] <= i*k - j*k  ===> a[i] - i*k <= a[j] - j*k  ===> b[i] <= b[j]  (其中j < i)
+		b[i] = a[i] - i * k;  
+	}
+	d[0] = LLONG_MAX; 
+	for (i64 i = 0; i < n; i++) {
+		if (b[i] <= d[cnt]) {
+			d[++cnt] = b[i];
+		} else {
+			i64 j = upper_bound(d.begin(), d.begin() + cnt + 1, b[i], greater<i64>()) - d.begin();
+			d[j] = b[i];
+		}
+	}
+	cout << n - cnt << "\n"; 
+	return 0;
+}

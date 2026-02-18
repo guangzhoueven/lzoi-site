@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+const i64 N = 1e6;
+vector<i64> phi(N + 1);
+
+void ok() {                        			// 预处理欧拉函数表
+	iota(phi.begin(), phi.end(), 0);  		// iota用于生成连续数值序列，初始化phi[i] = i
+	for (i64 i = 2; i <= N; i++) {
+		if (phi[i] == i) {         			// i是质数
+			for (i64 j = i; j <= N; j += i) // 对 i 的所有倍数应用欧拉函数公式
+				phi[j] -= phi[j] / i;      	// phi[j] *= (1 - 1/i)
+		}
+	}
+}
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	ok();
+	i64 T, n, d;
+	cin >> T;
+	while (T--) {
+		cin >> n >> d;
+		cout << (n % d ? 0 : phi[n / d]) << "\n";  // gcd(x, n) = d 的 x 个数 = phi(n/d)
+	}
+	return 0;
+}

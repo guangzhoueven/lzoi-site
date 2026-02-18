@@ -1,0 +1,62 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using i64 = long long;
+template <typename T>  		// C++模板，支持多种数据类型
+struct Fenwick {
+	int n;
+	vector<T> a;        	// 树状数组存储（1-based索引）
+
+	Fenwick(int n_) : n(n_) {
+		a.assign(n + 2, 0); // 初始化树状数组
+	}
+
+	void add(int p, T v) {	// 更新操作：不断 p += lowbit(p)，从p点开始，向上更新父节点
+		for (; p <= n; p += p & -p) a[p] += v;
+	}
+
+	T get(int p) {			// 求前缀和: sum(a[1..p]), 不断 p -= lowbit(p)，从p点开始，累加子节点值
+		T ans = 0;
+		for (; p > 0; p -= p & -p) ans += a[p];
+		return ans;
+	}
+
+	T get(int L, int R) {	// 求区间和(1-based): sum(a[1..R]) - sum(a[1..(L-1)])
+		return get(R) - get(L - 1);
+	}
+};
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n, m;
+	cin >> n >> m;  						// 数列长度n、操作数m
+
+	vector<i64> a(n + 1);
+	Fenwick<i64> bit(n), bit2(n);  			// 构建树状数组
+
+	for (int i = 1; i <= n; i++) {			// 初始化数列
+		cin >> a[i];
+		bit.add(i, a[i] - a[i - 1]);  		// 初始化差分数组
+		bit2.add(i, i * (a[i] - a[i - 1])); // 初始化i*d[i]数组
+	}
+
+	while (m--) {							// m 为操作次数
+		i64 op, L, R, k;						// 操作类型op、区间左端点L=x、右端点R=y, 添加的值k
+		cin >> op >> L >> R;
+		if (op == 1) {
+			cin >> k;
+			bit.add(L, k);  				// 区间修改：左端点加k
+			bit.add(R + 1, -k);  			// 区间修改：右端点+1处减k
+
+			bit2.add(L, L * k);  			// bit2[l] += l*k
+			bit2.add(R + 1, -(R + 1) * k); 	// bit2[r+1] -= (r+1)*k
+
+		} else {
+			i64 sumR = (R + 1) * bit.get(R) - bit2.get(R);  	// sum[1..R]
+			i64 sumL = L * bit.get(L - 1) - bit2.get(L - 1);  	// sum[1..L-1]
+			cout << sumR - sumL << "\n";  						// sum[L..R]
+		}
+	}
+
+	return 0;
+}

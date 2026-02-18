@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, m;
+	cin >> n >> m;
+	
+	vector<vector<i64>> dp(n + 1, vector<i64>(m + 1, -1));
+	vector<i64> v(n + 1), w(n + 1);
+	
+	for (i64 i = 1; i <= n; i++) cin >> v[i] >> w[i];
+	
+	auto ok = [&](auto&& self, i64 i, i64 j) -> i64 {
+		if (i == 0) return 0;
+		if (dp[i][j] >= 0) return dp[i][j];
+		
+		dp[i][j] = self(self, i - 1, j);
+		if (j >= v[i]) 
+			dp[i][j] = max(dp[i][j], self(self, i - 1, j - v[i]) + w[i]);
+		return dp[i][j];
+	};
+	cout << ok(ok, n, m) << "\n";
+	return 0;
+}

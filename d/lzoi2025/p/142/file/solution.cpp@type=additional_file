@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using i64 = long long;
+
+int main() {	
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+    
+    int l, r;
+    cin >> l >> r;
+    
+    int n = r - l + 1, m = sqrt(r);
+    vector<bool> is_p(m + 1, true);
+    
+    // ok[i] = true: 表示 i + l 为质数
+    vector<bool> ok(n, true);  
+
+    // 不超过 r 的数, 必然有不超过 sqrt(r) 的质因子
+    // 注意: 这里不能写 i * i <= r, 因为 i * i 可能超 int
+    for (int i = 2; i <= m; i++) if (is_p[i]) {
+        
+        // 找到不小于 l, 最小的 i 的倍数
+        int u = (l + i - 1) / i * i;
+        
+        // 筛掉 [l, r] 中 i 的倍数
+        // 注意: 当 r 很大时, r 可能超 int
+        for (i64 j = max(u, 2 * i); j <= r; j += i) ok[j - l] = false;
+    }
+    
+    int cnt = 0;
+    // 注意: 1 不是质数
+    for (int i = (l == 1 ? 1 : 0); i < n; i++) cnt += ok[i];
+    cout << cnt << '\n';
+
+    return 0;
+}
+
+/*
+2146483648 2147483647
+
+46603
+*/
+
+/*
+1 5
+
+3
+*/

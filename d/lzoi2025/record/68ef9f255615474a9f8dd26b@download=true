@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n;
+	cin >> n;
+	vector<i64> a;						// 当前排列
+	a.reserve(n);
+	vector<bool> vis(n + 1, false);
+
+	auto dfs = [&](auto&& self) -> void {
+		if ((i64)a.size() == n) {		// 终止条件：当前排列长度等于n
+			for (i64 i = 0; i < n; i++) cout << a[i] << " \n"[i == n - 1];
+			return;
+		}
+		
+		for (i64 i = 1; i <= n; i++) {	// 枚举所有可能的下一个数字
+			if (!vis[i]) {
+				a.push_back(i);
+				vis[i] = true;
+				self(self);
+				a.pop_back();
+				vis[i] = false;
+			}
+		}
+	};
+
+	dfs(dfs);
+	return 0;
+}

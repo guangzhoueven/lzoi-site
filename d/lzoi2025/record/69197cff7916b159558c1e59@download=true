@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, k;
+	cin >> n >> k;
+	vector<i64> a(n);
+	for (auto& x : a) cin >> x;
+	
+	i64 inf = -1e18;  	// 使用 -1e18 作为初始值，避免溢出
+	vector<i64> d_1(k + 1, inf), d0(k + 1, 0), d1(k + 1, inf);
+	
+	for (i64 i = 0; i < n; i++) {
+		for (i64 j = k; j >= 1; j--) {
+			d0[j] = max({d0[j], d_1[j] - a[i], d1[j] + a[i]});
+			d_1[j] = max(d_1[j], d0[j-1] + a[i]);
+			d1[j] = max(d1[j], d0[j-1] - a[i]);
+		}
+	}
+	cout << d0[k] << "\n";
+	return 0;
+}

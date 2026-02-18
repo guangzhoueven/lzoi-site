@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using i64 = long long;
+const int P = 998244353;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+
+    // 0000
+    // 0001
+    // 0010
+    // 0011
+    // 0100
+    i64 n, m, ans = 0;
+    cin >> n >> m;
+    
+    for (i64 i = 0, d = 1; i < 60; i++, d <<= 1) {
+        // m 的第 i 位是 0, 就不考虑了
+        if (!(m >> i & 1)) continue;
+
+        // 第 i 位的规律: 每 t 个数循环
+        // 前 d 个是 0, 后 d 个是 1
+        i64 t = d << 1, p = n / t, q = n % t;
+        
+        ans = (ans + p * d % P) % P;
+        ans = (ans + max(q + 1 - d, 0LL) % P) % P;
+    }
+    cout << ans << '\n';
+    return 0;
+}

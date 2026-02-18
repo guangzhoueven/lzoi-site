@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, ans = 0;
+	cin >> n;
+	vector<i64> a(n);
+	for (auto& x : a) cin >> x;
+
+	stack<i64> st;
+	for (i64 i = 0; i < n; i++) {
+		while (!st.empty() && a[i] >= a[st.top()]) {
+			i64 B = st.top();
+			st.pop();
+
+			if (st.empty()) break;
+			i64 L = st.top(), W = i - L - 1, H = min(a[L], a[i]) - a[B];
+			ans += H * W;
+		}
+		st.push(i);
+	}
+	cout << ans << "\n";
+	return 0;
+}

@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using i64 = long long;
+const int P = 998244353;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) cin >> a[i];
+
+    int ans = 0;
+    for (int i = 0; i < 31; i++) {
+
+        // c[0]: 第 i 位 0 的个数, c[1]: 第 i 位 1 的个数
+        vector<int> c(2, 0);
+        for (int j = 0; j < n; j++) c[a[j] >> i & 1]++;
+
+        // 只有 0 ^ 1 = 1
+        ans = (ans + (i64) (1 << i) * c[0] % P * c[1]) % P;
+    }
+    cout << ans << '\n';
+
+    return 0;
+}

@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+#define rep(i, x, y) for (int i = x; i <= y; ++i)
+#define repd(i, x, y) for (int i = x; i >= y; --i)
+typedef long long ll;
+using namespace std;
+const int N = 500010, mod = 998244353;
+int n, k, l, r, x, mx, f[2][N], p[N];
+int add(int x) {
+	if (x >= mod) {
+		x -= mod;
+	}
+	return x;
+}
+int dec(int x) {
+	if (x < 0) {
+		x += mod;
+	}
+	return x;
+}
+int main() {
+	scanf("%d%d%d%d", &n, &k, &l, &r);
+	x = min(r + 1, max(l, (int)sqrt(n)));
+	mx = x > r ? 0 : n / x, f[0][0] = 1;
+
+	if ((ll) k * l > n) {
+		printf("0\n");
+		return 0;
+	}
+	rep(i, l, x - 1) rep(j, i, n) f[0][j] = add(f[0][j] + f[0][j - i]);
+	memcpy(p, f[0], sizeof(int) * (n + 1));
+	rep(i, 1, mx) {
+		memset(f[i & 1], 0, sizeof(int) * (n + 1));
+		rep(j, x * i, n) {
+			f[i & 1][j] = add(f[i & 1][j - i] + f[(i & 1) ^ 1][j - x]);
+			if (j - r - i >= 0) {
+				f[i & 1][j] = dec(f[i & 1][j] - f[(i & 1) ^ 1][j - r - i]);
+			}
+			p[j] = add(p[j] + f[i & 1][j]);
+		}
+	}
+	int inv = 1;
+	for (int x = p[n], t = mod - 2; t; x = (ll)x * x % mod, t >>= 1) {
+		if (t & 1) inv = (ll)inv * x % mod;
+	}
+	int ans = 0;
+	for (int i = l, t = k * l; i <= r && t <= n; ++i, t += k) {
+		ans = add(ans + p[n - t]);
+	}
+	printf("%lld\n", (ll) ans * inv % mod);
+	return 0;
+}

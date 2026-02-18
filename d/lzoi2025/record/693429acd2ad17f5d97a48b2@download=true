@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 T;
+	cin >> T;
+	while (T--) {
+		i64 m, x, tmp = 0;
+		cin >> m;
+		unordered_map<i64, i64> q;
+		while (m--) {
+			char op;
+			cin >> op >> x;
+			if (op == 'P') q[x - tmp]++;
+			else if (op == 'A') tmp += x;
+			else {
+				if (q.count(x - tmp)) cout << q[x - tmp] << "\n";
+				else cout << 0 << "\n";
+			}
+		}
+	}
+	return 0;
+}

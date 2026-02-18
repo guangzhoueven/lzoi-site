@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+long long solve(long long n, long long k) {
+	if (k == 0) return 1;
+	long long q_min = n / (k + 1) + 1;
+	long long q_max = n / k;
+	if (q_min > q_max) 	return 0;
+	
+	return q_max - q_min + 1;
+}
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+	int T;
+	cin >> T;
+	while (T--) {
+		long long n, k;
+		cin >> n >> k;
+		cout << solve(n, k) << endl;
+	}
+	return 0;
+}

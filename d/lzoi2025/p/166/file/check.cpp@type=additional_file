@@ -1,0 +1,13 @@
+// https://atcoder.jp/contests/abc356/submissions/54134362
+#include<bits/stdc++.h>
+using namespace std;
+long long a,b,c;
+int main(){
+	cin>>a>>b,++a;
+	for(long long i=2;b;b/=2,i*=2){
+		if(b%2)
+			c+=a/i*(i/2)+max(0ll,a%i-i/2);
+		c%=998244353;
+	}
+	cout<<c;
+}

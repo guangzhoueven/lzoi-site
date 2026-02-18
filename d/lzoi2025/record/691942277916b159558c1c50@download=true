@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n;
+	cin >> n;
+	vector<i64> a(n);
+	for (auto& x : a) cin >> x;
+
+	i64 ma = a[0], mi = a[0], ma_sum = a[0], mi_sum = a[0], sum = a[0];
+	for (i64 i = 1; i < n; i++) {	// 情况1：最大子数组在中间（非环形）
+		ma = max(a[i], ma + a[i]);
+		mi = min(a[i], mi + a[i]);
+
+		ma_sum = max(ma_sum, ma);
+		mi_sum = min(mi_sum, mi);
+		sum += a[i];
+	}
+	i64 cir_max = sum - mi_sum;	// 情况2：最大子数组跨越首尾（环形）,则 环形最大和 = 总和 - 最小子数组和
+	cout << (ma_sum < 0 ? ma_sum : max(ma_sum, cir_max)) << "\n";// 特殊情况：如果所有数都是负数，取最大的单个元素
+
+	return 0;
+}

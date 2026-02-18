@@ -1,0 +1,101 @@
+#include <bits/stdc++.h>
+using namespace std;
+template <typename T>
+
+struct Graph {
+	int n;
+	vector<vector<pair<int, T>>> g;  // 邻接表
+	vector<T> d;                     // 最短距离
+	vector<int> cnt;                 // 入队次数
+	vector<bool> visited;           // 是否在队列中
+
+	Graph(int n_) : n(n_) {
+		g.resize(n + 1);            // 1-based + 超级源点0
+		d.assign(n + 1, INT_MAX);
+		cnt.assign(n + 1, 0);
+		visited.assign(n + 1, false);
+	}
+
+	void add_edge(int u, int v, T w) {
+		g[u].emplace_back(v, w);    // x_u - x_v ≤ w → 边u→v，权值w
+	}
+
+	bool spfa_heap(int s) {
+		using Node = pair<T, int>;  // first:距离, second:节点
+		priority_queue<Node, vector<Node>, greater<Node >> q;
+
+		d[s] = 0;
+		q.push({0, s});
+		visited[s] = true;
+		cnt[s]++;
+
+		while (!q.empty()) {
+			auto [dist_u, u] = q.top();
+			q.pop();
+			visited[u] = false;
+
+			for (auto& [v, w] : g[u]) {
+				if (d[v] > d[u] + w) {
+					d[v] = d[u] + w;
+					if (!visited[v]) {
+						q.push({d[v], v});
+						visited[v] = true;
+						if (++cnt[v] > n) return true;  // 存在负权环(无解)
+					}
+				}
+			}
+		}
+		return false;  			// 无负权环（存在解）
+	}
+};
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n, m,   u, v, w,   s = 0;
+	cin >> n >> m;
+	Graph<int> G(n+1);  			// 原始n个节点，超级源点0会自动添加
+
+	while (m--) {
+		cin >> u >> v >> w;
+		G.add_edge(v, u, w);  	// 不等式x_u - x_v ≤ w → 边v→u，权值w ， 注意：这里是(v，u，w)中的v，u顺序不要搞反了！！
+	}
+
+	for (int i = 1; i <= n; i++) {	// 添加超级源点到所有节点的边
+		G.add_edge(s, i, 0);
+	}
+
+	bool has_cycle = G.spfa_heap(s);
+	if (has_cycle) cout << "NO" << '\n';
+	else {
+		for (int i = 1; i <= n; i++) cout << G.d[i] << " \n"[i == n];
+	}
+	return 0;
+}
+
+/*
+input：
+3 3
+1 2 3
+2 3 -2
+1 3 1
+*/
+
+/*
+output：
+2 0 2
+3 1 3
+4 2 4
+5 3 5
+...
+*/
+/*【无解，输出“NO”】
+input：
+3 3
+1 2 1
+2 3 1
+3 1 -3
+*/
+/*
+output：
+NO
+*/

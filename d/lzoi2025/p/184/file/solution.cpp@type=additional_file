@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> solve(vector<int>& a, int k, int x) {
+    int n = a.size(), l = 0, r = n - 1;
+
+    // a[l] 和 a[r] 哪个离 x 远就删哪个
+    while (r - l + 1 > k) {
+        if (abs(a[l] - x) > abs(a[r] - x)) l++;
+        else r--;
+    }
+
+    vector<int> ans;
+    for (int i = l; i <= r; i++) ans.push_back(a[i]);
+    return ans;
+}
+
+int main() {	
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+    
+    int n, k, x;
+    cin >> n >> k >> x;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) cin >> a[i];
+
+    vector<int> ans = solve(a, k, x);
+    for (int i = 0; i < k; i++) cout << ans[i] << " \n"[i == k - 1];
+
+    return 0;
+}

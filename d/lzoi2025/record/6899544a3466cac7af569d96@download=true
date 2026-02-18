@@ -1,0 +1,65 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Graph {
+	int n, k;
+	vector<vector<pair<int, int>>> g;  // 邻接表: (v, a_i)
+	vector<vector<int>> dist;          // dist[u][mod] ： 到达u且时间模k=mod的最小时间
+
+	Graph(int n_, int k_) : n(n_), k(k_) {
+		g.resize(n + 1);              // 1-based
+		dist.assign(n + 1, vector<int>(k, INT_MAX));
+	}
+
+	void add_edge(int u, int v, int a) {
+		g[u].push_back({v, a});       // 有向图
+	}
+
+	int dijkstra() {
+		using Node = tuple<int, int, int>;
+		priority_queue<Node, vector<Node>, greater<Node >> q; // 最小堆: (time, node, time%k)
+		dist[1][0] = 0;               // 初始化起点：dist[u][mod]=0, 0时刻到达节点u=1，时间模k=0
+		q.push({0, 1, 0});
+
+		while (!q.empty()) {
+			auto [t, u, mod] = q.top();
+			q.pop();
+
+			if (t != dist[u][mod]) continue;
+			if (u == n && mod == 0) return t;  // 到达终点且时间模k=0，直接返回答案
+
+			for (auto [v, a] : g[u]) {         // 遍历u邻接的所有出边（有向边）
+				int tmp = t;
+				if (tmp < a) {
+					// 计算满足 t0 >= a 且 t0 ≡ t (mod k) 的最小时间
+					int delta = (a - tmp + k - 1) / k;
+					tmp += delta * k;
+					if (tmp < a) tmp += k;  // 确保 t0 >= a
+				}
+				int new_time = tmp + 1;    // 到达v的时间 = 出发时间 + 1
+				int new_mod = new_time % k;
+
+				if (new_time < dist[v][new_mod]) {
+					dist[v][new_mod] = new_time;
+					q.push({new_time, v, new_mod});
+				}
+			}
+		}
+		return - 1; // 无法到达终点
+	}
+};
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n, m, k;
+	cin >> n >> m >> k;
+	Graph G(n, k);
+
+	for (int i = 0; i < m; i++) {
+		int u, v, a;
+		cin >> u >> v >> a;
+		G.add_edge(u, v, a);
+	}
+	cout << G.dijkstra() << "\n";
+	return 0;
+}

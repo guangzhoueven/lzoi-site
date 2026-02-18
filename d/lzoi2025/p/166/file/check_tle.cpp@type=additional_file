@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using i64 = long long;
+const int P = 998244353;
+
+int main() {	
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+
+    i64 n, m, ans = 0;
+    cin >> n >> m;
+    for (i64 k = 0; k <= n; k++) {
+        i64 x = k & m;
+        while (x) ans += (x & 1), x >>= 1LL;
+        ans %= P;
+    }
+    cout << ans << '\n';
+
+    return 0;
+}

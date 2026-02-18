@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n, m, T, p = -1;
+    string s, t, d;
+    cin >> n >> m >> s >> t;
+    for (int i = 0; i < n && i < m; i++) {
+        if (s[i] != t[i]) {
+            p = i;
+            break;
+        }
+    }
+
+    cin >> T;
+    while (T--) {
+        cin >> d;
+        if (p == -1) cout << (n < m ? 's' : 't') << '\n';
+        else {
+            vector<int> c(26);
+            for (int i = 0; i < 26; i++) c[d[i] - 'a'] = i;
+            cout << (c[s[p] - 'a'] < c[t[p] - 'a'] ? 's' : 't') << '\n';
+        }
+    }
+    return 0;
+}

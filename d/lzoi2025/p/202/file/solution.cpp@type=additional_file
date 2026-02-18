@@ -1,0 +1,78 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// 只有 1 个字符
+int solve1(const string& s) {
+    int n = s.size(), ans = 0;
+    for (int i = 0, j; i < n; i++) {
+        j = i;
+        while (i + 1 < n && s[i + 1] == s[i]) i++;
+        ans = max(ans, i - j + 1);
+    }
+    return ans;
+}
+
+// 2 个字符, 需要 cnt(a) == cnt(b)
+// s[0..l] 的 a, b 次数为 [al, bl]
+// s[0..r] 的 a, b 次数为 [ar, br]
+// 那么子串 s[l + 1, r] 满足:
+// ar - al == br - bl, 移项:
+// ar - br == al - bl
+// 我们维护 ar - br 就好
+int solve2(const string& s, char a, char b) {
+    int n = s.size(), ans = 0;
+    int x = 0;  // cnt[a] - cnt[b]
+    map<int, int> q;
+    q[0] = 0;
+    for (int i = 1; i <= n; i++) {
+        if (s[i - 1] == a) x++;
+        else if (s[i - 1] == b) x--;
+        else {
+            // 碰到了其他字符, 重新开始
+            x = 0;
+            q.clear();
+        }
+        if (q.count(x)) ans = max(ans, i - q[x]);
+        else q[x] = i;
+    }
+    return ans;
+}
+
+int solve3(const string& s, char a, char b, char c) {
+    int n = s.size(), ans = 0;
+    int x = 0;  // cnt[a] - cnt[b]
+    int y = 0;  // cnt[b] - cnt[c]
+    map<pair<int, int>, int> q;
+    q[{0, 0}] = 0;
+    for (int i = 1; i <= n; i++) {
+        if (s[i - 1] == a) x++;
+        else if (s[i - 1] == b) x--, y++;
+        else y--;
+        if (q.count({x, y})) ans = max(ans, i - q[{x, y}]);
+        else q[{x, y}] = i;
+    }
+    return ans;
+}
+
+int solve(const string& s) {
+    int ans = solve1(s);
+    ans = max(ans, solve2(s, 'a', 'b'));
+    ans = max(ans, solve2(s, 'b', 'c'));
+    ans = max(ans, solve2(s, 'a', 'c'));
+    ans = max(ans, solve3(s, 'a', 'b', 'c'));
+    return ans;      
+}
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
+
+	int T;
+	string s;
+	cin >> T;
+	while (T--) {
+		cin >> s;
+		cout << solve(s) << '\n';
+	}
+	return 0;
+}

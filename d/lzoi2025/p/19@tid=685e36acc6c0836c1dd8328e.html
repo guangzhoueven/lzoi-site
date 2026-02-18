@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html data-page="homework_detail_problem" data-layout="basic" class="layout--basic page--homework_detail_problem theme--dark nojs" data-mantine-color-scheme="dark" lang="zh" data-app="Hydro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.gzlzoi.cn/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../../favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../../android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="../../../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../../favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://www.gzlzoi.cn/p/19?tid=685e36acc6c0836c1dd8328e">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="乐知课堂" />
+  <meta property="og:url" content="https://www.gzlzoi.cn/p/19" />
+  <meta property="og:image" content="/favicon-96x96.png" />
+                                  <meta property="og:locale" content="zh" />
+              <meta property="og:title" content="LT3556. 【入门】质数字符串 - 乐知课堂" />
+    <meta property="og:description" content="题目描述
+给定一个字符串 s，找出可以由其 子字符串组成的 3个最大的不同质数的和。
+输出这些质数的 总和，如果少于 3 个不同的质数，则输出 所有不同质数的和。
+质数是大于 1 且只有两个因数的自然..." />
+    <title>【入门】质数字符串 - 题目详情 - 乐知课堂</title>
+  <style>
+    body {
+      --font-family: "Microsoft Yahei", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Consolas", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="../../../theme-4.58.0-beta.17.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      window.UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","hydroacFeatures":[],"blspHost":"wss://ws.hydrooj.com","constantVersion":"1c07a499","domainId":"lzoi2025","domain":{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"},"extraTitleContent":"\u3010\u5165\u95E8\u3011\u8D28\u6570\u5B57\u7B26\u4E32","SWConfig":{"preload":"","hosts":["http://www.gzlzoi.cn","https://www.gzlzoi.cn","https://www.gzlzoi.cn/","/"],"assets":[],"domains":[]}}';
+      window.UserContext = '{"_id":39,"mail":"202610319@gzlzoi.cn","uname":"202610319","hashType":"hydro","priv":4,"regat":"2025-07-01T02:30:33.477Z","loginat":"2026-02-06T00:24:21.126Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921","role":"\u5B66\u751F","scope":"BigInt::-1","tfa":false,"authn":false,"group":["20250702\u4E0A\u5348","\u4E34\u65F6\u5C0F\u7EC4","20250804\u4E0A\u5348","39"],"domains":[{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"}],"viewLang":"zh","timeZone":"Asia/Shanghai","codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","avatar":"gravatar:202610319@gzlzoi.cn","qq":"","gender":"2","bio":"<blockquote class=\\"note\\">\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: yellow;\\">\u4E66\u5C71\u6709\u8DEF\u52E4\u4E3A\u5F84\uFF0C\u5B66\u6D77\u65E0\u6DAF\u82E6\u4F5C\u821F\u3002</p></h3>\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: #12DA72;\\">Diligence is the path to the mountain of knowledge, hard-working is the boat to the endless sea of learning.</p></h3>\\r\\n</blockquote>","school":"\u5E7F\u5DDE\u5E02\u5929\u6CB3\u533A\u9A8F\u666F\u5C0F\u5B66","studentId":"","backgroundImage":"/d/lzoi2025/file/39/%E4%B9%90%E7%9F%A5%E8%AF%BE%E5%A0%82%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.png","unreadMsg":0,"pinnedDomains":["lzoi2025"],"rounded":true,"skipAnimate":false,"showTimeAgo":true,"fontFamily":"Microsoft Yahei","codeFontFamily":"Consolas","theme":"dark","preferredEditorType":"sv","showInvisibleChar":false,"formatCode":true,"displayName":"\u9EC4\u98DE\u535A","rpInfo":{"problem":237.2780396214451,"contest":8.25},"nAccept":191,"nSubmit":194,"rp":245.5280396214451,"rank":2,"level":8,"join":true,"avatarUrl":"//cn.gravatar.com/avatar/2dbb0a041212ea8df395e4d4418e92fa?d=mm&s=128"}';
+    </script>
+      </head>
+<body>
+      <script type="text/javascript" src="../../../resource/1c07a499/entry.js"></script>
+    <script type="text/javascript" src="../../../resource/4.58.0-beta.17/lang-zh.js"></script>
+    <script type="text/javascript" src="../../../hydro-4.58.0-beta.17.js"></script>
+    <nav class="nav slideout-menu" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://www.gzlzoi.cn/"><img class="nav__logo" src="../../../components/navigation/nav-logo-small_dark.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="../index.html" class="nav__item">
+    首页
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../set_theme/dark.html" class="nav__item">
+    题库
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../training.html" class="nav__item">
+    训练
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../contest.html" class="nav__item">
+    比赛
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../homework.html" class="nav__item nav--active">
+    作业
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../discuss.html" class="nav__item">
+    讨论
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../record@uidOrName=39.html" class="nav__item">
+    评测记录
+  </a>
+</li>
+      </ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+              <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-domain" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <span class="nav__item"><span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span> lzoi2025 <span class="icon icon-expand_more nojs--hide"></span></span>
+        <ol class="dropdown-target menu" id="menu-nav-domain"><li class="menu__item">
+              <a href="../index.html" class="menu__link">
+                <span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span>
+                lzoi2025              </a>
+            </li><li class="menu__seperator"></li><li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 管理
+            </a>
+          </li>
+        </ol>
+      </li>
+          <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <a href="../user/39.html" class="nav__item">202610319 <span class="icon icon-expand_more nojs--hide"></span></a>
+        <ol class="dropdown-target menu" id="menu-nav-user">
+          <li class="menu__item">
+            <a href="../user/39.html" class="menu__link">
+              <span class="icon icon-account--circle"></span> 我的资料
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/messages.html" class="menu__link">
+              <span class="icon icon-comment--multiple"></span> 站内消息
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> @ lzoi2025
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/account.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 账户设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/settings/preference.html" class="menu__link">
+              <span class="icon icon-sliders"></span> 偏好设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/security.html" class="menu__link">
+              <span class="icon icon-security"></span> 安全设置
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> 我的域
+            </a>
+          </li>
+                              <li class="menu__seperator"></li>
+                    <li class="menu__item">
+            <a href="../logout.html" class="menu__link" name="nav_logout">
+              <span class="icon icon-logout"></span> 登出
+            </a>
+          </li>
+        </ol>
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://www.gzlzoi.cn/" target="_self">
+        <img src="../../../components/navigation/nav-logo-small_dark.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+        <script>
+
+  
+  
+  
+  
+  
+  
+  
+</script>
+<div class="row" data-sticky-parent>
+  <div class="medium-9 columns">
+    <div class="section">
+      <div class="section__header">
+        <h1 class="section__title">
+                    C. 【入门】质数字符串
+        </h1>
+                  <div class="section__tools contest-problems">
+                                                      <a href="31@tid=685e36acc6c0836c1dd8328e.html"
+                 class="pass                        ">
+                <span class="id">A</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="32@tid=685e36acc6c0836c1dd8328e.html"
+                 class="pass                        ">
+                <span class="id">B</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="19@tid=685e36acc6c0836c1dd8328e.html"
+                 class="pass                         active">
+                <span class="id">C</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="36@tid=685e36acc6c0836c1dd8328e.html"
+                 class="pass                        ">
+                <span class="id">D</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="37@tid=685e36acc6c0836c1dd8328e.html"
+                 class="pass                        ">
+                <span class="id">E</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="33@tid=685e36acc6c0836c1dd8328e.html"
+                 class="pass                        ">
+                <span class="id">F</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="35@tid=685e36acc6c0836c1dd8328e.html"
+                 class="pass                        ">
+                <span class="id">G</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="38@tid=685e36acc6c0836c1dd8328e.html"
+                 class="pass                        ">
+                <span class="id">H</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="34@tid=685e36acc6c0836c1dd8328e.html"
+                 class="pass                        ">
+                <span class="id">I</span>
+                <span class="icon icon-check"></span>              </a>                                          <a href="39@tid=685e36acc6c0836c1dd8328e.html"
+                 class="pass                        ">
+                <span class="id">J</span>
+                <span class="icon icon-check"></span>              </a>          </div>
+              </div>
+      <div class="section__body">
+        <ul class="problem__tags">
+                    <span class="problem__tag-item icon icon-book">传统题</span>
+                                <span class="problem__tag-item icon icon-stopwatch">100ms</span>
+            <span class="problem__tag-item icon icon-comparison">256MiB</span>
+                                      </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="problem-content-container"><div class="problem-content" data-marker-enabled>
+        <div class="section__header non-scratchpad--hide">
+          <h1 class="section__title">【入门】质数字符串</h1>
+        </div>
+                <div class="section__body typo richmedia" data-fragment-id="problem-description">
+                            <h1 id="%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0" tabindex="-1">题目描述</h1>
+<p>给定一个字符串 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span>，找出可以由其 <strong>子字符串</strong>组成的 <strong>3个最大的不同质数</strong>的和。</p>
+<p>输出这些质数的 <strong>总和</strong>，如果少于 3 个不同的质数，则输出 <strong>所有</strong>不同质数的和。</p>
+<p>质数是大于 1 且只有两个因数的自然数：1和它本身。</p>
+<p><strong>子字符串：</strong> 是字符串中的一个连续字符序列。</p>
+<p><strong>注意：</strong> 每个质数即使出现在 <strong>多个</strong>子字符串中，也只能计算 <strong>一次</strong>。此外，将子字符串转换为整数时，忽略任何前导零。</p>
+<h1 id="%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F" tabindex="-1">输入格式</h1>
+<p>输入一行，包含一个仅由数字组成的字符串</p>
+<h1 id="%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F" tabindex="-1">输出格式</h1>
+<p>输出一行包含答案</p>
+<pre><code class="language-input1">12234
+</code></pre>
+<pre><code class="language-output1">1469
+</code></pre>
+<pre><code class="language-input2">111
+</code></pre>
+<pre><code class="language-output2">11
+</code></pre>
+<h1 id="%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4%E4%B8%8E%E6%8F%90%E7%A4%BA" tabindex="-1">数据范围与提示</h1>
+<p><strong>【样例 1 解释】</strong></p>
+<ul>
+<li>由 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>12234</mn></mrow><annotation encoding="application/x-tex">12234</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">12234</span></span></span></span> 的子字符串形成的不同质数为 2 ，3 ，23 ，223 和 1223。</li>
+<li>最大的 3 个质数是 1223、223 和 23。它们的和是 1469。</li>
+</ul>
+<p><strong>【样例 2 解释】</strong></p>
+<ul>
+<li>由 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>111</mn></mrow><annotation encoding="application/x-tex">111</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">111</span></span></span></span> 的子字符串形成的不同质数是 11。</li>
+<li>由于只有一个质数，所以结果是 11。</li>
+</ul>
+<p><strong>【数据范围】</strong></p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>&lt;</mo><mo>=</mo><mi>s</mi><mi mathvariant="normal">.</mi><mi>l</mi><mi>e</mi><mi>n</mi><mi>g</mi><mi>t</mi><mi>h</mi><mo>&lt;</mo><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">1 &lt;= s.length &lt;= 10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6835em;vertical-align:-0.0391em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">s</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">10</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span> 仅由数字组成。</li>
+</ul>
+
+
+</div>      </div></div>
+    </div>
+  </div>
+  <div class="medium-3 columns"><div data-sticky="large">
+            <div class="section side section--problem-sidebar">
+  <div>
+    <ol class="menu">
+              <li class="menu__item scratchpad--hide nojs--hide"><a class="menu__link highlight" name="problem-sidebar__open-scratchpad" href="javascript:;" data-global-hotkey="alt+e" style="display: none;">
+        <span class="icon icon-enlarge"></span> 进入在线编程模式 (Alt+E)
+      </a></li>
+      <li class="menu__item non-scratchpad--hide"><a class="menu__link" name="problem-sidebar__quit-scratchpad" href="javascript:;" data-global-hotkey="alt+q">
+        <span class="icon icon-enlarge"></span> 退出在线编程模式 (Alt+Q)
+      </a></li>
+          <li class="menu__item scratchpad--hide"><a class="menu__link" href="LT3556/submit@tid=685e36acc6c0836c1dd8328e.html">
+        <span class="icon icon-send"></span> 递交
+      </a></li>
+            </ol>
+  </div>
+</div>    <div class="section side">
+  <a class="contest-sidebar__bg" href="../homework/685e36acc6c0836c1dd8328e.html">
+    <div class="section__body">
+      <h1>【算法入门-03】STL库的应用</h1>
+      <div class="contest-sidebar__status">
+              <span class="icon icon-check"></span> 已认领
+            </div>
+    </div>
+  </a>
+  <div>
+    <ol class="menu">
+          <li class="menu__item"><a class="menu__link" href="../homework/685e36acc6c0836c1dd8328e.html">
+        <span class="icon icon-homework"></span> 查看作业
+      </a></li>
+                  <li class="menu__item"><a class="menu__link" href="https://www.gzlzoi.cn/d/lzoi2025/homework/685e36acc6c0836c1dd8328e/scoreboard">
+        <span class="icon icon-statistics"></span> 成绩表
+      </a></li>
+                  <li class="menu__item"><a class="menu__link" href="../record@uidOrName=39&amp;tid=685e36acc6c0836c1dd8328e.html">
+        <span class="icon icon-flag"></span> 我的最近递交记录
+      </a></li>
+          <li class="menu__item"><a class="menu__link" href="https://www.gzlzoi.cn/d/lzoi2025Error:&#32;No&#32;route&#32;found&#32;for&#32;name:&#32;wiki#homework">
+        <span class="icon icon-help"></span> 帮助
+      </a></li>
+      <li class="menu__seperator"></li>
+    </ol>
+  </div>
+  <div class="section__body typo">
+    <dl class="large horizontal">
+      <dt>状态</dt><dd>正在进行…</dd>
+      <dt>题目</dt><dd>10</dd>
+      <dt>开始时间</dt><dd><span class="time" data-timestamp="1751414400">2025-7-2 8:00</span>
+</dd>
+      <dt>截止时间</dt><dd><span class="time" data-timestamp="1817308740">2027-8-3 23:59</span>
+</dd>
+      <dt>可延期</dt><dd>24
+ 小时</dd>
+    </dl>
+  </div>
+</div>    </div></div>
+</div>
+<div style="display:none" class="outer-loader-container"><div class="loader"></div></div>
+<div class="scratchpad-container" style="display:none">
+  <div style="display:none" class="loader-container"><div class="loader"></div></div>
+  <div id="scratchpad" style="opacity:0"></div>
+</div>
+  </div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+      <div class="row footer__links">
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          状态
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://www.gzlzoi.cn/d/lzoi2025/record">评测队列</a></li>
+          <li class="footer__category__item"><a href="../status.html">服务状态</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          开发
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">开源</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          支持
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/help.html">帮助</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">联系我们</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable end">
+        <h1>
+          关于
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/about.html">关于</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#privacy">隐私</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#tos">服务条款</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">版权申诉</a></li>
+        </ul></div>
+      </div>
+    </div>
+      <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+                    <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-lang"><li class="menu__item"><a class="menu__link" href="../language/en.html">English</a></li><li class="menu__item"><a class="menu__link" href="../language/ko.html">한국어</a></li><li class="menu__item"><a class="menu__link" href="../language/zh.html">简体中文</a></li><li class="menu__item"><a class="menu__link" href="../language/zh_TW.html">正體中文</a></li></ol>
+          </li>
+          <li class="footer__extra-link-item">
+                          <a href="https://www.gzlzoi.cn/legacy?legacy=true">兼容模式</a>
+                      </li>
+          <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> 主题 <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-theme">
+              <li class="menu__item"><a class="menu__link" href="../set_theme/light.html">亮色</a></li>
+              <li class="menu__item"><a class="menu__link" href="../set_theme/dark.html">暗色</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><a href="https://beian.miit.gov.cn/">京ICP备2023010486号-3</a></li><li class="footer__extra-link-item">Worker 0, 11ms</li>
+          <!-- Prepare 3ms -->
+          <!-- Method 0ms -->
+          
+          
+          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v5.0.0-beta.16</a> Community</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      window.UiContextNew = '{"problemId":"LT3556","problemNumId":19,"codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","pdoc":{"_id":"685cbb2ac6c0836c1dd83165","content":"{\\"zh\\":\\"# \u9898\u76EE\u63CF\u8FF0\\\\n\\\\n\u7ED9\u5B9A\u4E00\u4E2A\u5B57\u7B26\u4E32 $s$\uFF0C\u627E\u51FA\u53EF\u4EE5\u7531\u5176\xA0**\u5B50\u5B57\u7B26\u4E32**\u7EC4\u6210\u7684\xA0**3\u4E2A\u6700\u5927\u7684\u4E0D\u540C\u8D28\u6570**\u7684\u548C\u3002\\\\n\\\\n\u8F93\u51FA\u8FD9\u4E9B\u8D28\u6570\u7684\xA0**\u603B\u548C**\uFF0C\u5982\u679C\u5C11\u4E8E 3 \u4E2A\u4E0D\u540C\u7684\u8D28\u6570\uFF0C\u5219\u8F93\u51FA\xA0**\u6240\u6709**\u4E0D\u540C\u8D28\u6570\u7684\u548C\u3002\\\\n\\\\n\u8D28\u6570\u662F\u5927\u4E8E 1 \u4E14\u53EA\u6709\u4E24\u4E2A\u56E0\u6570\u7684\u81EA\u7136\u6570\uFF1A1\u548C\u5B83\u672C\u8EAB\u3002\\\\n\\\\n**\u5B50\u5B57\u7B26\u4E32\uFF1A** \u662F\u5B57\u7B26\u4E32\u4E2D\u7684\u4E00\u4E2A\u8FDE\u7EED\u5B57\u7B26\u5E8F\u5217\u3002\\\\n\\\\n**\u6CE8\u610F\uFF1A** \u6BCF\u4E2A\u8D28\u6570\u5373\u4F7F\u51FA\u73B0\u5728\xA0**\u591A\u4E2A**\u5B50\u5B57\u7B26\u4E32\u4E2D\uFF0C\u4E5F\u53EA\u80FD\u8BA1\u7B97\xA0**\u4E00\u6B21**\u3002\u6B64\u5916\uFF0C\u5C06\u5B50\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u6574\u6570\u65F6\uFF0C\u5FFD\u7565\u4EFB\u4F55\u524D\u5BFC\u96F6\u3002\\\\n\\\\n\\\\n# \u8F93\u5165\u683C\u5F0F\\\\n\\\\n\u8F93\u5165\u4E00\u884C\uFF0C\u5305\u542B\u4E00\u4E2A\u4EC5\u7531\u6570\u5B57\u7EC4\u6210\u7684\u5B57\u7B26\u4E32\\\\n\\\\n# \u8F93\u51FA\u683C\u5F0F\\\\n\\\\n\u8F93\u51FA\u4E00\u884C\u5305\u542B\u7B54\u6848\\\\n\\\\n\\\\n```input1\\\\n12234\\\\n```\\\\n```output1\\\\n1469\\\\n```\\\\n\\\\n```input2\\\\n111\\\\n```\\\\n```output2\\\\n11\\\\n```\\\\n\\\\n# \u6570\u636E\u8303\u56F4\u4E0E\u63D0\u793A\\\\n**\u3010\u6837\u4F8B 1 \u89E3\u91CA\u3011**\\\\n- \u7531 $12234$ \u7684\u5B50\u5B57\u7B26\u4E32\u5F62\u6210\u7684\u4E0D\u540C\u8D28\u6570\u4E3A 2 \uFF0C3 \uFF0C23 \uFF0C223 \u548C 1223\u3002\\\\n- \u6700\u5927\u7684 3 \u4E2A\u8D28\u6570\u662F 1223\u3001223 \u548C 23\u3002\u5B83\u4EEC\u7684\u548C\u662F 1469\u3002\\\\n\\\\n**\u3010\u6837\u4F8B 2 \u89E3\u91CA\u3011**\\\\n- \u7531 $111$ \u7684\u5B50\u5B57\u7B26\u4E32\u5F62\u6210\u7684\u4E0D\u540C\u8D28\u6570\u662F 11\u3002\\\\n- \u7531\u4E8E\u53EA\u6709\u4E00\u4E2A\u8D28\u6570\uFF0C\u6240\u4EE5\u7ED3\u679C\u662F 11\u3002\\\\n\\\\n**\u3010\u6570\u636E\u8303\u56F4\u3011**\\\\n- $1 <= s.length <= 10$\\\\n- $s$ \u4EC5\u7531\u6570\u5B57\u7EC4\u6210\u3002\\\\n\\\\n\x3C!-- # \u6765\u6E90\\\\n- [3556. \u6700\u5927\u8D28\u6570\u5B50\u5B57\u7B26\u4E32\u4E4B\u548C](https://leetcode.cn/problems/sum-of-largest-prime-substrings/description/) -->\\\\n\\\\n\\"}","owner":2,"domainId":"lzoi2025","docType":10,"docId":19,"title":"\u3010\u5165\u95E8\u3011\u8D28\u6570\u5B57\u7B26\u4E32","tag":[],"hidden":true,"pid":"LT3556","data":[{"_id":"1.in","name":"1.in","size":11,"lastModified":"2025-06-26T03:14:50.318Z","etag":"L2RhdGEvZmlsZS9oeWRyby92cHgvMmhvcjB5MGc3YXhzY3F0OXNlcTNyLmlu"},{"_id":"1.out","name":"1.out","size":10,"lastModified":"2025-06-26T03:14:50.321Z","etag":"L2RhdGEvZmlsZS9oeWRyby9rancvdWgzbGJrYXg3N3Z6dWtkb2JrbmNwLm91dA=="},{"_id":"10.in","name":"10.in","size":11,"lastModified":"2025-06-26T03:14:50.324Z","etag":"L2RhdGEvZmlsZS9oeWRyby82b3QvYjZvYzF5bjRmZmJucGxtemJvd3J2Lmlu"},{"_id":"10.out","name":"10.out","size":8,"lastModified":"2025-06-26T03:14:50.327Z","etag":"L2RhdGEvZmlsZS9oeWRyby83ZmsvZWZoaG53dmluaXNvZDd1cjl0Y2VoLm91dA=="},{"_id":"11.in","name":"11.in","size":10,"lastModified":"2025-06-26T03:14:50.331Z","etag":"L2RhdGEvZmlsZS9oeWRyby9sZzkveXpramZlejN5aXk3dTJkM3VtMGNtLmlu"},{"_id":"11.out","name":"11.out","size":8,"lastModified":"2025-06-26T03:14:50.334Z","etag":"L2RhdGEvZmlsZS9oeWRyby94bWsvNXZnZm12ejBjbzVudG1uaW54YXo1Lm91dA=="},{"_id":"12.in","name":"12.in","size":11,"lastModified":"2025-06-26T03:14:50.337Z","etag":"L2RhdGEvZmlsZS9oeWRyby9oankvMmNzdWh5cXR6a2F2ZDF5OHhnaXA4Lmlu"},{"_id":"12.out","name":"12.out","size":9,"lastModified":"2025-06-26T03:14:50.341Z","etag":"L2RhdGEvZmlsZS9oeWRyby93MWIvcWJmMm0zMHJqcXpiODB4czl4dGpqLm91dA=="},{"_id":"13.in","name":"13.in","size":11,"lastModified":"2025-06-26T03:14:50.344Z","etag":"L2RhdGEvZmlsZS9oeWRyby9oMGUvdjA3N2g3Mmd6YWxwOGg3Yzd1Z3h4Lmlu"},{"_id":"13.out","name":"13.out","size":8,"lastModified":"2025-06-26T03:14:50.348Z","etag":"L2RhdGEvZmlsZS9oeWRyby8yc2cvNDhhdXhrMzg1enZtaXR3dGNrenl5Lm91dA=="},{"_id":"14.in","name":"14.in","size":11,"lastModified":"2025-06-26T03:14:50.351Z","etag":"L2RhdGEvZmlsZS9oeWRyby9zMGEvano1YndvNW8wYXprZWFjeGcxYW5sLmlu"},{"_id":"14.out","name":"14.out","size":8,"lastModified":"2025-06-26T03:14:50.354Z","etag":"L2RhdGEvZmlsZS9oeWRyby90ODEveTdjeDB3bHphaDhxdHEzYXZxb2UyLm91dA=="},{"_id":"15.in","name":"15.in","size":11,"lastModified":"2025-06-26T03:14:50.358Z","etag":"L2RhdGEvZmlsZS9oeWRyby8wZ3gva3J3dWltZHpmbmwzdzJ5ZnZxN3o1Lmlu"},{"_id":"15.out","name":"15.out","size":8,"lastModified":"2025-06-26T03:14:50.361Z","etag":"L2RhdGEvZmlsZS9oeWRyby9zem0vNmp5ZTZkeGFuZnVzdDgwam9xdGwwLm91dA=="},{"_id":"16.in","name":"16.in","size":11,"lastModified":"2025-06-26T03:14:50.364Z","etag":"L2RhdGEvZmlsZS9oeWRyby9vZWgvdjBudTJtZGZwdmVsdWNvZXBhY3lxLmlu"},{"_id":"16.out","name":"16.out","size":9,"lastModified":"2025-06-26T03:14:50.368Z","etag":"L2RhdGEvZmlsZS9oeWRyby9zZHMvZXZ5dHFsbWgwbG5qd2xhZjVodDMyLm91dA=="},{"_id":"17.in","name":"17.in","size":10,"lastModified":"2025-06-26T03:14:50.371Z","etag":"L2RhdGEvZmlsZS9oeWRyby9uZ3cvemc4M3U0cjM4cXJ6MG95encwbnFwLmlu"},{"_id":"17.out","name":"17.out","size":10,"lastModified":"2025-06-26T03:14:50.374Z","etag":"L2RhdGEvZmlsZS9oeWRyby9hdXQvc2FmcXh3Z2dzYnplNTgzZXVtbnFsLm91dA=="},{"_id":"18.in","name":"18.in","size":11,"lastModified":"2025-06-26T03:14:50.378Z","etag":"L2RhdGEvZmlsZS9oeWRyby9uc3EvdmZ1b3d1bHhqZmdiYThhend2dTNvLmlu"},{"_id":"18.out","name":"18.out","size":8,"lastModified":"2025-06-26T03:14:50.381Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kNmIva2hydjFuaG4wbXQ0aWpneGE2cG05Lm91dA=="},{"_id":"19.in","name":"19.in","size":11,"lastModified":"2025-06-26T03:14:50.385Z","etag":"L2RhdGEvZmlsZS9oeWRyby9ic3YvMWg1Z21wdHVweXMweWRiemQwMGF2Lmlu"},{"_id":"19.out","name":"19.out","size":8,"lastModified":"2025-06-26T03:14:50.388Z","etag":"L2RhdGEvZmlsZS9oeWRyby9mOTYvZ3JjbHMyMmM0eHU4d2dwY3dlZWduLm91dA=="},{"_id":"2.in","name":"2.in","size":11,"lastModified":"2025-06-26T03:14:50.391Z","etag":"L2RhdGEvZmlsZS9oeWRyby9nengvc3lxY2EwaGN1cjB0ZzZpNDZjeXkzLmlu"},{"_id":"2.out","name":"2.out","size":8,"lastModified":"2025-06-26T03:14:50.395Z","etag":"L2RhdGEvZmlsZS9oeWRyby95d2cvbnY3eHZoa3htbzJjcnowbGdma2x2Lm91dA=="},{"_id":"20.in","name":"20.in","size":11,"lastModified":"2025-06-26T03:14:50.399Z","etag":"L2RhdGEvZmlsZS9oeWRyby85eWUvNmZweTBwbWJqaXVjam96c3FpancyLmlu"},{"_id":"20.out","name":"20.out","size":8,"lastModified":"2025-06-26T03:14:50.402Z","etag":"L2RhdGEvZmlsZS9oeWRyby81M3UvZXVxc3MwbHAwYXF2bXRyc2liYWJ3Lm91dA=="},{"_id":"3.in","name":"3.in","size":11,"lastModified":"2025-06-26T03:14:50.405Z","etag":"L2RhdGEvZmlsZS9oeWRyby9tYXEvaDByZDdldXh0cWc2cWNqcXI3Y2xkLmlu"},{"_id":"3.out","name":"3.out","size":8,"lastModified":"2025-06-26T03:14:50.409Z","etag":"L2RhdGEvZmlsZS9oeWRyby9uZGcvaGp1NDd2c2FrMm94Z3Jna3FkMDZ6Lm91dA=="},{"_id":"4.in","name":"4.in","size":11,"lastModified":"2025-06-26T03:14:50.412Z","etag":"L2RhdGEvZmlsZS9oeWRyby80cnAvaHkzdG5uN242aWF0eW4wZ2RmaGwwLmlu"},{"_id":"4.out","name":"4.out","size":10,"lastModified":"2025-06-26T03:14:50.415Z","etag":"L2RhdGEvZmlsZS9oeWRyby9sdHovZXprbHllbWZjdm5kY3N0YWNtcmdxLm91dA=="},{"_id":"5.in","name":"5.in","size":11,"lastModified":"2025-06-26T03:14:50.419Z","etag":"L2RhdGEvZmlsZS9oeWRyby81aHMva3Flb2NyN2syd2FzY3ZlbmZnM2FvLmlu"},{"_id":"5.out","name":"5.out","size":9,"lastModified":"2025-06-26T03:14:50.432Z","etag":"L2RhdGEvZmlsZS9oeWRyby95OHQvdjQ3Zm9uaXUxMXBrNTNxemVzNjNqLm91dA=="},{"_id":"6.in","name":"6.in","size":11,"lastModified":"2025-06-26T03:14:50.436Z","etag":"L2RhdGEvZmlsZS9oeWRyby81YjcveHg2eXVibXY1cDRteWxrNGpvNWt1Lmlu"},{"_id":"6.out","name":"6.out","size":8,"lastModified":"2025-06-26T03:14:50.440Z","etag":"L2RhdGEvZmlsZS9oeWRyby90MzYvNzA2bjcwdTk4bnRhbGNjdmt5OWRuLm91dA=="},{"_id":"7.in","name":"7.in","size":11,"lastModified":"2025-06-26T03:14:50.444Z","etag":"L2RhdGEvZmlsZS9oeWRyby9mNXIvczVyMDJ3dHF6ZGV4cG5zc3VqZ3FyLmlu"},{"_id":"7.out","name":"7.out","size":9,"lastModified":"2025-06-26T03:14:50.448Z","etag":"L2RhdGEvZmlsZS9oeWRyby9iaHovb3J0aGEycnh2NmdhcXl3cmQ3amljLm91dA=="},{"_id":"8.in","name":"8.in","size":11,"lastModified":"2025-06-26T03:14:50.452Z","etag":"L2RhdGEvZmlsZS9oeWRyby9tcTQvOXV1dHE2YWtjaHF0dnRnbWttMjVzLmlu"},{"_id":"8.out","name":"8.out","size":8,"lastModified":"2025-06-26T03:14:50.458Z","etag":"L2RhdGEvZmlsZS9oeWRyby9zZXcvanl1ODg3bWNjdzNqcmRzMGoxbzRqLm91dA=="},{"_id":"9.in","name":"9.in","size":11,"lastModified":"2025-06-26T03:14:50.461Z","etag":"L2RhdGEvZmlsZS9oeWRyby93eWUva2lmZTAwZXdtdW9jejQzeG5ra3o1Lmlu"},{"_id":"9.out","name":"9.out","size":10,"lastModified":"2025-06-26T03:14:50.465Z","etag":"L2RhdGEvZmlsZS9oeWRyby9jMGYvbWIyd2gwYXh1cmgwd3A4dHpicXlrLm91dA=="},{"_id":"config.yaml","name":"config.yaml","size":523,"lastModified":"2025-06-26T03:14:50.468Z","etag":"L2RhdGEvZmlsZS9oeWRyby9kbDAvbGRjY2wwd2s3eGhjb3l4MG1ycTAzLnlhbWw="}],"config":{"count":10,"memoryMin":256,"memoryMax":256,"timeMin":100,"timeMax":100,"type":"default","langs":["cc","cc.cc14o2","cc.cc17o2","py","py.py3"]},"additional_file":[{"_id":"gen.py","name":"gen.py","size":2456,"lastModified":"2025-06-26T03:14:50.476Z","etag":"L2RhdGEvZmlsZS9oeWRyby9oYnovc2U3Y3p4NGgwOXY3eW5rcmM0OWx5LnB5"},{"_id":"get_problem.py","name":"get_problem.py","size":6400,"lastModified":"2025-06-26T03:14:50.479Z","etag":"L2RhdGEvZmlsZS9oeWRyby9sbnYvcjJnc3ZocHEwcm5taHlvdXB2MTBjLnB5"},{"_id":"make.sh","name":"make.sh","size":232,"lastModified":"2025-06-26T03:14:50.482Z","etag":"L2RhdGEvZmlsZS9oeWRyby9sMGwvZHhvandodm1vNmtvMzB3bTAwOWQxLnNo"},{"_id":"run.sh","name":"run.sh","size":392,"lastModified":"2025-06-26T03:14:50.486Z","etag":"L2RhdGEvZmlsZS9oeWRyby9vdmsvZjdha2Y0cXVmMGd6Y2p5Ym1vaWh0LnNo"},{"_id":"solution.cpp","name":"solution.cpp","size":887,"lastModified":"2025-06-26T03:14:50.490Z","etag":"L2RhdGEvZmlsZS9oeWRyby9laHQvc3A2NWUwamFiaXd3YXhteHIwZWluLmNwcA=="}],"html":false},"tdoc":{"_id":"685e36acc6c0836c1dd8328e","content":"\u3010\u7B97\u6CD5\u5165\u95E8-03\u3011STL\u5E93\u7684\u5E94\u7528\\r\\n- \u4E0A\u8BFE\u8BFE\u4EF6\uFF1A\\r\\n  - [\u3010C++\u8BED\u6CD5\u5165\u95E804\u3011\u5411\u91CF\u5BB9\u5668vector\u548Cstring.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/685e36acc6c0836c1dd8328e/file/public/%E3%80%90C%2B%2B%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A804%E3%80%91%E5%90%91%E9%87%8F%E5%AE%B9%E5%99%A8vector%E5%92%8Cstring.pdf)\\r\\n  - [STL\u5E93\u7684\u5E94\u7528.pdf](https://www.gzlzoi.cn/d/lzoi2025/homework/685e36acc6c0836c1dd8328e/file/public/STL%E5%BA%93%E7%9A%84%E5%BA%94%E7%94%A8.pdf)\\r\\n- \u89C6\u9891\u56DE\u653E\uFF1A\\r\\n  - [B \u7AD9\uFF1A\u3010C++\u8BED\u6CD5\u5165\u95E804\u3011\u5411\u91CF\u5BB9\u5668vector\u548C\u5B57\u7B26\u4E32string](https://www.bilibili.com/video/BV1xs7AzyEcB/?spm_id_from=333.1387.homepage.video_card.click)","owner":2,"domainId":"lzoi2025","docType":30,"docId":"685e36acc6c0836c1dd8328e","penaltySince":"2027-08-03T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"assign":["20250804\u4E0A\u5348"],"title":"\u3010\u7B97\u6CD5\u5165\u95E8-03\u3011STL\u5E93\u7684\u5E94\u7528","rule":"homework","beginAt":"2025-07-02T00:00:00.000Z","endAt":"2027-08-04T15:59:00.000Z","pids":[31,32,19,36,37,33,35,38,34,39],"attend":78,"rated":false,"maintainer":[],"files":[{"_id":"\u3010C++\u8BED\u6CD5\u5165\u95E804\u3011\u5411\u91CF\u5BB9\u5668vector\u548Cstring.pdf","name":"\u3010C++\u8BED\u6CD5\u5165\u95E804\u3011\u5411\u91CF\u5BB9\u5668vector\u548Cstring.pdf","size":2249898,"lastModified":"2025-07-01T09:13:11.853Z","etag":"L2RhdGEvZmlsZS9oeWRyby82ZDQvdGJ2dGMxYzlhcmg5ZG9lN3AxenhpLnBkZg=="},{"_id":"STL\u5E93\u7684\u5E94\u7528.pdf","name":"STL\u5E93\u7684\u5E94\u7528.pdf","size":1494491,"lastModified":"2025-07-06T00:29:19.743Z","etag":"L2RhdGEvZmlsZS9oeWRyby9xNDQvc3RnaGEwYzEwbG44anRzcjR2ZDcxLnBkZg=="}],"langs":[]},"tsdoc":{"attend":1,"startAt":"2025-07-03T01:12:08.834Z","detail":{"19":{"rid":"6866241e0407a1392fe8b366","pid":19,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc14o2","penaltyScore":100,"time":109982},"31":{"rid":"686621530407a1392fe8b300","pid":31,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc14o2","penaltyScore":100,"time":109267},"32":{"rid":"686623670407a1392fe8b352","pid":32,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc14o2","penaltyScore":100,"time":109799},"33":{"rid":"68662f2f0407a1392fe8b486","pid":33,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc14o2","penaltyScore":100,"time":112815},"34":{"rid":"686674150407a1392fe8bcee","pid":34,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc14o2","penaltyScore":100,"time":130453},"35":{"rid":"6866416f0407a1392fe8b6b5","pid":35,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc14o2","penaltyScore":100,"time":117487},"36":{"rid":"686628250407a1392fe8b3c7","pid":36,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc14o2","penaltyScore":100,"time":111013},"37":{"rid":"686629880407a1392fe8b3ec","pid":37,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc14o2","penaltyScore":100,"time":111368},"38":{"rid":"68666e510407a1392fe8bb1a","pid":38,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc14o2","penaltyScore":100,"time":128977},"39":{"rid":"6867efa3378af7f9fb349bb6","pid":39,"status":1,"score":100,"subtasks":{"1":{"type":"sum","score":100,"status":1}},"lang":"cc.cc14o2","penaltyScore":100,"time":227619}}},"canViewRecord":true,"postSubmitUrl":"/d/lzoi2025/p/19/submit?tid=685e36acc6c0836c1dd8328e","getSubmissionsUrl":"/d/lzoi2025/record?fullStatus=true&pid=19&tid=685e36acc6c0836c1dd8328e","getRecordDetailUrl":"/d/lzoi2025/record/%7Brid%7D?tid=685e36acc6c0836c1dd8328e","pretestConnUrl":"record-conn?pretest=1&uidOrName=39&pid=19&domainId=lzoi2025&tid=685e36acc6c0836c1dd8328e"}';
+      window.UserContextNew = '{}';
+    </script>
+  </body>
+</html>

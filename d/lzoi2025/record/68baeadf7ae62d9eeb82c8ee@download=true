@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int T;
+	cin >> T;
+	while (T--) {
+		int n;
+		cin >> n;
+		vector<int> b(n);
+		for (int i = 0; i < n; i++) cin >> b[i];
+
+		int maxn = b[0] * 2;
+		bool ans = true;
+		for (int i = 1; i < n; i++) {
+			if (b[i] >= maxn) {
+				ans = false;
+				break;
+			}
+			maxn = min(maxn, b[i] * 2);
+		}
+		cout << (ans == true ? "YES" : "NO") << "\n";
+	}
+	return 0;
+}

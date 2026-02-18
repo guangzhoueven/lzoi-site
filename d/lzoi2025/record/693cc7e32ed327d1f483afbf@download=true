@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+i64 solve(vector<i64> a, i64 n, i64 m) {
+	i64 maxi = 2048, ans = 0;
+	vector<i64> L(maxi);
+	for (i64 i = 1; i < n; i++) {
+		vector<i64> t(maxi);
+		t[a[i]] = 1;
+
+		for (i64 j = 0; j < maxi; j++) t[j ^ a[i]] += L[j];
+		L = t;
+	}
+	vector<i64> R(maxi), r(maxi);
+	for (i64 i = n; i > 1; i--) {
+		// 包含自己
+		vector<i64> t(maxi);
+		t[a[i]] = 1;
+
+		// 和a[i+1]
+		for (i64 j = 0; j < maxi; j++) t[j ^ a[i]] += R[j];
+		R = t;
+		for (i64 j = 0; j < maxi; j++) r[j] += R[j];
+
+		// 此时 h_R 是以 a[n] 开头的后缀和
+		for (i64 j = 0; j < maxi; j++) ans += L[j] * r[j ^ m];
+
+		// 接下来 h_R 会变成以 a[n - 1] 开头
+		// L 就要变成以 a[n - 2] 结尾
+		vector<i64> tmp(maxi);
+		L[a[i - 1]]--;
+		for (i64 j = 0; j < maxi; j++) tmp[j] = L[j ^ a[i - 1]];
+		L = tmp;
+	}
+	return ans;
+}
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, m;
+	cin >> n >> m;
+	vector<i64> a(n + 1);
+	for (i64 i = 1; i <= n; i++) cin >> a[i];
+	cout << solve(a, n, m) << "\n";
+	return 0;
+}

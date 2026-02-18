@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using i64 = long long;
+
+int main() {	
+	ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
+
+	int n;
+	cin >> n;
+	vector<int> a(n);
+	for (int i = 0; i < n; i++) cin >> a[i];
+
+	int maxi = *max_element(a.begin(), a.end());
+
+	// c[i]: 表示 i 出现的次数
+	vector<int> c(maxi + 1, 0);
+	for (int i = 0; i < n; i++) c[a[i]]++;
+
+	// 对 c 求前缀和
+	for (int i = 1; i <= maxi; i++) c[i] += c[i - 1];
+
+	i64 ans = 0;
+	for (int i = 1; i <= maxi; i++) {
+		int m = c[i] - c[i - 1];
+		if (m == 0) continue;
+
+		// i 除以 i 的结果
+		ans += (i64) m * (m - 1) / 2;
+		for (int d = 1; i * d <= maxi; d++) {
+
+			// [l, r] 中的数除 i 的商都是 d
+			int l = max(i + 1, d * i), r = min(maxi, (d + 1) * i - 1);
+			ans += (i64) m * d * (c[r] - c[l - 1]);
+		}
+		// cout << "i= " << i << ", ans= " << ans << '\n';
+	}
+	cout << ans << '\n';
+
+	return 0;
+}

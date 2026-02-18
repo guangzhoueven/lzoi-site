@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n, k;
+	cin >> n >> k;
+	vector<int> a(n);
+	for (auto &x : a) cin >> x;
+	sort(a.begin(), a.end());
+
+	int res = a.back() - a.front();			// 初始差值为所有元素加k或减k的情况
+	
+	for (int i = 0; i < n - 1; i++) {	
+		int max_val = max(a[i] + k, a.back() - k);
+		int min_val = min(a[0] + k, a[i + 1] - k);
+		res = min(res, max_val - min_val);	// 	整个数组的最大和最小值之差最小
+	}
+	cout << res << '\n';
+	return 0;
+}

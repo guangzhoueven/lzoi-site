@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using pii = pair<int, int>;
+
+int solve(vector<int>& a) {
+    int n = a.size(), y = 0, s = 0, ans = 0;
+
+	// q[{x, y}] = z: 前缀异或为 x, 奇偶数之差为 y 的最小下标
+    map<pii, int> q;
+    q[{0, 0}] = 0;
+    for (int i = 1; i <= n; i++) {
+        y ^= a[i - 1];
+        s += (a[i - 1] % 2 ? 1 : -1);
+
+		// 两个前缀和相减, 就可以得到一段连续子数组
+		if (q.count({y, s})) ans = max(ans, i - q[{y, s}]);
+        else q[{y, s}] = i;
+    }
+    return ans;
+}
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
+
+	int T, n;
+	cin >> T;
+	while (T--) {
+		cin >> n;
+		vector<int> a(n);
+		for (int i = 0; i < n; i++) cin >> a[i];
+		cout << solve(a) << '\n';
+	}
+	return 0;
+}

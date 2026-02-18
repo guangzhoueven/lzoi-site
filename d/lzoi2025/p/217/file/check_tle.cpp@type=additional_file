@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node {
+    int u, v, w;
+};
+
+int kruskal(int n, int m, vector<Node>& g) {
+    
+    // 按边权从小到大排序
+    sort(g.begin(), g.end(), [&](const Node& x, const Node& y) {
+        return x.w < y.w;
+    });
+    
+    int cnt = 0;           // 已经选的边数
+    int ans = 0;           // 当前选的边的权值和
+    vector<int> f(n + 1);  // 编号
+    for (int i = 1; i <= n; i++) f[i] = i;
+    
+    for (int i = 0; i < m; i++) {
+        int u = g[i].u, v = g[i].v, w = g[i].w;
+        
+        // 现在要判断 u, v 是否已经联通
+        if (f[u] == f[v]) continue;  // 已经联通
+        else {
+            // u, v 不联通, 要这条边
+            ans += w;
+            if (++cnt == n - 1) break;  // 已经选 n-1 条边
+            
+            // 把所有和 v 联通的点的编号, 都改为 f[u]
+            int fv = f[v];
+            for (int j = 1; j <= n; j++) {
+                if (f[j] == fv) f[j] = f[u];
+            }
+        }
+    }
+    if (cnt != n - 1) return -1;
+    return ans;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+    
+    int n, m;
+    cin >> n >> m;
+    
+    vector<Node> g(m);
+    for (int i = 0; i < m; i++) cin >> g[i].u >> g[i].v >> g[i].w;
+    
+    int ans = kruskal(n, m, g);
+    if (ans == -1) cout << "orz" << '\n';
+    else cout << ans << '\n';
+
+    return 0;
+}

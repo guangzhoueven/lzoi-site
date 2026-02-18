@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int maxProfit(vector<int>& a, int k) {
+    int n = a.size(), inf = 1000000000;
+    
+    // d_1: 需要买入 1 个股票的最大钱
+    // d0 : 手上没有股票的最大钱
+    // d1 : 手上有 1 个股票需要卖出的最大钱
+    vector<int> d_1(k + 1, -inf), d0(k + 1, 0), d1(k + 1, -inf);
+
+    for (int i = 0; i < n; i++) {
+        for (int j = k; j >= 1; j--) {
+            d0[j]  = max({d0[j], d_1[j] - a[i], d1[j] + a[i]});  // max(啥也不干, 买 a[i], 卖 a[i])
+            d_1[j] = max(d_1[j],  d0[j - 1] + a[i]);             // max(啥也不干, 卖 a[i])
+            d1[j]  = max(d1[j],   d0[j - 1] - a[i]);             // max(啥也不干, 买 a[i])
+            // cout << "i= " << i << ", j= " << j << ", d_1= " << d_1[j] << ", d0= " << d0[j] << ", d1= " << d1[j] << '\n';
+        }
+    }
+    return d0[k];  
+}
+
+int main() {	
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+    
+    int n, k;
+    cin >> n >> k;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) cin >> a[i];
+    cout << maxProfit(a, k) << '\n';
+    return 0;
+}

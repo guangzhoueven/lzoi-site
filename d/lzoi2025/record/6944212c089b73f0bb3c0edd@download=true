@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n;
+	cin >> n;
+	vector<i64> a(n);
+	for (auto& x : a) cin >> x;
+
+	i64 maxa = a[0], mina = a[0], ans = a[0];
+	for (i64 i = 1; i < n; i++) {
+		i64 x = maxa * a[i], y = mina * a[i];
+		maxa = max(a[i], max(x, y));
+		mina = max(a[i], min(x, y));
+		ans = max(ans, maxa);
+	}
+	cout << ans << "\n";
+	return 0;
+}

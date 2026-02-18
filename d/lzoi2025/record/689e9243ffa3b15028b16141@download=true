@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int T;
+	cin >> T;
+	while (T--) {
+		i64 n, a = 1;
+		cin >> n;
+		i64 S = n * (n + 1) / 2;
+		for (i64 i = sqrt(S); i >= 1; i--) {
+			if (S % i == 0) {
+				a = i;
+				break;
+			}
+		}
+		i64 b = S / a;
+		cout << 2 * (a + b) << "\n";
+	}
+	return 0;
+}

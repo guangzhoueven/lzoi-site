@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define mod 998244353
+int n,x[32],y[32];
+long long ans;
+signed main()
+{
+	scanf("%d",&n);
+	for(int i=1,p;i<=n;i++)
+	{
+		scanf("%d",&p);
+		for(int i=0;i<=31;i++)
+		{
+			if(p&(1ll<<i))++y[i];
+			else ++x[i];
+		}
+	}
+	for(int i=0;i<=31;i++)ans=(ans+(1ll*x[i]*y[i]%mod*(1ll<<i))%mod)%mod;
+	printf("%lld\n",ans%mod);
+	return 0;
+}

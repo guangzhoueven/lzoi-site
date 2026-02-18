@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html data-page="homework_detail_problem" data-layout="basic" class="layout--basic page--homework_detail_problem theme--dark nojs" data-mantine-color-scheme="dark" lang="zh" data-app="Hydro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.gzlzoi.cn/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../../favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../../android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="../../../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../../favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://www.gzlzoi.cn/p/P4779?tid=6947b8bf94db19114128b9c2">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="乐知课堂" />
+  <meta property="og:url" content="https://www.gzlzoi.cn/p/P4779" />
+  <meta property="og:image" content="/favicon-96x96.png" />
+                                  <meta property="og:locale" content="zh" />
+              <meta property="og:title" content="P4779. 【模板】单源最短路径（标准版） - 乐知课堂" />
+    <meta property="og:description" content="题目描述
+给定一个 n 个点，m 条 有向图，所有边权都为非负整数，请你计算从 s 出发，到每个点的距离。数据保证你能从 s 出发到任意点。
+这里有三份模板供大家参考，请注意：
+* 请大家务必自己写一..." />
+    <title>【模板】单源最短路径（标准版） - 题目详情 - 乐知课堂</title>
+  <style>
+    body {
+      --font-family: "Microsoft Yahei", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Consolas", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="../../../theme-4.58.0-beta.17.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      window.UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","hydroacFeatures":[],"blspHost":"wss://ws.hydrooj.com","constantVersion":"1c07a499","domainId":"lzoi2025","domain":{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"},"extraTitleContent":"\u3010\u6A21\u677F\u3011\u5355\u6E90\u6700\u77ED\u8DEF\u5F84\uFF08\u6807\u51C6\u7248\uFF09","SWConfig":{"preload":"","hosts":["http://www.gzlzoi.cn","https://www.gzlzoi.cn","https://www.gzlzoi.cn/","/"],"assets":[],"domains":[]}}';
+      window.UserContext = '{"_id":39,"mail":"202610319@gzlzoi.cn","uname":"202610319","hashType":"hydro","priv":4,"regat":"2025-07-01T02:30:33.477Z","loginat":"2026-02-06T00:24:21.126Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921","role":"\u5B66\u751F","scope":"BigInt::-1","tfa":false,"authn":false,"group":["20250702\u4E0A\u5348","\u4E34\u65F6\u5C0F\u7EC4","20250804\u4E0A\u5348","39"],"domains":[{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"}],"viewLang":"zh","timeZone":"Asia/Shanghai","codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","avatar":"gravatar:202610319@gzlzoi.cn","qq":"","gender":"2","bio":"<blockquote class=\\"note\\">\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: yellow;\\">\u4E66\u5C71\u6709\u8DEF\u52E4\u4E3A\u5F84\uFF0C\u5B66\u6D77\u65E0\u6DAF\u82E6\u4F5C\u821F\u3002</p></h3>\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: #12DA72;\\">Diligence is the path to the mountain of knowledge, hard-working is the boat to the endless sea of learning.</p></h3>\\r\\n</blockquote>","school":"\u5E7F\u5DDE\u5E02\u5929\u6CB3\u533A\u9A8F\u666F\u5C0F\u5B66","studentId":"","backgroundImage":"/d/lzoi2025/file/39/%E4%B9%90%E7%9F%A5%E8%AF%BE%E5%A0%82%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.png","unreadMsg":0,"pinnedDomains":["lzoi2025"],"rounded":true,"skipAnimate":false,"showTimeAgo":true,"fontFamily":"Microsoft Yahei","codeFontFamily":"Consolas","theme":"dark","preferredEditorType":"sv","showInvisibleChar":false,"formatCode":true,"displayName":"\u9EC4\u98DE\u535A","rpInfo":{"problem":237.2780396214451,"contest":8.25},"nAccept":191,"nSubmit":194,"rp":245.5280396214451,"rank":2,"level":8,"join":true,"avatarUrl":"//cn.gravatar.com/avatar/2dbb0a041212ea8df395e4d4418e92fa?d=mm&s=128"}';
+    </script>
+      </head>
+<body>
+      <script type="text/javascript" src="../../../resource/1c07a499/entry.js"></script>
+    <script type="text/javascript" src="../../../resource/4.58.0-beta.17/lang-zh.js"></script>
+    <script type="text/javascript" src="../../../hydro-4.58.0-beta.17.js"></script>
+    <nav class="nav slideout-menu" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://www.gzlzoi.cn/"><img class="nav__logo" src="../../../components/navigation/nav-logo-small_dark.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="../index.html" class="nav__item">
+    首页
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../set_theme/dark.html" class="nav__item">
+    题库
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../training.html" class="nav__item">
+    训练
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../contest.html" class="nav__item">
+    比赛
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../homework.html" class="nav__item nav--active">
+    作业
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../discuss.html" class="nav__item">
+    讨论
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="../record@uidOrName=39.html" class="nav__item">
+    评测记录
+  </a>
+</li>
+      </ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+              <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-domain" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <span class="nav__item"><span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span> lzoi2025 <span class="icon icon-expand_more nojs--hide"></span></span>
+        <ol class="dropdown-target menu" id="menu-nav-domain"><li class="menu__item">
+              <a href="../index.html" class="menu__link">
+                <span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span>
+                lzoi2025              </a>
+            </li><li class="menu__seperator"></li><li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 管理
+            </a>
+          </li>
+        </ol>
+      </li>
+          <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <a href="../user/39.html" class="nav__item">202610319 <span class="icon icon-expand_more nojs--hide"></span></a>
+        <ol class="dropdown-target menu" id="menu-nav-user">
+          <li class="menu__item">
+            <a href="../user/39.html" class="menu__link">
+              <span class="icon icon-account--circle"></span> 我的资料
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/messages.html" class="menu__link">
+              <span class="icon icon-comment--multiple"></span> 站内消息
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> @ lzoi2025
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/settings/account.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 账户设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/settings/preference.html" class="menu__link">
+              <span class="icon icon-sliders"></span> 偏好设置
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="../home/security.html" class="menu__link">
+              <span class="icon icon-security"></span> 安全设置
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="../home/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> 我的域
+            </a>
+          </li>
+                              <li class="menu__seperator"></li>
+                    <li class="menu__item">
+            <a href="../logout.html" class="menu__link" name="nav_logout">
+              <span class="icon icon-logout"></span> 登出
+            </a>
+          </li>
+        </ol>
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://www.gzlzoi.cn/" target="_self">
+        <img src="../../../components/navigation/nav-logo-small_dark.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+        <script>
+
+  
+  
+  
+  
+  
+  
+  
+</script>
+<div class="row" data-sticky-parent>
+  <div class="medium-9 columns">
+    <div class="section">
+      <div class="section__header">
+        <h1 class="section__title">
+                    F. 【模板】单源最短路径（标准版）
+        </h1>
+                  <div class="section__tools contest-problems">
+                                                      <a href="424@tid=6947b8bf94db19114128b9c2.html"
+                 class="                        ">
+                <span class="id">A</span>
+                              </a>                                          <a href="425@tid=6947b8bf94db19114128b9c2.html"
+                 class="                        ">
+                <span class="id">B</span>
+                              </a>                                          <a href="426@tid=6947b8bf94db19114128b9c2.html"
+                 class="                        ">
+                <span class="id">C</span>
+                              </a>                                          <a href="428@tid=6947b8bf94db19114128b9c2.html"
+                 class="                        ">
+                <span class="id">D</span>
+                              </a>                                          <a href="427@tid=6947b8bf94db19114128b9c2.html"
+                 class="                        ">
+                <span class="id">E</span>
+                              </a>                                          <a href="68@tid=6947b8bf94db19114128b9c2.html"
+                 class="                         active">
+                <span class="id">F</span>
+                              </a>                                          <a href="429@tid=6947b8bf94db19114128b9c2.html"
+                 class="                        ">
+                <span class="id">G</span>
+                              </a>                                          <a href="430@tid=6947b8bf94db19114128b9c2.html"
+                 class="                        ">
+                <span class="id">H</span>
+                              </a>                                          <a href="433@tid=6947b8bf94db19114128b9c2.html"
+                 class="                        ">
+                <span class="id">I</span>
+                              </a>                                          <a href="431@tid=6947b8bf94db19114128b9c2.html"
+                 class="                        ">
+                <span class="id">J</span>
+                              </a>                                          <a href="432@tid=6947b8bf94db19114128b9c2.html"
+                 class="                        ">
+                <span class="id">K</span>
+                              </a>          </div>
+              </div>
+      <div class="section__body">
+        <ul class="problem__tags">
+                    <span class="problem__tag-item icon icon-book">远端评测题</span>
+                                <span class="problem__tag-item icon icon-stopwatch">1000ms</span>
+            <span class="problem__tag-item icon icon-comparison">512MiB</span>
+                                      </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="problem-content-container"><div class="problem-content" data-marker-enabled>
+        <div class="section__header non-scratchpad--hide">
+          <h1 class="section__title">【模板】单源最短路径（标准版）</h1>
+        </div>
+                <div class="section__body typo richmedia" data-fragment-id="problem-description">
+                            <h2 id="%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0" tabindex="-1">题目描述</h2>
+<p>给定一个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 个点，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span> 条 <strong><font color="#FF0000">有向图，所有边权都为非负整数</font></strong>，请你计算从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span> 出发，到每个点的距离。数据保证你能从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span> 出发到任意点。</p>
+<p>这里有三份模板供大家参考，请注意：</p>
+<ul>
+<li>请大家务必自己写一遍，<strong><font color="#FF0000">这是图论题里最常考的算法</font></strong></li>
+<li>以后大家的代码会越来越长，在第一次写的时候，一定要写规范，并且尽可能封装好，方便以后重复利用</li>
+</ul>
+<details>
+<summary><font color="#FF0000">（点击展开）二维vector+queue：类似 bfs，写法简单，但多数题目会 TLE，不推荐</font></summary>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+const int inf = 1000000000;
+
+// template 是 C++ 的模板方法, 方便我们封装代码
+template &lt;typename T&gt;
+struct Graph {
+	int n;                             // n: 点的个数, m: 边的个数
+	vector&lt;vector&lt;pair&lt;int, int&gt;&gt;&gt; g;  // 二维 vector 存储图
+	vector&lt;T&gt; d;                       // d[i] 表示起点到 i 的最短距离
+	
+	Graph(int n_): n(n_) {
+		g.resize(n + 1);
+		d.resize(n + 1);  // resize() 也可只写长度, 不赋初值
+	}
+	
+	void add_edge(int u, int v, int w) {
+		g[u].push_back({v, w});
+	}
+	
+	void spfa(int s) {
+		// 求最短路, 将 d[i] 赋初值为无穷大
+		for (int i = 1; i &lt;= n; i++) d[i] = inf;
+
+		queue&lt;int&gt; q;
+		q.push(s), d[s] = 0;
+		
+		while (!q.empty()) {
+			auto u = q.front();
+			q.pop();
+			for (auto [v, w] : g[u]) {
+				T tmp = d[u] + w;
+				if (tmp &lt; d[v]) q.push(v), d[v] = tmp;
+			}
+		}
+	}
+};
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
+	
+	int n, m, s,  u, v, w;
+	cin &gt;&gt; n &gt;&gt; m &gt;&gt; s;
+	Graph&lt;int&gt; G(n);
+	while (m--) {
+		cin &gt;&gt; u &gt;&gt; v &gt;&gt; w;
+		G.add_edge(u, v, w);  // 有向图只添加 1 条边
+//		G.add_edge(v, u, w);  // 无向图要添加 2 条边
+	}
+	G.spfa(s);
+	for (int i = 1; i &lt;= n; i++) cout &lt;&lt; G.d[i] &lt;&lt; &quot; \n&quot;[i == n];
+	return 0;
+}
+</code></pre>
+</details>
+<details>
+<summary><font color="#00DD00">（点击展开）链式前向星存储图+priority_queue 优化：跑的最快，推荐</font></summary>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+const int inf = 1000000000;
+
+// template 是 C++ 的模板方法, 方便我们封装代码
+template &lt;typename T&gt;
+struct Graph {
+	int n, m, e;                 // n: 点的个数, m: 边的个数, e: 已经插入的边的个数
+	vector&lt;int&gt; head, pnt, nxt;  // 链式前向星存储图
+	vector&lt;T&gt; wv;                // 边权
+	vector&lt;T&gt; d;                 // d[i] 表示起点到 i 的最短距离
+	
+	Graph(int n_, int m_): n(n_), m(m_) {
+		e = 0;
+		
+		// 依次对 vector 调整长度
+		// resize(n, -1): 表示将长度调整为 n, 并赋初值为 -1
+		head.resize(n + 1, -1);
+		pnt.resize(m, 0);
+		wv.resize(m, 0);
+		nxt.resize(m, 0);
+		d.resize(n + 1);  // resize() 也可只写长度, 不赋初值
+	}
+	
+	void add_edge(int u, int v, int w) {
+		pnt[e] = v, wv[e] = w;
+		nxt[e] = head[u], head[u] = e++;
+	}
+	
+	void spfa_heap(int s) {
+		// 求最短路, 将 d[i] 赋初值为无穷大
+		for (int i = 1; i &lt;= n; i++) d[i] = inf;
+		
+		// 求最短路, 放到优先队列式加个负号
+		priority_queue&lt;pair&lt;T, int&gt;&gt; q;
+		q.push({-(d[s] = 0), s});
+		
+		while (!q.empty()) {
+			auto [w, u] = q.top();
+			q.pop();
+			if (d[u] != -w) continue;
+			for (int i = head[u]; i != -1; i = nxt[i]) {
+				int v = pnt[i];
+				T tmp = d[u] + wv[i];
+				if (tmp &lt; d[v]) q.push({-(d[v] = tmp), v});
+			}
+		}
+	}
+};
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
+	
+	int n, m, s,  u, v, w;
+	cin &gt;&gt; n &gt;&gt; m &gt;&gt; s;
+	Graph&lt;int&gt; G(n, m * 2);
+	while (m--) {
+		cin &gt;&gt; u &gt;&gt; v &gt;&gt; w;
+		G.add_edge(u, v, w);  // 有向图只添加 1 条边
+//		G.add_edge(v, u, w);  // 无向图要添加 2 条边
+	}
+	G.spfa_heap(s);
+	for (int i = 1; i &lt;= n; i++) cout &lt;&lt; G.d[i] &lt;&lt; &quot; \n&quot;[i == n];
+	return 0;
+}
+</code></pre>
+</details>
+<details>
+<summary><font color="#00DD00">（点击展开）二维 vector 存储图+priority_queue 优化：写起来更简单，推荐</font></summary>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+const int inf = 1000000000;
+
+// template 是 C++ 的模板方法, 方便我们封装代码
+template &lt;typename T&gt;
+struct Graph {
+	int n;                             // n: 点的个数, m: 边的个数
+	vector&lt;vector&lt;pair&lt;int, int&gt;&gt;&gt; g;  // 二维 vector 存储图
+	vector&lt;T&gt; d;                       // d[i] 表示起点到 i 的最短距离
+	
+	Graph(int n_): n(n_) {
+		g.resize(n + 1);
+		d.resize(n + 1);  // resize() 也可只写长度, 不赋初值
+	}
+	
+	void add_edge(int u, int v, int w) {
+		g[u].push_back({v, w});
+	}
+	
+	void spfa_heap(int s) {
+		// 求最短路, 将 d[i] 赋初值为无穷大
+		for (int i = 1; i &lt;= n; i++) d[i] = inf;
+		
+		// 求最短路, 放到优先队列式加个负号
+		priority_queue&lt;pair&lt;T, int&gt;&gt; q;
+		q.push({-(d[s] = 0), s});
+		
+		while (!q.empty()) {
+			auto [w, u] = q.top();
+			q.pop();
+			if (d[u] != -w) continue;
+			for (auto [v, w] : g[u]) {
+				T tmp = d[u] + w;
+				if (tmp &lt; d[v]) q.push({-(d[v] = tmp), v});
+			}
+		}
+	}
+};
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
+	
+	int n, m, s,  u, v, w;
+	cin &gt;&gt; n &gt;&gt; m &gt;&gt; s;
+	Graph&lt;int&gt; G(n);
+	while (m--) {
+		cin &gt;&gt; u &gt;&gt; v &gt;&gt; w;
+		G.add_edge(u, v, w);  // 有向图只添加 1 条边
+//		G.add_edge(v, u, w);  // 无向图要添加 2 条边
+	}
+	G.spfa_heap(s);
+	for (int i = 1; i &lt;= n; i++) cout &lt;&lt; G.d[i] &lt;&lt; &quot; \n&quot;[i == n];
+	return 0;
+}
+</code></pre>
+</details>
+<h2 id="%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F" tabindex="-1">输入格式</h2>
+<p>第一行为三个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo separator="true">,</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">n, m, s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">m</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">s</span></span></span></span>。
+第二行起 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span> 行，每行三个非负整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>v</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>w</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">u_i, v_i, w_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，表示从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">u_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">v_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 有一条权值为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">w_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 的有向边。</p>
+<h2 id="%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F" tabindex="-1">输出格式</h2>
+<p>输出一行 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 个空格分隔的非负整数，表示 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span> 到每个点的距离。</p>
+<pre><code class="language-input1">4 6 1
+1 2 2
+2 3 2
+2 4 1
+1 3 5
+3 4 3
+1 4 4
+</code></pre>
+<pre><code class="language-output1">0 2 4 3
+</code></pre>
+<h2 id="%E6%8F%90%E7%A4%BA" tabindex="-1">提示</h2>
+<p><strong>【样例 1 解释】</strong></p>
+<ul>
+<li>推荐一个在线画图工具, <a href="https://csacademy.com/app/graph_editor/">graph_editor</a></li>
+</ul>
+<h2 id="%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1%E4%B8%8E%E9%99%90%E5%88%B6" tabindex="-1">数据规模与限制</h2>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><msup><mn>10</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">1 \leq n \leq 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span>；</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>m</mi><mo>≤</mo><mn>2</mn><mo>×</mo><msup><mn>10</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">1 \leq m \leq 2\times 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span>；</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>u</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>v</mi><mi>i</mi></msub><mo>≤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">1 \leq u_i, v_i\leq n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>；</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><msub><mi>w</mi><mi>i</mi></msub><mo>≤</mo><msup><mn>10</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">0 \leq w_i \leq 10 ^ 9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.786em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span>,</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mo>∑</mo><msub><mi>w</mi><mi>i</mi></msub><mo>≤</mo><msup><mn>10</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">0 \leq \sum w_i \leq 10 ^ 9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span>。</li>
+</ul>
+
+</div>      </div></div>
+    </div>
+  </div>
+  <div class="medium-3 columns"><div data-sticky="large">
+          <div class="section side section--problem-sidebar">
+  <div>
+    <ol class="menu">
+              <li class="menu__item scratchpad--hide nojs--hide"><a class="menu__link highlight" name="problem-sidebar__open-scratchpad" href="javascript:;" data-global-hotkey="alt+e" style="display: none;">
+        <span class="icon icon-enlarge"></span> 进入在线编程模式 (Alt+E)
+      </a></li>
+      <li class="menu__item non-scratchpad--hide"><a class="menu__link" name="problem-sidebar__quit-scratchpad" href="javascript:;" data-global-hotkey="alt+q">
+        <span class="icon icon-enlarge"></span> 退出在线编程模式 (Alt+Q)
+      </a></li>
+          <li class="menu__item scratchpad--hide"><a class="menu__link" href="P4779/submit@tid=6947b8bf94db19114128b9c2.html">
+        <span class="icon icon-send"></span> 递交
+      </a></li>
+            </ol>
+  </div>
+</div>    <div class="section side">
+  <a class="contest-sidebar__bg" href="../homework/6947b8bf94db19114128b9c2.html">
+    <div class="section__body">
+      <h1>【2026-01-10】学校要封校，不能上课，我们寒假再见（请大家点开作业）</h1>
+      <div class="contest-sidebar__status">
+              <span class="icon icon-check"></span> 已认领
+            </div>
+    </div>
+  </a>
+  <div>
+    <ol class="menu">
+          <li class="menu__item"><a class="menu__link" href="../homework/6947b8bf94db19114128b9c2.html">
+        <span class="icon icon-homework"></span> 查看作业
+      </a></li>
+                  <li class="menu__item"><a class="menu__link" href="https://www.gzlzoi.cn/d/lzoi2025/homework/6947b8bf94db19114128b9c2/scoreboard">
+        <span class="icon icon-statistics"></span> 成绩表
+      </a></li>
+                  <li class="menu__item"><a class="menu__link" href="../record@uidOrName=39&amp;tid=6947b8bf94db19114128b9c2.html">
+        <span class="icon icon-flag"></span> 我的最近递交记录
+      </a></li>
+          <li class="menu__item"><a class="menu__link" href="https://www.gzlzoi.cn/d/lzoi2025Error:&#32;No&#32;route&#32;found&#32;for&#32;name:&#32;wiki#homework">
+        <span class="icon icon-help"></span> 帮助
+      </a></li>
+      <li class="menu__seperator"></li>
+    </ol>
+  </div>
+  <div class="section__body typo">
+    <dl class="large horizontal">
+      <dt>状态</dt><dd>正在进行…</dd>
+      <dt>题目</dt><dd>11</dd>
+      <dt>开始时间</dt><dd><span class="time" data-timestamp="1767744000">2026-1-7 8:00</span>
+</dd>
+      <dt>截止时间</dt><dd><span class="time" data-timestamp="1818950340">2027-8-22 23:59</span>
+</dd>
+      <dt>可延期</dt><dd>24
+ 小时</dd>
+    </dl>
+  </div>
+</div>    </div></div>
+</div>
+<div style="display:none" class="outer-loader-container"><div class="loader"></div></div>
+<div class="scratchpad-container" style="display:none">
+  <div style="display:none" class="loader-container"><div class="loader"></div></div>
+  <div id="scratchpad" style="opacity:0"></div>
+</div>
+  </div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+      <div class="row footer__links">
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          状态
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://www.gzlzoi.cn/d/lzoi2025/record">评测队列</a></li>
+          <li class="footer__category__item"><a href="../status.html">服务状态</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          开发
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">开源</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          支持
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/help.html">帮助</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">联系我们</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable end">
+        <h1>
+          关于
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="../wiki/about.html">关于</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#privacy">隐私</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#tos">服务条款</a></li>
+          <li class="footer__category__item"><a href="../wiki/about.html#contact">版权申诉</a></li>
+        </ul></div>
+      </div>
+    </div>
+      <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+                    <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-lang"><li class="menu__item"><a class="menu__link" href="../language/en.html">English</a></li><li class="menu__item"><a class="menu__link" href="../language/ko.html">한국어</a></li><li class="menu__item"><a class="menu__link" href="../language/zh.html">简体中文</a></li><li class="menu__item"><a class="menu__link" href="../language/zh_TW.html">正體中文</a></li></ol>
+          </li>
+          <li class="footer__extra-link-item">
+                          <a href="https://www.gzlzoi.cn/legacy?legacy=true">兼容模式</a>
+                      </li>
+          <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> 主题 <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-theme">
+              <li class="menu__item"><a class="menu__link" href="../set_theme/light.html">亮色</a></li>
+              <li class="menu__item"><a class="menu__link" href="../set_theme/dark.html">暗色</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><a href="https://beian.miit.gov.cn/">京ICP备2023010486号-3</a></li><li class="footer__extra-link-item">Worker 0, 22ms</li>
+          <!-- Prepare 6ms -->
+          <!-- Method 0ms -->
+          
+          
+          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v5.0.0-beta.16</a> Community</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      window.UiContextNew = '{"problemId":"P4779","problemNumId":68,"codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","pdoc":{"_id":"689449cdc2f34c36e4fe8b5f","content":"{\\"zh\\":\\"## \u9898\u76EE\u63CF\u8FF0\\\\n\u7ED9\u5B9A\u4E00\u4E2A $n$ \u4E2A\u70B9\uFF0C$m$ \u6761 **<font color=\\\\\\"#FF0000\\\\\\">\u6709\u5411\u56FE\uFF0C\u6240\u6709\u8FB9\u6743\u90FD\u4E3A\u975E\u8D1F\u6574\u6570</font>**\uFF0C\u8BF7\u4F60\u8BA1\u7B97\u4ECE $s$ \u51FA\u53D1\uFF0C\u5230\u6BCF\u4E2A\u70B9\u7684\u8DDD\u79BB\u3002\u6570\u636E\u4FDD\u8BC1\u4F60\u80FD\u4ECE $s$ \u51FA\u53D1\u5230\u4EFB\u610F\u70B9\u3002\\\\n\\\\n\\\\n\\\\n\u8FD9\u91CC\u6709\u4E09\u4EFD\u6A21\u677F\u4F9B\u5927\u5BB6\u53C2\u8003\uFF0C\u8BF7\u6CE8\u610F\uFF1A\\\\n- \u8BF7\u5927\u5BB6\u52A1\u5FC5\u81EA\u5DF1\u5199\u4E00\u904D\uFF0C**<font color=\\\\\\"#FF0000\\\\\\">\u8FD9\u662F\u56FE\u8BBA\u9898\u91CC\u6700\u5E38\u8003\u7684\u7B97\u6CD5</font>**\\\\n- \u4EE5\u540E\u5927\u5BB6\u7684\u4EE3\u7801\u4F1A\u8D8A\u6765\u8D8A\u957F\uFF0C\u5728\u7B2C\u4E00\u6B21\u5199\u7684\u65F6\u5019\uFF0C\u4E00\u5B9A\u8981\u5199\u89C4\u8303\uFF0C\u5E76\u4E14\u5C3D\u53EF\u80FD\u5C01\u88C5\u597D\uFF0C\u65B9\u4FBF\u4EE5\u540E\u91CD\u590D\u5229\u7528\\\\n\\\\n<details>\\\\n<summary><font color=\\\\\\"#FF0000\\\\\\">\uFF08\u70B9\u51FB\u5C55\u5F00\uFF09\u4E8C\u7EF4vector+queue\uFF1A\u7C7B\u4F3C bfs\uFF0C\u5199\u6CD5\u7B80\u5355\uFF0C\u4F46\u591A\u6570\u9898\u76EE\u4F1A TLE\uFF0C\u4E0D\u63A8\u8350</font></summary>\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nconst int inf = 1000000000;\\\\n\\\\n// template \u662F C++ \u7684\u6A21\u677F\u65B9\u6CD5, \u65B9\u4FBF\u6211\u4EEC\u5C01\u88C5\u4EE3\u7801\\\\ntemplate <typename T>\\\\nstruct Graph {\\\\n\\\\tint n;                             // n: \u70B9\u7684\u4E2A\u6570, m: \u8FB9\u7684\u4E2A\u6570\\\\n\\\\tvector<vector<pair<int, int>>> g;  // \u4E8C\u7EF4 vector \u5B58\u50A8\u56FE\\\\n\\\\tvector<T> d;                       // d[i] \u8868\u793A\u8D77\u70B9\u5230 i \u7684\u6700\u77ED\u8DDD\u79BB\\\\n\\\\t\\\\n\\\\tGraph(int n_): n(n_) {\\\\n\\\\t\\\\tg.resize(n + 1);\\\\n\\\\t\\\\td.resize(n + 1);  // resize() \u4E5F\u53EF\u53EA\u5199\u957F\u5EA6, \u4E0D\u8D4B\u521D\u503C\\\\n\\\\t}\\\\n\\\\t\\\\n\\\\tvoid add_edge(int u, int v, int w) {\\\\n\\\\t\\\\tg[u].push_back({v, w});\\\\n\\\\t}\\\\n\\\\t\\\\n\\\\tvoid spfa(int s) {\\\\n\\\\t\\\\t// \u6C42\u6700\u77ED\u8DEF, \u5C06 d[i] \u8D4B\u521D\u503C\u4E3A\u65E0\u7A77\u5927\\\\n\\\\t\\\\tfor (int i = 1; i <= n; i++) d[i] = inf;\\\\n\\\\n\\\\t\\\\tqueue<int> q;\\\\n\\\\t\\\\tq.push(s), d[s] = 0;\\\\n\\\\t\\\\t\\\\n\\\\t\\\\twhile (!q.empty()) {\\\\n\\\\t\\\\t\\\\tauto u = q.front();\\\\n\\\\t\\\\t\\\\tq.pop();\\\\n\\\\t\\\\t\\\\tfor (auto [v, w] : g[u]) {\\\\n\\\\t\\\\t\\\\t\\\\tT tmp = d[u] + w;\\\\n\\\\t\\\\t\\\\t\\\\tif (tmp < d[v]) q.push(v), d[v] = tmp;\\\\n\\\\t\\\\t\\\\t}\\\\n\\\\t\\\\t}\\\\n\\\\t}\\\\n};\\\\n\\\\nint main() {\\\\n\\\\tios::sync_with_stdio(false);\\\\n\\\\tcin.tie(0); cout.tie(0);\\\\n\\\\t\\\\n\\\\tint n, m, s,  u, v, w;\\\\n\\\\tcin >> n >> m >> s;\\\\n\\\\tGraph<int> G(n);\\\\n\\\\twhile (m--) {\\\\n\\\\t\\\\tcin >> u >> v >> w;\\\\n\\\\t\\\\tG.add_edge(u, v, w);  // \u6709\u5411\u56FE\u53EA\u6DFB\u52A0 1 \u6761\u8FB9\\\\n//\\\\t\\\\tG.add_edge(v, u, w);  // \u65E0\u5411\u56FE\u8981\u6DFB\u52A0 2 \u6761\u8FB9\\\\n\\\\t}\\\\n\\\\tG.spfa(s);\\\\n\\\\tfor (int i = 1; i <= n; i++) cout << G.d[i] << \\\\\\" \\\\\\\\n\\\\\\"[i == n];\\\\n\\\\treturn 0;\\\\n}\\\\n```\\\\n\\\\n</details>\\\\n\\\\n<details>\\\\n<summary><font color=\\\\\\"#00DD00\\\\\\">\uFF08\u70B9\u51FB\u5C55\u5F00\uFF09\u94FE\u5F0F\u524D\u5411\u661F\u5B58\u50A8\u56FE+priority_queue \u4F18\u5316\uFF1A\u8DD1\u7684\u6700\u5FEB\uFF0C\u63A8\u8350</font></summary>\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nconst int inf = 1000000000;\\\\n\\\\n// template \u662F C++ \u7684\u6A21\u677F\u65B9\u6CD5, \u65B9\u4FBF\u6211\u4EEC\u5C01\u88C5\u4EE3\u7801\\\\ntemplate <typename T>\\\\nstruct Graph {\\\\n\\\\tint n, m, e;                 // n: \u70B9\u7684\u4E2A\u6570, m: \u8FB9\u7684\u4E2A\u6570, e: \u5DF2\u7ECF\u63D2\u5165\u7684\u8FB9\u7684\u4E2A\u6570\\\\n\\\\tvector<int> head, pnt, nxt;  // \u94FE\u5F0F\u524D\u5411\u661F\u5B58\u50A8\u56FE\\\\n\\\\tvector<T> wv;                // \u8FB9\u6743\\\\n\\\\tvector<T> d;                 // d[i] \u8868\u793A\u8D77\u70B9\u5230 i \u7684\u6700\u77ED\u8DDD\u79BB\\\\n\\\\t\\\\n\\\\tGraph(int n_, int m_): n(n_), m(m_) {\\\\n\\\\t\\\\te = 0;\\\\n\\\\t\\\\t\\\\n\\\\t\\\\t// \u4F9D\u6B21\u5BF9 vector \u8C03\u6574\u957F\u5EA6\\\\n\\\\t\\\\t// resize(n, -1): \u8868\u793A\u5C06\u957F\u5EA6\u8C03\u6574\u4E3A n, \u5E76\u8D4B\u521D\u503C\u4E3A -1\\\\n\\\\t\\\\thead.resize(n + 1, -1);\\\\n\\\\t\\\\tpnt.resize(m, 0);\\\\n\\\\t\\\\twv.resize(m, 0);\\\\n\\\\t\\\\tnxt.resize(m, 0);\\\\n\\\\t\\\\td.resize(n + 1);  // resize() \u4E5F\u53EF\u53EA\u5199\u957F\u5EA6, \u4E0D\u8D4B\u521D\u503C\\\\n\\\\t}\\\\n\\\\t\\\\n\\\\tvoid add_edge(int u, int v, int w) {\\\\n\\\\t\\\\tpnt[e] = v, wv[e] = w;\\\\n\\\\t\\\\tnxt[e] = head[u], head[u] = e++;\\\\n\\\\t}\\\\n\\\\t\\\\n\\\\tvoid spfa_heap(int s) {\\\\n\\\\t\\\\t// \u6C42\u6700\u77ED\u8DEF, \u5C06 d[i] \u8D4B\u521D\u503C\u4E3A\u65E0\u7A77\u5927\\\\n\\\\t\\\\tfor (int i = 1; i <= n; i++) d[i] = inf;\\\\n\\\\t\\\\t\\\\n\\\\t\\\\t// \u6C42\u6700\u77ED\u8DEF, \u653E\u5230\u4F18\u5148\u961F\u5217\u5F0F\u52A0\u4E2A\u8D1F\u53F7\\\\n\\\\t\\\\tpriority_queue<pair<T, int>> q;\\\\n\\\\t\\\\tq.push({-(d[s] = 0), s});\\\\n\\\\t\\\\t\\\\n\\\\t\\\\twhile (!q.empty()) {\\\\n\\\\t\\\\t\\\\tauto [w, u] = q.top();\\\\n\\\\t\\\\t\\\\tq.pop();\\\\n\\\\t\\\\t\\\\tif (d[u] != -w) continue;\\\\n\\\\t\\\\t\\\\tfor (int i = head[u]; i != -1; i = nxt[i]) {\\\\n\\\\t\\\\t\\\\t\\\\tint v = pnt[i];\\\\n\\\\t\\\\t\\\\t\\\\tT tmp = d[u] + wv[i];\\\\n\\\\t\\\\t\\\\t\\\\tif (tmp < d[v]) q.push({-(d[v] = tmp), v});\\\\n\\\\t\\\\t\\\\t}\\\\n\\\\t\\\\t}\\\\n\\\\t}\\\\n};\\\\n\\\\nint main() {\\\\n\\\\tios::sync_with_stdio(false);\\\\n\\\\tcin.tie(0); cout.tie(0);\\\\n\\\\t\\\\n\\\\tint n, m, s,  u, v, w;\\\\n\\\\tcin >> n >> m >> s;\\\\n\\\\tGraph<int> G(n, m * 2);\\\\n\\\\twhile (m--) {\\\\n\\\\t\\\\tcin >> u >> v >> w;\\\\n\\\\t\\\\tG.add_edge(u, v, w);  // \u6709\u5411\u56FE\u53EA\u6DFB\u52A0 1 \u6761\u8FB9\\\\n//\\\\t\\\\tG.add_edge(v, u, w);  // \u65E0\u5411\u56FE\u8981\u6DFB\u52A0 2 \u6761\u8FB9\\\\n\\\\t}\\\\n\\\\tG.spfa_heap(s);\\\\n\\\\tfor (int i = 1; i <= n; i++) cout << G.d[i] << \\\\\\" \\\\\\\\n\\\\\\"[i == n];\\\\n\\\\treturn 0;\\\\n}\\\\n```\\\\n</details>\\\\n\\\\n<details>\\\\n<summary><font color=\\\\\\"#00DD00\\\\\\">\uFF08\u70B9\u51FB\u5C55\u5F00\uFF09\u4E8C\u7EF4 vector \u5B58\u50A8\u56FE+priority_queue \u4F18\u5316\uFF1A\u5199\u8D77\u6765\u66F4\u7B80\u5355\uFF0C\u63A8\u8350</font></summary>\\\\n\\\\n```c++\\\\n#include <bits/stdc++.h>\\\\nusing namespace std;\\\\n\\\\nconst int inf = 1000000000;\\\\n\\\\n// template \u662F C++ \u7684\u6A21\u677F\u65B9\u6CD5, \u65B9\u4FBF\u6211\u4EEC\u5C01\u88C5\u4EE3\u7801\\\\ntemplate <typename T>\\\\nstruct Graph {\\\\n\\\\tint n;                             // n: \u70B9\u7684\u4E2A\u6570, m: \u8FB9\u7684\u4E2A\u6570\\\\n\\\\tvector<vector<pair<int, int>>> g;  // \u4E8C\u7EF4 vector \u5B58\u50A8\u56FE\\\\n\\\\tvector<T> d;                       // d[i] \u8868\u793A\u8D77\u70B9\u5230 i \u7684\u6700\u77ED\u8DDD\u79BB\\\\n\\\\t\\\\n\\\\tGraph(int n_): n(n_) {\\\\n\\\\t\\\\tg.resize(n + 1);\\\\n\\\\t\\\\td.resize(n + 1);  // resize() \u4E5F\u53EF\u53EA\u5199\u957F\u5EA6, \u4E0D\u8D4B\u521D\u503C\\\\n\\\\t}\\\\n\\\\t\\\\n\\\\tvoid add_edge(int u, int v, int w) {\\\\n\\\\t\\\\tg[u].push_back({v, w});\\\\n\\\\t}\\\\n\\\\t\\\\n\\\\tvoid spfa_heap(int s) {\\\\n\\\\t\\\\t// \u6C42\u6700\u77ED\u8DEF, \u5C06 d[i] \u8D4B\u521D\u503C\u4E3A\u65E0\u7A77\u5927\\\\n\\\\t\\\\tfor (int i = 1; i <= n; i++) d[i] = inf;\\\\n\\\\t\\\\t\\\\n\\\\t\\\\t// \u6C42\u6700\u77ED\u8DEF, \u653E\u5230\u4F18\u5148\u961F\u5217\u5F0F\u52A0\u4E2A\u8D1F\u53F7\\\\n\\\\t\\\\tpriority_queue<pair<T, int>> q;\\\\n\\\\t\\\\tq.push({-(d[s] = 0), s});\\\\n\\\\t\\\\t\\\\n\\\\t\\\\twhile (!q.empty()) {\\\\n\\\\t\\\\t\\\\tauto [w, u] = q.top();\\\\n\\\\t\\\\t\\\\tq.pop();\\\\n\\\\t\\\\t\\\\tif (d[u] != -w) continue;\\\\n\\\\t\\\\t\\\\tfor (auto [v, w] : g[u]) {\\\\n\\\\t\\\\t\\\\t\\\\tT tmp = d[u] + w;\\\\n\\\\t\\\\t\\\\t\\\\tif (tmp < d[v]) q.push({-(d[v] = tmp), v});\\\\n\\\\t\\\\t\\\\t}\\\\n\\\\t\\\\t}\\\\n\\\\t}\\\\n};\\\\n\\\\nint main() {\\\\n\\\\tios::sync_with_stdio(false);\\\\n\\\\tcin.tie(0); cout.tie(0);\\\\n\\\\t\\\\n\\\\tint n, m, s,  u, v, w;\\\\n\\\\tcin >> n >> m >> s;\\\\n\\\\tGraph<int> G(n);\\\\n\\\\twhile (m--) {\\\\n\\\\t\\\\tcin >> u >> v >> w;\\\\n\\\\t\\\\tG.add_edge(u, v, w);  // \u6709\u5411\u56FE\u53EA\u6DFB\u52A0 1 \u6761\u8FB9\\\\n//\\\\t\\\\tG.add_edge(v, u, w);  // \u65E0\u5411\u56FE\u8981\u6DFB\u52A0 2 \u6761\u8FB9\\\\n\\\\t}\\\\n\\\\tG.spfa_heap(s);\\\\n\\\\tfor (int i = 1; i <= n; i++) cout << G.d[i] << \\\\\\" \\\\\\\\n\\\\\\"[i == n];\\\\n\\\\treturn 0;\\\\n}\\\\n```\\\\n\\\\n</details>\\\\n\\\\n## \u8F93\u5165\u683C\u5F0F\\\\n\u7B2C\u4E00\u884C\u4E3A\u4E09\u4E2A\u6B63\u6574\u6570 $n, m, s$\u3002\\\\n\u7B2C\u4E8C\u884C\u8D77 $m$ \u884C\uFF0C\u6BCF\u884C\u4E09\u4E2A\u975E\u8D1F\u6574\u6570 $u_i, v_i, w_i$\uFF0C\u8868\u793A\u4ECE $u_i$ \u5230 $v_i$ \u6709\u4E00\u6761\u6743\u503C\u4E3A $w_i$ \u7684\u6709\u5411\u8FB9\u3002\\\\n\\\\n## \u8F93\u51FA\u683C\u5F0F\\\\n\u8F93\u51FA\u4E00\u884C $n$ \u4E2A\u7A7A\u683C\u5206\u9694\u7684\u975E\u8D1F\u6574\u6570\uFF0C\u8868\u793A $s$ \u5230\u6BCF\u4E2A\u70B9\u7684\u8DDD\u79BB\u3002\\\\n\\\\n```input1\\\\n4 6 1\\\\n1 2 2\\\\n2 3 2\\\\n2 4 1\\\\n1 3 5\\\\n3 4 3\\\\n1 4 4\\\\n```\\\\n\\\\n```output1\\\\n0 2 4 3\\\\n```\\\\n\\\\n## \u63D0\u793A\\\\n**\u3010\u6837\u4F8B 1 \u89E3\u91CA\u3011**\\\\n- \u63A8\u8350\u4E00\u4E2A\u5728\u7EBF\u753B\u56FE\u5DE5\u5177, [graph_editor](https://csacademy.com/app/graph_editor/)\\\\n\\\\n## \u6570\u636E\u89C4\u6A21\u4E0E\u9650\u5236\\\\n\\\\n- $1 \\\\\\\\leq n \\\\\\\\leq 10^5$\uFF1B\\\\n- $1 \\\\\\\\leq m \\\\\\\\leq 2\\\\\\\\times 10^5$\uFF1B\\\\n- $1 \\\\\\\\leq u_i, v_i\\\\\\\\leq n$\uFF1B\\\\n- $0 \\\\\\\\leq w_i \\\\\\\\leq 10 ^ 9$,\\\\n- $0 \\\\\\\\leq \\\\\\\\sum w_i \\\\\\\\leq 10 ^ 9$\u3002\\\\n\\"}","owner":1,"domainId":"lzoi2025","docType":10,"docId":68,"title":"\u3010\u6A21\u677F\u3011\u5355\u6E90\u6700\u77ED\u8DEF\u5F84\uFF08\u6807\u51C6\u7248\uFF09","tag":[],"hidden":false,"pid":"P4779","reference":{"domainId":"luogu","pid":3775},"html":false,"config":{"count":7,"memoryMin":512,"memoryMax":512,"timeMin":1000,"timeMax":1000,"type":"remote_judge","subType":"luogu","target":"P4779","langs":["cc.cc14o2","cc.cc17o2","py.py3"]},"additional_file":[{"_id":"graph.png","name":"graph.png","size":17503,"lastModified":"2025-08-07T06:47:26.508Z","etag":"L2RhdGEvZmlsZS9oeWRyby94bngvN29vbXBidTJ6c2IxMGVwMjZnbzBsLnBuZw=="}]},"tdoc":{"_id":"6947b8bf94db19114128b9c2","content":"\u30102026-01-10\u3011\u5B66\u6821\u8981\u5C01\u6821\uFF0C\u4E0D\u80FD\u4E0A\u8BFE\uFF0C\u6211\u4EEC\u5BD2\u5047\u518D\u89C1\\r\\n- \u4F5C\u4E1A\u91CC\u9762\u662F\u4E00\u4E9B\u5927\u5BB6\u505A\u7684\u4E0D\u597D\u7684\u9898\u76EE\uFF0C\u8BF7\u5927\u5BB6\u8BA4\u771F\u5B8C\u6210","owner":2,"domainId":"lzoi2025","docType":30,"docId":"6947b8bf94db19114128b9c2","assign":["20250804\u4E0A\u5348"],"penaltySince":"2027-08-22T15:59:00.000Z","penaltyRules":{"1":0.9,"3":0.8,"12":0.75,"9999":0.5},"title":"\u30102026-01-10\u3011\u5B66\u6821\u8981\u5C01\u6821\uFF0C\u4E0D\u80FD\u4E0A\u8BFE\uFF0C\u6211\u4EEC\u5BD2\u5047\u518D\u89C1\uFF08\u8BF7\u5927\u5BB6\u70B9\u5F00\u4F5C\u4E1A\uFF09","rule":"homework","beginAt":"2026-01-07T00:00:00.000Z","endAt":"2027-08-23T15:59:00.000Z","pids":[424,425,426,428,427,68,429,430,433,431,432],"attend":39,"rated":false,"langs":[],"maintainer":[2]},"tsdoc":{"attend":1,"startAt":"2025-12-21T11:43:42.180Z"},"canViewRecord":true,"postSubmitUrl":"/d/lzoi2025/p/68/submit?tid=6947b8bf94db19114128b9c2","getSubmissionsUrl":"/d/lzoi2025/record?fullStatus=true&pid=68&tid=6947b8bf94db19114128b9c2","getRecordDetailUrl":"/d/lzoi2025/record/%7Brid%7D?tid=6947b8bf94db19114128b9c2","pretestConnUrl":"record-conn?pretest=1&uidOrName=39&pid=68&domainId=lzoi2025&tid=6947b8bf94db19114128b9c2"}';
+      window.UserContextNew = '{}';
+    </script>
+  </body>
+</html>

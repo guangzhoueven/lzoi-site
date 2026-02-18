@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 L, R;
+	cin >> L >> R;
+	
+	i64 sqrtR = sqrt(R);
+	vector<bool> ok(sqrtR + 1, true);
+	vector<i64> primes;
+	
+	// 线性筛小素数
+	for (i64 i = 2; i <= sqrtR; i++) {
+		if (ok[i]) primes.push_back(i);
+		for (auto p : primes) {
+			if (i * p > sqrtR) break;
+			ok[i * p] = false;
+			if (i % p == 0) break;
+		}
+	}
+	
+	// 区间筛，直接复用ok数组
+	ok.assign(R - L + 1, true);
+	if (L == 1) ok[0] = false;
+	for (i64 p : primes) {
+		for (i64 j = max(p * p, (L + p - 1) / p * p); j <= R; j += p) 
+			ok[j - L] = false;
+	}
+
+	cout << count(ok.begin(), ok.end(), true) << "\n";	
+	return 0;
+}

@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+using pii = pair<int, int>;
+int main() {
+    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n;
+	cin >> n;										// n 场电影
+	vector<pii> movies(n); 							// 每场电影放映的开始-结束区间： moves<L，R>
+
+	for (int i = 0; i < n; i++) {	    			// 0-based
+		cin >> movies[i].first >> movies[i].second; // 开始时间-结束时间：<L,R>
+	}
+
+	sort(movies.begin(), movies.end(), [&](const pii & x, const pii & y) {
+		return x.second < y.second;					// 按电影的 结束时间 从小到大排序
+	});
+
+	int cnt = 1, last_end = movies[0].second; 		// 初始化：last_end = 第一场电影的结束时间
+	for (int i = 1; i < n; i++) {
+		if (movies[i].first >= last_end) {    		// 下一场电影[开始时间] 要在上一场电影[结束时间]后才能开始
+			cnt++;									// 统计可观看电影的数量
+			last_end = movies[i].second;			// 看完一场电影，其结束时间重新更新给last_end
+		}
+	}
+	cout << cnt << "\n";
+	return 0;
+}

@@ -1,0 +1,74 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+i64 ok1(vector<i64>& a) {		// 【方法1】预计算左右最大值的贡献法
+	i64 n = a.size();
+	vector<i64> L(n, a[0]);
+	for (i64 i = 1; i < n; i++) 	 L[i] = max(L[i - 1], a[i]);    // L(i): [a(0), a(1), ... a(i)] 最大的数
+
+	vector<i64> R(n, a[n - 1]);
+	for (i64 i = n - 2; i >= 0; i--) R[i] = max(R[i + 1], a[i]);    // R(i): [a(i), a(i + 1), ... a(n - 1)] 最大的数
+
+	i64 ans = 0;
+	for (i64 i = 1; i < n - 1; i++)  ans += min(L[i], R[i]) - a[i];	// 左右两边的最大值, 取较小的那个
+	return ans;              // 积水量[i] = min(左边最高柱子, 右边最高柱子) - 当前高度[i]
+}
+
+i64 ok2(vector<i64>& a) {		// 【方法2】标准双指针法
+	i64 n = a.size();
+	if (n < 3) return 0;
+
+	i64 L = 0, R = n - 1;
+	i64 LMax = a[L], RMax = a[R];
+	i64 ans = 0;
+
+	while (L < R) {   								// 核心：总是处理较矮的一边, 当 L == R 时，该柱子是最高点，不会积水
+		if (a[L] <= a[R]) {
+			L++;  									// 先移动左指针
+			if (a[L] < LMax) ans += LMax - a[L];  	// 计算积水
+			else LMax = a[L];  						// 更新左边最大值
+		} else {
+			R--;  									// 先移动右指针
+			if (a[R] < RMax) ans += RMax - a[R];  	// 计算积水
+			else RMax = a[R];  						// 更新右边最大值
+		}
+	}
+	return ans;
+}
+
+i64 ok3(vector<i64>& a) {		// 【方法3】单调栈法
+	i64 n = a.size(), ans = 0;
+	// 单调栈：存储柱子下标，保证栈中对应柱子高度单调递减
+	// 栈底 → 栈顶：高度递减（或相等）
+	stack<i64> st;
+	for (i64 i = 0; i < n; i++) {
+		// 关键：当遇到比栈顶高的柱子时，可能形成积水区域
+		// 条件 a[i] >= a[st.top()]：当前柱子不低于栈顶柱子
+		while (!st.empty() && a[i] >= a[st.top()]) {
+			i64 B = st.top();  				// B：当前低洼处的底部（栈顶柱子）
+			st.pop();  						// 弹出底部，因为它将被水覆盖
+			if (st.empty()) break;  		// 栈空说明没有左边界，无法形成积水
+			i64 L = st.top();  				// L：左边界（新的栈顶）
+			i64 W = i - L - 1;  			// W：积水宽度 = 左右边界之间的柱子数量
+			i64 H = min(a[L], a[i]) - a[B]; // H：积水高度 = min(左边界高度, 右边界高度) - 底部高度，水不会超过两边较矮的那个
+			ans += H * W;  					// 累加当前低洼区域的积水体积（高度 × 宽度）
+		}
+		st.push(i);  						// 将当前柱子下标入栈，保持单调递减性
+	}
+	return ans;
+}
+
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n;
+	cin >> n;
+	vector<i64> a(n);
+
+	for (auto& x : a) cin >> x;
+	cout << ok1(a) << "\n"; // 【方法1】预计算左右最大值的贡献法
+//	cout << ok2(a) << "\n"; // 【方法2】标准双指针法
+//	cout << ok3(a) << "\n"; // 【方法3】单调栈法
+	return 0;
+}

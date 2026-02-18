@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+using pii = pair<i64, i64>;
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n, m;
+	cin >> n >> m;
+	vector<pii> ab(n);
+	for (int i = 0; i < n; i++) cin >> ab[i].first >> ab[i].second;
+
+	vector<pii> d_ab(n);
+	for (int i = 0; i < n; i++) d_ab[i] = {(ab[i].first - ab[i].second), i};
+
+	sort(d_ab.begin(), d_ab.end(), [&](const auto & x, const auto & y) {
+		return x.first > y.first;  		// 差值大的 降序排序
+	});
+
+	i64 ans = 0;
+	// 先从数字a中选m个数（差值最大的）
+	for (int i = 0; i < m; i++)	ans += ab[d_ab[i].second].first;
+
+	// 再从数组b中选n-m个数，计算最大总和
+	for (int i = m; i < n; i++)	ans += ab[d_ab[i].second].second;
+
+	cout << ans << "\n";
+	return 0;
+}

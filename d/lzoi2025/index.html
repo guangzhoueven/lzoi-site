@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html data-page="homepage" data-layout="basic" class="layout--basic page--homepage theme--dark nojs" data-mantine-color-scheme="dark" lang="zh_TW" data-app="Hydro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.gzlzoi.cn/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="../../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://www.gzlzoi.cn/">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="乐知课堂" />
+  <meta property="og:url" content="https://www.gzlzoi.cn/" />
+  <meta property="og:image" content="/favicon-96x96.png" />
+      <title>首頁 - 乐知课堂</title>
+  <style>
+    body {
+      --font-family: "Microsoft Yahei", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Consolas", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="../../theme-4.58.0-beta.17.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      window.UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","hydroacFeatures":[],"blspHost":"wss://ws.hydrooj.com","constantVersion":"1c07a499","domainId":"lzoi2025","domain":{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"},"SWConfig":{"preload":"","hosts":["http://www.gzlzoi.cn","https://www.gzlzoi.cn","https://www.gzlzoi.cn/","/"],"assets":[],"domains":[]}}';
+      window.UserContext = '{"_id":39,"mail":"202610319@gzlzoi.cn","uname":"202610319","hashType":"hydro","priv":4,"regat":"2025-07-01T02:30:33.477Z","loginat":"2026-02-06T00:24:21.126Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921","role":"\u5B66\u751F","scope":"BigInt::-1","tfa":false,"authn":false,"group":["20250702\u4E0A\u5348","\u4E34\u65F6\u5C0F\u7EC4","20250804\u4E0A\u5348","39"],"domains":[{"_id":"lzoi2025","lower":"lzoi2025","owner":2,"name":"lzoi2025","bulletin":"\u6B22\u8FCE\u6765\u5230\u4E50\u77E5\u8BFE\u5802","roles":{"default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652665968686450754978432","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652772037458741283553921"},"avatar":"qq:904491908","langs":"cc.cc14o2,cc.cc17o2,py.py3,cc,py","share":"*"}],"viewLang":"zh_TW","timeZone":"Asia/Shanghai","codeLang":"cc.cc17o2","codeTemplate":"#include <bits/stdc++.h>\\r\\nusing namespace std;\\r\\nusing i64 = long long, u64 = unsigned long long;\\r\\nusing i128 = __int128, u128 = unsigned __int128;\\r\\n\\r\\nint main() {\\r\\n    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);\\r\\n    \\r\\n    return 0;\\r\\n}","avatar":"gravatar:202610319@gzlzoi.cn","qq":"","gender":"2","bio":"<blockquote class=\\"note\\">\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: yellow;\\">\u4E66\u5C71\u6709\u8DEF\u52E4\u4E3A\u5F84\uFF0C\u5B66\u6D77\u65E0\u6DAF\u82E6\u4F5C\u821F\u3002</p></h3>\\r\\n<h3><p style=\\"text-align: center; font-weight: bold; color: #12DA72;\\">Diligence is the path to the mountain of knowledge, hard-working is the boat to the endless sea of learning.</p></h3>\\r\\n</blockquote>","school":"\u5E7F\u5DDE\u5E02\u5929\u6CB3\u533A\u9A8F\u666F\u5C0F\u5B66","studentId":"","backgroundImage":"/d/lzoi2025/file/39/%E4%B9%90%E7%9F%A5%E8%AF%BE%E5%A0%82%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.png","unreadMsg":0,"pinnedDomains":["lzoi2025"],"rounded":true,"skipAnimate":false,"showTimeAgo":true,"fontFamily":"Microsoft Yahei","codeFontFamily":"Consolas","theme":"dark","preferredEditorType":"sv","showInvisibleChar":false,"formatCode":true,"displayName":"\u9EC4\u98DE\u535A","rpInfo":{"problem":237.2780396214451,"contest":8.25},"nAccept":191,"nSubmit":194,"rp":245.5280396214451,"rank":2,"level":8,"join":true,"avatarUrl":"//cn.gravatar.com/avatar/2dbb0a041212ea8df395e4d4418e92fa?d=mm&s=128"}';
+    </script>
+      </head>
+<body>
+      <script type="text/javascript" src="../../resource/1c07a499/entry.js"></script>
+    <script type="text/javascript" src="../../resource/4.58.0-beta.17/lang-zh_TW.js"></script>
+    <script type="text/javascript" src="../../hydro-4.58.0-beta.17.js"></script>
+    <nav class="nav slideout-menu" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://www.gzlzoi.cn/"><img class="nav__logo" src="../../components/navigation/nav-logo-small_dark.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="index.html" class="nav__item nav--active">
+    首頁
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="set_theme/dark.html" class="nav__item">
+    題庫
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="training.html" class="nav__item">
+    訓練
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="contest.html" class="nav__item">
+    比賽
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="homework.html" class="nav__item">
+    功課
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="discuss.html" class="nav__item">
+    討論
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="record@uidOrName=39.html" class="nav__item">
+    評測佇列
+  </a>
+</li>
+      </ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+              <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-domain" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <span class="nav__item"><span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span> lzoi2025 <span class="icon icon-expand_more nojs--hide"></span></span>
+        <ol class="dropdown-target menu" id="menu-nav-domain"><li class="menu__item">
+              <a href="index.html" class="menu__link">
+                <span class="icon"><img class="small user-profile-avatar v-center" loading="lazy" src="https://q1.qlogo.cn/g?b=qq&amp;nk=904491908&amp;s=160" width="20" height="20"></span>
+                lzoi2025              </a>
+            </li><li class="menu__seperator"></li><li class="menu__item">
+            <a href="home/domain.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 管理
+            </a>
+          </li>
+        </ol>
+      </li>
+          <li class="nav__list-item" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstrainToWindow data-dropdown-trigger-desktop-only>
+        <a href="user/39.html" class="nav__item">202610319 <span class="icon icon-expand_more nojs--hide"></span></a>
+        <ol class="dropdown-target menu" id="menu-nav-user">
+          <li class="menu__item">
+            <a href="user/39.html" class="menu__link">
+              <span class="icon icon-account--circle"></span> 我的資料
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="home/messages.html" class="menu__link">
+              <span class="icon icon-comment--multiple"></span> 站內訊息
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="home/settings/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> @ lzoi2025
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="home/settings/account.html" class="menu__link">
+              <span class="icon icon-wrench"></span> 賬戶設定
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="home/settings/preference.html" class="menu__link">
+              <span class="icon icon-sliders"></span> 偏好設定
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="home/security.html" class="menu__link">
+              <span class="icon icon-security"></span> 安全設定
+            </a>
+          </li>
+          <li class="menu__seperator"></li>
+          <li class="menu__item">
+            <a href="home/domain.html" class="menu__link">
+              <span class="icon icon-web"></span> 我的域
+            </a>
+          </li>
+                              <li class="menu__seperator"></li>
+                    <li class="menu__item">
+            <a href="logout.html" class="menu__link" name="nav_logout">
+              <span class="icon icon-logout"></span> 登出
+            </a>
+          </li>
+        </ol>
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://www.gzlzoi.cn/" target="_self">
+        <img src="../../components/navigation/nav-logo-small_dark.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+        <div class="row">
+      <div class="large-9 columns">
+                                    <div class="section">
+    <div class="section__body typo richmedia">
+      <p>欢迎来到乐知课堂</p>
+
+    </div>
+  </div>
+                                            <div class="section page--contest_main">
+    <div class="section__header">
+      <h1 class="section__title">比賽</h1>
+    </div>
+    <ol class="section__list contest__list"><li class="section__list__item contest__item contest-type--ioi ">
+          <div class="media">
+            <div class="media__left medium">
+              <div class="contest__date numbox">
+                <div class="numbox__num large"><span class="time" data-timestamp="1755219600">15</span></div>
+                <div class="numbox__text"><span class="time" data-timestamp="1755219600">2025-8</span></div>
+              </div>
+            </div>
+            <div class="media__body medium">
+              <h1 class="contest__title"><a href="contest/689e039abbeb552d59dcd91d.html" data-emoji-enabled>祝大家暑假快乐！</a></h1>
+              <ul class="supplementary list">
+                <li>
+                  <a href="contest@rule=ioi.html" class="contest-type-tag"><span class="icon icon-award"></span>IOI</a>
+                </li>
+                                  <li class="contest-tag-rated"><span class="icon icon-star"></span>Rated</li>
+                                <li>
+                  <span class="icon icon-schedule--fill text-blue"></span> 2
+ 小時
+                </li>
+                <li>
+                  <span class="icon icon-user--multiple"></span> 28
+                </li>
+                                  <li class="contest__info-attended">
+                    <span class="icon icon-check"></span> 已參加
+                  </li>
+                              </ul>
+            </div>
+          </div>
+        </li><li class="section__list__item contest__item contest-type--ioi ">
+          <div class="media">
+            <div class="media__left medium">
+              <div class="contest__date numbox">
+                <div class="numbox__num large"><span class="time" data-timestamp="1751848200">7</span></div>
+                <div class="numbox__text"><span class="time" data-timestamp="1751848200">2025-7</span></div>
+              </div>
+            </div>
+            <div class="media__body medium">
+              <h1 class="contest__title"><a href="contest/686b1060839f592b7838df6a.html" data-emoji-enabled>第五天：青山不改，绿水长流</a></h1>
+              <ul class="supplementary list">
+                <li>
+                  <a href="contest@rule=ioi.html" class="contest-type-tag"><span class="icon icon-award"></span>IOI</a>
+                </li>
+                                  <li class="contest-tag-rated"><span class="icon icon-star"></span>Rated</li>
+                                <li>
+                  <span class="icon icon-schedule--fill text-blue"></span> 2.5
+ 小時
+                </li>
+                <li>
+                  <span class="icon icon-user--multiple"></span> 63
+                </li>
+                                  <li class="contest__info-attended">
+                    <span class="icon icon-check"></span> 已參加
+                  </li>
+                              </ul>
+            </div>
+          </div>
+        </li><li class="section__list__item contest__item contest-type--ioi ">
+          <div class="media">
+            <div class="media__left medium">
+              <div class="contest__date numbox">
+                <div class="numbox__num large"><span class="time" data-timestamp="1751417100">2</span></div>
+                <div class="numbox__text"><span class="time" data-timestamp="1751417100">2025-7</span></div>
+              </div>
+            </div>
+            <div class="media__body medium">
+              <h1 class="contest__title"><a href="contest/685fc10ec497f34a9db3c4fe.html" data-emoji-enabled>第一天：欢迎来到乐知课堂！</a></h1>
+              <ul class="supplementary list">
+                <li>
+                  <a href="contest@rule=ioi.html" class="contest-type-tag"><span class="icon icon-award"></span>IOI</a>
+                </li>
+                                <li>
+                  <span class="icon icon-schedule--fill text-blue"></span> 1
+ 小時
+                </li>
+                <li>
+                  <span class="icon icon-user--multiple"></span> 68
+                </li>
+                                  <li class="contest__info-attended">
+                    <span class="icon icon-check"></span> 已參加
+                  </li>
+                              </ul>
+            </div>
+          </div>
+        </li><li class="section__list__item contest__item contest-type--ioi ">
+          <div class="media">
+            <div class="media__left medium">
+              <div class="contest__date numbox">
+                <div class="numbox__num large"><span class="time" data-timestamp="1751761800">6</span></div>
+                <div class="numbox__text"><span class="time" data-timestamp="1751761800">2025-7</span></div>
+              </div>
+            </div>
+            <div class="media__body medium">
+              <h1 class="contest__title"><a href="contest/6867962c378af7f9fb349365.html" data-emoji-enabled>第四天：回首往“题”</a></h1>
+              <ul class="supplementary list">
+                <li>
+                  <a href="contest@rule=ioi.html" class="contest-type-tag"><span class="icon icon-award"></span>IOI</a>
+                </li>
+                                <li>
+                  <span class="icon icon-schedule--fill text-blue"></span> 4
+ 小時
+                </li>
+                <li>
+                  <span class="icon icon-user--multiple"></span> 57
+                </li>
+                                  <li class="contest__info-attended">
+                    <span class="icon icon-check"></span> 已參加
+                  </li>
+                              </ul>
+            </div>
+          </div>
+        </li></ol>
+    <ul class="pager pager-bottom"><li>
+      <a class="pager__item next link" href="contest.html">更多 ></a>
+    </li></ul>
+  </div>
+                                            <div class="section page--homework_main">
+    <div class="section__header">
+      <h1 class="section__title">功課</h1>
+    </div>
+    <ol class="section__list homework__list"><li class="section__list__item homework__item">
+          <div class="media">
+            <div class="media__left medium">
+              <div class="homework__date numbox">
+                <div class="numbox__num large"><span class="time" data-timestamp="1818950340">22</span></div>
+                <div class="numbox__text"><span class="time" data-timestamp="1818950340">2027-8</span></div>
+              </div>
+            </div>
+            <div class="media__body medium">
+              <h1 class="homework__title"><a href="homework/6947b8bf94db19114128b9c2.html" data-emoji-enabled>【2026-01-10】学校要封校，不能上课，我们寒假再见（请大家点开作业）</a></h1>
+              <ul class="supplementary list">
+                <li>狀態: 正在進行…</li>
+                <li>開始時間: <span class="time relative" data-timestamp="1767744000">2026-1-7 8:00:00</span></li>
+                <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818950340">2027-8-22 23:59:00</span>
+                                  </li>
+                                  <li class="homework__info-attended">
+                    <span class="icon icon-check"></span> 已認領
+                  </li>
+                              </ul>
+            </div>
+          </div>
+        </li><li class="section__list__item homework__item">
+          <div class="media">
+            <div class="media__left medium">
+              <div class="homework__date numbox">
+                <div class="numbox__num large"><span class="time" data-timestamp="1818863940">21</span></div>
+                <div class="numbox__text"><span class="time" data-timestamp="1818863940">2027-8</span></div>
+              </div>
+            </div>
+            <div class="media__body medium">
+              <h1 class="homework__title"><a href="homework/6938cbac736919eae1137a6c.html" data-emoji-enabled>【算法入门-21】生成树与并查集</a></h1>
+              <ul class="supplementary list">
+                <li>狀態: 正在進行…</li>
+                <li>開始時間: <span class="time relative" data-timestamp="1765584000">2025-12-13 8:00:00</span></li>
+                <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818863940">2027-8-21 23:59:00</span>
+                                  </li>
+                                  <li class="homework__info-attended">
+                    <span class="icon icon-check"></span> 已認領
+                  </li>
+                              </ul>
+            </div>
+          </div>
+        </li><li class="section__list__item homework__item">
+          <div class="media">
+            <div class="media__left medium">
+              <div class="homework__date numbox">
+                <div class="numbox__num large"><span class="time" data-timestamp="1818777540">20</span></div>
+                <div class="numbox__text"><span class="time" data-timestamp="1818777540">2027-8</span></div>
+              </div>
+            </div>
+            <div class="media__body medium">
+              <h1 class="homework__title"><a href="homework/692ed81da16808069bde8c9e.html" data-emoji-enabled>【算法入门-20】前缀和优化技巧</a></h1>
+              <ul class="supplementary list">
+                <li>狀態: 正在進行…</li>
+                <li>開始時間: <span class="time relative" data-timestamp="1764979200">2025-12-6 8:00:00</span></li>
+                <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818777540">2027-8-20 23:59:00</span>
+                                  </li>
+                                  <li class="homework__info-attended">
+                    <span class="icon icon-check"></span> 已認領
+                  </li>
+                              </ul>
+            </div>
+          </div>
+        </li><li class="section__list__item homework__item">
+          <div class="media">
+            <div class="media__left medium">
+              <div class="homework__date numbox">
+                <div class="numbox__num large"><span class="time" data-timestamp="1818691140">19</span></div>
+                <div class="numbox__text"><span class="time" data-timestamp="1818691140">2027-8</span></div>
+              </div>
+            </div>
+            <div class="media__body medium">
+              <h1 class="homework__title"><a href="homework/692671f0ce9c6f6f1ad9ba22.html" data-emoji-enabled>【算法入门-19】神奇的根号算法</a></h1>
+              <ul class="supplementary list">
+                <li>狀態: 正在進行…</li>
+                <li>開始時間: <span class="time relative" data-timestamp="1764374400">2025-11-29 8:00:00</span></li>
+                <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818691140">2027-8-19 23:59:00</span>
+                                  </li>
+                                  <li class="homework__info-attended">
+                    <span class="icon icon-check"></span> 已認領
+                  </li>
+                              </ul>
+            </div>
+          </div>
+        </li><li class="section__list__item homework__item">
+          <div class="media">
+            <div class="media__left medium">
+              <div class="homework__date numbox">
+                <div class="numbox__num large"><span class="time" data-timestamp="1818604740">18</span></div>
+                <div class="numbox__text"><span class="time" data-timestamp="1818604740">2027-8</span></div>
+              </div>
+            </div>
+            <div class="media__body medium">
+              <h1 class="homework__title"><a href="homework/691afe5917726c08837084b7.html" data-emoji-enabled>【算法入门-18】尺取法和双指针</a></h1>
+              <ul class="supplementary list">
+                <li>狀態: 正在進行…</li>
+                <li>開始時間: <span class="time relative" data-timestamp="1763769600">2025-11-22 8:00:00</span></li>
+                <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818604740">2027-8-18 23:59:00</span>
+                                  </li>
+                                  <li class="homework__info-attended">
+                    <span class="icon icon-check"></span> 已認領
+                  </li>
+                              </ul>
+            </div>
+          </div>
+        </li><li class="section__list__item homework__item">
+          <div class="media">
+            <div class="media__left medium">
+              <div class="homework__date numbox">
+                <div class="numbox__num large"><span class="time" data-timestamp="1818518340">17</span></div>
+                <div class="numbox__text"><span class="time" data-timestamp="1818518340">2027-8</span></div>
+              </div>
+            </div>
+            <div class="media__body medium">
+              <h1 class="homework__title"><a href="homework/6915789c648edc5ab68a9f17.html" data-emoji-enabled>【算法入门-17】如何设计你的状态</a></h1>
+              <ul class="supplementary list">
+                <li>狀態: 正在進行…</li>
+                <li>開始時間: <span class="time relative" data-timestamp="1763164800">2025-11-15 8:00:00</span></li>
+                <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818518340">2027-8-17 23:59:00</span>
+                                  </li>
+                                  <li class="homework__info-attended">
+                    <span class="icon icon-check"></span> 已認領
+                  </li>
+                              </ul>
+            </div>
+          </div>
+        </li><li class="section__list__item homework__item">
+          <div class="media">
+            <div class="media__left medium">
+              <div class="homework__date numbox">
+                <div class="numbox__num large"><span class="time" data-timestamp="1818431940">16</span></div>
+                <div class="numbox__text"><span class="time" data-timestamp="1818431940">2027-8</span></div>
+              </div>
+            </div>
+            <div class="media__body medium">
+              <h1 class="homework__title"><a href="homework/69085f10fd80d5b0ebdc54da.html" data-emoji-enabled>【算法入门-16】贡献思维和单调栈</a></h1>
+              <ul class="supplementary list">
+                <li>狀態: 正在進行…</li>
+                <li>開始時間: <span class="time relative" data-timestamp="1762560000">2025-11-8 8:00:00</span></li>
+                <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818431940">2027-8-16 23:59:00</span>
+                                  </li>
+                                  <li class="homework__info-attended">
+                    <span class="icon icon-check"></span> 已認領
+                  </li>
+                              </ul>
+            </div>
+          </div>
+        </li><li class="section__list__item homework__item">
+          <div class="media">
+            <div class="media__left medium">
+              <div class="homework__date numbox">
+                <div class="numbox__num large"><span class="time" data-timestamp="1818345540">15</span></div>
+                <div class="numbox__text"><span class="time" data-timestamp="1818345540">2027-8</span></div>
+              </div>
+            </div>
+            <div class="media__body medium">
+              <h1 class="homework__title"><a href="homework/68d9d6717fd8fcac1ed2807f.html" data-emoji-enabled>【算法入门-15】数论分块</a></h1>
+              <ul class="supplementary list">
+                <li>狀態: 正在進行…</li>
+                <li>開始時間: <span class="time relative" data-timestamp="1764604800">2025-12-2 0:00:00</span></li>
+                <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818345540">2027-8-15 23:59:00</span>
+                                  </li>
+                                  <li class="homework__info-attended">
+                    <span class="icon icon-check"></span> 已認領
+                  </li>
+                              </ul>
+            </div>
+          </div>
+        </li><li class="section__list__item homework__item">
+          <div class="media">
+            <div class="media__left medium">
+              <div class="homework__date numbox">
+                <div class="numbox__num large"><span class="time" data-timestamp="1818259140">14</span></div>
+                <div class="numbox__text"><span class="time" data-timestamp="1818259140">2027-8</span></div>
+              </div>
+            </div>
+            <div class="media__body medium">
+              <h1 class="homework__title"><a href="homework/68d762cbc69a4e0706158d7e.html" data-emoji-enabled>【算法入门-14】筛法只能求质数？</a></h1>
+              <ul class="supplementary list">
+                <li>狀態: 正在進行…</li>
+                <li>開始時間: <span class="time relative" data-timestamp="1759881600">2025-10-8 8:00:00</span></li>
+                <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818259140">2027-8-14 23:59:00</span>
+                                  </li>
+                                  <li class="homework__info-attended">
+                    <span class="icon icon-check"></span> 已認領
+                  </li>
+                              </ul>
+            </div>
+          </div>
+        </li><li class="section__list__item homework__item">
+          <div class="media">
+            <div class="media__left medium">
+              <div class="homework__date numbox">
+                <div class="numbox__num large"><span class="time" data-timestamp="1818172740">13</span></div>
+                <div class="numbox__text"><span class="time" data-timestamp="1818172740">2027-8</span></div>
+              </div>
+            </div>
+            <div class="media__body medium">
+              <h1 class="homework__title"><a href="homework/68c28292fe802d7961adcfcd.html" data-emoji-enabled>【算法入门-13】区间统计问题研究</a></h1>
+              <ul class="supplementary list">
+                <li>狀態: 正在進行…</li>
+                <li>開始時間: <span class="time relative" data-timestamp="1757721600">2025-9-13 8:00:00</span></li>
+                <li>
+                                      截止時間: <span class="time relative" data-timestamp="1818172740">2027-8-13 23:59:00</span>
+                                  </li>
+                                  <li class="homework__info-attended">
+                    <span class="icon icon-check"></span> 已認領
+                  </li>
+                              </ul>
+            </div>
+          </div>
+        </li></ol>
+    <ul class="pager pager-bottom"><li>
+      <a class="pager__item next link" href="homework.html">更多 ></a>
+    </li></ul>
+  </div>
+                                            <div class="section page--training_main">
+    <div class="section__header">
+      <h1 class="section__title">訓練</h1>
+    </div>
+    <ol class="section__list all primary training__list"><li class="section__list__item training__item">
+          <div class="media">
+            <div class="media__left middle">
+              <div class="training__participants numbox">
+                <div class="numbox__num large">12</div>
+                <div class="numbox__text">已參加</div>
+              </div>
+            </div>
+            <div class="media__body middle">
+              <h1 class="training__title"><a href="training/6951f28f6a74d88710035a2b.html" data-emoji-enabled>CSP-J：算法基础</a></h1>
+              <div class="training__intro typo">
+                <p>CSP-J：算法基础</p>
+              </div>
+              <ul class="supplementary list training__progress">
+                <li>
+                  <span class="icon icon-flag text-blue"></span> 12 小節, 159 道題
+                </li>
+                <li>
+                                                    <span class="icon training-status--icon progress"></span>
+                  <span class="training-status--text progress">已完成 6%</span>
+                                                  </li>
+              </ul>
+            </div>
+          </div>
+        </li><li class="section__list__item training__item">
+          <div class="media">
+            <div class="media__left middle">
+              <div class="training__participants numbox">
+                <div class="numbox__num large">8</div>
+                <div class="numbox__text">已參加</div>
+              </div>
+            </div>
+            <div class="media__body middle">
+              <h1 class="training__title"><a href="training/695221a16a74d88710035dce.html" data-emoji-enabled>CSP-S：算法进阶</a></h1>
+              <div class="training__intro typo">
+                <p>CSP-S：算法进阶</p>
+              </div>
+              <ul class="supplementary list training__progress">
+                <li>
+                  <span class="icon icon-flag text-blue"></span> 8 小節, 122 道題
+                </li>
+                <li>
+                                                    <span class="icon training-status--icon progress"></span>
+                  <span class="training-status--text progress">已完成 10%</span>
+                                                  </li>
+              </ul>
+            </div>
+          </div>
+        </li></ol>
+    <ul class="pager pager-bottom"><li>
+      <a class="pager__item next link" href="training.html">更多 ></a>
+    </li></ul>
+  </div>
+                                                                                                      </div>
+      <div class="large-3 columns">
+                                  <div class="section side nojs--hide">
+  <div class="section__header">
+    <h1 class="section__title">一言</h1>
+  </div>
+  <div class="section__body typo" name="hitokoto"></div>
+</div>
+                                            <div class="section side nojs--hide">
+    <div class="section__header">
+      <h1 class="section__title">收藏的題目</h1>
+    </div>
+    <div class="section__body typo no-media col--problem-name"><p data-star-action="/d/lzoi2025/p/97" data-star="true">
+              <a href="p/LS1221.html"><b>LS1221</b>
+&nbsp;&nbsp;【入门】4的倍数</a>
+        </p><p data-star-action="/d/lzoi2025/p/98" data-star="true">
+              <a href="p/LS1222.html"><b>LS1222</b>
+&nbsp;&nbsp;【入门】能否相同</a>
+        </p><p data-star-action="/d/lzoi2025/p/99" data-star="true">
+              <a href="p/LS1223.html"><b>LS1223</b>
+&nbsp;&nbsp;【入门】数组转换</a>
+        </p><p data-star-action="/d/lzoi2025/p/100" data-star="true">
+              <a href="p/LS1224.html"><b>LS1224</b>
+&nbsp;&nbsp;【入门】组合方块</a>
+        </p><p data-star-action="/d/lzoi2025/p/101" data-star="true">
+              <a href="p/LS1225.html"><b>LS1225</b>
+&nbsp;&nbsp;【入门】均值和中位数</a>
+        </p></div>
+  </div>
+                                            <div class="section side nojs--hide">
+    <div class="section__header">
+      <h1 class="section__title">最新題目</h1>
+    </div>
+    <div class="section__body typo no-media col--problem-name"><p>
+              <a href="p/B2001.html">入门测试题目</a>
+          <span style="float: right"><span class="time relative" data-timestamp="1769652021">2026-1-29 10:00:21</span></span>
+        </p><p>
+              <a href="p/LS1290.html">【提高】第二大数</a>
+          <span style="float: right"><span class="time relative" data-timestamp="1769427214">2026-1-26 19:33:34</span></span>
+        </p><p>
+              <a href="p/P1154.html">【提高】第二大数</a>
+          <span style="float: right"><span class="time relative" data-timestamp="1769427047">2026-1-26 19:30:47</span></span>
+        </p><p>
+              <a href="p/ZT047.html">CSP-S 2022 策略游戏</a>
+          <span style="float: right"><span class="time relative" data-timestamp="1769404700">2026-1-26 13:18:20</span></span>
+        </p><p>
+              <a href="p/P3865.html">【模板】ST 表 &amp; RMQ 问题</a>
+          <span style="float: right"><span class="time relative" data-timestamp="1769394279">2026-1-26 10:24:39</span></span>
+        </p><p>
+              <a href="problem/random@q=category%253AAPIO.html">[APIO2019] 路灯</a>
+          <span style="float: right"><span class="time relative" data-timestamp="1767952497">2026-1-9 17:54:57</span></span>
+        </p><p>
+              <a href="problem/random@q=category%253ACTSC%252FCTS.html">[CTSC2018] 混合果汁</a>
+          <span style="float: right"><span class="time relative" data-timestamp="1767952497">2026-1-9 17:54:57</span></span>
+        </p><p>
+              <a href="p/P2839.html">[国家集训队] middle</a>
+          <span style="float: right"><span class="time relative" data-timestamp="1767952497">2026-1-9 17:54:57</span></span>
+        </p><p>
+              <a href="p/P3168.html">[CQOI2015] 任务查询系统</a>
+          <span style="float: right"><span class="time relative" data-timestamp="1767952497">2026-1-9 17:54:57</span></span>
+        </p><p>
+              <a href="p/P2617.html">Dynamic Rankings</a>
+          <span style="float: right"><span class="time relative" data-timestamp="1767952497">2026-1-9 17:54:57</span></span>
+        </p></div>
+  </div>
+                                              <div class="section side">
+  <div class="section__header">
+    <h1 class="section__title">討論節點</h1>
+  </div>
+  <div class="section__body"><ul class="group-list"></ul></div>
+</div>                                          <div class="section side">
+  <div class="section__header">
+    <h1 class="section__title">推薦</h1>
+  </div>
+  <div class="section__body"><ul class="group-list">
+    <li class="group-list__item">
+      <h2 class="section__title">中文</h2>
+      <ol class="chip-list">
+        <li class="chip-list__item"><a class="typo-a" href="https://loj.ac/" target="_blank">LibreOJ</a></li>
+        <li class="chip-list__item"><a class="typo-a" href="https://www.luogu.com.cn/" target="_blank">洛谷</a></li>
+        <li class="chip-list__item"><a class="typo-a" href="https://uoj.ac/" target="_blank">UOJ</a></li>
+        <li class="chip-list__item"><a class="typo-a" href="https://www.cometoj.com/" target="_blank">CometOJ</a></li>
+        <li class="chip-list__item"><a class="typo-a" href="https://vijos.org/" target="_blank">Vijos</a></li>
+      </ol>
+    </li>
+    <li class="group-list__item">
+      <h2 class="section__title">English</h2>
+      <ol class="chip-list">
+        <li class="chip-list__item"><a class="typo-a" href="https://codeforces.com/" target="_blank">Codeforces</a></li>
+        <li class="chip-list__item"><a class="typo-a" href="https://atcoder.jp/" target="_blank">AtCoder</a></li>
+        <li class="chip-list__item"><a class="typo-a" href="https://www.codechef.com/" target="_blank">CodeChef</a></li>
+        <li class="chip-list__item"><a class="typo-a" href="https://www.spoj.com/" target="_blank">SPOJ</a></li>
+        <li class="chip-list__item"><a class="typo-a" href="https://www.topcoder.com/" target="_blank">TopCoder</a></li>
+        <li class="chip-list__item"><a class="typo-a" href="https://onlinejudge.org/" target="_blank">OnlineJudge</a></li>
+      </ol>
+    </li>
+    <li class="group-list__item">
+      <h2 class="section__title">工具</h2>
+      <ol class="chip-list">
+        <li class="chip-list__item"><a class="typo-a" href="https://oier.baoshuo.dev/" target="_blank">OIerDb</a></li>
+      </ol>
+    </li>
+  </ul></div>
+</div>
+                  </div>
+  </div>
+  </div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+      <div class="row footer__links">
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          狀態
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://www.gzlzoi.cn/d/lzoi2025/record">評測佇列</a></li>
+          <li class="footer__category__item"><a href="status.html">服務狀態</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          開發
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">開源</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable">
+        <h1>
+          支援
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="wiki/help.html">幫助</a></li>
+          <li class="footer__category__item"><a href="wiki/about.html#contact">聯絡我們</a></li>
+        </ul></div>
+      </div>
+      <div class="medium-3 large-2 columns footer__category expandable end">
+        <h1>
+          關於
+          <span class="expand-icon">
+            <span class="icon icon-expand_more"></span>
+          </span>
+        </h1>
+        <div class="footer__category__expander"><ul class="footer__category__list">
+          <li class="footer__category__item"><a href="wiki/about.html">關於</a></li>
+          <li class="footer__category__item"><a href="wiki/about.html#privacy">隱私</a></li>
+          <li class="footer__category__item"><a href="wiki/about.html#tos">服務條款</a></li>
+          <li class="footer__category__item"><a href="wiki/about.html#contact">版權申訴</a></li>
+        </ul></div>
+      </div>
+    </div>
+      <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+                    <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-lang"><li class="menu__item"><a class="menu__link" href="language/en.html">English</a></li><li class="menu__item"><a class="menu__link" href="language/ko.html">한국어</a></li><li class="menu__item"><a class="menu__link" href="language/zh.html">简体中文</a></li><li class="menu__item"><a class="menu__link" href="language/zh_TW.html">正體中文</a></li></ol>
+          </li>
+          <li class="footer__extra-link-item">
+                          <a href="https://www.gzlzoi.cn/legacy?legacy=true">相容模式</a>
+                      </li>
+          <li class="footer__extra-link-item nojs--hide" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> 主題 <span class="icon icon-expand_less"></span></span>
+            <ol class="dropdown-target menu" id="menu-footer-theme">
+              <li class="menu__item"><a class="menu__link" href="set_theme/light.html">亮色</a></li>
+              <li class="menu__item"><a class="menu__link" href="set_theme/dark.html">暗色</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><a href="https://beian.miit.gov.cn/">京ICP备2023010486号-3</a></li><li class="footer__extra-link-item">Worker 0, 36ms</li>
+          <!-- Prepare 0ms -->
+          <!-- Method 22ms -->
+          
+          
+          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v5.0.0-beta.16</a> Community</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      window.UiContextNew = '{}';
+      window.UserContextNew = '{}';
+    </script>
+  </body>
+</html>

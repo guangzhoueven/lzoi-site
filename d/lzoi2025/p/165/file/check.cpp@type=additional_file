@@ -1,0 +1,36 @@
+// https://leetcode.cn/problems/trapping-rain-water/solutions/692342/jie-yu-shui-by-leetcode-solution-tuvc/
+#include <bits/stdc++.h>
+using namespace std;
+
+using i64 = long long;
+
+int solve(vector<int>& height) {
+    int ans = 0;
+    int left = 0, right = height.size() - 1;
+    int leftMax = 0, rightMax = 0;
+    while (left < right) {
+        leftMax = max(leftMax, height[left]);
+        rightMax = max(rightMax, height[right]);
+        if (height[left] < height[right]) {
+            ans += leftMax - height[left];
+            ++left;
+        } else {
+            ans += rightMax - height[right];
+            --right;
+        }
+    }
+    return ans;
+}
+
+int main() {	
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) cin >> a[i];
+    cout << solve(a) << '\n';
+
+    return 0;
+}

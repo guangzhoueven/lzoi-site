@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+const int f[] = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6};
+
+int compute_f(long long x) {
+    int res = 0;
+    while (x > 0) {
+        res += f[x % 10];
+        x /= 10;
+    }
+    return res;
+}
+
+int solve(long long l, long long r) { //最长的连续相同 f(x) 的段的长度不超过 3
+    if (l == r) return 1;
+    int f1 = compute_f(l);
+    int f2 = compute_f(l + 1);
+    if (f1 != f2) return 1;
+    if (l + 1 == r) return 2;
+    int f3 = compute_f(l + 2);
+    if (f2 == f3) return 3;
+    else return 2;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+	 
+    int T;
+    cin >> T;
+    while (T--) {
+        long long l, r;
+        cin >> l >> r;
+        cout << solve(l, r) << '\n';
+    }
+    return 0;
+}

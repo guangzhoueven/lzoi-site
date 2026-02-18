@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	int n;
+	cin >> n;
+	vector<string> strs(n);
+	for (int i = 0; i < n; i++)	cin >> strs[i];
+
+	sort(strs.begin(), strs.end(),  [&](const auto& x, const auto& y) {	// 计算字符串x和y中'X'数量和数字总和，判断x在前还是y在前
+		i64 x_Xcnt = count(x.begin(), x.end(), 'X');			// 统计x中'X'的数量
+		i64 y_Xcnt = count(y.begin(), y.end(), 'X');			// 统计y中'X'的数量
+		i64 x_sum = 0, y_sum = 0;
+		for (auto c : x) if (isdigit(c)) x_sum += c - '0';		// 统计x中数字的总和
+		for (auto c : y) if (isdigit(c)) y_sum += c - '0';		// 统计y中数字的总和
+
+		// i64 s1 = x_Xcnt * x_sum + y.Xcnt * (x.sum + y.sum);
+		// i64 s2 = y.Xcnt * y.sum + x.Xcnt * (y.sum + x.sum);
+		// 以上两个等式去掉相同的部分x.Xcnt * x.sum 和y.Xcnt * y.sum 得到下面新的等式，直接比较，简化运算
+		return x_Xcnt * y_sum > y_Xcnt * x_sum; 				// s2 > s1  降序排序
+	});
+
+	i64 ans = 0, Xcnt = 0;
+	for (string s : strs) {		// 统计分数最大值
+		for (auto c : s) {
+			if (c == 'X') Xcnt++;
+			else if (isdigit(c)) ans += (c - '0') * Xcnt;    // 字符转数字 * 'X'的总数
+		}
+	}
+	cout << ans << "\n";
+	return 0;
+}

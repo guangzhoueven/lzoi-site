@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, k;
+	cin >> n >> k;
+	vector<i64> a(n);
+	for (auto& x : a) cin >> x;
+	
+	vector<i64> buy(k + 1, LLONG_MIN), sell(k + 1, 0);
+	for (i64 i = 0; i < n; i++)  {
+		for (i64 j = k; j >= 1; j--) {
+			sell[j] = max(sell[j], buy[j] + a[i]);
+			buy[j] = max(buy[j], sell[j-1] - a[i]);
+		}
+	}
+	cout << sell[k] << "\n";
+	return 0;
+}

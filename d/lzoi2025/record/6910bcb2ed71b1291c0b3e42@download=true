@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+const i64 MOD = 998244353;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, m, ans = 0;
+	cin >> n >> m;
+	
+	for (int i = 0; i < 60; i++) {
+		if ((m >> i) & 1) {
+			i64 T = 1LL << (i + 1);
+			i64 O = 1LL << i;
+			i64 F = (n + 1) / T;
+			i64 r = (n + 1) % T;
+			i64 cnt = F * O;
+			if (r > O) cnt += r - O;
+			ans = (ans + cnt) % MOD;
+		}
+	}
+	cout << ans << "\n";
+	return 0;
+}

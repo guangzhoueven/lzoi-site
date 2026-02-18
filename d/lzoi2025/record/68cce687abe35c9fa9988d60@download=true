@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+	ios::sync_with_stdio(false),cin.tie(nullptr),cout.tie(nullptr);
+	i64 n, L, R;
+	cin >> n >> L >> R;
+	vector<i64> a(n + 1);
+	vector<i64> dp(n + 1, LLONG_MIN);
+	for (i64 i = 0; i <= n; i++) cin >> a[i];
+	
+	dp[0] = 0;
+	deque<i64> q;
+	i64 k = 0;
+	for (i64 i = L; i <= n; i++) {
+		while (k <= i - L) {
+			if (dp[k] != LLONG_MIN) {
+				while (!q.empty() && dp[q.back()] < dp[k]) q.pop_back();
+				q.push_back(k);
+			}
+			k++;
+		}
+		while (!q.empty() && q.front() < i - R) q.pop_front();
+		if (!q.empty()) dp[i] = dp[q.front()] + a[i];
+	}
+	i64 ans = LLONG_MIN;
+	i64 start = max(0LL, n - R + 1);
+	for (i64 i = start; i <= n; i++)
+		if (dp[i] > ans) ans = dp[i];
+	cout << ans << "\n";
+	return 0;
+}

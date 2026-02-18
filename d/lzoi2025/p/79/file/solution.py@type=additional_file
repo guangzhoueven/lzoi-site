@@ -1,0 +1,6 @@
+N, P = 10000, 1000000007
+f = [1] * N
+for i in range(3, N):
+    f[i] = (2 * f[i - 2] + 3 * f[i - 1] + 4 * i) % P
+n = int(input())
+print(f[n])

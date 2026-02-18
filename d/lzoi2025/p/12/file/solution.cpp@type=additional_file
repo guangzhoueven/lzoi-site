@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// n 个人(0, 1, ..., n - 1), 从 0 开始报数, 每 m 个出圈 1 个, 求第 k 个出圈的人
+int solve(int n, int m, int k) {
+	// 终止逻辑
+	if (k == 1) return (m - 1) % n;
+	
+	// 分解为规模更小的问题
+	return (solve(n - 1, m, k - 1) + m) % n;
+}
+
+int main() {
+	int T, n, k, m;
+	cin >> T;
+	while (T--) {
+		cin >> n >> m >> k;
+		cout << solve(n, m, k) << '\n';
+	}
+	return 0;
+}

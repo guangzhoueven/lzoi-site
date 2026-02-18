@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+const i64 MAXN = 4096;
+
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+	i64 n, m;
+	cin >> n >> m;
+	vector<i64> a(n);
+	for (auto& x : a) cin >> x;
+
+	i64 max_v = 0;
+	for (auto x : a) max_v = max(max_v, x);
+	
+	vector<i64> pref(n + 1, 0);
+	for (i64 i = 0; i < n; i++) pref[i + 1] = pref[i] ^ a[i];
+	
+	vector<vector<short>> R_cnt(n, vector<short>(MAXN, 0));
+	for (i64 L = n - 1; L >= 0; L--) {
+		if (L < n - 1) 
+			for (i64 x = 0; x < MAXN; x++) R_cnt[L][x] = R_cnt[L + 1][x];
+		for (i64 R = L; R < n; R++) {
+			i64 k = pref[R + 1] ^ pref[L];
+			if (k < MAXN) R_cnt[L][k]++;
+		}
+	}
+	
+	i64 ans = 0;
+	for (i64 R1 = 0; R1 < n - 1; R1++) {
+		vector<short> L_cnt(MAXN, 0);
+		for (i64 L1 = 0; L1 <= R1; L1++) {
+			i64 k = pref[R1 + 1] ^ pref[L1];
+			if (k < MAXN) L_cnt[k]++;
+		}
+		
+		vector<short>& R_v = R_cnt[R1 + 1];
+		for (i64 x = 0; x < MAXN; x++) {
+			i64 y = x ^ m;
+			if (y < MAXN) 
+				ans += (i64)L_cnt[x] * (i64)R_v[y];
+		}
+	}
+	cout << ans << "\n";
+	return 0;
+}

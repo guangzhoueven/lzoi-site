@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int gao(vector<int>& h) {
+    int n = h.size();
+    vector<int> L(n, -1), R(n, n);
+    
+    int e = 0;
+    vector<int> s(n);
+    
+    // 右边第一个比自己小的
+    for (int i = 0; i < n; i++) {
+        while (e > 0 && h[s[e - 1]] > h[i]) R[s[--e]] = i;
+        s[e++] = i;
+    }
+    e = 0;
+    // 左边第一个比自己小的
+    for (int i = n - 1; i >= 0; i--) {
+        while (e > 0 && h[s[e - 1]] > h[i]) L[s[--e]] = i;
+        s[e++] = i;
+    }
+    // for (int i = 0; i < n; i++) cout << L[i] << " \n"[i == n - 1];
+    // for (int i = 0; i < n; i++) cout << R[i] << " \n"[i == n - 1];
+    int ans = 0;
+    for (int i = 0; i < n; i++) ans = max(ans, h[i] * (R[i] - L[i] - 1));
+    return ans;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr); cout.tie(nullptr);
+
+    int n;
+    cin >> n;
+    vector<int> h(n);
+    for (int i = 0; i < n; i++) cin >> h[i];
+    cout << gao(h) << '\n';
+
+    return 0;
+}
